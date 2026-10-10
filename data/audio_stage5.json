@@ -1,0 +1,438 @@
+{
+  "sfx": [
+    {
+      "name": "explosive_spitter_windup",
+      "kind": "growl",
+      "duration": 0.5,
+      "pitch": 75,
+      "seed": 55000
+    },
+    {
+      "name": "explosive_spitter_attack",
+      "kind": "whoosh",
+      "duration": 0.25,
+      "pitch": 82,
+      "seed": 55001
+    },
+    {
+      "name": "explosive_spitter_hurt",
+      "kind": "hurt",
+      "duration": 0.22,
+      "pitch": 89,
+      "seed": 55002
+    },
+    {
+      "name": "explosive_spitter_death",
+      "kind": "death",
+      "duration": 0.55,
+      "pitch": 96,
+      "seed": 55003
+    },
+    {
+      "name": "wall_diver_windup",
+      "kind": "growl",
+      "duration": 0.5,
+      "pitch": 87,
+      "seed": 55004
+    },
+    {
+      "name": "wall_diver_attack",
+      "kind": "whoosh",
+      "duration": 0.25,
+      "pitch": 94,
+      "seed": 55005
+    },
+    {
+      "name": "wall_diver_hurt",
+      "kind": "hurt",
+      "duration": 0.22,
+      "pitch": 101,
+      "seed": 55006
+    },
+    {
+      "name": "wall_diver_death",
+      "kind": "death",
+      "duration": 0.55,
+      "pitch": 108,
+      "seed": 55007
+    },
+    {
+      "name": "root_spewer_windup",
+      "kind": "growl",
+      "duration": 0.5,
+      "pitch": 99,
+      "seed": 55008
+    },
+    {
+      "name": "root_spewer_attack",
+      "kind": "whoosh",
+      "duration": 0.25,
+      "pitch": 106,
+      "seed": 55009
+    },
+    {
+      "name": "root_spewer_hurt",
+      "kind": "hurt",
+      "duration": 0.22,
+      "pitch": 113,
+      "seed": 55010
+    },
+    {
+      "name": "root_spewer_death",
+      "kind": "death",
+      "duration": 0.55,
+      "pitch": 120,
+      "seed": 55011
+    },
+    {
+      "name": "boar_charger_windup",
+      "kind": "growl",
+      "duration": 0.5,
+      "pitch": 111,
+      "seed": 55012
+    },
+    {
+      "name": "boar_charger_attack",
+      "kind": "whoosh",
+      "duration": 0.25,
+      "pitch": 118,
+      "seed": 55013
+    },
+    {
+      "name": "boar_charger_hurt",
+      "kind": "hurt",
+      "duration": 0.22,
+      "pitch": 125,
+      "seed": 55014
+    },
+    {
+      "name": "boar_charger_death",
+      "kind": "death",
+      "duration": 0.55,
+      "pitch": 132,
+      "seed": 55015
+    },
+    {
+      "name": "gas_sac_windup",
+      "kind": "growl",
+      "duration": 0.5,
+      "pitch": 123,
+      "seed": 55016
+    },
+    {
+      "name": "gas_sac_attack",
+      "kind": "whoosh",
+      "duration": 0.25,
+      "pitch": 130,
+      "seed": 55017
+    },
+    {
+      "name": "gas_sac_hurt",
+      "kind": "hurt",
+      "duration": 0.22,
+      "pitch": 137,
+      "seed": 55018
+    },
+    {
+      "name": "gas_sac_death",
+      "kind": "death",
+      "duration": 0.55,
+      "pitch": 144,
+      "seed": 55019
+    },
+    {
+      "name": "wraith_ray_windup",
+      "kind": "growl",
+      "duration": 0.5,
+      "pitch": 135,
+      "seed": 55020
+    },
+    {
+      "name": "wraith_ray_attack",
+      "kind": "whoosh",
+      "duration": 0.25,
+      "pitch": 142,
+      "seed": 55021
+    },
+    {
+      "name": "wraith_ray_hurt",
+      "kind": "hurt",
+      "duration": 0.22,
+      "pitch": 149,
+      "seed": 55022
+    },
+    {
+      "name": "wraith_ray_death",
+      "kind": "death",
+      "duration": 0.55,
+      "pitch": 156,
+      "seed": 55023
+    },
+    {
+      "name": "shell_scorpion_windup",
+      "kind": "growl",
+      "duration": 0.5,
+      "pitch": 147,
+      "seed": 55024
+    },
+    {
+      "name": "shell_scorpion_attack",
+      "kind": "whoosh",
+      "duration": 0.25,
+      "pitch": 154,
+      "seed": 55025
+    },
+    {
+      "name": "shell_scorpion_hurt",
+      "kind": "hurt",
+      "duration": 0.22,
+      "pitch": 161,
+      "seed": 55026
+    },
+    {
+      "name": "shell_scorpion_death",
+      "kind": "death",
+      "duration": 0.55,
+      "pitch": 168,
+      "seed": 55027
+    },
+    {
+      "name": "corpse_bomber_windup",
+      "kind": "growl",
+      "duration": 0.5,
+      "pitch": 159,
+      "seed": 55028
+    },
+    {
+      "name": "corpse_bomber_attack",
+      "kind": "whoosh",
+      "duration": 0.25,
+      "pitch": 166,
+      "seed": 55029
+    },
+    {
+      "name": "corpse_bomber_hurt",
+      "kind": "hurt",
+      "duration": 0.22,
+      "pitch": 173,
+      "seed": 55030
+    },
+    {
+      "name": "corpse_bomber_death",
+      "kind": "death",
+      "duration": 0.55,
+      "pitch": 180,
+      "seed": 55031
+    },
+    {
+      "name": "chain_beastman_windup",
+      "kind": "growl",
+      "duration": 0.5,
+      "pitch": 171,
+      "seed": 55032
+    },
+    {
+      "name": "chain_beastman_attack",
+      "kind": "whoosh",
+      "duration": 0.25,
+      "pitch": 178,
+      "seed": 55033
+    },
+    {
+      "name": "chain_beastman_hurt",
+      "kind": "hurt",
+      "duration": 0.22,
+      "pitch": 185,
+      "seed": 55034
+    },
+    {
+      "name": "chain_beastman_death",
+      "kind": "death",
+      "duration": 0.55,
+      "pitch": 192,
+      "seed": 55035
+    },
+    {
+      "name": "spit_launch",
+      "kind": "whoosh",
+      "duration": 0.2,
+      "pitch": 100,
+      "seed": 56000,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "explosion_boom",
+      "kind": "impact",
+      "duration": 0.4,
+      "pitch": 117,
+      "seed": 56001,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "gas_burst",
+      "kind": "flame_start",
+      "duration": 0.3,
+      "pitch": 134,
+      "seed": 56002,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "gas_loop",
+      "kind": "flame_loop",
+      "duration": 0.5,
+      "pitch": 151,
+      "seed": 56003,
+      "loop": true,
+      "volume_db": 0
+    },
+    {
+      "name": "chain_launch",
+      "kind": "rattle",
+      "duration": 0.35,
+      "pitch": 168,
+      "seed": 56004,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "chain_pull",
+      "kind": "rattle",
+      "duration": 0.35,
+      "pitch": 185,
+      "seed": 56005,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "guard_block",
+      "kind": "rattle",
+      "duration": 0.16,
+      "pitch": 202,
+      "seed": 56006,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "corpse_scream",
+      "kind": "screech",
+      "duration": 0.4,
+      "pitch": 219,
+      "seed": 56007,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "corpse_fuse_beep",
+      "kind": "screech",
+      "duration": 0.06,
+      "pitch": 236,
+      "seed": 56008,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "boar_charge_rumble",
+      "kind": "growl",
+      "duration": 0.8,
+      "pitch": 253,
+      "seed": 56009,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "wraith_wail_loop",
+      "kind": "flame_loop",
+      "duration": 0.5,
+      "pitch": 270,
+      "seed": 56010,
+      "loop": true,
+      "volume_db": -14
+    },
+    {
+      "name": "wall_diver_screech",
+      "kind": "screech",
+      "duration": 0.2,
+      "pitch": 287,
+      "seed": 56011,
+      "loop": false,
+      "volume_db": 0
+    }
+  ],
+  "bgm": [
+    {
+      "name": "passage_descent",
+      "duration": 48,
+      "frequencies": [
+        30,
+        45,
+        60,
+        90
+      ],
+      "gains": [
+        0.24,
+        0.12,
+        0.08,
+        0.035
+      ],
+      "string_harmonics": 2,
+      "pulse_cycles": 3,
+      "wind_gain": 0.02,
+      "wind_band": [
+        70,
+        1200
+      ],
+      "chime_every": 8,
+      "chime_gain": 0.014,
+      "seed": 57000,
+      "metal_percussion": {
+        "interval": 6,
+        "gain": 0.025,
+        "frequencies": [
+          140,
+          271,
+          423
+        ],
+        "decay": 0.7
+      }
+    },
+    {
+      "name": "uruk_home_road",
+      "duration": 48,
+      "frequencies": [
+        43,
+        64.5,
+        86,
+        129
+      ],
+      "gains": [
+        0.24,
+        0.12,
+        0.08,
+        0.035
+      ],
+      "string_harmonics": 2,
+      "pulse_cycles": 3,
+      "wind_gain": 0.02,
+      "wind_band": [
+        70,
+        1200
+      ],
+      "chime_every": 8,
+      "chime_gain": 0.014,
+      "seed": 57001,
+      "metal_percussion": {
+        "interval": 6,
+        "gain": 0.025,
+        "frequencies": [
+          140,
+          271,
+          423
+        ],
+        "decay": 0.7
+      }
+    }
+  ]
+}

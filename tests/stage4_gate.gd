@@ -76,11 +76,7 @@ func _run() -> void:
     _check(manager.current_level.level_id == "CastleFront" and hero.global_position == Vector2(760,880) and hero.hp == 123, "Great gate returns to courtyard x760 preserving HP")
     await manager.go_to("CastleOutskirts", "Spawn_Debug")
     var locked: DoorPortal = manager.current_level.doors["downtown_passage_entrance"]
-    hero.global_position = locked.global_position
-    locked.interact(hero)
-    await _wait(0.03)
-    _check(main.get_node("HUD").toast.text == "아직 들어갈 수 없다" and not manager.player_locked, "Locked downtown door toasts without loading future level")
-    await _wait(0.3)
+    _check(not locked.locked and locked.target_level == "DowntownPassage_F8", "Exterior entrance is unlocked for top-floor descent")
     await manager.go_to("RearGate", "Spawn_Start")
     gate = manager.current_level.doors["villa_gate"]
     _check(gate.target_level == "VillaF1" and gate.target_spawn == "Spawn_FromGate", "Villa automatic destination unchanged")

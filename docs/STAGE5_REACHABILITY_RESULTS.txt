@@ -1,0 +1,10 @@
+REACHABILITY CastleOutskirts: 106 checks, 0 failures; jump height 138.01px
+REACHABILITY DowntownPassage_F1: 22 checks, 0 failures; jump height 138.01px
+REACHABILITY DowntownPassage_F2: 19 checks, 0 failures; jump height 138.01px
+REACHABILITY DowntownPassage_F3: 41 checks, 0 failures; jump height 138.01px
+REACHABILITY DowntownPassage_F4: 32 checks, 0 failures; jump height 138.01px
+REACHABILITY DowntownPassage_F5: 48 checks, 0 failures; jump height 138.01px
+REACHABILITY DowntownPassage_F6: 11 checks, 0 failures; jump height 138.01px
+REACHABILITY DowntownPassage_F7: 15 checks, 0 failures; jump height 138.01px
+REACHABILITY DowntownPassage_F8: 35 checks, 0 failures; jump height 138.01px
+REACHABILITY HomeRoad: 109 checks, 0 failures; jump height 138.01px

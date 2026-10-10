@@ -113,6 +113,27 @@
         420
       ],
       "frames": 6
+    },
+    "passage_door": {
+      "frame_size": [
+        256,
+        384
+      ],
+      "frames": 6
+    },
+    "downtown_passage_door_anim": {
+      "frame_size": [
+        320,
+        460
+      ],
+      "frames": 6
+    },
+    "nimrod_home_gate": {
+      "frame_size": [
+        320,
+        420
+      ],
+      "frames": 6
     }
   },
   "great_gate": {

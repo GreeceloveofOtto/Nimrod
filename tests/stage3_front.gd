@@ -85,12 +85,11 @@ func _run() -> void:
     _check(outer.display_name == "문지기" and not outer.interactable, "Outer keeper retains noninteractive name tag")
     _check(get_nodes_in_group("enemies").size() == 15, "Outskirts reuses ten melee and five ranged beasts")
     var locked: DoorPortal = level.doors["downtown_passage_entrance"]
-    _check(locked.locked and locked.target_level == "DowntownPassage_F1", "Future downtown target stored behind lock")
+    _check(not locked.locked and locked.target_level == "DowntownPassage_F8", "Downtown entrance now connects top floor")
     hero.global_position = locked.global_position
     locked.interact(hero)
-    await _wait(0.03)
-    _check(main.get_node("HUD").toast.text == "아직 들어갈 수 없다" and not manager.player_locked, "Downtown lock toasts without loading unknown scene")
-    await _wait(0.30)
+    await manager.transition_finished
+    _check(manager.current_level.level_id == "DowntownPassage_F8" and hero.hp == 123, "Passage entry preserves HP")
     await manager.go_to("CastleFront", "Spawn_FromCastle")
     level = manager.current_level
     door = level.doors["castle_front_exterior"]

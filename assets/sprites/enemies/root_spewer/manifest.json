@@ -1,0 +1,145 @@
+{
+  "character": "root_spewer",
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/enemies/root_spewer/idle.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 1.2,
+      "fps": 5.0,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3840,
+        640
+      ]
+    },
+    {
+      "name": "windup",
+      "sheet": "sprites/enemies/root_spewer/windup.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.5,
+      "fps": 8.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2560,
+        640
+      ]
+    },
+    {
+      "name": "spew",
+      "sheet": "sprites/enemies/root_spewer/spew.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.4,
+      "fps": 10.0,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2560,
+        640
+      ]
+    },
+    {
+      "name": "recovery",
+      "sheet": "sprites/enemies/root_spewer/recovery.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.6,
+      "fps": 6.666666666666667,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2560,
+        640
+      ]
+    },
+    {
+      "name": "turn",
+      "sheet": "sprites/enemies/root_spewer/turn.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.25,
+      "fps": 16.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2560,
+        640
+      ]
+    },
+    {
+      "name": "hurt",
+      "sheet": "sprites/enemies/root_spewer/hurt.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 2,
+      "rows": 1,
+      "frames": 2,
+      "duration_seconds": 0.2,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1280,
+        640
+      ]
+    },
+    {
+      "name": "death",
+      "sheet": "sprites/enemies/root_spewer/death.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.7,
+      "fps": 8.571428571428571,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3840,
+        640
+      ]
+    }
+  ]
+}

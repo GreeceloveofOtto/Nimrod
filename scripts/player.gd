@@ -85,6 +85,18 @@ var _portal_walk_direction: int = 1
 var _portal_walk_clock: float = 0.0
 var _transition_visual: Dictionary = {}
 var _restart_requested: bool = false
+var direction_cancel_data: Dictionary = {}
+var pending_cancel_direction: int = 0
+var direction_cancel_buffer_left: float = 0.0
+var air_direction_cancels: int = 0
+var pull_data: Dictionary = {}
+var movement_data: Dictionary = {}
+var pull_left: float = 0.0
+var pull_elapsed: float = 0.0
+var pull_target_x: float = 0.0
+var pull_escaped: bool = false
+var damage_tick_clock: float = 0.0
+var tick_sources: Dictionary = {}
 
 func _ready() -> void:
     add_to_group("player")
@@ -110,6 +122,9 @@ func _load_attack_data() -> void:
     for row: Dictionary in parsed.get("attacks", []):
         attack_data[int(row.get("step", 0))] = row
     shockwave_data = parsed.get("shockwave", {})
+    direction_cancel_data = parsed.get("direction_cancel", {})
+    movement_data = parsed.get("movement", {})
+    pull_data = parsed.get("pull", {})
 
 func _load_sprites() -> void:
     var file := FileAccess.open("res://assets/animation_manifest.json", FileAccess.READ)
@@ -146,6 +161,9 @@ func _physics_process(delta: float) -> void:
         queue_redraw()
 
     damage_grace = maxf(0.0, damage_grace - delta)
+    damage_tick_clock += delta
+    if is_on_floor():
+        air_direction_cancels = 0
     flash_time = maxf(0.0, flash_time - delta)
     if debug_hitboxes:
         queue_redraw()
@@ -159,6 +177,21 @@ func _physics_process(delta: float) -> void:
         if death_clock >= Config.PLAYER_DEATH_RESTART_SECONDS:
             _request_run_restart()
         return
+
+    if pull_left > 0.0:
+        pull_elapsed += delta
+        if Input.is_action_just_pressed("roll") and pull_elapsed >= float(pull_data.get("escape_after", 0.15)):
+            pull_left = 0.0
+            pull_escaped = true
+            _begin_roll()
+        else:
+            var motion_x: float = (pull_target_x - global_position.x) * minf(1.0, delta / maxf(delta, pull_left))
+            velocity.x = motion_x / delta
+            _integrate_vertical(delta)
+            move_and_slide()
+            pull_left = maxf(0.0, pull_left - delta)
+            _refresh_normal_visual(delta)
+            return
 
     if Input.is_action_just_pressed("roll") and (action == "normal" or action == "attack"):
         _begin_roll()
@@ -198,7 +231,14 @@ func _physics_process(delta: float) -> void:
             combo_next = 1
 
     if Input.is_action_just_pressed("attack"):
-        if action == "attack" and attack_step < 4:
+        var attack_axis: float = Input.get_axis("move_left", "move_right")
+        if action == "attack" and _can_direction_cancel(attack_axis):
+            if hitstop_left > 0.0:
+                pending_cancel_direction = 1 if attack_axis > 0.0 else -1
+                direction_cancel_buffer_left = float(direction_cancel_data.get("buffer_during_hitstop", 0.12))
+            else:
+                _direction_cancel_attack(attack_axis)
+        elif action == "attack" and attack_step < 4:
             buffered_attack = true
         elif action == "normal":
             var chosen_step: int = 4 if not is_on_floor() else combo_next
@@ -206,6 +246,12 @@ func _physics_process(delta: float) -> void:
 
     if hitstop_left > 0.0:
         hitstop_left = maxf(0.0, hitstop_left - delta)
+        if pending_cancel_direction != 0 and direction_cancel_buffer_left > 0.0 and hitstop_left <= 0.000001:
+            _direction_cancel_attack(float(pending_cancel_direction))
+        elif pending_cancel_direction != 0:
+            direction_cancel_buffer_left = maxf(0.0, direction_cancel_buffer_left - delta)
+            if direction_cancel_buffer_left == 0.0:
+                pending_cancel_direction = 0
         _refresh_attack_visual()
         _update_camera_shake(delta)
         return
@@ -241,7 +287,7 @@ func _physics_process(delta: float) -> void:
 
     var desired_speed: float = move_axis * RUN_SPEED
     if crouching:
-        desired_speed = 0.0
+        desired_speed = move_axis * float(movement_data.get("crouch_speed", 0.0))
     elif action == "attack":
         desired_speed *= Config.PLAYER_ATTACK_MOVE_SCALE
     var accel: float = GROUND_ACCEL if grounded_before else AIR_ACCEL
@@ -315,6 +361,35 @@ func _update_drop_mask(delta: float) -> void:
         drop_mask_left = maxf(0.0, drop_mask_left - delta)
         if drop_mask_left == 0.0:
             set_collision_mask_value(2, true)
+
+func _can_direction_cancel(axis: float) -> bool:
+    if not bool(direction_cancel_data.get("enabled", false)) or absf(axis) <= Config.PLAYER_INPUT_DEADZONE or axis * facing >= 0.0:
+        return false
+    return is_on_floor() or air_direction_cancels < int(direction_cancel_data.get("air_limit", 2))
+
+func _direction_cancel_attack(axis: float) -> void:
+    if action != "attack" or not _can_direction_cancel(axis):
+        return
+    var next_step: int = (attack_step % 4) + 1 if bool(direction_cancel_data.get("keep_combo", true)) else 1
+    if not is_on_floor():
+        next_step = 4
+        air_direction_cancels += 1
+    _cancel_attack()
+    facing = 1 if axis > 0.0 else -1
+    visual.flip_h = facing < 0
+    velocity.x = 0.0
+    _begin_attack(next_step)
+
+func apply_pull(target_x: float, seconds: float) -> bool:
+    if transition_locked or action == "dead" or is_roll_invulnerable():
+        return false
+    _cancel_attack()
+    pull_target_x = target_x
+    pull_left = maxf(0.0, seconds)
+    pull_elapsed = 0.0
+    pull_escaped = false
+    velocity.x = 0.0
+    return true
 
 func _begin_attack(step: int) -> void:
     if not attack_data.has(clampi(step, 1, 4)):
@@ -393,7 +468,10 @@ func _resolve_axe_hit() -> void:
         var tuning: Dictionary = attack_data[attack_step]
         var damage: int = int(tuning["damage"])
         # Knockback uses the attacker's origin; the axe tip can pass the target.
-        obj.call("take_hit", damage, global_position, attack_step)
+        var result: Variant = obj.call("take_hit", damage, global_position, attack_step)
+        if result is Dictionary and bool(result.get("blocked", false)):
+            _guard_recoil()
+            continue
         _play_shared_sfx("axe_hit_heavy" if attack_step == 4 else "axe_hit_flesh")
         hitstop_left = HITSTOP_SECONDS
         shake_time = maxf(shake_time, float(tuning["shake"]))
@@ -420,14 +498,22 @@ func _resolve_shockwave() -> void:
             continue
         attack_already_hit[id] = true
         var damage: int = int(shockwave_data["damage"])
+        var result: Variant
         if obj.has_method("take_shockwave_hit"):
-            obj.call("take_shockwave_hit", damage, global_position, 4)
+            result = obj.call("take_shockwave_hit", damage, global_position, 4)
         else:
-            obj.call("take_hit", damage, global_position, 4)
+            result = obj.call("take_hit", damage, global_position, 4)
+        if result is Dictionary and bool(result.get("blocked", false)):
+            _guard_recoil()
+            continue
         _play_shared_sfx("axe_hit_heavy")
         hitstop_left = HITSTOP_SECONDS
         shake_time = maxf(shake_time, float(shockwave_data["shake"]))
         attack_connected.emit(damage, 4)
+
+func _guard_recoil() -> void:
+    velocity.x = 0.0
+    move_and_collide(Vector2(-facing * float(direction_cancel_data.get("guard_recoil_pixels", 50.0)), 0.0))
 
 func _begin_roll() -> void:
     var move_axis: float = Input.get_axis("move_left", "move_right")
@@ -473,6 +559,8 @@ func _cancel_attack() -> void:
     shockwave_rect = Rect2()
     shockwave_done = false
     hitstop_left = 0.0
+    pending_cancel_direction = 0
+    direction_cancel_buffer_left = 0.0
     queue_redraw()
 
 func _restore_safe_collider() -> void:
@@ -509,6 +597,13 @@ func receive_damage(amount: int, opts: Dictionary = {}) -> bool:
     # Tick damage has its own clock and must not inherit ordinary hit grace.
     if grant_grace and damage_grace > 0.0:
         return false
+    if opts.has("tick_group"):
+        var group: String = str(opts["tick_group"])
+        var source: int = int(opts.get("tick_source", 0))
+        var previous: Dictionary = tick_sources.get(group, {})
+        if not previous.is_empty() and source != int(previous["source"]) and damage_tick_clock - float(previous["clock"]) < float(opts.get("overlap_interval", 0.2)):
+            return false
+        tick_sources[group] = {"source": source, "clock": damage_tick_clock}
     hp = maxi(0, hp - amount)
     flash_time = Config.PLAYER_DAMAGE_FLASH_SECONDS
     shake_time = Config.PLAYER_DAMAGE_SHAKE_SECONDS
@@ -516,6 +611,7 @@ func receive_damage(amount: int, opts: Dictionary = {}) -> bool:
         _play_shared_sfx("player_hurt")
     damage_received.emit(amount, hp)
     if hp == 0:
+        pull_left = 0.0
         if action == "roll":
             _restore_safe_collider()
         _cancel_attack()
@@ -526,6 +622,7 @@ func receive_damage(amount: int, opts: Dictionary = {}) -> bool:
     if grant_grace:
         damage_grace = Config.PLAYER_DAMAGE_GRACE_SECONDS
     if stagger:
+        pull_left = 0.0
         if action == "roll":
             _restore_safe_collider()
         _cancel_attack()
@@ -601,6 +698,12 @@ func reset_run_state() -> void:
     shake_time = 0.0
     step_timer = 0.0
     _restart_requested = false
+    pull_left = 0.0
+    pull_elapsed = 0.0
+    pull_escaped = false
+    air_direction_cancels = 0
+    tick_sources.clear()
+    damage_tick_clock = 0.0
     end_portal_walk()
     _set_standing_collider()
     collision_mask = Config.PLAYER_COLLISION_MASK

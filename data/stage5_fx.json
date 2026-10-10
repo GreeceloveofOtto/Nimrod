@@ -1,0 +1,70 @@
+{
+  "fx": [
+    {
+      "name": "spit_projectile",
+      "path": "res://assets/sprites/fx/spit_projectile.png",
+      "frame_size": [
+        128,
+        128
+      ],
+      "frames": 4,
+      "duration": 0.4,
+      "loop": true
+    },
+    {
+      "name": "explosion",
+      "path": "res://assets/sprites/fx/explosion.png",
+      "frame_size": [
+        256,
+        256
+      ],
+      "frames": 6,
+      "duration": 0.35,
+      "loop": false
+    },
+    {
+      "name": "gas_cloud",
+      "path": "res://assets/sprites/fx/gas_cloud.png",
+      "frame_size": [
+        256,
+        256
+      ],
+      "frames": 6,
+      "duration": 0.6,
+      "loop": true
+    },
+    {
+      "name": "guard_spark",
+      "path": "res://assets/sprites/fx/guard_spark.png",
+      "frame_size": [
+        192,
+        192
+      ],
+      "frames": 5,
+      "duration": 0.18,
+      "loop": false
+    },
+    {
+      "name": "chain_segment",
+      "path": "res://assets/sprites/fx/chain_segment.png",
+      "frame_size": [
+        64,
+        24
+      ],
+      "frames": 1,
+      "duration": 1,
+      "loop": true
+    },
+    {
+      "name": "chain_hook",
+      "path": "res://assets/sprites/fx/chain_hook.png",
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 1,
+      "duration": 1,
+      "loop": true
+    }
+  ]
+}

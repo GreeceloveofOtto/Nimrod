@@ -21,7 +21,18 @@
     "props/doors/stage3_manifest.json",
     "sprites/npcs/shamash/manifest.json",
     "sprites/npcs/aya/manifest.json",
-    "props/doors/stage4_manifest.json"
+    "props/doors/stage4_manifest.json",
+    "props/doors/stage5_manifest.json",
+    "sprites/fx/stage5_manifest.json",
+    "sprites/enemies/explosive_spitter/manifest.json",
+    "sprites/enemies/wall_diver/manifest.json",
+    "sprites/enemies/root_spewer/manifest.json",
+    "sprites/enemies/boar_charger/manifest.json",
+    "sprites/enemies/gas_sac/manifest.json",
+    "sprites/enemies/wraith_ray/manifest.json",
+    "sprites/enemies/shell_scorpion/manifest.json",
+    "sprites/enemies/corpse_bomber/manifest.json",
+    "sprites/enemies/chain_beastman/manifest.json"
   ],
   "assets": [
     {
@@ -691,6 +702,357 @@
       "width": 1536,
       "height": 512,
       "transparent": false
+    },
+    {
+      "name": "wall_tile_a",
+      "path": "backgrounds/passage/wall_tile_a.png",
+      "width": 1024,
+      "height": 720,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "wall_tile_b",
+      "path": "backgrounds/passage/wall_tile_b.png",
+      "width": 1024,
+      "height": 720,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "wall_tile_c",
+      "path": "backgrounds/passage/wall_tile_c.png",
+      "width": 1024,
+      "height": 720,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "wall_tile_d",
+      "path": "backgrounds/passage/wall_tile_d.png",
+      "width": 1024,
+      "height": 720,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "far_abyss_tile",
+      "path": "backgrounds/passage/far_abyss_tile.png",
+      "width": 2048,
+      "height": 720,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "passage_pillar_a",
+      "path": "props/passage_pillar_a.png",
+      "width": 220,
+      "height": 620,
+      "transparent": true
+    },
+    {
+      "name": "passage_pillar_b",
+      "path": "props/passage_pillar_b.png",
+      "width": 260,
+      "height": 620,
+      "transparent": true
+    },
+    {
+      "name": "passage_arch",
+      "path": "props/passage_arch.png",
+      "width": 600,
+      "height": 520,
+      "transparent": true
+    },
+    {
+      "name": "passage_window_crimson",
+      "path": "props/passage_window_crimson.png",
+      "width": 320,
+      "height": 420,
+      "transparent": true
+    },
+    {
+      "name": "passage_gargoyle",
+      "path": "props/passage_gargoyle.png",
+      "width": 240,
+      "height": 300,
+      "transparent": true
+    },
+    {
+      "name": "passage_chandelier",
+      "path": "props/passage_chandelier.png",
+      "width": 280,
+      "height": 360,
+      "transparent": true
+    },
+    {
+      "name": "passage_pipe_cluster",
+      "path": "props/passage_pipe_cluster.png",
+      "width": 420,
+      "height": 300,
+      "transparent": true
+    },
+    {
+      "name": "passage_gear_pillar",
+      "path": "props/passage_gear_pillar.png",
+      "width": 200,
+      "height": 520,
+      "transparent": true
+    },
+    {
+      "name": "passage_stair_block",
+      "path": "props/passage_stair_block.png",
+      "width": 320,
+      "height": 120,
+      "transparent": true
+    },
+    {
+      "name": "floor_tile",
+      "path": "tiles/passage/floor_tile.png",
+      "width": 512,
+      "height": 180,
+      "transparent": true,
+      "tile_x": true
+    },
+    {
+      "name": "platform",
+      "path": "tiles/passage/platform.png",
+      "width": 256,
+      "height": 48,
+      "transparent": true
+    },
+    {
+      "name": "ledge",
+      "path": "tiles/passage/ledge.png",
+      "width": 480,
+      "height": 56,
+      "transparent": true
+    },
+    {
+      "name": "ceiling_tile",
+      "path": "tiles/passage/ceiling_tile.png",
+      "width": 512,
+      "height": 120,
+      "transparent": true,
+      "tile_x": true
+    },
+    {
+      "name": "low_tunnel_ceiling",
+      "path": "tiles/passage/low_tunnel_ceiling.png",
+      "width": 512,
+      "height": 140,
+      "transparent": true,
+      "tile_x": true
+    },
+    {
+      "name": "bridge_plank",
+      "path": "tiles/passage/bridge_plank.png",
+      "width": 320,
+      "height": 48,
+      "transparent": true
+    },
+    {
+      "name": "sky",
+      "path": "backgrounds/homeroad/sky.png",
+      "width": 1792,
+      "height": 720,
+      "transparent": false,
+      "map_width": 10800,
+      "scroll_ratio": 0.05
+    },
+    {
+      "name": "far_tile",
+      "path": "backgrounds/homeroad/far_tile.png",
+      "width": 2048,
+      "height": 720,
+      "transparent": true,
+      "tile_x": true,
+      "map_width": 10800,
+      "scroll_ratio": 0.2,
+      "repeat_x": true
+    },
+    {
+      "name": "mid_district_tile",
+      "path": "backgrounds/homeroad/mid_district_tile.png",
+      "width": 2048,
+      "height": 720,
+      "transparent": true,
+      "tile_x": true,
+      "map_width": 10800,
+      "scroll_ratio": 0.45,
+      "repeat_x": true
+    },
+    {
+      "name": "nimrod_home_exterior",
+      "path": "props/nimrod_home_exterior.png",
+      "width": 1300,
+      "height": 720,
+      "transparent": true,
+      "localized": true
+    },
+    {
+      "name": "house_ruin_a",
+      "path": "props/house_ruin_a.png",
+      "width": 500,
+      "height": 380,
+      "transparent": true
+    },
+    {
+      "name": "house_ruin_b",
+      "path": "props/house_ruin_b.png",
+      "width": 420,
+      "height": 300,
+      "transparent": true
+    },
+    {
+      "name": "broken_overpass",
+      "path": "props/broken_overpass.png",
+      "width": 1100,
+      "height": 260,
+      "transparent": true
+    },
+    {
+      "name": "canal_wall_left",
+      "path": "props/canal_wall_left.png",
+      "width": 300,
+      "height": 260,
+      "transparent": true
+    },
+    {
+      "name": "canal_wall_right",
+      "path": "props/canal_wall_right.png",
+      "width": 300,
+      "height": 260,
+      "transparent": true
+    },
+    {
+      "name": "market_stall_a",
+      "path": "props/market_stall_a.png",
+      "width": 260,
+      "height": 170,
+      "transparent": true
+    },
+    {
+      "name": "market_stall_b",
+      "path": "props/market_stall_b.png",
+      "width": 260,
+      "height": 170,
+      "transparent": true
+    },
+    {
+      "name": "garden_fence",
+      "path": "props/garden_fence.png",
+      "width": 600,
+      "height": 140,
+      "transparent": true
+    },
+    {
+      "name": "lamp_post_ruined",
+      "path": "props/lamp_post_ruined.png",
+      "width": 100,
+      "height": 260,
+      "transparent": true
+    },
+    {
+      "name": "shrub",
+      "path": "props/shrub.png",
+      "width": 220,
+      "height": 140,
+      "transparent": true
+    },
+    {
+      "name": "ground_tile",
+      "path": "tiles/homeroad/ground_tile.png",
+      "width": 512,
+      "height": 200,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "plaza_tile",
+      "path": "tiles/homeroad/plaza_tile.png",
+      "width": 512,
+      "height": 200,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "canal_floor_tile",
+      "path": "tiles/homeroad/canal_floor_tile.png",
+      "width": 512,
+      "height": 200,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "stone_slab_bridge",
+      "path": "tiles/homeroad/stone_slab_bridge.png",
+      "width": 360,
+      "height": 56,
+      "transparent": true
+    },
+    {
+      "name": "balcony_platform",
+      "path": "tiles/homeroad/balcony_platform.png",
+      "width": 256,
+      "height": 48,
+      "transparent": true
+    },
+    {
+      "name": "passage_f1_bg",
+      "path": "backgrounds/passage/passage_f1_bg.png",
+      "width": 3600,
+      "height": 800,
+      "transparent": false
+    },
+    {
+      "name": "passage_f2_bg",
+      "path": "backgrounds/passage/passage_f2_bg.png",
+      "width": 3600,
+      "height": 800,
+      "transparent": false
+    },
+    {
+      "name": "passage_f3_bg",
+      "path": "backgrounds/passage/passage_f3_bg.png",
+      "width": 3600,
+      "height": 800,
+      "transparent": false
+    },
+    {
+      "name": "passage_f4_bg",
+      "path": "backgrounds/passage/passage_f4_bg.png",
+      "width": 3600,
+      "height": 960,
+      "transparent": false
+    },
+    {
+      "name": "passage_f5_bg",
+      "path": "backgrounds/passage/passage_f5_bg.png",
+      "width": 3600,
+      "height": 800,
+      "transparent": false
+    },
+    {
+      "name": "passage_f6_bg",
+      "path": "backgrounds/passage/passage_f6_bg.png",
+      "width": 3600,
+      "height": 800,
+      "transparent": false
+    },
+    {
+      "name": "passage_f7_bg",
+      "path": "backgrounds/passage/passage_f7_bg.png",
+      "width": 3600,
+      "height": 800,
+      "transparent": false
+    },
+    {
+      "name": "passage_f8_bg",
+      "path": "backgrounds/passage/passage_f8_bg.png",
+      "width": 3600,
+      "height": 960,
+      "transparent": false
     }
   ],
   "source_metadata": [
@@ -702,6 +1064,11 @@
     "source_art/stage3/generation_prompts.json",
     "source_art/stage3/provenance.json",
     "source_art/stage4/generation_prompts.json",
-    "source_art/stage4/player_packing.json"
+    "source_art/stage4/player_packing.json",
+    "source_art/stage5/enemy_generation_prompts.json",
+    "source_art/stage5/world_generation_prompts.json",
+    "source_art/stage5/supplementary_generation_prompts.json",
+    "source_art/stage5/provenance.json",
+    "source_art/stage5/roll_packing.json"
   ]
 }

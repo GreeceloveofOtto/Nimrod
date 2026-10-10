@@ -38,9 +38,18 @@ func _start() -> void:
 func _finish(label: String) -> void:
     manager.set_player_locked(true)
     manager.level_changed.disconnect(_freeze)
-    root.get_node("Audio").stop_bgm(0.0)
+    var audio: Node = root.get_node("Audio")
+    audio.stop_bgm(0.0)
+    # Also stop player-local jump/step/land streams before the audio mixer exits.
+    var sounds: Array[Node] = root.find_children("*", "AudioStreamPlayer", true, false)
+    sounds.append_array(root.find_children("*", "AudioStreamPlayer2D", true, false))
+    for sound in sounds:
+        if sound is AudioStreamPlayer or sound is AudioStreamPlayer2D:
+            sound.stop()
+            sound.stream = null
     main.queue_free()
     current_scene = null
-    await _wait(0.2)
+    # Traversal tests run at time_scale=4. Allow real mixer time for stream release.
+    await create_timer(0.2, true, false, true).timeout
     print("%s: %d checks, %d failures" % [label, checks, failures])
     quit(1 if failures else 0)

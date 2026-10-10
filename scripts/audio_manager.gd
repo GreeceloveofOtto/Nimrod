@@ -2,6 +2,55 @@ extends Node
 
 # Replace a source file at the same path to upgrade the temporary synthesized audio.
 const SFX_TABLE: Dictionary = {
+    "explosive_spitter_windup": "res://assets/audio/sfx/explosive_spitter_windup.wav",
+    "explosive_spitter_attack": "res://assets/audio/sfx/explosive_spitter_attack.wav",
+    "explosive_spitter_hurt": "res://assets/audio/sfx/explosive_spitter_hurt.wav",
+    "explosive_spitter_death": "res://assets/audio/sfx/explosive_spitter_death.wav",
+    "wall_diver_windup": "res://assets/audio/sfx/wall_diver_windup.wav",
+    "wall_diver_attack": "res://assets/audio/sfx/wall_diver_attack.wav",
+    "wall_diver_hurt": "res://assets/audio/sfx/wall_diver_hurt.wav",
+    "wall_diver_death": "res://assets/audio/sfx/wall_diver_death.wav",
+    "root_spewer_windup": "res://assets/audio/sfx/root_spewer_windup.wav",
+    "root_spewer_attack": "res://assets/audio/sfx/root_spewer_attack.wav",
+    "root_spewer_hurt": "res://assets/audio/sfx/root_spewer_hurt.wav",
+    "root_spewer_death": "res://assets/audio/sfx/root_spewer_death.wav",
+    "boar_charger_windup": "res://assets/audio/sfx/boar_charger_windup.wav",
+    "boar_charger_attack": "res://assets/audio/sfx/boar_charger_attack.wav",
+    "boar_charger_hurt": "res://assets/audio/sfx/boar_charger_hurt.wav",
+    "boar_charger_death": "res://assets/audio/sfx/boar_charger_death.wav",
+    "gas_sac_windup": "res://assets/audio/sfx/gas_sac_windup.wav",
+    "gas_sac_attack": "res://assets/audio/sfx/gas_sac_attack.wav",
+    "gas_sac_hurt": "res://assets/audio/sfx/gas_sac_hurt.wav",
+    "gas_sac_death": "res://assets/audio/sfx/gas_sac_death.wav",
+    "wraith_ray_windup": "res://assets/audio/sfx/wraith_ray_windup.wav",
+    "wraith_ray_attack": "res://assets/audio/sfx/wraith_ray_attack.wav",
+    "wraith_ray_hurt": "res://assets/audio/sfx/wraith_ray_hurt.wav",
+    "wraith_ray_death": "res://assets/audio/sfx/wraith_ray_death.wav",
+    "shell_scorpion_windup": "res://assets/audio/sfx/shell_scorpion_windup.wav",
+    "shell_scorpion_attack": "res://assets/audio/sfx/shell_scorpion_attack.wav",
+    "shell_scorpion_hurt": "res://assets/audio/sfx/shell_scorpion_hurt.wav",
+    "shell_scorpion_death": "res://assets/audio/sfx/shell_scorpion_death.wav",
+    "corpse_bomber_windup": "res://assets/audio/sfx/corpse_bomber_windup.wav",
+    "corpse_bomber_attack": "res://assets/audio/sfx/corpse_bomber_attack.wav",
+    "corpse_bomber_hurt": "res://assets/audio/sfx/corpse_bomber_hurt.wav",
+    "corpse_bomber_death": "res://assets/audio/sfx/corpse_bomber_death.wav",
+    "chain_beastman_windup": "res://assets/audio/sfx/chain_beastman_windup.wav",
+    "chain_beastman_attack": "res://assets/audio/sfx/chain_beastman_attack.wav",
+    "chain_beastman_hurt": "res://assets/audio/sfx/chain_beastman_hurt.wav",
+    "chain_beastman_death": "res://assets/audio/sfx/chain_beastman_death.wav",
+    "spit_launch": "res://assets/audio/sfx/spit_launch.wav",
+    "explosion_boom": "res://assets/audio/sfx/explosion_boom.wav",
+    "gas_burst": "res://assets/audio/sfx/gas_burst.wav",
+    "gas_loop": "res://assets/audio/sfx/gas_loop.wav",
+    "chain_launch": "res://assets/audio/sfx/chain_launch.wav",
+    "chain_pull": "res://assets/audio/sfx/chain_pull.wav",
+    "guard_block": "res://assets/audio/sfx/guard_block.wav",
+    "corpse_scream": "res://assets/audio/sfx/corpse_scream.wav",
+    "corpse_fuse_beep": "res://assets/audio/sfx/corpse_fuse_beep.wav",
+    "boar_charge_rumble": "res://assets/audio/sfx/boar_charge_rumble.wav",
+    "wraith_wail_loop": "res://assets/audio/sfx/wraith_wail_loop.wav",
+    "wall_diver_screech": "res://assets/audio/sfx/wall_diver_screech.wav",
+
     "jump_a": "res://assets/audio/jump_a.wav",
     "jump_b": "res://assets/audio/jump_b.wav",
     "jump_c": "res://assets/audio/jump_c.wav",
@@ -34,6 +83,9 @@ const SFX_TABLE: Dictionary = {
     "great_gate_close": "res://assets/audio/sfx/great_gate_close.wav"
 }
 const BGM_TABLE: Dictionary = {
+    "passage_descent": "res://assets/audio/bgm/passage_descent.wav",
+    "uruk_home_road": "res://assets/audio/bgm/uruk_home_road.wav",
+
     "uruk_rear_gate": "res://assets/audio/bgm/uruk_rear_gate.wav",
     "castle_hall": "res://assets/audio/bgm/castle_hall.wav",
     "uruk_sky": "res://assets/audio/bgm/uruk_sky.wav",
@@ -41,15 +93,19 @@ const BGM_TABLE: Dictionary = {
     "castle_front": "res://assets/audio/bgm/castle_front.wav",
     "uruk_wasteland": "res://assets/audio/bgm/uruk_wasteland.wav"
 }
-const LOOP_SFX: Array[String] = ["beast_ranged_flame_loop", "sky_beast_wingflap_loop"]
+const LOOP_SFX: Array[String] = ["beast_ranged_flame_loop", "sky_beast_wingflap_loop", "gas_loop", "wraith_wail_loop"]
 const SILENT_DB: float = -60.0
 
 var _streams: Dictionary = {}
+var sfx_volumes: Dictionary = {}
 var _bgm: AudioStreamPlayer
 var _bgm_name: String = ""
 var _bgm_tween: Tween
 
 func _ready() -> void:
+    var spec: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/audio_stage5.json"))
+    for item in spec.get("sfx", []):
+        sfx_volumes[str(item["name"])] = float(item.get("volume_db", 0.0))
     _bgm = AudioStreamPlayer.new()
     _bgm.name = "BackgroundMusic"
     _bgm.bus = &"BGM"
@@ -105,6 +161,7 @@ func play_sfx(name: String, position: Variant = null, pitch_jitter: float = 0.04
     var pitch: float = randf_range(1.0 - absf(pitch_jitter), 1.0 + absf(pitch_jitter))
     if position is Vector2:
         var spatial: AudioStreamPlayer2D = AudioStreamPlayer2D.new()
+        spatial.volume_db = float(sfx_volumes.get(name, 0.0))
         spatial.stream = stream
         spatial.bus = &"SFX"
         spatial.pitch_scale = maxf(0.01, pitch)
@@ -116,6 +173,7 @@ func play_sfx(name: String, position: Variant = null, pitch_jitter: float = 0.04
         spatial.play()
         return spatial
     var player: AudioStreamPlayer = AudioStreamPlayer.new()
+    player.volume_db = float(sfx_volumes.get(name, 0.0))
     player.stream = stream
     player.bus = &"SFX"
     player.pitch_scale = maxf(0.01, pitch)

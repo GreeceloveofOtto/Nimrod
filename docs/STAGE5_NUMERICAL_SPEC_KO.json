@@ -1,0 +1,6108 @@
+{
+  "note": "모든 좌표·충돌 박스·이동/넉백 속도·시간은 런타임 data/*.json에서 읽습니다. 아래는 5단계 최종 데이터의 검토용 사본입니다.",
+  "player": {
+    "attacks": [
+      {
+        "step": 1,
+        "damage": 20,
+        "knockback": 140,
+        "stagger": 0.18,
+        "duration": 0.33,
+        "active_start": 0.09,
+        "active_end": 0.17,
+        "impulse": 80,
+        "shake": 0.06,
+        "impact_offset": [
+          80,
+          -90
+        ],
+        "hitbox": {
+          "offset_x": 6,
+          "top": -110,
+          "width": 82,
+          "height": 82
+        }
+      },
+      {
+        "step": 2,
+        "damage": 20,
+        "knockback": 160,
+        "stagger": 0.18,
+        "duration": 0.33,
+        "active_start": 0.08,
+        "active_end": 0.16,
+        "impulse": 80,
+        "shake": 0.06,
+        "impact_offset": [
+          80,
+          -90
+        ],
+        "hitbox": {
+          "offset_x": 6,
+          "top": -118,
+          "width": 86,
+          "height": 88
+        }
+      },
+      {
+        "step": 3,
+        "damage": 20,
+        "knockback": 260,
+        "stagger": 0.3,
+        "duration": 0.4,
+        "active_start": 0.14,
+        "active_end": 0.24,
+        "impulse": 80,
+        "shake": 0.1,
+        "impact_offset": [
+          80,
+          -90
+        ],
+        "hitbox": {
+          "offset_x": 6,
+          "top": -128,
+          "width": 120,
+          "height": 110
+        }
+      },
+      {
+        "step": 4,
+        "damage": 22,
+        "knockback": 120,
+        "stagger": 0.25,
+        "duration": 0.56,
+        "active_start": 0.22,
+        "active_end": 0.34,
+        "impulse": 48,
+        "shake": 0.1,
+        "impact_offset": [
+          80,
+          -90
+        ],
+        "hitbox": {
+          "offset_x": 6,
+          "top": -164,
+          "width": 84,
+          "height": 150
+        }
+      }
+    ],
+    "shockwave": {
+      "damage": 22,
+      "knockback": 90,
+      "stagger": 0.15,
+      "start": 0.34,
+      "shake": 0.12,
+      "impact_offset": [
+        110,
+        -10
+      ],
+      "hitbox": {
+        "offset_x": 24,
+        "top": -38,
+        "width": 112,
+        "height": 34
+      }
+    },
+    "direction_cancel": {
+      "enabled": true,
+      "keep_combo": true,
+      "buffer_during_hitstop": 0.12,
+      "air_limit": 2,
+      "guard_recoil_pixels": 50
+    },
+    "pull": {
+      "escape_after": 0.15
+    },
+    "movement": {
+      "crouch_speed": 120
+    }
+  },
+  "enemy_common": {
+    "gravity": 1750.0,
+    "max_fall_speed": 1100.0,
+    "knockback_friction": 2400.0,
+    "hitstop_seconds": 0.05,
+    "max_stun_seconds": 0.6,
+    "stun_cap_grace_seconds": 0.12,
+    "death_fade_seconds": 0.4,
+    "hit_spark_seconds": 0.15,
+    "hit_spark_scale": 0.24,
+    "missing_clip_seconds": 1.0,
+    "patrol_arrival_distance": 4.0,
+    "overlap_tick_seconds": 0.2,
+    "guard_spark_scale": 0.35,
+    "guard_spark_seconds": 0.18,
+    "chain_height_offset": -90,
+    "floating_floor_margin": 50,
+    "ledge_probe_x": 32,
+    "ledge_probe_down": 100,
+    "corpse_beep_min": 0.06,
+    "corpse_beep_factor": 0.3,
+    "corpse_blink_start": 12,
+    "corpse_blink_acceleration": 20,
+    "gas_blink_rate": 30
+  },
+  "new_enemies": {
+    "explosive_spitter": {
+      "id": "explosive_spitter",
+      "display_name": "폭발 투사체 괴수",
+      "appearance": "thick orange-brown toad with swollen throat sac",
+      "hp": 76,
+      "contact_damage": 7,
+      "turn_delay": 0.3,
+      "move_speed": 80,
+      "detect_range": 650,
+      "body_size": [
+        110,
+        86
+      ],
+      "body_offset_y": -43.0,
+      "visual_scale": 0.3,
+      "frame_size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        600
+      ],
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 0.9,
+          "loop": true
+        },
+        {
+          "name": "walk",
+          "frames": 8,
+          "duration": 0.9,
+          "loop": true
+        },
+        {
+          "name": "windup",
+          "frames": 4,
+          "duration": 0.6,
+          "loop": false
+        },
+        {
+          "name": "spit",
+          "frames": 3,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "recovery",
+          "frames": 4,
+          "duration": 0.5,
+          "loop": false
+        },
+        {
+          "name": "turn",
+          "frames": 4,
+          "duration": 0.3,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "frames": 2,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "death",
+          "frames": 6,
+          "duration": 0.7,
+          "loop": false
+        }
+      ],
+      "hurt_sfx": "explosive_spitter_hurt",
+      "death_sfx": "explosive_spitter_death",
+      "drop_id": "healing_vomit",
+      "drop_chance": 0.07,
+      "knockback_multiplier": 1,
+      "preferred_distance": [
+        380,
+        520
+      ],
+      "retreat_distance": 300,
+      "projectile": {
+        "speed": 480,
+        "direct_damage": 7,
+        "direct_stagger": 0.3,
+        "fuse": 0.3,
+        "radius": 90,
+        "explosion_damage": 14,
+        "knockback": 220,
+        "collision_radius": 12
+      },
+      "attacks": [
+        {
+          "id": "spit",
+          "damage": 7,
+          "windup": 0.6,
+          "active": 0.2,
+          "recovery": 0.5,
+          "range": 650,
+          "cooldown": 2,
+          "hitbox": {
+            "width": 100,
+            "height": 80,
+            "offset_x": 10,
+            "top": -80
+          }
+        }
+      ]
+    },
+    "wall_diver": {
+      "id": "wall_diver",
+      "display_name": "벽면 강하 괴수",
+      "appearance": "bat-centipede hybrid, black-purple hide, many hooked legs and leathery wings",
+      "hp": 36,
+      "contact_damage": 8,
+      "turn_delay": 0.25,
+      "move_speed": 230,
+      "detect_range": 600,
+      "body_size": [
+        90,
+        60
+      ],
+      "body_offset_y": 0,
+      "visual_scale": 0.3,
+      "frame_size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        320
+      ],
+      "clips": [
+        {
+          "name": "perch_ceiling",
+          "frames": 4,
+          "duration": 0.8,
+          "loop": true
+        },
+        {
+          "name": "perch_wall",
+          "frames": 4,
+          "duration": 0.8,
+          "loop": true
+        },
+        {
+          "name": "tell",
+          "frames": 3,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "dive",
+          "frames": 3,
+          "duration": 0.25,
+          "loop": true
+        },
+        {
+          "name": "claw",
+          "frames": 4,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "recovery",
+          "frames": 4,
+          "duration": 0.5,
+          "loop": false
+        },
+        {
+          "name": "crawl",
+          "frames": 8,
+          "duration": 0.7,
+          "loop": true
+        },
+        {
+          "name": "turn",
+          "frames": 4,
+          "duration": 0.25,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "frames": 2,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "death",
+          "frames": 6,
+          "duration": 0.6,
+          "loop": false
+        }
+      ],
+      "hurt_sfx": "wall_diver_hurt",
+      "death_sfx": "wall_diver_death",
+      "drop_id": "healing_vomit",
+      "drop_chance": 0.05,
+      "knockback_multiplier": 1,
+      "sensor_ceiling": [
+        160,
+        400
+      ],
+      "sensor_wall": [
+        220,
+        120
+      ],
+      "dive_speed": 720,
+      "dive_seconds": 0.6,
+      "tell_seconds": 0.2,
+      "landing_recovery": 0.5,
+      "attacks": [
+        {
+          "id": "claw",
+          "damage": 8,
+          "windup": 0.35,
+          "active": 0.12,
+          "recovery": 0.6,
+          "range": 105,
+          "cooldown": 0,
+          "hitbox": {
+            "width": 100,
+            "height": 80,
+            "offset_x": 10,
+            "top": -45
+          }
+        }
+      ]
+    },
+    "root_spewer": {
+      "id": "root_spewer",
+      "display_name": "뿌리 화염 괴수",
+      "appearance": "plant-root and esophagus hybrid, green-brown bark, fleshy vertical throat",
+      "hp": 55,
+      "contact_damage": 1,
+      "turn_delay": 0.25,
+      "move_speed": 0,
+      "detect_range": 540,
+      "body_size": [
+        74,
+        80
+      ],
+      "body_offset_y": -40.0,
+      "visual_scale": 0.3,
+      "frame_size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        600
+      ],
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 1.2,
+          "loop": true
+        },
+        {
+          "name": "windup",
+          "frames": 4,
+          "duration": 0.5,
+          "loop": false
+        },
+        {
+          "name": "spew",
+          "frames": 4,
+          "duration": 0.4,
+          "loop": true
+        },
+        {
+          "name": "recovery",
+          "frames": 4,
+          "duration": 0.6,
+          "loop": false
+        },
+        {
+          "name": "turn",
+          "frames": 4,
+          "duration": 0.25,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "frames": 2,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "death",
+          "frames": 6,
+          "duration": 0.7,
+          "loop": false
+        }
+      ],
+      "hurt_sfx": "root_spewer_hurt",
+      "death_sfx": "root_spewer_death",
+      "drop_id": "healing_vomit",
+      "drop_chance": 0.05,
+      "knockback_multiplier": 1,
+      "sensor": [
+        360,
+        400
+      ],
+      "attacks": [
+        {
+          "id": "spew",
+          "damage": 1,
+          "windup": 0.5,
+          "active": 1,
+          "recovery": 0.6,
+          "range": 400,
+          "cooldown": 1.8,
+          "hitbox": {
+            "width": 100,
+            "height": 320,
+            "offset_x": -50,
+            "top": -320
+          },
+          "tick_count": 10,
+          "tick_interval": 0.1,
+          "first_stagger": 0.18,
+          "interrupt_stun": 0.4
+        }
+      ]
+    },
+    "boar_charger": {
+      "id": "boar_charger",
+      "display_name": "돌진 괴수",
+      "appearance": "boar and armored woodlouse hybrid, protruding bone shell, dark gray, red eyes",
+      "hp": 110,
+      "contact_damage": 15,
+      "turn_delay": 0.45,
+      "move_speed": 120,
+      "detect_range": 700,
+      "body_size": [
+        155,
+        94
+      ],
+      "body_offset_y": -47.0,
+      "visual_scale": 0.3,
+      "frame_size": [
+        768,
+        640
+      ],
+      "anchor": [
+        384,
+        600
+      ],
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 1.0,
+          "loop": true
+        },
+        {
+          "name": "walk",
+          "frames": 8,
+          "duration": 0.9,
+          "loop": true
+        },
+        {
+          "name": "telegraph",
+          "frames": 4,
+          "duration": 0.5,
+          "loop": false
+        },
+        {
+          "name": "charge",
+          "frames": 4,
+          "duration": 0.3,
+          "loop": true
+        },
+        {
+          "name": "crash_stun",
+          "frames": 4,
+          "duration": 0.8,
+          "loop": false
+        },
+        {
+          "name": "recovery",
+          "frames": 4,
+          "duration": 0.6,
+          "loop": false
+        },
+        {
+          "name": "turn",
+          "frames": 4,
+          "duration": 0.45,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "frames": 2,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "death",
+          "frames": 6,
+          "duration": 0.8,
+          "loop": false
+        }
+      ],
+      "hurt_sfx": "boar_charger_hurt",
+      "death_sfx": "boar_charger_death",
+      "drop_id": "healing_vomit",
+      "drop_chance": 0.05,
+      "knockback_multiplier": 1,
+      "charge_speed": 640,
+      "charge_distance": 800,
+      "crash_stun": 0.8,
+      "contact_knockback": 260,
+      "attacks": [
+        {
+          "id": "charge",
+          "damage": 15,
+          "windup": 0.5,
+          "active": 1.25,
+          "recovery": 0.6,
+          "range": 700,
+          "cooldown": 1.5,
+          "hitbox": {
+            "width": 170,
+            "height": 95,
+            "offset_x": 0,
+            "top": -95
+          }
+        }
+      ]
+    },
+    "gas_sac": {
+      "id": "gas_sac",
+      "display_name": "독가스 주머니 괴수",
+      "appearance": "swollen jellyfish-pufferfish hybrid, yellow-green translucent sac, tentacles",
+      "hp": 40,
+      "contact_damage": 6,
+      "turn_delay": 0.3,
+      "move_speed": 70,
+      "detect_range": 700,
+      "body_size": [
+        88,
+        90
+      ],
+      "body_offset_y": 0,
+      "visual_scale": 0.3,
+      "frame_size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        320
+      ],
+      "clips": [
+        {
+          "name": "float",
+          "frames": 6,
+          "duration": 0.9,
+          "loop": true
+        },
+        {
+          "name": "bump",
+          "frames": 3,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "turn",
+          "frames": 4,
+          "duration": 0.3,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "frames": 2,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "death_swell",
+          "frames": 6,
+          "duration": 1.0,
+          "loop": false
+        },
+        {
+          "name": "burst",
+          "frames": 5,
+          "duration": 0.3,
+          "loop": false
+        }
+      ],
+      "hurt_sfx": "gas_sac_hurt",
+      "death_sfx": "gas_sac_death",
+      "drop_id": "healing_vomit",
+      "drop_chance": 0.05,
+      "knockback_multiplier": 1,
+      "contact_interval": 0.8,
+      "death_swell_seconds": 1,
+      "gas": {
+        "seconds": 2,
+        "radius": 110,
+        "height": 160,
+        "tick_interval": 0.2,
+        "damage": 1
+      },
+      "attacks": []
+    },
+    "wraith_ray": {
+      "id": "wraith_ray",
+      "display_name": "추적 환령",
+      "appearance": "indistinct smoke-shaped manta ray, pale blue-gray vapor, ominous silhouette",
+      "hp": 18,
+      "contact_damage": 5,
+      "turn_delay": 0.25,
+      "move_speed": 90,
+      "detect_range": 2000,
+      "body_size": [
+        98,
+        48
+      ],
+      "body_offset_y": 0,
+      "visual_scale": 0.3,
+      "frame_size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        320
+      ],
+      "clips": [
+        {
+          "name": "glide",
+          "frames": 8,
+          "duration": 1.0,
+          "loop": true
+        },
+        {
+          "name": "turn",
+          "frames": 4,
+          "duration": 0.25,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "frames": 2,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "death",
+          "frames": 6,
+          "duration": 0.6,
+          "loop": false
+        }
+      ],
+      "hurt_sfx": "wraith_ray_hurt",
+      "death_sfx": "wraith_ray_death",
+      "drop_id": "healing_vomit",
+      "drop_chance": 0.05,
+      "knockback_multiplier": 1,
+      "contact_interval": 1,
+      "attacks": []
+    },
+    "shell_scorpion": {
+      "id": "shell_scorpion",
+      "display_name": "방어 갑피 괴수",
+      "appearance": "turtle shell and scorpion claws hybrid, dark brown armored carapace and barbed tail",
+      "hp": 75,
+      "contact_damage": 12,
+      "turn_delay": 0.5,
+      "move_speed": 70,
+      "detect_range": 450,
+      "body_size": [
+        134,
+        80
+      ],
+      "body_offset_y": -40.0,
+      "visual_scale": 0.3,
+      "frame_size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        600
+      ],
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 1.0,
+          "loop": true
+        },
+        {
+          "name": "walk",
+          "frames": 8,
+          "duration": 1.1,
+          "loop": true
+        },
+        {
+          "name": "guard_block",
+          "frames": 3,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "claw_windup",
+          "frames": 4,
+          "duration": 0.5,
+          "loop": false
+        },
+        {
+          "name": "claw_attack",
+          "frames": 3,
+          "duration": 0.15,
+          "loop": false
+        },
+        {
+          "name": "claw_recovery",
+          "frames": 4,
+          "duration": 0.7,
+          "loop": false
+        },
+        {
+          "name": "tail_windup",
+          "frames": 3,
+          "duration": 0.3,
+          "loop": false
+        },
+        {
+          "name": "tail_strike",
+          "frames": 3,
+          "duration": 0.15,
+          "loop": false
+        },
+        {
+          "name": "tail_recovery",
+          "frames": 4,
+          "duration": 0.6,
+          "loop": false
+        },
+        {
+          "name": "turn",
+          "frames": 6,
+          "duration": 0.6,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "frames": 2,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "death",
+          "frames": 6,
+          "duration": 0.8,
+          "loop": false
+        }
+      ],
+      "hurt_sfx": "shell_scorpion_hurt",
+      "death_sfx": "shell_scorpion_death",
+      "drop_id": "healing_vomit",
+      "drop_chance": 0.05,
+      "knockback_multiplier": 1,
+      "back_turn_delay": 0.6,
+      "back_range": 220,
+      "tail_chance": 0.35,
+      "attacks": [
+        {
+          "id": "claw",
+          "damage": 12,
+          "windup": 0.5,
+          "active": 0.15,
+          "recovery": 0.7,
+          "range": 145,
+          "cooldown": 0,
+          "hitbox": {
+            "width": 120,
+            "height": 70,
+            "offset_x": 10,
+            "top": -70
+          }
+        },
+        {
+          "id": "tail",
+          "damage": 10,
+          "windup": 0.3,
+          "active": 0.15,
+          "recovery": 0.6,
+          "range": 220,
+          "cooldown": 0,
+          "hitbox": {
+            "width": 110,
+            "height": 60,
+            "offset_x": 10,
+            "top": -60
+          }
+        }
+      ]
+    },
+    "corpse_bomber": {
+      "id": "corpse_bomber",
+      "display_name": "자폭 시체",
+      "appearance": "grotesquely bloated zombie, black-red swollen flesh, tattered clothing",
+      "hp": 30,
+      "contact_damage": 18,
+      "turn_delay": 0.3,
+      "move_speed": 340,
+      "detect_range": 520,
+      "body_size": [
+        62,
+        88
+      ],
+      "body_offset_y": -44.0,
+      "visual_scale": 0.3,
+      "frame_size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        600
+      ],
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 1.0,
+          "loop": true
+        },
+        {
+          "name": "scream",
+          "frames": 4,
+          "duration": 0.4,
+          "loop": false
+        },
+        {
+          "name": "run",
+          "frames": 8,
+          "duration": 0.6,
+          "loop": true
+        },
+        {
+          "name": "fuse",
+          "frames": 6,
+          "duration": 0.5,
+          "loop": true
+        },
+        {
+          "name": "explode",
+          "frames": 6,
+          "duration": 0.3,
+          "loop": false
+        },
+        {
+          "name": "turn",
+          "frames": 4,
+          "duration": 0.3,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "frames": 2,
+          "duration": 0.2,
+          "loop": false
+        }
+      ],
+      "hurt_sfx": "corpse_bomber_hurt",
+      "death_sfx": "corpse_bomber_death",
+      "drop_id": "healing_vomit",
+      "drop_chance": 0.05,
+      "knockback_multiplier": 1,
+      "fuse_seconds": 1.5,
+      "scream_seconds": 0.4,
+      "explosion": {
+        "radius": 110,
+        "damage": 18,
+        "knockback": 260
+      },
+      "attacks": []
+    },
+    "chain_beastman": {
+      "id": "chain_beastman",
+      "display_name": "사슬 꼬리 수인",
+      "appearance": "large hulking beastman with articulated heavy chain tail, black iron hide and fur",
+      "hp": 160,
+      "contact_damage": 10,
+      "turn_delay": 0.8,
+      "move_speed": 90,
+      "detect_range": 700,
+      "body_size": [
+        180,
+        178
+      ],
+      "body_offset_y": -89.0,
+      "visual_scale": 0.3,
+      "frame_size": [
+        896,
+        768
+      ],
+      "anchor": [
+        448,
+        720
+      ],
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 1.2,
+          "loop": true
+        },
+        {
+          "name": "walk",
+          "frames": 8,
+          "duration": 1.2,
+          "loop": true
+        },
+        {
+          "name": "tail_windup",
+          "frames": 5,
+          "duration": 0.6,
+          "loop": false
+        },
+        {
+          "name": "tail_sweep",
+          "frames": 4,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "tail_recovery",
+          "frames": 5,
+          "duration": 0.8,
+          "loop": false
+        },
+        {
+          "name": "chain_windup",
+          "frames": 4,
+          "duration": 0.4,
+          "loop": false
+        },
+        {
+          "name": "chain_throw",
+          "frames": 4,
+          "duration": 0.35,
+          "loop": false
+        },
+        {
+          "name": "pull_hold",
+          "frames": 3,
+          "duration": 0.35,
+          "loop": true
+        },
+        {
+          "name": "smash_windup",
+          "frames": 4,
+          "duration": 0.35,
+          "loop": false
+        },
+        {
+          "name": "smash",
+          "frames": 3,
+          "duration": 0.15,
+          "loop": false
+        },
+        {
+          "name": "smash_recovery",
+          "frames": 5,
+          "duration": 0.9,
+          "loop": false
+        },
+        {
+          "name": "turn",
+          "frames": 6,
+          "duration": 0.8,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "frames": 2,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "death",
+          "frames": 8,
+          "duration": 1.0,
+          "loop": false
+        }
+      ],
+      "hurt_sfx": "chain_beastman_hurt",
+      "death_sfx": "chain_beastman_death",
+      "drop_id": "healing_vomit",
+      "drop_chance": 0.05,
+      "knockback_multiplier": 0.5,
+      "chain": {
+        "range": 520,
+        "throw_seconds": 0.35,
+        "pull_seconds": 0.35,
+        "pull_offset": 90,
+        "escape_after": 0.15,
+        "miss_recovery": 0.7
+      },
+      "attacks": [
+        {
+          "id": "tail",
+          "damage": 10,
+          "windup": 0.6,
+          "active": 0.2,
+          "recovery": 0.8,
+          "range": 220,
+          "cooldown": 0,
+          "hitbox": {
+            "width": 240,
+            "height": 90,
+            "offset_x": 0,
+            "top": -125
+          }
+        },
+        {
+          "id": "chain",
+          "damage": 16,
+          "windup": 0.4,
+          "active": 0.35,
+          "recovery": 0.9,
+          "range": 520,
+          "cooldown": 4,
+          "hitbox": {
+            "width": 120,
+            "height": 120,
+            "offset_x": 0,
+            "top": -120
+          },
+          "smash_windup": 0.35,
+          "smash_active": 0.15
+        }
+      ]
+    }
+  },
+  "levels": {
+    "CastleOutskirts": {
+      "id": "CastleOutskirts",
+      "scene": "res://scenes/CastleOutskirts.tscn",
+      "width": 10000,
+      "floor_y": 880,
+      "display_name": "루갈성 대문 밖",
+      "bgm": "uruk_wasteland",
+      "bg_dim": [
+        0.88,
+        0.88,
+        0.92
+      ],
+      "camera_limits": [
+        0,
+        0,
+        10000,
+        1240
+      ],
+      "safe_zones": [
+        [
+          8850,
+          -200,
+          1150,
+          1800
+        ]
+      ],
+      "spawns": {
+        "Spawn_FromGate": [
+          9440,
+          760
+        ],
+        "Spawn_Debug": [
+          1200,
+          680
+        ],
+        "Spawn_FromPassage": [
+          640,
+          680
+        ]
+      },
+      "steps": [],
+      "floor_sections": [],
+      "floor_art": "res://assets/tiles/outskirts/ground_tile.png",
+      "floor_art_size": [
+        512,
+        200
+      ],
+      "ceiling": false,
+      "backgrounds": [
+        {
+          "name": "Sky",
+          "path": "res://assets/backgrounds/outskirts/sky.png",
+          "size": [
+            1792,
+            720
+          ],
+          "ratio": 0.05,
+          "z": -40,
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "FarCity",
+          "path": "res://assets/backgrounds/outskirts/far_city_tile.png",
+          "size": [
+            2048,
+            720
+          ],
+          "ratio": 0.2,
+          "z": -30,
+          "position": [
+            0,
+            0
+          ],
+          "repeat_size": [
+            2048,
+            0
+          ],
+          "repeat_times": 6
+        },
+        {
+          "name": "MidRuins",
+          "path": "res://assets/backgrounds/outskirts/mid_ruins_tile.png",
+          "size": [
+            2048,
+            720
+          ],
+          "ratio": 0.45,
+          "z": -20,
+          "position": [
+            0,
+            0
+          ],
+          "repeat_size": [
+            2048,
+            0
+          ],
+          "repeat_times": 6
+        },
+        {
+          "name": "Landmark",
+          "path": "res://assets/backgrounds/outskirts/far_landmark.png",
+          "size": [
+            900,
+            720
+          ],
+          "ratio": 0.2,
+          "z": -25,
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "DowntownFacade",
+          "path": "res://assets/backgrounds/castle_front/downtown_passage_facade.png",
+          "position": [
+            0,
+            -40
+          ],
+          "size": [
+            1100,
+            720
+          ],
+          "ratio": 1,
+          "z": -10
+        }
+      ],
+      "doors": [
+        {
+          "door_id": "castle_great_gate",
+          "position": [
+            9600,
+            760
+          ],
+          "door_art": "res://assets/props/doors/castle_great_gate.png",
+          "target_level": "CastleFront",
+          "target_spawn": "Spawn_FromGate",
+          "arrival_spawn": "Spawn_FromGate",
+          "kind": "great_gate",
+          "opens_without_keeper": true,
+          "gate_settings_key": "great_gate",
+          "gate_open_seconds": 1.2,
+          "gate_close_seconds": 1.0,
+          "auto_transition_level": "CastleFront",
+          "auto_transition_spawn": "Spawn_FromGate",
+          "exit_direction": -1
+        },
+        {
+          "door_id": "downtown_passage_entrance",
+          "position": [
+            520,
+            680
+          ],
+          "door_art": "res://assets/props/doors/downtown_passage_door_anim.png",
+          "target_level": "DowntownPassage_F8",
+          "target_spawn": "Spawn_FromTop",
+          "arrival_spawn": "Spawn_FromPassage",
+          "locked": false,
+          "locked_message": "아직 들어갈 수 없다",
+          "exit_direction": 1
+        }
+      ],
+      "npcs": [
+        {
+          "id": "castle_gatekeeper_outer",
+          "position": [
+            9140,
+            760
+          ],
+          "face_player": true,
+          "interactable": false
+        }
+      ],
+      "terrain": [
+        {
+          "id": "ground_0",
+          "from": 0,
+          "to": 1500,
+          "y": 680,
+          "elevation": 200,
+          "art": "res://assets/tiles/outskirts/plaza_tile.png"
+        },
+        {
+          "id": "ground_1500",
+          "from": 1500,
+          "to": 1780,
+          "y": 680,
+          "elevation": 200,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_1780",
+          "from": 1780,
+          "to": 2060,
+          "y": 740,
+          "elevation": 140,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_2060",
+          "from": 2060,
+          "to": 2340,
+          "y": 790,
+          "elevation": 90,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_2340",
+          "from": 2340,
+          "to": 2620,
+          "y": 840,
+          "elevation": 40,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_2620",
+          "from": 2620,
+          "to": 2900,
+          "y": 890,
+          "elevation": -10,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_2900",
+          "from": 2900,
+          "to": 3200,
+          "y": 940,
+          "elevation": -60,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_3200",
+          "from": 3200,
+          "to": 5000,
+          "y": 940,
+          "elevation": -60,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_5000",
+          "from": 5000,
+          "to": 5200,
+          "y": 940,
+          "elevation": -60,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_5200",
+          "from": 5200,
+          "to": 6480,
+          "y": 920,
+          "elevation": -40,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_6480",
+          "from": 6480,
+          "to": 6600,
+          "y": 940,
+          "elevation": -60,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_6600",
+          "from": 6600,
+          "to": 6800,
+          "y": 940,
+          "elevation": -60,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_6800",
+          "from": 6800,
+          "to": 7950,
+          "y": 1000,
+          "elevation": -120,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_7950",
+          "from": 7950,
+          "to": 8050,
+          "y": 940,
+          "elevation": -60,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_8050",
+          "from": 8050,
+          "to": 8250,
+          "y": 895,
+          "elevation": -15,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_8250",
+          "from": 8250,
+          "to": 8450,
+          "y": 850,
+          "elevation": 30,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_8450",
+          "from": 8450,
+          "to": 8650,
+          "y": 805,
+          "elevation": 75,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_8650",
+          "from": 8650,
+          "to": 8850,
+          "y": 760,
+          "elevation": 120,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_8850",
+          "from": 8850,
+          "to": 10000,
+          "y": 760,
+          "elevation": 120,
+          "art": "res://assets/tiles/outskirts/plaza_tile.png"
+        }
+      ],
+      "regions": [
+        {
+          "id": 1,
+          "span": [
+            8850,
+            10000
+          ],
+          "label": "대문 광장"
+        },
+        {
+          "id": 2,
+          "span": [
+            8050,
+            8850
+          ],
+          "label": "내리막 계단"
+        },
+        {
+          "id": 3,
+          "span": [
+            6600,
+            8050
+          ],
+          "label": "균열 협곡"
+        },
+        {
+          "id": 4,
+          "span": [
+            5000,
+            6600
+          ],
+          "label": "폐허 성벽"
+        },
+        {
+          "id": 5,
+          "span": [
+            3200,
+            5000
+          ],
+          "label": "황무지 잔해"
+        },
+        {
+          "id": 6,
+          "span": [
+            1500,
+            3200
+          ],
+          "label": "오르막 테라스"
+        },
+        {
+          "id": 7,
+          "span": [
+            0,
+            1500
+          ],
+          "label": "통로 광장"
+        }
+      ],
+      "platforms": [
+        {
+          "id": "bridge_left_low",
+          "position": [
+            6640,
+            890
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/outskirts/bridge_platform.png",
+          "elevation": -10
+        },
+        {
+          "id": "bridge_left_high",
+          "position": [
+            6820,
+            820
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/outskirts/bridge_platform.png",
+          "elevation": 60
+        },
+        {
+          "id": "bridge",
+          "position": [
+            6900,
+            820
+          ],
+          "width": 900,
+          "art": "res://assets/tiles/outskirts/bridge_platform.png",
+          "elevation": 60
+        },
+        {
+          "id": "bridge_right_high",
+          "position": [
+            7780,
+            820
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/outskirts/bridge_platform.png",
+          "elevation": 60
+        },
+        {
+          "id": "bridge_right_low",
+          "position": [
+            7960,
+            890
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/outskirts/bridge_platform.png",
+          "elevation": -10
+        },
+        {
+          "id": "wall_left_low",
+          "position": [
+            5000,
+            830
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/outskirts/ruin_platform.png",
+          "elevation": 50
+        },
+        {
+          "id": "wall_left_high",
+          "position": [
+            5200,
+            740
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/outskirts/ruin_platform.png",
+          "elevation": 140
+        },
+        {
+          "id": "upper",
+          "position": [
+            5300,
+            740
+          ],
+          "width": 1000,
+          "art": "res://assets/tiles/outskirts/ruin_platform.png",
+          "elevation": 140
+        },
+        {
+          "id": "wall_right_high",
+          "position": [
+            6300,
+            740
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/outskirts/ruin_platform.png",
+          "elevation": 140
+        },
+        {
+          "id": "wall_right_low",
+          "position": [
+            6500,
+            830
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/outskirts/ruin_platform.png",
+          "elevation": 50
+        },
+        {
+          "id": "rubble_low_left",
+          "position": [
+            3980,
+            850
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/outskirts/ruin_platform.png",
+          "elevation": 30
+        },
+        {
+          "id": "rubble_high",
+          "position": [
+            4160,
+            790
+          ],
+          "width": 340,
+          "art": "res://assets/tiles/outskirts/ruin_platform.png",
+          "elevation": 90
+        },
+        {
+          "id": "rubble_low_right",
+          "position": [
+            4500,
+            850
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/outskirts/ruin_platform.png",
+          "elevation": 30
+        }
+      ],
+      "obstacles": [
+        {
+          "rect": [
+            3600,
+            880,
+            220,
+            60
+          ],
+          "art": "res://assets/props/large_rubble_a.png"
+        },
+        {
+          "rect": [
+            4100,
+            850,
+            160,
+            90
+          ],
+          "art": "res://assets/props/large_rubble_b.png"
+        },
+        {
+          "rect": [
+            4600,
+            865,
+            160,
+            75
+          ],
+          "art": "res://assets/props/large_rubble_b.png"
+        },
+        {
+          "rect": [
+            1600,
+            660,
+            60,
+            20
+          ],
+          "art": "res://assets/tiles/outskirts/ruin_ledge.png"
+        },
+        {
+          "rect": [
+            1880,
+            720,
+            60,
+            20
+          ],
+          "art": "res://assets/tiles/outskirts/ruin_ledge.png"
+        },
+        {
+          "rect": [
+            2160,
+            770,
+            60,
+            20
+          ],
+          "art": "res://assets/tiles/outskirts/ruin_ledge.png"
+        },
+        {
+          "rect": [
+            2440,
+            820,
+            60,
+            20
+          ],
+          "art": "res://assets/tiles/outskirts/ruin_ledge.png"
+        },
+        {
+          "rect": [
+            2720,
+            870,
+            60,
+            20
+          ],
+          "art": "res://assets/tiles/outskirts/ruin_ledge.png"
+        },
+        {
+          "rect": [
+            3000,
+            920,
+            60,
+            20
+          ],
+          "art": "res://assets/tiles/outskirts/ruin_ledge.png"
+        }
+      ],
+      "enemies": [
+        {
+          "id": "melee_beast",
+          "position": [
+            8350,
+            850
+          ],
+          "patrol_center": 8350,
+          "patrol_range": 100
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            7000,
+            1000
+          ],
+          "patrol_center": 7000,
+          "patrol_range": 200
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            7450,
+            820
+          ],
+          "patrol_center": 7450,
+          "patrol_range": 150
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            5400,
+            920
+          ],
+          "patrol_center": 5400,
+          "patrol_range": 200
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            6200,
+            920
+          ],
+          "patrol_center": 6200,
+          "patrol_range": 200
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            3400,
+            940
+          ],
+          "patrol_center": 3400,
+          "patrol_range": 200
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            3900,
+            940
+          ],
+          "patrol_center": 3900,
+          "patrol_range": 200
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            4600,
+            865
+          ],
+          "patrol_center": 4600,
+          "patrol_range": 200
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            2800,
+            890
+          ],
+          "patrol_center": 2800,
+          "patrol_range": 200
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            1100,
+            680
+          ],
+          "patrol_center": 1100,
+          "patrol_range": 150
+        },
+        {
+          "id": "ranged_beast",
+          "position": [
+            7300,
+            1000
+          ],
+          "patrol_center": 7300,
+          "patrol_range": 150
+        },
+        {
+          "id": "ranged_beast",
+          "position": [
+            5800,
+            740
+          ],
+          "patrol_center": 5800,
+          "patrol_range": 150
+        },
+        {
+          "id": "ranged_beast",
+          "position": [
+            4200,
+            790
+          ],
+          "patrol_center": 4200,
+          "patrol_range": 150
+        },
+        {
+          "id": "ranged_beast",
+          "position": [
+            2300,
+            790
+          ],
+          "patrol_center": 2300,
+          "patrol_range": 150
+        },
+        {
+          "id": "ranged_beast",
+          "position": [
+            1900,
+            740
+          ],
+          "patrol_center": 1900,
+          "patrol_range": 150
+        }
+      ],
+      "decorations": [
+        {
+          "path": "res://assets/props/castle_gate_wall_left.png",
+          "position": [
+            8860,
+            160
+          ],
+          "size": [
+            420,
+            600
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/castle_gate_wall_right.png",
+          "position": [
+            9920,
+            160
+          ],
+          "size": [
+            420,
+            600
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/ruin_wall_a.png",
+          "position": [
+            5120,
+            520
+          ],
+          "size": [
+            600,
+            420
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/ruin_wall_b.png",
+          "position": [
+            5970,
+            580
+          ],
+          "size": [
+            480,
+            360
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/broken_tower.png",
+          "position": [
+            4660,
+            380
+          ],
+          "size": [
+            360,
+            560
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/chasm_edge_left.png",
+          "position": [
+            6530,
+            820
+          ],
+          "size": [
+            300,
+            260
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/chasm_edge_right.png",
+          "position": [
+            7850,
+            820
+          ],
+          "size": [
+            300,
+            260
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/collapsed_bridge.png",
+          "position": [
+            6900,
+            820
+          ],
+          "size": [
+            900,
+            180
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/upper_walkway.png",
+          "position": [
+            5300,
+            740
+          ],
+          "size": [
+            1000,
+            120
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/dead_tree.png",
+          "position": [
+            3490,
+            560
+          ],
+          "size": [
+            240,
+            380
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/crashed_pod_wreck.png",
+          "position": [
+            4570,
+            700
+          ],
+          "size": [
+            420,
+            240
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/outskirts_lamp.png",
+          "position": [
+            8780,
+            500
+          ],
+          "size": [
+            100,
+            260
+          ],
+          "z": -2
+        }
+      ],
+      "reachability": {
+        "max_rise": 110,
+        "max_gap": 200,
+        "max_local_platform_elevation": 180,
+        "player_jump_height": 138.0,
+        "required_ground_route": [
+          0,
+          10000
+        ],
+        "chains": [
+          [
+            "bridge_left_low",
+            "bridge_left_high",
+            "bridge"
+          ],
+          [
+            "bridge",
+            "bridge_right_high",
+            "bridge_right_low"
+          ],
+          [
+            "wall_left_low",
+            "wall_left_high",
+            "upper"
+          ],
+          [
+            "upper",
+            "wall_right_high",
+            "wall_right_low"
+          ],
+          [
+            "rubble_low_left",
+            "rubble_high",
+            "rubble_low_right"
+          ]
+        ]
+      }
+    },
+    "DowntownPassage_F1": {
+      "id": "DowntownPassage_F1",
+      "scene": "res://scenes/DowntownPassage_F1.tscn",
+      "width": 3600,
+      "floor_y": 620,
+      "bgm": "passage_descent",
+      "display_name": "도심 방향 통로 1층",
+      "theme_name": "로비 홀",
+      "palette": [
+        0.5,
+        0.32,
+        0.65
+      ],
+      "bg_dim": [
+        0.88,
+        0.88,
+        0.92
+      ],
+      "ceiling": true,
+      "camera_limits": [
+        0,
+        0,
+        3600,
+        800
+      ],
+      "safe_zones": [
+        [
+          0,
+          -100,
+          420,
+          1000
+        ],
+        [
+          3250,
+          -100,
+          350,
+          1000
+        ]
+      ],
+      "backgrounds": [
+        {
+          "name": "PassageInterior",
+          "path": "res://assets/backgrounds/passage/passage_f1_bg.png",
+          "position": [
+            0,
+            0
+          ],
+          "size": [
+            3600,
+            800
+          ],
+          "ratio": 1,
+          "z": -25
+        }
+      ],
+      "spawns": {
+        "Spawn_FromAbove": [
+          3330,
+          620
+        ],
+        "Spawn_FromBelow": [
+          300,
+          620
+        ]
+      },
+      "doors": [
+        {
+          "door_id": "door_up",
+          "position": [
+            3450,
+            620
+          ],
+          "target_level": "DowntownPassage_F2",
+          "target_spawn": "Spawn_FromBelow",
+          "arrival_spawn": "Spawn_FromAbove",
+          "door_art": "res://assets/props/doors/passage_door.png",
+          "exit_direction": -1
+        },
+        {
+          "door_id": "door_down",
+          "position": [
+            220,
+            620
+          ],
+          "target_level": "HomeRoad",
+          "target_spawn": "Spawn_FromPassage",
+          "arrival_spawn": "Spawn_FromBelow",
+          "door_art": "res://assets/props/doors/passage_door.png",
+          "exit_direction": 1
+        }
+      ],
+      "npcs": [],
+      "enemies": [
+        {
+          "id": "melee_beast",
+          "position": [
+            3100,
+            620
+          ],
+          "patrol_center": 3100,
+          "patrol_range": 150
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            1900,
+            620
+          ],
+          "patrol_center": 1900,
+          "patrol_range": 150
+        },
+        {
+          "id": "ranged_beast",
+          "position": [
+            2800,
+            510
+          ],
+          "patrol_center": 2800,
+          "patrol_range": 150
+        },
+        {
+          "id": "ranged_beast",
+          "position": [
+            700,
+            620
+          ],
+          "patrol_center": 700,
+          "patrol_range": 150
+        },
+        {
+          "id": "explosive_spitter",
+          "position": [
+            2200,
+            620
+          ],
+          "patrol_center": 2200,
+          "patrol_range": 150
+        },
+        {
+          "id": "explosive_spitter",
+          "position": [
+            900,
+            560
+          ],
+          "patrol_center": 900,
+          "patrol_range": 150
+        },
+        {
+          "id": "wall_diver",
+          "position": [
+            2000,
+            140
+          ],
+          "patrol_center": 2000,
+          "patrol_range": 150,
+          "perch_kind": "ceiling"
+        },
+        {
+          "id": "wall_diver",
+          "position": [
+            1100,
+            390
+          ],
+          "patrol_center": 1100,
+          "patrol_range": 150,
+          "perch_kind": "wall"
+        }
+      ],
+      "decorations": [
+        {
+          "path": "res://assets/props/passage_pillar_a.png",
+          "position": [
+            550,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_pillar_a.png",
+          "position": [
+            1200,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_pillar_a.png",
+          "position": [
+            2750,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_chandelier.png",
+          "position": [
+            1700,
+            40
+          ],
+          "size": [
+            280,
+            360
+          ],
+          "z": -2
+        }
+      ],
+      "steps": [],
+      "platforms": [
+        {
+          "id": "high",
+          "position": [
+            2500,
+            510
+          ],
+          "width": 500,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "left_access",
+          "position": [
+            2320,
+            565
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "right_access",
+          "position": [
+            3000,
+            565
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        }
+      ],
+      "obstacles": [],
+      "floor_art": "res://assets/tiles/passage/floor_tile.png",
+      "floor_art_size": [
+        512,
+        180
+      ],
+      "drop_rule": {
+        "mode": "only_listed",
+        "listed": {
+          "explosive_spitter": 0.07
+        }
+      },
+      "perches": [
+        {
+          "name": "Perch_2000",
+          "position": [
+            2000,
+            140
+          ],
+          "kind": "ceiling"
+        },
+        {
+          "name": "Perch_1100",
+          "position": [
+            1100,
+            390
+          ],
+          "kind": "wall"
+        }
+      ],
+      "ceilings": [],
+      "reachability": {
+        "max_rise": 110,
+        "max_gap": 200,
+        "max_local_platform_elevation": 500,
+        "chains": [
+          [
+            "left_access",
+            "high",
+            "right_access"
+          ]
+        ],
+        "floor_reference": 620,
+        "elevation_limits": [
+          -140,
+          400
+        ],
+        "required_ground_route": [
+          0,
+          3600
+        ]
+      },
+      "terrain": [
+        {
+          "id": "ground_0",
+          "from": 0,
+          "to": 900,
+          "y": 620,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_900",
+          "from": 900,
+          "to": 1200,
+          "y": 560,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_1200",
+          "from": 1200,
+          "to": 1500,
+          "y": 510,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_1500",
+          "from": 1500,
+          "to": 1800,
+          "y": 560,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_1800",
+          "from": 1800,
+          "to": 3600,
+          "y": 620,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        }
+      ]
+    },
+    "DowntownPassage_F2": {
+      "id": "DowntownPassage_F2",
+      "scene": "res://scenes/DowntownPassage_F2.tscn",
+      "width": 3600,
+      "floor_y": 620,
+      "bgm": "passage_descent",
+      "display_name": "도심 방향 통로 2층",
+      "theme_name": "계단 홀",
+      "palette": [
+        0.32,
+        0.32,
+        0.62
+      ],
+      "bg_dim": [
+        0.88,
+        0.88,
+        0.92
+      ],
+      "ceiling": true,
+      "camera_limits": [
+        0,
+        0,
+        3600,
+        800
+      ],
+      "safe_zones": [
+        [
+          0,
+          -100,
+          420,
+          1000
+        ],
+        [
+          3250,
+          -100,
+          350,
+          1000
+        ]
+      ],
+      "backgrounds": [
+        {
+          "name": "PassageInterior",
+          "path": "res://assets/backgrounds/passage/passage_f2_bg.png",
+          "position": [
+            0,
+            0
+          ],
+          "size": [
+            3600,
+            800
+          ],
+          "ratio": 1,
+          "z": -25
+        }
+      ],
+      "spawns": {
+        "Spawn_FromAbove": [
+          3330,
+          620
+        ],
+        "Spawn_FromBelow": [
+          300,
+          620
+        ]
+      },
+      "doors": [
+        {
+          "door_id": "door_up",
+          "position": [
+            3450,
+            620
+          ],
+          "target_level": "DowntownPassage_F3",
+          "target_spawn": "Spawn_FromBelow",
+          "arrival_spawn": "Spawn_FromAbove",
+          "door_art": "res://assets/props/doors/passage_door.png",
+          "exit_direction": -1
+        },
+        {
+          "door_id": "door_down",
+          "position": [
+            220,
+            620
+          ],
+          "target_level": "DowntownPassage_F1",
+          "target_spawn": "Spawn_FromAbove",
+          "arrival_spawn": "Spawn_FromBelow",
+          "door_art": "res://assets/props/doors/passage_door.png",
+          "exit_direction": 1
+        }
+      ],
+      "npcs": [],
+      "enemies": [
+        {
+          "id": "ranged_beast",
+          "position": [
+            1550,
+            440
+          ],
+          "patrol_center": 1550,
+          "patrol_range": 150
+        },
+        {
+          "id": "ranged_beast",
+          "position": [
+            2100,
+            500
+          ],
+          "patrol_center": 2100,
+          "patrol_range": 150
+        },
+        {
+          "id": "explosive_spitter",
+          "position": [
+            2900,
+            620
+          ],
+          "patrol_center": 2900,
+          "patrol_range": 150
+        },
+        {
+          "id": "explosive_spitter",
+          "position": [
+            780,
+            620
+          ],
+          "patrol_center": 780,
+          "patrol_range": 150
+        },
+        {
+          "id": "wall_diver",
+          "position": [
+            2850,
+            130
+          ],
+          "patrol_center": 2850,
+          "patrol_range": 150,
+          "perch_kind": "ceiling"
+        },
+        {
+          "id": "wall_diver",
+          "position": [
+            1850,
+            100
+          ],
+          "patrol_center": 1850,
+          "patrol_range": 150,
+          "perch_kind": "ceiling"
+        },
+        {
+          "id": "wall_diver",
+          "position": [
+            680,
+            360
+          ],
+          "patrol_center": 680,
+          "patrol_range": 150,
+          "perch_kind": "wall"
+        },
+        {
+          "id": "root_spewer",
+          "position": [
+            1400,
+            420
+          ],
+          "patrol_center": 1400,
+          "patrol_range": 150
+        },
+        {
+          "id": "root_spewer",
+          "position": [
+            2220,
+            420
+          ],
+          "patrol_center": 2220,
+          "patrol_range": 150
+        }
+      ],
+      "decorations": [
+        {
+          "path": "res://assets/props/passage_pillar_b.png",
+          "position": [
+            550,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_pillar_b.png",
+          "position": [
+            1200,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_pillar_b.png",
+          "position": [
+            2750,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_chandelier.png",
+          "position": [
+            1700,
+            40
+          ],
+          "size": [
+            280,
+            360
+          ],
+          "z": -2
+        }
+      ],
+      "steps": [],
+      "platforms": [
+        {
+          "id": "root_left",
+          "position": [
+            1320,
+            420
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "root_right",
+          "position": [
+            2150,
+            420
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        }
+      ],
+      "obstacles": [],
+      "floor_art": "res://assets/tiles/passage/floor_tile.png",
+      "floor_art_size": [
+        512,
+        180
+      ],
+      "drop_rule": {
+        "mode": "only_listed",
+        "listed": {
+          "explosive_spitter": 0.07
+        }
+      },
+      "perches": [
+        {
+          "name": "Perch_2850",
+          "position": [
+            2850,
+            130
+          ],
+          "kind": "ceiling"
+        },
+        {
+          "name": "Perch_1850",
+          "position": [
+            1850,
+            100
+          ],
+          "kind": "ceiling"
+        },
+        {
+          "name": "Perch_680",
+          "position": [
+            680,
+            360
+          ],
+          "kind": "wall"
+        }
+      ],
+      "ceilings": [],
+      "reachability": {
+        "max_rise": 110,
+        "max_gap": 200,
+        "max_local_platform_elevation": 500,
+        "chains": [],
+        "floor_reference": 620,
+        "elevation_limits": [
+          -140,
+          400
+        ],
+        "required_ground_route": [
+          0,
+          3600
+        ]
+      },
+      "terrain": [
+        {
+          "id": "ground_0",
+          "from": 0,
+          "to": 900,
+          "y": 620,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_900",
+          "from": 900,
+          "to": 1200,
+          "y": 560,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_1200",
+          "from": 1200,
+          "to": 1500,
+          "y": 500,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_1500",
+          "from": 1500,
+          "to": 2100,
+          "y": 440,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_2100",
+          "from": 2100,
+          "to": 2400,
+          "y": 500,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_2400",
+          "from": 2400,
+          "to": 2700,
+          "y": 560,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_2700",
+          "from": 2700,
+          "to": 3600,
+          "y": 620,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        }
+      ]
+    },
+    "DowntownPassage_F3": {
+      "id": "DowntownPassage_F3",
+      "scene": "res://scenes/DowntownPassage_F3.tscn",
+      "width": 3600,
+      "floor_y": 620,
+      "bgm": "passage_descent",
+      "display_name": "도심 방향 통로 3층",
+      "theme_name": "3단 캣워크",
+      "palette": [
+        0.2,
+        0.28,
+        0.51
+      ],
+      "bg_dim": [
+        0.88,
+        0.88,
+        0.92
+      ],
+      "ceiling": true,
+      "camera_limits": [
+        0,
+        0,
+        3600,
+        800
+      ],
+      "safe_zones": [
+        [
+          0,
+          -100,
+          420,
+          1000
+        ],
+        [
+          3250,
+          -100,
+          350,
+          1000
+        ]
+      ],
+      "backgrounds": [
+        {
+          "name": "PassageInterior",
+          "path": "res://assets/backgrounds/passage/passage_f3_bg.png",
+          "position": [
+            0,
+            0
+          ],
+          "size": [
+            3600,
+            800
+          ],
+          "ratio": 1,
+          "z": -25
+        }
+      ],
+      "spawns": {
+        "Spawn_FromAbove": [
+          3330,
+          620
+        ],
+        "Spawn_FromBelow": [
+          300,
+          620
+        ]
+      },
+      "doors": [
+        {
+          "door_id": "door_up",
+          "position": [
+            3450,
+            620
+          ],
+          "target_level": "DowntownPassage_F4",
+          "target_spawn": "Spawn_FromBelow",
+          "arrival_spawn": "Spawn_FromAbove",
+          "door_art": "res://assets/props/doors/passage_door.png",
+          "exit_direction": -1
+        },
+        {
+          "door_id": "door_down",
+          "position": [
+            220,
+            620
+          ],
+          "target_level": "DowntownPassage_F2",
+          "target_spawn": "Spawn_FromAbove",
+          "arrival_spawn": "Spawn_FromBelow",
+          "door_art": "res://assets/props/doors/passage_door.png",
+          "exit_direction": 1
+        }
+      ],
+      "npcs": [],
+      "enemies": [
+        {
+          "id": "explosive_spitter",
+          "position": [
+            2800,
+            380
+          ],
+          "patrol_center": 2800,
+          "patrol_range": 150
+        },
+        {
+          "id": "explosive_spitter",
+          "position": [
+            1500,
+            500
+          ],
+          "patrol_center": 1500,
+          "patrol_range": 150
+        },
+        {
+          "id": "wall_diver",
+          "position": [
+            2900,
+            120
+          ],
+          "patrol_center": 2900,
+          "patrol_range": 150,
+          "perch_kind": "ceiling"
+        },
+        {
+          "id": "wall_diver",
+          "position": [
+            1800,
+            160
+          ],
+          "patrol_center": 1800,
+          "patrol_range": 150,
+          "perch_kind": "ceiling"
+        },
+        {
+          "id": "wall_diver",
+          "position": [
+            650,
+            350
+          ],
+          "patrol_center": 650,
+          "patrol_range": 150,
+          "perch_kind": "wall"
+        },
+        {
+          "id": "root_spewer",
+          "position": [
+            1400,
+            500
+          ],
+          "patrol_center": 1400,
+          "patrol_range": 150
+        },
+        {
+          "id": "root_spewer",
+          "position": [
+            2300,
+            500
+          ],
+          "patrol_center": 2300,
+          "patrol_range": 150
+        },
+        {
+          "id": "boar_charger",
+          "position": [
+            1700,
+            620
+          ],
+          "patrol_center": 1700,
+          "patrol_range": 420
+        }
+      ],
+      "decorations": [
+        {
+          "path": "res://assets/props/passage_pillar_a.png",
+          "position": [
+            550,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_pillar_a.png",
+          "position": [
+            1200,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_pillar_a.png",
+          "position": [
+            2750,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_chandelier.png",
+          "position": [
+            1700,
+            40
+          ],
+          "size": [
+            280,
+            360
+          ],
+          "z": -2
+        }
+      ],
+      "steps": [],
+      "platforms": [
+        {
+          "id": "middle",
+          "position": [
+            1000,
+            500
+          ],
+          "width": 2000,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "upper",
+          "position": [
+            2100,
+            380
+          ],
+          "width": 1000,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "left60",
+          "position": [
+            800,
+            560
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "left180",
+          "position": [
+            1920,
+            440
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "right60",
+          "position": [
+            3000,
+            560
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "right180",
+          "position": [
+            3100,
+            440
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "right120",
+          "position": [
+            3280,
+            500
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "right0",
+          "position": [
+            3280,
+            560
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        }
+      ],
+      "obstacles": [],
+      "floor_art": "res://assets/tiles/passage/floor_tile.png",
+      "floor_art_size": [
+        512,
+        180
+      ],
+      "drop_rule": {
+        "mode": "only_listed",
+        "listed": {
+          "explosive_spitter": 0.07
+        }
+      },
+      "perches": [
+        {
+          "name": "Perch_2900",
+          "position": [
+            2900,
+            120
+          ],
+          "kind": "ceiling"
+        },
+        {
+          "name": "Perch_1800",
+          "position": [
+            1800,
+            160
+          ],
+          "kind": "ceiling"
+        },
+        {
+          "name": "Perch_650",
+          "position": [
+            650,
+            350
+          ],
+          "kind": "wall"
+        }
+      ],
+      "ceilings": [],
+      "reachability": {
+        "max_rise": 110,
+        "max_gap": 200,
+        "max_local_platform_elevation": 500,
+        "chains": [
+          [
+            "left60",
+            "middle",
+            "right60"
+          ],
+          [
+            "middle",
+            "left180",
+            "upper",
+            "right180",
+            "right120",
+            "right0",
+            "right60"
+          ]
+        ],
+        "floor_reference": 620,
+        "elevation_limits": [
+          -140,
+          400
+        ],
+        "required_ground_route": [
+          0,
+          3600
+        ]
+      },
+      "terrain": [
+        {
+          "id": "ground_0",
+          "from": 0,
+          "to": 3600,
+          "y": 620,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        }
+      ]
+    },
+    "DowntownPassage_F4": {
+      "id": "DowntownPassage_F4",
+      "scene": "res://scenes/DowntownPassage_F4.tscn",
+      "width": 3600,
+      "floor_y": 620,
+      "bgm": "passage_descent",
+      "display_name": "도심 방향 통로 4층",
+      "theme_name": "심연 교량",
+      "palette": [
+        0.19,
+        0.3,
+        0.22
+      ],
+      "bg_dim": [
+        0.88,
+        0.88,
+        0.92
+      ],
+      "ceiling": true,
+      "camera_limits": [
+        0,
+        0,
+        3600,
+        960
+      ],
+      "safe_zones": [
+        [
+          0,
+          -100,
+          420,
+          1160
+        ],
+        [
+          3250,
+          -100,
+          350,
+          1160
+        ]
+      ],
+      "backgrounds": [
+        {
+          "name": "FarAbyss",
+          "path": "res://assets/backgrounds/passage/far_abyss_tile.png",
+          "position": [
+            0,
+            0
+          ],
+          "size": [
+            2048,
+            960
+          ],
+          "ratio": 0.3,
+          "z": -30,
+          "repeat_size": [
+            2048,
+            0
+          ],
+          "repeat_times": 4
+        },
+        {
+          "name": "PassageInterior",
+          "path": "res://assets/backgrounds/passage/passage_f4_bg.png",
+          "position": [
+            0,
+            0
+          ],
+          "size": [
+            3600,
+            960
+          ],
+          "ratio": 1,
+          "z": -25
+        }
+      ],
+      "spawns": {
+        "Spawn_FromAbove": [
+          3330,
+          620
+        ],
+        "Spawn_FromBelow": [
+          300,
+          620
+        ]
+      },
+      "doors": [
+        {
+          "door_id": "door_up",
+          "position": [
+            3450,
+            620
+          ],
+          "target_level": "DowntownPassage_F5",
+          "target_spawn": "Spawn_FromBelow",
+          "arrival_spawn": "Spawn_FromAbove",
+          "door_art": "res://assets/props/doors/passage_door.png",
+          "exit_direction": -1
+        },
+        {
+          "door_id": "door_down",
+          "position": [
+            220,
+            620
+          ],
+          "target_level": "DowntownPassage_F3",
+          "target_spawn": "Spawn_FromAbove",
+          "arrival_spawn": "Spawn_FromBelow",
+          "door_art": "res://assets/props/doors/passage_door.png",
+          "exit_direction": 1
+        }
+      ],
+      "npcs": [],
+      "enemies": [
+        {
+          "id": "wall_diver",
+          "position": [
+            2800,
+            130
+          ],
+          "patrol_center": 2800,
+          "patrol_range": 150,
+          "perch_kind": "ceiling"
+        },
+        {
+          "id": "wall_diver",
+          "position": [
+            1800,
+            160
+          ],
+          "patrol_center": 1800,
+          "patrol_range": 150,
+          "perch_kind": "ceiling"
+        },
+        {
+          "id": "wall_diver",
+          "position": [
+            850,
+            140
+          ],
+          "patrol_center": 850,
+          "patrol_range": 150,
+          "perch_kind": "ceiling"
+        },
+        {
+          "id": "root_spewer",
+          "position": [
+            980,
+            620
+          ],
+          "patrol_center": 980,
+          "patrol_range": 150
+        },
+        {
+          "id": "root_spewer",
+          "position": [
+            2440,
+            620
+          ],
+          "patrol_center": 2440,
+          "patrol_range": 150
+        },
+        {
+          "id": "boar_charger",
+          "position": [
+            1220,
+            620
+          ],
+          "patrol_center": 1220,
+          "patrol_range": 420
+        },
+        {
+          "id": "gas_sac",
+          "position": [
+            1600,
+            690
+          ],
+          "patrol_center": 1600,
+          "patrol_range": 150
+        },
+        {
+          "id": "gas_sac",
+          "position": [
+            2400,
+            690
+          ],
+          "patrol_center": 2400,
+          "patrol_range": 150
+        }
+      ],
+      "decorations": [
+        {
+          "path": "res://assets/props/passage_pillar_b.png",
+          "position": [
+            550,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_pillar_b.png",
+          "position": [
+            1200,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_pillar_b.png",
+          "position": [
+            2750,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_chandelier.png",
+          "position": [
+            1700,
+            40
+          ],
+          "size": [
+            280,
+            360
+          ],
+          "z": -2
+        }
+      ],
+      "steps": [],
+      "platforms": [
+        {
+          "id": "bridge_left",
+          "position": [
+            780,
+            620
+          ],
+          "width": 900,
+          "art": "res://assets/tiles/passage/bridge_plank.png",
+          "art_height": 48
+        },
+        {
+          "id": "bridge_right",
+          "position": [
+            1920,
+            620
+          ],
+          "width": 900,
+          "art": "res://assets/tiles/passage/bridge_plank.png",
+          "art_height": 48
+        },
+        {
+          "id": "gap_step",
+          "position": [
+            1680,
+            690
+          ],
+          "width": 240,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "bottom_left_step",
+          "position": [
+            780,
+            690
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "bottom_right_step",
+          "position": [
+            2660,
+            690
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        }
+      ],
+      "obstacles": [],
+      "floor_art": "res://assets/tiles/passage/floor_tile.png",
+      "floor_art_size": [
+        512,
+        180
+      ],
+      "drop_rule": {
+        "mode": "all",
+        "chance": 0.05
+      },
+      "perches": [
+        {
+          "name": "Perch_2800",
+          "position": [
+            2800,
+            130
+          ],
+          "kind": "ceiling"
+        },
+        {
+          "name": "Perch_1800",
+          "position": [
+            1800,
+            160
+          ],
+          "kind": "ceiling"
+        },
+        {
+          "name": "Perch_850",
+          "position": [
+            850,
+            140
+          ],
+          "kind": "ceiling"
+        }
+      ],
+      "ceilings": [],
+      "reachability": {
+        "max_rise": 110,
+        "max_gap": 200,
+        "max_local_platform_elevation": 500,
+        "chains": [
+          [
+            "bottom_left_step",
+            "bridge_left",
+            "gap_step",
+            "bridge_right",
+            "bottom_right_step"
+          ]
+        ],
+        "floor_reference": 620,
+        "elevation_limits": [
+          -140,
+          400
+        ],
+        "required_ground_route": [
+          0,
+          3600
+        ]
+      },
+      "terrain": [
+        {
+          "id": "ground_0",
+          "from": 0,
+          "to": 700,
+          "y": 620,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_700",
+          "from": 700,
+          "to": 920,
+          "y": 690,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_920",
+          "from": 920,
+          "to": 2680,
+          "y": 760,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_2680",
+          "from": 2680,
+          "to": 2900,
+          "y": 690,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_2900",
+          "from": 2900,
+          "to": 3600,
+          "y": 620,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        }
+      ]
+    },
+    "DowntownPassage_F5": {
+      "id": "DowntownPassage_F5",
+      "scene": "res://scenes/DowntownPassage_F5.tscn",
+      "width": 3600,
+      "floor_y": 620,
+      "bgm": "passage_descent",
+      "display_name": "도심 방향 통로 5층",
+      "theme_name": "기계 지주 숲",
+      "palette": [
+        0.28,
+        0.44,
+        0.56
+      ],
+      "bg_dim": [
+        0.88,
+        0.88,
+        0.92
+      ],
+      "ceiling": true,
+      "camera_limits": [
+        0,
+        0,
+        3600,
+        800
+      ],
+      "safe_zones": [
+        [
+          0,
+          -100,
+          420,
+          1000
+        ],
+        [
+          3250,
+          -100,
+          350,
+          1000
+        ]
+      ],
+      "backgrounds": [
+        {
+          "name": "PassageInterior",
+          "path": "res://assets/backgrounds/passage/passage_f5_bg.png",
+          "position": [
+            0,
+            0
+          ],
+          "size": [
+            3600,
+            800
+          ],
+          "ratio": 1,
+          "z": -25
+        }
+      ],
+      "spawns": {
+        "Spawn_FromAbove": [
+          3330,
+          620
+        ],
+        "Spawn_FromBelow": [
+          300,
+          620
+        ]
+      },
+      "doors": [
+        {
+          "door_id": "door_up",
+          "position": [
+            3450,
+            620
+          ],
+          "target_level": "DowntownPassage_F6",
+          "target_spawn": "Spawn_FromBelow",
+          "arrival_spawn": "Spawn_FromAbove",
+          "door_art": "res://assets/props/doors/passage_door.png",
+          "exit_direction": -1
+        },
+        {
+          "door_id": "door_down",
+          "position": [
+            220,
+            620
+          ],
+          "target_level": "DowntownPassage_F4",
+          "target_spawn": "Spawn_FromAbove",
+          "arrival_spawn": "Spawn_FromBelow",
+          "door_art": "res://assets/props/doors/passage_door.png",
+          "exit_direction": 1
+        }
+      ],
+      "npcs": [],
+      "enemies": [
+        {
+          "id": "root_spewer",
+          "position": [
+            1080,
+            500
+          ],
+          "patrol_center": 1080,
+          "patrol_range": 150
+        },
+        {
+          "id": "root_spewer",
+          "position": [
+            1600,
+            380
+          ],
+          "patrol_center": 1600,
+          "patrol_range": 150
+        },
+        {
+          "id": "root_spewer",
+          "position": [
+            2120,
+            500
+          ],
+          "patrol_center": 2120,
+          "patrol_range": 150
+        },
+        {
+          "id": "boar_charger",
+          "position": [
+            1800,
+            680
+          ],
+          "patrol_center": 1800,
+          "patrol_range": 420
+        },
+        {
+          "id": "gas_sac",
+          "position": [
+            1400,
+            560
+          ],
+          "patrol_center": 1400,
+          "patrol_range": 150
+        },
+        {
+          "id": "gas_sac",
+          "position": [
+            2400,
+            540
+          ],
+          "patrol_center": 2400,
+          "patrol_range": 150
+        },
+        {
+          "id": "wraith_ray",
+          "position": [
+            2800,
+            400
+          ],
+          "patrol_center": 2800,
+          "patrol_range": 3600
+        },
+        {
+          "id": "wraith_ray",
+          "position": [
+            1100,
+            430
+          ],
+          "patrol_center": 1100,
+          "patrol_range": 3600
+        }
+      ],
+      "decorations": [
+        {
+          "path": "res://assets/props/passage_gear_pillar.png",
+          "position": [
+            740,
+            590
+          ],
+          "size": [
+            180,
+            500
+          ],
+          "z": -3
+        },
+        {
+          "path": "res://assets/props/passage_gear_pillar.png",
+          "position": [
+            1000,
+            500
+          ],
+          "size": [
+            180,
+            500
+          ],
+          "z": -3
+        },
+        {
+          "path": "res://assets/props/passage_gear_pillar.png",
+          "position": [
+            1260,
+            410
+          ],
+          "size": [
+            180,
+            500
+          ],
+          "z": -3
+        },
+        {
+          "path": "res://assets/props/passage_gear_pillar.png",
+          "position": [
+            1520,
+            380
+          ],
+          "size": [
+            180,
+            500
+          ],
+          "z": -3
+        },
+        {
+          "path": "res://assets/props/passage_gear_pillar.png",
+          "position": [
+            1780,
+            410
+          ],
+          "size": [
+            180,
+            500
+          ],
+          "z": -3
+        },
+        {
+          "path": "res://assets/props/passage_gear_pillar.png",
+          "position": [
+            2040,
+            500
+          ],
+          "size": [
+            180,
+            500
+          ],
+          "z": -3
+        },
+        {
+          "path": "res://assets/props/passage_gear_pillar.png",
+          "position": [
+            2300,
+            590
+          ],
+          "size": [
+            180,
+            500
+          ],
+          "z": -3
+        },
+        {
+          "path": "res://assets/props/passage_gear_pillar.png",
+          "position": [
+            2560,
+            500
+          ],
+          "size": [
+            180,
+            500
+          ],
+          "z": -3
+        },
+        {
+          "path": "res://assets/props/passage_gear_pillar.png",
+          "position": [
+            2820,
+            560
+          ],
+          "size": [
+            180,
+            500
+          ],
+          "z": -3
+        },
+        {
+          "path": "res://assets/props/passage_pillar_a.png",
+          "position": [
+            550,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_pillar_a.png",
+          "position": [
+            1200,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_pillar_a.png",
+          "position": [
+            2750,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_chandelier.png",
+          "position": [
+            1700,
+            40
+          ],
+          "size": [
+            280,
+            360
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_pipe_cluster.png",
+          "position": [
+            2800,
+            100
+          ],
+          "size": [
+            420,
+            300
+          ],
+          "z": -2
+        }
+      ],
+      "steps": [],
+      "platforms": [
+        {
+          "id": "p0",
+          "position": [
+            740,
+            590
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "p1",
+          "position": [
+            1000,
+            500
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "p2",
+          "position": [
+            1260,
+            410
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "p3",
+          "position": [
+            1520,
+            380
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "p4",
+          "position": [
+            1780,
+            410
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "p5",
+          "position": [
+            2040,
+            500
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "p6",
+          "position": [
+            2300,
+            590
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "p7",
+          "position": [
+            2560,
+            500
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "p8",
+          "position": [
+            2820,
+            560
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        }
+      ],
+      "obstacles": [],
+      "floor_art": "res://assets/tiles/passage/floor_tile.png",
+      "floor_art_size": [
+        512,
+        180
+      ],
+      "drop_rule": {
+        "mode": "all",
+        "chance": 0.05
+      },
+      "perches": [],
+      "ceilings": [],
+      "reachability": {
+        "max_rise": 110,
+        "max_gap": 200,
+        "max_local_platform_elevation": 500,
+        "chains": [
+          [
+            "p0",
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6"
+          ],
+          [
+            "p6",
+            "p7",
+            "p8"
+          ]
+        ],
+        "floor_reference": 620,
+        "elevation_limits": [
+          -140,
+          400
+        ],
+        "required_ground_route": [
+          0,
+          3600
+        ]
+      },
+      "terrain": [
+        {
+          "id": "ground_0",
+          "from": 0,
+          "to": 600,
+          "y": 620,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_600",
+          "from": 600,
+          "to": 3000,
+          "y": 680,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_3000",
+          "from": 3000,
+          "to": 3600,
+          "y": 620,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        }
+      ]
+    },
+    "DowntownPassage_F6": {
+      "id": "DowntownPassage_F6",
+      "scene": "res://scenes/DowntownPassage_F6.tscn",
+      "width": 3600,
+      "floor_y": 620,
+      "bgm": "passage_descent",
+      "display_name": "도심 방향 통로 6층",
+      "theme_name": "돌진 회랑",
+      "palette": [
+        0.6,
+        0.37,
+        0.19
+      ],
+      "bg_dim": [
+        0.88,
+        0.88,
+        0.92
+      ],
+      "ceiling": true,
+      "camera_limits": [
+        0,
+        0,
+        3600,
+        800
+      ],
+      "safe_zones": [
+        [
+          0,
+          -100,
+          420,
+          1000
+        ],
+        [
+          3250,
+          -100,
+          350,
+          1000
+        ]
+      ],
+      "backgrounds": [
+        {
+          "name": "PassageInterior",
+          "path": "res://assets/backgrounds/passage/passage_f6_bg.png",
+          "position": [
+            0,
+            0
+          ],
+          "size": [
+            3600,
+            800
+          ],
+          "ratio": 1,
+          "z": -25
+        }
+      ],
+      "spawns": {
+        "Spawn_FromAbove": [
+          3330,
+          620
+        ],
+        "Spawn_FromBelow": [
+          300,
+          620
+        ]
+      },
+      "doors": [
+        {
+          "door_id": "door_up",
+          "position": [
+            3450,
+            620
+          ],
+          "target_level": "DowntownPassage_F7",
+          "target_spawn": "Spawn_FromBelow",
+          "arrival_spawn": "Spawn_FromAbove",
+          "door_art": "res://assets/props/doors/passage_door.png",
+          "exit_direction": -1
+        },
+        {
+          "door_id": "door_down",
+          "position": [
+            220,
+            620
+          ],
+          "target_level": "DowntownPassage_F5",
+          "target_spawn": "Spawn_FromAbove",
+          "arrival_spawn": "Spawn_FromBelow",
+          "door_art": "res://assets/props/doors/passage_door.png",
+          "exit_direction": 1
+        }
+      ],
+      "npcs": [],
+      "enemies": [
+        {
+          "id": "boar_charger",
+          "position": [
+            3100,
+            620
+          ],
+          "patrol_center": 3100,
+          "patrol_range": 420
+        },
+        {
+          "id": "boar_charger",
+          "position": [
+            1100,
+            620
+          ],
+          "patrol_center": 1100,
+          "patrol_range": 420
+        },
+        {
+          "id": "gas_sac",
+          "position": [
+            2600,
+            520
+          ],
+          "patrol_center": 2600,
+          "patrol_range": 150
+        },
+        {
+          "id": "gas_sac",
+          "position": [
+            800,
+            500
+          ],
+          "patrol_center": 800,
+          "patrol_range": 150
+        },
+        {
+          "id": "wraith_ray",
+          "position": [
+            2200,
+            450
+          ],
+          "patrol_center": 2200,
+          "patrol_range": 3600
+        },
+        {
+          "id": "wraith_ray",
+          "position": [
+            600,
+            440
+          ],
+          "patrol_center": 600,
+          "patrol_range": 3600
+        },
+        {
+          "id": "shell_scorpion",
+          "position": [
+            3200,
+            620
+          ],
+          "patrol_center": 3200,
+          "patrol_range": 150
+        },
+        {
+          "id": "shell_scorpion",
+          "position": [
+            1300,
+            620
+          ],
+          "patrol_center": 1300,
+          "patrol_range": 150
+        }
+      ],
+      "decorations": [
+        {
+          "path": "res://assets/props/passage_pillar_b.png",
+          "position": [
+            550,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_pillar_b.png",
+          "position": [
+            1200,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_pillar_b.png",
+          "position": [
+            2750,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_chandelier.png",
+          "position": [
+            1700,
+            40
+          ],
+          "size": [
+            280,
+            360
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_pipe_cluster.png",
+          "position": [
+            2800,
+            100
+          ],
+          "size": [
+            420,
+            300
+          ],
+          "z": -2
+        }
+      ],
+      "steps": [],
+      "platforms": [
+        {
+          "id": "alcove_left",
+          "position": [
+            700,
+            520
+          ],
+          "width": 300,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "alcove_right",
+          "position": [
+            2450,
+            520
+          ],
+          "width": 300,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        }
+      ],
+      "obstacles": [],
+      "floor_art": "res://assets/tiles/passage/floor_tile.png",
+      "floor_art_size": [
+        512,
+        180
+      ],
+      "drop_rule": {
+        "mode": "all",
+        "chance": 0.05
+      },
+      "perches": [],
+      "ceilings": [],
+      "reachability": {
+        "max_rise": 110,
+        "max_gap": 200,
+        "max_local_platform_elevation": 500,
+        "chains": [],
+        "floor_reference": 620,
+        "elevation_limits": [
+          -140,
+          400
+        ],
+        "required_ground_route": [
+          0,
+          3600
+        ]
+      },
+      "terrain": [
+        {
+          "id": "ground_0",
+          "from": 0,
+          "to": 1700,
+          "y": 620,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_1700",
+          "from": 1700,
+          "to": 1950,
+          "y": 520,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_1950",
+          "from": 1950,
+          "to": 3600,
+          "y": 620,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        }
+      ]
+    },
+    "DowntownPassage_F7": {
+      "id": "DowntownPassage_F7",
+      "scene": "res://scenes/DowntownPassage_F7.tscn",
+      "width": 3600,
+      "floor_y": 620,
+      "bgm": "passage_descent",
+      "display_name": "도심 방향 통로 7층",
+      "theme_name": "저천장 터널",
+      "palette": [
+        0.37,
+        0.1,
+        0.16
+      ],
+      "bg_dim": [
+        0.88,
+        0.88,
+        0.92
+      ],
+      "ceiling": true,
+      "camera_limits": [
+        0,
+        0,
+        3600,
+        800
+      ],
+      "safe_zones": [
+        [
+          0,
+          -100,
+          420,
+          1000
+        ],
+        [
+          3250,
+          -100,
+          350,
+          1000
+        ]
+      ],
+      "backgrounds": [
+        {
+          "name": "PassageInterior",
+          "path": "res://assets/backgrounds/passage/passage_f7_bg.png",
+          "position": [
+            0,
+            0
+          ],
+          "size": [
+            3600,
+            800
+          ],
+          "ratio": 1,
+          "z": -25
+        }
+      ],
+      "spawns": {
+        "Spawn_FromAbove": [
+          3330,
+          620
+        ],
+        "Spawn_FromBelow": [
+          300,
+          620
+        ]
+      },
+      "doors": [
+        {
+          "door_id": "door_up",
+          "position": [
+            3450,
+            620
+          ],
+          "target_level": "DowntownPassage_F8",
+          "target_spawn": "Spawn_FromBelow",
+          "arrival_spawn": "Spawn_FromAbove",
+          "door_art": "res://assets/props/doors/passage_door.png",
+          "exit_direction": -1
+        },
+        {
+          "door_id": "door_down",
+          "position": [
+            220,
+            620
+          ],
+          "target_level": "DowntownPassage_F6",
+          "target_spawn": "Spawn_FromAbove",
+          "arrival_spawn": "Spawn_FromBelow",
+          "door_art": "res://assets/props/doors/passage_door.png",
+          "exit_direction": 1
+        }
+      ],
+      "npcs": [],
+      "enemies": [
+        {
+          "id": "gas_sac",
+          "position": [
+            2850,
+            500
+          ],
+          "patrol_center": 2850,
+          "patrol_range": 150
+        },
+        {
+          "id": "gas_sac",
+          "position": [
+            2100,
+            565
+          ],
+          "patrol_center": 2100,
+          "patrol_range": 150
+        },
+        {
+          "id": "wraith_ray",
+          "position": [
+            2800,
+            430
+          ],
+          "patrol_center": 2800,
+          "patrol_range": 3600
+        },
+        {
+          "id": "wraith_ray",
+          "position": [
+            1300,
+            540
+          ],
+          "patrol_center": 1300,
+          "patrol_range": 3600
+        },
+        {
+          "id": "shell_scorpion",
+          "position": [
+            3000,
+            620
+          ],
+          "patrol_center": 3000,
+          "patrol_range": 150
+        },
+        {
+          "id": "shell_scorpion",
+          "position": [
+            900,
+            620
+          ],
+          "patrol_center": 900,
+          "patrol_range": 150
+        },
+        {
+          "id": "corpse_bomber",
+          "position": [
+            2000,
+            620
+          ],
+          "patrol_center": 2000,
+          "patrol_range": 150
+        },
+        {
+          "id": "corpse_bomber",
+          "position": [
+            1200,
+            620
+          ],
+          "patrol_center": 1200,
+          "patrol_range": 150
+        },
+        {
+          "id": "corpse_bomber",
+          "position": [
+            500,
+            620
+          ],
+          "patrol_center": 500,
+          "patrol_range": 150
+        }
+      ],
+      "decorations": [
+        {
+          "path": "res://assets/props/passage_pillar_a.png",
+          "position": [
+            550,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_pillar_a.png",
+          "position": [
+            1200,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_pillar_a.png",
+          "position": [
+            2750,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_chandelier.png",
+          "position": [
+            1700,
+            40
+          ],
+          "size": [
+            280,
+            360
+          ],
+          "z": -2
+        }
+      ],
+      "steps": [],
+      "platforms": [
+        {
+          "id": "balcony_low",
+          "position": [
+            700,
+            530
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "balcony_high",
+          "position": [
+            900,
+            440
+          ],
+          "width": 300,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "balcony_exit",
+          "position": [
+            1200,
+            530
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        }
+      ],
+      "obstacles": [],
+      "floor_art": "res://assets/tiles/passage/floor_tile.png",
+      "floor_art_size": [
+        512,
+        180
+      ],
+      "drop_rule": {
+        "mode": "all",
+        "chance": 0.05
+      },
+      "perches": [],
+      "ceilings": [
+        {
+          "rect": [
+            1450,
+            380,
+            1200,
+            140
+          ],
+          "art": "res://assets/tiles/passage/low_tunnel_ceiling.png",
+          "clearance": 100
+        }
+      ],
+      "reachability": {
+        "max_rise": 110,
+        "max_gap": 200,
+        "max_local_platform_elevation": 500,
+        "chains": [
+          [
+            "balcony_low",
+            "balcony_high",
+            "balcony_exit"
+          ]
+        ],
+        "floor_reference": 620,
+        "elevation_limits": [
+          -140,
+          400
+        ],
+        "required_ground_route": [
+          0,
+          3600
+        ]
+      },
+      "terrain": [
+        {
+          "id": "ground_0",
+          "from": 0,
+          "to": 3600,
+          "y": 620,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        }
+      ]
+    },
+    "DowntownPassage_F8": {
+      "id": "DowntownPassage_F8",
+      "scene": "res://scenes/DowntownPassage_F8.tscn",
+      "width": 3600,
+      "floor_y": 620,
+      "bgm": "passage_descent",
+      "display_name": "도심 방향 통로 8층",
+      "theme_name": "최심부 수직 통로",
+      "palette": [
+        0.48,
+        0.09,
+        0.14
+      ],
+      "bg_dim": [
+        0.88,
+        0.88,
+        0.92
+      ],
+      "ceiling": true,
+      "camera_limits": [
+        0,
+        0,
+        3600,
+        960
+      ],
+      "safe_zones": [
+        [
+          0,
+          -100,
+          420,
+          1160
+        ],
+        [
+          3250,
+          -100,
+          350,
+          1160
+        ]
+      ],
+      "backgrounds": [
+        {
+          "name": "PassageInterior",
+          "path": "res://assets/backgrounds/passage/passage_f8_bg.png",
+          "position": [
+            0,
+            0
+          ],
+          "size": [
+            3600,
+            960
+          ],
+          "ratio": 1,
+          "z": -25
+        }
+      ],
+      "spawns": {
+        "Spawn_FromAbove": [
+          3330,
+          620
+        ],
+        "Spawn_FromBelow": [
+          300,
+          620
+        ],
+        "Spawn_FromTop": [
+          3330,
+          620
+        ]
+      },
+      "doors": [
+        {
+          "door_id": "door_up",
+          "position": [
+            3450,
+            620
+          ],
+          "target_level": "CastleOutskirts",
+          "target_spawn": "Spawn_FromPassage",
+          "arrival_spawn": "Spawn_FromTop",
+          "door_art": "res://assets/props/doors/downtown_passage_door_anim.png",
+          "exit_direction": -1
+        },
+        {
+          "door_id": "door_down",
+          "position": [
+            220,
+            620
+          ],
+          "target_level": "DowntownPassage_F7",
+          "target_spawn": "Spawn_FromAbove",
+          "arrival_spawn": "Spawn_FromBelow",
+          "door_art": "res://assets/props/doors/passage_door.png",
+          "exit_direction": 1
+        }
+      ],
+      "npcs": [],
+      "enemies": [
+        {
+          "id": "wraith_ray",
+          "position": [
+            3000,
+            440
+          ],
+          "patrol_center": 3000,
+          "patrol_range": 3600
+        },
+        {
+          "id": "wraith_ray",
+          "position": [
+            1500,
+            340
+          ],
+          "patrol_center": 1500,
+          "patrol_range": 3600
+        },
+        {
+          "id": "wraith_ray",
+          "position": [
+            600,
+            420
+          ],
+          "patrol_center": 600,
+          "patrol_range": 3600
+        },
+        {
+          "id": "shell_scorpion",
+          "position": [
+            3200,
+            620
+          ],
+          "patrol_center": 3200,
+          "patrol_range": 150
+        },
+        {
+          "id": "shell_scorpion",
+          "position": [
+            900,
+            530
+          ],
+          "patrol_center": 900,
+          "patrol_range": 150
+        },
+        {
+          "id": "corpse_bomber",
+          "position": [
+            2600,
+            620
+          ],
+          "patrol_center": 2600,
+          "patrol_range": 150
+        },
+        {
+          "id": "corpse_bomber",
+          "position": [
+            1100,
+            440
+          ],
+          "patrol_center": 1100,
+          "patrol_range": 150
+        },
+        {
+          "id": "corpse_bomber",
+          "position": [
+            480,
+            620
+          ],
+          "patrol_center": 480,
+          "patrol_range": 150
+        },
+        {
+          "id": "chain_beastman",
+          "position": [
+            1900,
+            620
+          ],
+          "patrol_center": 1900,
+          "patrol_range": 350
+        }
+      ],
+      "decorations": [
+        {
+          "path": "res://assets/props/passage_pillar_b.png",
+          "position": [
+            550,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_pillar_b.png",
+          "position": [
+            1200,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_pillar_b.png",
+          "position": [
+            2750,
+            0
+          ],
+          "size": [
+            220,
+            620
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/passage_chandelier.png",
+          "position": [
+            1700,
+            40
+          ],
+          "size": [
+            280,
+            360
+          ],
+          "z": -2
+        }
+      ],
+      "steps": [],
+      "platforms": [
+        {
+          "id": "wall_l90",
+          "position": [
+            1680,
+            530
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "wall_l180",
+          "position": [
+            1510,
+            440
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "wall_l270",
+          "position": [
+            1680,
+            350
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "wall_r90",
+          "position": [
+            2410,
+            530
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "wall_r180",
+          "position": [
+            2580,
+            440
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "wall_r270",
+          "position": [
+            2410,
+            350
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/passage/platform.png",
+          "art_height": 48
+        }
+      ],
+      "obstacles": [],
+      "floor_art": "res://assets/tiles/passage/floor_tile.png",
+      "floor_art_size": [
+        512,
+        180
+      ],
+      "drop_rule": {
+        "mode": "all",
+        "chance": 0.05
+      },
+      "perches": [],
+      "ceilings": [],
+      "reachability": {
+        "max_rise": 110,
+        "max_gap": 200,
+        "max_local_platform_elevation": 500,
+        "chains": [
+          [
+            "wall_l90",
+            "wall_l180",
+            "wall_l270"
+          ],
+          [
+            "wall_r90",
+            "wall_r180",
+            "wall_r270"
+          ]
+        ],
+        "floor_reference": 620,
+        "elevation_limits": [
+          -140,
+          400
+        ],
+        "required_ground_route": [
+          0,
+          3600
+        ]
+      },
+      "terrain": [
+        {
+          "id": "ground_0",
+          "from": 0,
+          "to": 750,
+          "y": 620,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_750",
+          "from": 750,
+          "to": 1050,
+          "y": 530,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_1050",
+          "from": 1050,
+          "to": 1350,
+          "y": 440,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_1350",
+          "from": 1350,
+          "to": 1650,
+          "y": 530,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        },
+        {
+          "id": "ground_1650",
+          "from": 1650,
+          "to": 3600,
+          "y": 620,
+          "art": "res://assets/tiles/passage/floor_tile.png"
+        }
+      ]
+    },
+    "HomeRoad": {
+      "id": "HomeRoad",
+      "scene": "res://scenes/HomeRoad.tscn",
+      "width": 10800,
+      "floor_y": 880,
+      "bgm": "uruk_home_road",
+      "display_name": "니므롯의 집 가는 길",
+      "bg_dim": [
+        0.88,
+        0.88,
+        0.92
+      ],
+      "ceiling": false,
+      "camera_limits": [
+        0,
+        0,
+        10800,
+        1240
+      ],
+      "safe_zones": [
+        [
+          0,
+          -200,
+          900,
+          1800
+        ]
+      ],
+      "spawns": {
+        "Spawn_FromPassage": [
+          10400,
+          880
+        ],
+        "Spawn_Debug": [
+          5000,
+          720
+        ]
+      },
+      "doors": [
+        {
+          "door_id": "passage_exit",
+          "position": [
+            10400,
+            880
+          ],
+          "target_level": "DowntownPassage_F1",
+          "target_spawn": "Spawn_FromBelow",
+          "arrival_spawn": "Spawn_FromPassage",
+          "door_art": "res://assets/props/doors/downtown_passage_door_anim.png",
+          "exit_direction": -1
+        },
+        {
+          "door_id": "nimrod_home_gate",
+          "position": [
+            400,
+            880
+          ],
+          "target_level": "",
+          "target_spawn": "",
+          "arrival_spawn": "",
+          "door_art": "res://assets/props/doors/nimrod_home_gate.png",
+          "exit_direction": 1,
+          "locked": true,
+          "locked_message": "아직 들어갈 수 없다"
+        }
+      ],
+      "npcs": [],
+      "enemies": [
+        {
+          "id": "melee_beast",
+          "position": [
+            9900,
+            880
+          ],
+          "patrol_center": 9900,
+          "patrol_range": 150
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            8800,
+            880
+          ],
+          "patrol_center": 8800,
+          "patrol_range": 150
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            8500,
+            880
+          ],
+          "patrol_center": 8500,
+          "patrol_range": 150
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            7800,
+            980
+          ],
+          "patrol_center": 7800,
+          "patrol_range": 150
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            7200,
+            980
+          ],
+          "patrol_center": 7200,
+          "patrol_range": 150
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            6600,
+            880
+          ],
+          "patrol_center": 6600,
+          "patrol_range": 150
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            6100,
+            880
+          ],
+          "patrol_center": 6100,
+          "patrol_range": 150
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            5700,
+            880
+          ],
+          "patrol_center": 5700,
+          "patrol_range": 150
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            4600,
+            720
+          ],
+          "patrol_center": 4600,
+          "patrol_range": 150
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            3600,
+            880
+          ],
+          "patrol_center": 3600,
+          "patrol_range": 150
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            3000,
+            880
+          ],
+          "patrol_center": 3000,
+          "patrol_range": 150
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            2300,
+            800
+          ],
+          "patrol_center": 2300,
+          "patrol_range": 150
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            1800,
+            840
+          ],
+          "patrol_center": 1800,
+          "patrol_range": 150
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            1300,
+            880
+          ],
+          "patrol_center": 1300,
+          "patrol_range": 150
+        },
+        {
+          "id": "ranged_beast",
+          "position": [
+            9000,
+            690
+          ],
+          "patrol_center": 9000,
+          "patrol_range": 150
+        },
+        {
+          "id": "ranged_beast",
+          "position": [
+            7500,
+            840
+          ],
+          "patrol_center": 7500,
+          "patrol_range": 150
+        },
+        {
+          "id": "ranged_beast",
+          "position": [
+            6300,
+            760
+          ],
+          "patrol_center": 6300,
+          "patrol_range": 150
+        },
+        {
+          "id": "ranged_beast",
+          "position": [
+            4900,
+            720
+          ],
+          "patrol_center": 4900,
+          "patrol_range": 150
+        },
+        {
+          "id": "ranged_beast",
+          "position": [
+            4400,
+            800
+          ],
+          "patrol_center": 4400,
+          "patrol_range": 150
+        },
+        {
+          "id": "ranged_beast",
+          "position": [
+            3800,
+            730
+          ],
+          "patrol_center": 3800,
+          "patrol_range": 150
+        },
+        {
+          "id": "ranged_beast",
+          "position": [
+            3100,
+            730
+          ],
+          "patrol_center": 3100,
+          "patrol_range": 150
+        },
+        {
+          "id": "ranged_beast",
+          "position": [
+            2000,
+            840
+          ],
+          "patrol_center": 2000,
+          "patrol_range": 150
+        }
+      ],
+      "decorations": [
+        {
+          "path": "res://assets/props/house_ruin_a.png",
+          "position": [
+            8500,
+            500
+          ],
+          "size": [
+            500,
+            380
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/house_ruin_b.png",
+          "position": [
+            9160,
+            580
+          ],
+          "size": [
+            420,
+            300
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/broken_overpass.png",
+          "position": [
+            2870,
+            730
+          ],
+          "size": [
+            1100,
+            260
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/canal_wall_left.png",
+          "position": [
+            6840,
+            780
+          ],
+          "size": [
+            300,
+            260
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/canal_wall_right.png",
+          "position": [
+            8060,
+            780
+          ],
+          "size": [
+            300,
+            260
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/market_stall_a.png",
+          "position": [
+            5650,
+            710
+          ],
+          "size": [
+            260,
+            170
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/market_stall_b.png",
+          "position": [
+            6500,
+            710
+          ],
+          "size": [
+            260,
+            170
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/garden_fence.png",
+          "position": [
+            1150,
+            740
+          ],
+          "size": [
+            600,
+            140
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/lamp_post_ruined.png",
+          "position": [
+            9780,
+            620
+          ],
+          "size": [
+            100,
+            260
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/shrub.png",
+          "position": [
+            2080,
+            820
+          ],
+          "size": [
+            220,
+            140
+          ],
+          "z": -2
+        }
+      ],
+      "steps": [],
+      "platforms": [
+        {
+          "id": "balcony_left",
+          "position": [
+            8500,
+            780
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/homeroad/balcony_platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "balcony",
+          "position": [
+            8800,
+            690
+          ],
+          "width": 600,
+          "art": "res://assets/tiles/homeroad/balcony_platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "balcony_right",
+          "position": [
+            9400,
+            780
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/homeroad/balcony_platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "canal_left_step",
+          "position": [
+            7000,
+            910
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/homeroad/balcony_platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "slab1",
+          "position": [
+            7180,
+            840
+          ],
+          "width": 260,
+          "art": "res://assets/tiles/homeroad/stone_slab_bridge.png",
+          "art_height": 48
+        },
+        {
+          "id": "slab2",
+          "position": [
+            7500,
+            840
+          ],
+          "width": 260,
+          "art": "res://assets/tiles/homeroad/stone_slab_bridge.png",
+          "art_height": 48
+        },
+        {
+          "id": "slab3",
+          "position": [
+            7820,
+            840
+          ],
+          "width": 260,
+          "art": "res://assets/tiles/homeroad/stone_slab_bridge.png",
+          "art_height": 48
+        },
+        {
+          "id": "canal_right_step",
+          "position": [
+            8080,
+            910
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/homeroad/balcony_platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "market_left",
+          "position": [
+            6010,
+            820
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/homeroad/balcony_platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "market_roof",
+          "position": [
+            6190,
+            760
+          ],
+          "width": 260,
+          "art": "res://assets/tiles/homeroad/balcony_platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "market_right",
+          "position": [
+            6450,
+            820
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/homeroad/balcony_platform.png",
+          "art_height": 48
+        },
+        {
+          "id": "overpass_left",
+          "position": [
+            2800,
+            805
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/homeroad/stone_slab_bridge.png",
+          "art_height": 48
+        },
+        {
+          "id": "overpass1",
+          "position": [
+            2980,
+            730
+          ],
+          "width": 360,
+          "art": "res://assets/tiles/homeroad/stone_slab_bridge.png",
+          "art_height": 48
+        },
+        {
+          "id": "overpass2",
+          "position": [
+            3440,
+            730
+          ],
+          "width": 360,
+          "art": "res://assets/tiles/homeroad/stone_slab_bridge.png",
+          "art_height": 48
+        },
+        {
+          "id": "overpass3",
+          "position": [
+            3800,
+            730
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/homeroad/stone_slab_bridge.png",
+          "art_height": 48
+        },
+        {
+          "id": "overpass_right",
+          "position": [
+            3980,
+            805
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/homeroad/stone_slab_bridge.png",
+          "art_height": 48
+        }
+      ],
+      "obstacles": [
+        {
+          "rect": [
+            5800,
+            820,
+            160,
+            60
+          ],
+          "art": "res://assets/props/market_stall_a.png"
+        },
+        {
+          "rect": [
+            6150,
+            800,
+            160,
+            80
+          ],
+          "art": "res://assets/props/market_stall_a.png"
+        },
+        {
+          "rect": [
+            6600,
+            820,
+            160,
+            60
+          ],
+          "art": "res://assets/props/market_stall_a.png"
+        }
+      ],
+      "floor_art": "res://assets/tiles/homeroad/ground_tile.png",
+      "floor_art_size": [
+        512,
+        200
+      ],
+      "backgrounds": [
+        {
+          "name": "Sky",
+          "path": "res://assets/backgrounds/homeroad/sky.png",
+          "position": [
+            0,
+            0
+          ],
+          "size": [
+            1792,
+            720
+          ],
+          "ratio": 0.05,
+          "z": -40
+        },
+        {
+          "name": "FarCity",
+          "path": "res://assets/backgrounds/homeroad/far_tile.png",
+          "position": [
+            0,
+            0
+          ],
+          "size": [
+            2048,
+            720
+          ],
+          "ratio": 0.2,
+          "z": -30,
+          "repeat_size": [
+            2048,
+            0
+          ],
+          "repeat_times": 6
+        },
+        {
+          "name": "MidDistrict",
+          "path": "res://assets/backgrounds/homeroad/mid_district_tile.png",
+          "position": [
+            0,
+            0
+          ],
+          "size": [
+            2048,
+            720
+          ],
+          "ratio": 0.45,
+          "z": -20,
+          "repeat_size": [
+            2048,
+            0
+          ],
+          "repeat_times": 6
+        },
+        {
+          "name": "HomeExterior",
+          "path": "res://assets/props/nimrod_home_exterior.png",
+          "position": [
+            0,
+            160
+          ],
+          "size": [
+            1300,
+            720
+          ],
+          "ratio": 1,
+          "z": -10
+        },
+        {
+          "name": "PassageExterior",
+          "path": "res://assets/backgrounds/castle_front/downtown_passage_facade.png",
+          "position": [
+            9700,
+            160
+          ],
+          "size": [
+            1100,
+            720
+          ],
+          "ratio": 1,
+          "z": -10
+        }
+      ],
+      "reachability": {
+        "max_rise": 110,
+        "max_gap": 200,
+        "max_local_platform_elevation": 440,
+        "chains": [
+          [
+            "balcony_left",
+            "balcony",
+            "balcony_right"
+          ],
+          [
+            "canal_left_step",
+            "slab1",
+            "slab2",
+            "slab3",
+            "canal_right_step"
+          ],
+          [
+            "market_left",
+            "market_roof",
+            "market_right"
+          ],
+          [
+            "overpass_left",
+            "overpass1",
+            "overpass2",
+            "overpass3",
+            "overpass_right"
+          ]
+        ],
+        "floor_reference": 880,
+        "elevation_limits": [
+          -120,
+          440
+        ],
+        "required_ground_route": [
+          0,
+          10800
+        ],
+        "door_distance": 10000
+      },
+      "terrain": [
+        {
+          "id": "ground_0",
+          "from": 0,
+          "to": 1500,
+          "y": 880,
+          "art": "res://assets/tiles/homeroad/ground_tile.png"
+        },
+        {
+          "id": "ground_1500",
+          "from": 1500,
+          "to": 1800,
+          "y": 880,
+          "art": "res://assets/tiles/homeroad/ground_tile.png"
+        },
+        {
+          "id": "ground_1800",
+          "from": 1800,
+          "to": 2100,
+          "y": 840,
+          "art": "res://assets/tiles/homeroad/ground_tile.png"
+        },
+        {
+          "id": "ground_2100",
+          "from": 2100,
+          "to": 2400,
+          "y": 800,
+          "art": "res://assets/tiles/homeroad/ground_tile.png"
+        },
+        {
+          "id": "ground_2400",
+          "from": 2400,
+          "to": 2700,
+          "y": 840,
+          "art": "res://assets/tiles/homeroad/ground_tile.png"
+        },
+        {
+          "id": "ground_2700",
+          "from": 2700,
+          "to": 4000,
+          "y": 880,
+          "art": "res://assets/tiles/homeroad/ground_tile.png"
+        },
+        {
+          "id": "ground_4000",
+          "from": 4000,
+          "to": 4250,
+          "y": 880,
+          "art": "res://assets/tiles/homeroad/ground_tile.png"
+        },
+        {
+          "id": "ground_4250",
+          "from": 4250,
+          "to": 4500,
+          "y": 800,
+          "art": "res://assets/tiles/homeroad/ground_tile.png"
+        },
+        {
+          "id": "ground_4500",
+          "from": 4500,
+          "to": 4750,
+          "y": 720,
+          "art": "res://assets/tiles/homeroad/ground_tile.png"
+        },
+        {
+          "id": "ground_4750",
+          "from": 4750,
+          "to": 4900,
+          "y": 640,
+          "art": "res://assets/tiles/homeroad/ground_tile.png"
+        },
+        {
+          "id": "ground_4900",
+          "from": 4900,
+          "to": 5150,
+          "y": 720,
+          "art": "res://assets/tiles/homeroad/ground_tile.png"
+        },
+        {
+          "id": "ground_5150",
+          "from": 5150,
+          "to": 5400,
+          "y": 800,
+          "art": "res://assets/tiles/homeroad/ground_tile.png"
+        },
+        {
+          "id": "ground_5400",
+          "from": 5400,
+          "to": 6900,
+          "y": 880,
+          "art": "res://assets/tiles/homeroad/ground_tile.png"
+        },
+        {
+          "id": "ground_6900",
+          "from": 6900,
+          "to": 7100,
+          "y": 930,
+          "art": "res://assets/tiles/homeroad/ground_tile.png"
+        },
+        {
+          "id": "ground_7100",
+          "from": 7100,
+          "to": 8100,
+          "y": 980,
+          "art": "res://assets/tiles/homeroad/ground_tile.png"
+        },
+        {
+          "id": "ground_8100",
+          "from": 8100,
+          "to": 8300,
+          "y": 930,
+          "art": "res://assets/tiles/homeroad/ground_tile.png"
+        },
+        {
+          "id": "ground_8300",
+          "from": 8300,
+          "to": 10800,
+          "y": 880,
+          "art": "res://assets/tiles/homeroad/ground_tile.png"
+        }
+      ],
+      "regions": [
+        {
+          "id": 1,
+          "span": [
+            9700,
+            10800
+          ],
+          "label": "통로 앞 평지"
+        },
+        {
+          "id": 2,
+          "span": [
+            8300,
+            9700
+          ],
+          "label": "허물어진 주거지"
+        },
+        {
+          "id": 3,
+          "span": [
+            6900,
+            8300
+          ],
+          "label": "마른 수로"
+        },
+        {
+          "id": 4,
+          "span": [
+            5400,
+            6900
+          ],
+          "label": "시장 광장"
+        },
+        {
+          "id": 5,
+          "span": [
+            4000,
+            5400
+          ],
+          "label": "급경사 언덕"
+        },
+        {
+          "id": 6,
+          "span": [
+            2700,
+            4000
+          ],
+          "label": "부서진 고가 도로"
+        },
+        {
+          "id": 7,
+          "span": [
+            1500,
+            2700
+          ],
+          "label": "안개 정원"
+        },
+        {
+          "id": 8,
+          "span": [
+            0,
+            1500
+          ],
+          "label": "니므롯의 집"
+        }
+      ]
+    }
+  },
+  "fx": {
+    "fx": [
+      {
+        "name": "spit_projectile",
+        "path": "res://assets/sprites/fx/spit_projectile.png",
+        "frame_size": [
+          128,
+          128
+        ],
+        "frames": 4,
+        "duration": 0.4,
+        "loop": true
+      },
+      {
+        "name": "explosion",
+        "path": "res://assets/sprites/fx/explosion.png",
+        "frame_size": [
+          256,
+          256
+        ],
+        "frames": 6,
+        "duration": 0.35,
+        "loop": false
+      },
+      {
+        "name": "gas_cloud",
+        "path": "res://assets/sprites/fx/gas_cloud.png",
+        "frame_size": [
+          256,
+          256
+        ],
+        "frames": 6,
+        "duration": 0.6,
+        "loop": true
+      },
+      {
+        "name": "guard_spark",
+        "path": "res://assets/sprites/fx/guard_spark.png",
+        "frame_size": [
+          192,
+          192
+        ],
+        "frames": 5,
+        "duration": 0.18,
+        "loop": false
+      },
+      {
+        "name": "chain_segment",
+        "path": "res://assets/sprites/fx/chain_segment.png",
+        "frame_size": [
+          64,
+          24
+        ],
+        "frames": 1,
+        "duration": 1,
+        "loop": true
+      },
+      {
+        "name": "chain_hook",
+        "path": "res://assets/sprites/fx/chain_hook.png",
+        "frame_size": [
+          96,
+          96
+        ],
+        "frames": 1,
+        "duration": 1,
+        "loop": true
+      }
+    ]
+  },
+  "world": {
+    "surface_layer": 1,
+    "one_way_layer": 2,
+    "wall_thickness": 64,
+    "outside_margin": 200,
+    "ground_collision_height": 220,
+    "one_way_margin": 8,
+    "platform_collision_height": 16,
+    "platform_art_height": 48,
+    "step_art": "res://assets/tiles/rear_gate/step_block.png",
+    "platform_art": "res://assets/tiles/rear_gate/platform.png",
+    "npc_script": "res://scripts/npc_base.gd",
+    "gatekeeper_script": "res://scripts/villa_gatekeeper.gd",
+    "door_script": "res://scripts/door_portal.gd",
+    "villa_gate_script": "res://scripts/villa_gate.gd",
+    "enemy_scripts": {
+      "melee_beast": "res://scripts/enemy_melee_beast.gd",
+      "ranged_beast": "res://scripts/enemy_ranged_beast.gd",
+      "sky_beast": "res://scripts/enemy_sky_beast.gd",
+      "explosive_spitter": "res://scripts/enemy_explosive_spitter.gd",
+      "wall_diver": "res://scripts/enemy_wall_diver.gd",
+      "root_spewer": "res://scripts/enemy_root_spewer.gd",
+      "boar_charger": "res://scripts/enemy_boar_charger.gd",
+      "gas_sac": "res://scripts/enemy_gas_sac.gd",
+      "wraith_ray": "res://scripts/enemy_wraith_ray.gd",
+      "shell_scorpion": "res://scripts/enemy_shell_scorpion.gd",
+      "corpse_bomber": "res://scripts/enemy_corpse_bomber.gd",
+      "chain_beastman": "res://scripts/enemy_chain_beastman.gd"
+    },
+    "enemy_copy_spacing": 100,
+    "gate_controller_script": "res://scripts/gate_controller.gd",
+    "underground_art": "res://assets/tiles/underground_fill.png",
+    "underground_size": [
+      512,
+      512
+    ]
+  },
+  "player_visuals": {
+    "reference_height_px": 363,
+    "height_tolerance": 0.03,
+    "visual_scale": 0.3,
+    "frame_size": [
+      640,
+      640
+    ],
+    "anchor": [
+      320,
+      600
+    ],
+    "alpha_threshold": 0,
+    "margin_px": 8,
+    "status": "generated_validated_applied",
+    "before_height_px": 363,
+    "before_alpha12_height_px": 359,
+    "before_bounds": [
+      233,
+      237,
+      458,
+      600
+    ],
+    "clips": [
+      {
+        "name": "idle",
+        "frames": 10,
+        "duration": 2.2,
+        "loop": true
+      },
+      {
+        "name": "walk",
+        "frames": 10,
+        "duration": 1.05,
+        "loop": true
+      },
+      {
+        "name": "run",
+        "frames": 10,
+        "duration": 0.82,
+        "loop": true
+      },
+      {
+        "name": "crouch_enter",
+        "frames": 4,
+        "duration": 0.14,
+        "loop": false
+      },
+      {
+        "name": "crouch_idle",
+        "frames": 6,
+        "duration": 0.8,
+        "loop": true
+      },
+      {
+        "name": "crouch_exit",
+        "frames": 4,
+        "duration": 0.13,
+        "loop": false
+      },
+      {
+        "name": "jump_start",
+        "frames": 4,
+        "duration": 0.13,
+        "loop": false
+      },
+      {
+        "name": "jump_rise",
+        "frames": 6,
+        "duration": 0.42,
+        "loop": false
+      },
+      {
+        "name": "fall",
+        "frames": 6,
+        "duration": 0.36,
+        "loop": true
+      },
+      {
+        "name": "land",
+        "frames": 5,
+        "duration": 0.24,
+        "loop": false
+      },
+      {
+        "name": "drop_through",
+        "frames": 5,
+        "duration": 0.22,
+        "loop": false
+      },
+      {
+        "name": "attack_1",
+        "frames": 8,
+        "duration": 0.33,
+        "loop": false
+      },
+      {
+        "name": "attack_2",
+        "frames": 8,
+        "duration": 0.33,
+        "loop": false
+      },
+      {
+        "name": "attack_3",
+        "frames": 10,
+        "duration": 0.4,
+        "loop": false
+      },
+      {
+        "name": "attack_4",
+        "frames": 10,
+        "duration": 0.56,
+        "loop": false
+      },
+      {
+        "name": "roll",
+        "frames": 12,
+        "duration": 0.48,
+        "loop": false
+      },
+      {
+        "name": "hurt",
+        "frames": 5,
+        "duration": 0.32,
+        "loop": false
+      },
+      {
+        "name": "death",
+        "frames": 8,
+        "duration": 0.6,
+        "loop": false
+      }
+    ],
+    "after_height_px": 363,
+    "after_bounds": [
+      201,
+      237,
+      439,
+      600
+    ]
+  }
+}

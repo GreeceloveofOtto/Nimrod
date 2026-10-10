@@ -1,0 +1,5 @@
+LOOP gas_loop seam 317.0 normal99.9% 5838.6
+LOOP wraith_wail_loop seam 517.0 normal99.9% 5901.7
+LOOP passage_descent seam 67.0 normal99.9% 317.0
+LOOP uruk_home_road seam 53.0 normal99.9% 382.0
+STAGE5_AUDIO: 154 checks, 0 failures

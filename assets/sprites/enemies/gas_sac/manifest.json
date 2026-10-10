@@ -1,0 +1,125 @@
+{
+  "character": "gas_sac",
+  "clips": [
+    {
+      "name": "float",
+      "sheet": "sprites/enemies/gas_sac/float.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.9,
+      "fps": 6.666666666666666,
+      "loop": true,
+      "anchor_px": [
+        320,
+        320
+      ],
+      "image_size": [
+        3840,
+        640
+      ]
+    },
+    {
+      "name": "bump",
+      "sheet": "sprites/enemies/gas_sac/bump.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 3,
+      "rows": 1,
+      "frames": 3,
+      "duration_seconds": 0.2,
+      "fps": 15.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        320
+      ],
+      "image_size": [
+        1920,
+        640
+      ]
+    },
+    {
+      "name": "turn",
+      "sheet": "sprites/enemies/gas_sac/turn.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.3,
+      "fps": 13.333333333333334,
+      "loop": false,
+      "anchor_px": [
+        320,
+        320
+      ],
+      "image_size": [
+        2560,
+        640
+      ]
+    },
+    {
+      "name": "hurt",
+      "sheet": "sprites/enemies/gas_sac/hurt.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 2,
+      "rows": 1,
+      "frames": 2,
+      "duration_seconds": 0.2,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        320
+      ],
+      "image_size": [
+        1280,
+        640
+      ]
+    },
+    {
+      "name": "death_swell",
+      "sheet": "sprites/enemies/gas_sac/death_swell.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 1.0,
+      "fps": 6.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        320
+      ],
+      "image_size": [
+        3840,
+        640
+      ]
+    },
+    {
+      "name": "burst",
+      "sheet": "sprites/enemies/gas_sac/burst.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.3,
+      "fps": 16.666666666666668,
+      "loop": false,
+      "anchor_px": [
+        320,
+        320
+      ],
+      "image_size": [
+        3200,
+        640
+      ]
+    }
+  ]
+}

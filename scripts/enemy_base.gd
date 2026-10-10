@@ -259,9 +259,10 @@ func _update_recovery(delta: float) -> void:
 
 func _update_turn(delta: float) -> void:
     _brake(delta)
-    var delay: float = float(stats.get("turn_delay", 0.0))
+    var delay: float = _turn_seconds()
     # Four equally timed frames: index 2 (the third frame) begins at halfway.
-    if not turn_flip_applied and state_clock >= delay * 0.5:
+    var frames: int = maxi(3, int(clip_data.get("turn", {}).get("frames", 4)))
+    if not turn_flip_applied and state_clock >= delay * 2.0 / frames:
         facing = pending_facing
         visual.flip_h = facing < 0
         turn_flip_applied = true
@@ -321,6 +322,9 @@ func _request_turn(direction: int) -> void:
     turn_flip_applied = false
     _set_state(State.TURN)
 
+func _turn_seconds() -> float:
+    return float(stats.get("turn_delay", 0.0))
+
 func _begin_attack() -> void:
     attack_has_hit = false
     _set_state(State.WINDUP)
@@ -376,11 +380,11 @@ func _player_in_attack(player: Node2D) -> bool:
         return false
     return get_attack_rect().intersects(_player_rect(player))
 
-func take_hit(damage: int, from_pos: Vector2, step: int) -> void:
-    _receive_hit(damage, from_pos, step, false)
+func take_hit(damage: int, from_pos: Vector2, step: int) -> Dictionary:
+    return _receive_hit(damage, from_pos, step, false)
 
-func take_shockwave_hit(damage: int, from_pos: Vector2, step: int = 4) -> void:
-    _receive_hit(damage, from_pos, step, true)
+func take_shockwave_hit(damage: int, from_pos: Vector2, step: int = 4) -> Dictionary:
+    return _receive_hit(damage, from_pos, step, true)
 
 func _strike_data(step: int, shockwave: bool) -> Dictionary:
     if shockwave:
@@ -390,9 +394,10 @@ func _strike_data(step: int, shockwave: bool) -> Dictionary:
             return attack
     return {}
 
-func _receive_hit(damage: int, from_pos: Vector2, step: int, shockwave: bool) -> void:
+func _receive_hit(damage: int, from_pos: Vector2, step: int, shockwave: bool) -> Dictionary:
     if state == State.DEAD:
-        return
+        return {"blocked": false, "damage_dealt": 0}
+    var dealt: int = mini(hp, maxi(0, damage))
     var strike: Dictionary = _strike_data(step, shockwave)
     hp = maxi(0, hp - damage)
     var direction: float = 1.0 if global_position.x >= from_pos.x else -1.0
@@ -403,8 +408,9 @@ func _receive_hit(damage: int, from_pos: Vector2, step: int, shockwave: bool) ->
     damaged.emit(damage, hp)
     if hp <= 0:
         _die()
-        return
+        return {"blocked": false, "damage_dealt": dealt}
     _on_hit(float(strike.get("stagger", 0.0)))
+    return {"blocked": false, "damage_dealt": dealt}
 
 func _on_hit(seconds: float) -> void:
     _apply_stun(seconds)
@@ -448,8 +454,18 @@ func _die() -> void:
     died.emit(self)
     _show_clip("death", 0.0)
 
+func get_drop_chance() -> float:
+    var level: Node = _level()
+    if level != null and level.get("config") is Dictionary:
+        var rule: Dictionary = level.config.get("drop_rule", {})
+        if str(rule.get("mode", "")) == "only_listed":
+            return float(rule.get("listed", {}).get(enemy_id, 0.0))
+        if str(rule.get("mode", "")) == "all":
+            return float(rule.get("chance", 0.0))
+    return float(stats.get("drop_chance", 0.0))
+
 func _on_death() -> void:
-    if randf() < float(stats.get("drop_chance", 0.0)):
+    if randf() < get_drop_chance():
         var level: Node = _level()
         if level == null:
             return
@@ -501,7 +517,7 @@ func _show_clip(clip_name: String, seconds: float) -> void:
     var frames: int = maxi(1, int(clip.get("frames", 1)))
     var duration_seconds: float = float(clip.get("duration_seconds", common.get("missing_clip_seconds", 1.0)))
     if clip_name == "turn":
-        duration_seconds = float(stats.get("turn_delay", duration_seconds))
+        duration_seconds = _turn_seconds()
     var phase: float = fmod(seconds, maxf(0.001, duration_seconds)) if bool(clip.get("loop", false)) else seconds
     current_frame = clampi(int(phase / maxf(0.001, duration_seconds) * frames), 0, frames - 1)
     if texture == null:

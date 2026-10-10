@@ -114,7 +114,7 @@
     },
     {
       "name": "roll",
-      "frames": 10,
+      "frames": 12,
       "duration": 0.48,
       "loop": false
     },

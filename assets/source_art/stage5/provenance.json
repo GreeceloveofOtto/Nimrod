@@ -1,0 +1,95 @@
+{
+  "tool": "image_gen.imagegen",
+  "background": "#FF00FF unless opaque background",
+  "processing": "pack_sprites.py chromakey/crop/resize/anchor alignment; generated tiles get edge blending and color correction; no game art drawn in code",
+  "roll_reference": [
+    "assets/reference/nimrod_design.png",
+    "assets/reference/nimrod_base_right.png"
+  ],
+  "rejected_atlases": [
+    "chain_beastman_first.png",
+    "corpse_bomber_first.png",
+    "gas_sac_first.png",
+    "root_spewer_first.png"
+  ],
+  "files": {
+    "shell_scorpion_atlas.png": {
+      "sha256": "7ebf753d710df46978304247cbf50426774d8b7ee08aee5a42dd7602d57e2d4f"
+    },
+    "wraith_ray_atlas.png": {
+      "sha256": "0e775bfc8755fd8b2f2466cc81975fd98a1799ba9550370f10197721f2650659"
+    },
+    "fx_atlas.png": {
+      "sha256": "e7793a7be3249b814d0a0b96c7761109830a608cf74bbced2baa8c566fe9dd6c"
+    },
+    "chain_smash.png": {
+      "sha256": "1fd2f08f73b7ccb58b6498cba52fb6b64e63bc40736eda5e8e95e1c7ebaef678"
+    },
+    "roll_candidate.png": {
+      "sha256": "14cb7b276aef5410acb0b2bccc78c4e46f0e8405aa30da5e4e29a2ffa8f09d89"
+    },
+    "passage_props_atlas.png": {
+      "sha256": "1dd94d0776ffd1b99b16e9ddbe3ea03b3d277c7ac3662041fdc351541da30ba7"
+    },
+    "wall_diver_atlas.png": {
+      "sha256": "3dd0f2225514673a4d4d8618caf2ad4ba860af3d529774a5e700c9eba5a583ef"
+    },
+    "explosive_spitter_atlas.png": {
+      "sha256": "59eaf01c3061ec52d5c01ef327726031292450f9cfa996ca029d47013cc03d64"
+    },
+    "root_spewer_first.png": {
+      "sha256": "01c170080964506bdd2aabb0903e43690dfa0c369e0c715f9e7efcf21a90e884"
+    },
+    "gas_sac_atlas.png": {
+      "sha256": "e4bbfb3ebc61b8a14ab095e404970b2168b206e4caecac20fb31446304c767d4"
+    },
+    "roll_atlas.png": {
+      "sha256": "5f9e6911fa1964cecbb2c5730402c46169cb68a99b68564b25aeabe4d6cfae6d"
+    },
+    "homeroad_props_atlas.png": {
+      "sha256": "edfa615c21b7ef40008cc9806ab7d642dee3b74061b9a52141cbb81fab6fb086"
+    },
+    "chain_beastman_atlas.png": {
+      "sha256": "dae5fb809bdac94b53c458e4700e3ae2f9b9e11b5521eb5291657a02746e5dee"
+    },
+    "root_spewer_atlas.png": {
+      "sha256": "8e24efce5e6e8222c0a10a31b41f6bc879051095f649df992b00792475629cff"
+    },
+    "gas_sac_first.png": {
+      "sha256": "54aae6f099ba842a5405e6f27087a756544bca97cb0789f07be08d22ff364502"
+    },
+    "corpse_bomber_atlas.png": {
+      "sha256": "35b64fce354ef441f753e6d819342fd4083a87d0edc7f1390c0841cbe5fcea24"
+    },
+    "corpse_bomber_first.png": {
+      "sha256": "98094ce33f36a78eeb2f0340a4c2f69ddddc13c92c26397f2b990ea8a011035e"
+    },
+    "passage_tiles_doors_atlas.png": {
+      "sha256": "fca12c88e2617a9df72626ce770992ebd8f70fc4066f1d15915f9936fc7c9af3"
+    },
+    "homeroad_bg_atlas.png": {
+      "sha256": "fa3b7f91273f617fdb81585dd4a8b71b561f32b10bc4f46034777b569b7337ee"
+    },
+    "boar_charger_first.png": {
+      "sha256": "3c3779bcd1f1d6466431a96047c22668db93458fd6a46d1ca1d0948a7cdea29d"
+    },
+    "shell_recovery.png": {
+      "sha256": "df52e0aa11da138a9d770772a0d547a53c93446620f97e122e93758c7dd6d28e"
+    },
+    "passage_walls_atlas.png": {
+      "sha256": "50f8b397e360c5ff1e152cd6edec9fda14d1dec170547ea89f1fc1350f71db11"
+    },
+    "chain_beastman_first.png": {
+      "sha256": "6e9a4b1c9b42ed084eea4d2663c02678aa3bd990efcdc0c2b389c49d09fcb79d"
+    },
+    "homeroad_tiles_atlas.png": {
+      "sha256": "33bb8f7900ca16097f7b00e06b8a0b97f296d64f2d2a4beb762f14a6e6e5ac90"
+    },
+    "boar_charger_atlas.png": {
+      "sha256": "7b0394f026a2ed3bc13f1c5d81446c6bd80581c3b35f383df68971239d0f4c39"
+    },
+    "boar_stun.png": {
+      "sha256": "18b70cd18110210359ec638245c0b2d2cf578a28ea37ef27d92e04c76ef8a07e"
+    }
+  }
+}

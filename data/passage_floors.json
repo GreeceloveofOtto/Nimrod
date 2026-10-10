@@ -1,0 +1,90 @@
+{
+  "interpretation": "ordered roster, sliding window of four; higher floors replace first with one new type",
+  "ordered_roster": [
+    "melee_beast",
+    "ranged_beast",
+    "explosive_spitter",
+    "wall_diver",
+    "root_spewer",
+    "boar_charger",
+    "gas_sac",
+    "wraith_ray",
+    "shell_scorpion",
+    "corpse_bomber",
+    "chain_beastman"
+  ],
+  "floors": [
+    {
+      "floor": 1,
+      "enemy_ids": [
+        "melee_beast",
+        "ranged_beast",
+        "explosive_spitter",
+        "wall_diver"
+      ]
+    },
+    {
+      "floor": 2,
+      "enemy_ids": [
+        "ranged_beast",
+        "explosive_spitter",
+        "wall_diver",
+        "root_spewer"
+      ]
+    },
+    {
+      "floor": 3,
+      "enemy_ids": [
+        "explosive_spitter",
+        "wall_diver",
+        "root_spewer",
+        "boar_charger"
+      ]
+    },
+    {
+      "floor": 4,
+      "enemy_ids": [
+        "wall_diver",
+        "root_spewer",
+        "boar_charger",
+        "gas_sac"
+      ]
+    },
+    {
+      "floor": 5,
+      "enemy_ids": [
+        "root_spewer",
+        "boar_charger",
+        "gas_sac",
+        "wraith_ray"
+      ]
+    },
+    {
+      "floor": 6,
+      "enemy_ids": [
+        "boar_charger",
+        "gas_sac",
+        "wraith_ray",
+        "shell_scorpion"
+      ]
+    },
+    {
+      "floor": 7,
+      "enemy_ids": [
+        "gas_sac",
+        "wraith_ray",
+        "shell_scorpion",
+        "corpse_bomber"
+      ]
+    },
+    {
+      "floor": 8,
+      "enemy_ids": [
+        "wraith_ray",
+        "shell_scorpion",
+        "corpse_bomber",
+        "chain_beastman"
+      ]
+    }
+  ]
+}

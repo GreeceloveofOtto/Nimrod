@@ -5,13 +5,13 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--godot',default=os.environ.get('GODOT_BIN','godot'));args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--godot',default=os.environ.get('GODOT_BIN','godot'));parser.add_argument('--report',default=str(ROOT/'docs/STAGE4_TEST_RESULTS.json'));args=parser.parse_args()
     version=subprocess.check_output([args.godot,'--version'],text=True).strip()
     if not version.startswith('4.3.'):raise SystemExit('Godot 4.3 required, got '+version)
     logs=Path(os.environ.get('NIMROD_TEST_LOG_DIR','/tmp/nimrod-stage4-tests'));logs.mkdir(parents=True,exist_ok=True)
     results=[]
     for path in sorted((ROOT/'tests').glob('*.gd')):
-        if path.name=='render_capture.gd':continue # A real renderer is checked separately.
+        if path.name.startswith('render'):continue # A real renderer is checked separately.
         start=time.monotonic()
         try:
             run=subprocess.run([args.godot,'--headless','--path',str(ROOT),'--script',str(path)],cwd=ROOT,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=240)
@@ -29,7 +29,7 @@ def main():
         print(('PASS' if passed else 'FAIL'),result,flush=True)
         if not passed:print(output[-3000:],flush=True)
     report=dict(godot_version=version,tests=results,total_checks=sum(r['checks'] for r in results),all_passed=all(r['passed'] for r in results))
-    (ROOT/'docs/STAGE4_TEST_RESULTS.json').write_text(json.dumps(report,indent=2)+'\n')
+    Path(args.report).write_text(json.dumps(report,indent=2)+'\n')
     return 0 if report['all_passed'] else 1
 
 if __name__=='__main__':raise SystemExit(main())

@@ -10,8 +10,16 @@
       "active_end": 0.17,
       "impulse": 80,
       "shake": 0.06,
-      "impact_offset": [80, -90],
-      "hitbox": {"offset_x": 6, "top": -110, "width": 82, "height": 82}
+      "impact_offset": [
+        80,
+        -90
+      ],
+      "hitbox": {
+        "offset_x": 6,
+        "top": -110,
+        "width": 82,
+        "height": 82
+      }
     },
     {
       "step": 2,
@@ -23,21 +31,37 @@
       "active_end": 0.16,
       "impulse": 80,
       "shake": 0.06,
-      "impact_offset": [80, -90],
-      "hitbox": {"offset_x": 6, "top": -118, "width": 86, "height": 88}
+      "impact_offset": [
+        80,
+        -90
+      ],
+      "hitbox": {
+        "offset_x": 6,
+        "top": -118,
+        "width": 86,
+        "height": 88
+      }
     },
     {
       "step": 3,
       "damage": 20,
       "knockback": 260,
-      "stagger": 0.30,
-      "duration": 0.40,
+      "stagger": 0.3,
+      "duration": 0.4,
       "active_start": 0.14,
       "active_end": 0.24,
       "impulse": 80,
-      "shake": 0.10,
-      "impact_offset": [80, -90],
-      "hitbox": {"offset_x": 6, "top": -128, "width": 120, "height": 110}
+      "shake": 0.1,
+      "impact_offset": [
+        80,
+        -90
+      ],
+      "hitbox": {
+        "offset_x": 6,
+        "top": -128,
+        "width": 120,
+        "height": 110
+      }
     },
     {
       "step": 4,
@@ -48,9 +72,17 @@
       "active_start": 0.22,
       "active_end": 0.34,
       "impulse": 48,
-      "shake": 0.10,
-      "impact_offset": [80, -90],
-      "hitbox": {"offset_x": 6, "top": -164, "width": 84, "height": 150}
+      "shake": 0.1,
+      "impact_offset": [
+        80,
+        -90
+      ],
+      "hitbox": {
+        "offset_x": 6,
+        "top": -164,
+        "width": 84,
+        "height": 150
+      }
     }
   ],
   "shockwave": {
@@ -59,7 +91,28 @@
     "stagger": 0.15,
     "start": 0.34,
     "shake": 0.12,
-    "impact_offset": [110, -10],
-    "hitbox": {"offset_x": 24, "top": -38, "width": 112, "height": 34}
+    "impact_offset": [
+      110,
+      -10
+    ],
+    "hitbox": {
+      "offset_x": 24,
+      "top": -38,
+      "width": 112,
+      "height": 34
+    }
+  },
+  "direction_cancel": {
+    "enabled": true,
+    "keep_combo": true,
+    "buffer_during_hitstop": 0.12,
+    "air_limit": 2,
+    "guard_recoil_pixels": 50
+  },
+  "pull": {
+    "escape_after": 0.15
+  },
+  "movement": {
+    "crouch_speed": 120
   }
 }

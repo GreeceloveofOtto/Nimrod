@@ -363,32 +363,19 @@
       "sheet": "sprites/roll.png",
       "frame_width": 640,
       "frame_height": 640,
-      "columns": 10,
+      "columns": 12,
       "rows": 1,
-      "frames": 10,
+      "frames": 12,
       "duration_seconds": 0.48,
-      "fps": 20.833333333333336,
+      "fps": 25.0,
       "loop": false,
       "anchor_px": [
         320,
         600
       ],
       "image_size": [
-        6400,
+        7680,
         640
-      ],
-      "frame_boundaries_seconds": [
-        0,
-        0.03,
-        0.08,
-        0.13,
-        0.18,
-        0.23,
-        0.28,
-        0.33,
-        0.38,
-        0.43,
-        0.48
       ]
     }
   ]

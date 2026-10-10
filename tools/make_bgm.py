@@ -42,6 +42,11 @@ def make_stage2_bgm(spec):
     print(f"Generated {path.name}: {duration:g}s periodic loop.")
 
 
+def stage5_audio():
+    spec = json.loads((PROJECT_ROOT / "data/audio_stage5.json").read_text())
+    for item in spec["bgm"]:
+        make_stage2_bgm(item)
+
 def main():
     t = timeline(LOOP_SECONDS)
     # Integer cycle counts keep all tones/modulation periodic over 48 seconds.
@@ -86,4 +91,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    if "--stage5-only" in sys.argv:
+        stage5_audio()
+    else:
+        main()
+        stage5_audio()

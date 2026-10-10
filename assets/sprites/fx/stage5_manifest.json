@@ -1,0 +1,144 @@
+{
+  "clips": [
+    {
+      "name": "root_flame",
+      "sheet": "sprites/fx/root_flame.png",
+      "frame_width": 256,
+      "frame_height": 512,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.6,
+      "fps": 10.0,
+      "loop": true,
+      "anchor_px": [
+        128,
+        508
+      ],
+      "image_size": [
+        1536,
+        512
+      ]
+    },
+    {
+      "name": "spit_projectile",
+      "sheet": "sprites/fx/spit_projectile.png",
+      "frame_width": 128,
+      "frame_height": 128,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.4,
+      "fps": 10.0,
+      "loop": true,
+      "anchor_px": [
+        64,
+        64
+      ],
+      "image_size": [
+        512,
+        128
+      ]
+    },
+    {
+      "name": "explosion",
+      "sheet": "sprites/fx/explosion.png",
+      "frame_width": 256,
+      "frame_height": 256,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.35,
+      "fps": 17.142857142857142,
+      "loop": false,
+      "anchor_px": [
+        128,
+        128
+      ],
+      "image_size": [
+        1536,
+        256
+      ]
+    },
+    {
+      "name": "gas_cloud",
+      "sheet": "sprites/fx/gas_cloud.png",
+      "frame_width": 256,
+      "frame_height": 256,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.6,
+      "fps": 10.0,
+      "loop": true,
+      "anchor_px": [
+        128,
+        128
+      ],
+      "image_size": [
+        1536,
+        256
+      ]
+    },
+    {
+      "name": "guard_spark",
+      "sheet": "sprites/fx/guard_spark.png",
+      "frame_width": 192,
+      "frame_height": 192,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.18,
+      "fps": 27.77777777777778,
+      "loop": false,
+      "anchor_px": [
+        96,
+        96
+      ],
+      "image_size": [
+        960,
+        192
+      ]
+    },
+    {
+      "name": "chain_segment",
+      "sheet": "sprites/fx/chain_segment.png",
+      "frame_width": 64,
+      "frame_height": 24,
+      "columns": 1,
+      "rows": 1,
+      "frames": 1,
+      "duration_seconds": 1,
+      "fps": 1.0,
+      "loop": true,
+      "anchor_px": [
+        32,
+        12
+      ],
+      "image_size": [
+        64,
+        24
+      ]
+    },
+    {
+      "name": "chain_hook",
+      "sheet": "sprites/fx/chain_hook.png",
+      "frame_width": 96,
+      "frame_height": 96,
+      "columns": 1,
+      "rows": 1,
+      "frames": 1,
+      "duration_seconds": 1,
+      "fps": 1.0,
+      "loop": true,
+      "anchor_px": [
+        48,
+        48
+      ],
+      "image_size": [
+        96,
+        96
+      ]
+    }
+  ]
+}

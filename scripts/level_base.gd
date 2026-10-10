@@ -74,6 +74,13 @@ func _make_spawns() -> void:
         marker.position = _vector(points[spawn_name])
         add_child(marker)
 
+    for entry in config.get("perches", []):
+        var perch := Marker2D.new()
+        perch.name = str(entry["name"])
+        perch.position = _vector(entry["position"])
+        perch.set_meta("perch_kind", str(entry.get("kind", "ceiling")))
+        add_child(perch)
+
 func get_spawn(spawn_name: String) -> Marker2D:
     return get_node_or_null(NodePath(spawn_name)) as Marker2D
 
@@ -145,6 +152,14 @@ func _make_world() -> void:
         var bounds: Rect2 = _rect(obstacle["rect"])
         _make_surface(bounds.position.x, bounds.position.y, bounds.size.x, bounds.size.y, false)
         Art.add_image(self, str(obstacle["art"]), bounds.position, bounds.size, -3)
+    for ceiling in config.get("ceilings", []):
+        var bounds: Rect2 = _rect(ceiling["rect"])
+        _make_surface(bounds.position.x, bounds.position.y, bounds.size.x, bounds.size.y, false)
+        var x: float = bounds.position.x
+        while x < bounds.end.x:
+            var size_px := Vector2(minf(512.0, bounds.end.x - x), bounds.size.y)
+            Art.add_image(self, str(ceiling["art"]), Vector2(x, bounds.position.y), size_px, -3)
+            x += size_px.x
 
 func _cover_ground(from_x: float, to_x: float, ground_y: float, art: String, tile_size: Vector2) -> void:
     var x: float = from_x
@@ -265,6 +280,7 @@ func _spawn_enemies() -> void:
             enemy.name = enemy_id + "_" + str(int(at.x))
             enemy.position = at
             _set_if_present(enemy, "enemy_id", enemy_id)
+            _set_if_present(enemy, "perch_kind", str(entry.get("perch_kind", "ceiling")))
             _set_if_present(enemy, "patrol_center", float(entry.get("patrol_center", at.x)))
             _set_if_present(enemy, "patrol_range", float(entry.get("patrol_range", 0.0)))
             _set_if_present(enemy, "safe_min_x", camera_limits.position.x)

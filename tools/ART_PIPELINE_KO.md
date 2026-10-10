@@ -108,3 +108,36 @@ python tools/validate_assets.py
 모든 풍경·포즈 원본은 이미지 생성 PNG이며 도구는 크롭·크로마키·균등 리사이즈·앵커·시트 합성만 합니다. 새18종을 모두 검증한 후 적용하며 기존 파일은 _legacy_player에 한 번만 보관합니다. 중간 source_art/stage4/player_staged는 재생성 가능하여 배포에서 제외합니다. 실제 요청은 generation_prompts.json, 포즈 선택·축척은 player_packing.json, 최종 경로별 요청은 image_prompts/stage4_*.md에 있습니다.
 
 5명 정면은 이전 대화의 디자인 첫 열을 재사용합니다. 새 샤마쉬·아야는 같은 디자인에서 정면/측면을 가져옵니다. 숨쉬기·내부 림라이트만 허용된 이미지 파생입니다. 새 플레이어 기준363px, 재사용 토인만 원래 제작 기준359px를 데이터에 보존하며 배율1.30 유지. Foreground는 모든 레벨·재빌드 목록에서 제거했습니다. 지하 채움은 양방향 이음새를, 반복 배경은 타일 이음새와 repeat_size를 검사합니다. 대비 경고7곳은 STAGE4_REPORT_KO.md를 참고하세요.
+
+## 5단계 재합성
+
+4단계 결과에 이어 아래 순서를 사용합니다. 저장한 원본을 재패킹하며 새로운
+아트를 코드로 그리지 않습니다. 원본 생성 요청과 SHA256은
+assets/source_art/stage5/*generation_prompts.json 및 provenance.json에 있습니다.
+
+```bash
+python tools/build_stage5_data.py
+python tools/build_stage5_levels.py
+python tools/build_stage5_assets.py all
+python tools/build_passage_backgrounds.py
+python tools/make_sfx.py --stage5-only
+python tools/make_bgm.py --stage5-only
+python tools/check_player_motion.py roll
+python tools/validate_assets.py
+python tools/check_player_scale.py
+python tools/check_level_reachability.py
+python tools/check_stage5_audio.py
+godot --headless --editor --path . --quit
+python tools/run_tests.py --godot godot --report docs/STAGE5_TEST_RESULTS.json
+```
+
+구르기 후보가 크기 검사를 통과한 뒤에만 roll.png를 교체하며 이전 적용본은
+_legacy_player/roll_prev.png에 한 번만 보존합니다. 다른17개 PNG는 건드리지 않습니다.
+괴수9종은 클립별 PNG와 manifest를 생성하고 지상/부유 앵커·지정 프레임 크기를
+유지합니다. 월드 아틀라스는 가로세로 비율을 보존한 크롭 후 크기 조절하고,
+통로 배경은 생성 타일의 색보정과 생성 세트피스 합성으로 구성합니다.
+사슬 찍기·방어 후딜·돌진 기절의 추가 생성 원본도 재합성에 사용합니다.
+원본 아틀라스와 최종 개별 에셋 프롬프트는 최종 PNG와 함께 배포합니다.
+
+이전 단계 전용 재빌드 명령은 해당 단계의 데이터/아트를 복원하는 용도입니다.
+5단계를 유지하려면 위5단계 순서를 마지막에 적용해야 합니다.

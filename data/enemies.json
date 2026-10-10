@@ -10,7 +10,19 @@
     "hit_spark_seconds": 0.15,
     "hit_spark_scale": 0.24,
     "missing_clip_seconds": 1.0,
-    "patrol_arrival_distance": 4.0
+    "patrol_arrival_distance": 4.0,
+    "overlap_tick_seconds": 0.2,
+    "guard_spark_scale": 0.35,
+    "guard_spark_seconds": 0.18,
+    "chain_height_offset": -90,
+    "floating_floor_margin": 50,
+    "ledge_probe_x": 32,
+    "ledge_probe_down": 100,
+    "corpse_beep_min": 0.06,
+    "corpse_beep_factor": 0.3,
+    "corpse_blink_start": 12,
+    "corpse_blink_acceleration": 20,
+    "gas_blink_rate": 30
   },
   "enemies": [
     {
@@ -149,6 +161,951 @@
           "recovery_deceleration": 380.0,
           "windup_flash_gain": 1.35,
           "windup_flash_cycles": 3.0
+        }
+      ]
+    },
+    {
+      "id": "explosive_spitter",
+      "display_name": "폭발 투사체 괴수",
+      "appearance": "thick orange-brown toad with swollen throat sac",
+      "hp": 76,
+      "contact_damage": 7,
+      "turn_delay": 0.3,
+      "move_speed": 80,
+      "detect_range": 650,
+      "body_size": [
+        110,
+        86
+      ],
+      "body_offset_y": -43.0,
+      "visual_scale": 0.3,
+      "frame_size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        600
+      ],
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 0.9,
+          "loop": true
+        },
+        {
+          "name": "walk",
+          "frames": 8,
+          "duration": 0.9,
+          "loop": true
+        },
+        {
+          "name": "windup",
+          "frames": 4,
+          "duration": 0.6,
+          "loop": false
+        },
+        {
+          "name": "spit",
+          "frames": 3,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "recovery",
+          "frames": 4,
+          "duration": 0.5,
+          "loop": false
+        },
+        {
+          "name": "turn",
+          "frames": 4,
+          "duration": 0.3,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "frames": 2,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "death",
+          "frames": 6,
+          "duration": 0.7,
+          "loop": false
+        }
+      ],
+      "hurt_sfx": "explosive_spitter_hurt",
+      "death_sfx": "explosive_spitter_death",
+      "drop_id": "healing_vomit",
+      "drop_chance": 0.07,
+      "knockback_multiplier": 1,
+      "preferred_distance": [
+        380,
+        520
+      ],
+      "retreat_distance": 300,
+      "projectile": {
+        "speed": 480,
+        "direct_damage": 7,
+        "direct_stagger": 0.3,
+        "fuse": 0.3,
+        "radius": 90,
+        "explosion_damage": 14,
+        "knockback": 220,
+        "collision_radius": 12
+      },
+      "attacks": [
+        {
+          "id": "spit",
+          "damage": 7,
+          "windup": 0.6,
+          "active": 0.2,
+          "recovery": 0.5,
+          "range": 650,
+          "cooldown": 2,
+          "hitbox": {
+            "width": 100,
+            "height": 80,
+            "offset_x": 10,
+            "top": -80
+          }
+        }
+      ]
+    },
+    {
+      "id": "wall_diver",
+      "display_name": "벽면 강하 괴수",
+      "appearance": "bat-centipede hybrid, black-purple hide, many hooked legs and leathery wings",
+      "hp": 36,
+      "contact_damage": 8,
+      "turn_delay": 0.25,
+      "move_speed": 230,
+      "detect_range": 600,
+      "body_size": [
+        90,
+        60
+      ],
+      "body_offset_y": 0,
+      "visual_scale": 0.3,
+      "frame_size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        320
+      ],
+      "clips": [
+        {
+          "name": "perch_ceiling",
+          "frames": 4,
+          "duration": 0.8,
+          "loop": true
+        },
+        {
+          "name": "perch_wall",
+          "frames": 4,
+          "duration": 0.8,
+          "loop": true
+        },
+        {
+          "name": "tell",
+          "frames": 3,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "dive",
+          "frames": 3,
+          "duration": 0.25,
+          "loop": true
+        },
+        {
+          "name": "claw",
+          "frames": 4,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "recovery",
+          "frames": 4,
+          "duration": 0.5,
+          "loop": false
+        },
+        {
+          "name": "crawl",
+          "frames": 8,
+          "duration": 0.7,
+          "loop": true
+        },
+        {
+          "name": "turn",
+          "frames": 4,
+          "duration": 0.25,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "frames": 2,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "death",
+          "frames": 6,
+          "duration": 0.6,
+          "loop": false
+        }
+      ],
+      "hurt_sfx": "wall_diver_hurt",
+      "death_sfx": "wall_diver_death",
+      "drop_id": "healing_vomit",
+      "drop_chance": 0.05,
+      "knockback_multiplier": 1,
+      "sensor_ceiling": [
+        160,
+        400
+      ],
+      "sensor_wall": [
+        220,
+        120
+      ],
+      "dive_speed": 720,
+      "dive_seconds": 0.6,
+      "tell_seconds": 0.2,
+      "landing_recovery": 0.5,
+      "attacks": [
+        {
+          "id": "claw",
+          "damage": 8,
+          "windup": 0.35,
+          "active": 0.12,
+          "recovery": 0.6,
+          "range": 105,
+          "cooldown": 0,
+          "hitbox": {
+            "width": 100,
+            "height": 80,
+            "offset_x": 10,
+            "top": -45
+          }
+        }
+      ]
+    },
+    {
+      "id": "root_spewer",
+      "display_name": "뿌리 화염 괴수",
+      "appearance": "plant-root and esophagus hybrid, green-brown bark, fleshy vertical throat",
+      "hp": 55,
+      "contact_damage": 1,
+      "turn_delay": 0.25,
+      "move_speed": 0,
+      "detect_range": 540,
+      "body_size": [
+        74,
+        80
+      ],
+      "body_offset_y": -40.0,
+      "visual_scale": 0.3,
+      "frame_size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        600
+      ],
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 1.2,
+          "loop": true
+        },
+        {
+          "name": "windup",
+          "frames": 4,
+          "duration": 0.5,
+          "loop": false
+        },
+        {
+          "name": "spew",
+          "frames": 4,
+          "duration": 0.4,
+          "loop": true
+        },
+        {
+          "name": "recovery",
+          "frames": 4,
+          "duration": 0.6,
+          "loop": false
+        },
+        {
+          "name": "turn",
+          "frames": 4,
+          "duration": 0.25,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "frames": 2,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "death",
+          "frames": 6,
+          "duration": 0.7,
+          "loop": false
+        }
+      ],
+      "hurt_sfx": "root_spewer_hurt",
+      "death_sfx": "root_spewer_death",
+      "drop_id": "healing_vomit",
+      "drop_chance": 0.05,
+      "knockback_multiplier": 1,
+      "sensor": [
+        360,
+        400
+      ],
+      "attacks": [
+        {
+          "id": "spew",
+          "damage": 1,
+          "windup": 0.5,
+          "active": 1,
+          "recovery": 0.6,
+          "range": 400,
+          "cooldown": 1.8,
+          "hitbox": {
+            "width": 100,
+            "height": 320,
+            "offset_x": -50,
+            "top": -320
+          },
+          "tick_count": 10,
+          "tick_interval": 0.1,
+          "first_stagger": 0.18,
+          "interrupt_stun": 0.4
+        }
+      ]
+    },
+    {
+      "id": "boar_charger",
+      "display_name": "돌진 괴수",
+      "appearance": "boar and armored woodlouse hybrid, protruding bone shell, dark gray, red eyes",
+      "hp": 110,
+      "contact_damage": 15,
+      "turn_delay": 0.45,
+      "move_speed": 120,
+      "detect_range": 700,
+      "body_size": [
+        155,
+        94
+      ],
+      "body_offset_y": -47.0,
+      "visual_scale": 0.3,
+      "frame_size": [
+        768,
+        640
+      ],
+      "anchor": [
+        384,
+        600
+      ],
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 1.0,
+          "loop": true
+        },
+        {
+          "name": "walk",
+          "frames": 8,
+          "duration": 0.9,
+          "loop": true
+        },
+        {
+          "name": "telegraph",
+          "frames": 4,
+          "duration": 0.5,
+          "loop": false
+        },
+        {
+          "name": "charge",
+          "frames": 4,
+          "duration": 0.3,
+          "loop": true
+        },
+        {
+          "name": "crash_stun",
+          "frames": 4,
+          "duration": 0.8,
+          "loop": false
+        },
+        {
+          "name": "recovery",
+          "frames": 4,
+          "duration": 0.6,
+          "loop": false
+        },
+        {
+          "name": "turn",
+          "frames": 4,
+          "duration": 0.45,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "frames": 2,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "death",
+          "frames": 6,
+          "duration": 0.8,
+          "loop": false
+        }
+      ],
+      "hurt_sfx": "boar_charger_hurt",
+      "death_sfx": "boar_charger_death",
+      "drop_id": "healing_vomit",
+      "drop_chance": 0.05,
+      "knockback_multiplier": 1,
+      "charge_speed": 640,
+      "charge_distance": 800,
+      "crash_stun": 0.8,
+      "contact_knockback": 260,
+      "attacks": [
+        {
+          "id": "charge",
+          "damage": 15,
+          "windup": 0.5,
+          "active": 1.25,
+          "recovery": 0.6,
+          "range": 700,
+          "cooldown": 1.5,
+          "hitbox": {
+            "width": 170,
+            "height": 95,
+            "offset_x": 0,
+            "top": -95
+          }
+        }
+      ]
+    },
+    {
+      "id": "gas_sac",
+      "display_name": "독가스 주머니 괴수",
+      "appearance": "swollen jellyfish-pufferfish hybrid, yellow-green translucent sac, tentacles",
+      "hp": 40,
+      "contact_damage": 6,
+      "turn_delay": 0.3,
+      "move_speed": 70,
+      "detect_range": 700,
+      "body_size": [
+        88,
+        90
+      ],
+      "body_offset_y": 0,
+      "visual_scale": 0.3,
+      "frame_size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        320
+      ],
+      "clips": [
+        {
+          "name": "float",
+          "frames": 6,
+          "duration": 0.9,
+          "loop": true
+        },
+        {
+          "name": "bump",
+          "frames": 3,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "turn",
+          "frames": 4,
+          "duration": 0.3,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "frames": 2,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "death_swell",
+          "frames": 6,
+          "duration": 1.0,
+          "loop": false
+        },
+        {
+          "name": "burst",
+          "frames": 5,
+          "duration": 0.3,
+          "loop": false
+        }
+      ],
+      "hurt_sfx": "gas_sac_hurt",
+      "death_sfx": "gas_sac_death",
+      "drop_id": "healing_vomit",
+      "drop_chance": 0.05,
+      "knockback_multiplier": 1,
+      "contact_interval": 0.8,
+      "death_swell_seconds": 1,
+      "gas": {
+        "seconds": 2,
+        "radius": 110,
+        "height": 160,
+        "tick_interval": 0.2,
+        "damage": 1
+      },
+      "attacks": []
+    },
+    {
+      "id": "wraith_ray",
+      "display_name": "추적 환령",
+      "appearance": "indistinct smoke-shaped manta ray, pale blue-gray vapor, ominous silhouette",
+      "hp": 18,
+      "contact_damage": 5,
+      "turn_delay": 0.25,
+      "move_speed": 90,
+      "detect_range": 2000,
+      "body_size": [
+        98,
+        48
+      ],
+      "body_offset_y": 0,
+      "visual_scale": 0.3,
+      "frame_size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        320
+      ],
+      "clips": [
+        {
+          "name": "glide",
+          "frames": 8,
+          "duration": 1.0,
+          "loop": true
+        },
+        {
+          "name": "turn",
+          "frames": 4,
+          "duration": 0.25,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "frames": 2,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "death",
+          "frames": 6,
+          "duration": 0.6,
+          "loop": false
+        }
+      ],
+      "hurt_sfx": "wraith_ray_hurt",
+      "death_sfx": "wraith_ray_death",
+      "drop_id": "healing_vomit",
+      "drop_chance": 0.05,
+      "knockback_multiplier": 1,
+      "contact_interval": 1,
+      "attacks": []
+    },
+    {
+      "id": "shell_scorpion",
+      "display_name": "방어 갑피 괴수",
+      "appearance": "turtle shell and scorpion claws hybrid, dark brown armored carapace and barbed tail",
+      "hp": 75,
+      "contact_damage": 12,
+      "turn_delay": 0.5,
+      "move_speed": 70,
+      "detect_range": 450,
+      "body_size": [
+        134,
+        80
+      ],
+      "body_offset_y": -40.0,
+      "visual_scale": 0.3,
+      "frame_size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        600
+      ],
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 1.0,
+          "loop": true
+        },
+        {
+          "name": "walk",
+          "frames": 8,
+          "duration": 1.1,
+          "loop": true
+        },
+        {
+          "name": "guard_block",
+          "frames": 3,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "claw_windup",
+          "frames": 4,
+          "duration": 0.5,
+          "loop": false
+        },
+        {
+          "name": "claw_attack",
+          "frames": 3,
+          "duration": 0.15,
+          "loop": false
+        },
+        {
+          "name": "claw_recovery",
+          "frames": 4,
+          "duration": 0.7,
+          "loop": false
+        },
+        {
+          "name": "tail_windup",
+          "frames": 3,
+          "duration": 0.3,
+          "loop": false
+        },
+        {
+          "name": "tail_strike",
+          "frames": 3,
+          "duration": 0.15,
+          "loop": false
+        },
+        {
+          "name": "tail_recovery",
+          "frames": 4,
+          "duration": 0.6,
+          "loop": false
+        },
+        {
+          "name": "turn",
+          "frames": 6,
+          "duration": 0.6,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "frames": 2,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "death",
+          "frames": 6,
+          "duration": 0.8,
+          "loop": false
+        }
+      ],
+      "hurt_sfx": "shell_scorpion_hurt",
+      "death_sfx": "shell_scorpion_death",
+      "drop_id": "healing_vomit",
+      "drop_chance": 0.05,
+      "knockback_multiplier": 1,
+      "back_turn_delay": 0.6,
+      "back_range": 220,
+      "tail_chance": 0.35,
+      "attacks": [
+        {
+          "id": "claw",
+          "damage": 12,
+          "windup": 0.5,
+          "active": 0.15,
+          "recovery": 0.7,
+          "range": 145,
+          "cooldown": 0,
+          "hitbox": {
+            "width": 120,
+            "height": 70,
+            "offset_x": 10,
+            "top": -70
+          }
+        },
+        {
+          "id": "tail",
+          "damage": 10,
+          "windup": 0.3,
+          "active": 0.15,
+          "recovery": 0.6,
+          "range": 220,
+          "cooldown": 0,
+          "hitbox": {
+            "width": 110,
+            "height": 60,
+            "offset_x": 10,
+            "top": -60
+          }
+        }
+      ]
+    },
+    {
+      "id": "corpse_bomber",
+      "display_name": "자폭 시체",
+      "appearance": "grotesquely bloated zombie, black-red swollen flesh, tattered clothing",
+      "hp": 30,
+      "contact_damage": 18,
+      "turn_delay": 0.3,
+      "move_speed": 340,
+      "detect_range": 520,
+      "body_size": [
+        62,
+        88
+      ],
+      "body_offset_y": -44.0,
+      "visual_scale": 0.3,
+      "frame_size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        600
+      ],
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 1.0,
+          "loop": true
+        },
+        {
+          "name": "scream",
+          "frames": 4,
+          "duration": 0.4,
+          "loop": false
+        },
+        {
+          "name": "run",
+          "frames": 8,
+          "duration": 0.6,
+          "loop": true
+        },
+        {
+          "name": "fuse",
+          "frames": 6,
+          "duration": 0.5,
+          "loop": true
+        },
+        {
+          "name": "explode",
+          "frames": 6,
+          "duration": 0.3,
+          "loop": false
+        },
+        {
+          "name": "turn",
+          "frames": 4,
+          "duration": 0.3,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "frames": 2,
+          "duration": 0.2,
+          "loop": false
+        }
+      ],
+      "hurt_sfx": "corpse_bomber_hurt",
+      "death_sfx": "corpse_bomber_death",
+      "drop_id": "healing_vomit",
+      "drop_chance": 0.05,
+      "knockback_multiplier": 1,
+      "fuse_seconds": 1.5,
+      "scream_seconds": 0.4,
+      "explosion": {
+        "radius": 110,
+        "damage": 18,
+        "knockback": 260
+      },
+      "attacks": []
+    },
+    {
+      "id": "chain_beastman",
+      "display_name": "사슬 꼬리 수인",
+      "appearance": "large hulking beastman with articulated heavy chain tail, black iron hide and fur",
+      "hp": 160,
+      "contact_damage": 10,
+      "turn_delay": 0.8,
+      "move_speed": 90,
+      "detect_range": 700,
+      "body_size": [
+        180,
+        178
+      ],
+      "body_offset_y": -89.0,
+      "visual_scale": 0.3,
+      "frame_size": [
+        896,
+        768
+      ],
+      "anchor": [
+        448,
+        720
+      ],
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 1.2,
+          "loop": true
+        },
+        {
+          "name": "walk",
+          "frames": 8,
+          "duration": 1.2,
+          "loop": true
+        },
+        {
+          "name": "tail_windup",
+          "frames": 5,
+          "duration": 0.6,
+          "loop": false
+        },
+        {
+          "name": "tail_sweep",
+          "frames": 4,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "tail_recovery",
+          "frames": 5,
+          "duration": 0.8,
+          "loop": false
+        },
+        {
+          "name": "chain_windup",
+          "frames": 4,
+          "duration": 0.4,
+          "loop": false
+        },
+        {
+          "name": "chain_throw",
+          "frames": 4,
+          "duration": 0.35,
+          "loop": false
+        },
+        {
+          "name": "pull_hold",
+          "frames": 3,
+          "duration": 0.35,
+          "loop": true
+        },
+        {
+          "name": "smash_windup",
+          "frames": 4,
+          "duration": 0.35,
+          "loop": false
+        },
+        {
+          "name": "smash",
+          "frames": 3,
+          "duration": 0.15,
+          "loop": false
+        },
+        {
+          "name": "smash_recovery",
+          "frames": 5,
+          "duration": 0.9,
+          "loop": false
+        },
+        {
+          "name": "turn",
+          "frames": 6,
+          "duration": 0.8,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "frames": 2,
+          "duration": 0.2,
+          "loop": false
+        },
+        {
+          "name": "death",
+          "frames": 8,
+          "duration": 1.0,
+          "loop": false
+        }
+      ],
+      "hurt_sfx": "chain_beastman_hurt",
+      "death_sfx": "chain_beastman_death",
+      "drop_id": "healing_vomit",
+      "drop_chance": 0.05,
+      "knockback_multiplier": 0.5,
+      "chain": {
+        "range": 520,
+        "throw_seconds": 0.35,
+        "pull_seconds": 0.35,
+        "pull_offset": 90,
+        "escape_after": 0.15,
+        "miss_recovery": 0.7
+      },
+      "attacks": [
+        {
+          "id": "tail",
+          "damage": 10,
+          "windup": 0.6,
+          "active": 0.2,
+          "recovery": 0.8,
+          "range": 220,
+          "cooldown": 0,
+          "hitbox": {
+            "width": 240,
+            "height": 90,
+            "offset_x": 0,
+            "top": -125
+          }
+        },
+        {
+          "id": "chain",
+          "damage": 16,
+          "windup": 0.4,
+          "active": 0.35,
+          "recovery": 0.9,
+          "range": 520,
+          "cooldown": 4,
+          "hitbox": {
+            "width": 120,
+            "height": 120,
+            "offset_x": 0,
+            "top": -120
+          },
+          "smash_windup": 0.35,
+          "smash_active": 0.15
         }
       ]
     }

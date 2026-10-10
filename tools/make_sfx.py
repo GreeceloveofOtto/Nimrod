@@ -77,6 +77,12 @@ def synthesize(duration, kind, pitch, seed):
     raise ValueError(kind)
 
 
+def stage5_audio():
+    spec = json.loads((PROJECT_ROOT / "data/audio_stage5.json").read_text())
+    for item in spec["sfx"]:
+        signal = synthesize(item["duration"], item["kind"], item["pitch"], item["seed"])
+        write_wav(PROJECT_ROOT / "assets/audio/sfx" / (item["name"] + ".wav"), signal, fade_seconds=0.0 if item.get("loop", False) else 0.004)
+
 def main():
     out_dir = PROJECT_ROOT / "assets/audio/sfx"
     for index, (name, (duration, kind, pitch)) in enumerate(SOUNDS.items()):
@@ -95,4 +101,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    if "--stage5-only" in sys.argv:
+        stage5_audio()
+    else:
+        main()
+        stage5_audio()

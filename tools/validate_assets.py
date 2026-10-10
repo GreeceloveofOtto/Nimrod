@@ -23,6 +23,7 @@ class Validator:
         self.missing = []
         self.checked = 0
         self.npc_data = {}
+        self.enemy_data = {e["id"]:e for e in json.loads((root / "data/enemies.json").read_text())["enemies"]}
         self.player_height = None
 
     def fail(self, path, message):
@@ -92,7 +93,12 @@ class Validator:
         anchor = clip["anchor_px"]
         if len(anchor) != 2 or not (0 <= anchor[0] <= width and 0 <= anchor[1] <= height):
             self.fail(path, "anchor must lie inside frame")
-        if sky:
+        configured = self.enemy_data.get(Path(path).parent.name, {}) if enemy else {}
+        centered = enemy and configured.get("anchor", anchor)[1] == 320
+        if configured.get("frame_size"):
+            if [width,height] != configured["frame_size"] or anchor != configured["anchor"]:
+                self.fail(path, "enemy frame/anchor differ from data/enemies.json")
+        elif sky:
             if (width, height, anchor) != (768, 640, [384, 320]):
                 self.fail(path, "sky-beast frame must be 768x640 with center anchor [384,320]")
         elif (enemy or npc is not None) and (width != 640 or height != 640 or anchor != [320, 600]):
@@ -109,12 +115,12 @@ class Validator:
             bounds = alpha.point(lambda value: 255 if value > 12 else 0).getbbox()
             if bounds is None:
                 self.fail(path, f"frame {index + 1} is empty")
-            elif sky:
+            elif sky or centered:
                 center_x = (bounds[0] + bounds[2]) / 2
                 center_y = (bounds[1] + bounds[3]) / 2
                 if abs(center_x - anchor[0]) > 4 or abs(center_y - anchor[1]) > 4:
                     self.fail(path, f"frame {index + 1} not aligned to center anchor: {bounds}")
-                if bounds[2] - bounds[0] > 700:
+                if sky and bounds[2] - bounds[0] > 700:
                     self.fail(path, f"frame {index + 1} exceeds 700px maximum wing span")
             elif enemy or npc is not None:
                 center_x = (bounds[0] + bounds[2]) / 2

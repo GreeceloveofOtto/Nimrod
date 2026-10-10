@@ -1,0 +1,145 @@
+{
+  "character": "corpse_bomber",
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/enemies/corpse_bomber/idle.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 1.0,
+      "fps": 6.0,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3840,
+        640
+      ]
+    },
+    {
+      "name": "scream",
+      "sheet": "sprites/enemies/corpse_bomber/scream.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.4,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2560,
+        640
+      ]
+    },
+    {
+      "name": "run",
+      "sheet": "sprites/enemies/corpse_bomber/run.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 0.6,
+      "fps": 13.333333333333334,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        5120,
+        640
+      ]
+    },
+    {
+      "name": "fuse",
+      "sheet": "sprites/enemies/corpse_bomber/fuse.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.5,
+      "fps": 12.0,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3840,
+        640
+      ]
+    },
+    {
+      "name": "explode",
+      "sheet": "sprites/enemies/corpse_bomber/explode.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.3,
+      "fps": 20.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3840,
+        640
+      ]
+    },
+    {
+      "name": "turn",
+      "sheet": "sprites/enemies/corpse_bomber/turn.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.3,
+      "fps": 13.333333333333334,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2560,
+        640
+      ]
+    },
+    {
+      "name": "hurt",
+      "sheet": "sprites/enemies/corpse_bomber/hurt.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 2,
+      "rows": 1,
+      "frames": 2,
+      "duration_seconds": 0.2,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1280,
+        640
+      ]
+    }
+  ]
+}
