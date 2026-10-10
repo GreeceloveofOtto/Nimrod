@@ -115,8 +115,9 @@ godot --headless --path . --script res://tests/stage2_interactions.gd
 godot --headless --path . --script res://tests/stage2_sky.gd
 
 현재 기능 검사: 기존 회귀 196, 전환 210, NPC·문 41, 비행 괴수 66개,
-합계 513개 통과. 최종 아트 검증·화면·배포 ZIP 결과는
-아래 2단계 보고서에 기록합니다.
+합계 513개 통과·실패 0. 최종 PNG 77개 누락·오류 0, 실제 렌더 화면 8개.
+변경 파일 전체 목록: docs/STAGE2_FILES_KO.txt
+아트·화면·배포 확인 내용은 아래 2단계 보고서에 기록합니다.
 실제 스피커 청감, Windows 실행, 장시간 사람의 직접 플레이는 별도 확인이 필요합니다.
 
 전체 변경 영역·선택 수치·이미지 상태·검증·미실행 항목:

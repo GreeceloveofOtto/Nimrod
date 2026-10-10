@@ -72,12 +72,11 @@ HP 180, 도끼 20/20/20/22, 구르기 0.48초(선딜 0.03·무적 0.25·후딜 0
 
 `_draw()`는 F1 디버그 판정에만 사용합니다. 이미지가 빠지면 회색 사각형과 `MISSING` 라벨이 있는 `MISSING_TEXTURE`만 표시합니다. 플레이 가능한 최종 아트로 간주하지 않습니다.
 
-<!-- FINAL_ART_RESULT: 배포 전에 최종 생성 PNG 수·누락 목록·검증 결과로 교체 -->
-새 캐릭터 묶음 19개와 환경 묶음 32개(정적 이미지 26개·문 시트 6개)를 생성·패킹했습니다. 환경 원본은 8개 atlas이며 `generation.json`과 `packing.json`에 기록했습니다. 환경 32개 부분 검증은 누락 0·오류 0입니다. 요청 아트의 미생성 항목은 없습니다. 기존 자산을 포함한 최종 전체 PNG 수와 검증 결과는 최종 배포 확인 후 이 항목에 기록합니다.
+새 캐릭터 묶음 19개(NPC 시트 12개·비행 괴수 7개)와 환경 묶음 32개(정적 이미지 26개·문 시트 6개)를 생성·패킹했습니다. 기존 배경 3개는 새 크기로 교체했습니다. 통합 `assets/art_manifest.json` 검증 결과는 **PNG 77개·누락 0·오류 0**입니다. 모든 NPC 프레임의 키 비율 ±3%, 앵커, 비행 괴수 특수 규격, 레벨별 시차 너비와 타일 이음새를 검사했습니다. **이미지 미생성 에셋 목록: 없음.**
 
 ## 테스트 결과
 
-Godot **4.3**의 headless 실행으로 다음 기능 검사를 통과했습니다. 아트 파일이 생성되는 동안에는 명시된 MISSING 폴백으로도 게임 로직을 검사했습니다.
+Godot **4.3.stable.official.77dcf97d8**에서 모든 최종 PNG를 가져온 후 아래 네 기능 검사를 다시 실행했습니다. **513개 통과·실패 0**, 스크립트 오류·MISSING 경고가 없었습니다.
 
 | 검사 | 통과 | 실패 | 주요 검증 |
 |---|---:|---:|---|
@@ -92,8 +91,8 @@ Godot **4.3**의 headless 실행으로 다음 기능 검사를 통과했습니�
 - NPC·문 검사는 실제 SceneManager로 레벨을 오가며 실행합니다. 문이 완전히 열리기 전 자동 진입이 불가능하고, 600px 이탈 후 닫힘·300px 재접근 후 열림·향후 대화 요구 훅 차단을 확인했습니다.
 - 비행 괴수 5% 드랍은 제어된 확률 입력으로 양쪽 결과를 검사하며, 사람의 플레이에서 정확히 20마리마다 한 번 나온다는 의미는 아닙니다.
 
-<!-- FINAL_VERIFICATION: 배포 전 최종 아트·렌더·새 ZIP 검사 결과를 추가 -->
-최종 PNG 포함 재실행, GL Compatibility 실제 화면 캡처, 새 배포 ZIP의 임포트·무결성 검증 결과는 배포 확인 시 추가합니다.
+- GL Compatibility 실제 렌더링은 Mesa llvmpipe/Xvfb에서 실행했습니다. 7개 레벨과 후문 밖 별장 대문까지 **8개 1280×720 화면**을 `docs/screenshots/stage2_*.png`에 보존했습니다. NPC·요리사·청소 하인·문·비행 괴수와 새 배경을 확인했습니다. 가상 디스플레이의 VSync 미지원 경고 외 오류가 없었습니다.
+- 배포는 `main`을 변경하지 않고 `codex/nimrod-rear-gate-godot43` 브랜치에 저장합니다. GitHub 커밋 ZIP을 실제 다운로드하고 CRC·커밋 파일 바이트 일치·캐시 제외를 확인합니다. 새 폴더에 압축 해제한 후 Godot 4.3 최초 임포트·메인 실행과 PNG 검증을 수행해 전달합니다.
 
 검사 명령:
 
@@ -130,5 +129,4 @@ godot --headless --path . --script res://tests/stage2_sky.gd
 | 한글·문서 | `assets/fonts/NimrodUIKorean-Regular.otf`, `README.md`, `README_KO.txt`, 이 보고서, `tools/ART_PIPELINE_KO.md` |
 | 검사 | `tests/regression.gd`, `tests/stage2_transitions.gd`, `tests/stage2_interactions.gd`, `tests/stage2_sky.gd`, 렌더 캡처 도구·화면 |
 
-<!-- FINAL_FILE_LIST: 배포 변경 파일 전체 목록의 경로를 추가 -->
-배포 기준 전체 변경·추가 파일 목록은 최종 파일 집계에 함께 제공합니다.
+배포 기준 전체 변경·추가 파일 목록은 [STAGE2_FILES_KO.txt](STAGE2_FILES_KO.txt)에 있습니다. 비교 기준은 1단계 전경 삭제 완료 커밋 `e65e09df3cbbfa2fcf881693d7927a08449be63c`입니다.

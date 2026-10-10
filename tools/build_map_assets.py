@@ -22,12 +22,17 @@ def pack(kind, source, output, *options):
 
 
 def main():
-    for name, size in [("sky", "1536,720"), ("far_city", "1920,720"),
-                       ("castle_wall", "2560,720")]:
-        options = ["--size", size]
-        if name == "sky":
-            options.append("--opaque")
-        pack("image", name + "_source.png", "backgrounds/rear_gate/" + name + ".png", *options)
+    if (SOURCE / "stage2_environment/rear_layers.png").is_file():
+        # Keep the expanded-map images when rebuilding the original terrain/FX.
+        # Their current dimensions and new foreground come from stage two.
+        print("Keeping stage-two backgrounds; repack them with tools/build_stage2_environment_assets.py")
+    else:
+        for name, size in [("sky", "1536,720"), ("far_city", "1920,720"),
+                           ("castle_wall", "2560,720")]:
+            options = ["--size", size]
+            if name == "sky":
+                options.append("--opaque")
+            pack("image", name + "_source.png", "backgrounds/rear_gate/" + name + ".png", *options)
     pack("image", "terrain_source.png", "tiles/rear_gate/ground_tile.png",
          "--crop", "24,92,1800,215", "--size", "512,220", "--opaque", "--tile-x")
     pack("image", "terrain_source.png", "tiles/rear_gate/step_block.png",

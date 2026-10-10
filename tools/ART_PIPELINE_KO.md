@@ -39,7 +39,7 @@ python tools/pack_sprites.py sheet spark_raw.png assets/sprites/fx/hit_spark.png
 
 ## 배경·지형·장식
 
-사용자 요청에 따라 전경 에셋 `assets/backgrounds/rear_gate/foreground.png`, 마젠타 생성 원본 `assets/source_art/foreground_source.png`, 프롬프트 `assets/image_prompts/rear_gate_foreground.md`를 제거했다. 맵은 하늘·먼 도시·루갈성 외벽의 3겹 파랄랙스(0.05/0.20/0.45)를 사용한다. 에셋 manifest·출처 기록·재패킹 도구·검사에서도 전경을 제외하며 `build_map_assets.py`는 전경을 다시 만들지 않는다.
+1단계에서 삭제한 전경 생성 원본 `assets/source_art/foreground_source.png`와 기존 프롬프트는 복원하지 않았다. 2단계 명세에 따라 새 원본 `assets/source_art/stage2_environment/rear_layers.png`에서 폭 5400에 맞는 전경을 새로 패킹했다. 현재 RearGate는 4겹 시차(0.05/0.20/0.45/0.80)를 사용한다. `build_map_assets.py`는 2단계 원본이 있으면 새 배경을 보존하며 기존 지형·소품·이펙트만 재패킹한다.
 
 ```bash
 python tools/pack_sprites.py image generated.png assets/props/rear_gate_door.png --crop 0,0,320,420 --size 320,420
@@ -55,6 +55,20 @@ python tools/pack_sprites.py image generated_ground.png assets/tiles/rear_gate/g
 python tools/validate_assets.py
 ```
 
-기본 검사는 `assets/art_manifest.json`이 요구하는 29개 PNG 전체를 확인하며 하나라도 없으면 실패한다. PNG 형식, RGBA, 정확한 크기·프레임 수, 프레임별 비어 있지 않은 그림, 연속 복제 프레임 여부, 괴수 앵커, 알파, manifest의 fps/길이, 파랄랙스 이동을 덮는 너비, 바닥 타일 양쪽 경계의 일치를 확인한다. `--allow-missing`은 제작 도중 있는 파일만 검사하며 누락을 SKIPPED로 보고한다. PARTIAL PASS는 최종 아트 완료를 뜻하지 않는다.
+기본 검사는 `assets/art_manifest.json`이 요구하는 77개 PNG 전체를 확인하며 하나라도 없으면 실패한다. PNG 형식, RGBA, 정확한 크기·프레임 수, 프레임별 비어 있지 않은 그림, 연속 복제 프레임 여부, 괴수·NPC 앵커, NPC 모든 프레임 높이 비율 ±3%, 비행 괴수 중앙 앵커·날개폭, 알파, manifest의 fps/길이, 레벨별 파랄랙스 이동을 덮는 너비, 바닥 타일 양쪽 경계의 일치를 확인한다. `--allow-missing`은 제작 도중 있는 파일만 검사하며 누락을 SKIPPED로 보고한다. PARTIAL PASS는 최종 아트 완료를 뜻하지 않는다.
 
 이미지 생성이 불가능한 환경에서는 `assets/image_prompts/`의 프롬프트를 사용자에게 전달하고 런타임의 회색 `MISSING` 폴백을 유지한다. 코드 도형이나 절차적 생성으로 최종 아트를 대체하지 않는다.
+
+## 2단계 NPC·비행 괴수·환경 재패킹
+
+```bash
+python tools/build_stage2_character_assets.py
+python tools/build_stage2_environment_assets.py
+python tools/validate_assets.py
+```
+
+캐릭터 도구는 생성 포즈 6개 원본에서 NPC 12개 시트와 비행 괴수 7개 시트를 만든다. NPC 기준 높이는 플레이어 idle 첫 프레임의 alpha>12 bbox 359px다. 모든 NPC 프레임은 data/npcs.json의 높이 비율 ±3%, 발 앵커 [320,600]을 유지한다. 숨쉬기만 허용된 정지 이미지 변형을 tools/make_breathing_sheet.py로 파생한다. 요리·청소·문 열기 동작은 생성된 여러 포즈를 패킹한다. 비행 괴수는 768×640, 중앙 앵커 [384,320], 날개폭 최대 700px다.
+
+환경 도구는 8개 생성 원본에서 정적 이미지 26개와 문 시트 6개를 만든다. 하늘 1536, 먼 도시 2112, 성벽 3136, 전경 4608px로 5400px 맵의 카메라 이동을 덮는다. 실내·테라스는 바닥선 y620에 맞춰 생성 픽셀을 정렬한다. 문 닫힘은 열림 시트를 역재생한다. E 프롬프트와 회복 드랍 이미지도 포함한다. tools/stitch_background.py는 여러 생성 이미지를 이어 붙일 때 사용하며 새 풍경을 코드로 그리지 않는다.
+
+생성 기록은 assets/source_art/stage2_characters/provenance.json·generation_prompts.json 및 assets/source_art/stage2_environment/generation.json·packing.json에 있다. assets/stage2_character_manifest.json과 assets/stage2_environment_manifest.json의 항목은 최종 assets/art_manifest.json에 통합했다.
