@@ -1,0 +1,141 @@
+{
+  "reference_height_px": 363,
+  "height_tolerance": 0.03,
+  "visual_scale": 0.3,
+  "frame_size": [
+    640,
+    640
+  ],
+  "anchor": [
+    320,
+    600
+  ],
+  "alpha_threshold": 0,
+  "margin_px": 8,
+  "status": "generated_validated_applied",
+  "before_height_px": 363,
+  "before_alpha12_height_px": 359,
+  "before_bounds": [
+    233,
+    237,
+    458,
+    600
+  ],
+  "clips": [
+    {
+      "name": "idle",
+      "frames": 10,
+      "duration": 2.2,
+      "loop": true
+    },
+    {
+      "name": "walk",
+      "frames": 10,
+      "duration": 1.05,
+      "loop": true
+    },
+    {
+      "name": "run",
+      "frames": 10,
+      "duration": 0.82,
+      "loop": true
+    },
+    {
+      "name": "crouch_enter",
+      "frames": 4,
+      "duration": 0.14,
+      "loop": false
+    },
+    {
+      "name": "crouch_idle",
+      "frames": 6,
+      "duration": 0.8,
+      "loop": true
+    },
+    {
+      "name": "crouch_exit",
+      "frames": 4,
+      "duration": 0.13,
+      "loop": false
+    },
+    {
+      "name": "jump_start",
+      "frames": 4,
+      "duration": 0.13,
+      "loop": false
+    },
+    {
+      "name": "jump_rise",
+      "frames": 6,
+      "duration": 0.42,
+      "loop": false
+    },
+    {
+      "name": "fall",
+      "frames": 6,
+      "duration": 0.36,
+      "loop": true
+    },
+    {
+      "name": "land",
+      "frames": 5,
+      "duration": 0.24,
+      "loop": false
+    },
+    {
+      "name": "drop_through",
+      "frames": 5,
+      "duration": 0.22,
+      "loop": false
+    },
+    {
+      "name": "attack_1",
+      "frames": 8,
+      "duration": 0.33,
+      "loop": false
+    },
+    {
+      "name": "attack_2",
+      "frames": 8,
+      "duration": 0.33,
+      "loop": false
+    },
+    {
+      "name": "attack_3",
+      "frames": 10,
+      "duration": 0.4,
+      "loop": false
+    },
+    {
+      "name": "attack_4",
+      "frames": 10,
+      "duration": 0.56,
+      "loop": false
+    },
+    {
+      "name": "roll",
+      "frames": 10,
+      "duration": 0.48,
+      "loop": false
+    },
+    {
+      "name": "hurt",
+      "frames": 5,
+      "duration": 0.32,
+      "loop": false
+    },
+    {
+      "name": "death",
+      "frames": 8,
+      "duration": 0.6,
+      "loop": false
+    }
+  ],
+  "after_height_px": 363,
+  "after_bounds": [
+    201,
+    237,
+    439,
+    600
+  ]
+}

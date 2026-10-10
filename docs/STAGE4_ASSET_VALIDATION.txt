@@ -1,0 +1,30 @@
+NPC height reference: player idle frame 0, alpha > 12, H_p=363px; every frame ±3%.
+CONTRAST RearGate/gatekeeper: NPC 72.5, BG 48.9, difference 23.6
+WARNING: NPC contrast below 30: RearGate/gatekeeper
+CONTRAST CastleF1/lugalbanda: NPC 96.7, BG 28.6, difference 68.1
+CONTRAST CastleF1/ninsun: NPC 123.4, BG 34.1, difference 89.3
+CONTRAST CastleF2/shamhat: NPC 169.5, BG 59.6, difference 109.9
+CONTRAST CastleF3/cook_a: NPC 66.1, BG 32.5, difference 33.5
+CONTRAST CastleF3/cook_b: NPC 78.3, BG 26.9, difference 51.4
+CONTRAST CastleF3/cook_c: NPC 90.1, BG 41.9, difference 48.2
+CONTRAST CastleF4/inanna: NPC 194.0, BG 46.6, difference 147.4
+CONTRAST CastleF4/papsukkal: NPC 85.7, BG 34.4, difference 51.3
+CONTRAST VillaF1/servant_a: NPC 83.4, BG 60.6, difference 22.8
+WARNING: NPC contrast below 30: VillaF1/servant_a
+CONTRAST VillaF1/servant_b: NPC 83.6, BG 25.5, difference 58.1
+CONTRAST CastleFront/castle_gatekeeper_inner: NPC 72.5, BG 75.7, difference 3.2
+WARNING: NPC contrast below 30: CastleFront/castle_gatekeeper_inner
+CONTRAST CastleOutskirts/castle_gatekeeper_outer: NPC 72.5, BG 32.7, difference 39.8
+CONTRAST VillaF2/cook_a: NPC 66.1, BG 65.9, difference 0.1
+WARNING: NPC contrast below 30: VillaF2/cook_a
+CONTRAST VillaF2/cook_b: NPC 78.3, BG 70.6, difference 7.7
+WARNING: NPC contrast below 30: VillaF2/cook_b
+CONTRAST VillaF2/cook_c: NPC 90.1, BG 61.6, difference 28.4
+WARNING: NPC contrast below 30: VillaF2/cook_c
+CONTRAST VillaF2/cook_c: NPC 90.1, BG 63.4, difference 26.7
+WARNING: NPC contrast below 30: VillaF2/cook_c
+CONTRAST VillaF3/shamash: NPC 124.1, BG 60.8, difference 63.3
+CONTRAST VillaF3/aya: NPC 178.3, BG 65.4, difference 112.9
+NPC contrast warnings: 7 (non-failing; light pools/highlights excluded)
+Checked 147 PNG files; missing 0; errors 0.
+PASS: all required sheets and map assets match their manifests.

@@ -95,6 +95,9 @@ func _make_backgrounds() -> void:
             layer.scroll_scale = Vector2(ratio, 0.0)
             layer.z_index = int(entry.get("z", 0))
             layer.modulate = bg_dim
+            if entry.has("repeat_size"):
+                layer.repeat_size = _vector(entry["repeat_size"])
+                layer.repeat_times = int(entry.get("repeat_times", 4))
             add_child(layer)
             Art.add_image(layer, str(entry["path"]), at, size_px)
 
@@ -103,17 +106,24 @@ func _make_world() -> void:
     var margin: float = float(world_settings.get("outside_margin", 0.0))
     var wall: float = float(world_settings.get("wall_thickness", 0.0))
     var ground_height: float = float(world_settings.get("ground_collision_height", 0.0))
-    _make_surface(-margin, floor_y, width + margin * 2.0, ground_height, false)
+    if config.has("terrain"):
+        for segment in config["terrain"]:
+            var ground_y: float = float(segment["y"])
+            _make_surface(float(segment["from"]), ground_y, float(segment["to"]) - float(segment["from"]), maxf(ground_height, camera_limits.end.y - ground_y + ground_height), false)
+            _cover_ground(float(segment["from"]), float(segment["to"]), ground_y, str(segment.get("art", config.get("floor_art", ""))), _vector(config.get("floor_art_size", [512, 200])))
+    else:
+        _make_surface(-margin, floor_y, width + margin * 2.0, ground_height, false)
     _make_surface(-wall, -margin, wall, floor_y + ground_height + margin * 2.0, false)
     _make_surface(width, -margin, wall, floor_y + ground_height + margin * 2.0, false)
     if bool(config.get("ceiling", false)):
         _make_surface(-wall, -wall, width + wall * 2.0, wall, false)
     var tile_size: Vector2 = _vector(config.get("floor_art_size", []))
-    if tile_size.x > 0.0:
+    if tile_size.x > 0.0 and not config.has("terrain"):
         var tile_x: float = -margin
         while tile_x < width + margin:
             Art.add_image(self, str(config.get("floor_art", "")), Vector2(tile_x, floor_y), tile_size, -4)
             tile_x += tile_size.x
+        _fill_underground(-margin, width + margin, floor_y + tile_size.y)
     for section in config.get("floor_sections", []):
         var section_size: Vector2 = _vector(section["size"])
         var start: float = float(section["from"])
@@ -130,7 +140,34 @@ func _make_world() -> void:
         var at: Vector2 = _vector(platform["position"])
         var platform_width: float = float(platform["width"])
         _make_surface(at.x, at.y, platform_width, float(world_settings["platform_collision_height"]), true)
-        Art.add_image(self, str(world_settings["platform_art"]), at, Vector2(platform_width, float(world_settings["platform_art_height"])), -3)
+        Art.add_image(self, str(platform.get("art", world_settings["platform_art"])), at, Vector2(platform_width, float(platform.get("art_height", world_settings["platform_art_height"]))), -3)
+    for obstacle in config.get("obstacles", []):
+        var bounds: Rect2 = _rect(obstacle["rect"])
+        _make_surface(bounds.position.x, bounds.position.y, bounds.size.x, bounds.size.y, false)
+        Art.add_image(self, str(obstacle["art"]), bounds.position, bounds.size, -3)
+
+func _cover_ground(from_x: float, to_x: float, ground_y: float, art: String, tile_size: Vector2) -> void:
+    var x: float = from_x
+    while x < to_x:
+        Art.add_image(self, art, Vector2(x, ground_y), Vector2(minf(tile_size.x, to_x - x), tile_size.y), -4)
+        x += tile_size.x
+    _fill_underground(from_x, to_x, ground_y + tile_size.y)
+
+func _fill_underground(from_x: float, to_x: float, top: float) -> void:
+    var size_px: Vector2 = _vector(world_settings.get("underground_size", [512, 512]))
+    var y: float = top
+    while y < camera_limits.end.y:
+        var x: float = from_x
+        while x < to_x:
+            Art.add_image(self, str(world_settings.get("underground_art", "")), Vector2(x, y), Vector2(minf(size_px.x, to_x - x), minf(size_px.y, camera_limits.end.y - y)), -5)
+            x += size_px.x
+        y += size_px.y
+
+func ground_y_at(x: float) -> float:
+    for segment in config.get("terrain", []):
+        if x >= float(segment["from"]) and x <= float(segment["to"]):
+            return float(segment["y"])
+    return floor_y
 
 func _make_surface(x: float, y: float, width: float, height: float, one_way: bool) -> void:
     var body := StaticBody2D.new()
@@ -176,7 +213,7 @@ func _make_doors() -> void:
             continue
         door.name = str(entry["door_id"])
         door.position = _vector(entry["position"])
-        for property in ["door_id", "target_level", "target_spawn", "door_art", "locked", "locked_message", "auto_trigger", "interact_range", "arrival_spawn", "exit_direction", "arrival_walk_pixels", "gate_settings_key", "gate_open_seconds", "gate_close_seconds"]:
+        for property in ["door_id", "target_level", "target_spawn", "door_art", "locked", "locked_message", "auto_trigger", "interact_range", "arrival_spawn", "exit_direction", "arrival_walk_pixels", "gate_settings_key", "gate_open_seconds", "gate_close_seconds", "auto_transition_level", "auto_transition_spawn", "opens_without_keeper"]:
             if entry.has(property):
                 _set_if_present(door, property, entry[property])
         if entry.has("door_art"):
@@ -193,13 +230,14 @@ func _make_npcs() -> void:
         var npc: Node2D = _new_script_node(str(world_settings.get(script_key, "")))
         if npc == null:
             continue
-        npc.name = str(entry["id"])
+        var instance_id: String = str(entry.get("instance_id", entry["id"]))
+        npc.name = instance_id
         npc.position = _vector(entry["position"])
         _set_if_present(npc, "npc_id", str(entry["id"]))
         for property in ["idle_clip", "face_player", "initial_facing", "random_start", "interactable", "gesture_face_player"]:
             if entry.has(property):
                 _set_if_present(npc, property, entry[property])
-        npcs[str(entry["id"])] = npc
+        npcs[instance_id] = npc
         add_child(npc)
 
 func _connect_gatekeeper() -> void:

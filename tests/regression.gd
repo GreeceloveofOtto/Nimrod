@@ -561,9 +561,9 @@ func _test_rear_gate() -> void:
     _expect(not gate.can_interact(hero), "villa automatic entry does not trigger outside strip")
     gate.gate_state = gate.GateState.CLOSED
 
-    var layers: Array[String] = ["Sky", "FarCity", "CastleWall", "Foreground"]
-    var ratios: Array[float] = [0.05, 0.2, 0.45, 0.8]
-    var widths: Array[float] = [1536.0, 2112.0, 3136.0, 4608.0]
+    var layers: Array[String] = ["Sky", "FarCity", "CastleWall"]
+    var ratios: Array[float] = [0.05, 0.2, 0.45]
+    var widths: Array[float] = [1536.0, 2112.0, 3136.0]
     for index: int in range(layers.size()):
         var layer: Parallax2D = scene.get_node(layers[index]) as Parallax2D
         _close(layer.scroll_scale.x, ratios[index], layers[index] + " parallax ratio")

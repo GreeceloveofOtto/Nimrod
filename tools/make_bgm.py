@@ -80,6 +80,9 @@ def main():
     stage3 = json.loads((PROJECT_ROOT / "data/audio_stage3.json").read_text(encoding="utf-8"))
     for spec in stage3["bgm"]:
         make_stage2_bgm(spec)
+    stage4 = json.loads((PROJECT_ROOT / "data/audio_stage4.json").read_text(encoding="utf-8"))
+    for spec in stage4["bgm"]:
+        make_stage2_bgm(spec)
 
 
 if __name__ == "__main__":

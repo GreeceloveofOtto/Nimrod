@@ -5,3 +5,6 @@
 __pycache__/
 *.pyc
 artifacts/
+
+# Intermediate validated sheets; final PNGs and generated source poses are retained.
+assets/source_art/stage4/player_staged/

@@ -33,15 +33,6 @@
       "map_width": 5400
     },
     {
-      "name": "rear_gate_foreground",
-      "path": "backgrounds/rear_gate/foreground.png",
-      "width": 4608,
-      "height": 720,
-      "transparent": true,
-      "scroll_ratio": 0.8,
-      "map_width": 5400
-    },
-    {
       "name": "villa_exterior",
       "path": "backgrounds/rear_gate/villa_exterior.png",
       "width": 1500,

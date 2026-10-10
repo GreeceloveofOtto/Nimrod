@@ -38,7 +38,8 @@ const BGM_TABLE: Dictionary = {
     "castle_hall": "res://assets/audio/bgm/castle_hall.wav",
     "uruk_sky": "res://assets/audio/bgm/uruk_sky.wav",
     "villa_calm": "res://assets/audio/bgm/villa_calm.wav",
-    "castle_front": "res://assets/audio/bgm/castle_front.wav"
+    "castle_front": "res://assets/audio/bgm/castle_front.wav",
+    "uruk_wasteland": "res://assets/audio/bgm/uruk_wasteland.wav"
 }
 const LOOP_SFX: Array[String] = ["beast_ranged_flame_loop", "sky_beast_wingflap_loop"]
 const SILENT_DB: float = -60.0

@@ -58,6 +58,15 @@
       "shadow_width_ratio": 0.9,
       "shadow_height": 12,
       "shadow_alpha": 0.45
+    },
+    "three_way": {
+      "front_distance": 140,
+      "side_distance": 220,
+      "fade_seconds": 0.12,
+      "look_distance": 700,
+      "look_min": 4,
+      "look_max": 8,
+      "look_min_hold": 2
     }
   },
   "npcs": [
@@ -72,10 +81,18 @@
           "frames": 6,
           "duration": 2.4,
           "loop": true
+        },
+        {
+          "name": "idle_front",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
         }
       ],
       "face_player": true,
-      "random_start": false
+      "random_start": false,
+      "three_way": true,
+      "initial_pose": "right"
     },
     {
       "id": "ninsun",
@@ -88,10 +105,18 @@
           "frames": 6,
           "duration": 2.4,
           "loop": true
+        },
+        {
+          "name": "idle_front",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
         }
       ],
       "face_player": true,
-      "random_start": false
+      "random_start": false,
+      "three_way": true,
+      "initial_pose": "left"
     },
     {
       "id": "shamhat",
@@ -104,10 +129,18 @@
           "frames": 6,
           "duration": 2.4,
           "loop": true
+        },
+        {
+          "name": "idle_front",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
         }
       ],
       "face_player": true,
-      "random_start": false
+      "random_start": false,
+      "three_way": true,
+      "initial_pose": "front"
     },
     {
       "id": "inanna",
@@ -120,10 +153,18 @@
           "frames": 6,
           "duration": 2.4,
           "loop": true
+        },
+        {
+          "name": "idle_front",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
         }
       ],
       "face_player": true,
-      "random_start": false
+      "random_start": false,
+      "three_way": true,
+      "initial_pose": "front"
     },
     {
       "id": "papsukkal",
@@ -136,10 +177,18 @@
           "frames": 6,
           "duration": 2.4,
           "loop": true
+        },
+        {
+          "name": "idle_front",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
         }
       ],
       "face_player": true,
-      "random_start": false
+      "random_start": false,
+      "three_way": true,
+      "initial_pose": "front"
     },
     {
       "id": "cook_a",
@@ -157,7 +206,8 @@
       "face_player": false,
       "random_start": true,
       "source_height_ratio": 0.7,
-      "visual_scale_multiplier": 1.3
+      "visual_scale_multiplier": 1.3,
+      "source_reference_height_px": 359
     },
     {
       "id": "cook_b",
@@ -175,7 +225,8 @@
       "face_player": false,
       "random_start": true,
       "source_height_ratio": 0.72,
-      "visual_scale_multiplier": 1.3
+      "visual_scale_multiplier": 1.3,
+      "source_reference_height_px": 359
     },
     {
       "id": "cook_c",
@@ -193,7 +244,8 @@
       "face_player": false,
       "random_start": true,
       "source_height_ratio": 0.74,
-      "visual_scale_multiplier": 1.3
+      "visual_scale_multiplier": 1.3,
+      "source_reference_height_px": 359
     },
     {
       "id": "servant_a",
@@ -211,7 +263,8 @@
       "face_player": false,
       "random_start": true,
       "source_height_ratio": 0.7,
-      "visual_scale_multiplier": 1.3
+      "visual_scale_multiplier": 1.3,
+      "source_reference_height_px": 359
     },
     {
       "id": "servant_b",
@@ -229,7 +282,8 @@
       "face_player": false,
       "random_start": true,
       "source_height_ratio": 0.72,
-      "visual_scale_multiplier": 1.3
+      "visual_scale_multiplier": 1.3,
+      "source_reference_height_px": 359
     },
     {
       "id": "gatekeeper",
@@ -253,7 +307,8 @@
       "face_player": false,
       "random_start": true,
       "source_height_ratio": 0.74,
-      "visual_scale_multiplier": 1.3
+      "visual_scale_multiplier": 1.3,
+      "source_reference_height_px": 359
     },
     {
       "id": "castle_gatekeeper_outer",
@@ -277,7 +332,8 @@
       "face_player": true,
       "random_start": true,
       "source_height_ratio": 0.74,
-      "visual_scale_multiplier": 1.3
+      "visual_scale_multiplier": 1.3,
+      "source_reference_height_px": 359
     },
     {
       "id": "castle_gatekeeper_inner",
@@ -301,7 +357,56 @@
       "face_player": false,
       "random_start": true,
       "source_height_ratio": 0.74,
-      "visual_scale_multiplier": 1.3
+      "visual_scale_multiplier": 1.3,
+      "source_reference_height_px": 359
+    },
+    {
+      "id": "shamash",
+      "display_name": "샤마쉬",
+      "height_ratio": 1.04,
+      "sheet_dir": "assets/sprites/npcs/shamash",
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
+        },
+        {
+          "name": "idle_front",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
+        }
+      ],
+      "face_player": true,
+      "three_way": true,
+      "initial_pose": "front",
+      "random_start": false
+    },
+    {
+      "id": "aya",
+      "display_name": "아야",
+      "height_ratio": 0.98,
+      "sheet_dir": "assets/sprites/npcs/aya",
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
+        },
+        {
+          "name": "idle_front",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
+        }
+      ],
+      "face_player": true,
+      "three_way": true,
+      "initial_pose": "front",
+      "random_start": false
     }
   ]
 }

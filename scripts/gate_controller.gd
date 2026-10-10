@@ -13,6 +13,7 @@ extends DoorPortal
 @export var auto_transition_level: String = ""
 @export var auto_transition_spawn: String = ""
 @export var requires_dialogue: bool = false
+@export var opens_without_keeper: bool = false
 @export var gate_settings_key: String = "great_gate"
 
 # Compatibility property for saved villa scenes and previous regression checks.
@@ -30,6 +31,7 @@ var gatekeeper: Node2D
 var wall: StaticBody2D
 var wall_shape: CollisionShape2D
 var entry_armed: bool = true
+var approach_armed: bool = true
 
 func _ready() -> void:
     if not gate_art.is_empty():
@@ -76,6 +78,8 @@ func _process(_delta: float) -> void:
     if player == null or busy:
         return
     var distance: float = absf(player.global_position.x - global_position.x)
+    if not approach_armed and distance > trigger_radius:
+        approach_armed = true
     if not entry_armed and distance > float(gate_config.get("entry_rearm_distance", 80.0)):
         entry_armed = true
     if not _player_available(player):
@@ -83,7 +87,7 @@ func _process(_delta: float) -> void:
     # TODO: a future dialogue system may authorize the gate here.
     if gate_requires_dialogue:
         return
-    if gate_state == GateState.CLOSED and distance <= trigger_radius:
+    if gate_state == GateState.CLOSED and approach_armed and distance <= trigger_radius:
         _request_open(player)
     elif gate_state == GateState.OPEN and distance >= close_radius:
         _close_gate()
@@ -102,8 +106,11 @@ func _request_open(player: Node2D) -> void:
     if is_instance_valid(gatekeeper):
         gatekeeper.call("begin_open_gate", player)
     else:
-        push_warning("Gatekeeper missing; opening gate directly")
-        keeper_open_frame_reached()
+        if opens_without_keeper:
+            keeper_open_frame_reached()
+        else:
+            gate_state = GateState.CLOSED
+            push_warning("Gatekeeper missing; gate remains closed")
 
 func keeper_open_frame_reached() -> void:
     if gate_state != GateState.REQUESTED or gate_requires_dialogue:
@@ -140,6 +147,7 @@ func interact(player: Node2D) -> void:
 
 func prepare_arrival(player: Node2D) -> void:
     entry_armed = false
+    approach_armed = false
     gate_state = GateState.OPEN
     wall_shape.set_deferred("disabled", true)
     super.prepare_arrival(player)

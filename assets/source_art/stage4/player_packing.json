@@ -1,0 +1,641 @@
+{
+  "idle": {
+    "source": "source_art/stage4/locomotion_atlas.png",
+    "scale": 1.4015444015444016,
+    "source_pose_sizes": [
+      [
+        170,
+        259
+      ],
+      [
+        158,
+        258
+      ],
+      [
+        139,
+        258
+      ],
+      [
+        146,
+        258
+      ],
+      [
+        155,
+        258
+      ],
+      [
+        140,
+        259
+      ],
+      [
+        143,
+        260
+      ],
+      [
+        148,
+        259
+      ],
+      [
+        153,
+        259
+      ],
+      [
+        158,
+        259
+      ]
+    ]
+  },
+  "walk": {
+    "source": "source_art/stage4/locomotion_atlas.png",
+    "scale": 1.4015444015444016,
+    "source_pose_sizes": [
+      [
+        177,
+        238
+      ],
+      [
+        178,
+        235
+      ],
+      [
+        167,
+        234
+      ],
+      [
+        193,
+        232
+      ],
+      [
+        181,
+        232
+      ],
+      [
+        188,
+        235
+      ],
+      [
+        194,
+        237
+      ],
+      [
+        192,
+        235
+      ],
+      [
+        200,
+        234
+      ],
+      [
+        174,
+        234
+      ]
+    ]
+  },
+  "crouch_enter": {
+    "source": "source_art/stage4/crouch_atlas.png",
+    "scale": 0.8819345661450925,
+    "source_pose_sizes": [
+      [
+        226,
+        330
+      ],
+      [
+        235,
+        291
+      ],
+      [
+        234,
+        252
+      ],
+      [
+        255,
+        196
+      ]
+    ]
+  },
+  "crouch_idle": {
+    "source": "source_art/stage4/crouch_atlas.png",
+    "scale": 0.8819345661450925,
+    "source_pose_sizes": [
+      [
+        247,
+        217
+      ],
+      [
+        246,
+        208
+      ],
+      [
+        241,
+        225
+      ],
+      [
+        244,
+        232
+      ],
+      [
+        237,
+        215
+      ],
+      [
+        227,
+        231
+      ]
+    ]
+  },
+  "crouch_exit": {
+    "source": "source_art/stage4/crouch_atlas.png",
+    "scale": 0.8819345661450925,
+    "source_pose_sizes": [
+      [
+        251,
+        246
+      ],
+      [
+        236,
+        290
+      ],
+      [
+        230,
+        325
+      ],
+      [
+        703,
+        344
+      ]
+    ]
+  },
+  "jump_start": {
+    "source": "source_art/stage4/airborne_atlas.png",
+    "scale": 1.1089613034623218,
+    "source_pose_sizes": [
+      [
+        241,
+        232
+      ],
+      [
+        258,
+        201
+      ],
+      [
+        258,
+        253
+      ],
+      [
+        213,
+        296
+      ]
+    ]
+  },
+  "jump_rise": {
+    "source": "source_art/stage4/airborne_atlas.png",
+    "scale": 1.1089613034623218,
+    "source_pose_sizes": [
+      [
+        194,
+        296
+      ],
+      [
+        236,
+        292
+      ],
+      [
+        223,
+        242
+      ],
+      [
+        226,
+        273
+      ],
+      [
+        215,
+        295
+      ],
+      [
+        271,
+        292
+      ]
+    ]
+  },
+  "fall": {
+    "source": "source_art/stage4/airborne_atlas.png",
+    "scale": 1.1089613034623218,
+    "source_pose_sizes": [
+      [
+        276,
+        313
+      ],
+      [
+        288,
+        302
+      ],
+      [
+        243,
+        270
+      ],
+      [
+        258,
+        240
+      ],
+      [
+        259,
+        240
+      ],
+      [
+        270,
+        322
+      ]
+    ]
+  },
+  "land": {
+    "source": "source_art/stage4/responses_atlas.png",
+    "scale": 1.5381355932203389,
+    "source_pose_sizes": [
+      [
+        225,
+        245
+      ],
+      [
+        248,
+        164
+      ],
+      [
+        202,
+        133
+      ],
+      [
+        174,
+        192
+      ],
+      [
+        143,
+        236
+      ]
+    ]
+  },
+  "drop_through": {
+    "source": "source_art/stage4/responses_atlas.png",
+    "scale": 1.5381355932203389,
+    "source_pose_sizes": [
+      [
+        157,
+        191
+      ],
+      [
+        192,
+        207
+      ],
+      [
+        181,
+        233
+      ],
+      [
+        201,
+        199
+      ],
+      [
+        190,
+        125
+      ]
+    ]
+  },
+  "hurt": {
+    "source": "source_art/stage4/responses_atlas.png",
+    "scale": 1.5381355932203389,
+    "source_pose_sizes": [
+      [
+        202,
+        243
+      ],
+      [
+        189,
+        241
+      ],
+      [
+        199,
+        220
+      ],
+      [
+        174,
+        223
+      ],
+      [
+        203,
+        236
+      ]
+    ]
+  },
+  "death": {
+    "source": "source_art/stage4/responses_atlas.png",
+    "scale": 1.5381355932203389,
+    "source_pose_sizes": [
+      [
+        158,
+        233
+      ],
+      [
+        165,
+        194
+      ],
+      [
+        175,
+        165
+      ],
+      [
+        180,
+        142
+      ],
+      [
+        194,
+        105
+      ],
+      [
+        213,
+        89
+      ],
+      [
+        179,
+        85
+      ],
+      [
+        244,
+        89
+      ]
+    ]
+  },
+  "attack_1": {
+    "source": "source_art/stage4/attack_1_clean_atlas.png",
+    "scale": 0.9758064516129032,
+    "source_pose_sizes": [
+      [
+        361,
+        262
+      ],
+      [
+        301,
+        381
+      ],
+      [
+        346,
+        305
+      ],
+      [
+        462,
+        264
+      ],
+      [
+        460,
+        258
+      ],
+      [
+        460,
+        257
+      ],
+      [
+        377,
+        303
+      ],
+      [
+        272,
+        372
+      ]
+    ],
+    "frame_8_source": "source_art/stage4/attack_1_atlas.png; crop (1160,512,1536,1024), scale to preceding ready pose height"
+  },
+  "attack_2": {
+    "source": "source_art/stage4/attack_2_atlas.png",
+    "scale": 0.8157303370786517,
+    "source_pose_sizes": [
+      [
+        328,
+        389
+      ],
+      [
+        392,
+        356
+      ],
+      [
+        451,
+        367
+      ],
+      [
+        349,
+        464
+      ],
+      [
+        319,
+        471
+      ],
+      [
+        303,
+        431
+      ],
+      [
+        374,
+        393
+      ],
+      [
+        294,
+        445
+      ]
+    ]
+  },
+  "attack_3": {
+    "source": "source_art/stage4/attack_3_atlas.png",
+    "scale": 0.8832116788321168,
+    "source_pose_sizes": [
+      [
+        264,
+        412
+      ],
+      [
+        273,
+        445
+      ],
+      [
+        235,
+        446
+      ],
+      [
+        354,
+        425
+      ],
+      [
+        398,
+        386
+      ],
+      [
+        365,
+        373
+      ],
+      [
+        382,
+        307
+      ],
+      [
+        310,
+        381
+      ],
+      [
+        277,
+        402
+      ],
+      [
+        280,
+        411
+      ]
+    ]
+  },
+  "attack_4": {
+    "source": "source_art/stage4/attack_4_clean_atlas.png",
+    "scale": 1.2181208053691275,
+    "source_pose_sizes": [
+      [
+        165,
+        278
+      ],
+      [
+        289,
+        263
+      ],
+      [
+        256,
+        301
+      ],
+      [
+        346,
+        305
+      ],
+      [
+        432,
+        231
+      ],
+      [
+        380,
+        223
+      ],
+      [
+        425,
+        192
+      ],
+      [
+        291,
+        191
+      ],
+      [
+        285,
+        280
+      ],
+      [
+        178,
+        298
+      ]
+    ],
+    "frame_4_source": "source_art/stage4/attack_1_clean_atlas.png; second row first generated descending strike pose"
+  },
+  "run": {
+    "source": "source_art/stage4/run_atlas.png",
+    "scale": 0.8864265927977839,
+    "source_pose_sizes": [
+      [
+        295,
+        361
+      ],
+      [
+        314,
+        361
+      ],
+      [
+        254,
+        361
+      ],
+      [
+        304,
+        361
+      ],
+      [
+        332,
+        361
+      ],
+      [
+        304,
+        361
+      ],
+      [
+        318,
+        361
+      ],
+      [
+        257,
+        361
+      ],
+      [
+        296,
+        361
+      ],
+      [
+        344,
+        361
+      ]
+    ],
+    "normalization": "Uniformly resize each complete generated pose to the first source pose height; packed height 320px"
+  },
+  "roll": {
+    "source": "source_art/stage4/roll_atlas.png",
+    "scale": 0.9945205479452055,
+    "source_pose_sizes": [
+      [
+        350,
+        247
+      ],
+      [
+        318,
+        218
+      ],
+      [
+        245,
+        305
+      ],
+      [
+        290,
+        266
+      ],
+      [
+        357,
+        266
+      ],
+      [
+        355,
+        232
+      ],
+      [
+        344,
+        233
+      ],
+      [
+        315,
+        271
+      ],
+      [
+        283,
+        343
+      ],
+      [
+        321,
+        365
+      ]
+    ],
+    "compact_frames": {
+      "frames": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "source": "source_art/stage4/roll_compact_atlas.png",
+      "scale": 0.37825059101654845,
+      "maximum_packed_height_px": 160
+    }
+  }
+}

@@ -678,6 +678,13 @@ func _show_clip(name: String, explicit_time: float = -1.0, delta: float = 0.0) -
     var looped: bool = bool(clip.get("loop", false))
     var local_t: float = fmod(display_clock, duration) if looped else minf(display_clock, duration)
     var index: int = clampi(int(floor(local_t * float(count) / duration)), 0, count - 1)
+    var boundaries: Array = clip.get("frame_boundaries_seconds", [])
+    if boundaries.size() == count + 1:
+        index = count - 1
+        for frame in range(count):
+            if local_t < float(boundaries[frame + 1]):
+                index = frame
+                break
     var width: int = int(clip.get("frame_width", 512))
     var height: int = int(clip.get("frame_height", 512))
     var cols: int = int(clip.get("columns", 1))

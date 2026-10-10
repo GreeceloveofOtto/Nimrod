@@ -42,7 +42,9 @@
           },
           "windup_stun_immune": true
         }
-      ]
+      ],
+      "drop_chance": 0.05,
+      "drop_id": "healing_vomit"
     },
     {
       "id": "ranged_beast",
@@ -87,7 +89,9 @@
             128
           ]
         }
-      ]
+      ],
+      "drop_chance": 0.05,
+      "drop_id": "healing_vomit"
     },
     {
       "id": "sky_beast",

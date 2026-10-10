@@ -85,7 +85,7 @@ def main():
 
         for index, (name, width, ratio) in enumerate([
             ("sky", 1536, .05), ("far_city", 2112, .20),
-            ("castle_wall", 3136, .45), ("foreground", 4608, .80),
+            ("castle_wall", 3136, .45),
         ]):
             top, bottom = round(index * 1254 / 4), round((index + 1) * 1254 / 4)
             single("rear_gate_" + name, "rear_layers", [0, top, 1254, bottom - top],

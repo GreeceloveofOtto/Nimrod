@@ -1,23 +1,171 @@
 extends SceneTree
 
-# Render all eight levels plus exterior gate and CastleFront views.
+# Render Stage4 maps, seven terrain regions and NPC three-way poses.
 # DISPLAY=:99 godot43 --path . --audio-driver Dummy --script tests/render_capture.gd
 # A display is required; headless rendering cannot capture the actual artwork.
 const OUTPUT: String = "res://docs/screenshots/"
 const VIEWPORT_SIZE: Vector2i = Vector2i(1280, 720)
 const SAMPLES: Array[Dictionary] = [
-    {"name": "castle_front_arrival", "level": "CastleFront", "spawn": "Spawn_FromCastle", "x": 3900.0, "settle": 0.3},
-    {"name": "castle_front_great_gate", "level": "CastleFront", "spawn": "Spawn_FromCastle", "x": 2960.0, "settle": 1.9},
-    {"name": "castle_front_downtown", "level": "CastleFront", "spawn": "Spawn_FromCastle", "x": 480.0, "settle": 0.3},
-    {"name": "castle_front_combat", "level": "CastleFront", "spawn": "Spawn_Debug", "x": 1750.0, "settle": 0.3},
-    {"name": "rear_gate_start", "level": "RearGate", "spawn": "Spawn_Start", "x": 230.0, "settle": 0.3},
-    {"name": "rear_gate_villa_gate", "level": "RearGate", "spawn": "Spawn_Start", "x": 4930.0, "settle": 1.6},
-    {"name": "castle_f1", "level": "CastleF1", "spawn": "Spawn_FromRearGate", "x": 780.0, "settle": 0.3},
-    {"name": "castle_f2", "level": "CastleF2", "spawn": "Spawn_FromBelow", "x": 740.0, "settle": 0.3},
-    {"name": "castle_f3", "level": "CastleF3", "spawn": "Spawn_FromBelow", "x": 900.0, "settle": 0.3},
-    {"name": "castle_f4", "level": "CastleF4", "spawn": "Spawn_FromBelow", "x": 740.0, "settle": 0.3},
-    {"name": "castle_f5", "level": "CastleF5", "spawn": "Spawn_FromBelow", "x": 1100.0, "settle": 0.3},
-    {"name": "villa_f1", "level": "VillaF1", "spawn": "Spawn_FromGate", "x": 910.0, "settle": 0.3},
+    {
+        "name": "castle_front",
+        "level": "CastleFront",
+        "spawn": "Spawn_FromCastle",
+        "x": 2100.0,
+        "settle": 0.3
+    },
+    {
+        "name": "castle_front_gate",
+        "level": "CastleFront",
+        "spawn": "Spawn_FromCastle",
+        "x": 860.0,
+        "settle": 0.3
+    },
+    {
+        "name": "outskirts_region_1",
+        "level": "CastleOutskirts",
+        "spawn": "Spawn_FromGate",
+        "x": 9330.0,
+        "settle": 0.3
+    },
+    {
+        "name": "outskirts_region_2",
+        "level": "CastleOutskirts",
+        "spawn": "Spawn_FromGate",
+        "x": 8450.0,
+        "settle": 0.3
+    },
+    {
+        "name": "outskirts_region_3",
+        "level": "CastleOutskirts",
+        "spawn": "Spawn_FromGate",
+        "x": 7300.0,
+        "settle": 0.3,
+        "y": 820.0
+    },
+    {
+        "name": "outskirts_region_4",
+        "level": "CastleOutskirts",
+        "spawn": "Spawn_FromGate",
+        "x": 5800.0,
+        "settle": 0.3,
+        "y": 740.0
+    },
+    {
+        "name": "outskirts_region_5",
+        "level": "CastleOutskirts",
+        "spawn": "Spawn_FromGate",
+        "x": 4100.0,
+        "settle": 0.3
+    },
+    {
+        "name": "outskirts_region_6",
+        "level": "CastleOutskirts",
+        "spawn": "Spawn_FromGate",
+        "x": 2350.0,
+        "settle": 0.3
+    },
+    {
+        "name": "outskirts_region_7",
+        "level": "CastleOutskirts",
+        "spawn": "Spawn_FromGate",
+        "x": 800.0,
+        "settle": 0.3
+    },
+    {
+        "name": "villa_f1",
+        "level": "VillaF1",
+        "spawn": "Spawn_FromGate",
+        "x": 1000.0,
+        "settle": 0.3
+    },
+    {
+        "name": "villa_f2",
+        "level": "VillaF2",
+        "spawn": "Spawn_FromBelow",
+        "x": 1000.0,
+        "settle": 0.3
+    },
+    {
+        "name": "villa_f3",
+        "level": "VillaF3",
+        "spawn": "Spawn_FromBelow",
+        "x": 1000.0,
+        "settle": 0.3
+    },
+    {
+        "name": "npc_left",
+        "level": "CastleF1",
+        "spawn": "Spawn_FromRearGate",
+        "x": 950.0,
+        "settle": 0.3,
+        "pose": "left"
+    },
+    {
+        "name": "npc_front",
+        "level": "CastleF1",
+        "spawn": "Spawn_FromRearGate",
+        "x": 950.0,
+        "settle": 0.3,
+        "pose": "front"
+    },
+    {
+        "name": "npc_right",
+        "level": "CastleF1",
+        "spawn": "Spawn_FromRearGate",
+        "x": 950.0,
+        "settle": 0.3,
+        "pose": "right"
+    },
+    {
+        "name": "castle_f4_npcs",
+        "level": "CastleF4",
+        "spawn": "Spawn_FromBelow",
+        "x": 950.0,
+        "settle": 0.3
+    },
+    {
+        "name": "rear_gate_no_foreground",
+        "level": "RearGate",
+        "spawn": "Spawn_Start",
+        "x": 1300.0,
+        "settle": 0.3
+    },
+    {
+        "name": "attack_1_hitbox",
+        "level": "CastleOutskirts",
+        "spawn": "Spawn_Debug",
+        "x": 1200.0,
+        "settle": 0.15,
+        "attack": 1,
+        "time": 0.12
+    },
+    {
+        "name": "attack_2_hitbox",
+        "level": "CastleOutskirts",
+        "spawn": "Spawn_Debug",
+        "x": 1200.0,
+        "settle": 0.15,
+        "attack": 2,
+        "time": 0.12
+    },
+    {
+        "name": "attack_3_hitbox",
+        "level": "CastleOutskirts",
+        "spawn": "Spawn_Debug",
+        "x": 1200.0,
+        "settle": 0.15,
+        "attack": 3,
+        "time": 0.2
+    },
+    {
+        "name": "attack_4_hitbox",
+        "level": "CastleOutskirts",
+        "spawn": "Spawn_Debug",
+        "x": 1200.0,
+        "settle": 0.15,
+        "attack": 4,
+        "time": 0.34
+    }
 ]
 
 func _initialize() -> void:
@@ -69,10 +217,23 @@ func _run() -> void:
                 return
         var level: Node2D = manager.current_level
         hero.set_physics_process(false)
-        hero.global_position = Vector2(float(sample["x"]), float(level.get("floor_y")))
+        hero.global_position = Vector2(float(sample["x"]), float(sample.get("y", level.ground_y_at(float(sample["x"])))))
+        if sample.has("pose"):
+            for npc: NPC in level.npcs.values():
+                npc.set_process(false)
+                npc._change_pose({"left":-1,"front":0,"right":1}[str(sample["pose"])])
         hero.facing = 1
         hero.visual.flip_h = false
         hero._show_clip("idle", 0.0)
+        if sample.has("attack"):
+            hero._begin_attack(int(sample["attack"]))
+            hero.attack_clock = float(sample["time"])
+            hero._show_clip("attack_"+str(sample["attack"]),hero.attack_clock)
+            hero.debug_hitboxes = true
+            hero.debug_rect = hero._attack_rect()
+            if int(sample["attack"]) == 4:
+                hero.shockwave_rect = hero._configured_hitbox(hero.shockwave_data)
+            hero.queue_redraw()
         hero.camera.reset_smoothing()
         hero.camera.force_update_scroll()
         if str(sample["name"]) != "rear_gate_start":
@@ -82,7 +243,7 @@ func _run() -> void:
         await process_frame
         await RenderingServer.frame_post_draw
         var image: Image = root.get_texture().get_image()
-        var path: String = OUTPUT + "stage3_" + str(sample["name"]) + ".png"
+        var path: String = OUTPUT + "stage4_" + str(sample["name"]) + ".png"
         var result: Error = image.save_png(path)
         if result != OK or image.get_size() != VIEWPORT_SIZE:
             push_error("Rendered capture failed: " + path)

@@ -1,0 +1,87 @@
+{
+  "godot_version": "4.3.stable.official.77dcf97d8",
+  "tests": [
+    {
+      "test": "regression.gd",
+      "checks": 193,
+      "failures": 0,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 2.93
+    },
+    {
+      "test": "stage2_interactions.gd",
+      "checks": 41,
+      "failures": 0,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 14.55
+    },
+    {
+      "test": "stage2_sky.gd",
+      "checks": 66,
+      "failures": 0,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 4.48
+    },
+    {
+      "test": "stage2_transitions.gd",
+      "checks": 210,
+      "failures": 0,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 32.95
+    },
+    {
+      "test": "stage3_front.gd",
+      "checks": 40,
+      "failures": 0,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 14.61
+    },
+    {
+      "test": "stage4_gate.gd",
+      "checks": 38,
+      "failures": 0,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 15.35
+    },
+    {
+      "test": "stage4_npc_facing.gd",
+      "checks": 73,
+      "failures": 0,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 9.78
+    },
+    {
+      "test": "stage4_player_scale.gd",
+      "checks": 45,
+      "failures": 0,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 1.38
+    },
+    {
+      "test": "stage4_terrain.gd",
+      "checks": 5,
+      "failures": 0,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 15.55
+    },
+    {
+      "test": "stage4_villa.gd",
+      "checks": 19,
+      "failures": 0,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 11.89
+    }
+  ],
+  "total_checks": 730,
+  "all_passed": true
+}

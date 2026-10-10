@@ -106,6 +106,13 @@
         460
       ],
       "frames": 1
+    },
+    "villa_back_door": {
+      "frame_size": [
+        320,
+        420
+      ],
+      "frames": 6
     }
   },
   "great_gate": {

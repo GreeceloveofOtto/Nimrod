@@ -29,6 +29,26 @@
         3840,
         640
       ]
+    },
+    {
+      "name": "idle_front",
+      "sheet": "sprites/npcs/papsukkal/idle_front.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 2.4,
+      "fps": 2.5,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3840,
+        640
+      ]
     }
   ],
   "design_reference": "reference/papsukkal_design.png",

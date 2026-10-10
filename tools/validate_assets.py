@@ -122,7 +122,7 @@ class Validator:
                     self.fail(path, f"frame {index + 1} not aligned to bottom-center anchor: {bounds}")
             if bounds is not None and npc is not None and self.player_height is not None:
                 measured_height = bounds[3] - bounds[1]
-                expected_height = self.player_height * npc["height_ratio"]
+                expected_height = npc.get("source_reference_height_px", self.player_height) * npc["height_ratio"]
                 measured_height *= npc.get("visual_scale_multiplier", 1.0)
                 if abs(measured_height - expected_height) > expected_height * 0.03:
                     self.fail(path, f"frame {index + 1} NPC height {measured_height}px outside ±3% of "
@@ -248,9 +248,11 @@ class Validator:
                 last = image.crop((image.width - 1, 0, image.width, image.height)).tobytes()
                 if first != last:
                     self.fail(entry["path"], "tile_x requires matching first/last RGBA columns; repack with --tile-x")
+            if image is not None and entry.get("tile_y") and image.crop((0,0,image.width,1)).tobytes() != image.crop((0,image.height-1,image.width,image.height)).tobytes():
+                self.fail(entry["path"], "tile_y requires identical top/bottom edges")
             ratio = entry.get("scroll_ratio")
             map_width = entry.get("map_width", 3600)
-            if ratio is not None and entry["width"] < 1280 + max(0, map_width - 1280) * ratio:
+            if ratio is not None and not entry.get("repeat_x") and not entry.get("localized") and entry["width"] < 1280 + max(0, map_width - 1280) * ratio:
                 self.fail(entry["path"], f"image width insufficient for {map_width}px map parallax travel")
         self.check_npc_contrast()
         for relative in self.missing:

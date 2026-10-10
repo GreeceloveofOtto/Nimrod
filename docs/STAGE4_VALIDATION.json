@@ -1,0 +1,19 @@
+{
+  "player_height_before": 363,
+  "player_height_after": 363,
+  "player_scale_checks": 297,
+  "reachability_checks": 99,
+  "required_pngs": 147,
+  "missing_pngs": 0,
+  "asset_errors": 0,
+  "contrast_warnings": 7,
+  "render_screenshots": 21,
+  "motion_gifs": 18,
+  "motion_contact_sheets": 18,
+  "all_gameplay_checks": 730,
+  "render_script_errors": 0,
+  "bgm_seconds": 48,
+  "bgm_peak_dbfs": -3.0003622493859567,
+  "bgm_boundary_delta_pcm": 151,
+  "bgm_max_adjacent_delta_pcm": 359
+}

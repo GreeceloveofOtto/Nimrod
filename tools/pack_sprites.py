@@ -249,6 +249,8 @@ def pack_image(args):
         # Exact equality at the wrap seam, including alpha.
         pixels[:, -1] = pixels[:, 0]
         source = Image.fromarray(pixels, "RGBA")
+    if not args.opaque:
+        source = chromakey(source)  # Remove 1-alpha magenta resampling fringe.
     save_image(source, args.output)
 
 

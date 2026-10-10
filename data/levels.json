@@ -23,7 +23,12 @@
       "sky_beast": "res://scripts/enemy_sky_beast.gd"
     },
     "enemy_copy_spacing": 100,
-    "gate_controller_script": "res://scripts/gate_controller.gd"
+    "gate_controller_script": "res://scripts/gate_controller.gd",
+    "underground_art": "res://assets/tiles/underground_fill.png",
+    "underground_size": [
+      512,
+      512
+    ]
   },
   "levels": [
     {
@@ -105,20 +110,6 @@
           ],
           "ratio": 0.45,
           "z": -20,
-          "position": [
-            0,
-            0
-          ]
-        },
-        {
-          "name": "Foreground",
-          "path": "res://assets/backgrounds/rear_gate/foreground.png",
-          "size": [
-            4608,
-            720
-          ],
-          "ratio": 0.8,
-          "z": 20,
           "position": [
             0,
             0
@@ -1026,6 +1017,10 @@
         "Spawn_FromGate": [
           200,
           620
+        ],
+        "Spawn_FromAbove": [
+          1000,
+          620
         ]
       },
       "backgrounds": [
@@ -1058,25 +1053,35 @@
           "exit_direction": 1
         },
         {
-          "door_id": "villa_up_locked",
+          "door_id": "door_up",
+          "position": [
+            1000,
+            620
+          ],
+          "door_art": "res://assets/props/doors/villa_inner_door.png",
+          "target_level": "VillaF2",
+          "target_spawn": "Spawn_FromBelow",
+          "arrival_spawn": "Spawn_FromAbove"
+        },
+        {
+          "door_id": "villa_back_door",
           "position": [
             1850,
             620
           ],
-          "door_art": "res://assets/props/doors/villa_inner_door.png",
+          "door_art": "res://assets/props/doors/villa_back_door.png",
           "target_level": "",
           "target_spawn": "",
           "arrival_spawn": "",
-          "exit_direction": 1,
           "locked": true,
-          "locked_message": "아직 갈 수 없다"
+          "locked_message": "후문은 아직 열 수 없다"
         }
       ],
       "npcs": [
         {
           "id": "servant_a",
           "position": [
-            700,
+            520,
             620
           ],
           "idle_clip": "sweep",
@@ -1087,7 +1092,7 @@
         {
           "id": "servant_b",
           "position": [
-            1250,
+            1480,
             620
           ],
           "idle_clip": "sweep",
@@ -1101,38 +1106,26 @@
         {
           "path": "res://assets/props/villa_vase.png",
           "position": [
-            380,
-            440
+            300,
+            420
           ],
           "size": [
-            110,
-            180
-          ],
-          "z": -2
-        },
-        {
-          "path": "res://assets/props/villa_vase.png",
-          "position": [
-            1610,
-            440
-          ],
-          "size": [
-            110,
-            180
+            150,
+            200
           ],
           "z": -2
         },
         {
           "path": "res://assets/props/villa_rug.png",
           "position": [
-            740,
-            596
+            1200,
+            590
           ],
           "size": [
-            470,
-            24
+            500,
+            30
           ],
-          "z": -3
+          "z": -2
         }
       ],
       "steps": [],
@@ -1152,22 +1145,22 @@
     {
       "id": "CastleFront",
       "scene": "res://scenes/CastleFront.tscn",
-      "width": 4400,
+      "width": 2600,
       "bgm": "castle_front",
       "display_name": "루갈성 정문 앞",
       "floor_y": 880,
       "camera_limits": [
         0,
         0,
-        4400,
-        1060
+        2600,
+        1120
       ],
       "safe_zones": [
         [
-          2300,
-          -1000,
-          2100,
-          4000
+          0,
+          -200,
+          2600,
+          1520
         ]
       ],
       "bg_dim": [
@@ -1177,11 +1170,11 @@
       ],
       "spawns": {
         "Spawn_FromCastle": [
-          3900,
+          2100,
           880
         ],
-        "Spawn_Debug": [
-          1000,
+        "Spawn_FromGate": [
+          760,
           880
         ]
       },
@@ -1229,53 +1222,25 @@
           ]
         },
         {
-          "name": "foreground",
-          "path": "res://assets/backgrounds/castle_front/foreground.png",
-          "size": [
-            3840,
-            720
-          ],
-          "ratio": 0.8,
-          "z": 20,
-          "position": [
-            0,
-            0
-          ]
-        },
-        {
-          "name": "downtown_passage_facade",
-          "path": "res://assets/backgrounds/castle_front/downtown_passage_facade.png",
-          "size": [
-            1100,
-            720
-          ],
-          "ratio": 1,
-          "z": -12,
-          "position": [
-            0,
-            160
-          ]
-        },
-        {
-          "name": "castle_facade",
+          "name": "CastleFacade",
           "path": "res://assets/backgrounds/castle_front/castle_facade.png",
+          "position": [
+            1100,
+            160
+          ],
           "size": [
             1500,
             720
           ],
           "ratio": 1,
-          "z": -12,
-          "position": [
-            2900,
-            160
-          ]
+          "z": -10
         }
       ],
       "doors": [
         {
           "door_id": "castle_front_exterior",
           "position": [
-            4000,
+            2200,
             880
           ],
           "door_art": "res://assets/props/doors/castle_front_door_exterior.png",
@@ -1287,128 +1252,51 @@
         {
           "door_id": "castle_great_gate",
           "position": [
-            2900,
+            600,
             880
           ],
           "door_art": "res://assets/props/doors/castle_great_gate.png",
+          "target_level": "CastleOutskirts",
+          "target_spawn": "Spawn_FromGate",
+          "arrival_spawn": "Spawn_FromGate",
           "kind": "great_gate",
           "inner_gatekeeper_id": "castle_gatekeeper_inner",
-          "outer_gatekeeper_id": "castle_gatekeeper_outer",
           "gate_settings_key": "great_gate",
           "gate_open_seconds": 1.2,
-          "gate_close_seconds": 1.0
-        },
-        {
-          "door_id": "downtown_passage_entrance",
-          "position": [
-            480,
-            880
-          ],
-          "door_art": "res://assets/props/doors/downtown_passage_door.png",
-          "target_level": "DowntownPassage_F1",
-          "target_spawn": "Spawn_FromGate",
-          "locked": true,
-          "locked_message": "아직 들어갈 수 없다"
+          "gate_close_seconds": 1.0,
+          "auto_transition_level": "CastleOutskirts",
+          "auto_transition_spawn": "Spawn_FromGate",
+          "exit_direction": 1
         }
       ],
       "npcs": [
         {
-          "id": "castle_gatekeeper_outer",
-          "position": [
-            2520,
-            880
-          ],
-          "face_player": true,
-          "interactable": false,
-          "random_start": true
-        },
-        {
           "id": "castle_gatekeeper_inner",
           "position": [
-            3280,
+            880,
             880
           ],
           "kind": "gatekeeper",
           "initial_facing": -1,
           "face_player": false,
-          "gesture_face_player": false,
-          "random_start": true
+          "gesture_face_player": false
         }
       ],
-      "enemies": [
-        {
-          "id": "melee_beast",
-          "position": [
-            1250,
-            880
-          ],
-          "patrol_center": 1250,
-          "patrol_range": 150
-        },
-        {
-          "id": "ranged_beast",
-          "position": [
-            1850,
-            880
-          ],
-          "patrol_center": 1850,
-          "patrol_range": 250
-        },
-        {
-          "id": "melee_beast",
-          "position": [
-            2100,
-            880
-          ],
-          "patrol_center": 2100,
-          "patrol_range": 150
-        }
-      ],
-      "steps": [
-        {
-          "x": 1550,
-          "width": 180,
-          "height": 60
-        }
-      ],
-      "platforms": [
-        {
-          "position": [
-            1690,
-            700
-          ],
-          "width": 240
-        },
-        {
-          "position": [
-            2030,
-            700
-          ],
-          "width": 240
-        }
-      ],
+      "enemies": [],
+      "steps": [],
+      "platforms": [],
       "ceiling": false,
-      "floor_art": "res://assets/tiles/castle_front/ground_tile.png",
+      "floor_art": "res://assets/tiles/castle_front/courtyard_tile.png",
       "floor_art_size": [
         512,
         200
       ],
-      "floor_sections": [
-        {
-          "from": 2300,
-          "to": 4400,
-          "path": "res://assets/tiles/castle_front/courtyard_tile.png",
-          "size": [
-            512,
-            200
-          ]
-        }
-      ],
+      "floor_sections": [],
       "decorations": [
         {
           "path": "res://assets/props/castle_gate_wall_left.png",
           "position": [
-            2160,
+            -140,
             280
           ],
           "size": [
@@ -1420,7 +1308,7 @@
         {
           "path": "res://assets/props/castle_gate_wall_right.png",
           "position": [
-            3220,
+            920,
             280
           ],
           "size": [
@@ -1432,11 +1320,11 @@
         {
           "path": "res://assets/props/castle_front_brazier.png",
           "position": [
-            2620,
+            1450,
             680
           ],
           "size": [
-            140,
+            180,
             200
           ],
           "z": -2
@@ -1444,11 +1332,11 @@
         {
           "path": "res://assets/props/castle_front_statue.png",
           "position": [
-            3060,
+            1750,
             560
           ],
           "size": [
-            170,
+            230,
             320
           ],
           "z": -2
@@ -1456,8 +1344,890 @@
         {
           "path": "res://assets/props/castle_front_lamp_post.png",
           "position": [
-            3640,
+            2340,
             620
+          ],
+          "size": [
+            150,
+            260
+          ],
+          "z": -2
+        }
+      ]
+    },
+    {
+      "id": "CastleOutskirts",
+      "scene": "res://scenes/CastleOutskirts.tscn",
+      "width": 10000,
+      "floor_y": 880,
+      "display_name": "루갈성 대문 밖",
+      "bgm": "uruk_wasteland",
+      "bg_dim": [
+        0.88,
+        0.88,
+        0.92
+      ],
+      "camera_limits": [
+        0,
+        0,
+        10000,
+        1240
+      ],
+      "safe_zones": [
+        [
+          8850,
+          -200,
+          1150,
+          1800
+        ]
+      ],
+      "spawns": {
+        "Spawn_FromGate": [
+          9440,
+          760
+        ],
+        "Spawn_Debug": [
+          1200,
+          680
+        ]
+      },
+      "steps": [],
+      "floor_sections": [],
+      "floor_art": "res://assets/tiles/outskirts/ground_tile.png",
+      "floor_art_size": [
+        512,
+        200
+      ],
+      "ceiling": false,
+      "backgrounds": [
+        {
+          "name": "Sky",
+          "path": "res://assets/backgrounds/outskirts/sky.png",
+          "size": [
+            1792,
+            720
+          ],
+          "ratio": 0.05,
+          "z": -40,
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "FarCity",
+          "path": "res://assets/backgrounds/outskirts/far_city_tile.png",
+          "size": [
+            2048,
+            720
+          ],
+          "ratio": 0.2,
+          "z": -30,
+          "position": [
+            0,
+            0
+          ],
+          "repeat_size": [
+            2048,
+            0
+          ],
+          "repeat_times": 6
+        },
+        {
+          "name": "MidRuins",
+          "path": "res://assets/backgrounds/outskirts/mid_ruins_tile.png",
+          "size": [
+            2048,
+            720
+          ],
+          "ratio": 0.45,
+          "z": -20,
+          "position": [
+            0,
+            0
+          ],
+          "repeat_size": [
+            2048,
+            0
+          ],
+          "repeat_times": 6
+        },
+        {
+          "name": "Landmark",
+          "path": "res://assets/backgrounds/outskirts/far_landmark.png",
+          "size": [
+            900,
+            720
+          ],
+          "ratio": 0.2,
+          "z": -25,
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "DowntownFacade",
+          "path": "res://assets/backgrounds/castle_front/downtown_passage_facade.png",
+          "position": [
+            0,
+            -40
+          ],
+          "size": [
+            1100,
+            720
+          ],
+          "ratio": 1,
+          "z": -10
+        }
+      ],
+      "doors": [
+        {
+          "door_id": "castle_great_gate",
+          "position": [
+            9600,
+            760
+          ],
+          "door_art": "res://assets/props/doors/castle_great_gate.png",
+          "target_level": "CastleFront",
+          "target_spawn": "Spawn_FromGate",
+          "arrival_spawn": "Spawn_FromGate",
+          "kind": "great_gate",
+          "opens_without_keeper": true,
+          "gate_settings_key": "great_gate",
+          "gate_open_seconds": 1.2,
+          "gate_close_seconds": 1.0,
+          "auto_transition_level": "CastleFront",
+          "auto_transition_spawn": "Spawn_FromGate",
+          "exit_direction": -1
+        },
+        {
+          "door_id": "downtown_passage_entrance",
+          "position": [
+            520,
+            680
+          ],
+          "door_art": "res://assets/props/doors/downtown_passage_door.png",
+          "target_level": "DowntownPassage_F1",
+          "target_spawn": "Spawn_FromGate",
+          "arrival_spawn": "",
+          "locked": true,
+          "locked_message": "아직 들어갈 수 없다"
+        }
+      ],
+      "npcs": [
+        {
+          "id": "castle_gatekeeper_outer",
+          "position": [
+            9140,
+            760
+          ],
+          "face_player": true,
+          "interactable": false
+        }
+      ],
+      "terrain": [
+        {
+          "id": "ground_0",
+          "from": 0,
+          "to": 1500,
+          "y": 680,
+          "elevation": 200,
+          "art": "res://assets/tiles/outskirts/plaza_tile.png"
+        },
+        {
+          "id": "ground_1500",
+          "from": 1500,
+          "to": 1780,
+          "y": 680,
+          "elevation": 200,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_1780",
+          "from": 1780,
+          "to": 2060,
+          "y": 740,
+          "elevation": 140,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_2060",
+          "from": 2060,
+          "to": 2340,
+          "y": 790,
+          "elevation": 90,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_2340",
+          "from": 2340,
+          "to": 2620,
+          "y": 840,
+          "elevation": 40,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_2620",
+          "from": 2620,
+          "to": 2900,
+          "y": 890,
+          "elevation": -10,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_2900",
+          "from": 2900,
+          "to": 3200,
+          "y": 940,
+          "elevation": -60,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_3200",
+          "from": 3200,
+          "to": 5000,
+          "y": 940,
+          "elevation": -60,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_5000",
+          "from": 5000,
+          "to": 5200,
+          "y": 940,
+          "elevation": -60,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_5200",
+          "from": 5200,
+          "to": 6480,
+          "y": 920,
+          "elevation": -40,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_6480",
+          "from": 6480,
+          "to": 6600,
+          "y": 940,
+          "elevation": -60,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_6600",
+          "from": 6600,
+          "to": 6800,
+          "y": 940,
+          "elevation": -60,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_6800",
+          "from": 6800,
+          "to": 7950,
+          "y": 1000,
+          "elevation": -120,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_7950",
+          "from": 7950,
+          "to": 8050,
+          "y": 940,
+          "elevation": -60,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_8050",
+          "from": 8050,
+          "to": 8250,
+          "y": 895,
+          "elevation": -15,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_8250",
+          "from": 8250,
+          "to": 8450,
+          "y": 850,
+          "elevation": 30,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_8450",
+          "from": 8450,
+          "to": 8650,
+          "y": 805,
+          "elevation": 75,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_8650",
+          "from": 8650,
+          "to": 8850,
+          "y": 760,
+          "elevation": 120,
+          "art": "res://assets/tiles/outskirts/ground_tile.png"
+        },
+        {
+          "id": "ground_8850",
+          "from": 8850,
+          "to": 10000,
+          "y": 760,
+          "elevation": 120,
+          "art": "res://assets/tiles/outskirts/plaza_tile.png"
+        }
+      ],
+      "regions": [
+        {
+          "id": 1,
+          "span": [
+            8850,
+            10000
+          ],
+          "label": "대문 광장"
+        },
+        {
+          "id": 2,
+          "span": [
+            8050,
+            8850
+          ],
+          "label": "내리막 계단"
+        },
+        {
+          "id": 3,
+          "span": [
+            6600,
+            8050
+          ],
+          "label": "균열 협곡"
+        },
+        {
+          "id": 4,
+          "span": [
+            5000,
+            6600
+          ],
+          "label": "폐허 성벽"
+        },
+        {
+          "id": 5,
+          "span": [
+            3200,
+            5000
+          ],
+          "label": "황무지 잔해"
+        },
+        {
+          "id": 6,
+          "span": [
+            1500,
+            3200
+          ],
+          "label": "오르막 테라스"
+        },
+        {
+          "id": 7,
+          "span": [
+            0,
+            1500
+          ],
+          "label": "통로 광장"
+        }
+      ],
+      "platforms": [
+        {
+          "id": "bridge_left_low",
+          "position": [
+            6640,
+            890
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/outskirts/bridge_platform.png",
+          "elevation": -10
+        },
+        {
+          "id": "bridge_left_high",
+          "position": [
+            6820,
+            820
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/outskirts/bridge_platform.png",
+          "elevation": 60
+        },
+        {
+          "id": "bridge",
+          "position": [
+            6900,
+            820
+          ],
+          "width": 900,
+          "art": "res://assets/tiles/outskirts/bridge_platform.png",
+          "elevation": 60
+        },
+        {
+          "id": "bridge_right_high",
+          "position": [
+            7780,
+            820
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/outskirts/bridge_platform.png",
+          "elevation": 60
+        },
+        {
+          "id": "bridge_right_low",
+          "position": [
+            7960,
+            890
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/outskirts/bridge_platform.png",
+          "elevation": -10
+        },
+        {
+          "id": "wall_left_low",
+          "position": [
+            5000,
+            830
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/outskirts/ruin_platform.png",
+          "elevation": 50
+        },
+        {
+          "id": "wall_left_high",
+          "position": [
+            5200,
+            740
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/outskirts/ruin_platform.png",
+          "elevation": 140
+        },
+        {
+          "id": "upper",
+          "position": [
+            5300,
+            740
+          ],
+          "width": 1000,
+          "art": "res://assets/tiles/outskirts/ruin_platform.png",
+          "elevation": 140
+        },
+        {
+          "id": "wall_right_high",
+          "position": [
+            6300,
+            740
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/outskirts/ruin_platform.png",
+          "elevation": 140
+        },
+        {
+          "id": "wall_right_low",
+          "position": [
+            6500,
+            830
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/outskirts/ruin_platform.png",
+          "elevation": 50
+        },
+        {
+          "id": "rubble_low_left",
+          "position": [
+            3980,
+            850
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/outskirts/ruin_platform.png",
+          "elevation": 30
+        },
+        {
+          "id": "rubble_high",
+          "position": [
+            4160,
+            790
+          ],
+          "width": 340,
+          "art": "res://assets/tiles/outskirts/ruin_platform.png",
+          "elevation": 90
+        },
+        {
+          "id": "rubble_low_right",
+          "position": [
+            4500,
+            850
+          ],
+          "width": 180,
+          "art": "res://assets/tiles/outskirts/ruin_platform.png",
+          "elevation": 30
+        }
+      ],
+      "obstacles": [
+        {
+          "rect": [
+            3600,
+            880,
+            220,
+            60
+          ],
+          "art": "res://assets/props/large_rubble_a.png"
+        },
+        {
+          "rect": [
+            4100,
+            850,
+            160,
+            90
+          ],
+          "art": "res://assets/props/large_rubble_b.png"
+        },
+        {
+          "rect": [
+            4600,
+            865,
+            160,
+            75
+          ],
+          "art": "res://assets/props/large_rubble_b.png"
+        },
+        {
+          "rect": [
+            1600,
+            660,
+            60,
+            20
+          ],
+          "art": "res://assets/tiles/outskirts/ruin_ledge.png"
+        },
+        {
+          "rect": [
+            1880,
+            720,
+            60,
+            20
+          ],
+          "art": "res://assets/tiles/outskirts/ruin_ledge.png"
+        },
+        {
+          "rect": [
+            2160,
+            770,
+            60,
+            20
+          ],
+          "art": "res://assets/tiles/outskirts/ruin_ledge.png"
+        },
+        {
+          "rect": [
+            2440,
+            820,
+            60,
+            20
+          ],
+          "art": "res://assets/tiles/outskirts/ruin_ledge.png"
+        },
+        {
+          "rect": [
+            2720,
+            870,
+            60,
+            20
+          ],
+          "art": "res://assets/tiles/outskirts/ruin_ledge.png"
+        },
+        {
+          "rect": [
+            3000,
+            920,
+            60,
+            20
+          ],
+          "art": "res://assets/tiles/outskirts/ruin_ledge.png"
+        }
+      ],
+      "enemies": [
+        {
+          "id": "melee_beast",
+          "position": [
+            8350,
+            850
+          ],
+          "patrol_center": 8350,
+          "patrol_range": 100
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            7000,
+            1000
+          ],
+          "patrol_center": 7000,
+          "patrol_range": 200
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            7450,
+            820
+          ],
+          "patrol_center": 7450,
+          "patrol_range": 150
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            5400,
+            920
+          ],
+          "patrol_center": 5400,
+          "patrol_range": 200
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            6200,
+            920
+          ],
+          "patrol_center": 6200,
+          "patrol_range": 200
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            3400,
+            940
+          ],
+          "patrol_center": 3400,
+          "patrol_range": 200
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            3900,
+            940
+          ],
+          "patrol_center": 3900,
+          "patrol_range": 200
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            4600,
+            865
+          ],
+          "patrol_center": 4600,
+          "patrol_range": 200
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            2800,
+            890
+          ],
+          "patrol_center": 2800,
+          "patrol_range": 200
+        },
+        {
+          "id": "melee_beast",
+          "position": [
+            1100,
+            680
+          ],
+          "patrol_center": 1100,
+          "patrol_range": 150
+        },
+        {
+          "id": "ranged_beast",
+          "position": [
+            7300,
+            1000
+          ],
+          "patrol_center": 7300,
+          "patrol_range": 150
+        },
+        {
+          "id": "ranged_beast",
+          "position": [
+            5800,
+            740
+          ],
+          "patrol_center": 5800,
+          "patrol_range": 150
+        },
+        {
+          "id": "ranged_beast",
+          "position": [
+            4200,
+            790
+          ],
+          "patrol_center": 4200,
+          "patrol_range": 150
+        },
+        {
+          "id": "ranged_beast",
+          "position": [
+            2300,
+            790
+          ],
+          "patrol_center": 2300,
+          "patrol_range": 150
+        },
+        {
+          "id": "ranged_beast",
+          "position": [
+            1900,
+            740
+          ],
+          "patrol_center": 1900,
+          "patrol_range": 150
+        }
+      ],
+      "decorations": [
+        {
+          "path": "res://assets/props/castle_gate_wall_left.png",
+          "position": [
+            8860,
+            160
+          ],
+          "size": [
+            420,
+            600
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/castle_gate_wall_right.png",
+          "position": [
+            9920,
+            160
+          ],
+          "size": [
+            420,
+            600
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/ruin_wall_a.png",
+          "position": [
+            5120,
+            520
+          ],
+          "size": [
+            600,
+            420
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/ruin_wall_b.png",
+          "position": [
+            5970,
+            580
+          ],
+          "size": [
+            480,
+            360
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/broken_tower.png",
+          "position": [
+            4660,
+            380
+          ],
+          "size": [
+            360,
+            560
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/chasm_edge_left.png",
+          "position": [
+            6530,
+            820
+          ],
+          "size": [
+            300,
+            260
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/chasm_edge_right.png",
+          "position": [
+            7850,
+            820
+          ],
+          "size": [
+            300,
+            260
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/collapsed_bridge.png",
+          "position": [
+            6900,
+            820
+          ],
+          "size": [
+            900,
+            180
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/upper_walkway.png",
+          "position": [
+            5300,
+            740
+          ],
+          "size": [
+            1000,
+            120
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/dead_tree.png",
+          "position": [
+            3490,
+            560
+          ],
+          "size": [
+            240,
+            380
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/crashed_pod_wreck.png",
+          "position": [
+            4570,
+            700
+          ],
+          "size": [
+            420,
+            240
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/outskirts_lamp.png",
+          "position": [
+            8780,
+            500
           ],
           "size": [
             100,
@@ -1465,6 +2235,332 @@
           ],
           "z": -2
         }
+      ],
+      "reachability": {
+        "max_rise": 110,
+        "max_gap": 200,
+        "max_local_platform_elevation": 180,
+        "player_jump_height": 138.0,
+        "required_ground_route": [
+          0,
+          10000
+        ],
+        "chains": [
+          [
+            "bridge_left_low",
+            "bridge_left_high",
+            "bridge"
+          ],
+          [
+            "bridge",
+            "bridge_right_high",
+            "bridge_right_low"
+          ],
+          [
+            "wall_left_low",
+            "wall_left_high",
+            "upper"
+          ],
+          [
+            "upper",
+            "wall_right_high",
+            "wall_right_low"
+          ],
+          [
+            "rubble_low_left",
+            "rubble_high",
+            "rubble_low_right"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "VillaF2",
+      "scene": "res://scenes/VillaF2.tscn",
+      "width": 2200,
+      "bgm": "villa_calm",
+      "display_name": "샤마쉬와 아야의 별장 2층",
+      "floor_y": 620,
+      "camera_limits": [
+        0,
+        0,
+        2200,
+        720
+      ],
+      "safe_zones": [],
+      "backgrounds": [
+        {
+          "name": "Interior",
+          "path": "res://assets/backgrounds/villa/villa_f2_dining.png",
+          "size": [
+            2200,
+            720
+          ],
+          "ratio": 1,
+          "z": -20,
+          "position": [
+            0,
+            0
+          ]
+        }
+      ],
+      "spawns": {
+        "Spawn_FromBelow": [
+          200,
+          620
+        ],
+        "Spawn_FromAbove": [
+          2040,
+          620
+        ]
+      },
+      "doors": [
+        {
+          "door_id": "door_down",
+          "position": [
+            200,
+            620
+          ],
+          "door_art": "res://assets/props/doors/villa_inner_door.png",
+          "target_level": "VillaF1",
+          "target_spawn": "Spawn_FromAbove",
+          "arrival_spawn": "Spawn_FromBelow",
+          "exit_direction": 1
+        },
+        {
+          "door_id": "door_up",
+          "position": [
+            2040,
+            620
+          ],
+          "door_art": "res://assets/props/doors/villa_inner_door.png",
+          "target_level": "VillaF3",
+          "target_spawn": "Spawn_FromBelow",
+          "arrival_spawn": "Spawn_FromAbove",
+          "exit_direction": -1
+        }
+      ],
+      "npcs": [
+        {
+          "id": "cook_a",
+          "position": [
+            500,
+            620
+          ],
+          "idle_clip": "chop"
+        },
+        {
+          "id": "cook_b",
+          "position": [
+            720,
+            620
+          ],
+          "idle_clip": "stir"
+        },
+        {
+          "id": "cook_c",
+          "position": [
+            930,
+            620
+          ],
+          "idle_clip": "arrange",
+          "instance_id": "cook_c_left",
+          "initial_facing": 1
+        },
+        {
+          "id": "cook_c",
+          "position": [
+            1870,
+            620
+          ],
+          "idle_clip": "arrange",
+          "instance_id": "cook_c_right",
+          "initial_facing": -1
+        }
+      ],
+      "enemies": [],
+      "decorations": [
+        {
+          "path": "res://assets/props/kitchen_prep_table.png",
+          "position": [
+            460,
+            520
+          ],
+          "size": [
+            260,
+            100
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/kitchen_stove.png",
+          "position": [
+            650,
+            535
+          ],
+          "size": [
+            190,
+            85
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/villa_chairs.png",
+          "position": [
+            1120,
+            470
+          ],
+          "size": [
+            520,
+            150
+          ],
+          "z": -3
+        },
+        {
+          "path": "res://assets/props/villa_dining_table_wide.png",
+          "position": [
+            950,
+            530
+          ],
+          "size": [
+            900,
+            90
+          ],
+          "z": -2
+        }
+      ],
+      "steps": [],
+      "platforms": [],
+      "ceiling": true,
+      "floor_art": "res://assets/tiles/castle/villa_floor_tile.png",
+      "floor_art_size": [
+        512,
+        180
+      ],
+      "bg_dim": [
+        0.8,
+        0.8,
+        0.84
+      ]
+    },
+    {
+      "id": "VillaF3",
+      "scene": "res://scenes/VillaF3.tscn",
+      "width": 2000,
+      "bgm": "villa_calm",
+      "display_name": "샤마쉬와 아야의 별장 3층",
+      "floor_y": 620,
+      "camera_limits": [
+        0,
+        0,
+        2000,
+        720
+      ],
+      "safe_zones": [],
+      "backgrounds": [
+        {
+          "name": "Interior",
+          "path": "res://assets/backgrounds/villa/villa_f3_chamber.png",
+          "size": [
+            2000,
+            720
+          ],
+          "ratio": 1,
+          "z": -20,
+          "position": [
+            0,
+            0
+          ]
+        }
+      ],
+      "spawns": {
+        "Spawn_FromBelow": [
+          200,
+          620
+        ]
+      },
+      "doors": [
+        {
+          "door_id": "door_down",
+          "position": [
+            200,
+            620
+          ],
+          "door_art": "res://assets/props/doors/villa_inner_door.png",
+          "target_level": "VillaF2",
+          "target_spawn": "Spawn_FromAbove",
+          "arrival_spawn": "Spawn_FromBelow",
+          "exit_direction": 1
+        },
+        {
+          "door_id": "villa_up_locked",
+          "position": [
+            1800,
+            620
+          ],
+          "door_art": "res://assets/props/doors/villa_inner_door.png",
+          "target_level": "",
+          "target_spawn": "",
+          "arrival_spawn": "",
+          "locked": true,
+          "locked_message": "아직 갈 수 없다"
+        }
+      ],
+      "npcs": [
+        {
+          "id": "shamash",
+          "position": [
+            900,
+            620
+          ]
+        },
+        {
+          "id": "aya",
+          "position": [
+            1070,
+            620
+          ]
+        }
+      ],
+      "enemies": [],
+      "decorations": [
+        {
+          "path": "res://assets/props/villa_sofa.png",
+          "position": [
+            1240,
+            470
+          ],
+          "size": [
+            360,
+            150
+          ],
+          "z": -2
+        },
+        {
+          "path": "res://assets/props/villa_side_table.png",
+          "position": [
+            590,
+            520
+          ],
+          "size": [
+            160,
+            100
+          ],
+          "z": -2
+        }
+      ],
+      "steps": [],
+      "platforms": [],
+      "ceiling": true,
+      "floor_art": "res://assets/tiles/castle/villa_floor_tile.png",
+      "floor_art_size": [
+        512,
+        180
+      ],
+      "bg_dim": [
+        0.8,
+        0.8,
+        0.84
       ]
     }
   ]

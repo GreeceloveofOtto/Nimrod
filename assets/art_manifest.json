@@ -18,7 +18,10 @@
     "sprites/npcs/gatekeeper/manifest.json",
     "sprites/enemies/sky_beast/manifest.json",
     "props/doors/manifest.json",
-    "props/doors/stage3_manifest.json"
+    "props/doors/stage3_manifest.json",
+    "sprites/npcs/shamash/manifest.json",
+    "sprites/npcs/aya/manifest.json",
+    "props/doors/stage4_manifest.json"
   ],
   "assets": [
     {
@@ -104,15 +107,6 @@
       "width": 240,
       "height": 100,
       "transparent": true
-    },
-    {
-      "name": "rear_gate_foreground",
-      "path": "backgrounds/rear_gate/foreground.png",
-      "width": 4608,
-      "height": 720,
-      "transparent": true,
-      "scroll_ratio": 0.8,
-      "map_width": 5400
     },
     {
       "name": "villa_exterior",
@@ -303,15 +297,6 @@
       "map_width": 4400
     },
     {
-      "name": "foreground",
-      "path": "backgrounds/castle_front/foreground.png",
-      "width": 3840,
-      "height": 720,
-      "transparent": true,
-      "scroll_ratio": 0.8,
-      "map_width": 4400
-    },
-    {
       "name": "downtown_passage_facade",
       "path": "backgrounds/castle_front/downtown_passage_facade.png",
       "width": 1100,
@@ -452,6 +437,260 @@
       "width": 1254,
       "height": 313,
       "transparent": false
+    },
+    {
+      "name": "sky",
+      "path": "backgrounds/outskirts/sky.png",
+      "width": 1792,
+      "height": 720,
+      "transparent": false,
+      "scroll_ratio": 0.05,
+      "map_width": 10000
+    },
+    {
+      "name": "far_city_tile",
+      "path": "backgrounds/outskirts/far_city_tile.png",
+      "width": 2048,
+      "height": 720,
+      "transparent": true,
+      "tile_x": true,
+      "scroll_ratio": 0.2,
+      "repeat_x": true,
+      "map_width": 10000
+    },
+    {
+      "name": "mid_ruins_tile",
+      "path": "backgrounds/outskirts/mid_ruins_tile.png",
+      "width": 2048,
+      "height": 720,
+      "transparent": true,
+      "tile_x": true,
+      "scroll_ratio": 0.45,
+      "repeat_x": true,
+      "map_width": 10000
+    },
+    {
+      "name": "far_landmark",
+      "path": "backgrounds/outskirts/far_landmark.png",
+      "width": 900,
+      "height": 720,
+      "transparent": true,
+      "scroll_ratio": 0.2,
+      "localized": true
+    },
+    {
+      "name": "ruin_wall_a",
+      "path": "props/ruin_wall_a.png",
+      "width": 600,
+      "height": 420,
+      "transparent": true
+    },
+    {
+      "name": "ruin_wall_b",
+      "path": "props/ruin_wall_b.png",
+      "width": 480,
+      "height": 360,
+      "transparent": true
+    },
+    {
+      "name": "broken_tower",
+      "path": "props/broken_tower.png",
+      "width": 360,
+      "height": 560,
+      "transparent": true
+    },
+    {
+      "name": "chasm_edge_left",
+      "path": "props/chasm_edge_left.png",
+      "width": 300,
+      "height": 260,
+      "transparent": true
+    },
+    {
+      "name": "chasm_edge_right",
+      "path": "props/chasm_edge_right.png",
+      "width": 300,
+      "height": 260,
+      "transparent": true
+    },
+    {
+      "name": "collapsed_bridge",
+      "path": "props/collapsed_bridge.png",
+      "width": 960,
+      "height": 180,
+      "transparent": true
+    },
+    {
+      "name": "upper_walkway",
+      "path": "props/upper_walkway.png",
+      "width": 1000,
+      "height": 120,
+      "transparent": true
+    },
+    {
+      "name": "large_rubble_a",
+      "path": "props/large_rubble_a.png",
+      "width": 220,
+      "height": 120,
+      "transparent": true
+    },
+    {
+      "name": "large_rubble_b",
+      "path": "props/large_rubble_b.png",
+      "width": 160,
+      "height": 90,
+      "transparent": true
+    },
+    {
+      "name": "dead_tree",
+      "path": "props/dead_tree.png",
+      "width": 240,
+      "height": 380,
+      "transparent": true
+    },
+    {
+      "name": "crashed_pod_wreck",
+      "path": "props/crashed_pod_wreck.png",
+      "width": 420,
+      "height": 240,
+      "transparent": true
+    },
+    {
+      "name": "outskirts_lamp",
+      "path": "props/outskirts_lamp.png",
+      "width": 100,
+      "height": 260,
+      "transparent": true
+    },
+    {
+      "name": "ground_tile",
+      "path": "tiles/outskirts/ground_tile.png",
+      "width": 512,
+      "height": 200,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "plaza_tile",
+      "path": "tiles/outskirts/plaza_tile.png",
+      "width": 512,
+      "height": 200,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "ruin_platform",
+      "path": "tiles/outskirts/ruin_platform.png",
+      "width": 256,
+      "height": 48,
+      "transparent": true
+    },
+    {
+      "name": "bridge_platform",
+      "path": "tiles/outskirts/bridge_platform.png",
+      "width": 320,
+      "height": 48,
+      "transparent": true
+    },
+    {
+      "name": "ruin_ledge",
+      "path": "tiles/outskirts/ruin_ledge.png",
+      "width": 480,
+      "height": 56,
+      "transparent": true
+    },
+    {
+      "name": "underground_fill",
+      "path": "tiles/underground_fill.png",
+      "width": 512,
+      "height": 512,
+      "transparent": false,
+      "tile_x": true,
+      "tile_y": true
+    },
+    {
+      "name": "villa_f2_dining",
+      "path": "backgrounds/villa/villa_f2_dining.png",
+      "width": 2200,
+      "height": 720,
+      "transparent": false
+    },
+    {
+      "name": "villa_f3_chamber",
+      "path": "backgrounds/villa/villa_f3_chamber.png",
+      "width": 2000,
+      "height": 720,
+      "transparent": false
+    },
+    {
+      "name": "nimrod_base_rear",
+      "path": "reference/nimrod_base_rear.png",
+      "width": 640,
+      "height": 640,
+      "transparent": true
+    },
+    {
+      "name": "nimrod_base_right",
+      "path": "reference/nimrod_base_right.png",
+      "width": 640,
+      "height": 640,
+      "transparent": true
+    },
+    {
+      "name": "nimrod_design",
+      "path": "reference/nimrod_design.png",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false
+    },
+    {
+      "name": "nimrod_base_three_quarter",
+      "path": "reference/nimrod_base_three_quarter.png",
+      "width": 640,
+      "height": 640,
+      "transparent": true
+    },
+    {
+      "name": "villa_dining_table_wide",
+      "path": "props/villa_dining_table_wide.png",
+      "width": 900,
+      "height": 220,
+      "transparent": true
+    },
+    {
+      "name": "villa_chairs",
+      "path": "props/villa_chairs.png",
+      "width": 520,
+      "height": 150,
+      "transparent": true
+    },
+    {
+      "name": "villa_sofa",
+      "path": "props/villa_sofa.png",
+      "width": 360,
+      "height": 200,
+      "transparent": true
+    },
+    {
+      "name": "villa_side_table",
+      "path": "props/villa_side_table.png",
+      "width": 160,
+      "height": 120,
+      "transparent": true
+    },
+    {
+      "name": "shamash_design",
+      "path": "reference/shamash_design.png",
+      "width": 1536,
+      "height": 512,
+      "transparent": false
+    },
+    {
+      "name": "aya_design",
+      "path": "reference/aya_design.png",
+      "width": 1536,
+      "height": 512,
+      "transparent": false
     }
   ],
   "source_metadata": [
@@ -461,6 +700,8 @@
     "source_art/stage2_characters/provenance.json",
     "source_art/stage2_characters/generation_prompts.json",
     "source_art/stage3/generation_prompts.json",
-    "source_art/stage3/provenance.json"
+    "source_art/stage3/provenance.json",
+    "source_art/stage4/generation_prompts.json",
+    "source_art/stage4/player_packing.json"
   ]
 }

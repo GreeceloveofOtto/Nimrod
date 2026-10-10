@@ -51,14 +51,14 @@ func _test_npcs() -> void:
     npc.facing = 1
     npc.visual.flip_h = false
     npc.face_cooldown_left = 0.0
-    npc.face_toward(npc.global_position.x - 119.0)
-    _check(npc.facing == 1, "NPC ignores crossing less than 120 px")
-    npc.face_toward(npc.global_position.x - 121.0)
-    _check(npc.facing == -1 and npc.visual.flip_h, "NPC faces player after 120 px crossing")
-    npc.face_toward(npc.global_position.x + 200.0)
+    npc.face_toward(npc.global_position.x - 219.0)
+    _check(npc.facing == 1, "NPC ignores crossing hysteresis below 220 px")
+    npc.face_toward(npc.global_position.x - 220.0)
+    _check(npc.facing == -1 and npc.visual.flip_h, "NPC faces player at 220 px crossing")
+    npc.face_toward(npc.global_position.x + 220.0)
     _check(npc.facing == -1, "NPC flip is blocked during 0.5 s cooldown")
     npc.face_cooldown_left = 0.0
-    npc.face_toward(npc.global_position.x + 200.0)
+    npc.face_toward(npc.global_position.x + 220.0)
     _check(npc.facing == 1, "NPC can flip after cooldown")
     npc.interacted.connect(func() -> void: interaction_signals += 1)
     npc.interact(player)
@@ -81,13 +81,13 @@ func _test_npcs() -> void:
 func _test_locked_and_nearest() -> void:
     await manager.go_to("VillaF1", "Spawn_FromGate")
     var level: Node = manager.current_level
-    var front: DoorPortal = level.doors.get("villa_up_locked") as DoorPortal
+    var front: DoorPortal = level.doors.get("villa_back_door") as DoorPortal
     player.global_position = front.global_position
     var origin: Vector2 = front.visual.position
     front.interact(player)
     await _wait(0.03)
     _check(front.busy and not front.visual.position.is_equal_approx(origin), "Locked door shakes when interacted with")
-    _check(str(main.get_node("HUD").toast.text) == "아직 갈 수 없다", "Locked door displays its Korean toast")
+    _check(str(main.get_node("HUD").toast.text) == "후문은 아직 열 수 없다", "Locked door displays its Korean toast")
     _check(not manager.player_locked and front.open_progress == 0.0, "Locked door leaves input available and stays closed")
     await _wait(0.30)
     _check(not front.busy and front.visual.position.is_equal_approx(origin), "Locked door shake restores its exact position")

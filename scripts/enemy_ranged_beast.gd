@@ -101,6 +101,7 @@ func _on_hit(seconds: float) -> void:
 
 func _on_death() -> void:
     _stop_flame()
+    super._on_death()
 
 func _exit_tree() -> void:
     _stop_flame()

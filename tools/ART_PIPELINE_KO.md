@@ -87,3 +87,24 @@ python tools/validate_assets.py
 3단계는 기존 배경 PNG를 재생성하거나 수정하지 않는다. 새 CastleFront 시차 4겹·외관 2개, 문 4개, 타일 2개, 소품·성벽 5개, FX 2개만 생성 원본에서 패킹한다. 두 기존 성 타일의 작은 마젠타 윗여백도 기존 원본의 크롭만 보정한다. 불투명 타일의 키 색상 잔여와 양쪽 경계를 검사한다. Stage 2 재빌드 보호는 신규 왕족 시트를 덮어쓰지 않으며, 전체 재빌드 시 Stage 3 도구를 마지막에 실행한다.
 
 check_npc_contrast는 플레이어 크기 기준 NPC 상자와 bg_dim 적용 배경 크롭의 평균 휘도 차이를 비교한다. 30 미만은 경고이며 실패가 아니다. FX·근접 밝기·소품은 제외한 보수적인 검사다. 재사용 작업자 4곳의 남은 대비 경고와 권고는 docs/STAGE3_REPORT_KO.md에 기록했다.
+
+## 4단계 재생성 순서
+
+이전 명령은 역사적 재생성용입니다. 최종4단계 데이터·플레이어를 유지하려면 아래 순서를 마지막에 실행합니다.
+
+```bash
+python tools/build_stage4_levels.py
+python tools/build_stage4_assets.py
+python tools/build_stage4_player.py
+# 스테이징 검증 성공 후에만 교체:
+python tools/build_stage4_player.py --apply
+python tools/write_stage4_prompts.py
+python tools/check_player_scale.py
+python tools/check_player_motion.py
+python tools/check_level_reachability.py
+python tools/validate_assets.py
+```
+
+모든 풍경·포즈 원본은 이미지 생성 PNG이며 도구는 크롭·크로마키·균등 리사이즈·앵커·시트 합성만 합니다. 새18종을 모두 검증한 후 적용하며 기존 파일은 _legacy_player에 한 번만 보관합니다. 중간 source_art/stage4/player_staged는 재생성 가능하여 배포에서 제외합니다. 실제 요청은 generation_prompts.json, 포즈 선택·축척은 player_packing.json, 최종 경로별 요청은 image_prompts/stage4_*.md에 있습니다.
+
+5명 정면은 이전 대화의 디자인 첫 열을 재사용합니다. 새 샤마쉬·아야는 같은 디자인에서 정면/측면을 가져옵니다. 숨쉬기·내부 림라이트만 허용된 이미지 파생입니다. 새 플레이어 기준363px, 재사용 토인만 원래 제작 기준359px를 데이터에 보존하며 배율1.30 유지. Foreground는 모든 레벨·재빌드 목록에서 제거했습니다. 지하 채움은 양방향 이음새를, 반복 배경은 타일 이음새와 repeat_size를 검사합니다. 대비 경고7곳은 STAGE4_REPORT_KO.md를 참고하세요.

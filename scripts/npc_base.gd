@@ -12,6 +12,15 @@ signal clip_finished(clip: String)
 @export var face_player: bool = true
 @export var initial_facing: int = 1
 @export var interactable: bool = false
+@export var three_way: bool = false
+@export var initial_pose: String = "front"
+
+enum Pose { LEFT = -1, FRONT = 0, RIGHT = 1 }
+var pose: int = Pose.RIGHT
+var initial_side: int = Pose.RIGHT
+var look_left: float = 0.0
+var visual_fade: Sprite2D
+var pose_tween: Tween
 
 var stats: Dictionary = {}
 var common: Dictionary = {}
@@ -44,18 +53,30 @@ func _ready() -> void:
     if sheet_manifest.is_empty():
         sheet_manifest = "res://" + str(stats.get("sheet_dir", "assets/sprites/npcs/" + npc_id)) + "/manifest.json"
     facing = -1 if initial_facing < 0 else 1
+    three_way = bool(stats.get("three_way", three_way))
+    initial_pose = str(stats.get("initial_pose", initial_pose))
+    initial_side = -1 if initial_pose == "left" else 1
+    pose = (Pose.FRONT if initial_pose == "front" else initial_side) if three_way else facing
+    if three_way:
+        facing = initial_side
     visual = Sprite2D.new()
     visual.name = "Visual"
     visual.region_enabled = true
     visual.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
     visual.scale = Vector2.ONE * float(common.get("visual_scale", 0.30)) * float(stats.get("visual_scale_multiplier", 1.0))
-    visual.flip_h = facing < 0
+    visual.flip_h = facing < 0 and (not three_way or pose != Pose.FRONT)
     add_child(visual)
+    visual_fade = Sprite2D.new()
+    visual_fade.name = "VisualFade"
+    visual_fade.visible = false
+    visual_fade.texture_filter = visual.texture_filter
+    add_child(visual_fade)
     _load_clips()
     _make_missing_visual()
     if not clip_data.has(idle_clip) and not clip_data.is_empty():
         idle_clip = str(clip_data.keys()[0])
-    play_clip(idle_clip, bool(stats.get("random_start", false)))
+    play_clip("idle_front" if three_way and pose == Pose.FRONT else idle_clip, bool(stats.get("random_start", false)))
+    _reset_look_clock()
     readability = common.get("readability", {})
     _make_readability_fx()
     _make_name_tag()
@@ -203,14 +224,85 @@ func _make_missing_visual() -> void:
 func _process(delta: float) -> void:
     _update_readability(delta)
     face_cooldown_left = maxf(0.0, face_cooldown_left - delta)
-    if face_player:
+    look_left -= delta
+    if three_way:
+        _update_three_way()
+    elif face_player:
         var player := get_tree().get_first_node_in_group("player") as Node2D
         if player != null:
             face_toward(player.global_position.x)
     clip_clock += delta
     _refresh_visual()
 
+func _reset_look_clock() -> void:
+    var options: Dictionary = common.get("three_way", {})
+    look_left = randf_range(float(options.get("look_min", 4.0)), float(options.get("look_max", 8.0)))
+
+func _update_three_way() -> void:
+    var player: Node2D = get_tree().get_first_node_in_group("player") as Node2D
+    if player == null or face_cooldown_left > 0.0:
+        return
+    var dx: float = player.global_position.x - global_position.x
+    var options: Dictionary = common.get("three_way", {})
+    if absf(dx) >= float(options.get("look_distance", 700.0)):
+        if look_left <= 0.0:
+            _change_pose(Pose.FRONT if pose != Pose.FRONT else initial_side)
+            _reset_look_clock()
+        return
+    _reset_look_clock()
+    if absf(dx) <= float(options.get("front_distance", 140.0)):
+        _change_pose(Pose.FRONT)
+    elif absf(dx) >= float(options.get("side_distance", 220.0)):
+        _change_pose(Pose.LEFT if dx < 0 else Pose.RIGHT)
+
+func _change_pose(next_pose: int) -> void:
+    if pose == next_pose:
+        return
+    if is_instance_valid(pose_tween):
+        pose_tween.kill()
+    visual_fade.texture = visual.texture
+    visual_fade.region_enabled = true
+    visual_fade.region_rect = visual.region_rect
+    visual_fade.offset = visual.offset
+    visual_fade.scale = visual.scale
+    visual_fade.flip_h = visual.flip_h
+    visual_fade.modulate.a = 1.0
+    visual_fade.visible = visual.visible
+    pose = next_pose
+    if pose != Pose.FRONT:
+        facing = pose
+    play_clip("idle_front" if pose == Pose.FRONT else "idle")
+    visual.modulate.a = 0.0
+    pose_tween = create_tween().set_parallel(true)
+    var seconds: float = float(common.get("three_way", {}).get("fade_seconds", 0.12))
+    pose_tween.tween_property(visual_fade, "modulate:a", 0.0, seconds)
+    pose_tween.tween_property(visual, "modulate:a", 1.0, seconds)
+    pose_tween.chain().tween_callback(visual_fade.hide)
+    face_cooldown_left = float(common.get("face_cooldown", 0.5))
+    _resize_pose_shadow()
+
+func _resize_pose_shadow() -> void:
+    var shadow: Node2D = get_node_or_null("ContactShadow")
+    var texture: Texture2D = textures.get(current_clip) as Texture2D
+    if shadow == null or texture == null:
+        return
+    var width: float = float(texture.get_image().get_region(Rect2i(0, 0, 640, 640)).get_used_rect().size.x) * visual.scale.x * float(readability["shadow_width_ratio"])
+    shadow.position.x = -width * 0.5
+    var image: Sprite2D = shadow.get_node_or_null("Image") as Sprite2D
+    if image != null:
+        image.scale.x = width / image.texture.get_width()
+        image.position.x = width * 0.5
+
 func face_toward(target_x: float, force: bool = false) -> void:
+    if three_way:
+        if force or face_cooldown_left <= 0.0:
+            var dx: float = target_x - global_position.x
+            var options: Dictionary = common.get("three_way", {})
+            if absf(dx) <= float(options.get("front_distance", 140.0)):
+                _change_pose(Pose.FRONT)
+            elif absf(dx) >= float(options.get("side_distance", 220.0)):
+                _change_pose(Pose.LEFT if dx < 0 else Pose.RIGHT)
+        return
     var distance: float = target_x - global_position.x
     if not force and (absf(distance) < float(common.get("face_threshold", 120.0)) or face_cooldown_left > 0.0):
         return
@@ -219,7 +311,7 @@ func face_toward(target_x: float, force: bool = false) -> void:
     var next_facing: int = -1 if distance < 0.0 else 1
     if next_facing != facing:
         facing = next_facing
-        visual.flip_h = facing < 0
+        visual.flip_h = facing < 0 and (not three_way or pose != Pose.FRONT)
         face_cooldown_left = float(common.get("face_cooldown", 0.5))
 
 func play_clip(clip: String, random_start: bool = false) -> void:
@@ -255,7 +347,7 @@ func _refresh_visual() -> void:
         visual.texture = texture
         visual.region_rect = Rect2(current_frame * width, 0.0, width, height)
         visual.offset = Vector2(width * 0.5 - float(anchor[0]), height * 0.5 - float(anchor[1]))
-        visual.flip_h = facing < 0
+        visual.flip_h = facing < 0 and (not three_way or pose != Pose.FRONT)
     if not loop and clip_clock >= duration and not animation_finished:
         animation_finished = true
         clip_finished.emit(current_clip)

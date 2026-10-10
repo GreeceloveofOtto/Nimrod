@@ -1,0 +1,24 @@
+{
+  "clips": [
+    {
+      "name": "villa_back_door",
+      "sheet": "props/doors/villa_back_door.png",
+      "frame_width": 320,
+      "frame_height": 420,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.6,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        160,
+        420
+      ],
+      "image_size": [
+        1920,
+        420
+      ]
+    }
+  ]
+}

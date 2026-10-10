@@ -57,7 +57,7 @@ def main():
             if not (legacy/name).exists():shutil.copyfile(folder/name,legacy/name)
             add_rim_light(Image.open(legacy/name)).save(folder/name)
     # Atlas separators are excluded; no new pixels are painted.
-    for (name,width,ratio,opaque),box in zip([('sky',1536,0.05,True),('far_city',2048,0.2,False),('castle_wall',2816,0.45,False),('foreground',3840,0.8,False)],[(0,0,1254,310),(0,312,1254,627),(0,628,1254,940),(0,942,1254,1254)]):
+    for (name,width,ratio,opaque),box in zip([('sky',1536,0.05,True),('far_city',2048,0.2,False),('castle_wall',2816,0.45,False)],[(0,0,1254,310),(0,312,1254,627),(0,628,1254,940)]):
         image('layers_atlas.png',box,'backgrounds/castle_front/'+name+'.png',(width,720),not opaque,scroll_ratio=ratio,map_width=4400)
     image('facades_atlas.png',(0,0,1448,537),'backgrounds/castle_front/downtown_passage_facade.png',(1100,720))
     image('facades_atlas.png',(0,542,1448,1045),'backgrounds/castle_front/castle_facade.png',(1500,720))
@@ -99,7 +99,7 @@ def main():
     # Asset prompts describe the actual original generation request.
     for entry in ENTRIES+clips:
         out=entry.get('path',entry.get('sheet'))
-        key='doors' if '/doors/' in out else ('layers' if '/castle_front/' in out and Path(out).stem in ['sky','far_city','castle_wall','foreground'] else 'facades' if 'facade' in out else 'fx' if out.startswith('fx/') else 'inanna' if 'inanna' in out else 'design' if out.startswith('reference/') else 'props')
+        key='doors' if '/doors/' in out else ('layers' if '/castle_front/' in out and Path(out).stem in ['sky','far_city','castle_wall'] else 'facades' if 'facade' in out else 'fx' if out.startswith('fx/') else 'inanna' if 'inanna' in out else 'design' if out.startswith('reference/') else 'props')
         if Path(out).stem=='castle_great_gate':key='great_gate'
         text=f"# {Path(out).stem}\n\n목적: 3단계 게임 에셋.\n경로: assets/{out}\n규격: {entry.get('image_size',[entry.get('width'),entry.get('height')])}, 프레임 {entry.get('frames',1)}.\n배경: 투명 스프라이트는 #FF00FF 크로마키, FX는 생성 알파 보존, 하늘·타일·디자인은 불투명.\n후처리: crop/resize/anchor/pack, 타일은 원본 경계 블렌드만.\n\n완성 프롬프트:\n\n{PROMPTS[key]}\n"
         (ASSETS/'image_prompts'/('stage3_'+Path(out).stem+'.md')).write_text(text)

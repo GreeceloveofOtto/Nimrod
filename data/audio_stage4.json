@@ -1,0 +1,40 @@
+{
+  "bgm": [
+    {
+      "name": "uruk_wasteland",
+      "duration": 48.0,
+      "seed": 44001,
+      "frequencies": [
+        32.5,
+        48.75,
+        65.0,
+        97.5
+      ],
+      "gains": [
+        0.27,
+        0.16,
+        0.1,
+        0.04
+      ],
+      "wind_band": [
+        55.0,
+        720.0
+      ],
+      "wind_gain": 0.026,
+      "pulse_cycles": 2,
+      "string_harmonics": 1,
+      "chime_every": 6.0,
+      "chime_gain": 0.025,
+      "metal_percussion": {
+        "interval": 4.0,
+        "gain": 0.04,
+        "frequencies": [
+          179.0,
+          437.0,
+          683.0
+        ],
+        "decay": 1.2
+      }
+    }
+  ]
+}

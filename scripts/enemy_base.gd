@@ -449,7 +449,14 @@ func _die() -> void:
     _show_clip("death", 0.0)
 
 func _on_death() -> void:
-    pass
+    if randf() < float(stats.get("drop_chance", 0.0)):
+        var level: Node = _level()
+        if level == null:
+            return
+        var pickup: Node2D = load("res://scripts/healing_pickup.gd").new()
+        pickup.pickup_id = str(stats.get("drop_id", "healing_vomit"))
+        level.add_child(pickup)
+        pickup.global_position = global_position
 
 func _update_dead(delta: float) -> void:
     state_clock += delta
