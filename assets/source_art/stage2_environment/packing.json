@@ -1,0 +1,434 @@
+[
+  {
+    "path": "backgrounds/rear_gate/sky.png",
+    "source": "rear_layers.png",
+    "crop": [
+      0,
+      0,
+      1254,
+      314
+    ],
+    "floor_y_source": null,
+    "floor_y_output": null
+  },
+  {
+    "path": "backgrounds/rear_gate/far_city.png",
+    "source": "rear_layers.png",
+    "crop": [
+      0,
+      314,
+      1254,
+      313
+    ],
+    "floor_y_source": null,
+    "floor_y_output": null
+  },
+  {
+    "path": "backgrounds/rear_gate/castle_wall.png",
+    "source": "rear_layers.png",
+    "crop": [
+      0,
+      627,
+      1254,
+      313
+    ],
+    "floor_y_source": null,
+    "floor_y_output": null
+  },
+  {
+    "path": "backgrounds/rear_gate/foreground.png",
+    "source": "rear_layers.png",
+    "crop": [
+      0,
+      940,
+      1254,
+      314
+    ],
+    "floor_y_source": null,
+    "floor_y_output": null
+  },
+  {
+    "path": "backgrounds/rear_gate/villa_exterior.png",
+    "source": "villa_exterior.png",
+    "crop": [
+      0,
+      0,
+      1774,
+      887
+    ],
+    "floor_y_source": null,
+    "floor_y_output": null
+  },
+  {
+    "path": "backgrounds/castle/castle_f1_hall.png",
+    "source": "castle_interiors.png",
+    "crop": [
+      0,
+      0,
+      1254,
+      307
+    ],
+    "floor_y_source": 252,
+    "floor_y_output": 620
+  },
+  {
+    "path": "backgrounds/castle/castle_f2_sanctum.png",
+    "source": "castle_interiors.png",
+    "crop": [
+      0,
+      307,
+      1254,
+      322
+    ],
+    "floor_y_source": 269,
+    "floor_y_output": 620
+  },
+  {
+    "path": "backgrounds/castle/castle_f3_kitchen.png",
+    "source": "castle_interiors.png",
+    "crop": [
+      0,
+      629,
+      1254,
+      288
+    ],
+    "floor_y_source": 236,
+    "floor_y_output": 620
+  },
+  {
+    "path": "backgrounds/castle/castle_f4_boudoir.png",
+    "source": "castle_interiors.png",
+    "crop": [
+      0,
+      917,
+      1254,
+      337
+    ],
+    "floor_y_source": 247,
+    "floor_y_output": 620
+  },
+  {
+    "path": "backgrounds/villa/villa_f1_hall.png",
+    "source": "villa_rooftop.png",
+    "crop": [
+      0,
+      0,
+      1254,
+      312
+    ],
+    "floor_y_source": 250,
+    "floor_y_output": 620
+  },
+  {
+    "path": "backgrounds/castle/castle_f5_sky.png",
+    "source": "villa_rooftop.png",
+    "crop": [
+      0,
+      313,
+      1254,
+      314
+    ],
+    "floor_y_source": null,
+    "floor_y_output": null
+  },
+  {
+    "path": "backgrounds/castle/castle_f5_far.png",
+    "source": "villa_rooftop.png",
+    "crop": [
+      0,
+      627,
+      1254,
+      314
+    ],
+    "floor_y_source": null,
+    "floor_y_output": null
+  },
+  {
+    "path": "backgrounds/castle/castle_f5_terrace.png",
+    "source": "villa_rooftop.png",
+    "crop": [
+      0,
+      941,
+      1254,
+      313
+    ],
+    "floor_y_source": 244,
+    "floor_y_output": 620
+  },
+  {
+    "path": "tiles/castle/floor_tile.png",
+    "source": "tiles.png",
+    "crop": [
+      12,
+      84,
+      1424,
+      262
+    ],
+    "floor_y_source": null,
+    "floor_y_output": null
+  },
+  {
+    "path": "tiles/castle/balcony_floor_tile.png",
+    "source": "tiles.png",
+    "crop": [
+      12,
+      431,
+      1424,
+      263
+    ],
+    "floor_y_source": null,
+    "floor_y_output": null
+  },
+  {
+    "path": "tiles/castle/villa_floor_tile.png",
+    "source": "tiles.png",
+    "crop": [
+      12,
+      766,
+      1424,
+      272
+    ],
+    "floor_y_source": null,
+    "floor_y_output": null
+  },
+  {
+    "path": "props/castle_pillar.png",
+    "source": "props_atlas.png",
+    "crop": [
+      0,
+      0,
+      384,
+      420
+    ],
+    "floor_y_source": null,
+    "floor_y_output": null
+  },
+  {
+    "path": "props/castle_banner.png",
+    "source": "props_atlas.png",
+    "crop": [
+      384,
+      0,
+      384,
+      420
+    ],
+    "floor_y_source": null,
+    "floor_y_output": null
+  },
+  {
+    "path": "props/brazier.png",
+    "source": "props_atlas.png",
+    "crop": [
+      768,
+      0,
+      320,
+      420
+    ],
+    "floor_y_source": null,
+    "floor_y_output": null
+  },
+  {
+    "path": "props/kitchen_prep_table.png",
+    "source": "props_atlas.png",
+    "crop": [
+      1088,
+      0,
+      448,
+      420
+    ],
+    "floor_y_source": null,
+    "floor_y_output": null
+  },
+  {
+    "path": "props/kitchen_stove.png",
+    "source": "props_atlas.png",
+    "crop": [
+      0,
+      420,
+      384,
+      330
+    ],
+    "floor_y_source": null,
+    "floor_y_output": null
+  },
+  {
+    "path": "props/kitchen_dining_table.png",
+    "source": "props_atlas.png",
+    "crop": [
+      384,
+      420,
+      420,
+      330
+    ],
+    "floor_y_source": null,
+    "floor_y_output": null
+  },
+  {
+    "path": "props/villa_vase.png",
+    "source": "props_atlas.png",
+    "crop": [
+      804,
+      420,
+      250,
+      330
+    ],
+    "floor_y_source": null,
+    "floor_y_output": null
+  },
+  {
+    "path": "props/villa_rug.png",
+    "source": "props_atlas.png",
+    "crop": [
+      1054,
+      420,
+      482,
+      330
+    ],
+    "floor_y_source": null,
+    "floor_y_output": null
+  },
+  {
+    "path": "props/healing_vomit.png",
+    "source": "props_atlas.png",
+    "crop": [
+      0,
+      760,
+      384,
+      264
+    ],
+    "floor_y_source": null,
+    "floor_y_output": null
+  },
+  {
+    "path": "ui/prompt_e.png",
+    "source": "props_atlas.png",
+    "crop": [
+      384,
+      760,
+      300,
+      264
+    ],
+    "floor_y_source": null,
+    "floor_y_output": null
+  },
+  {
+    "path": "props/doors/castle_rear_door_exterior.png",
+    "source": "door_castle.png",
+    "crop": [
+      0,
+      0,
+      1254,
+      410
+    ],
+    "columns": 6,
+    "frames": 6,
+    "frame_size": [
+      320,
+      420
+    ],
+    "artwork_scale_xy": [
+      1.5247524752475248,
+      1.3161290322580645
+    ]
+  },
+  {
+    "path": "props/doors/castle_interior_door.png",
+    "source": "door_castle.png",
+    "crop": [
+      0,
+      410,
+      1254,
+      390
+    ],
+    "columns": 6,
+    "frames": 6,
+    "frame_size": [
+      256,
+      384
+    ],
+    "artwork_scale_xy": [
+      1.2842105263157895,
+      1.15527950310559
+    ]
+  },
+  {
+    "path": "props/doors/castle_rear_door_interior.png",
+    "source": "door_castle.png",
+    "crop": [
+      0,
+      800,
+      1254,
+      454
+    ],
+    "columns": 6,
+    "frames": 6,
+    "frame_size": [
+      320,
+      420
+    ],
+    "artwork_scale_xy": [
+      1.5247524752475248,
+      1.3289902280130292
+    ]
+  },
+  {
+    "path": "props/doors/villa_gate.png",
+    "source": "door_villa.png",
+    "crop": [
+      0,
+      0,
+      1254,
+      450
+    ],
+    "columns": 8,
+    "frames": 8,
+    "frame_size": [
+      480,
+      420
+    ],
+    "artwork_scale_xy": [
+      2.9808917197452227,
+      1.2670807453416149
+    ]
+  },
+  {
+    "path": "props/doors/villa_inner_door.png",
+    "source": "door_villa.png",
+    "crop": [
+      0,
+      450,
+      1254,
+      320
+    ],
+    "columns": 8,
+    "frames": 6,
+    "frame_size": [
+      256,
+      384
+    ],
+    "artwork_scale_xy": [
+      1.5741935483870968,
+      1.4588235294117646
+    ]
+  },
+  {
+    "path": "props/doors/castle_front_gate_locked.png",
+    "source": "door_villa.png",
+    "crop": [
+      0,
+      780,
+      320,
+      474
+    ],
+    "columns": 1,
+    "frames": 1,
+    "frame_size": [
+      320,
+      420
+    ],
+    "artwork_scale_xy": [
+      0.9903536977491961,
+      0.9975550122249389
+    ]
+  }
+]

@@ -1,5 +1,16 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=4 format=3]
 
-[ext_resource type="PackedScene" path="res://scenes/RearGate.tscn" id="1_rear_gate"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://scenes/Player.tscn" id="2_player"]
+[ext_resource type="Script" path="res://scripts/game_hud.gd" id="3_hud"]
 
-[node name="NimrodRearGate" instance=ExtResource("1_rear_gate")]
+[node name="Nimrod" type="Node2D"]
+script = ExtResource("1_main")
+
+[node name="LevelRoot" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+z_index = 5
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("3_hud")

@@ -1,0 +1,172 @@
+extends Node
+
+signal level_changed(level_id: String)
+signal transition_finished(level_id: String)
+
+var player: NimrodPlayer
+var current_level: Node2D
+var level_root: Node2D
+var main: Node
+var is_transitioning: bool = false
+var player_locked: bool = false
+var levels: Dictionary = {}
+var config: Dictionary = {}
+var _overlay: CanvasLayer
+var _fade_rect: ColorRect
+var _fade_tween: Tween
+var _reset_on_arrival: bool = false
+
+func _ready() -> void:
+    var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://data/transitions.json"))
+    if parsed is Dictionary:
+        config = parsed
+    _load_levels()
+    _overlay = CanvasLayer.new()
+    _overlay.name = "LevelTransition"
+    _overlay.layer = int(config.get("ui", {}).get("fade_canvas_layer", 100))
+    add_child(_overlay)
+    _fade_rect = ColorRect.new()
+    _fade_rect.color = Color.BLACK
+    _fade_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+    _fade_rect.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+    _fade_rect.modulate.a = 0.0
+    _overlay.add_child(_fade_rect)
+
+func _load_levels() -> void:
+    levels.clear()
+    if not FileAccess.file_exists("res://data/levels.json"):
+        return
+    var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://data/levels.json"))
+    if not (parsed is Dictionary):
+        push_error("Invalid level registry")
+        return
+    for row: Dictionary in parsed.get("levels", []):
+        levels[str(row["id"])] = row
+
+func bind_main(value: Node, root: Node2D, actor: NimrodPlayer) -> void:
+    main = value
+    level_root = root
+    player = actor
+    current_level = null
+    _load_levels()
+    set_player_locked(true)
+    _fade_rect.modulate.a = 1.0
+    _reset_on_arrival = true
+    _start_game.call_deferred()
+
+func unbind_main(value: Node) -> void:
+    if main != value:
+        return
+    if _fade_tween != null and _fade_tween.is_valid():
+        _fade_tween.kill()
+    main = null
+    level_root = null
+    player = null
+    current_level = null
+    is_transitioning = false
+    player_locked = false
+    _fade_rect.modulate.a = 0.0
+
+func _start_game() -> void:
+    await go_to(str(config["start_level"]), str(config["start_spawn"]))
+
+# A door locks the actor before its opening animation; this is deliberately
+# separate from is_transitioning so that its subsequent go_to call is accepted.
+func set_player_locked(locked: bool) -> void:
+    player_locked = locked
+    if is_instance_valid(player):
+        player.set_transition_locked(locked)
+
+func show_toast(text: String) -> void:
+    if is_instance_valid(main):
+        var hud := main.get_node_or_null("HUD")
+        if hud != null:
+            hud.show_toast(text)
+
+func go_to(level_id: String, spawn_name: String) -> bool:
+    if is_transitioning or not is_instance_valid(player) or not is_instance_valid(level_root):
+        return false
+    if not levels.has(level_id):
+        push_warning("Unknown level: " + level_id)
+        _cancel_entry()
+        return false
+    var definition: Dictionary = levels[level_id]
+    var packed := load(str(definition["scene"])) as PackedScene
+    if packed == null:
+        push_warning("Level could not be loaded: " + level_id)
+        _cancel_entry()
+        return false
+    is_transitioning = true
+    set_player_locked(true)
+    await _fade_to(1.0, float(config["fade_out_seconds"]))
+    if not is_instance_valid(level_root) or not is_instance_valid(player):
+        return false
+    if is_instance_valid(current_level):
+        level_root.remove_child(current_level)
+        current_level.queue_free()
+    current_level = packed.instantiate() as Node2D
+    level_root.add_child(current_level)
+    var spawn: Marker2D = current_level.get_spawn(spawn_name)
+    if spawn == null:
+        push_warning("Missing spawn %s in %s" % [spawn_name, level_id])
+        spawn = current_level.get_spawn(str(config["start_spawn"]))
+    if _reset_on_arrival:
+        player.reset_run_state()
+        _reset_on_arrival = false
+    if spawn != null:
+        player.global_position = spawn.global_position
+    player.modulate.a = 1.0
+    _update_camera(current_level.camera_limits)
+    Audio.play_bgm(str(current_level.bgm_name), float(config["bgm_fade_seconds"]))
+    var hud := main.get_node_or_null("HUD")
+    if hud != null:
+        hud.set_level_name(str(current_level.display_name))
+    level_changed.emit(level_id)
+    var arrival: Node = current_level.find_arrival_door(spawn_name)
+    # An arrival door prepares itself before fade-in, then plays its walking
+    # and closing sequence while input and incoming damage remain locked.
+    if arrival != null and arrival.has_method("prepare_arrival"):
+        arrival.prepare_arrival(player)
+    await _fade_to(0.0, float(config["fade_in_seconds"]))
+    if not is_instance_valid(player) or not is_instance_valid(current_level):
+        return false
+    if is_instance_valid(arrival) and arrival.has_method("play_arrival"):
+        await arrival.play_arrival(player)
+    player.end_portal_walk()
+    player.modulate.a = 1.0
+    set_player_locked(false)
+    is_transitioning = false
+    show_toast(str(current_level.display_name))
+    if level_id == str(config["start_level"]) and spawn_name == str(config["start_spawn"]) and GameState.first_time("rear_gate_intro"):
+        if hud != null:
+            hud.show_story()
+    transition_finished.emit(level_id)
+    return true
+
+func restart_run() -> void:
+    if is_transitioning or not is_instance_valid(player):
+        return
+    GameState.reset_run()
+    _reset_on_arrival = true
+    await go_to(str(config["start_level"]), str(config["start_spawn"]))
+
+func _cancel_entry() -> void:
+    if is_instance_valid(player):
+        player.end_portal_walk()
+        player.modulate.a = 1.0
+    set_player_locked(false)
+
+func _update_camera(limits: Rect2) -> void:
+    player.camera.limit_left = roundi(limits.position.x)
+    player.camera.limit_top = roundi(limits.position.y)
+    player.camera.limit_right = roundi(limits.end.x)
+    player.camera.limit_bottom = roundi(limits.end.y)
+    player.camera.reset_smoothing()
+    player.camera.force_update_scroll()
+
+func _fade_to(alpha: float, seconds: float) -> void:
+    if _fade_tween != null and _fade_tween.is_valid():
+        _fade_tween.kill()
+    _fade_tween = create_tween()
+    _fade_tween.tween_property(_fade_rect, "modulate:a", alpha, seconds)
+    await _fade_tween.finished

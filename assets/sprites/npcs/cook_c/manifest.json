@@ -1,0 +1,34 @@
+{
+  "character": "cook_c",
+  "frame_size": [
+    640,
+    640
+  ],
+  "orientation": "right-facing; flip_h for left",
+  "height_ratio": 0.74,
+  "height_reference_px": 359,
+  "height_reference_method": "idle frame 0 alpha > 12",
+  "height_validation": "every frame alpha>12 bbox height within 3 percent of player height times height_ratio",
+  "clips": [
+    {
+      "name": "arrange",
+      "sheet": "sprites/npcs/cook_c/arrange.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 2.0,
+      "fps": 3.0,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3840,
+        640
+      ]
+    }
+  ]
+}

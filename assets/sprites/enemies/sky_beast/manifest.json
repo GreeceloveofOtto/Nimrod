@@ -1,0 +1,151 @@
+{
+  "character": "sky_beast",
+  "frame_size": [
+    768,
+    640
+  ],
+  "orientation": "right-facing; turn frame 3 is near-symmetric frontal",
+  "render": "Image-generated animation poses; chromakey, shared per-clip scale and center packing only",
+  "clips": [
+    {
+      "name": "fly_idle",
+      "sheet": "sprites/enemies/sky_beast/fly_idle.png",
+      "frame_width": 768,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.9,
+      "fps": 6.666666666666666,
+      "loop": true,
+      "anchor_px": [
+        384,
+        320
+      ],
+      "image_size": [
+        4608,
+        640
+      ]
+    },
+    {
+      "name": "windup",
+      "sheet": "sprites/enemies/sky_beast/windup.png",
+      "frame_width": 768,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.4,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        384,
+        320
+      ],
+      "image_size": [
+        3072,
+        640
+      ]
+    },
+    {
+      "name": "dive",
+      "sheet": "sprites/enemies/sky_beast/dive.png",
+      "frame_width": 768,
+      "frame_height": 640,
+      "columns": 3,
+      "rows": 1,
+      "frames": 3,
+      "duration_seconds": 0.25,
+      "fps": 12.0,
+      "loop": true,
+      "anchor_px": [
+        384,
+        320
+      ],
+      "image_size": [
+        2304,
+        640
+      ]
+    },
+    {
+      "name": "recovery",
+      "sheet": "sprites/enemies/sky_beast/recovery.png",
+      "frame_width": 768,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.6,
+      "fps": 6.666666666666667,
+      "loop": false,
+      "anchor_px": [
+        384,
+        320
+      ],
+      "image_size": [
+        3072,
+        640
+      ]
+    },
+    {
+      "name": "turn",
+      "sheet": "sprites/enemies/sky_beast/turn.png",
+      "frame_width": 768,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.25,
+      "fps": 16.0,
+      "loop": false,
+      "anchor_px": [
+        384,
+        320
+      ],
+      "image_size": [
+        3072,
+        640
+      ]
+    },
+    {
+      "name": "hurt",
+      "sheet": "sprites/enemies/sky_beast/hurt.png",
+      "frame_width": 768,
+      "frame_height": 640,
+      "columns": 2,
+      "rows": 1,
+      "frames": 2,
+      "duration_seconds": 0.2,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        384,
+        320
+      ],
+      "image_size": [
+        1536,
+        640
+      ]
+    },
+    {
+      "name": "death",
+      "sheet": "sprites/enemies/sky_beast/death.png",
+      "frame_width": 768,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.8,
+      "fps": 7.5,
+      "loop": false,
+      "anchor_px": [
+        384,
+        320
+      ],
+      "image_size": [
+        4608,
+        640
+      ]
+    }
+  ]
+}

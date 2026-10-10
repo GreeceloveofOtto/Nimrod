@@ -9,7 +9,8 @@
     "death_fade_seconds": 0.4,
     "hit_spark_seconds": 0.15,
     "hit_spark_scale": 0.24,
-    "missing_clip_seconds": 1.0
+    "missing_clip_seconds": 1.0,
+    "patrol_arrival_distance": 4.0
   },
   "enemies": [
     {
@@ -85,6 +86,65 @@
             434,
             128
           ]
+        }
+      ]
+    },
+    {
+      "id": "sky_beast",
+      "hp": 110,
+      "contact_damage": 8,
+      "turn_delay": 0.25,
+      "move_speed": 82.0,
+      "detect_range": 700.0,
+      "visual_scale": 0.45,
+      "body_size": [
+        150.0,
+        88.0
+      ],
+      "body_offset_y": 0.0,
+      "knockback_multiplier": 0.4,
+      "hurt_sfx": "sky_beast_hurt",
+      "death_sfx": "sky_beast_death",
+      "flight": {
+        "hover_altitude": [
+          180.0,
+          260.0
+        ],
+        "hover_sway": 90.0,
+        "hover_cycle_seconds": 3.6,
+        "hover_vertical_speed": 66.0,
+        "hover_acceleration": 240.0,
+        "fallback_bounds": [
+          0.0,
+          80.0,
+          2400.0,
+          500.0
+        ],
+        "fallback_floor_y": 620.0,
+        "wing_volume_db": -16.0,
+        "death_gravity": 640.0,
+        "death_fall_speed": 420.0,
+        "death_spiral_radius": 18.0,
+        "death_spiral_rate": 11.0,
+        "death_spiral_rotation": 0.32,
+        "drop_chance": 0.05,
+        "drop_id": "healing_vomit"
+      },
+      "attacks": [
+        {
+          "id": "dive",
+          "damage": 8,
+          "windup": 0.4,
+          "active": 0.9,
+          "recovery": 0.6,
+          "cooldown": 1.2,
+          "dive_speed": 520.0,
+          "overshoot_distance": 200.0,
+          "interrupt_stun": 0.25,
+          "recovery_rise_speed": 120.0,
+          "recovery_deceleration": 380.0,
+          "windup_flash_gain": 1.35,
+          "windup_flash_cycles": 3.0
         }
       ]
     }

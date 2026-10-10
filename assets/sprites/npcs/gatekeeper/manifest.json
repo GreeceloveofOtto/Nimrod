@@ -1,0 +1,54 @@
+{
+  "character": "gatekeeper",
+  "frame_size": [
+    640,
+    640
+  ],
+  "orientation": "right-facing; flip_h for left",
+  "height_ratio": 0.74,
+  "height_reference_px": 359,
+  "height_reference_method": "idle frame 0 alpha > 12",
+  "height_validation": "every frame alpha>12 bbox height within 3 percent of player height times height_ratio",
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/npcs/gatekeeper/idle.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 2.4,
+      "fps": 2.5,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3840,
+        640
+      ]
+    },
+    {
+      "name": "open_gate",
+      "sheet": "sprites/npcs/gatekeeper/open_gate.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.8,
+      "fps": 6.25,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3200,
+        640
+      ]
+    }
+  ]
+}

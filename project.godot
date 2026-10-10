@@ -1,13 +1,15 @@
 config_version=5
 
 [application]
-config/name="NIMROD | Uruk Rear Gate"
-config/description="Nimrod: the road outside Lugal Castle's rear gate"
+config/name="NIMROD | Lugal Castle and Uruk"
+config/description="Nimrod: Lugal Castle, Uruk rooftops and the villa"
 run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 
 [autoload]
 Audio="*res://scripts/audio_manager.gd"
+GameState="*res://scripts/game_state.gd"
+SceneManager="*res://scripts/scene_manager.gd"
 
 [audio]
 buses/default_bus_layout="res://default_bus_layout.tres"

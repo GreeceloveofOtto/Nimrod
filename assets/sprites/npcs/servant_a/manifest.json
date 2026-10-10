@@ -1,0 +1,34 @@
+{
+  "character": "servant_a",
+  "frame_size": [
+    640,
+    640
+  ],
+  "orientation": "right-facing; flip_h for left",
+  "height_ratio": 0.7,
+  "height_reference_px": 359,
+  "height_reference_method": "idle frame 0 alpha > 12",
+  "height_validation": "every frame alpha>12 bbox height within 3 percent of player height times height_ratio",
+  "clips": [
+    {
+      "name": "sweep",
+      "sheet": "sprites/npcs/servant_a/sweep.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 1.6,
+      "fps": 5.0,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        5120,
+        640
+      ]
+    }
+  ]
+}

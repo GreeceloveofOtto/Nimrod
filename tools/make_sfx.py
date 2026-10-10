@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Create replaceable, seeded combat sounds, mono 44100 Hz 16-bit PCM."""
+import json
 import numpy as np
 
 from audio_common import PROJECT_ROOT, band_noise, envelope, timeline, write_wav
@@ -49,6 +50,25 @@ def synthesize(duration, kind, pitch, seed):
         rumble = np.sin(2.0 * np.pi * 84.0 * t) + 0.3 * np.sin(2.0 * np.pi * 126.0 * t)
         flutter = 0.75 + 0.16 * np.sin(2.0 * np.pi * 6.0 * t)
         return (0.38 * mid_noise + 0.14 * high_noise + 0.18 * rumble) * flutter
+    if kind in ("door", "door_close"):
+        creak = np.sin(2.0 * np.pi * (pitch * t + 2.3 * np.sin(2.0 * np.pi * 3.0 * t)))
+        creak += 0.15 * np.sin(2.0 * np.pi * pitch * 2.97 * t)
+        signal = (0.35 * creak + 0.20 * low_noise + 0.045 * mid_noise) * np.sin(np.pi * t / duration) ** 0.65
+        if kind == "door_close":
+            impact_time = np.maximum(t - duration * 0.73, 0.0)
+            signal += (t >= duration * 0.73) * (0.5 * tone + 0.11 * mid_noise) * envelope(impact_time, decay=0.026)
+        return signal
+    if kind == "rattle":
+        metallic = tone + 0.38 * np.sin(2.0 * np.pi * pitch * 2.71 * t)
+        return (0.33 * metallic + 0.22 * mid_noise) * envelope(t, decay=0.045)
+    if kind == "wing_loop":
+        # FFT noise and this modulation are periodic over the exact clip length.
+        beats = 0.12 + 0.88 * (0.5 + 0.5 * np.sin(2.0 * np.pi * 2.0 * t / duration)) ** 4
+        return (0.25 * low_noise + 0.17 * mid_noise) * beats
+    if kind == "screech":
+        voice = np.sin(2.0 * np.pi * (pitch * t - pitch * 0.22 * t * t / duration))
+        voice += 0.20 * np.sin(2.0 * np.pi * pitch * 2.01 * t)
+        return (0.32 * voice + 0.055 * high_noise) * envelope(t, attack=0.024, decay=duration * 0.38)
     if kind in ("hurt", "death"):
         fall = pitch * (0.48 if kind == "death" else 0.20)
         voice = np.sin(2.0 * np.pi * (pitch * t - fall * t * t / (2.0 * duration)))
@@ -62,7 +82,12 @@ def main():
     for index, (name, (duration, kind, pitch)) in enumerate(SOUNDS.items()):
         signal = synthesize(duration, kind, pitch, 5100 + index)
         write_wav(out_dir / (name + ".wav"), signal, fade_seconds=0.0 if kind == "flame_loop" else 0.004)
-    print(f"Generated {len(SOUNDS)} replaceable combat effects; flame_loop is periodic.")
+    stage2 = json.loads((PROJECT_ROOT / "data/audio_stage2.json").read_text(encoding="utf-8"))
+    for item in stage2["sfx"]:
+        signal = synthesize(item["duration"], item["kind"], item["pitch"], item["seed"])
+        write_wav(out_dir / (item["name"] + ".wav"), signal,
+                  fade_seconds=0.0 if item["kind"] == "wing_loop" else 0.004)
+    print(f"Generated {len(SOUNDS) + len(stage2['sfx'])} effects; flame and wing loops are periodic.")
 
 
 if __name__ == "__main__":

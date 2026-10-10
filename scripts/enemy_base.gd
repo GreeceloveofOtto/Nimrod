@@ -52,6 +52,7 @@ var displayed_clip: String = ""
 var display_clock: float = 0.0
 var current_frame: int = 0
 var ignored_player: PhysicsBody2D
+var returning_to_patrol: bool = false
 
 func _ready() -> void:
     collision_layer = ENEMY_LAYER
@@ -68,7 +69,7 @@ func _ready() -> void:
     var shape := RectangleShape2D.new()
     shape.size = body_size
     collider.shape = shape
-    collider.position.y = -body_size.y * 0.5
+    collider.position.y = float(stats.get("body_offset_y", -body_size.y * 0.5))
     add_child(collider)
     visual = Sprite2D.new()
     visual.name = "Visual"
@@ -132,7 +133,7 @@ func _create_missing_visual() -> void:
     add_child(missing_visual)
     var box := ColorRect.new()
     box.color = Color.GRAY
-    box.position = Vector2(-body_size.x * 0.5, -body_size.y)
+    box.position = _local_hurt_rect().position
     box.size = body_size
     box.mouse_filter = Control.MOUSE_FILTER_IGNORE
     missing_visual.add_child(box)
@@ -178,10 +179,16 @@ func _physics_process(delta: float) -> void:
             _update_turn(delta)
         State.STUN:
             _update_stun(delta)
-    velocity.y = minf(float(common.get("max_fall_speed", 1100.0)), velocity.y + float(common.get("gravity", 1750.0)) * delta)
-    move_and_slide()
+    _integrate_motion(delta)
     _enforce_bounds()
     _update_visual(delta)
+
+func _integrate_motion(delta: float) -> void:
+    velocity.y = minf(float(common.get("max_fall_speed", 1100.0)), velocity.y + float(common.get("gravity", 1750.0)) * delta)
+    move_and_slide()
+
+func _level() -> Node:
+    return get_tree().get_first_node_in_group("current_level")
 
 func _target() -> Node2D:
     var candidate: Node = get_tree().get_first_node_in_group("player")
@@ -195,13 +202,41 @@ func _target() -> Node2D:
         return candidate as Node2D
     return null
 
+func _player_is_available(player: Node2D) -> bool:
+    if player == null:
+        return false
+    if player.has_method("is_transition_locked") and bool(player.call("is_transition_locked")):
+        return false
+    var level: Node = _level()
+    if level != null and level.has_method("is_point_safe"):
+        if bool(level.call("is_point_safe", player.global_position)):
+            return false
+    return true
+
 func _can_detect(player: Node2D) -> bool:
-    return player != null and global_position.distance_to(player.global_position) <= float(stats.get("detect_range", 0.0))
+    return not returning_to_patrol and _player_is_available(player) and global_position.distance_to(player.global_position) <= float(stats.get("detect_range", 0.0))
 
 func _update_idle(delta: float) -> void:
-    _brake(delta)
-    if _can_detect(_target()):
+    var player: Node2D = _target()
+    if _can_detect(player):
         _set_state(State.CHASE)
+        return
+    _return_to_patrol(delta)
+
+func _return_to_patrol(delta: float) -> void:
+    var bounds: Vector2 = _ground_roam_bounds()
+    var home: float = clampf(patrol_center, bounds.x, bounds.y)
+    var difference: float = home - global_position.x
+    if absf(difference) <= float(common.get("patrol_arrival_distance", 4.0)):
+        _brake(delta)
+        returning_to_patrol = false
+        return
+    var direction: int = 1 if difference > 0.0 else -1
+    if direction != facing:
+        _request_turn(direction)
+        _brake(delta)
+    else:
+        velocity.x = direction * float(stats.get("move_speed", 0.0))
 
 func _update_chase(delta: float) -> void:
     _brake(delta)
@@ -247,12 +282,32 @@ func _update_stun(delta: float) -> void:
 func _brake(delta: float) -> void:
     velocity.x = move_toward(velocity.x, 0.0, float(common.get("knockback_friction", 2400.0)) * delta)
 
+func _ground_roam_bounds() -> Vector2:
+    var low: float = safe_min_x + body_size.x * 0.5
+    var high: float = safe_max_x - body_size.x * 0.5
+    var level: Node = _level()
+    if level != null and level.has_method("get_enemy_roam_bounds"):
+        var allowed: Vector2 = level.call("get_enemy_roam_bounds", Vector2(patrol_center, global_position.y), body_size)
+        low = allowed.x
+        high = allowed.y
+    low = maxf(low, patrol_center - patrol_range)
+    high = minf(high, patrol_center + patrol_range)
+    if low > high:
+        high = low
+    return Vector2(low, high)
+
 func _enforce_bounds() -> void:
-    var low: float = maxf(safe_min_x + body_size.x * 0.5, patrol_center - patrol_range)
-    var high: float = minf(safe_max_x - body_size.x * 0.5, patrol_center + patrol_range)
-    global_position.x = clampf(global_position.x, low, high)
-    if (global_position.x <= low and velocity.x < 0.0) or (global_position.x >= high and velocity.x > 0.0):
+    var bounds: Vector2 = _ground_roam_bounds()
+    var attempted_x: float = global_position.x
+    global_position.x = clampf(global_position.x, bounds.x, bounds.y)
+    if (global_position.x <= bounds.x and velocity.x < 0.0) or (global_position.x >= bounds.y and velocity.x > 0.0):
         velocity.x = 0.0
+        if state == State.CHASE:
+            returning_to_patrol = true
+            _set_state(State.IDLE)
+    # Bounds are applied after physics, including knockback frames.
+    if attempted_x != global_position.x and state == State.IDLE:
+        returning_to_patrol = true
 
 func _set_state(next: State) -> void:
     state = next
@@ -291,8 +346,14 @@ func _play_sfx(sound_name: String) -> Node:
         return audio.call("play_sfx", sound_name, global_position) as Node
     return null
 
+func _local_hurt_rect() -> Rect2:
+    var center_y: float = float(stats.get("body_offset_y", -body_size.y * 0.5))
+    return Rect2(Vector2(-body_size.x * 0.5, center_y - body_size.y * 0.5), body_size)
+
 func get_hurt_rect() -> Rect2:
-    return Rect2(global_position + Vector2(-body_size.x * 0.5, -body_size.y), body_size)
+    var box: Rect2 = _local_hurt_rect()
+    box.position += global_position
+    return box
 
 func get_attack_rect() -> Rect2:
     if state != State.ACTIVE:
@@ -311,7 +372,7 @@ func _player_rect(player: Node2D) -> Rect2:
     return Rect2(player.global_position, Vector2.ZERO)
 
 func _player_in_attack(player: Node2D) -> bool:
-    if player == null or player.global_position.x < safe_min_x or player.global_position.x > safe_max_x:
+    if not _player_is_available(player):
         return false
     return get_attack_rect().intersects(_player_rect(player))
 
@@ -335,10 +396,10 @@ func _receive_hit(damage: int, from_pos: Vector2, step: int, shockwave: bool) ->
     var strike: Dictionary = _strike_data(step, shockwave)
     hp = maxi(0, hp - damage)
     var direction: float = 1.0 if global_position.x >= from_pos.x else -1.0
-    velocity.x = direction * float(strike.get("knockback", 0.0))
+    velocity.x = direction * float(strike.get("knockback", 0.0)) * float(stats.get("knockback_multiplier", 1.0))
     hitstop_left = float(common.get("hitstop_seconds", 0.05))
     _spawn_hit_spark(from_pos)
-    _play_sfx("beast_" + _audio_kind() + "_hurt")
+    _play_sfx(str(stats.get("hurt_sfx", "beast_" + _audio_kind() + "_hurt")))
     damaged.emit(damage, hp)
     if hp <= 0:
         _die()
@@ -373,7 +434,7 @@ func _spawn_hit_spark(from_pos: Vector2) -> void:
     if scene == null:
         scene = get_parent()
     scene.add_child(effect)
-    effect.global_position = Vector2(lerpf(global_position.x, from_pos.x, 0.25), global_position.y - body_size.y * 0.5)
+    effect.global_position = Vector2(lerpf(global_position.x, from_pos.x, 0.25), get_hurt_rect().get_center().y)
 
 func _die() -> void:
     _on_death()
@@ -383,7 +444,7 @@ func _die() -> void:
     velocity = Vector2.ZERO
     hitstop_left = 0.0
     _set_state(State.DEAD)
-    _play_sfx("beast_" + _audio_kind() + "_death")
+    _play_sfx(str(stats.get("death_sfx", "beast_" + _audio_kind() + "_death")))
     died.emit(self)
     _show_clip("death", 0.0)
 
@@ -407,7 +468,7 @@ func _active_clip() -> String:
 func _update_visual(delta: float) -> void:
     var clip: String = "idle"
     match state:
-        State.CHASE:
+        State.IDLE, State.CHASE:
             clip = "walk" if absf(velocity.x) > 0.0 else "idle"
         State.WINDUP:
             clip = "windup"
@@ -450,7 +511,7 @@ func _draw() -> void:
     # Debug geometry only. Creature and effect art always comes from PNGs.
     if not debug_hitboxes or state == State.DEAD:
         return
-    draw_rect(Rect2(Vector2(-body_size.x * 0.5, -body_size.y), body_size), Color(0.2, 0.5, 1.0, 0.85), false, 2.0)
+    draw_rect(_local_hurt_rect(), Color(0.2, 0.5, 1.0, 0.85), false, 2.0)
     draw_arc(Vector2.ZERO, float(stats.get("detect_range", 0.0)), 0.0, TAU, 64, Color(0.9, 0.8, 0.3, 0.5), 1.0)
     var attack_box: Rect2 = get_attack_rect()
     if attack_box.has_area():

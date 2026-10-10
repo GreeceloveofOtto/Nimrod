@@ -1,0 +1,203 @@
+{
+  "common": {
+    "visual_scale": 0.3,
+    "frame_size": [
+      640,
+      640
+    ],
+    "anchor_px": [
+      320,
+      600
+    ],
+    "face_threshold": 120,
+    "face_cooldown": 0.5,
+    "missing_size": [
+      70,
+      110
+    ]
+  },
+  "npcs": [
+    {
+      "id": "lugalbanda",
+      "display_name": "루갈반다",
+      "height_ratio": 1.06,
+      "sheet_dir": "assets/sprites/npcs/lugalbanda",
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
+        }
+      ],
+      "face_player": true,
+      "random_start": false
+    },
+    {
+      "id": "ninsun",
+      "display_name": "닌순",
+      "height_ratio": 0.98,
+      "sheet_dir": "assets/sprites/npcs/ninsun",
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
+        }
+      ],
+      "face_player": true,
+      "random_start": false
+    },
+    {
+      "id": "shamhat",
+      "display_name": "샴하트",
+      "height_ratio": 0.96,
+      "sheet_dir": "assets/sprites/npcs/shamhat",
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
+        }
+      ],
+      "face_player": true,
+      "random_start": false
+    },
+    {
+      "id": "inanna",
+      "display_name": "인안나",
+      "height_ratio": 1.0,
+      "sheet_dir": "assets/sprites/npcs/inanna",
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
+        }
+      ],
+      "face_player": true,
+      "random_start": false
+    },
+    {
+      "id": "papsukkal",
+      "display_name": "팝수칼",
+      "height_ratio": 1.02,
+      "sheet_dir": "assets/sprites/npcs/papsukkal",
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
+        }
+      ],
+      "face_player": true,
+      "random_start": false
+    },
+    {
+      "id": "cook_a",
+      "display_name": "토인 요리사",
+      "height_ratio": 0.7,
+      "sheet_dir": "assets/sprites/npcs/cook_a",
+      "clips": [
+        {
+          "name": "chop",
+          "frames": 6,
+          "duration": 1.2,
+          "loop": true
+        }
+      ],
+      "face_player": false,
+      "random_start": true
+    },
+    {
+      "id": "cook_b",
+      "display_name": "토인 요리사",
+      "height_ratio": 0.72,
+      "sheet_dir": "assets/sprites/npcs/cook_b",
+      "clips": [
+        {
+          "name": "stir",
+          "frames": 6,
+          "duration": 1.6,
+          "loop": true
+        }
+      ],
+      "face_player": false,
+      "random_start": true
+    },
+    {
+      "id": "cook_c",
+      "display_name": "토인 요리사",
+      "height_ratio": 0.74,
+      "sheet_dir": "assets/sprites/npcs/cook_c",
+      "clips": [
+        {
+          "name": "arrange",
+          "frames": 6,
+          "duration": 2.0,
+          "loop": true
+        }
+      ],
+      "face_player": false,
+      "random_start": true
+    },
+    {
+      "id": "servant_a",
+      "display_name": "토인 하인",
+      "height_ratio": 0.7,
+      "sheet_dir": "assets/sprites/npcs/servant_a",
+      "clips": [
+        {
+          "name": "sweep",
+          "frames": 8,
+          "duration": 1.6,
+          "loop": true
+        }
+      ],
+      "face_player": false,
+      "random_start": true
+    },
+    {
+      "id": "servant_b",
+      "display_name": "토인 하인",
+      "height_ratio": 0.72,
+      "sheet_dir": "assets/sprites/npcs/servant_b",
+      "clips": [
+        {
+          "name": "sweep",
+          "frames": 8,
+          "duration": 1.6,
+          "loop": true
+        }
+      ],
+      "face_player": false,
+      "random_start": true
+    },
+    {
+      "id": "gatekeeper",
+      "display_name": "별장 문지기",
+      "height_ratio": 0.74,
+      "sheet_dir": "assets/sprites/npcs/gatekeeper",
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
+        },
+        {
+          "name": "open_gate",
+          "frames": 5,
+          "duration": 0.8,
+          "loop": false
+        }
+      ],
+      "face_player": false,
+      "random_start": false
+    }
+  ]
+}

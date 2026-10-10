@@ -20,12 +20,24 @@ const SFX_TABLE: Dictionary = {
     "beast_ranged_flame_loop": "res://assets/audio/sfx/beast_ranged_flame_loop.wav",
     "beast_ranged_hurt": "res://assets/audio/sfx/beast_ranged_hurt.wav",
     "beast_ranged_death": "res://assets/audio/sfx/beast_ranged_death.wav",
-    "player_hurt": "res://assets/audio/sfx/player_hurt.wav"
+    "player_hurt": "res://assets/audio/sfx/player_hurt.wav",
+    "door_open": "res://assets/audio/sfx/door_open.wav",
+    "door_close": "res://assets/audio/sfx/door_close.wav",
+    "door_locked": "res://assets/audio/sfx/door_locked.wav",
+    "portal_whoosh": "res://assets/audio/sfx/portal_whoosh.wav",
+    "sky_beast_wingflap_loop": "res://assets/audio/sfx/sky_beast_wingflap_loop.wav",
+    "sky_beast_windup_screech": "res://assets/audio/sfx/sky_beast_windup_screech.wav",
+    "sky_beast_dive_whoosh": "res://assets/audio/sfx/sky_beast_dive_whoosh.wav",
+    "sky_beast_hurt": "res://assets/audio/sfx/sky_beast_hurt.wav",
+    "sky_beast_death": "res://assets/audio/sfx/sky_beast_death.wav"
 }
 const BGM_TABLE: Dictionary = {
-    "uruk_rear_gate": "res://assets/audio/bgm/uruk_rear_gate.wav"
+    "uruk_rear_gate": "res://assets/audio/bgm/uruk_rear_gate.wav",
+    "castle_hall": "res://assets/audio/bgm/castle_hall.wav",
+    "uruk_sky": "res://assets/audio/bgm/uruk_sky.wav",
+    "villa_calm": "res://assets/audio/bgm/villa_calm.wav"
 }
-const LOOP_SFX: Array[String] = ["beast_ranged_flame_loop"]
+const LOOP_SFX: Array[String] = ["beast_ranged_flame_loop", "sky_beast_wingflap_loop"]
 const SILENT_DB: float = -60.0
 
 var _streams: Dictionary = {}

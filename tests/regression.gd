@@ -487,28 +487,43 @@ func _test_real_hit_queries() -> void:
 
 func _test_rear_gate() -> void:
     var failures_before: int = failures
-    var scene: Variant = load("res://scenes/RearGate.tscn").instantiate()
-    root.add_child(scene)
-    current_scene = scene
-    scene.set_process(false)
-    var hero: Variant = scene.get_node("Player")
+    var manager: Node = root.get_node("SceneManager")
+    var game_state: Node = root.get_node("GameState")
+    var main: Node2D = load("res://scenes/Main.tscn").instantiate()
+    root.add_child(main)
+    current_scene = main
+    await manager.transition_finished
+    var scene: Variant = manager.current_level
+    var hero: Variant = main.get_node("Player")
     hero.set_physics_process(false)
     var enemies: Array = get_nodes_in_group("enemies")
     for enemy: Node in enemies:
         enemy.set_physics_process(false)
+    var gate: Variant = scene.doors["villa_gate"]
+    gate.set_process(false)
     _expect(hero.position == Vector2(260, 880), "rear gate player spawns at x260 on floor")
-    _expect(enemies.size() == 5, "rear gate spawns three melee and two ranged beasts")
-    var expected_spawn_x: Array[float] = [400.0, 1300.0, 1900.0, 2800.0, 2920.0]
+    _expect(get_nodes_in_group("player").size() == 1 and scene.get_node_or_null("Player") == null, "Main owns the only persistent player")
+    _expect(enemies.size() == 8, "expanded rear gate spawns five melee and three ranged beasts")
+    var expected_spawn_x: Array[float] = [400.0, 1300.0, 1900.0, 2800.0, 2920.0, 3900.0, 4350.0, 4750.0]
     var actual_spawn_x: Array[float] = []
     for enemy: Variant in enemies:
-        actual_spawn_x.append(enemy.position.x)
-        _close(enemy.patrol_range, 250.0, "spawn has 250 pixel patrol radius")
+        actual_spawn_x.append(enemy.patrol_center)
+        var expected_patrol: float = 150.0 if enemy.patrol_center in [3900.0, 4750.0] else 250.0
+        _close(enemy.patrol_range, expected_patrol, "spawn has configured patrol radius")
         enemy.position.x = 0.0
         enemy._enforce_bounds()
-        _expect(enemy.get_hurt_rect().position.x >= 200.0, "enemy bounds keep its entire hurtbox outside rear gate safe zone")
+        _expect(enemy.get_hurt_rect().position.x >= 350.0, "enemy bounds keep entire hurtbox outside left safe zone")
+        enemy.position.x = 5400.0
+        enemy._enforce_bounds()
+        _expect(enemy.get_hurt_rect().end.x <= 4950.0, "enemy bounds keep entire hurtbox outside villa safe zone")
         enemy.position.x = enemy.patrol_center
+        enemy._enforce_bounds()
     actual_spawn_x.sort()
-    _expect(actual_spawn_x == expected_spawn_x, "rear gate enemies occupy requested encounters")
+    _expect(actual_spawn_x == expected_spawn_x, "expanded rear gate contains every requested encounter")
+    _expect(scene.is_point_safe(Vector2(350, 880)) and scene.is_point_safe(Vector2(4950, 880)), "safe zones include both exact boundaries")
+    _expect(not scene.is_point_safe(Vector2(351, 880)) and not scene.is_point_safe(Vector2(4949, 880)), "combat space starts immediately outside safe boundaries")
+    _expect(scene.constrain_enemy(Vector2(100, 880), Vector2(150, 90)) == Vector2(425, 880), "left safe clamp includes creature half width")
+    _expect(scene.constrain_enemy(Vector2(5200, 880), Vector2(150, 90)) == Vector2(4875, 880), "right safe clamp includes creature half width")
 
     var found_steps: Array[float] = []
     var platforms: int = 0
@@ -520,27 +535,39 @@ func _test_rear_gate() -> void:
             if shape_node.one_way_collision:
                 platforms += 1
                 _expect(top_left.y == 700.0 and size_px == Vector2(240, 16) and child.collision_layer == 2, "one-way platform collision aligns y700 top and 16 thickness")
-            elif top_left.x == 900.0 or top_left.x == 2400.0:
+            elif top_left.x in [900.0, 2400.0, 4100.0]:
                 found_steps.append(size_px.y)
     found_steps.sort()
-    _expect(found_steps == [60.0, 90.0] and platforms == 2, "rear gate has both required step heights and two one-way platforms")
-    _expect(hero.camera.limit_left == 0 and hero.camera.limit_right == 3600, "camera uses full 3600 pixel map limits")
-    _expect(InputMap.has_action("interact"), "E interaction has an input action for the rear gate prompt")
-    hero.position = Vector2(100, 880)
-    scene._process(0.01)
-    _expect(scene.door_prompt.visible and scene.door_prompt.text == "E", "rear door displays E while player is nearby")
+    _expect(found_steps == [60.0, 70.0, 90.0] and platforms == 4, "rear gate has three step heights and four one-way platforms")
+    _expect(hero.camera.limit_left == 0 and hero.camera.limit_right == 5400, "camera uses full 5400 pixel map limits")
+    _expect(InputMap.has_action("interact"), "E interaction has an input action")
+    var rear_door: Variant = scene.doors["rear_gate_exterior"]
+    hero.position = Vector2(150, 880)
+    rear_door._process(0.01)
+    _expect(rear_door.prompt.visible, "rear door image prompt displays while player is nearby")
+    _expect(rear_door.target_level == "CastleF1" and rear_door.target_spawn == "Spawn_FromRearGate", "rear door connects to castle first floor")
     hero.position = Vector2(500, 880)
-    scene._process(0.01)
-    _expect(not scene.door_prompt.visible, "rear door prompt hides outside interaction distance")
+    rear_door._process(0.01)
+    _expect(not rear_door.prompt.visible, "rear door prompt hides outside interaction distance")
+    _expect(not scene.has_node("VillaDirectionExit"), "old villa direction sign trigger has been removed")
+    _expect(gate.global_position == Vector2(5200, 880) and gate.gatekeeper.global_position == Vector2(5050, 880), "villa gate and keeper occupy safe area")
+    _expect(gate.wall.collision_layer == 1 and not gate.wall_shape.disabled, "closed villa gate has a physical barrier")
+    hero.position = Vector2(5200, 880)
+    _expect(not gate.can_interact(hero), "closed villa gate rejects automatic entry")
+    gate.gate_state = gate.GateState.OPEN
+    hero.position.x = 5161.0
+    _expect(gate.can_interact(hero), "fully open villa gate accepts the inner 40 pixel strip")
+    hero.position.x = 5159.0
+    _expect(not gate.can_interact(hero), "villa automatic entry does not trigger outside strip")
+    gate.gate_state = gate.GateState.CLOSED
 
-    var layers: Array[String] = ["Sky", "FarCity", "CastleWall"]
-    var ratios: Array[float] = [0.05, 0.2, 0.45]
-    var widths: Array[float] = [1536.0, 1920.0, 2560.0]
+    var layers: Array[String] = ["Sky", "FarCity", "CastleWall", "Foreground"]
+    var ratios: Array[float] = [0.05, 0.2, 0.45, 0.8]
+    var widths: Array[float] = [1536.0, 2112.0, 3136.0, 4608.0]
     for index: int in range(layers.size()):
         var layer: Parallax2D = scene.get_node(layers[index]) as Parallax2D
         _close(layer.scroll_scale.x, ratios[index], layers[index] + " parallax ratio")
-        _expect(widths[index] > 1280.0 + 2320.0 * ratios[index], layers[index] + " art is wider than full camera travel requirement")
-    _expect(not scene.has_node("Foreground"), "removed foreground layer is absent from rear gate")
+        _expect(widths[index] > 1280.0 + 4120.0 * ratios[index], layers[index] + " art covers full expanded camera travel")
     hero.camera.position_smoothing_enabled = false
     hero.position = Vector2(260, 880)
     hero.camera.force_update_scroll()
@@ -548,43 +575,34 @@ func _test_rear_gate() -> void:
     var original_offsets: Array[float] = []
     for name: String in layers:
         original_offsets.append(scene.get_node(name).get_global_transform_with_canvas().origin.x)
-    hero.position = Vector2(3340, 880)
+    hero.position = Vector2(5140, 880)
     hero.camera.force_update_scroll()
     await process_frame
     for index: int in range(layers.size()):
         var actual: float = scene.get_node(layers[index]).get_global_transform_with_canvas().origin.x - original_offsets[index]
-        _expect(absf(actual + 2320.0 * ratios[index]) < 1.0, layers[index] + " actually scrolls according to ratio across map (delta=%s)" % actual)
+        _expect(absf(actual + 4120.0 * ratios[index]) < 1.0, layers[index] + " actually scrolls at its ratio over expanded map (delta=%s)" % actual)
 
-    hero.position = Vector2(3450, 880)
-    await physics_frame
-    await physics_frame
-    await physics_frame
-    await process_frame
-    var exit_area: Area2D = scene.get_node("VillaDirectionExit") as Area2D
-    _expect(exit_area.get_overlapping_bodies().has(hero), "player physically enters villa direction exit trigger")
-    _expect(scene.exit_label.text.contains("별장 방향"), "exit retains villa direction label")
-
-    # Exercise the actual delayed restart, with this scene set as current_scene.
+    # The run restarts after the original delay, retaining Main and its player.
     hero.position = Vector2(260, 880)
     hero._cancel_attack()
     hero.action = "normal"
     hero.hp = 180
     hero.damage_grace = 0.0
+    game_state.first_time("regression_before_death")
     hero.receive_damage(180)
     _expect(hero.action == "dead", "lethal hit enters player death state")
-    var old_scene_id: int = scene.get_instance_id()
+    var old_level_id: int = scene.get_instance_id()
+    var player_id: int = hero.get_instance_id()
+    var main_id: int = main.get_instance_id()
     hero._physics_process(1.59)
-    _expect(current_scene.get_instance_id() == old_scene_id, "death keeps scene until 1.6 second restart delay")
+    _expect(manager.current_level.get_instance_id() == old_level_id, "death waits for the original 1.6 second delay")
     hero._physics_process(0.02)
-    hero = null
-    scene = null
+    await manager.transition_finished
+    _expect(manager.current_level.get_instance_id() != old_level_id and manager.current_level.level_id == "RearGate", "death replaces current level with rear gate")
+    _expect(main.get_instance_id() == main_id and hero.get_instance_id() == player_id, "death preserves the single Main player instance")
+    _expect(hero.hp == 180 and hero.position.x == 260.0, "run restart restores HP180 at x260")
+    _expect(not game_state.run_flags.has("regression_before_death"), "run restart clears first-attempt flags")
+    main.queue_free()
+    current_scene = null
     await process_frame
-    await process_frame
-    _expect(current_scene != null and current_scene.get_instance_id() != old_scene_id, "player death reloads rear gate after 1.6 seconds")
-    if current_scene != null:
-        var respawn: Variant = current_scene.get_node("Player")
-        _expect(respawn.hp == 180 and respawn.position.x == 260.0, "scene restart restores full HP at rear gate spawn")
-        current_scene.queue_free()
-        current_scene = null
-    await process_frame
-    _section_result("map physics, actual parallax, prompts, exit and death restart", failures_before)
+    _section_result("expanded map, safe zones, parallax, doors and persistent-player death restart", failures_before)

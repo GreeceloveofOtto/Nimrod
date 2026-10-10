@@ -1,0 +1,32 @@
+{
+  "start_level": "RearGate",
+  "start_spawn": "Spawn_Start",
+  "fade_out_seconds": 0.25,
+  "fade_in_seconds": 0.25,
+  "bgm_fade_seconds": 1.0,
+  "toast_seconds": 2.0,
+  "toast_fade_seconds": 0.2,
+  "story_seconds": 7.0,
+  "story": "루갈성의 마지막 횃불이 등을 비춘다.\n니므롯은 성 안과 황혼의 길을 지나 별장으로 향한다.",
+  "ui": {
+    "font": "res://assets/fonts/NimrodUIKorean-Regular.otf",
+    "font_color": "eed8b5",
+    "shadow_color": "101721",
+    "hp_border": [18, 18, 246, 30],
+    "hp_background": [21, 21, 240, 24],
+    "hp_fill": [24, 24, 234, 18],
+    "hp_label": [28, 18, 230, 28],
+    "title": [18, 57, 720, 34],
+    "controls": [18, 675, 1240, 30],
+    "story": [305, 32, 850, 65],
+    "toast": [24, 608, 1000, 50],
+    "hp_font_size": 18,
+    "title_font_size": 24,
+    "controls_font_size": 16,
+    "story_font_size": 19,
+    "toast_font_size": 26,
+    "canvas_layer": 20,
+    "fade_canvas_layer": 100,
+    "controls_text": "A/D·←/→ 이동   Space 점프   E 문   J 도끼   K 구르기   S 수그리기   S+Space 내려가기   F1 판정   R 처음부터"
+  }
+}

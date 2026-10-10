@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate generated PNG sheets and rear-gate art against their manifests.
+"""Validate generated PNG sheets, NPC proportions and level art manifests.
 
 Missing assets fail by default. --allow-missing reports them as SKIPPED and
 returns success only when every present asset is valid; it does not certify
@@ -22,6 +22,8 @@ class Validator:
         self.errors = []
         self.missing = []
         self.checked = 0
+        self.npc_data = {}
+        self.player_height = None
 
     def fail(self, path, message):
         self.errors.append(f"{path}: {message}")
@@ -67,7 +69,7 @@ class Validator:
             self.fail(relative, "opaque image required but nonopaque pixels found")
         return image
 
-    def validate_clip(self, clip, enemy=False):
+    def validate_clip(self, clip, enemy=False, sky=False, npc=None):
         required = {"name", "sheet", "frame_width", "frame_height", "columns", "rows", "frames",
                     "duration_seconds", "fps", "loop", "anchor_px", "image_size"}
         if required - clip.keys():
@@ -90,8 +92,11 @@ class Validator:
         anchor = clip["anchor_px"]
         if len(anchor) != 2 or not (0 <= anchor[0] <= width and 0 <= anchor[1] <= height):
             self.fail(path, "anchor must lie inside frame")
-        if enemy and (width != 640 or height != 640 or anchor != [320, 600]):
-            self.fail(path, "enemy frame must be 640x640 with anchor [320,600]")
+        if sky:
+            if (width, height, anchor) != (768, 640, [384, 320]):
+                self.fail(path, "sky-beast frame must be 768x640 with center anchor [384,320]")
+        elif (enemy or npc is not None) and (width != 640 or height != 640 or anchor != [320, 600]):
+            self.fail(path, "ground enemy/NPC frame must be 640x640 with anchor [320,600]")
         if clip["name"] == "turn" and (frames < 3 or clip["loop"]):
             self.fail(path, "turn requires at least 3 frames and must not loop")
         image = self.open_png(path, expected_size, True)
@@ -104,10 +109,23 @@ class Validator:
             bounds = alpha.point(lambda value: 255 if value > 12 else 0).getbbox()
             if bounds is None:
                 self.fail(path, f"frame {index + 1} is empty")
-            elif enemy:
+            elif sky:
+                center_x = (bounds[0] + bounds[2]) / 2
+                center_y = (bounds[1] + bounds[3]) / 2
+                if abs(center_x - anchor[0]) > 4 or abs(center_y - anchor[1]) > 4:
+                    self.fail(path, f"frame {index + 1} not aligned to center anchor: {bounds}")
+                if bounds[2] - bounds[0] > 700:
+                    self.fail(path, f"frame {index + 1} exceeds 700px maximum wing span")
+            elif enemy or npc is not None:
                 center_x = (bounds[0] + bounds[2]) / 2
                 if abs(center_x - anchor[0]) > 4 or abs(bounds[3] - anchor[1]) > 4:
                     self.fail(path, f"frame {index + 1} not aligned to bottom-center anchor: {bounds}")
+            if bounds is not None and npc is not None and self.player_height is not None:
+                measured_height = bounds[3] - bounds[1]
+                expected_height = self.player_height * npc["height_ratio"]
+                if abs(measured_height - expected_height) > expected_height * 0.03:
+                    self.fail(path, f"frame {index + 1} NPC height {measured_height}px outside ±3% of "
+                              f"{self.player_height} × {npc['height_ratio']} = {expected_height:.2f}px")
             current = frame.tobytes()
             if previous is not None and current == previous:
                 self.fail(path, f"frame {index + 1} duplicates previous frame; animation poses required")
@@ -117,13 +135,45 @@ class Validator:
         manifest = self.read_json("art_manifest.json")
         if manifest is None:
             return
+        npc_path = self.root / "data/npcs.json"
+        if npc_path.is_file():
+            npc_config = json.loads(npc_path.read_text(encoding="utf-8"))
+            self.npc_data = {entry["id"]: entry for entry in npc_config["npcs"]}
+            player = Image.open(self.assets / "sprites/idle.png").convert("RGBA")
+            player_frame = player.crop((0, 0, 640, 640))
+            bounds = player_frame.getchannel("A").point(lambda value: 255 if value > 12 else 0).getbbox()
+            if bounds is None:
+                self.fail("sprites/idle.png", "player reference frame is empty")
+            else:
+                self.player_height = bounds[3] - bounds[1]
+                print(f"NPC height reference: player idle frame 0, alpha > 12, H_p={self.player_height}px; every frame ±3%.")
         for relative in manifest["sprite_manifests"]:
             sprite = self.read_json(relative)
             if sprite is None:
                 continue
             enemy = "/enemies/" in relative
+            sky = "/sky_beast/" in relative
+            npc = None
+            if "/npcs/" in relative:
+                npc_id = sprite.get("character", Path(relative).parent.name)
+                npc = self.npc_data.get(npc_id)
+                if npc is None:
+                    self.fail(relative, f"NPC {npc_id} not registered in data/npcs.json")
+                elif not math.isclose(sprite.get("height_ratio", -1), npc["height_ratio"]):
+                    self.fail(relative, "height_ratio differs from data/npcs.json")
+                else:
+                    expected_clips = {item["name"]: item for item in npc["clips"]}
+                    actual_clips = {item["name"]: item for item in sprite.get("clips", [])}
+                    if expected_clips.keys() != actual_clips.keys():
+                        self.fail(relative, "clip names differ from data/npcs.json")
+                    for name, expected in expected_clips.items():
+                        actual = actual_clips.get(name)
+                        if actual and (actual["frames"] != expected["frames"] or
+                                       actual["loop"] != expected["loop"] or
+                                       not math.isclose(actual["duration_seconds"], expected["duration"])):
+                            self.fail(relative, f"clip {name} count/loop/duration differs from data/npcs.json")
             for clip in sprite.get("clips", []):
-                self.validate_clip(clip, enemy)
+                self.validate_clip(clip, enemy, sky, npc)
             for effect in sprite.get("effects", []):
                 self.validate_clip(effect)
         for entry in manifest["assets"]:
@@ -134,8 +184,9 @@ class Validator:
                 if first != last:
                     self.fail(entry["path"], "tile_x requires matching first/last RGBA columns; repack with --tile-x")
             ratio = entry.get("scroll_ratio")
-            if ratio is not None and entry["width"] < 1280 + 2320 * ratio:
-                self.fail(entry["path"], "image width insufficient for 3600px map parallax travel")
+            map_width = entry.get("map_width", 3600)
+            if ratio is not None and entry["width"] < 1280 + max(0, map_width - 1280) * ratio:
+                self.fail(entry["path"], f"image width insufficient for {map_width}px map parallax travel")
         for relative in self.missing:
             if self.allow_missing:
                 print(f"SKIPPED (MISSING_TEXTURE fallback required): assets/{relative}")

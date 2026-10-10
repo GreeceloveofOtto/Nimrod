@@ -1,0 +1,83 @@
+{
+  "portal": {
+    "interact_range": 90,
+    "vertical_range": 120,
+    "open_seconds": 0.6,
+    "enter_seconds": 0.4,
+    "arrival_walk_seconds": 0.3,
+    "close_seconds": 0.5,
+    "arrival_step": 40,
+    "prompt_size": [
+      40,
+      40
+    ],
+    "prompt_gap": 12,
+    "prompt_path": "res://assets/ui/prompt_e.png",
+    "locked_shake_pixels": 5,
+    "locked_shake_seconds": 0.24,
+    "locked_shake_cycles": 3,
+    "fallback_size": [
+      256,
+      384
+    ],
+    "fallback_frames": 6
+  },
+  "villa_gate": {
+    "open_distance": 300,
+    "close_distance": 600,
+    "trigger_half_width": 40,
+    "open_seconds": 1.0,
+    "close_seconds": 0.8,
+    "keeper_trigger_frame": 2,
+    "keeper_clip_seconds": 0.8,
+    "collision_size": [
+      36,
+      360
+    ],
+    "entry_rearm_distance": 80
+  },
+  "door_art": {
+    "castle_rear_door_exterior": {
+      "frame_size": [
+        320,
+        420
+      ],
+      "frames": 6
+    },
+    "castle_interior_door": {
+      "frame_size": [
+        256,
+        384
+      ],
+      "frames": 6
+    },
+    "castle_rear_door_interior": {
+      "frame_size": [
+        320,
+        420
+      ],
+      "frames": 6
+    },
+    "castle_front_gate_locked": {
+      "frame_size": [
+        320,
+        420
+      ],
+      "frames": 1
+    },
+    "villa_gate": {
+      "frame_size": [
+        480,
+        420
+      ],
+      "frames": 8
+    },
+    "villa_inner_door": {
+      "frame_size": [
+        256,
+        384
+      ],
+      "frames": 6
+    }
+  }
+}

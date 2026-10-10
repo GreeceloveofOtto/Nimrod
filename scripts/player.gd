@@ -79,6 +79,12 @@ var shockwave_done: bool = false
 var step_timer: float = 0.0
 var attack_data: Dictionary = {}
 var shockwave_data: Dictionary = {}
+var transition_locked: bool = false
+var _portal_walking: bool = false
+var _portal_walk_direction: int = 1
+var _portal_walk_clock: float = 0.0
+var _transition_visual: Dictionary = {}
+var _restart_requested: bool = false
 
 func _ready() -> void:
     add_to_group("player")
@@ -126,8 +132,14 @@ func _load_sprites() -> void:
         clip_data[name] = clip
 
 func _physics_process(delta: float) -> void:
+    if transition_locked:
+        if _portal_walking:
+            _portal_walk_clock += delta
+            _show_clip("run", _portal_walk_clock)
+            visual.flip_h = _portal_walk_direction < 0
+        return
     if Input.is_action_just_pressed("restart"):
-        get_tree().reload_current_scene()
+        _request_run_restart()
         return
     if Input.is_action_just_pressed("debug_hitbox"):
         debug_hitboxes = not debug_hitboxes
@@ -145,7 +157,7 @@ func _physics_process(delta: float) -> void:
         move_and_slide()
         _show_clip("death", death_clock)
         if death_clock >= Config.PLAYER_DEATH_RESTART_SECONDS:
-            get_tree().reload_current_scene()
+            _request_run_restart()
         return
 
     if Input.is_action_just_pressed("roll") and (action == "normal" or action == "attack"):
@@ -492,7 +504,7 @@ func is_roll_invulnerable() -> bool:
 func receive_damage(amount: int, opts: Dictionary = {}) -> bool:
     var stagger: bool = bool(opts.get("stagger", true))
     var grant_grace: bool = bool(opts.get("grant_grace", true))
-    if amount <= 0 or action == "dead" or is_roll_invulnerable():
+    if transition_locked or amount <= 0 or action == "dead" or is_roll_invulnerable():
         return false
     # Tick damage has its own clock and must not inherit ordinary hit grace.
     if grant_grace and damage_grace > 0.0:
@@ -524,6 +536,87 @@ func receive_damage(amount: int, opts: Dictionary = {}) -> bool:
     if knockback is Vector2 and knockback != Vector2.ZERO:
         velocity += knockback
     return true
+
+func is_transition_locked() -> bool:
+    return transition_locked
+
+func set_transition_locked(locked: bool) -> void:
+    if transition_locked == locked:
+        return
+    transition_locked = locked
+    if locked:
+        _transition_visual = {"clip": displayed_clip, "clock": display_clock}
+        for sound in [sfx_attack, sfx_roll, sfx_jump, sfx_step, sfx_land]:
+            if sound != null:
+                sound.stop()
+    else:
+        end_portal_walk()
+        var saved_clip: String = str(_transition_visual.get("clip", "idle"))
+        _show_clip(saved_clip, float(_transition_visual.get("clock", 0.0)))
+        _transition_visual.clear()
+    queue_redraw()
+
+# Door choreography changes presentation only. Combat state, velocity, facing,
+# roll progress and all other gameplay clocks resume when the lock is released.
+func begin_portal_walk(direction: float) -> void:
+    _portal_walking = true
+    _portal_walk_direction = 1 if direction >= 0.0 else -1
+    _portal_walk_clock = 0.0
+
+func end_portal_walk() -> void:
+    _portal_walking = false
+
+func _request_run_restart() -> void:
+    if _restart_requested:
+        return
+    _restart_requested = true
+    var manager := get_node_or_null("/root/SceneManager")
+    if manager != null and manager.player == self:
+        manager.restart_run.call_deferred()
+    else:
+        get_tree().reload_current_scene()
+
+func reset_run_state() -> void:
+    _cancel_attack()
+    hp = MAX_HP
+    facing = 1
+    action = "normal"
+    velocity = Vector2.ZERO
+    roll_clock = 0.0
+    roll_direction = 1
+    hurt_clock = 0.0
+    hurt_duration = Config.PLAYER_HURT_SECONDS
+    death_clock = 0.0
+    damage_grace = 0.0
+    hitstop_left = 0.0
+    coyote_left = 0.0
+    jump_buffer_left = 0.0
+    jump_start_left = 0.0
+    landing_left = 0.0
+    crouching = false
+    crouch_enter_left = 0.0
+    crouch_exit_left = 0.0
+    drop_mask_left = 0.0
+    flash_time = 0.0
+    shake_time = 0.0
+    step_timer = 0.0
+    _restart_requested = false
+    end_portal_walk()
+    _set_standing_collider()
+    collision_mask = Config.PLAYER_COLLISION_MASK
+    camera.offset = Vector2.ZERO
+    modulate = Color.WHITE
+    _show_clip("idle", 0.0)
+    if transition_locked:
+        _transition_visual = {"clip": "idle", "clock": 0.0}
+    damage_received.emit(0, hp)
+
+func heal(amount: int) -> int:
+    if amount <= 0 or action == "dead" or transition_locked:
+        return 0
+    var restored: int = mini(amount, MAX_HP - hp)
+    hp += restored
+    return restored
 
 func _play_shared_sfx(name: String) -> void:
     var audio: Node = get_node_or_null("/root/Audio")
@@ -621,7 +714,7 @@ func _play_attack_sfx(step: int) -> void:
     sfx_attack.play()
 
 func _draw() -> void:
-    if debug_hitboxes:
+    if debug_hitboxes and not transition_locked:
         if debug_rect.size != Vector2.ZERO:
             draw_rect(debug_rect, Color(0.2, 1.0, 0.95, 0.25), true)
             draw_rect(debug_rect, Color(0.2, 1.0, 0.95, 0.85), false, 2.0)

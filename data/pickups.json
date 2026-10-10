@@ -1,0 +1,21 @@
+{
+  "healing_vomit": {
+    "display_name": "토사물",
+    "heal_amount": 30,
+    "interact_range": 72.0,
+    "art": "res://assets/props/healing_vomit.png",
+    "art_size": [
+      64.0,
+      48.0
+    ],
+    "prompt_art": "res://assets/ui/prompt_e.png",
+    "prompt_size": [
+      32.0,
+      32.0
+    ],
+    "prompt_offset": [
+      0.0,
+      -68.0
+    ]
+  }
+}

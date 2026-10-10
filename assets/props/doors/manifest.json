@@ -1,0 +1,124 @@
+{
+  "clips": [
+    {
+      "name": "castle_rear_door_exterior",
+      "sheet": "props/doors/castle_rear_door_exterior.png",
+      "frame_width": 320,
+      "frame_height": 420,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.6,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        160,
+        420
+      ],
+      "image_size": [
+        1920,
+        420
+      ]
+    },
+    {
+      "name": "castle_interior_door",
+      "sheet": "props/doors/castle_interior_door.png",
+      "frame_width": 256,
+      "frame_height": 384,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.6,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        128,
+        384
+      ],
+      "image_size": [
+        1536,
+        384
+      ]
+    },
+    {
+      "name": "castle_rear_door_interior",
+      "sheet": "props/doors/castle_rear_door_interior.png",
+      "frame_width": 320,
+      "frame_height": 420,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.6,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        160,
+        420
+      ],
+      "image_size": [
+        1920,
+        420
+      ]
+    },
+    {
+      "name": "villa_gate",
+      "sheet": "props/doors/villa_gate.png",
+      "frame_width": 480,
+      "frame_height": 420,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 1.0,
+      "fps": 8.0,
+      "loop": false,
+      "anchor_px": [
+        240,
+        420
+      ],
+      "image_size": [
+        3840,
+        420
+      ]
+    },
+    {
+      "name": "villa_inner_door",
+      "sheet": "props/doors/villa_inner_door.png",
+      "frame_width": 256,
+      "frame_height": 384,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.6,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        128,
+        384
+      ],
+      "image_size": [
+        1536,
+        384
+      ]
+    },
+    {
+      "name": "castle_front_gate_locked",
+      "sheet": "props/doors/castle_front_gate_locked.png",
+      "frame_width": 320,
+      "frame_height": 420,
+      "columns": 1,
+      "rows": 1,
+      "frames": 1,
+      "duration_seconds": 0.6,
+      "fps": 1.6666666666666667,
+      "loop": false,
+      "anchor_px": [
+        160,
+        420
+      ],
+      "image_size": [
+        320,
+        420
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# gatekeeper / open_gate
+
+Purpose: stage 2 character animation.
+
+Output: `assets/sprites/npcs/gatekeeper/open_gate.png`
+
+Frames: 5 × 640x640, one horizontal row; duration 0.8s; anchor [320,600].
+
+Background: request flat #FF00FF, chromakey with tools/pack_sprites.py to RGBA.
+
+Every pose is painted by the image-generation tool; no cloned action frames.
+
+Complete generation prompt:
+
+2D side-view game asset, dark fantasy, ancient Mesopotamian Uruk atmosphere, hand-painted look, clean readable silhouette, consistent with the Nimrod character sprite sheets, no text, no watermark. Repaint this worker atlas exactly THREE ROWS, firsttwo rows8frames, lastrow5frames andemptyrest, pure #FF00FF. CRITICAL SPRITE REQUIREMENT: every character stays UPRIGHT and crownofHEAD at exactly SAME HEIGHT, feet fixed SAME baseline in EVERY pose. No deepwaistbends. Sweep by moving shoulders/ARMS and thebroom angle alongfloor. All broom handles stay LOWER thanHEAD, broombristles atFOOTbaseline. Exactly8genuinelydifferent arm+broom sweep poses foreachservant; preserve originalsamefaces/clothesidentities. Thirdrowkeeper5poses, keep head/feetandstaffsameheight, rightarmgestures no handabovehead, firstrest,secondstart raising,thirdfullyextendpalm towardgate, fourthbeckon/fifthrelax. 21 fullypainted poses, naturaladultshortfantasyfolk, equalbodyheight perrow, sideviewright. Allisolated withmagenta gaps; noobjectsclip/touchcells, no text/numbers/frames.
