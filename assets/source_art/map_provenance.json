@@ -4,8 +4,7 @@
   "backgrounds": [
     "sky_source.png",
     "far_city_source.png",
-    "castle_wall_source.png",
-    "foreground_source.png"
+    "castle_wall_source.png"
   ],
   "terrain": "terrain_source.png",
   "props": "props_source.png",

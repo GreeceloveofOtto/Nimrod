@@ -39,6 +39,8 @@ python tools/pack_sprites.py sheet spark_raw.png assets/sprites/fx/hit_spark.png
 
 ## 배경·지형·장식
 
+사용자 요청에 따라 전경 에셋 `assets/backgrounds/rear_gate/foreground.png`, 마젠타 생성 원본 `assets/source_art/foreground_source.png`, 프롬프트 `assets/image_prompts/rear_gate_foreground.md`를 제거했다. 맵은 하늘·먼 도시·루갈성 외벽의 3겹 파랄랙스(0.05/0.20/0.45)를 사용한다. 에셋 manifest·출처 기록·재패킹 도구·검사에서도 전경을 제외하며 `build_map_assets.py`는 전경을 다시 만들지 않는다.
+
 ```bash
 python tools/pack_sprites.py image generated.png assets/props/rear_gate_door.png --crop 0,0,320,420 --size 320,420
 python tools/pack_sprites.py image generated_sky.png assets/backgrounds/rear_gate/sky.png --size 1536,720 --opaque
@@ -53,6 +55,6 @@ python tools/pack_sprites.py image generated_ground.png assets/tiles/rear_gate/g
 python tools/validate_assets.py
 ```
 
-기본 검사는 `assets/art_manifest.json`이 요구하는 30개 PNG 전체를 확인하며 하나라도 없으면 실패한다. PNG 형식, RGBA, 정확한 크기·프레임 수, 프레임별 비어 있지 않은 그림, 연속 복제 프레임 여부, 괴수 앵커, 알파, manifest의 fps/길이, 파랄랙스 이동을 덮는 너비, 바닥 타일 양쪽 경계의 일치를 확인한다. `--allow-missing`은 제작 도중 있는 파일만 검사하며 누락을 SKIPPED로 보고한다. PARTIAL PASS는 최종 아트 완료를 뜻하지 않는다.
+기본 검사는 `assets/art_manifest.json`이 요구하는 29개 PNG 전체를 확인하며 하나라도 없으면 실패한다. PNG 형식, RGBA, 정확한 크기·프레임 수, 프레임별 비어 있지 않은 그림, 연속 복제 프레임 여부, 괴수 앵커, 알파, manifest의 fps/길이, 파랄랙스 이동을 덮는 너비, 바닥 타일 양쪽 경계의 일치를 확인한다. `--allow-missing`은 제작 도중 있는 파일만 검사하며 누락을 SKIPPED로 보고한다. PARTIAL PASS는 최종 아트 완료를 뜻하지 않는다.
 
 이미지 생성이 불가능한 환경에서는 `assets/image_prompts/`의 프롬프트를 사용자에게 전달하고 런타임의 회색 `MISSING` 폴백을 유지한다. 코드 도형이나 절차적 생성으로 최종 아트를 대체하지 않는다.

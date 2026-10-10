@@ -37,7 +37,8 @@ HP180 / 도끼20,20,20,22 / 콤보 리셋0.8초 / 히트스톱0.05초
 - 근접HP95 박치기 괴수 / 원거리HP63 화염 괴수, 느린 회전·후딜·인터럽트
 - 적 이동 범위±250px, 경직 상한, 플레이어/적 몸체 충돌 예외
 - 폭3600 맵, 단차2·일방향 발판2·괴수5, 안전 후문 구역과 별장 출구
-- 실제 이미지 생성 PNG30종, manifest, 파랄랙스4겹, 휴대 가능한 한글 폰트
+- 실제 이미지 생성 PNG29종, manifest, 파랄랙스3겹, 휴대 가능한 한글 폰트
+- 사용자 요청에 따라 전경 이미지·마젠타 생성 원본·전경 프롬프트와 연결 설정 제거
 - 가까운 적이 플레이어 쪽으로 밀리던 넉백 방향 추가 수정
 - 기존 jump.wav는 assets/audio/legacy/jump.wav로 원본 그대로 이동
 
@@ -47,7 +48,8 @@ data/enemies.json: 적 스탯·공격·효과 설정
 scripts/game_constants.gd, rear_gate_layout.gd: 플레이어·맵·UI 상수
 assets/art_manifest.json, 괴수 manifest: PNG 규격·프레임·앵커
 assets/source_art/: 실제 이미지 생성 원본과 후처리 기록
-assets/image_prompts/: 에셋별 완성 프롬프트30개
+assets/image_prompts/: 에셋별 완성 프롬프트29개
+배경은 하늘·먼 도시·루갈성 외벽 3겹이며 전경 이미지는 사용하지 않습니다.
 그림은 PNG만 사용합니다. _draw는 F1 디버그 판정만 그립니다.
 이미지가 없으면 회색 MISSING_TEXTURE 사각형과 MISSING 라벨을 표시합니다.
 최종 제공본에 누락된 요청 아트는 없습니다.
@@ -67,12 +69,12 @@ python tools/validate_assets.py
 godot --headless --editor --path . --import
 godot --headless --path . --script tests/regression.gd
 godot --headless --path . --quit-after 180
-Godot4.3 회귀 검사169개/실패0, 생성 PNG30개/누락0/오류0 확인.
+Godot4.3 회귀 검사166개/실패0, 생성 PNG29개/누락0/오류0 확인.
 GL Compatibility 시작·중간(화염)·출구를1280x720로 렌더링 검증했습니다.
 새 폴더의 ZIP 최초 임포트·회귀 검사도 통과했습니다.
 --quit-after 강제 종료는 코드0으로 끝나지만 Godot4.3에서 대기 중인
-오디오 객체의 ObjectDB 종료 경고가 남습니다. 일반 회귀·렌더 검사는
-이 경고 없이 종료합니다.
+오디오 객체의 ObjectDB 종료 경고가 남습니다. 일반 회귀는 이 경고 없이
+종료하며, 렌더 캡처 종료 때에는 같은 오디오 경고가 나올 수 있습니다.
 실제 스피커 청감, 장시간 직접 플레이, 애니메이션의 체감 자연스러움은
 사람이 직접 확인할 항목입니다. Windows 배치는 Linux에서 실행하지 않았습니다.
 

@@ -32,14 +32,6 @@
       "scroll_ratio": 0.45
     },
     {
-      "name": "foreground",
-      "path": "backgrounds/rear_gate/foreground.png",
-      "width": 3328,
-      "height": 720,
-      "transparent": true,
-      "scroll_ratio": 0.8
-    },
-    {
       "name": "ground_tile",
       "path": "tiles/rear_gate/ground_tile.png",
       "width": 512,

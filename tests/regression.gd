@@ -533,14 +533,14 @@ func _test_rear_gate() -> void:
     scene._process(0.01)
     _expect(not scene.door_prompt.visible, "rear door prompt hides outside interaction distance")
 
-    var layers: Array[String] = ["Sky", "FarCity", "CastleWall", "Foreground"]
-    var ratios: Array[float] = [0.05, 0.2, 0.45, 0.8]
-    var widths: Array[float] = [1536.0, 1920.0, 2560.0, 3328.0]
+    var layers: Array[String] = ["Sky", "FarCity", "CastleWall"]
+    var ratios: Array[float] = [0.05, 0.2, 0.45]
+    var widths: Array[float] = [1536.0, 1920.0, 2560.0]
     for index: int in range(layers.size()):
         var layer: Parallax2D = scene.get_node(layers[index]) as Parallax2D
         _close(layer.scroll_scale.x, ratios[index], layers[index] + " parallax ratio")
         _expect(widths[index] > 1280.0 + 2320.0 * ratios[index], layers[index] + " art is wider than full camera travel requirement")
-    _expect(scene.get_node("Foreground").z_index > hero.z_index, "foreground is drawn in front of player")
+    _expect(not scene.has_node("Foreground"), "removed foreground layer is absent from rear gate")
     hero.camera.position_smoothing_enabled = false
     hero.position = Vector2(260, 880)
     hero.camera.force_update_scroll()

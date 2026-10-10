@@ -32,7 +32,6 @@ const PARALLAX_LAYERS := [
     {"name": "Sky", "file": "sky.png", "size": Vector2(1536.0, 720.0), "ratio": 0.05, "z": -40},
     {"name": "FarCity", "file": "far_city.png", "size": Vector2(1920.0, 720.0), "ratio": 0.20, "z": -30},
     {"name": "CastleWall", "file": "castle_wall.png", "size": Vector2(2560.0, 720.0), "ratio": 0.45, "z": -20},
-    {"name": "Foreground", "file": "foreground.png", "size": Vector2(3328.0, 720.0), "ratio": 0.80, "z": 20},
 ]
 const DOOR_CENTER: Vector2 = Vector2(100.0, FLOOR_Y)
 const DOOR_SIZE: Vector2 = Vector2(320.0, 420.0)

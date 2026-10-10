@@ -23,7 +23,7 @@ def pack(kind, source, output, *options):
 
 def main():
     for name, size in [("sky", "1536,720"), ("far_city", "1920,720"),
-                       ("castle_wall", "2560,720"), ("foreground", "3328,720")]:
+                       ("castle_wall", "2560,720")]:
         options = ["--size", size]
         if name == "sky":
             options.append("--opaque")
@@ -66,7 +66,7 @@ def main():
     provenance = {
         "generator": "image_gen.imagegen",
         "postprocess": "tools/pack_sprites.py: chromakey/crop/resize/anchor/edge-pixel blend only",
-        "backgrounds": ["sky_source.png", "far_city_source.png", "castle_wall_source.png", "foreground_source.png"],
+        "backgrounds": ["sky_source.png", "far_city_source.png", "castle_wall_source.png"],
         "terrain": "terrain_source.png",
         "props": "props_source.png",
         "effects": "fx_source.png",
