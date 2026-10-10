@@ -1,0 +1,92 @@
+{
+  "common": {
+    "gravity": 1750.0,
+    "max_fall_speed": 1100.0,
+    "knockback_friction": 2400.0,
+    "hitstop_seconds": 0.05,
+    "max_stun_seconds": 0.6,
+    "stun_cap_grace_seconds": 0.12,
+    "death_fade_seconds": 0.4,
+    "hit_spark_seconds": 0.15,
+    "hit_spark_scale": 0.24,
+    "missing_clip_seconds": 1.0
+  },
+  "enemies": [
+    {
+      "id": "melee_beast",
+      "hp": 95,
+      "contact_damage": 9,
+      "turn_delay": 0.45,
+      "move_speed": 140.0,
+      "detect_range": 520.0,
+      "visual_scale": 0.33,
+      "body_size": [
+        150.0,
+        90.0
+      ],
+      "attacks": [
+        {
+          "id": "headbutt",
+          "damage": 9,
+          "range": 100.0,
+          "windup": 0.45,
+          "active": 0.12,
+          "recovery": 0.55,
+          "lunge_speed": 120.0,
+          "hitbox": {
+            "offset_x": 40.0,
+            "top": -75.0,
+            "width": 90.0,
+            "height": 70.0
+          },
+          "windup_stun_immune": true
+        }
+      ]
+    },
+    {
+      "id": "ranged_beast",
+      "hp": 63,
+      "contact_damage": 11,
+      "turn_delay": 0.25,
+      "move_speed": 90.0,
+      "detect_range": 640.0,
+      "visual_scale": 0.36,
+      "body_size": [
+        126.0,
+        198.0
+      ],
+      "preferred_distance": [
+        300.0,
+        400.0
+      ],
+      "attacks": [
+        {
+          "id": "flame",
+          "damage": 1,
+          "total_damage": 11,
+          "range": 360.0,
+          "windup": 0.5,
+          "active": 1.0,
+          "recovery": 0.8,
+          "cooldown": 1.5,
+          "interrupt_stun": 0.4,
+          "tick_interval": 0.09,
+          "tick_count": 11,
+          "first_tick_stagger": true,
+          "first_tick_stagger_seconds": 0.18,
+          "hitbox": {
+            "offset_x": 58.0,
+            "top": -140.0,
+            "width": 220.0,
+            "height": 60.0
+          },
+          "flame_animation_seconds": 0.36,
+          "flame_art_size": [
+            434,
+            128
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "character": "melee_beast",
+  "frame_size": [
+    640,
+    640
+  ],
+  "orientation": "faces screen right; engine flips at turn frame 3",
+  "render": "Image-generated art, chromakey and atlas packing with tools/pack_sprites.py",
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/enemies/melee_beast/idle.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 1.0,
+      "fps": 6.0,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3840,
+        640
+      ]
+    },
+    {
+      "name": "walk",
+      "sheet": "sprites/enemies/melee_beast/walk.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 0.9,
+      "fps": 8.88888888888889,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        5120,
+        640
+      ]
+    },
+    {
+      "name": "windup",
+      "sheet": "sprites/enemies/melee_beast/windup.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.45,
+      "fps": 8.88888888888889,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2560,
+        640
+      ]
+    },
+    {
+      "name": "attack",
+      "sheet": "sprites/enemies/melee_beast/attack.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 3,
+      "rows": 1,
+      "frames": 3,
+      "duration_seconds": 0.12,
+      "fps": 25.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1920,
+        640
+      ]
+    },
+    {
+      "name": "recovery",
+      "sheet": "sprites/enemies/melee_beast/recovery.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.55,
+      "fps": 7.2727272727272725,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2560,
+        640
+      ]
+    },
+    {
+      "name": "turn",
+      "sheet": "sprites/enemies/melee_beast/turn.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.45,
+      "fps": 8.88888888888889,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2560,
+        640
+      ]
+    },
+    {
+      "name": "hurt",
+      "sheet": "sprites/enemies/melee_beast/hurt.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 2,
+      "rows": 1,
+      "frames": 2,
+      "duration_seconds": 0.2,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1280,
+        640
+      ]
+    },
+    {
+      "name": "death",
+      "sheet": "sprites/enemies/melee_beast/death.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.7,
+      "fps": 8.571428571428571,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3840,
+        640
+      ]
+    }
+  ]
+}

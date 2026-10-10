@@ -1,0 +1,378 @@
+{
+  "character": "Nimrod",
+  "step": 11,
+  "frame_size": [
+    640,
+    640
+  ],
+  "frame_anchor_top_left": [
+    320,
+    600
+  ],
+  "render": "Generated from approved concept art, normalized into uniform 2D sprite sheets for Godot",
+  "orientation": "faces screen right; horizontally flip sprites for left",
+  "combo_reset_seconds": 0.8,
+  "base_hp": 180,
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/idle.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 2.2,
+      "fps": 3.6363636363636362,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        5120,
+        640
+      ]
+    },
+    {
+      "name": "walk",
+      "sheet": "sprites/walk.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 1.05,
+      "fps": 7.619047619047619,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        5120,
+        640
+      ]
+    },
+    {
+      "name": "run",
+      "sheet": "sprites/run.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 0.82,
+      "fps": 9.75609756097561,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        5120,
+        640
+      ]
+    },
+    {
+      "name": "crouch_enter",
+      "sheet": "sprites/crouch_enter.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 3,
+      "rows": 1,
+      "frames": 3,
+      "duration_seconds": 0.14,
+      "fps": 21.428571428571427,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1920,
+        640
+      ]
+    },
+    {
+      "name": "crouch_idle",
+      "sheet": "sprites/crouch_idle.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.8,
+      "fps": 5.0,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2560,
+        640
+      ]
+    },
+    {
+      "name": "crouch_exit",
+      "sheet": "sprites/crouch_exit.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 3,
+      "rows": 1,
+      "frames": 3,
+      "duration_seconds": 0.13,
+      "fps": 23.076923076923077,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1920,
+        640
+      ]
+    },
+    {
+      "name": "jump_start",
+      "sheet": "sprites/jump_start.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 3,
+      "rows": 1,
+      "frames": 3,
+      "duration_seconds": 0.13,
+      "fps": 23.076923076923077,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1920,
+        640
+      ]
+    },
+    {
+      "name": "jump_rise",
+      "sheet": "sprites/jump_rise.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.42,
+      "fps": 14.285714285714286,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3840,
+        640
+      ]
+    },
+    {
+      "name": "fall",
+      "sheet": "sprites/fall.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.36,
+      "fps": 11.11111111111111,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2560,
+        640
+      ]
+    },
+    {
+      "name": "land",
+      "sheet": "sprites/land.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.2,
+      "fps": 20.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2560,
+        640
+      ]
+    },
+    {
+      "name": "drop_through",
+      "sheet": "sprites/drop_through.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.22,
+      "fps": 18.181818181818183,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2560,
+        640
+      ]
+    },
+    {
+      "name": "attack_1",
+      "sheet": "sprites/attack_1.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.34,
+      "fps": 17.64705882352941,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3840,
+        640
+      ]
+    },
+    {
+      "name": "attack_2",
+      "sheet": "sprites/attack_2.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.38,
+      "fps": 15.789473684210526,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3840,
+        640
+      ]
+    },
+    {
+      "name": "attack_3",
+      "sheet": "sprites/attack_3.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 7,
+      "rows": 1,
+      "frames": 7,
+      "duration_seconds": 0.52,
+      "fps": 13.461538461538462,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        4480,
+        640
+      ]
+    },
+    {
+      "name": "attack_4",
+      "sheet": "sprites/attack_4.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 7,
+      "rows": 1,
+      "frames": 7,
+      "duration_seconds": 0.56,
+      "fps": 12.499999999999998,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        4480,
+        640
+      ]
+    },
+    {
+      "name": "roll",
+      "sheet": "sprites/roll.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 0.48,
+      "fps": 16.666666666666668,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        5120,
+        640
+      ]
+    },
+    {
+      "name": "hurt",
+      "sheet": "sprites/hurt.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.32,
+      "fps": 12.5,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2560,
+        640
+      ]
+    },
+    {
+      "name": "death",
+      "sheet": "sprites/death.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.6,
+      "fps": 8.333333333333334,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3200,
+        640
+      ]
+    }
+  ]
+}

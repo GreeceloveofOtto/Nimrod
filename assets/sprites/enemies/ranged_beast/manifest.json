@@ -1,0 +1,193 @@
+{
+  "character": "ranged_beast",
+  "frame_size": [
+    640,
+    640
+  ],
+  "orientation": "faces screen right; engine flips at turn frame 3",
+  "render": "Image-generated art, chromakey and atlas packing with tools/pack_sprites.py",
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/enemies/ranged_beast/idle.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 1.0,
+      "fps": 6.0,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3840,
+        640
+      ]
+    },
+    {
+      "name": "walk",
+      "sheet": "sprites/enemies/ranged_beast/walk.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 1.0,
+      "fps": 8.0,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        5120,
+        640
+      ]
+    },
+    {
+      "name": "windup",
+      "sheet": "sprites/enemies/ranged_beast/windup.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.5,
+      "fps": 8.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2560,
+        640
+      ]
+    },
+    {
+      "name": "flame_loop",
+      "sheet": "sprites/enemies/ranged_beast/flame_loop.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.36,
+      "fps": 11.11111111111111,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2560,
+        640
+      ]
+    },
+    {
+      "name": "recovery",
+      "sheet": "sprites/enemies/ranged_beast/recovery.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.8,
+      "fps": 5.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2560,
+        640
+      ]
+    },
+    {
+      "name": "turn",
+      "sheet": "sprites/enemies/ranged_beast/turn.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.25,
+      "fps": 16.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2560,
+        640
+      ]
+    },
+    {
+      "name": "hurt",
+      "sheet": "sprites/enemies/ranged_beast/hurt.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 2,
+      "rows": 1,
+      "frames": 2,
+      "duration_seconds": 0.2,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1280,
+        640
+      ]
+    },
+    {
+      "name": "death",
+      "sheet": "sprites/enemies/ranged_beast/death.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.8,
+      "fps": 7.5,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3840,
+        640
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "name": "flame",
+      "sheet": "sprites/enemies/ranged_beast/flame.png",
+      "frame_width": 512,
+      "frame_height": 256,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.36,
+      "fps": 16.666666666666668,
+      "loop": true,
+      "anchor_px": [
+        16,
+        128
+      ],
+      "image_size": [
+        3072,
+        256
+      ]
+    }
+  ]
+}

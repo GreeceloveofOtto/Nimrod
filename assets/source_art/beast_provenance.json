@@ -1,0 +1,205 @@
+{
+  "assets": [
+    {
+      "beast": "melee_beast",
+      "source": "assets/source_art/melee_atlas.png",
+      "sha256": "e56491c3ccc75d154adc134f5a671f4939f0eb39b9cc31fc78396c753f4d4907",
+      "generation_tool": "image_gen.imagegen",
+      "generated_artifact": "exec-e0251d10-6010-4aa4-89c8-42583099e77e.png",
+      "source_dimensions": [
+        1254,
+        1254
+      ],
+      "packing": {
+        "source": "melee_atlas.png",
+        "fit": [
+          460,
+          300
+        ],
+        "bands": [
+          [
+            "idle",
+            0,
+            160,
+            6,
+            false
+          ],
+          [
+            "walk",
+            160,
+            175,
+            8,
+            false
+          ],
+          [
+            "windup",
+            335,
+            153,
+            4,
+            false
+          ],
+          [
+            "attack",
+            488,
+            154,
+            3,
+            false
+          ],
+          [
+            "recovery",
+            335,
+            153,
+            4,
+            true
+          ],
+          [
+            "turn",
+            642,
+            155,
+            4,
+            false
+          ],
+          [
+            "hurt",
+            797,
+            188,
+            2,
+            false
+          ],
+          [
+            "death",
+            985,
+            147,
+            6,
+            false
+          ]
+        ]
+      },
+      "postprocess": "Magenta chromakey; connected-component selection of original painted poses; a single shared uniform scale from first idle frame; bottom-center [320,600] anchoring; horizontal RGBA sheet. No drawing or procedural art."
+    },
+    {
+      "beast": "ranged_beast",
+      "source": "assets/source_art/ranged_atlas.png",
+      "sha256": "d99bff2ce3310acbaa3880dc7a620987e11f36165857a32326f5230bd900bbcd",
+      "generation_tool": "image_gen.imagegen",
+      "generated_artifact": "exec-3f4bc2fa-6196-4bc7-b7c1-e74af8ffdbf1.png",
+      "source_dimensions": [
+        1254,
+        1254
+      ],
+      "packing": {
+        "source": "ranged_atlas.png",
+        "fit": [
+          440,
+          600
+        ],
+        "bands": [
+          [
+            "idle",
+            0,
+            194,
+            6,
+            false
+          ],
+          [
+            "walk",
+            194,
+            168,
+            8,
+            false
+          ],
+          [
+            "windup",
+            362,
+            185,
+            4,
+            false
+          ],
+          [
+            "flame_loop",
+            0,
+            455,
+            4,
+            false
+          ],
+          [
+            "recovery",
+            655,
+            163,
+            4,
+            false
+          ],
+          [
+            "turn",
+            818,
+            165,
+            4,
+            false
+          ],
+          [
+            "hurt",
+            978,
+            152,
+            2,
+            false
+          ],
+          [
+            "death",
+            455,
+            338,
+            6,
+            false
+          ]
+        ],
+        "boxes": {
+          "hurt": [
+            [
+              435,
+              978,
+              140,
+              152
+            ],
+            [
+              621,
+              978,
+              160,
+              152
+            ]
+          ]
+        },
+        "sources": {
+          "flame_loop": "ranged_compact_atlas.png",
+          "death": "ranged_compact_atlas.png"
+        },
+        "source_scales": {
+          "ranged_compact_atlas.png": 0.56
+        },
+        "flip_frames": {
+          "turn": [
+            1
+          ]
+        }
+      },
+      "postprocess": "Magenta chromakey; connected-component selection of original painted poses; common uniform scaling across clips; bottom-center [320,600] anchor; turn frame 2 mirrored to face right before engine frame-3 flip. No drawing or procedural art."
+    },
+    {
+      "beast": "ranged_beast_compact_clips",
+      "source": "assets/source_art/ranged_compact_atlas.png",
+      "sha256": "efdefbf3e425195a7da8d247fdada9f7bf95d70df4138cc16077091d3a4d3e0a",
+      "generation_tool": "image_gen.imagegen",
+      "generated_artifact": "exec-43f5ccee-c13c-4c6c-936c-ce364e8ab31e.png",
+      "source_dimensions": [
+        1983,
+        793
+      ],
+      "clips": [
+        "flame_loop",
+        "death"
+      ],
+      "normalization_scale": 0.56,
+      "normalization_reason": "Larger-resolution compact-pose source: back-to-ground torso/legs about139px versus77px in upright source. One uniform0.56 source normalization preserves body scale across all compact frames before common atlas scale."
+    }
+  ],
+  "melee_recovery_note": "Image-generated melee atlas contains seven bands. Recovery reverses the four generated windup poses to rise from the lowered headbutt stance. No poses are drawn or synthesized.",
+  "ranged_proportion_note": "Upright-neck atlas plus image-generated compact folded-neck flame/death replacement. Common atlas scale safely fits all normalized source poses. Upright fit440x600; max620px width safety gives3.2631578947 scale, first idle about398x551px (~198px tall at runtime visual_scale0.36). Alternate source uniformly normalized0.56 before common scale; anatomy not distorted."
+}

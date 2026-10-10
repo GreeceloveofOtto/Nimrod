@@ -1,0 +1,24 @@
+{
+  "clips": [
+    {
+      "name": "hit_spark",
+      "sheet": "sprites/fx/hit_spark.png",
+      "frame_width": 256,
+      "frame_height": 256,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.15,
+      "fps": 33.333333333333336,
+      "loop": false,
+      "anchor_px": [
+        128,
+        128
+      ],
+      "image_size": [
+        1280,
+        256
+      ]
+    }
+  ]
+}

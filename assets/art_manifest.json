@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "source_policy": "All monster, background, terrain, prop and effect art is image-generated. PIL only chromakeys, crops, rescales, aligns and packs existing generated images.",
+  "sprite_manifests": [
+    "sprites/enemies/melee_beast/manifest.json",
+    "sprites/enemies/ranged_beast/manifest.json",
+    "sprites/fx/manifest.json"
+  ],
+  "assets": [
+    {
+      "name": "sky",
+      "path": "backgrounds/rear_gate/sky.png",
+      "width": 1536,
+      "height": 720,
+      "transparent": false,
+      "scroll_ratio": 0.05
+    },
+    {
+      "name": "far_city",
+      "path": "backgrounds/rear_gate/far_city.png",
+      "width": 1920,
+      "height": 720,
+      "transparent": true,
+      "scroll_ratio": 0.2
+    },
+    {
+      "name": "castle_wall",
+      "path": "backgrounds/rear_gate/castle_wall.png",
+      "width": 2560,
+      "height": 720,
+      "transparent": true,
+      "scroll_ratio": 0.45
+    },
+    {
+      "name": "foreground",
+      "path": "backgrounds/rear_gate/foreground.png",
+      "width": 3328,
+      "height": 720,
+      "transparent": true,
+      "scroll_ratio": 0.8
+    },
+    {
+      "name": "ground_tile",
+      "path": "tiles/rear_gate/ground_tile.png",
+      "width": 512,
+      "height": 220,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "step_block",
+      "path": "tiles/rear_gate/step_block.png",
+      "width": 512,
+      "height": 90,
+      "transparent": true
+    },
+    {
+      "name": "platform",
+      "path": "tiles/rear_gate/platform.png",
+      "width": 256,
+      "height": 48,
+      "transparent": true
+    },
+    {
+      "name": "rear_gate_door",
+      "path": "props/rear_gate_door.png",
+      "width": 320,
+      "height": 420,
+      "transparent": true
+    },
+    {
+      "name": "exit_signpost",
+      "path": "props/exit_signpost.png",
+      "width": 160,
+      "height": 240,
+      "transparent": true
+    },
+    {
+      "name": "ruin_pillar_a",
+      "path": "props/ruin_pillar_a.png",
+      "width": 160,
+      "height": 300,
+      "transparent": true
+    },
+    {
+      "name": "ruin_pillar_b",
+      "path": "props/ruin_pillar_b.png",
+      "width": 140,
+      "height": 220,
+      "transparent": true
+    },
+    {
+      "name": "rubble",
+      "path": "props/rubble.png",
+      "width": 240,
+      "height": 100,
+      "transparent": true
+    }
+  ],
+  "source_metadata": [
+    "source_art/beast_provenance.json"
+  ]
+}

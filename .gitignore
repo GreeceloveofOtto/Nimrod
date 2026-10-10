@@ -1,0 +1,7 @@
+.godot/
+*.import
+*.uid
+*.tmp
+__pycache__/
+*.pyc
+artifacts/

@@ -1,0 +1,459 @@
+class_name EnemyBase
+extends CharacterBody2D
+
+signal damaged(amount: int, hp: int)
+signal died(enemy: EnemyBase)
+
+enum State { IDLE, CHASE, WINDUP, ACTIVE, RECOVERY, TURN, STUN, DEAD }
+
+const STATS_PATH: String = "res://data/enemies.json"
+const PLAYER_ATTACKS_PATH: String = "res://data/player_attacks.json"
+const IMAGE_EFFECT = preload("res://scripts/image_effect.gd")
+const HIT_SPARK_PATH: String = "res://assets/sprites/fx/hit_spark.png"
+const HIT_SPARK_FRAME_SIZE: Vector2i = Vector2i(256, 256)
+const HIT_SPARK_FRAMES: int = 5
+const ENEMY_LAYER: int = 4
+const SURFACE_MASK: int = 3
+const FALLBACK_ANCHOR: Vector2 = Vector2(320, 600)
+const FALLBACK_FRAME_SIZE: Vector2 = Vector2(640, 640)
+const TIME_EPSILON: float = 0.000001
+
+@export var enemy_id: String = "melee_beast"
+@export var patrol_center: float = -1.0
+@export var patrol_range: float = 250.0
+@export var safe_min_x: float = 200.0
+@export var safe_max_x: float = 3400.0
+
+var stats: Dictionary = {}
+var common: Dictionary = {}
+var attack_stats: Dictionary = {}
+var player_attack_stats: Dictionary = {}
+var hp: int = 0
+var state: State = State.IDLE
+var state_clock: float = 0.0
+var facing: int = 1
+var pending_facing: int = 1
+var turn_flip_applied: bool = false
+var hitstop_left: float = 0.0
+var stun_left: float = 0.0
+var stun_immunity_left: float = 0.0
+var recovery_after_stun: float = 0.0
+var recovery_duration: float = 0.0
+var attack_cooldown_left: float = 0.0
+var attack_has_hit: bool = false
+var debug_hitboxes: bool = false
+var body_size: Vector2 = Vector2.ONE
+var visual: Sprite2D
+var missing_visual: Node2D
+var collider: CollisionShape2D
+var textures: Dictionary = {}
+var clip_data: Dictionary = {}
+var displayed_clip: String = ""
+var display_clock: float = 0.0
+var current_frame: int = 0
+var ignored_player: PhysicsBody2D
+
+func _ready() -> void:
+    collision_layer = ENEMY_LAYER
+    collision_mask = SURFACE_MASK
+    add_to_group("enemies")
+    _load_stats()
+    hp = int(stats.get("hp", 1))
+    var dimensions: Array = stats.get("body_size", [1.0, 1.0])
+    body_size = Vector2(float(dimensions[0]), float(dimensions[1]))
+    if patrol_center < 0.0:
+        patrol_center = global_position.x
+    collider = CollisionShape2D.new()
+    collider.name = "Hurtbox"
+    var shape := RectangleShape2D.new()
+    shape.size = body_size
+    collider.shape = shape
+    collider.position.y = -body_size.y * 0.5
+    add_child(collider)
+    visual = Sprite2D.new()
+    visual.name = "Visual"
+    visual.region_enabled = true
+    visual.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
+    visual.scale = Vector2.ONE * float(stats.get("visual_scale", 0.33))
+    add_child(visual)
+    _load_sprites()
+    _create_missing_visual()
+    _show_clip("idle", 0.0)
+    _target()
+
+func _read_json(path: String) -> Dictionary:
+    var file := FileAccess.open(path, FileAccess.READ)
+    if file == null:
+        push_warning("Missing data: " + path)
+        return {}
+    var value: Variant = JSON.parse_string(file.get_as_text())
+    if not value is Dictionary:
+        push_warning("Invalid data: " + path)
+        return {}
+    return value as Dictionary
+
+func _load_stats() -> void:
+    var data: Dictionary = _read_json(STATS_PATH)
+    common = data.get("common", {})
+    for candidate in data.get("enemies", []):
+        if str(candidate.get("id", "")) == enemy_id:
+            stats = candidate
+            break
+    if stats.is_empty():
+        push_warning("Enemy stats missing: " + enemy_id)
+    var attacks: Array = stats.get("attacks", [])
+    if not attacks.is_empty():
+        attack_stats = attacks[0]
+    player_attack_stats = _read_json(PLAYER_ATTACKS_PATH)
+
+func _load_sprites() -> void:
+    var folder: String = "res://assets/sprites/enemies/" + enemy_id + "/"
+    var manifest: Dictionary = _read_json(folder + "manifest.json")
+    for entry in manifest.get("clips", []):
+        var clip: Dictionary = entry
+        var clip_name: String = str(clip.get("name", ""))
+        clip_data[clip_name] = clip
+        var sheet: String = str(clip.get("sheet", clip_name + ".png"))
+        var path: String = folder + sheet
+        if sheet.begins_with("res://"):
+            path = sheet
+        elif sheet.begins_with("sprites/"):
+            path = "res://assets/" + sheet
+        if not ResourceLoader.exists(path):
+            push_warning("MISSING_TEXTURE: " + path)
+            continue
+        var texture: Texture2D = load(path) as Texture2D
+        if texture != null:
+            textures[clip_name] = texture
+
+func _create_missing_visual() -> void:
+    missing_visual = Node2D.new()
+    missing_visual.name = "MISSING_TEXTURE"
+    add_child(missing_visual)
+    var box := ColorRect.new()
+    box.color = Color.GRAY
+    box.position = Vector2(-body_size.x * 0.5, -body_size.y)
+    box.size = body_size
+    box.mouse_filter = Control.MOUSE_FILTER_IGNORE
+    missing_visual.add_child(box)
+    var label := Label.new()
+    label.text = "MISSING"
+    label.position = box.position
+    label.size = body_size
+    label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+    label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+    label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+    missing_visual.add_child(label)
+
+func _physics_process(delta: float) -> void:
+    if Input.is_action_just_pressed("debug_hitbox"):
+        debug_hitboxes = not debug_hitboxes
+        queue_redraw()
+    if debug_hitboxes:
+        queue_redraw()
+    attack_cooldown_left = maxf(0.0, attack_cooldown_left - delta)
+    stun_immunity_left = maxf(0.0, stun_immunity_left - delta)
+    if state == State.DEAD:
+        _update_dead(delta)
+        return
+    if hitstop_left > 0.0:
+        hitstop_left = maxf(0.0, hitstop_left - delta)
+        if hitstop_left <= TIME_EPSILON:
+            hitstop_left = 0.0
+        return
+
+    state_clock += delta
+    match state:
+        State.IDLE:
+            _update_idle(delta)
+        State.CHASE:
+            _update_chase(delta)
+        State.WINDUP:
+            _update_windup(delta)
+        State.ACTIVE:
+            _update_active(delta)
+        State.RECOVERY:
+            _update_recovery(delta)
+        State.TURN:
+            _update_turn(delta)
+        State.STUN:
+            _update_stun(delta)
+    velocity.y = minf(float(common.get("max_fall_speed", 1100.0)), velocity.y + float(common.get("gravity", 1750.0)) * delta)
+    move_and_slide()
+    _enforce_bounds()
+    _update_visual(delta)
+
+func _target() -> Node2D:
+    var candidate: Node = get_tree().get_first_node_in_group("player")
+    if candidate is Node2D and int(candidate.get("hp")) > 0:
+        # The existing player occupies layer 1, which is also a floor layer.
+        # Keep the required masks and explicitly exclude only the player body.
+        if candidate is PhysicsBody2D and ignored_player != candidate:
+            ignored_player = candidate as PhysicsBody2D
+            add_collision_exception_with(ignored_player)
+            ignored_player.add_collision_exception_with(self)
+        return candidate as Node2D
+    return null
+
+func _can_detect(player: Node2D) -> bool:
+    return player != null and global_position.distance_to(player.global_position) <= float(stats.get("detect_range", 0.0))
+
+func _update_idle(delta: float) -> void:
+    _brake(delta)
+    if _can_detect(_target()):
+        _set_state(State.CHASE)
+
+func _update_chase(delta: float) -> void:
+    _brake(delta)
+
+func _update_windup(delta: float) -> void:
+    _brake(delta)
+    if state_clock >= float(attack_stats.get("windup", 0.0)):
+        _begin_active()
+
+func _update_active(delta: float) -> void:
+    _brake(delta)
+    if state_clock >= float(attack_stats.get("active", 0.0)):
+        _finish_active()
+
+func _update_recovery(delta: float) -> void:
+    _brake(delta)
+    if state_clock >= recovery_duration:
+        recovery_after_stun = 0.0
+        _set_state(State.CHASE if _can_detect(_target()) else State.IDLE)
+
+func _update_turn(delta: float) -> void:
+    _brake(delta)
+    var delay: float = float(stats.get("turn_delay", 0.0))
+    # Four equally timed frames: index 2 (the third frame) begins at halfway.
+    if not turn_flip_applied and state_clock >= delay * 0.5:
+        facing = pending_facing
+        visual.flip_h = facing < 0
+        turn_flip_applied = true
+    if state_clock >= delay:
+        _set_state(State.CHASE if _can_detect(_target()) else State.IDLE)
+
+func _update_stun(delta: float) -> void:
+    _brake(delta)
+    stun_left = maxf(0.0, stun_left - delta)
+    if stun_left <= 0.0:
+        if state_clock >= float(common.get("max_stun_seconds", 0.6)) - delta:
+            stun_immunity_left = float(common.get("stun_cap_grace_seconds", 0.12))
+        if recovery_after_stun > 0.0:
+            _begin_recovery(recovery_after_stun)
+        else:
+            _set_state(State.CHASE if _can_detect(_target()) else State.IDLE)
+
+func _brake(delta: float) -> void:
+    velocity.x = move_toward(velocity.x, 0.0, float(common.get("knockback_friction", 2400.0)) * delta)
+
+func _enforce_bounds() -> void:
+    var low: float = maxf(safe_min_x + body_size.x * 0.5, patrol_center - patrol_range)
+    var high: float = minf(safe_max_x - body_size.x * 0.5, patrol_center + patrol_range)
+    global_position.x = clampf(global_position.x, low, high)
+    if (global_position.x <= low and velocity.x < 0.0) or (global_position.x >= high and velocity.x > 0.0):
+        velocity.x = 0.0
+
+func _set_state(next: State) -> void:
+    state = next
+    state_clock = 0.0
+    display_clock = 0.0
+
+func _request_turn(direction: int) -> void:
+    if direction == facing or state in [State.WINDUP, State.ACTIVE, State.RECOVERY, State.STUN, State.DEAD]:
+        return
+    pending_facing = direction
+    turn_flip_applied = false
+    _set_state(State.TURN)
+
+func _begin_attack() -> void:
+    attack_has_hit = false
+    _set_state(State.WINDUP)
+    _play_sfx("beast_" + _audio_kind() + "_windup")
+
+func _begin_active() -> void:
+    _set_state(State.ACTIVE)
+
+func _finish_active() -> void:
+    _begin_recovery(float(attack_stats.get("recovery", 0.0)))
+
+func _begin_recovery(seconds: float) -> void:
+    recovery_duration = seconds
+    recovery_after_stun = 0.0
+    _set_state(State.RECOVERY)
+
+func _audio_kind() -> String:
+    return "ranged" if enemy_id == "ranged_beast" else "melee"
+
+func _play_sfx(sound_name: String) -> Node:
+    var audio: Node = get_node_or_null("/root/Audio")
+    if audio != null and audio.has_method("play_sfx"):
+        return audio.call("play_sfx", sound_name, global_position) as Node
+    return null
+
+func get_hurt_rect() -> Rect2:
+    return Rect2(global_position + Vector2(-body_size.x * 0.5, -body_size.y), body_size)
+
+func get_attack_rect() -> Rect2:
+    if state != State.ACTIVE:
+        return Rect2()
+    var box: Dictionary = attack_stats.get("hitbox", {})
+    var size_px := Vector2(float(box.get("width", 0.0)), float(box.get("height", 0.0)))
+    var offset: float = float(box.get("offset_x", 0.0))
+    var x: float = offset if facing > 0 else -offset - size_px.x
+    return Rect2(global_position + Vector2(x, float(box.get("top", 0.0))), size_px)
+
+func _player_rect(player: Node2D) -> Rect2:
+    var hit: CollisionShape2D = player.get_node_or_null("CollisionShape2D") as CollisionShape2D
+    if hit != null and hit.shape is RectangleShape2D:
+        var size_px: Vector2 = (hit.shape as RectangleShape2D).size * hit.global_scale.abs()
+        return Rect2(hit.global_position - size_px * 0.5, size_px)
+    return Rect2(player.global_position, Vector2.ZERO)
+
+func _player_in_attack(player: Node2D) -> bool:
+    if player == null or player.global_position.x < safe_min_x or player.global_position.x > safe_max_x:
+        return false
+    return get_attack_rect().intersects(_player_rect(player))
+
+func take_hit(damage: int, from_pos: Vector2, step: int) -> void:
+    _receive_hit(damage, from_pos, step, false)
+
+func take_shockwave_hit(damage: int, from_pos: Vector2, step: int = 4) -> void:
+    _receive_hit(damage, from_pos, step, true)
+
+func _strike_data(step: int, shockwave: bool) -> Dictionary:
+    if shockwave:
+        return player_attack_stats.get("shockwave", {})
+    for attack in player_attack_stats.get("attacks", []):
+        if int(attack.get("step", 0)) == step:
+            return attack
+    return {}
+
+func _receive_hit(damage: int, from_pos: Vector2, step: int, shockwave: bool) -> void:
+    if state == State.DEAD:
+        return
+    var strike: Dictionary = _strike_data(step, shockwave)
+    hp = maxi(0, hp - damage)
+    var direction: float = 1.0 if global_position.x >= from_pos.x else -1.0
+    velocity.x = direction * float(strike.get("knockback", 0.0))
+    hitstop_left = float(common.get("hitstop_seconds", 0.05))
+    _spawn_hit_spark(from_pos)
+    _play_sfx("beast_" + _audio_kind() + "_hurt")
+    damaged.emit(damage, hp)
+    if hp <= 0:
+        _die()
+        return
+    _on_hit(float(strike.get("stagger", 0.0)))
+
+func _on_hit(seconds: float) -> void:
+    _apply_stun(seconds)
+
+func _apply_stun(seconds: float, force: bool = false) -> void:
+    if seconds <= 0.0 or (stun_immunity_left > 0.0 and not force):
+        return
+    var maximum: float = float(common.get("max_stun_seconds", 0.6))
+    if state == State.STUN:
+        # Do not reset the episode clock: repeated hits cannot prolong it forever.
+        stun_left = maxf(stun_left, minf(seconds, maxf(0.0, maximum - state_clock)))
+        return
+    if state == State.RECOVERY:
+        recovery_after_stun = maxf(0.0, recovery_duration - state_clock)
+    elif state in [State.WINDUP, State.ACTIVE]:
+        # Interrupted attacks must still pay their full recovery before turning.
+        recovery_after_stun = float(attack_stats.get("recovery", 0.0))
+    stun_left = minf(seconds, maximum)
+    _set_state(State.STUN)
+
+func _spawn_hit_spark(from_pos: Vector2) -> void:
+    var effect: Node2D = IMAGE_EFFECT.new()
+    effect.configure(HIT_SPARK_PATH, HIT_SPARK_FRAME_SIZE, HIT_SPARK_FRAMES, float(common.get("hit_spark_seconds", 0.15)), false, Vector2(HIT_SPARK_FRAME_SIZE) * 0.5)
+    effect.scale = Vector2.ONE * float(common.get("hit_spark_scale", 0.24))
+    effect.z_index = 20
+    var scene: Node = get_tree().current_scene
+    if scene == null:
+        scene = get_parent()
+    scene.add_child(effect)
+    effect.global_position = Vector2(lerpf(global_position.x, from_pos.x, 0.25), global_position.y - body_size.y * 0.5)
+
+func _die() -> void:
+    _on_death()
+    collision_layer = 0
+    collision_mask = 0
+    collider.set_deferred("disabled", true)
+    velocity = Vector2.ZERO
+    hitstop_left = 0.0
+    _set_state(State.DEAD)
+    _play_sfx("beast_" + _audio_kind() + "_death")
+    died.emit(self)
+    _show_clip("death", 0.0)
+
+func _on_death() -> void:
+    pass
+
+func _update_dead(delta: float) -> void:
+    state_clock += delta
+    _show_clip("death", state_clock)
+    var clip: Dictionary = clip_data.get("death", {})
+    var animation_seconds: float = float(clip.get("duration_seconds", 0.0))
+    var fade_seconds: float = float(common.get("death_fade_seconds", 0.4))
+    if state_clock > animation_seconds:
+        modulate.a = clampf(1.0 - (state_clock - animation_seconds) / maxf(0.001, fade_seconds), 0.0, 1.0)
+    if state_clock >= animation_seconds + fade_seconds:
+        queue_free()
+
+func _active_clip() -> String:
+    return "attack"
+
+func _update_visual(delta: float) -> void:
+    var clip: String = "idle"
+    match state:
+        State.CHASE:
+            clip = "walk" if absf(velocity.x) > 0.0 else "idle"
+        State.WINDUP:
+            clip = "windup"
+        State.ACTIVE:
+            clip = _active_clip()
+        State.RECOVERY:
+            clip = "recovery"
+        State.TURN:
+            clip = "turn"
+        State.STUN:
+            clip = "hurt"
+    display_clock += delta
+    var explicit_clock: float = state_clock if state not in [State.IDLE, State.CHASE] else display_clock
+    _show_clip(clip, explicit_clock)
+
+func _show_clip(clip_name: String, seconds: float) -> void:
+    displayed_clip = clip_name
+    var clip: Dictionary = clip_data.get(clip_name, {})
+    var texture: Texture2D = textures.get(clip_name) as Texture2D
+    visual.visible = texture != null
+    missing_visual.visible = texture == null
+    visual.flip_h = facing < 0
+    var frames: int = maxi(1, int(clip.get("frames", 1)))
+    var duration_seconds: float = float(clip.get("duration_seconds", common.get("missing_clip_seconds", 1.0)))
+    if clip_name == "turn":
+        duration_seconds = float(stats.get("turn_delay", duration_seconds))
+    var phase: float = fmod(seconds, maxf(0.001, duration_seconds)) if bool(clip.get("loop", false)) else seconds
+    current_frame = clampi(int(phase / maxf(0.001, duration_seconds) * frames), 0, frames - 1)
+    if texture == null:
+        return
+    visual.texture = texture
+    var width: float = float(clip.get("frame_width", FALLBACK_FRAME_SIZE.x))
+    var height: float = float(clip.get("frame_height", FALLBACK_FRAME_SIZE.y))
+    var columns: int = maxi(1, int(clip.get("columns", frames)))
+    visual.region_rect = Rect2(Vector2((current_frame % columns) * width, floori(float(current_frame) / columns) * height), Vector2(width, height))
+    var origin: Array = clip.get("anchor_px", [FALLBACK_ANCHOR.x, FALLBACK_ANCHOR.y])
+    visual.offset = Vector2(width, height) * 0.5 - Vector2(float(origin[0]), float(origin[1]))
+
+func _draw() -> void:
+    # Debug geometry only. Creature and effect art always comes from PNGs.
+    if not debug_hitboxes or state == State.DEAD:
+        return
+    draw_rect(Rect2(Vector2(-body_size.x * 0.5, -body_size.y), body_size), Color(0.2, 0.5, 1.0, 0.85), false, 2.0)
+    draw_arc(Vector2.ZERO, float(stats.get("detect_range", 0.0)), 0.0, TAU, 64, Color(0.9, 0.8, 0.3, 0.5), 1.0)
+    var attack_box: Rect2 = get_attack_rect()
+    if attack_box.has_area():
+        attack_box.position -= global_position
+        draw_rect(attack_box, Color(1.0, 0.15, 0.15, 0.25), true)
+        draw_rect(attack_box, Color(1.0, 0.15, 0.15, 0.9), false, 2.0)

@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_script"]
+[ext_resource type="AudioStream" path="res://assets/audio/roll.wav" id="2_roll"]
+[ext_resource type="AudioStream" path="res://assets/audio/jump_a.wav" id="3_jump_a"]
+[ext_resource type="AudioStream" path="res://assets/audio/step.wav" id="4_step"]
+[ext_resource type="AudioStream" path="res://assets/audio/jump_b.wav" id="5_jump_b"]
+[ext_resource type="AudioStream" path="res://assets/audio/jump_c.wav" id="6_jump_c"]
+[ext_resource type="AudioStream" path="res://assets/audio/land.wav" id="7_land"]
+
+[sub_resource type="RectangleShape2D" id="CharacterCollider"]
+size = Vector2(36, 124)
+
+[sub_resource type="AudioStreamRandomizer" id="JumpRandomizer"]
+random_pitch = 1.0
+streams_count = 3
+stream_0/stream = ExtResource("3_jump_a")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("5_jump_b")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("6_jump_c")
+stream_2/weight = 1.0
+
+[node name="Nimrod" type="CharacterBody2D"]
+collision_layer = 1
+collision_mask = 3
+floor_snap_length = 8.0
+script = ExtResource("1_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -62)
+shape = SubResource("CharacterCollider")
+
+[node name="Visual" type="Sprite2D" parent="."]
+centered = true
+region_enabled = true
+texture_filter = 1
+
+[node name="GroundCheck" type="RayCast2D" parent="."]
+position = Vector2(0, -12)
+target_position = Vector2(0, 36)
+collision_mask = 2
+exclude_parent = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -120)
+enabled = true
+position_smoothing_enabled = true
+position_smoothing_speed = 6.5
+
+[node name="SFXAttack" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+volume_db = -5.0
+
+[node name="SFXRoll" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_roll")
+bus = &"SFX"
+volume_db = -8.0
+
+[node name="SFXJump" type="AudioStreamPlayer" parent="."]
+stream = SubResource("JumpRandomizer")
+bus = &"SFX"
+volume_db = -7.0
+
+[node name="SFXLand" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_land")
+bus = &"SFX"
+volume_db = -9.0
+
+[node name="SFXStep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_step")
+bus = &"SFX"
+volume_db = -13.0
+max_polyphony = 2

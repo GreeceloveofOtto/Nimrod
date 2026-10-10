@@ -1,0 +1,4 @@
+# Optional regeneration/validation tools; no game runtime addons.
+numpy==2.3.5
+Pillow==12.3.0
+fonttools==4.61.1
