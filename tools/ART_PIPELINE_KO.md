@@ -55,7 +55,7 @@ python tools/pack_sprites.py image generated_ground.png assets/tiles/rear_gate/g
 python tools/validate_assets.py
 ```
 
-기본 검사는 `assets/art_manifest.json`이 요구하는 77개 PNG 전체를 확인하며 하나라도 없으면 실패한다. PNG 형식, RGBA, 정확한 크기·프레임 수, 프레임별 비어 있지 않은 그림, 연속 복제 프레임 여부, 괴수·NPC 앵커, NPC 모든 프레임 높이 비율 ±3%, 비행 괴수 중앙 앵커·날개폭, 알파, manifest의 fps/길이, 레벨별 파랄랙스 이동을 덮는 너비, 바닥 타일 양쪽 경계의 일치를 확인한다. `--allow-missing`은 제작 도중 있는 파일만 검사하며 누락을 SKIPPED로 보고한다. PARTIAL PASS는 최종 아트 완료를 뜻하지 않는다.
+기본 검사는 `assets/art_manifest.json`이 요구하는 105개 PNG 전체를 확인하며 하나라도 없으면 실패한다. PNG 형식, RGBA, 정확한 크기·프레임 수, 프레임별 비어 있지 않은 그림, 연속 복제 프레임 여부, 괴수·NPC 앵커, NPC 모든 프레임 높이 비율 ±3%, 비행 괴수 중앙 앵커·날개폭, 알파, manifest의 fps/길이, 레벨별 파랄랙스 이동을 덮는 너비, 바닥 타일 양쪽 경계의 일치를 확인한다. `--allow-missing`은 제작 도중 있는 파일만 검사하며 누락을 SKIPPED로 보고한다. PARTIAL PASS는 최종 아트 완료를 뜻하지 않는다.
 
 이미지 생성이 불가능한 환경에서는 `assets/image_prompts/`의 프롬프트를 사용자에게 전달하고 런타임의 회색 `MISSING` 폴백을 유지한다. 코드 도형이나 절차적 생성으로 최종 아트를 대체하지 않는다.
 
@@ -72,3 +72,18 @@ python tools/validate_assets.py
 환경 도구는 8개 생성 원본에서 정적 이미지 26개와 문 시트 6개를 만든다. 하늘 1536, 먼 도시 2112, 성벽 3136, 전경 4608px로 5400px 맵의 카메라 이동을 덮는다. 실내·테라스는 바닥선 y620에 맞춰 생성 픽셀을 정렬한다. 문 닫힘은 열림 시트를 역재생한다. E 프롬프트와 회복 드랍 이미지도 포함한다. tools/stitch_background.py는 여러 생성 이미지를 이어 붙일 때 사용하며 새 풍경을 코드로 그리지 않는다.
 
 생성 기록은 assets/source_art/stage2_characters/provenance.json·generation_prompts.json 및 assets/source_art/stage2_environment/generation.json·packing.json에 있다. assets/stage2_character_manifest.json과 assets/stage2_environment_manifest.json의 항목은 최종 assets/art_manifest.json에 통합했다.
+
+## 3단계 NPC 재디자인·정문 앞
+
+```bash
+python tools/build_stage3_assets.py
+python tools/validate_assets.py
+```
+
+왕족·호위 5명은 NPC 전용 근미래 복식 프롬프트를 사용한다. 기존 다크 판타지 공통 문구는 배경·문·FX에만 사용한다. 디자인 시트(정면/오른쪽 측면/얼굴) → 디자인 참조 오른쪽 정지 이미지 → pack_sprites.py 크로마키/발 앵커 → add_rim_light.py 내부 5px/40% 빛 방향 밴드 → make_breathing_sheet.py 숨쉬기 6프레임으로 만든다. 인안나 디자인 후보 4개와 선택 3번은 assets/reference/에 보존한다. 생성 원본·전체 프롬프트·출처는 assets/source_art/stage3/에 있다. 이전 NPC 시트와 매니페스트는 assets/sprites/npcs/_legacy/에 보존한다.
+
+토인 작업 포즈는 새로 생성하지 않는다. 기존 픽셀·알파·포즈를 재사용하고 허용된 림라이트 RGB 처리만 더한다. 재빌드는 반드시 _legacy 원본을 읽어 림라이트가 누적되지 않게 한다. 표시 배율은 데이터의 visual_scale_multiplier=1.30이다. source_height_ratio는 원본 픽셀 키, height_ratio는 표시 크기 비율이며 검증은 bbox×1.30을 한 번만 곱한다.
+
+3단계는 기존 배경 PNG를 재생성하거나 수정하지 않는다. 새 CastleFront 시차 4겹·외관 2개, 문 4개, 타일 2개, 소품·성벽 5개, FX 2개만 생성 원본에서 패킹한다. 두 기존 성 타일의 작은 마젠타 윗여백도 기존 원본의 크롭만 보정한다. 불투명 타일의 키 색상 잔여와 양쪽 경계를 검사한다. Stage 2 재빌드 보호는 신규 왕족 시트를 덮어쓰지 않으며, 전체 재빌드 시 Stage 3 도구를 마지막에 실행한다.
+
+check_npc_contrast는 플레이어 크기 기준 NPC 상자와 bg_dim 적용 배경 크롭의 평균 휘도 차이를 비교한다. 30 미만은 경고이며 실패가 아니다. FX·근접 밝기·소품은 제외한 보수적인 검사다. 재사용 작업자 4곳의 남은 대비 경고와 권고는 docs/STAGE3_REPORT_KO.md에 기록했다.

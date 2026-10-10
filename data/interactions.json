@@ -78,6 +78,49 @@
         384
       ],
       "frames": 6
+    },
+    "castle_front_door_interior": {
+      "frame_size": [
+        320,
+        420
+      ],
+      "frames": 6
+    },
+    "castle_front_door_exterior": {
+      "frame_size": [
+        360,
+        460
+      ],
+      "frames": 6
+    },
+    "castle_great_gate": {
+      "frame_size": [
+        640,
+        520
+      ],
+      "frames": 8
+    },
+    "downtown_passage_door": {
+      "frame_size": [
+        320,
+        460
+      ],
+      "frames": 1
     }
+  },
+  "great_gate": {
+    "open_distance": 300,
+    "close_distance": 600,
+    "open_seconds": 1.2,
+    "close_seconds": 1.0,
+    "keeper_trigger_frame": 2,
+    "collision_size": [
+      60,
+      440
+    ],
+    "entry_rearm_distance": 80,
+    "trigger_half_width": 40,
+    "open_sound": "great_gate_open",
+    "close_sound": "great_gate_close"
   }
 }

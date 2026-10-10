@@ -14,7 +14,51 @@
     "missing_size": [
       70,
       110
-    ]
+    ],
+    "readability": {
+      "range": 220,
+      "seconds": 0.15,
+      "near_brightness": 1.12,
+      "name_alpha": 0.85,
+      "near_name_alpha": 1.0,
+      "font": "res://assets/fonts/NimrodUIKorean-Regular.otf",
+      "font_size": 18,
+      "font_color": "f2e9d0",
+      "shadow_color": [
+        0,
+        0,
+        0,
+        0.6
+      ],
+      "shadow_offset": [
+        1,
+        1
+      ],
+      "panel_color": [
+        0.04,
+        0.05,
+        0.08,
+        0.45
+      ],
+      "corner_radius": 4,
+      "margin_x": 8,
+      "margin_y": 2,
+      "name_offset_y": 14,
+      "name_z": 50,
+      "light_pool": "res://assets/fx/npc_light_pool.png",
+      "shadow": "res://assets/fx/contact_shadow.png",
+      "pool_width_height_ratio": 1.4,
+      "pool_center_y": -90,
+      "pool_modulate": [
+        1,
+        0.92,
+        0.78,
+        0.35
+      ],
+      "shadow_width_ratio": 0.9,
+      "shadow_height": 12,
+      "shadow_alpha": 0.45
+    }
   },
   "npcs": [
     {
@@ -84,7 +128,7 @@
     {
       "id": "papsukkal",
       "display_name": "팝수칼",
-      "height_ratio": 1.02,
+      "height_ratio": 1.0,
       "sheet_dir": "assets/sprites/npcs/papsukkal",
       "clips": [
         {
@@ -100,7 +144,7 @@
     {
       "id": "cook_a",
       "display_name": "토인 요리사",
-      "height_ratio": 0.7,
+      "height_ratio": 0.91,
       "sheet_dir": "assets/sprites/npcs/cook_a",
       "clips": [
         {
@@ -111,12 +155,14 @@
         }
       ],
       "face_player": false,
-      "random_start": true
+      "random_start": true,
+      "source_height_ratio": 0.7,
+      "visual_scale_multiplier": 1.3
     },
     {
       "id": "cook_b",
       "display_name": "토인 요리사",
-      "height_ratio": 0.72,
+      "height_ratio": 0.936,
       "sheet_dir": "assets/sprites/npcs/cook_b",
       "clips": [
         {
@@ -127,12 +173,14 @@
         }
       ],
       "face_player": false,
-      "random_start": true
+      "random_start": true,
+      "source_height_ratio": 0.72,
+      "visual_scale_multiplier": 1.3
     },
     {
       "id": "cook_c",
       "display_name": "토인 요리사",
-      "height_ratio": 0.74,
+      "height_ratio": 0.962,
       "sheet_dir": "assets/sprites/npcs/cook_c",
       "clips": [
         {
@@ -143,12 +191,14 @@
         }
       ],
       "face_player": false,
-      "random_start": true
+      "random_start": true,
+      "source_height_ratio": 0.74,
+      "visual_scale_multiplier": 1.3
     },
     {
       "id": "servant_a",
       "display_name": "토인 하인",
-      "height_ratio": 0.7,
+      "height_ratio": 0.91,
       "sheet_dir": "assets/sprites/npcs/servant_a",
       "clips": [
         {
@@ -159,12 +209,14 @@
         }
       ],
       "face_player": false,
-      "random_start": true
+      "random_start": true,
+      "source_height_ratio": 0.7,
+      "visual_scale_multiplier": 1.3
     },
     {
       "id": "servant_b",
       "display_name": "토인 하인",
-      "height_ratio": 0.72,
+      "height_ratio": 0.936,
       "sheet_dir": "assets/sprites/npcs/servant_b",
       "clips": [
         {
@@ -175,12 +227,14 @@
         }
       ],
       "face_player": false,
-      "random_start": true
+      "random_start": true,
+      "source_height_ratio": 0.72,
+      "visual_scale_multiplier": 1.3
     },
     {
       "id": "gatekeeper",
-      "display_name": "별장 문지기",
-      "height_ratio": 0.74,
+      "display_name": "문지기",
+      "height_ratio": 0.962,
       "sheet_dir": "assets/sprites/npcs/gatekeeper",
       "clips": [
         {
@@ -197,7 +251,57 @@
         }
       ],
       "face_player": false,
-      "random_start": false
+      "random_start": true,
+      "source_height_ratio": 0.74,
+      "visual_scale_multiplier": 1.3
+    },
+    {
+      "id": "castle_gatekeeper_outer",
+      "display_name": "문지기",
+      "height_ratio": 0.962,
+      "sheet_dir": "assets/sprites/npcs/gatekeeper",
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
+        },
+        {
+          "name": "open_gate",
+          "frames": 5,
+          "duration": 0.8,
+          "loop": false
+        }
+      ],
+      "face_player": true,
+      "random_start": true,
+      "source_height_ratio": 0.74,
+      "visual_scale_multiplier": 1.3
+    },
+    {
+      "id": "castle_gatekeeper_inner",
+      "display_name": "문지기",
+      "height_ratio": 0.962,
+      "sheet_dir": "assets/sprites/npcs/gatekeeper",
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
+        },
+        {
+          "name": "open_gate",
+          "frames": 5,
+          "duration": 0.8,
+          "loop": false
+        }
+      ],
+      "face_player": false,
+      "random_start": true,
+      "source_height_ratio": 0.74,
+      "visual_scale_multiplier": 1.3
     }
   ]
 }

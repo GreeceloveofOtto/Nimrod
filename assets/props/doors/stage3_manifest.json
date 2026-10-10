@@ -1,0 +1,84 @@
+{
+  "clips": [
+    {
+      "name": "castle_front_door_interior",
+      "sheet": "props/doors/castle_front_door_interior.png",
+      "frame_width": 320,
+      "frame_height": 420,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.6,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        160,
+        420
+      ],
+      "image_size": [
+        1920,
+        420
+      ]
+    },
+    {
+      "name": "castle_front_door_exterior",
+      "sheet": "props/doors/castle_front_door_exterior.png",
+      "frame_width": 360,
+      "frame_height": 460,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.6,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        180,
+        460
+      ],
+      "image_size": [
+        2160,
+        460
+      ]
+    },
+    {
+      "name": "downtown_passage_door",
+      "sheet": "props/doors/downtown_passage_door.png",
+      "frame_width": 320,
+      "frame_height": 460,
+      "columns": 1,
+      "rows": 1,
+      "frames": 1,
+      "duration_seconds": 0.6,
+      "fps": 1.6666666666666667,
+      "loop": false,
+      "anchor_px": [
+        160,
+        460
+      ],
+      "image_size": [
+        320,
+        460
+      ]
+    },
+    {
+      "name": "castle_great_gate",
+      "sheet": "props/doors/castle_great_gate.png",
+      "frame_width": 640,
+      "frame_height": 520,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 1.2,
+      "fps": 6.666666666666667,
+      "loop": false,
+      "anchor_px": [
+        320,
+        520
+      ],
+      "image_size": [
+        5120,
+        520
+      ]
+    }
+  ]
+}

@@ -5,7 +5,7 @@
     640
   ],
   "orientation": "right-facing; flip_h for left",
-  "height_ratio": 1.02,
+  "height_ratio": 1.0,
   "height_reference_px": 359,
   "height_reference_method": "idle frame 0 alpha > 12",
   "height_validation": "every frame alpha>12 bbox height within 3 percent of player height times height_ratio",
@@ -30,5 +30,7 @@
         640
       ]
     }
-  ]
+  ],
+  "design_reference": "reference/papsukkal_design.png",
+  "style": "Stage3 near-future tailored clothing; generated still + permitted breathing/rim postprocess"
 }

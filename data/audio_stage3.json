@@ -1,0 +1,56 @@
+{
+  "sfx": [
+    {
+      "name": "great_gate_open",
+      "duration": 1.2,
+      "kind": "great_gate",
+      "pitch": 49.0,
+      "seed": 8301
+    },
+    {
+      "name": "great_gate_close",
+      "duration": 1.0,
+      "kind": "great_gate_close",
+      "pitch": 41.0,
+      "seed": 8302
+    }
+  ],
+  "bgm": [
+    {
+      "name": "castle_front",
+      "duration": 48.0,
+      "seed": 38401,
+      "frequencies": [
+        41.25,
+        55.0,
+        82.5,
+        110.0
+      ],
+      "gains": [
+        0.28,
+        0.16,
+        0.1,
+        0.045
+      ],
+      "wind_band": [
+        55.0,
+        720.0
+      ],
+      "wind_gain": 0.017,
+      "pulse_cycles": 2,
+      "string_harmonics": 1,
+      "chime_every": 6.0,
+      "chime_gain": 0.05,
+      "metal_percussion": {
+        "interval": 4.0,
+        "gain": 0.04,
+        "frequencies": [
+          179.0,
+          437.0,
+          683.0
+        ],
+        "decay": 1.2
+      }
+    }
+  ]
+}

@@ -10,6 +10,7 @@ const Art = preload("res://scripts/asset_visual.gd")
 @export var display_name: String = ""
 @export var safe_zones: Array[Rect2] = []
 @export var floor_y: float = 0.0
+@export var bg_dim: Color = Color(0.80, 0.80, 0.84)
 
 var config: Dictionary = {}
 var world_settings: Dictionary = {}
@@ -50,6 +51,8 @@ func _load_config() -> void:
     bgm_name = str(config.get("bgm", bgm_name))
     display_name = str(config.get("display_name", display_name))
     floor_y = float(config.get("floor_y", floor_y))
+    var dim: Array = config.get("bg_dim", [0.80, 0.80, 0.84])
+    bg_dim = Color(float(dim[0]), float(dim[1]), float(dim[2]))
     camera_limits = _rect(config.get("camera_limits", []))
     safe_zones.clear()
     for bounds in config.get("safe_zones", []):
@@ -85,11 +88,13 @@ func _make_backgrounds() -> void:
         if is_equal_approx(ratio, 1.0):
             var image := Art.add_image(self, str(entry["path"]), at, size_px, int(entry.get("z", 0)))
             image.name = str(entry.get("name", "Background"))
+            image.modulate = bg_dim
         else:
             var layer := Parallax2D.new()
             layer.name = str(entry.get("name", "Parallax"))
             layer.scroll_scale = Vector2(ratio, 0.0)
             layer.z_index = int(entry.get("z", 0))
+            layer.modulate = bg_dim
             add_child(layer)
             Art.add_image(layer, str(entry["path"]), at, size_px)
 
@@ -109,6 +114,12 @@ func _make_world() -> void:
         while tile_x < width + margin:
             Art.add_image(self, str(config.get("floor_art", "")), Vector2(tile_x, floor_y), tile_size, -4)
             tile_x += tile_size.x
+    for section in config.get("floor_sections", []):
+        var section_size: Vector2 = _vector(section["size"])
+        var start: float = float(section["from"])
+        while start < float(section["to"]):
+            Art.add_image(self, str(section["path"]), Vector2(start, floor_y), Vector2(minf(section_size.x, float(section["to"]) - start), section_size.y), -3)
+            start += section_size.x
     for step in config.get("steps", []):
         var height: float = float(step["height"])
         var x: float = float(step["x"])
@@ -158,15 +169,18 @@ func _set_if_present(actor: Node, property_name: String, value: Variant) -> void
 
 func _make_doors() -> void:
     for entry in config.get("doors", []):
-        var script_key: String = "villa_gate_script" if str(entry.get("kind", "")) == "villa_gate" else "door_script"
+        var kind: String = str(entry.get("kind", ""))
+        var script_key: String = "villa_gate_script" if kind == "villa_gate" else ("gate_controller_script" if kind == "great_gate" else "door_script")
         var door: Node2D = _new_script_node(str(world_settings.get(script_key, "")))
         if door == null:
             continue
         door.name = str(entry["door_id"])
         door.position = _vector(entry["position"])
-        for property in ["door_id", "target_level", "target_spawn", "door_art", "locked", "locked_message", "auto_trigger", "interact_range", "arrival_spawn", "exit_direction", "arrival_walk_pixels"]:
+        for property in ["door_id", "target_level", "target_spawn", "door_art", "locked", "locked_message", "auto_trigger", "interact_range", "arrival_spawn", "exit_direction", "arrival_walk_pixels", "gate_settings_key", "gate_open_seconds", "gate_close_seconds"]:
             if entry.has(property):
                 _set_if_present(door, property, entry[property])
+        if entry.has("door_art"):
+            _set_if_present(door, "gate_art", entry["door_art"])
         doors[str(entry["door_id"])] = door
         var arrival: String = str(entry.get("arrival_spawn", ""))
         if not arrival.is_empty():
@@ -182,17 +196,22 @@ func _make_npcs() -> void:
         npc.name = str(entry["id"])
         npc.position = _vector(entry["position"])
         _set_if_present(npc, "npc_id", str(entry["id"]))
-        for property in ["idle_clip", "face_player", "initial_facing", "random_start"]:
+        for property in ["idle_clip", "face_player", "initial_facing", "random_start", "interactable", "gesture_face_player"]:
             if entry.has(property):
                 _set_if_present(npc, property, entry[property])
         npcs[str(entry["id"])] = npc
         add_child(npc)
 
 func _connect_gatekeeper() -> void:
-    var gate: Node = doors.get("villa_gate") as Node
-    var keeper: Node = npcs.get("gatekeeper") as Node
-    if gate != null and keeper != null and gate.has_method("bind_gatekeeper"):
-        gate.call("bind_gatekeeper", keeper)
+    for entry in config.get("doors", []):
+        var gate: Node = doors.get(str(entry["door_id"])) as Node
+        if gate == null or not gate.has_method("bind_gatekeeper"):
+            continue
+        var keeper: Node = npcs.get(str(entry.get("inner_gatekeeper_id", "gatekeeper"))) as Node
+        if keeper != null:
+            gate.call("bind_gatekeeper", keeper)
+        if entry.has("outer_gatekeeper_id"):
+            _set_if_present(gate, "outer_gatekeeper", npcs.get(str(entry["outer_gatekeeper_id"])))
 
 func _spawn_enemies() -> void:
     var enemy_scripts: Dictionary = world_settings.get("enemy_scripts", {})

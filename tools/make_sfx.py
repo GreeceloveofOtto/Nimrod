@@ -50,11 +50,11 @@ def synthesize(duration, kind, pitch, seed):
         rumble = np.sin(2.0 * np.pi * 84.0 * t) + 0.3 * np.sin(2.0 * np.pi * 126.0 * t)
         flutter = 0.75 + 0.16 * np.sin(2.0 * np.pi * 6.0 * t)
         return (0.38 * mid_noise + 0.14 * high_noise + 0.18 * rumble) * flutter
-    if kind in ("door", "door_close"):
+    if kind in ("door", "door_close", "great_gate", "great_gate_close"):
         creak = np.sin(2.0 * np.pi * (pitch * t + 2.3 * np.sin(2.0 * np.pi * 3.0 * t)))
         creak += 0.15 * np.sin(2.0 * np.pi * pitch * 2.97 * t)
         signal = (0.35 * creak + 0.20 * low_noise + 0.045 * mid_noise) * np.sin(np.pi * t / duration) ** 0.65
-        if kind == "door_close":
+        if kind in ("door_close", "great_gate_close"):
             impact_time = np.maximum(t - duration * 0.73, 0.0)
             signal += (t >= duration * 0.73) * (0.5 * tone + 0.11 * mid_noise) * envelope(impact_time, decay=0.026)
         return signal
@@ -87,7 +87,11 @@ def main():
         signal = synthesize(item["duration"], item["kind"], item["pitch"], item["seed"])
         write_wav(out_dir / (item["name"] + ".wav"), signal,
                   fade_seconds=0.0 if item["kind"] == "wing_loop" else 0.004)
-    print(f"Generated {len(SOUNDS) + len(stage2['sfx'])} effects; flame and wing loops are periodic.")
+    stage3 = json.loads((PROJECT_ROOT / "data/audio_stage3.json").read_text(encoding="utf-8"))
+    for item in stage3["sfx"]:
+        signal = synthesize(item["duration"], item["kind"], item["pitch"], item["seed"])
+        write_wav(out_dir / (item["name"] + ".wav"), signal)
+    print(f"Generated {len(stage3['sfx']) + len(SOUNDS) + len(stage2['sfx'])} effects; flame and wing loops are periodic.")
 
 
 if __name__ == "__main__":

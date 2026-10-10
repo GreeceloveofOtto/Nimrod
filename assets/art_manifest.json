@@ -17,7 +17,8 @@
     "sprites/npcs/servant_b/manifest.json",
     "sprites/npcs/gatekeeper/manifest.json",
     "sprites/enemies/sky_beast/manifest.json",
-    "props/doors/manifest.json"
+    "props/doors/manifest.json",
+    "props/doors/stage3_manifest.json"
   ],
   "assets": [
     {
@@ -273,6 +274,184 @@
       "width": 64,
       "height": 64,
       "transparent": true
+    },
+    {
+      "name": "sky",
+      "path": "backgrounds/castle_front/sky.png",
+      "width": 1536,
+      "height": 720,
+      "transparent": false,
+      "scroll_ratio": 0.05,
+      "map_width": 4400
+    },
+    {
+      "name": "far_city",
+      "path": "backgrounds/castle_front/far_city.png",
+      "width": 2048,
+      "height": 720,
+      "transparent": true,
+      "scroll_ratio": 0.2,
+      "map_width": 4400
+    },
+    {
+      "name": "castle_wall",
+      "path": "backgrounds/castle_front/castle_wall.png",
+      "width": 2816,
+      "height": 720,
+      "transparent": true,
+      "scroll_ratio": 0.45,
+      "map_width": 4400
+    },
+    {
+      "name": "foreground",
+      "path": "backgrounds/castle_front/foreground.png",
+      "width": 3840,
+      "height": 720,
+      "transparent": true,
+      "scroll_ratio": 0.8,
+      "map_width": 4400
+    },
+    {
+      "name": "downtown_passage_facade",
+      "path": "backgrounds/castle_front/downtown_passage_facade.png",
+      "width": 1100,
+      "height": 720,
+      "transparent": true
+    },
+    {
+      "name": "castle_facade",
+      "path": "backgrounds/castle_front/castle_facade.png",
+      "width": 1500,
+      "height": 720,
+      "transparent": true
+    },
+    {
+      "name": "castle_gate_wall_left",
+      "path": "props/castle_gate_wall_left.png",
+      "width": 420,
+      "height": 600,
+      "transparent": true
+    },
+    {
+      "name": "castle_gate_wall_right",
+      "path": "props/castle_gate_wall_right.png",
+      "width": 420,
+      "height": 600,
+      "transparent": true
+    },
+    {
+      "name": "castle_front_brazier",
+      "path": "props/castle_front_brazier.png",
+      "width": 180,
+      "height": 200,
+      "transparent": true
+    },
+    {
+      "name": "castle_front_statue",
+      "path": "props/castle_front_statue.png",
+      "width": 230,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "name": "castle_front_lamp_post",
+      "path": "props/castle_front_lamp_post.png",
+      "width": 150,
+      "height": 260,
+      "transparent": true
+    },
+    {
+      "name": "ground_tile",
+      "path": "tiles/castle_front/ground_tile.png",
+      "width": 512,
+      "height": 200,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "courtyard_tile",
+      "path": "tiles/castle_front/courtyard_tile.png",
+      "width": 512,
+      "height": 200,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "npc_light_pool",
+      "path": "fx/npc_light_pool.png",
+      "width": 512,
+      "height": 256,
+      "transparent": true
+    },
+    {
+      "name": "contact_shadow",
+      "path": "fx/contact_shadow.png",
+      "width": 256,
+      "height": 64,
+      "transparent": true
+    },
+    {
+      "name": "inanna_candidate_1",
+      "path": "reference/inanna_candidate_1.png",
+      "width": 1254,
+      "height": 314,
+      "transparent": false
+    },
+    {
+      "name": "inanna_candidate_2",
+      "path": "reference/inanna_candidate_2.png",
+      "width": 1254,
+      "height": 313,
+      "transparent": false
+    },
+    {
+      "name": "inanna_candidate_3",
+      "path": "reference/inanna_candidate_3.png",
+      "width": 1254,
+      "height": 313,
+      "transparent": false
+    },
+    {
+      "name": "inanna_candidate_4",
+      "path": "reference/inanna_candidate_4.png",
+      "width": 1254,
+      "height": 314,
+      "transparent": false
+    },
+    {
+      "name": "inanna_design",
+      "path": "reference/inanna_design.png",
+      "width": 1254,
+      "height": 313,
+      "transparent": false
+    },
+    {
+      "name": "lugalbanda_design",
+      "path": "reference/lugalbanda_design.png",
+      "width": 1254,
+      "height": 314,
+      "transparent": false
+    },
+    {
+      "name": "ninsun_design",
+      "path": "reference/ninsun_design.png",
+      "width": 1254,
+      "height": 313,
+      "transparent": false
+    },
+    {
+      "name": "papsukkal_design",
+      "path": "reference/papsukkal_design.png",
+      "width": 1254,
+      "height": 314,
+      "transparent": false
+    },
+    {
+      "name": "shamhat_design",
+      "path": "reference/shamhat_design.png",
+      "width": 1254,
+      "height": 313,
+      "transparent": false
     }
   ],
   "source_metadata": [
@@ -280,6 +459,8 @@
     "source_art/stage2_environment/generation.json",
     "source_art/stage2_environment/packing.json",
     "source_art/stage2_characters/provenance.json",
-    "source_art/stage2_characters/generation_prompts.json"
+    "source_art/stage2_characters/generation_prompts.json",
+    "source_art/stage3/generation_prompts.json",
+    "source_art/stage3/provenance.json"
   ]
 }

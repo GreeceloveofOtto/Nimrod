@@ -1,9 +1,9 @@
-NIMROD — 2단계: 루갈성 내부·별장·문 포탈·NPC·비행 괴수
+NIMROD — 3단계: NPC 재디자인·이름표·가독성·루갈성 정문 앞
 Godot 4.3 / GDScript / GL Compatibility / 1280x720
 
 기존 Nimrod_Godot_v7_1_Import_Fixed 기반 프로젝트의 조작과 전투 수치를
-유지하며 확장했습니다. 현재 후문 밖, 루갈성 1~5층, 별장 1층 등
-총 7개 레벨을 문으로 오갈 수 있습니다. 플레이어는 Main에 하나만 유지됩니다.
+유지하며 확장했습니다. 현재 후문 밖, 정문 앞, 루갈성 1~5층, 별장 1층 등
+총 8개 레벨을 문으로 오갈 수 있습니다. 플레이어는 Main에 하나만 유지됩니다.
 NPC 대화·별장 2층·스토리 분기·최종 엔딩은 후속 단계입니다.
 
 실행
@@ -37,7 +37,10 @@ HP 180 / 도끼 20,20,20,22 / 콤보 리셋 0.8초 / 히트스톱 0.05초
   기존 전투 구간 오른쪽에 근접 2마리·원거리 1마리, 단차·발판을 추가.
   x<=350, x>=4950은 괴수가 추적하거나 넉백으로 들어오지 못하는 안전 구역.
 - CastleF1: 루갈반다·닌순. x=1450 문은 2층, x=1850 문은 후문 밖.
-  x=150 정문은 잠겨 있으며 "정문은 지금 닫혀 있다"를 표시.
+  x=150 정문에서 E를 누르면 CastleFront x=3900으로 이동. 복귀 스폰 x=220.
+- CastleFront: 폭4400, x4000 정문으로 CastleF1에 복귀. x2900 큰 대문은
+  안쪽 문지기가 자동 개방하며 걸어서 통과. x2300부터 안전 구역.
+  x1250/1850/2100의 괴수 3마리. x480 도심 문은 "아직 들어갈 수 없다" 표시.
 - CastleF2: 샴하트가 있는 제의실.
 - CastleF3: 칼질·솥 젓기·음식 차리기를 하는 토인 요리사 3명.
 - CastleF4: 인안나와 그 왼쪽 앞을 지키는 팝수칼.
@@ -58,7 +61,7 @@ HP 180 / 도끼 20,20,20,22 / 콤보 리셋 0.8초 / 히트스톱 0.05초
 - 루갈성 1~4층은 같은 castle_hall BGM을 끊지 않고 이어 재생.
 
 NPC와 비행 괴수
-- NPC 11명은 충돌이 없으며, 모든 인물은 플레이어와 같은 배율 0.30 사용.
+- NPC 13명은 충돌이 없으며, 왕족/호위5명은 배율0.30, 토인은1.30배인0.39 사용.
   왕족 5명은 숨쉬기, 요리사 3명은 서로 다른 작업, 하인 2명은 빗자루질.
   문지기는 대기와 문 열어 주기 클립을 사용.
 - 시선을 따라가는 NPC는 좌우 120px를 넘었을 때 방향을 바꾸며 0.5초 유예.
@@ -71,14 +74,15 @@ NPC와 비행 괴수
   5% 확률로 토사물을 떨어뜨리며 E로 HP 30 회복.
 
 데이터
-- data/levels.json: 7개 레벨, 배경·카메라·스폰·문·NPC·안전 구역·지형.
+- data/levels.json: 8개 레벨, 배경·카메라·스폰·문·NPC·안전 구역·지형.
 - data/enemies.json: 지상 괴수와 비행 괴수의 스탯·공격·비행·드랍 수치.
 - data/player_attacks.json: 기존 도끼·충격파 수치와 판정 타이밍.
-- data/npcs.json: 인물 11명의 키 비율·클립·시선·공통 배율.
+- data/npcs.json: 인물 13명의 키 비율·클립·시선·공통 배율.
 - data/interactions.json: 문 크기·열림·걷기·잠김·대문·E 이미지 설정.
 - data/transitions.json: 시작 레벨·페이드·토스트·HUD.
 - data/pickups.json: 회복 아이템 이름·수치·판정·PNG 경로.
 - data/audio_stage2.json: 문·비행 괴수 효과음 9종과 BGM 3곡의 합성 설정.
+- data/audio_stage3.json: 대문 효과음 2종과 정문 앞 48초 BGM 합성 설정.
 
 아트와 오디오
 배경·지형·문·괴수·NPC는 이미지 생성 PNG를 사용합니다.
@@ -94,6 +98,7 @@ assets/image_prompts/는 생성 프롬프트, assets/source_art/는 생성 원�
 BGM: RearGate=uruk_rear_gate, CastleF1~4=castle_hall,
 CastleF5=uruk_sky, VillaF1=villa_calm. 새 곡은 각 48초 반복입니다.
 효과음은 WAV 44100Hz·모노·16bit로 합성합니다. 동일 경로에 덮어써 교체할 수 있습니다.
+정문 앞 BGM=castle_front(48초), great_gate_open/close 효과음 추가.
 BGM 버스 -10dB / SFX 버스 0dB. 기존 jump.wav는 audio/legacy/에 보존했습니다.
 
 도구 (개발·재생성·검사 시에만 Python 필요)
@@ -103,6 +108,7 @@ python tools/make_sfx.py
 python tools/make_bgm.py
 python tools/build_stage2_character_assets.py
 python tools/build_stage2_environment_assets.py
+python tools/build_stage3_assets.py
 python tools/validate_assets.py
 아트 재생성 명령과 원본 기록은 tools/ART_PIPELINE_KO.md를 참고하세요.
 
@@ -114,12 +120,30 @@ godot --headless --path . --script res://tests/stage2_transitions.gd
 godot --headless --path . --script res://tests/stage2_interactions.gd
 godot --headless --path . --script res://tests/stage2_sky.gd
 
-현재 기능 검사: 기존 회귀 196, 전환 210, NPC·문 41, 비행 괴수 66개,
-합계 513개 통과·실패 0. 최종 PNG 77개 누락·오류 0, 실제 렌더 화면 8개.
-변경 파일 전체 목록: docs/STAGE2_FILES_KO.txt
-아트·화면·배포 확인 내용은 아래 2단계 보고서에 기록합니다.
+현재 기능 검사: 기존 회귀196, 전환210, NPC·문41, 비행괴수66, 신규정문59,
+합계572개 통과·실패0. 최종 PNG105개 누락·오류0. 평균 대비 경고4개(보고서 참조).
+실제 렌더 화면12개.
+변경 파일 전체 목록: docs/STAGE3_FILES_KO.txt
+아트·화면·배포 확인 내용은 아래 3단계 보고서에 기록합니다.
 실제 스피커 청감, Windows 실행, 장시간 사람의 직접 플레이는 별도 확인이 필요합니다.
 
 전체 변경 영역·선택 수치·이미지 상태·검증·미실행 항목:
-docs/STAGE2_REPORT_KO.md
+docs/STAGE3_REPORT_KO.md
 1단계 이력: docs/IMPLEMENTATION_REPORT_KO.md
+
+3단계 NPC 가독성
+모든 NPC 아래 이름표(18px 한글, 그림자만, 반투명 패널), 근접220px에서
+NPC 밝기1.12/이름 알파1.0(0.15초). 기존 배경은 modulate로만 어둡게 합니다.
+5명은 근미래 코트 디자인·밝은 팔레트로 교체하고 팝수칼은 여성 호위입니다.
+인안나 디자인4개 중 은빛 라벤더 머리의3번을 선택했습니다.
+모든 인물에 따뜻한 내부 림라이트·생성 빛 웅덩이·접지 그림자를 사용합니다.
+토인 기존 포즈는 재사용하고 림라이트만 보강, 원본은 _legacy 보존.
+토인 C/문지기 키0.962는 샴하트0.960보다 조금 큽니다.
+
+범용 GateController
+300px 접근→문지기3프레임→문 열림. 600px 이탈→닫힘.
+성 대문1.2초/1.0초, 충돌벽60x440, 완전 개방 시 물리 통과.
+별장 대문은 기존1.0초/0.8초와 열린 입구 자동 VillaF1 이동을 유지합니다.
+
+신규 검사: godot --headless --path . --script res://tests/stage3_front.gd
+2단계 이력: docs/STAGE2_REPORT_KO.md

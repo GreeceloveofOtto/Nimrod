@@ -108,6 +108,9 @@ def main():
                   "processing": "Image-generated poses, common chromakey packer, shared scale within each action clip; NPC breathing only derived.",
                   "npcs": {}, "sky_beast": {}}
     for npc_id, ratio, animation, count, duration, source, index in NPCS:
+        if source == "royals" and (ASSETS / "source_art/stage3/npc_stills_atlas.png").is_file():
+            manifests.append(f"sprites/npcs/{npc_id}/manifest.json")
+            continue
         if source == "royals":
             column, row = index % 3, index // 3
             bounds = (column * 418, 0 if row == 0 else 610, (column + 1) * 418, 610 if row == 0 else 1254)

@@ -69,7 +69,7 @@ func _test_npcs() -> void:
     var clips: Array[String] = []
     for cook in level.npcs.values():
         clips.append(str(cook.current_clip))
-        _check(float(cook.stats["height_ratio"]) <= 0.74, "Cook has the short Toin height ratio")
+        _check(float(cook.stats["height_ratio"]) <= 0.963 and is_equal_approx(float(cook.stats["visual_scale_multiplier"]), 1.30), "Cook uses the requested 1.30 Toin display multiplier")
         _check(bool(cook.stats["random_start"]), "Cook has an independent randomized clip phase")
     _check(clips.has("chop") and clips.has("stir") and clips.has("arrange"), "Kitchen cooks use three distinct generated actions")
     await manager.go_to("VillaF1", "Spawn_FromGate")
@@ -79,20 +79,15 @@ func _test_npcs() -> void:
     _check(level.npcs["servant_a"].current_clip == "sweep" and level.npcs["servant_b"].current_clip == "sweep", "Both servants play sweeping clips")
 
 func _test_locked_and_nearest() -> void:
-    await manager.go_to("CastleF1", "Spawn_FromRearGate")
+    await manager.go_to("VillaF1", "Spawn_FromGate")
     var level: Node = manager.current_level
-    var front: DoorPortal = level.doors.get("castle_front_gate") as DoorPortal
-    if front == null:
-        for candidate in level.doors.values():
-            if candidate.locked:
-                front = candidate
-                break
+    var front: DoorPortal = level.doors.get("villa_up_locked") as DoorPortal
     player.global_position = front.global_position
     var origin: Vector2 = front.visual.position
     front.interact(player)
     await _wait(0.03)
     _check(front.busy and not front.visual.position.is_equal_approx(origin), "Locked door shakes when interacted with")
-    _check(str(main.get_node("HUD").toast.text) == "정문은 지금 닫혀 있다", "Locked door displays its Korean toast")
+    _check(str(main.get_node("HUD").toast.text) == "아직 갈 수 없다", "Locked door displays its Korean toast")
     _check(not manager.player_locked and front.open_progress == 0.0, "Locked door leaves input available and stays closed")
     await _wait(0.30)
     _check(not front.busy and front.visual.position.is_equal_approx(origin), "Locked door shake restores its exact position")

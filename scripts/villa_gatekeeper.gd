@@ -1,13 +1,14 @@
 class_name VillaGatekeeper
 extends NPC
 
+@export var gesture_face_player: bool = true
+
 var gate: Node2D
 var gesture_active: bool = false
 var gesture_triggered: bool = false
 var trigger_frame: int = 2
 
 func _ready() -> void:
-    npc_id = "gatekeeper"
     super._ready()
     clip_frame_changed.connect(_on_clip_frame_changed)
 
@@ -18,7 +19,7 @@ func bind_gate(value: Node2D, frame: int) -> void:
 func begin_open_gate(player: Node2D) -> void:
     if gesture_active:
         return
-    if player != null:
+    if player != null and gesture_face_player:
         face_toward(player.global_position.x, true)
     gesture_active = true
     gesture_triggered = false

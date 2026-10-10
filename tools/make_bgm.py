@@ -30,6 +30,14 @@ def make_stage2_bgm(spec):
         bell = np.sin(2.0 * np.pi * frequency * elapsed) * np.exp(-elapsed / 1.8)
         bell *= np.minimum(elapsed / 0.12, 1.0)
         signal += float(spec["chime_gain"]) * bell
+    metal = spec.get("metal_percussion")
+    if metal:
+        for start in np.arange(0.0, duration, float(metal["interval"])):
+            elapsed = (t - start) % duration
+            clang = sum(np.sin(2*np.pi*(round(hz*duration)/duration)*elapsed)/float(i+1)
+                        for i,hz in enumerate(metal["frequencies"]))
+            clang *= np.minimum(elapsed/0.02,1.0)*np.exp(-elapsed/float(metal["decay"]))
+            signal += float(metal["gain"])*clang
     path = write_wav(PROJECT_ROOT / "assets/audio/bgm" / (spec["name"] + ".wav"), signal, fade_seconds=0.0)
     print(f"Generated {path.name}: {duration:g}s periodic loop.")
 
@@ -68,6 +76,9 @@ def main():
     print(f"Generated {path.name}: {LOOP_SECONDS:g} s, {SAMPLE_RATE} Hz, seamless periodic loop; seam step={seam:.6f}.")
     stage2 = json.loads((PROJECT_ROOT / "data/audio_stage2.json").read_text(encoding="utf-8"))
     for spec in stage2["bgm"]:
+        make_stage2_bgm(spec)
+    stage3 = json.loads((PROJECT_ROOT / "data/audio_stage3.json").read_text(encoding="utf-8"))
+    for spec in stage3["bgm"]:
         make_stage2_bgm(spec)
 
 

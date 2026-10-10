@@ -29,13 +29,16 @@ const SFX_TABLE: Dictionary = {
     "sky_beast_windup_screech": "res://assets/audio/sfx/sky_beast_windup_screech.wav",
     "sky_beast_dive_whoosh": "res://assets/audio/sfx/sky_beast_dive_whoosh.wav",
     "sky_beast_hurt": "res://assets/audio/sfx/sky_beast_hurt.wav",
-    "sky_beast_death": "res://assets/audio/sfx/sky_beast_death.wav"
+    "sky_beast_death": "res://assets/audio/sfx/sky_beast_death.wav",
+    "great_gate_open": "res://assets/audio/sfx/great_gate_open.wav",
+    "great_gate_close": "res://assets/audio/sfx/great_gate_close.wav"
 }
 const BGM_TABLE: Dictionary = {
     "uruk_rear_gate": "res://assets/audio/bgm/uruk_rear_gate.wav",
     "castle_hall": "res://assets/audio/bgm/castle_hall.wav",
     "uruk_sky": "res://assets/audio/bgm/uruk_sky.wav",
-    "villa_calm": "res://assets/audio/bgm/villa_calm.wav"
+    "villa_calm": "res://assets/audio/bgm/villa_calm.wav",
+    "castle_front": "res://assets/audio/bgm/castle_front.wav"
 }
 const LOOP_SFX: Array[String] = ["beast_ranged_flame_loop", "sky_beast_wingflap_loop"]
 const SILENT_DB: float = -60.0

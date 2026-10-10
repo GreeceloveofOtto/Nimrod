@@ -1,11 +1,15 @@
 extends SceneTree
 
-# Render the seven stage-two levels plus the exterior villa gate.
+# Render all eight levels plus exterior gate and CastleFront views.
 # DISPLAY=:99 godot43 --path . --audio-driver Dummy --script tests/render_capture.gd
 # A display is required; headless rendering cannot capture the actual artwork.
 const OUTPUT: String = "res://docs/screenshots/"
 const VIEWPORT_SIZE: Vector2i = Vector2i(1280, 720)
 const SAMPLES: Array[Dictionary] = [
+    {"name": "castle_front_arrival", "level": "CastleFront", "spawn": "Spawn_FromCastle", "x": 3900.0, "settle": 0.3},
+    {"name": "castle_front_great_gate", "level": "CastleFront", "spawn": "Spawn_FromCastle", "x": 2960.0, "settle": 1.9},
+    {"name": "castle_front_downtown", "level": "CastleFront", "spawn": "Spawn_FromCastle", "x": 480.0, "settle": 0.3},
+    {"name": "castle_front_combat", "level": "CastleFront", "spawn": "Spawn_Debug", "x": 1750.0, "settle": 0.3},
     {"name": "rear_gate_start", "level": "RearGate", "spawn": "Spawn_Start", "x": 230.0, "settle": 0.3},
     {"name": "rear_gate_villa_gate", "level": "RearGate", "spawn": "Spawn_Start", "x": 4930.0, "settle": 1.6},
     {"name": "castle_f1", "level": "CastleF1", "spawn": "Spawn_FromRearGate", "x": 780.0, "settle": 0.3},
@@ -78,7 +82,7 @@ func _run() -> void:
         await process_frame
         await RenderingServer.frame_post_draw
         var image: Image = root.get_texture().get_image()
-        var path: String = OUTPUT + "stage2_" + str(sample["name"]) + ".png"
+        var path: String = OUTPUT + "stage3_" + str(sample["name"]) + ".png"
         var result: Error = image.save_png(path)
         if result != OK or image.get_size() != VIEWPORT_SIZE:
             push_error("Rendered capture failed: " + path)

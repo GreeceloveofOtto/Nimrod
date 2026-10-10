@@ -173,12 +173,23 @@ func play_arrival(player: Node2D) -> void:
     busy = false
     _arrival_prepared = false
 
-func animate_open(opening: bool, seconds: float) -> void:
+func animate_open(opening: bool, seconds: float) -> Signal:
     if is_instance_valid(door_tween):
         door_tween.kill()
     door_tween = create_tween()
     door_tween.tween_method(_set_open_progress, open_progress, 1.0 if opening else 0.0, seconds)
-    await door_tween.finished
+    # A killed bound tween never emits finished in Godot 4.3. The tree-owned
+    # timer completes even when a departing level frees its animated door.
+    var timer: SceneTreeTimer = get_tree().create_timer(seconds)
+    timer.timeout.connect(_complete_door_animation.bind(door_tween.get_instance_id(), 1.0 if opening else 0.0), CONNECT_ONE_SHOT)
+    return timer.timeout
+
+func _complete_door_animation(animation_id: int, target: float) -> void:
+    if is_instance_valid(door_tween) and door_tween.get_instance_id() == animation_id and door_tween.is_valid():
+        # Timer and Tween can finish on adjacent frames; arrival must publish
+        # its exact closed/open frame before waiting portal callers continue.
+        _set_open_progress(target)
+        door_tween.kill()
 
 func _set_open_progress(value: float) -> void:
     open_progress = clampf(value, 0.0, 1.0)

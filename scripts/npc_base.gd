@@ -11,6 +11,7 @@ signal clip_finished(clip: String)
 @export var idle_clip: String = "idle"
 @export var face_player: bool = true
 @export var initial_facing: int = 1
+@export var interactable: bool = false
 
 var stats: Dictionary = {}
 var common: Dictionary = {}
@@ -24,6 +25,10 @@ var clip_clock: float = 0.0
 var facing: int = 1
 var face_cooldown_left: float = 0.0
 var animation_finished: bool = false
+var name_tag: PanelContainer
+var name_label: Label
+var readability: Dictionary = {}
+var _last_display_name: String = ""
 
 func _ready() -> void:
     add_to_group("npcs")
@@ -43,7 +48,7 @@ func _ready() -> void:
     visual.name = "Visual"
     visual.region_enabled = true
     visual.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
-    visual.scale = Vector2.ONE * float(common.get("visual_scale", 0.30))
+    visual.scale = Vector2.ONE * float(common.get("visual_scale", 0.30)) * float(stats.get("visual_scale_multiplier", 1.0))
     visual.flip_h = facing < 0
     add_child(visual)
     _load_clips()
@@ -51,6 +56,90 @@ func _ready() -> void:
     if not clip_data.has(idle_clip) and not clip_data.is_empty():
         idle_clip = str(clip_data.keys()[0])
     play_clip(idle_clip, bool(stats.get("random_start", false)))
+    readability = common.get("readability", {})
+    _make_readability_fx()
+    _make_name_tag()
+
+func _rgba(values: Array) -> Color:
+    return Color(float(values[0]), float(values[1]), float(values[2]), float(values[3]))
+
+func _make_readability_fx() -> void:
+    var dimensions: Vector2 = Vector2.ZERO
+    if textures.has(idle_clip):
+        var texture: Texture2D = textures[idle_clip]
+        var image: Image = texture.get_image()
+        dimensions = Vector2(image.get_region(Rect2i(0, 0, 640, 640)).get_used_rect().size) * visual.scale
+    else:
+        dimensions = Vector2(float(common.get("missing_size", [70, 110])[0]), float(common.get("missing_size", [70, 110])[1])) * float(stats.get("visual_scale_multiplier", 1.0))
+    var helper = load("res://scripts/asset_visual.gd")
+    var width: float = dimensions.y * float(readability.get("pool_width_height_ratio", 1.4))
+    var pool: Node2D = helper.add_image(self, str(readability["light_pool"]), Vector2(-width * 0.5, float(readability["pool_center_y"]) - width * 0.25), Vector2(width, width * 0.5), -2)
+    pool.name = "LightPool"
+    pool.modulate = _rgba(readability["pool_modulate"])
+    var material := CanvasItemMaterial.new()
+    material.blend_mode = CanvasItemMaterial.BLEND_MODE_ADD
+    pool.material = material
+    for child in pool.get_children():
+        if child is CanvasItem:
+            child.use_parent_material = true
+    width = dimensions.x * float(readability["shadow_width_ratio"])
+    var height: float = float(readability["shadow_height"])
+    var shadow: Node2D = helper.add_image(self, str(readability["shadow"]), Vector2(-width * 0.5, -height * 0.5), Vector2(width, height), -1)
+    shadow.name = "ContactShadow"
+    shadow.modulate.a = float(readability["shadow_alpha"])
+
+func _make_name_tag() -> void:
+    name_tag = PanelContainer.new()
+    name_tag.name = "NameTag"
+    name_tag.mouse_filter = Control.MOUSE_FILTER_IGNORE
+    name_tag.z_index = int(readability["name_z"])
+    name_tag.modulate.a = float(readability["name_alpha"])
+    var panel := StyleBoxFlat.new()
+    panel.bg_color = _rgba(readability["panel_color"])
+    var radius: int = int(readability["corner_radius"])
+    panel.set_corner_radius_all(radius)
+    panel.content_margin_left = float(readability["margin_x"])
+    panel.content_margin_right = float(readability["margin_x"])
+    panel.content_margin_top = float(readability["margin_y"])
+    panel.content_margin_bottom = float(readability["margin_y"])
+    name_tag.add_theme_stylebox_override("panel", panel)
+    add_child(name_tag)
+    name_label = Label.new()
+    name_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+    var settings := LabelSettings.new()
+    settings.font = load(str(readability["font"])) as Font
+    settings.font_size = int(readability["font_size"])
+    settings.font_color = Color(str(readability["font_color"]))
+    settings.outline_size = 0
+    settings.shadow_size = 1
+    settings.shadow_color = _rgba(readability["shadow_color"])
+    settings.shadow_offset = Vector2(float(readability["shadow_offset"][0]), float(readability["shadow_offset"][1]))
+    name_label.label_settings = settings
+    name_tag.add_child(name_label)
+    _update_name_text()
+
+func _update_name_text() -> void:
+    if name_label == null or _last_display_name == display_name:
+        return
+    _last_display_name = display_name
+    name_label.text = display_name
+    name_tag.reset_size()
+    _center_name_tag.call_deferred()
+
+func _center_name_tag() -> void:
+    await get_tree().process_frame
+    name_tag.position = Vector2(-name_tag.size.x * 0.5, float(readability["name_offset_y"]))
+
+func _update_readability(delta: float) -> void:
+    _update_name_text()
+    var player: Node2D = get_tree().get_first_node_in_group("player") as Node2D
+    var near: bool = player != null and global_position.distance_to(player.global_position) <= float(readability["range"])
+    var brightness: float = float(readability["near_brightness"]) if near else 1.0
+    var seconds: float = maxf(0.001, float(readability["seconds"]))
+    var value: float = move_toward(modulate.r, brightness, (float(readability["near_brightness"]) - 1.0) * delta / seconds)
+    modulate = Color(value, value, value, 1.0)
+    var alpha: float = float(readability["near_name_alpha"]) if near else float(readability["name_alpha"])
+    name_tag.modulate.a = move_toward(name_tag.modulate.a, alpha, (float(readability["near_name_alpha"]) - float(readability["name_alpha"])) * delta / seconds)
 
 func _read_json(path: String) -> Dictionary:
     var file := FileAccess.open(path, FileAccess.READ)
@@ -112,6 +201,7 @@ func _make_missing_visual() -> void:
     missing_visual.add_child(label)
 
 func _process(delta: float) -> void:
+    _update_readability(delta)
     face_cooldown_left = maxf(0.0, face_cooldown_left - delta)
     if face_player:
         var player := get_tree().get_first_node_in_group("player") as Node2D

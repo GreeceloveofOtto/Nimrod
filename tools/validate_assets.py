@@ -123,13 +123,73 @@ class Validator:
             if bounds is not None and npc is not None and self.player_height is not None:
                 measured_height = bounds[3] - bounds[1]
                 expected_height = self.player_height * npc["height_ratio"]
+                measured_height *= npc.get("visual_scale_multiplier", 1.0)
                 if abs(measured_height - expected_height) > expected_height * 0.03:
                     self.fail(path, f"frame {index + 1} NPC height {measured_height}px outside ±3% of "
-                              f"{self.player_height} × {npc['height_ratio']} = {expected_height:.2f}px")
+                              f"{self.player_height} × {npc['height_ratio']} = {expected_height:.2f}px (render multiplier applied)")
             current = frame.tobytes()
             if previous is not None and current == previous:
                 self.fail(path, f"frame {index + 1} duplicates previous frame; animation poses required")
             previous = current
+
+    def check_npc_contrast(self):
+        """Warn on average sprite/background luminance difference below 30.
+
+        This estimates the local background after bg_dim; it excludes props,
+        shadow/light-pool and proximity highlight so warnings remain conservative.
+        """
+        import numpy as np
+        registry = json.loads((self.root / "data/levels.json").read_text())
+        warnings = 0
+        for level in registry["levels"]:
+            for placement in level.get("npcs", []):
+                npc = self.npc_data.get(placement["id"])
+                if npc is None:
+                    continue
+                folder = self.root / npc["sheet_dir"]
+                sheet = folder / (placement.get("idle_clip", npc["clips"][0]["name"]) + ".png")
+                if not sheet.is_file():
+                    continue
+                frame = Image.open(sheet).convert("RGBA").crop((0, 0, 640, 640))
+                pixels = np.asarray(frame)
+                mask = pixels[..., 3] > 128
+                if not mask.any():
+                    continue
+                npc_luma = float((pixels[..., :3] @ np.array([0.2126, 0.7152, 0.0722]))[mask].mean())
+                bounds = frame.getchannel("A").point(lambda a: 255 if a > 12 else 0).getbbox()
+                scale = registry.get("npc_visual_scale", 0.30) * npc.get("visual_scale_multiplier", 1.0)
+                width, height = (bounds[2]-bounds[0])*scale, (bounds[3]-bounds[1])*scale
+                x, y = placement["position"]
+                camera_x = max(0, min(x-640, level["width"]-1280))
+                background = None
+                bg_entries = sorted(level["backgrounds"], key=lambda b: b.get("z", 0), reverse=True)
+                for entry in bg_entries:
+                    if entry.get("z", 0) >= 0:
+                        continue
+                    ratio = entry.get("ratio", 1)
+                    left = x-camera_x+camera_x*ratio-entry["position"][0]-width/2
+                    camera_y = max(0, level["camera_limits"][3]-720) if ratio != 1 else 0
+                    top = y-camera_y-entry["position"][1]-height
+                    if 0 <= left and left+width <= entry["size"][0] and 0 <= top and top+height <= entry["size"][1]:
+                        path = self.root / entry["path"].replace("res://", "")
+                        if not path.is_file():
+                            continue
+                        image = Image.open(path).convert("RGBA").resize(tuple(entry["size"]))
+                        crop = np.asarray(image.crop((round(left),round(top),round(left+width),round(top+height))))
+                        visible = crop[...,3] > 128
+                        if visible.any():
+                            background = crop[...,:3][visible].astype(float)
+                            break
+                if background is None:
+                    continue
+                dim = np.array(level.get("bg_dim", [0.80,0.80,0.84]))
+                bg_luma = float((background*dim @ np.array([0.2126,0.7152,0.0722])).mean())
+                difference = abs(npc_luma-bg_luma)
+                print(f"CONTRAST {level['id']}/{npc['id']}: NPC {npc_luma:.1f}, BG {bg_luma:.1f}, difference {difference:.1f}")
+                if difference < 30:
+                    warnings += 1
+                    print(f"WARNING: NPC contrast below 30: {level['id']}/{npc['id']}")
+        print(f"NPC contrast warnings: {warnings} (non-failing; light pools/highlights excluded)")
 
     def run(self):
         manifest = self.read_json("art_manifest.json")
@@ -159,7 +219,7 @@ class Validator:
                 npc = self.npc_data.get(npc_id)
                 if npc is None:
                     self.fail(relative, f"NPC {npc_id} not registered in data/npcs.json")
-                elif not math.isclose(sprite.get("height_ratio", -1), npc["height_ratio"]):
+                elif not math.isclose(sprite.get("height_ratio", -1), npc.get("source_height_ratio", npc["height_ratio"])):
                     self.fail(relative, "height_ratio differs from data/npcs.json")
                 else:
                     expected_clips = {item["name"]: item for item in npc["clips"]}
@@ -179,6 +239,11 @@ class Validator:
         for entry in manifest["assets"]:
             image = self.open_png(entry["path"], [entry["width"], entry["height"]], entry["transparent"])
             if image is not None and entry.get("tile_x"):
+                import numpy as np
+                pixels = np.asarray(image)
+                key_color = (pixels[..., 0] > 220) & (pixels[..., 1] < 60) & (pixels[..., 2] > 220)
+                if key_color.any():
+                    self.fail(entry["path"], "opaque tile contains magenta key-color margins; crop the generated source")
                 first = image.crop((0, 0, 1, image.height)).tobytes()
                 last = image.crop((image.width - 1, 0, image.width, image.height)).tobytes()
                 if first != last:
@@ -187,6 +252,7 @@ class Validator:
             map_width = entry.get("map_width", 3600)
             if ratio is not None and entry["width"] < 1280 + max(0, map_width - 1280) * ratio:
                 self.fail(entry["path"], f"image width insufficient for {map_width}px map parallax travel")
+        self.check_npc_contrast()
         for relative in self.missing:
             if self.allow_missing:
                 print(f"SKIPPED (MISSING_TEXTURE fallback required): assets/{relative}")

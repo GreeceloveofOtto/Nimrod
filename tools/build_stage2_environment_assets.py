@@ -117,8 +117,8 @@ def main():
                "backgrounds/castle/castle_f5_terrace.png", (2400, 720), floor_y=244)
 
         for name, crop in [
-            ("floor_tile", [12, 84, 1424, 262]),
-            ("balcony_floor_tile", [12, 431, 1424, 263]),
+            ("floor_tile", [12, 88, 1424, 258]),
+            ("balcony_floor_tile", [12, 435, 1424, 259]),
             ("villa_floor_tile", [12, 766, 1424, 272]),
         ]:
             single(name, "tiles", crop, "tiles/castle/" + name + ".png", (512, 180), opaque=True, tile=True)
