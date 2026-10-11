@@ -274,7 +274,7 @@
           }
         }
       ],
-      "size_multiplier": 3.0
+      "size_multiplier": 1.5
     },
     {
       "id": "wall_diver",
@@ -407,7 +407,7 @@
           }
         }
       ],
-      "size_multiplier": 3.0
+      "size_multiplier": 1.5
     },
     {
       "id": "root_spewer",
@@ -506,7 +506,7 @@
           "interrupt_stun": 0.4
         }
       ],
-      "size_multiplier": 3.0
+      "size_multiplier": 1.5
     },
     {
       "id": "boar_charger",
@@ -613,7 +613,7 @@
           }
         }
       ],
-      "size_multiplier": 3.0
+      "size_multiplier": 1.5
     },
     {
       "id": "gas_sac",
@@ -691,7 +691,7 @@
         "damage": 1
       },
       "attacks": [],
-      "size_multiplier": 3.0
+      "size_multiplier": 1.5
     },
     {
       "id": "wraith_ray",
@@ -749,7 +749,7 @@
       "knockback_multiplier": 1,
       "contact_interval": 1,
       "attacks": [],
-      "size_multiplier": 3.0
+      "size_multiplier": 1.5
     },
     {
       "id": "shell_scorpion",
@@ -888,7 +888,7 @@
           }
         }
       ],
-      "size_multiplier": 3.0
+      "size_multiplier": 1.5
     },
     {
       "id": "corpse_bomber",
@@ -970,7 +970,7 @@
         "knockback": 260
       },
       "attacks": [],
-      "size_multiplier": 3.0
+      "size_multiplier": 1.5
     },
     {
       "id": "chain_beastman",
@@ -1128,7 +1128,7 @@
           "smash_active": 0.15
         }
       ],
-      "size_multiplier": 3.0
+      "size_multiplier": 1.5
     },
     {
       "display_name": "삼나무 해골 파수꾼",

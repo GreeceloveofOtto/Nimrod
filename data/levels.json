@@ -2243,7 +2243,7 @@
             900,
             180
           ],
-          "z": -2
+          "z": -4
         },
         {
           "path": "res://assets/props/upper_walkway.png",
@@ -2255,7 +2255,7 @@
             1000,
             120
           ],
-          "z": -2
+          "z": -4
         },
         {
           "path": "res://assets/props/dead_tree.png",
@@ -6115,13 +6115,13 @@
           "path": "res://assets/props/broken_overpass.png",
           "position": [
             2870,
-            730
+            786
           ],
           "size": [
             1100,
-            260
+            94
           ],
-          "z": -2
+          "z": -4
         },
         {
           "path": "res://assets/props/canal_wall_left.png",

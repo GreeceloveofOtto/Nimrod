@@ -31,6 +31,8 @@ SPECS['kala_ushumgal']=dict(display_name='칼라-우쉬움갈',appearance='6 met
 FX=[('bone_spike',[128,256],4,.4,False),('soul_flame_cone',[768,384],6,.6,True),('bone_arrow',[96,24],1,1,False),('bone_spike_ground',[128,128],3,.6,False),('blue_flame_explosion',[256,256],6,.3,False),('armor_hit_spark',[192,192],5,.15,False)]
 def data():
  e=read('data/enemies.json');by={x['id']:x for x in e['enemies']}
+ for entry in by.values():
+  if 'size_multiplier' in entry: entry['size_multiplier']=1.5
  for id,entry in SPECS.items():
   item=copy.deepcopy(entry);item['id']=id;item.setdefault('knockback_multiplier',1);item.setdefault('drop_chance',.05);item.update(drop_id='healing_vomit',hurt_sfx=id+'_hurt',death_sfx=id+'_death');by[id]=item
  e['enemies']=list(by.values());save('data/enemies.json',e)

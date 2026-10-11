@@ -1,0 +1,63 @@
+{
+  "alpha_threshold": 64,
+  "minimum_top_coverage": 0.75,
+  "assets": [
+    {
+      "path": "assets/tiles/passage/platform.png",
+      "source_region": [
+        41,
+        14,
+        171,
+        23
+      ]
+    },
+    {
+      "path": "assets/tiles/passage/bridge_plank.png",
+      "source_region": [
+        51,
+        16,
+        269,
+        32
+      ]
+    },
+    {
+      "path": "assets/tiles/passage/low_tunnel_ceiling.png",
+      "source_region": [
+        51,
+        1,
+        461,
+        72
+      ],
+      "edge": "bottom",
+      "tile_x": 32
+    },
+    {
+      "path": "assets/tiles/cedar/boss_end_platform.png",
+      "source_region": [
+        0,
+        32,
+        280,
+        24
+      ]
+    },
+    {
+      "path": "assets/props/large_rubble_b.png",
+      "source_region": [
+        0,
+        59,
+        158,
+        31
+      ]
+    },
+    {
+      "path": "assets/props/broken_overpass.png",
+      "source_region": [
+        0,
+        130,
+        1100,
+        130
+      ],
+      "minimum_edge_coverage": 0
+    }
+  ]
+}

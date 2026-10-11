@@ -121,10 +121,10 @@ func _make_world() -> void:
             _cover_ground(float(segment["from"]), float(segment["to"]), ground_y, str(segment.get("art", config.get("floor_art", ""))), _vector(config.get("floor_art_size", [512, 200])))
     else:
         _make_surface(-margin, floor_y, width + margin * 2.0, ground_height, false)
-    _make_surface(-wall, -margin, wall, floor_y + ground_height + margin * 2.0, false)
-    _make_surface(width, -margin, wall, floor_y + ground_height + margin * 2.0, false)
+    _make_surface(-wall, -margin, wall, floor_y + ground_height + margin * 2.0, false, 0.0)
+    _make_surface(width, -margin, wall, floor_y + ground_height + margin * 2.0, false, 0.0)
     if bool(config.get("ceiling", false)):
-        _make_surface(-wall, float(config.get("ceiling_y", 0.0)) - wall, width + wall * 2.0, wall, false)
+        _make_surface(-wall, float(config.get("ceiling_y", 0.0)) - wall, width + wall * 2.0, wall, false, 0.0)
     var tile_size: Vector2 = _vector(config.get("floor_art_size", []))
     if tile_size.x > 0.0 and not config.has("terrain"):
         var tile_x: float = -margin
@@ -147,15 +147,17 @@ func _make_world() -> void:
     for platform in config.get("platforms", []):
         var at: Vector2 = _vector(platform["position"])
         var platform_width: float = float(platform["width"])
-        _make_surface(at.x, at.y, platform_width, float(world_settings["platform_collision_height"]), bool(platform.get("one_way", true)))
-        Art.add_image(self, str(platform.get("art", world_settings["platform_art"])), at, Vector2(platform_width, float(platform.get("art_height", world_settings["platform_art_height"]))), -3)
+        var art_height: float = float(platform.get("art_height", world_settings["platform_art_height"]))
+        _make_surface(at.x, at.y, platform_width, float(world_settings["platform_collision_height"]), bool(platform.get("one_way", true)), art_height)
+        Art.add_image(self, str(platform.get("art", world_settings["platform_art"])), at, Vector2(platform_width, art_height), -3)
     for obstacle in config.get("obstacles", []):
         var bounds: Rect2 = _rect(obstacle["rect"])
         _make_surface(bounds.position.x, bounds.position.y, bounds.size.x, bounds.size.y, false)
         Art.add_image(self, str(obstacle["art"]), bounds.position, bounds.size, -3)
     for ceiling in config.get("ceilings", []):
         var bounds: Rect2 = _rect(ceiling["rect"])
-        _make_surface(bounds.position.x, bounds.position.y, bounds.size.x, bounds.size.y, false)
+        var body: StaticBody2D = _make_surface(bounds.position.x, bounds.position.y, bounds.size.x, bounds.size.y, false)
+        body.get_node("SurfaceAccent").ceiling_surface = true
         var x: float = bounds.position.x
         while x < bounds.end.x:
             var size_px := Vector2(minf(512.0, bounds.end.x - x), bounds.size.y)
@@ -185,7 +187,7 @@ func ground_y_at(x: float) -> float:
             return float(segment["y"])
     return floor_y
 
-func _make_surface(x: float, y: float, width: float, height: float, one_way: bool) -> void:
+func _make_surface(x: float, y: float, width: float, height: float, one_way: bool, art_height: float = -1.0) -> StaticBody2D:
     var body := StaticBody2D.new()
     body.name = "OneWayPlatform" if one_way else "Floor"
     body.collision_layer = int(world_settings.get("one_way_layer" if one_way else "surface_layer", 0))
@@ -199,15 +201,18 @@ func _make_surface(x: float, y: float, width: float, height: float, one_way: boo
     hit.one_way_collision = one_way
     hit.one_way_collision_margin = float(world_settings.get("one_way_margin", 0.0))
     body.add_child(hit)
+    if is_zero_approx(art_height):
+        return body # Invisible world limits have no matching terrain image.
     var accent: Node2D = load("res://scripts/surface_accent.gd").new()
     accent.name = "SurfaceAccent"
     accent.position = -Vector2(width, height) * 0.5
-    accent.dimensions = Vector2(width, height)
+    accent.dimensions = Vector2(width, art_height if art_height > 0.0 else height)
     accent.one_way = one_way
     accent.ground_floor = height >= float(world_settings.get("ground_collision_height", 220.0)) and is_equal_approx(y, ground_y_at(x + width * 0.5))
     accent.level_id = level_id
     accent.z_index = -2
     body.add_child(accent)
+    return body
 
 func _make_props() -> void:
     for decoration in config.get("decorations", []):

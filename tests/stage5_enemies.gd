@@ -24,24 +24,26 @@ func _run() -> void:
     # Indoor fixture itself is safe, replace its zones for controlled battle checks.
     manager.current_level.safe_zones.clear()
     var expected: Dictionary = {"explosive_spitter":[76,7,.3],"wall_diver":[36,8,.25],"root_spewer":[55,1,.25],"boar_charger":[110,15,.45],"gas_sac":[40,6,.3],"wraith_ray":[18,5,.25],"shell_scorpion":[75,12,.5],"corpse_bomber":[30,18,.3],"chain_beastman":[160,10,.8]}
+    var expected_bodies: Dictionary = {"explosive_spitter":Vector2(165,129),"wall_diver":Vector2(135,90),"root_spewer":Vector2(111,120),"boar_charger":Vector2(232.5,141),"gas_sac":Vector2(132,135),"wraith_ray":Vector2(147,72),"shell_scorpion":Vector2(201,120),"corpse_bomber":Vector2(93,132),"chain_beastman":Vector2(270,267)}
     for id in expected:
         var e: Stage5Enemy = _add(id)
         _check(e.hp == expected[id][0] and e.stats["contact_damage"] == expected[id][1] and is_equal_approx(e.stats["turn_delay"],expected[id][2]), id+" numerical stats")
         _check(e.collision_layer == 4 and e.clip_data.has("turn") and e.clip_data["turn"]["frames"] >= 3,id+" shares EnemyBase collision and turn animation")
-        _check(e.stats["size_multiplier"] == 3.0 and is_equal_approx(e.stats["visual_scale"],.9), id+" Stage6 scale3 without stat changes")
+        _check(e.stats["size_multiplier"] == 1.5 and is_equal_approx(e.stats["visual_scale"],.45), id+" Stage6 revised scale1.5 without stat changes")
+        _check((e.collider.shape as RectangleShape2D).size.is_equal_approx(expected_bodies[id]) and e.get_hurt_rect().size.is_equal_approx(expected_bodies[id]), id+" body collider and hurtbox halved with the sprite")
         e.global_position.x = 1400
     var spitter: Stage5Enemy = actors["explosive_spitter"]
     spitter.global_position = Vector2(900,620)
     spitter._set_state(EnemyBase.State.CHASE)
     _reset_hero(Vector2(1200,620))
     spitter._update_chase(1.0/60)
-    _check(spitter.velocity.x < 0.0 and spitter.state == EnemyBase.State.CHASE,"Spitter retreats below preferred570")
-    _reset_hero(Vector2(1800,620))
+    _check(spitter.velocity.x < 0.0 and spitter.state == EnemyBase.State.CHASE,"Spitter retreats below preferred427.5")
+    _reset_hero(Vector2(1600,620))
     spitter._update_chase(1.0/60)
-    _check(spitter.velocity.x > 0.0 and spitter.state == EnemyBase.State.CHASE,"Spitter approaches above preferred780")
-    _reset_hero(Vector2(1550,620))
+    _check(spitter.velocity.x > 0.0 and spitter.state == EnemyBase.State.CHASE,"Spitter approaches above preferred585")
+    _reset_hero(Vector2(1400,620))
     spitter._update_chase(1.0/60)
-    _check(spitter.velocity.x == 0.0 and spitter.state == EnemyBase.State.WINDUP,"Spitter attacks within570to780")
+    _check(spitter.velocity.x == 0.0 and spitter.state == EnemyBase.State.WINDUP,"Spitter attacks within427.5to585")
     var shell: Stage5Enemy = actors["shell_scorpion"]
     shell.global_position = Vector2(900,620)
     shell.facing = 1
@@ -79,7 +81,7 @@ func _run() -> void:
     boar.take_hit(20,Vector2(1300,620),3)
     _check(boar.hp == 70 and boar.state == EnemyBase.State.ACTIVE,"Boar charge retains superarmor")
     boar.hitstop_left = 0
-    boar.global_position = Vector2(1400,620)
+    boar.global_position = Vector2(1600,620)
     boar.velocity = Vector2(640,0)
     for i in range(20):
         await physics_frame
@@ -168,7 +170,7 @@ func _run() -> void:
     wall._update_windup(0)
     _check(not wall.perched and wall.phase == "perch_dive" and is_equal_approx(wall.velocity.length(),720),"Perch dives at720px/s")
     wall._land_claw()
-    _check(wall.phase == "landing_claw" and wall.get_attack_rect().size == Vector2(300,240),"Landing produces claw and permanent ground mode")
+    _check(wall.phase == "landing_claw" and wall.get_attack_rect().size == Vector2(150,120),"Landing produces claw and permanent ground mode")
     await process_frame
     var chain: Stage5Enemy = actors["chain_beastman"]
     chain.phase = "tail"
@@ -180,7 +182,7 @@ func _run() -> void:
     chain.global_position = Vector2(900,620)
     _reset_hero(Vector2(1300,620))
     chain._begin_active()
-    chain.state_clock = .2
+    chain.state_clock = .3
     chain._update_chain(0)
     _check(chain.phase == "pull" and hero.pull_left == .35 and hero.hp == 180,"Chain hit starts damage-free .35sec pull")
     hero._physics_process(.1)

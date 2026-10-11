@@ -45,6 +45,7 @@ var hp: int = MAX_HP
 var facing: int = 1
 var action: String = "normal" # normal, attack, roll, hurt, dead
 var attack_step: int = 0
+var attack_generation: int = 0
 var attack_clock: float = 0.0
 var buffered_attack: bool = false
 var combo_next: int = 1
@@ -397,6 +398,7 @@ func _begin_attack(step: int) -> void:
         return
     if crouching and not _can_stand():
         return
+    attack_generation += 1
     action = "attack"
     attack_step = clampi(step, 1, 4)
     attack_clock = 0.0
@@ -412,13 +414,20 @@ func _begin_attack(step: int) -> void:
     _refresh_attack_visual()
 
 func _update_attack(delta: float) -> void:
+    if action != "attack" or not attack_data.has(attack_step):
+        return
+    var generation: int = attack_generation
     var before: float = attack_clock
     attack_clock += delta * modifiers.multiplier("attack_speed")
     var tuning: Dictionary = attack_data[attack_step]
     if before < float(tuning["active_end"]) and attack_clock >= float(tuning["active_start"]):
         _resolve_axe_hit()
+        if action != "attack" or attack_generation != generation:
+            return
     if attack_step == 4 and not shockwave_done and attack_clock >= float(shockwave_data["start"]):
         _resolve_shockwave()
+        if action != "attack" or attack_generation != generation:
+            return
         shockwave_done = true
     if attack_clock >= float(tuning["duration"]):
         var finished_step: int = attack_step
@@ -448,6 +457,11 @@ func _attack_rect() -> Rect2:
     return _configured_hitbox(attack_data[attack_step])
 
 func _resolve_axe_hit() -> void:
+    if action != "attack" or not attack_data.has(attack_step):
+        return
+    var generation: int = attack_generation
+    var strike: int = attack_step
+    var tuning: Dictionary = attack_data[strike]
     var area: Rect2 = _attack_rect()
     debug_rect = area
     hit_rectangle.size = area.size
@@ -459,6 +473,8 @@ func _resolve_axe_hit() -> void:
     query.collide_with_areas = false
     query.exclude = [get_rid()]
     for hit in get_world_2d().direct_space_state.intersect_shape(query, Config.ATTACK_QUERY_LIMIT):
+        if action != "attack" or attack_generation != generation:
+            return
         var obj: Object = hit.get("collider")
         if obj == null or not obj.has_method("take_hit"):
             continue
@@ -466,24 +482,29 @@ func _resolve_axe_hit() -> void:
         if attack_already_hit.has(id):
             continue
         attack_already_hit[id] = true
-        var tuning: Dictionary = attack_data[attack_step]
         var damage: int = roundi(float(tuning["damage"]) * modifiers.multiplier("attack"))
         # Knockback uses the attacker's origin; the axe tip can pass the target.
         if obj.has_method("set_hit_contact"):
             var enemy_box: Rect2 = obj.get_hurt_rect()
             obj.set_hit_contact(Rect2(global_position + area.position, area.size).intersection(enemy_box).get_center())
-        var result: Variant = obj.call("take_hit", damage, global_position, attack_step)
+        var result: Variant = obj.call("take_hit", damage, global_position, strike)
+        # A death explosion or a signal callback can cancel/replace this attack.
+        if action != "attack" or attack_generation != generation:
+            return
         if result is Dictionary and bool(result.get("blocked", false)):
             _guard_recoil()
             continue
         if result is Dictionary and int(result.get("damage_dealt", damage)) <= 0:
             continue
-        _play_shared_sfx("axe_hit_heavy" if attack_step == 4 else "axe_hit_flesh")
+        _play_shared_sfx("axe_hit_heavy" if strike == 4 else "axe_hit_flesh")
         hitstop_left = HITSTOP_SECONDS
         shake_time = maxf(shake_time, float(tuning["shake"]))
-        attack_connected.emit(damage, attack_step)
+        attack_connected.emit(damage, strike)
 
 func _resolve_shockwave() -> void:
+    if action != "attack" or attack_step != 4:
+        return
+    var generation: int = attack_generation
     shockwave_rect = _configured_hitbox(shockwave_data)
     _play_shared_sfx("shockwave")
     debug_rect = shockwave_rect if debug_hitboxes else debug_rect
@@ -496,6 +517,8 @@ func _resolve_shockwave() -> void:
     query.collide_with_areas = false
     query.exclude = [get_rid()]
     for hit in get_world_2d().direct_space_state.intersect_shape(query, Config.ATTACK_QUERY_LIMIT):
+        if action != "attack" or attack_generation != generation:
+            return
         var obj: Object = hit.get("collider")
         if obj == null or not obj.has_method("take_hit"):
             continue
@@ -509,6 +532,8 @@ func _resolve_shockwave() -> void:
             result = obj.call("take_shockwave_hit", damage, global_position, 4)
         else:
             result = obj.call("take_hit", damage, global_position, 4)
+        if action != "attack" or attack_generation != generation:
+            return
         if result is Dictionary and bool(result.get("blocked", false)):
             _guard_recoil()
             continue
@@ -556,6 +581,7 @@ func _update_roll(delta: float) -> void:
         roll_clock = ROLL_DURATION
 
 func _cancel_attack() -> void:
+    attack_generation += 1
     action = "normal"
     attack_step = 0
     attack_clock = 0.0

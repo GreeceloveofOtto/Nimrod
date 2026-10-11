@@ -6,6 +6,7 @@ static var globally_enabled: bool = true
 var dimensions := Vector2.ONE
 var one_way: bool = false
 var ground_floor: bool = false
+var ceiling_surface: bool = false
 var level_id: String = ""
 var settings: Dictionary = {}
 
@@ -29,17 +30,20 @@ func _draw() -> void:
         return
     var inset: float = minf(float(settings["inset"]), dimensions.x * 0.2)
     var color: Color = _color(settings["one_way_color"] if one_way else settings["solid_color"])
+    var edge_y: float = dimensions.y - 1.0 if ceiling_surface else 1.0
     if one_way:
         var x: float = inset
         while x < dimensions.x - inset:
-            draw_line(Vector2(x, 1), Vector2(minf(x + float(settings["dash"]), dimensions.x - inset), 1), color, float(settings["line_width"]))
+            draw_line(Vector2(x, edge_y), Vector2(minf(x + float(settings["dash"]), dimensions.x - inset), edge_y), color, float(settings["line_width"]))
             x += float(settings["dash"]) + float(settings["gap"])
     else:
-        draw_line(Vector2(inset, 1), Vector2(dimensions.x - inset, 1), color, float(settings["line_width"]))
+        draw_line(Vector2(inset, edge_y), Vector2(dimensions.x - inset, edge_y), color, float(settings["line_width"]))
     var band: float = minf(float(settings["top_band"]), dimensions.y)
     var bright := Color(color.r, color.g, color.b, float(settings["top_alpha"]))
-    draw_polygon(PackedVector2Array([Vector2(inset, 0), Vector2(dimensions.x - inset, 0), Vector2(dimensions.x - inset, band), Vector2(inset, band)]), PackedColorArray([bright, bright, Color(bright, 0), Color(bright, 0)]))
-    if not ground_floor:
+    var top: float = dimensions.y if ceiling_surface else 0.0
+    var inside: float = top - band if ceiling_surface else band
+    draw_polygon(PackedVector2Array([Vector2(inset, top), Vector2(dimensions.x - inset, top), Vector2(dimensions.x - inset, inside), Vector2(inset, inside)]), PackedColorArray([bright, bright, Color(bright, 0), Color(bright, 0)]))
+    if not ground_floor and not ceiling_surface:
         band = float(settings["bottom_band"])
         var dark := Color(0, 0, 0, float(settings["bottom_alpha"]))
         draw_polygon(PackedVector2Array([Vector2(inset, dimensions.y), Vector2(dimensions.x - inset, dimensions.y), Vector2(dimensions.x - inset, dimensions.y + band), Vector2(inset, dimensions.y + band)]), PackedColorArray([dark, dark, Color(dark, 0), Color(dark, 0)]))

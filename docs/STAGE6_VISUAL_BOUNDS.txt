@@ -1,15 +1,15 @@
 melee_beast: clip=idle, painted=99.0px, body=90.0px, difference=+10.0%
 ranged_beast: clip=idle, painted=198.4px, body=198.0px, difference=+0.2%
 WARNING sky_beast: clip=fly_idle, painted=248.0px, body=88.0px, difference=+181.8%
-WARNING explosive_spitter: clip=idle, painted=154.8px, body=258.0px, difference=-40.0%
-wall_diver: clip=idle, painted=180.0px, body=180.0px, difference=+0.0%
-WARNING root_spewer: clip=idle, painted=155.7px, body=240.0px, difference=-35.1%
-WARNING boar_charger: clip=idle, painted=140.4px, body=282.0px, difference=-50.2%
-WARNING gas_sac: clip=float, painted=75.6px, body=270.0px, difference=-72.0%
-wraith_ray: clip=glide, painted=144.0px, body=144.0px, difference=+0.0%
-WARNING shell_scorpion: clip=idle, painted=75.6px, body=240.0px, difference=-68.5%
-corpse_bomber: clip=idle, painted=247.5px, body=264.0px, difference=-6.2%
-WARNING chain_beastman: clip=idle, painted=416.7px, body=534.0px, difference=-22.0%
+WARNING explosive_spitter: clip=idle, painted=77.4px, body=129.0px, difference=-40.0%
+wall_diver: clip=idle, painted=90.0px, body=90.0px, difference=+0.0%
+WARNING root_spewer: clip=idle, painted=77.8px, body=120.0px, difference=-35.1%
+WARNING boar_charger: clip=idle, painted=70.2px, body=141.0px, difference=-50.2%
+WARNING gas_sac: clip=float, painted=37.8px, body=135.0px, difference=-72.0%
+wraith_ray: clip=glide, painted=72.0px, body=72.0px, difference=+0.0%
+WARNING shell_scorpion: clip=idle, painted=37.8px, body=120.0px, difference=-68.5%
+corpse_bomber: clip=idle, painted=123.8px, body=132.0px, difference=-6.2%
+WARNING chain_beastman: clip=idle, painted=208.4px, body=267.0px, difference=-22.0%
 cedar_sentinel: clip=idle, painted=250.2px, body=250.0px, difference=+0.1%
 cedar_colossus: clip=idle, painted=440.0px, body=440.0px, difference=+0.0%
 cedar_archer: clip=idle, painted=260.1px, body=260.0px, difference=+0.0%
