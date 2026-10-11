@@ -1,0 +1,30 @@
+{
+  "enabled": true,
+  "shadow_color": [
+    0.35,
+    0.04,
+    0.04,
+    0.5
+  ],
+  "shadow_width_ratio": 0.95,
+  "shadow_height": 20,
+  "shadow_ray_length": 600,
+  "triangle_color": "#C8473B",
+  "windup_color": "#FF5A44",
+  "triangle_alpha": 0.85,
+  "triangle_width": 18,
+  "triangle_height": 14,
+  "triangle_size_ratio": 0.06,
+  "triangle_min": 14,
+  "triangle_max": 30,
+  "head_gap": 14,
+  "bob_pixels": 3,
+  "bob_hz": 1.2,
+  "death_fade": 0.15,
+  "perch_alpha": 0.55,
+  "overrides": {
+    "kala_ushumgal": {
+      "triangle_height": 30
+    }
+  }
+}

@@ -134,6 +134,34 @@
         420
       ],
       "frames": 6
+    },
+    "nimrod_home_inner_door": {
+      "frame_size": [
+        256,
+        384
+      ],
+      "frames": 6
+    },
+    "villa_back_door_exterior": {
+      "frame_size": [
+        320,
+        420
+      ],
+      "frames": 6
+    },
+    "cedar_forest_portal": {
+      "frame_size": [
+        320,
+        460
+      ],
+      "frames": 6
+    },
+    "cedar_portal": {
+      "frame_size": [
+        256,
+        384
+      ],
+      "frames": 6
     }
   },
   "great_gate": {

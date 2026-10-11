@@ -11,8 +11,12 @@ var toast: Label
 var story: Label
 var _toast_tween: Tween
 var _story_tween: Tween
+var boss_panel: Control
+var boss_fill: ColorRect
+var boss_label: Label
 
 func _ready() -> void:
+    add_to_group("game_hud")
     var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://data/transitions.json"))
     if parsed is Dictionary:
         config = parsed
@@ -37,6 +41,26 @@ func _ready() -> void:
     story.modulate.a = 0.0
     toast = _new_label("toast", "", "toast_font_size")
     toast.modulate.a = 0.0
+    boss_panel = Control.new()
+    boss_panel.position = Vector2(380, 28)
+    boss_panel.visible = false
+    add_child(boss_panel)
+    var boss_back := ColorRect.new()
+    boss_back.size = Vector2(520, 10)
+    boss_back.position.y = 28
+    boss_back.color = Color("18202a")
+    boss_panel.add_child(boss_back)
+    boss_fill = ColorRect.new()
+    boss_fill.position.y = 28
+    boss_fill.size = Vector2(520, 10)
+    boss_fill.color = Color("bb6355")
+    boss_panel.add_child(boss_fill)
+    boss_label = Label.new()
+    boss_label.size.x = 520
+    boss_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+    boss_label.add_theme_font_override("font", ui_font)
+    boss_label.add_theme_font_size_override("font_size", 18)
+    boss_panel.add_child(boss_label)
 
 func bind_player(value: NimrodPlayer) -> void:
     player = value
@@ -47,16 +71,24 @@ func set_level_name(value: String) -> void:
 func _process(_delta: float) -> void:
     if not is_instance_valid(player) or hp_fill == null:
         return
-    hp_fill.size.x = _ui_rect("hp_fill").size.x * clampf(float(player.hp) / float(NimrodPlayer.MAX_HP), 0.0, 1.0)
-    hp_text.text = "HP %d / %d" % [player.hp, NimrodPlayer.MAX_HP]
+    hp_fill.size.x = _ui_rect("hp_fill").size.x * clampf(float(player.hp) / float(player.get_max_hp()), 0.0, 1.0)
+    hp_text.text = "HP %d / %d" % [player.hp, player.get_max_hp()]
+    var boss: KalaUshumgal
+    for enemy in get_tree().get_nodes_in_group("enemies"):
+        if enemy is KalaUshumgal:
+            boss = enemy
+    boss_panel.visible = boss != null and boss.battle_started and not boss.battle_finished
+    if boss_panel.visible:
+        boss_fill.size.x = 520.0 * clampf(float(boss.hp) / float(boss.stats["hp"]), 0, 1)
+        boss_label.text = "칼라-우쉬움갈  %d / 1200" % boss.hp
 
-func show_toast(text: String) -> void:
+func show_toast(text: String, seconds: float = -1.0) -> void:
     if _toast_tween != null and _toast_tween.is_valid():
         _toast_tween.kill()
     toast.text = text
     toast.modulate.a = 0.0
     var fade: float = float(config["toast_fade_seconds"])
-    var hold: float = maxf(0.0, float(config["toast_seconds"]) - fade * 2.0)
+    var hold: float = maxf(0.0, (float(config["toast_seconds"]) if seconds < 0.0 else seconds) - fade * 2.0)
     _toast_tween = create_tween()
     _toast_tween.tween_property(toast, "modulate:a", 1.0, fade)
     _toast_tween.tween_interval(hold)

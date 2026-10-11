@@ -96,6 +96,7 @@ func go_to(level_id: String, spawn_name: String) -> bool:
         push_warning("Level could not be loaded: " + level_id)
         _cancel_entry()
         return false
+    get_node("/root/Dialogue").cancel()
     is_transitioning = true
     set_player_locked(true)
     await _fade_to(1.0, float(config["fade_out_seconds"]))

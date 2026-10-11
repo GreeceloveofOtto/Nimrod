@@ -281,5 +281,10 @@
         768
       ]
     }
-  ]
+  ],
+  "aliases": {
+    "windup": "tail_windup",
+    "attack": "tail_sweep",
+    "recovery": "tail_recovery"
+  }
 }

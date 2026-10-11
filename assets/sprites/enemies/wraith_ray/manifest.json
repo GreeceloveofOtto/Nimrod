@@ -81,5 +81,12 @@
         640
       ]
     }
-  ]
+  ],
+  "aliases": {
+    "idle": "glide",
+    "walk": "glide",
+    "windup": "glide",
+    "attack": "glide",
+    "recovery": "glide"
+  }
 }

@@ -28,19 +28,20 @@ func _run() -> void:
         var e: Stage5Enemy = _add(id)
         _check(e.hp == expected[id][0] and e.stats["contact_damage"] == expected[id][1] and is_equal_approx(e.stats["turn_delay"],expected[id][2]), id+" numerical stats")
         _check(e.collision_layer == 4 and e.clip_data.has("turn") and e.clip_data["turn"]["frames"] >= 3,id+" shares EnemyBase collision and turn animation")
+        _check(e.stats["size_multiplier"] == 3.0 and is_equal_approx(e.stats["visual_scale"],.9), id+" Stage6 scale3 without stat changes")
         e.global_position.x = 1400
     var spitter: Stage5Enemy = actors["explosive_spitter"]
     spitter.global_position = Vector2(900,620)
     spitter._set_state(EnemyBase.State.CHASE)
     _reset_hero(Vector2(1200,620))
     spitter._update_chase(1.0/60)
-    _check(spitter.velocity.x < 0.0 and spitter.state == EnemyBase.State.CHASE,"Spitter retreats below preferred380")
-    _reset_hero(Vector2(1500,620))
+    _check(spitter.velocity.x < 0.0 and spitter.state == EnemyBase.State.CHASE,"Spitter retreats below preferred570")
+    _reset_hero(Vector2(1800,620))
     spitter._update_chase(1.0/60)
-    _check(spitter.velocity.x > 0.0 and spitter.state == EnemyBase.State.CHASE,"Spitter approaches above preferred520")
-    _reset_hero(Vector2(1300,620))
+    _check(spitter.velocity.x > 0.0 and spitter.state == EnemyBase.State.CHASE,"Spitter approaches above preferred780")
+    _reset_hero(Vector2(1550,620))
     spitter._update_chase(1.0/60)
-    _check(spitter.velocity.x == 0.0 and spitter.state == EnemyBase.State.WINDUP,"Spitter attacks within380to520")
+    _check(spitter.velocity.x == 0.0 and spitter.state == EnemyBase.State.WINDUP,"Spitter attacks within570to780")
     var shell: Stage5Enemy = actors["shell_scorpion"]
     shell.global_position = Vector2(900,620)
     shell.facing = 1
@@ -78,7 +79,7 @@ func _run() -> void:
     boar.take_hit(20,Vector2(1300,620),3)
     _check(boar.hp == 70 and boar.state == EnemyBase.State.ACTIVE,"Boar charge retains superarmor")
     boar.hitstop_left = 0
-    boar.global_position = Vector2(1720,620)
+    boar.global_position = Vector2(1400,620)
     boar.velocity = Vector2(640,0)
     for i in range(20):
         await physics_frame
@@ -167,7 +168,7 @@ func _run() -> void:
     wall._update_windup(0)
     _check(not wall.perched and wall.phase == "perch_dive" and is_equal_approx(wall.velocity.length(),720),"Perch dives at720px/s")
     wall._land_claw()
-    _check(wall.phase == "landing_claw" and wall.get_attack_rect().size == Vector2(100,80),"Landing produces claw and permanent ground mode")
+    _check(wall.phase == "landing_claw" and wall.get_attack_rect().size == Vector2(300,240),"Landing produces claw and permanent ground mode")
     await process_frame
     var chain: Stage5Enemy = actors["chain_beastman"]
     chain.phase = "tail"
@@ -177,13 +178,13 @@ func _run() -> void:
     chain.phase = "chain"
     chain.attack_stats = chain.stats["attacks"][1]
     chain.global_position = Vector2(900,620)
-    _reset_hero(Vector2(1150,620))
+    _reset_hero(Vector2(1300,620))
     chain._begin_active()
     chain.state_clock = .2
     chain._update_chain(0)
     _check(chain.phase == "pull" and hero.pull_left == .35 and hero.hp == 180,"Chain hit starts damage-free .35sec pull")
     hero._physics_process(.1)
-    _check(hero.pull_left > 0 and hero.global_position.x < 1150,"Pull moves toward enemy front")
+    _check(hero.pull_left > 0 and hero.global_position.x < 1300,"Pull moves toward enemy front")
     Input.action_press("roll")
     hero._physics_process(.02)
     _check(hero.action != "roll","K before .15sec cannot escape pull")

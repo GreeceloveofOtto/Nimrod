@@ -141,5 +141,12 @@
         640
       ]
     }
-  ]
+  ],
+  "aliases": {
+    "walk": "run",
+    "windup": "scream",
+    "attack": "explode",
+    "recovery": "idle",
+    "death": "explode"
+  }
 }

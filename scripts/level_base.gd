@@ -29,6 +29,7 @@ func _ready() -> void:
     _make_npcs()
     _connect_gatekeeper()
     _spawn_enemies()
+    _make_pickups()
 
 func _load_config() -> void:
     var file := FileAccess.open(LEVELS_PATH, FileAccess.READ)
@@ -99,7 +100,7 @@ func _make_backgrounds() -> void:
         else:
             var layer := Parallax2D.new()
             layer.name = str(entry.get("name", "Parallax"))
-            layer.scroll_scale = Vector2(ratio, 0.0)
+            layer.scroll_scale = Vector2(ratio, float(entry.get("ratio_y", 0.0)))
             layer.z_index = int(entry.get("z", 0))
             layer.modulate = bg_dim
             if entry.has("repeat_size"):
@@ -123,7 +124,7 @@ func _make_world() -> void:
     _make_surface(-wall, -margin, wall, floor_y + ground_height + margin * 2.0, false)
     _make_surface(width, -margin, wall, floor_y + ground_height + margin * 2.0, false)
     if bool(config.get("ceiling", false)):
-        _make_surface(-wall, -wall, width + wall * 2.0, wall, false)
+        _make_surface(-wall, float(config.get("ceiling_y", 0.0)) - wall, width + wall * 2.0, wall, false)
     var tile_size: Vector2 = _vector(config.get("floor_art_size", []))
     if tile_size.x > 0.0 and not config.has("terrain"):
         var tile_x: float = -margin
@@ -146,7 +147,7 @@ func _make_world() -> void:
     for platform in config.get("platforms", []):
         var at: Vector2 = _vector(platform["position"])
         var platform_width: float = float(platform["width"])
-        _make_surface(at.x, at.y, platform_width, float(world_settings["platform_collision_height"]), true)
+        _make_surface(at.x, at.y, platform_width, float(world_settings["platform_collision_height"]), bool(platform.get("one_way", true)))
         Art.add_image(self, str(platform.get("art", world_settings["platform_art"])), at, Vector2(platform_width, float(platform.get("art_height", world_settings["platform_art_height"]))), -3)
     for obstacle in config.get("obstacles", []):
         var bounds: Rect2 = _rect(obstacle["rect"])
@@ -198,6 +199,15 @@ func _make_surface(x: float, y: float, width: float, height: float, one_way: boo
     hit.one_way_collision = one_way
     hit.one_way_collision_margin = float(world_settings.get("one_way_margin", 0.0))
     body.add_child(hit)
+    var accent: Node2D = load("res://scripts/surface_accent.gd").new()
+    accent.name = "SurfaceAccent"
+    accent.position = -Vector2(width, height) * 0.5
+    accent.dimensions = Vector2(width, height)
+    accent.one_way = one_way
+    accent.ground_floor = height >= float(world_settings.get("ground_collision_height", 220.0)) and is_equal_approx(y, ground_y_at(x + width * 0.5))
+    accent.level_id = level_id
+    accent.z_index = -2
+    body.add_child(accent)
 
 func _make_props() -> void:
     for decoration in config.get("decorations", []):
@@ -283,6 +293,8 @@ func _spawn_enemies() -> void:
             _set_if_present(enemy, "perch_kind", str(entry.get("perch_kind", "ceiling")))
             _set_if_present(enemy, "patrol_center", float(entry.get("patrol_center", at.x)))
             _set_if_present(enemy, "patrol_range", float(entry.get("patrol_range", 0.0)))
+            if entry.has("room_bounds"):
+                _set_if_present(enemy, "room_bounds", _rect(entry["room_bounds"]))
             _set_if_present(enemy, "safe_min_x", camera_limits.position.x)
             _set_if_present(enemy, "safe_max_x", camera_limits.end.x)
             add_child(enemy)
@@ -320,3 +332,10 @@ func constrain_enemy(enemy_position: Vector2, body_size: Vector2) -> Vector2:
 
 func get_flight_bounds() -> Rect2:
     return _rect(config.get("flight_bounds", []))
+
+func _make_pickups() -> void:
+    for item in config.get("pickups", []):
+        var pickup: Node2D = load("res://scripts/healing_pickup.gd").new()
+        pickup.pickup_id = str(item.get("id", "healing_vomit"))
+        pickup.position = _vector(item["position"])
+        add_child(pickup)

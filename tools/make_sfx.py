@@ -74,8 +74,18 @@ def synthesize(duration, kind, pitch, seed):
         voice = np.sin(2.0 * np.pi * (pitch * t - fall * t * t / (2.0 * duration)))
         voice += 0.15 * np.sin(2.0 * np.pi * pitch * 1.98 * t)
         return (0.65 * voice + 0.12 * low_noise + 0.07 * mid_noise) * envelope(t, attack=0.012, decay=duration / 3.0)
+    if kind == "speech":
+        return 0.15 * np.sin(2 * np.pi * pitch * t) * np.sin(np.pi * t / duration) ** 2
+    if kind == "chime":
+        return sum(np.sin(2 * np.pi * pitch * ratio * t) / (index + 1) for index, ratio in enumerate([1, 1.25, 1.5, 2])) * envelope(t, attack=0.012, decay=0.16)
     raise ValueError(kind)
 
+
+def stage6_audio():
+    spec = json.loads((PROJECT_ROOT / "data/audio_stage6.json").read_text())
+    for item in spec["sfx"]:
+        signal = synthesize(item["duration"], item["kind"], item["pitch"], item["seed"])
+        write_wav(PROJECT_ROOT / "assets/audio/sfx" / (item["name"] + ".wav"), signal, fade_seconds=0.0 if item.get("loop", False) else min(0.004, item["duration"] / 4))
 
 def stage5_audio():
     spec = json.loads((PROJECT_ROOT / "data/audio_stage5.json").read_text())
@@ -102,7 +112,9 @@ def main():
 
 if __name__ == "__main__":
     import sys
-    if "--stage5-only" in sys.argv:
+    if "--stage6-only" in sys.argv:
+        stage6_audio()
+    elif "--stage5-only" in sys.argv:
         stage5_audio()
     else:
         main()

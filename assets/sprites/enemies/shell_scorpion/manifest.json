@@ -241,5 +241,10 @@
         640
       ]
     }
-  ]
+  ],
+  "aliases": {
+    "windup": "claw_windup",
+    "attack": "claw_attack",
+    "recovery": "claw_recovery"
+  }
 }

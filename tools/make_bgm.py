@@ -42,6 +42,11 @@ def make_stage2_bgm(spec):
     print(f"Generated {path.name}: {duration:g}s periodic loop.")
 
 
+def stage6_audio():
+    spec = json.loads((PROJECT_ROOT / "data/audio_stage6.json").read_text())
+    for item in spec["bgm"]:
+        make_stage2_bgm(item)
+
 def stage5_audio():
     spec = json.loads((PROJECT_ROOT / "data/audio_stage5.json").read_text())
     for item in spec["bgm"]:
@@ -92,7 +97,9 @@ def main():
 
 if __name__ == "__main__":
     import sys
-    if "--stage5-only" in sys.argv:
+    if "--stage6-only" in sys.argv:
+        stage6_audio()
+    elif "--stage5-only" in sys.argv:
         stage5_audio()
     else:
         main()

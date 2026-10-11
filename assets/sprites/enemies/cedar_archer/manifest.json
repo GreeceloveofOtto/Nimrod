@@ -1,0 +1,188 @@
+{
+  "character": "cedar_archer",
+  "aliases": {
+    "attack": "shoot"
+  },
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/enemies/cedar_archer/idle.png",
+      "frame_width": 768,
+      "frame_height": 768,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 1.0,
+      "fps": 6.0,
+      "loop": true,
+      "anchor_px": [
+        384,
+        720
+      ],
+      "image_size": [
+        4608,
+        768
+      ]
+    },
+    {
+      "name": "walk",
+      "sheet": "sprites/enemies/cedar_archer/walk.png",
+      "frame_width": 768,
+      "frame_height": 768,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 0.9,
+      "fps": 8.88888888888889,
+      "loop": true,
+      "anchor_px": [
+        384,
+        720
+      ],
+      "image_size": [
+        6144,
+        768
+      ]
+    },
+    {
+      "name": "windup",
+      "sheet": "sprites/enemies/cedar_archer/windup.png",
+      "frame_width": 768,
+      "frame_height": 768,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.5,
+      "fps": 8.0,
+      "loop": false,
+      "anchor_px": [
+        384,
+        720
+      ],
+      "image_size": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "shoot",
+      "sheet": "sprites/enemies/cedar_archer/shoot.png",
+      "frame_width": 768,
+      "frame_height": 768,
+      "columns": 3,
+      "rows": 1,
+      "frames": 3,
+      "duration_seconds": 0.2,
+      "fps": 15.0,
+      "loop": false,
+      "anchor_px": [
+        384,
+        720
+      ],
+      "image_size": [
+        2304,
+        768
+      ]
+    },
+    {
+      "name": "recovery",
+      "sheet": "sprites/enemies/cedar_archer/recovery.png",
+      "frame_width": 768,
+      "frame_height": 768,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.4,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        384,
+        720
+      ],
+      "image_size": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "hop_back",
+      "sheet": "sprites/enemies/cedar_archer/hop_back.png",
+      "frame_width": 768,
+      "frame_height": 768,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.4,
+      "fps": 12.5,
+      "loop": false,
+      "anchor_px": [
+        384,
+        720
+      ],
+      "image_size": [
+        3840,
+        768
+      ]
+    },
+    {
+      "name": "turn",
+      "sheet": "sprites/enemies/cedar_archer/turn.png",
+      "frame_width": 768,
+      "frame_height": 768,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.2,
+      "fps": 20.0,
+      "loop": false,
+      "anchor_px": [
+        384,
+        720
+      ],
+      "image_size": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "hurt",
+      "sheet": "sprites/enemies/cedar_archer/hurt.png",
+      "frame_width": 768,
+      "frame_height": 768,
+      "columns": 2,
+      "rows": 1,
+      "frames": 2,
+      "duration_seconds": 0.2,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        384,
+        720
+      ],
+      "image_size": [
+        1536,
+        768
+      ]
+    },
+    {
+      "name": "death",
+      "sheet": "sprites/enemies/cedar_archer/death.png",
+      "frame_width": 768,
+      "frame_height": 768,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.7,
+      "fps": 8.571428571428571,
+      "loop": false,
+      "anchor_px": [
+        384,
+        720
+      ],
+      "image_size": [
+        4608,
+        768
+      ]
+    }
+  ]
+}

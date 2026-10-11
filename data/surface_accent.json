@@ -1,0 +1,24 @@
+{
+  "enabled": true,
+  "solid_color": [
+    1,
+    0.89,
+    0.66,
+    0.55
+  ],
+  "one_way_color": [
+    0.78,
+    0.9,
+    1,
+    0.55
+  ],
+  "line_width": 2,
+  "inset": 6,
+  "top_band": 8,
+  "top_alpha": 0.25,
+  "bottom_band": 14,
+  "bottom_alpha": 0.35,
+  "dash": 12,
+  "gap": 8,
+  "levels": {}
+}

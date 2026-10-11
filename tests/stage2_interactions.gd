@@ -82,6 +82,10 @@ func _test_locked_and_nearest() -> void:
     await manager.go_to("VillaF1", "Spawn_FromGate")
     var level: Node = manager.current_level
     var front: DoorPortal = level.doors.get("villa_back_door") as DoorPortal
+    _check(not front.locked and front.target_level == "VillaBackyard", "Stage6 backdoor connects backyard")
+    # Use the connected door as a controlled locked-door fixture.
+    front.locked = true
+    front.locked_message = "후문은 아직 열 수 없다"
     player.global_position = front.global_position
     var origin: Vector2 = front.visual.position
     front.interact(player)

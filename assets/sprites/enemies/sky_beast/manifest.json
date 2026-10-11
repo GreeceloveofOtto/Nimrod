@@ -147,5 +147,10 @@
         640
       ]
     }
-  ]
+  ],
+  "aliases": {
+    "idle": "fly_idle",
+    "walk": "fly_idle",
+    "attack": "dive"
+  }
 }

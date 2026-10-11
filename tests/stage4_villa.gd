@@ -14,7 +14,7 @@ func _run() -> void:
     hero.hp = 111
     var level: LevelBase = manager.current_level
     _check(level.doors["door_up"].global_position.x == 1000, "Central upstairs portal at x1000")
-    _check(level.doors["villa_back_door"].locked and level.doors["villa_back_door"].locked_message == "후문은 아직 열 수 없다", "Right door is locked villa rear door")
+    _check(not level.doors["villa_back_door"].locked and level.doors["villa_back_door"].target_level == "VillaBackyard", "Stage6 right rear door reaches backyard")
     for npc: NPC in level.npcs.values():
         _check(npc.global_position.x < 860 or npc.global_position.x > 1140, "Servants leave central door clear")
     var bgm_stream: AudioStream = root.get_node("Audio")._bgm.stream

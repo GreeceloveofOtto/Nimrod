@@ -200,6 +200,50 @@
         3840,
         640
       ]
+    },
+    {
+      "name": "idle",
+      "sheet": "sprites/enemies/wall_diver/idle.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.8,
+      "fps": 5.0,
+      "loop": true,
+      "anchor_px": [
+        320,
+        320
+      ],
+      "image_size": [
+        2560,
+        640
+      ]
+    },
+    {
+      "name": "windup",
+      "sheet": "sprites/enemies/wall_diver/windup.png",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.35,
+      "fps": 11.428571428571429,
+      "loop": false,
+      "anchor_px": [
+        320,
+        320
+      ],
+      "image_size": [
+        2560,
+        640
+      ]
     }
-  ]
+  ],
+  "aliases": {
+    "walk": "crawl",
+    "attack": "claw"
+  }
 }

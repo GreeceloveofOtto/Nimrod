@@ -19,6 +19,7 @@ const FALLBACK_FRAME_SIZE: Vector2 = Vector2(640, 640)
 const TIME_EPSILON: float = 0.000001
 
 @export var enemy_id: String = "melee_beast"
+@export var room_bounds: Rect2 = Rect2()
 @export var patrol_center: float = -1.0
 @export var patrol_range: float = 250.0
 @export var safe_min_x: float = 200.0
@@ -53,6 +54,10 @@ var display_clock: float = 0.0
 var current_frame: int = 0
 var ignored_player: PhysicsBody2D
 var returning_to_patrol: bool = false
+var clip_aliases: Dictionary = {}
+var no_drop: bool = false
+var threat_marker: Node2D
+var _clip_warnings: Dictionary = {}
 
 func _ready() -> void:
     collision_layer = ENEMY_LAYER
@@ -81,6 +86,9 @@ func _ready() -> void:
     _create_missing_visual()
     _show_clip("idle", 0.0)
     _target()
+    threat_marker = load("res://scripts/threat_marker.gd").new()
+    threat_marker.name = "ThreatMarker"
+    add_child(threat_marker)
 
 func _read_json(path: String) -> Dictionary:
     var file := FileAccess.open(path, FileAccess.READ)
@@ -98,7 +106,8 @@ func _load_stats() -> void:
     common = data.get("common", {})
     for candidate in data.get("enemies", []):
         if str(candidate.get("id", "")) == enemy_id:
-            stats = candidate
+            stats = candidate.duplicate(true)
+            _scale_stats(stats)
             break
     if stats.is_empty():
         push_warning("Enemy stats missing: " + enemy_id)
@@ -110,6 +119,7 @@ func _load_stats() -> void:
 func _load_sprites() -> void:
     var folder: String = "res://assets/sprites/enemies/" + enemy_id + "/"
     var manifest: Dictionary = _read_json(folder + "manifest.json")
+    clip_aliases = manifest.get("aliases", {})
     for entry in manifest.get("clips", []):
         var clip: Dictionary = entry
         var clip_name: String = str(clip.get("name", ""))
@@ -298,6 +308,11 @@ func _ground_roam_bounds() -> Vector2:
     return Vector2(low, high)
 
 func _enforce_bounds() -> void:
+    if room_bounds.has_area():
+        var old_x: float = global_position.x
+        global_position.x = clampf(global_position.x, room_bounds.position.x + body_size.x * 0.5, room_bounds.end.x - body_size.x * 0.5)
+        if not is_equal_approx(old_x, global_position.x):
+            velocity.x = 0
     var bounds: Vector2 = _ground_roam_bounds()
     var attempted_x: float = global_position.x
     global_position.x = clampf(global_position.x, bounds.x, bounds.y)
@@ -455,6 +470,8 @@ func _die() -> void:
     _show_clip("death", 0.0)
 
 func get_drop_chance() -> float:
+    if no_drop:
+        return 0.0
     var level: Node = _level()
     if level != null and level.get("config") is Dictionary:
         var rule: Dictionary = level.config.get("drop_rule", {})
@@ -507,7 +524,59 @@ func _update_visual(delta: float) -> void:
     var explicit_clock: float = state_clock if state not in [State.IDLE, State.CHASE] else display_clock
     _show_clip(clip, explicit_clock)
 
+func _scale_stats(data: Dictionary) -> void:
+    var factor: float = float(data.get("size_multiplier", 1.0))
+    if is_equal_approx(factor, 1.0):
+        return
+    var distance_factor: float = 1.0 + (factor - 1.0) * 0.25
+    var area_factor: float = 1.0 + (factor - 1.0) * 0.5
+    data["visual_scale"] = float(data.get("visual_scale", 0.3)) * factor
+    for key in ["body_size", "sensor", "sensor_wall", "sensor_ceiling"]:
+        if data.has(key):
+            var multiplier: float = factor if key == "body_size" else distance_factor
+            for i in range(data[key].size()):
+                data[key][i] = float(data[key][i]) * multiplier
+    if data.has("body_offset_y"):
+        data["body_offset_y"] = float(data["body_offset_y"]) * factor
+    for key in ["detect_range", "retreat_distance", "back_range"]:
+        if data.has(key):
+            data[key] = minf(1100.0, float(data[key]) * distance_factor)
+    if data.has("preferred_distance"):
+        for i in range(data["preferred_distance"].size()):
+            data["preferred_distance"][i] = minf(1100.0, float(data["preferred_distance"][i]) * distance_factor)
+    for attack in data.get("attacks", []):
+        attack["range"] = minf(1100.0, float(attack.get("range", 0.0)) * distance_factor)
+        for key in attack.get("hitbox", {}):
+            attack["hitbox"][key] = float(attack["hitbox"][key]) * factor
+    for key in ["projectile", "explosion", "gas"]:
+        if data.has(key):
+            var section: Dictionary = data[key]
+            if section.has("radius"):
+                section["radius"] = float(section["radius"]) * area_factor
+            if section.has("height"):
+                section["height"] = float(section["height"]) * area_factor
+            if section.has("collision_radius"):
+                section["collision_radius"] = float(section["collision_radius"]) * factor
+    if data.has("chain"):
+        data["chain"]["range"] = minf(1100.0, float(data["chain"]["range"]) * distance_factor)
+        data["chain"]["pull_offset"] = float(data["chain"]["pull_offset"]) * factor
+
+func resolve_clip(requested: String) -> String:
+    if textures.has(requested):
+        return requested
+    var resolved: String = str(clip_aliases.get(requested, ""))
+    if textures.has(resolved):
+        return resolved
+    if not _clip_warnings.has(requested):
+        _clip_warnings[requested] = true
+        push_warning("Clip fallback: %s/%s" % [enemy_id, requested])
+    resolved = str(clip_aliases.get("idle", "idle"))
+    if textures.has(resolved):
+        return resolved
+    return str(textures.keys()[0]) if not textures.is_empty() else requested
+
 func _show_clip(clip_name: String, seconds: float) -> void:
+    clip_name = resolve_clip(clip_name)
     displayed_clip = clip_name
     var clip: Dictionary = clip_data.get(clip_name, {})
     var texture: Texture2D = textures.get(clip_name) as Texture2D
@@ -516,7 +585,8 @@ func _show_clip(clip_name: String, seconds: float) -> void:
     visual.flip_h = facing < 0
     var frames: int = maxi(1, int(clip.get("frames", 1)))
     var duration_seconds: float = float(clip.get("duration_seconds", common.get("missing_clip_seconds", 1.0)))
-    if clip_name == "turn":
+    if clip_name.begins_with("turn"):
+
         duration_seconds = _turn_seconds()
     var phase: float = fmod(seconds, maxf(0.001, duration_seconds)) if bool(clip.get("loop", false)) else seconds
     current_frame = clampi(int(phase / maxf(0.001, duration_seconds) * frames), 0, frames - 1)

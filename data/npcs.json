@@ -140,7 +140,10 @@
       "face_player": true,
       "random_start": false,
       "three_way": true,
-      "initial_pose": "front"
+      "initial_pose": "front",
+      "interactable": true,
+      "interact_range": 120,
+      "interaction": "shamhat_blessing"
     },
     {
       "id": "inanna",
@@ -407,6 +410,31 @@
       "three_way": true,
       "initial_pose": "front",
       "random_start": false
+    },
+    {
+      "id": "enkidua",
+      "display_name": "엔키두아",
+      "height_ratio": 1.04,
+      "sheet_dir": "assets/sprites/npcs/enkidua",
+      "visual_scale_multiplier": 1,
+      "three_way": true,
+      "face_player": true,
+      "initial_pose": "front",
+      "interactable": false,
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
+        },
+        {
+          "name": "idle_front",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
+        }
+      ]
     }
   ]
 }

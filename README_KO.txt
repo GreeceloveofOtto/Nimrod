@@ -1,155 +1,95 @@
-NIMROD — 5단계: 방향 공격 캔슬·인간형 구르기·도심 통로8층·집 가는 길
-Godot 4.3 / GDScript / GL Compatibility / 1280x720 / 외부 애드온 없음
+NIMROD — 6단계: 괴수 확대·가독성·집 내부·샴하트의 축복·삼나무 숲과 보스
+Godot4.3 / GDScript / GL Compatibility / 1280x720 / 외부 애드온 없음
 
 실행
-ZIP 전체를 새 폴더에 압축 해제하고 Godot 4.3에서 project.godot을 가져옵니다.
-최초 이미지·음원 임포트가 끝나면 F5로 실행합니다. 게임에는 Python이 필요하지
-않습니다. Windows용 PLAY_WITH_GODOT.bat는 보존했습니다.
-현재 20개 레벨. 대화·스토리 분기·최종 엔딩은 후속 작업입니다.
+ZIP 전체를 새 폴더에 압축 해제하고 Godot4.3에서 project.godot을 가져옵니다.
+최초 PNG·WAV 임포트를 마친 뒤 F5로 실행합니다. 게임 실행에는 Python이
+필요하지 않습니다. Windows용 PLAY_WITH_GODOT.bat도 포함되어 있습니다.
+현재25개 레벨. 최종 스토리 엔딩·세이브포인트·멜람무 보상은 후속 작업입니다.
 
 조작
 A/D 또는 좌우 화살표: 이동 / S: 수그리기 / S+A/D: 수그린 채 이동120px/s
-Space: 점프 / S+Space: 일방향 발판에서 내려가기
+Space: 점프 / S+Space: 일방향 발판에서 내려가기(숲의 막힌 방 바닥은 통과 불가)
 J: 도끼4연격 / 공중J: 4타 내려찍기
-공격 중 반대 방향+A/D를 누른 채 J: 즉시 방향 전환 후 다음 콤보.
-  공중 방향 캔슬 최대2회. 히트스톱 중 입력은0.12초까지 예약.
-사슬에 끌릴 때0.15초 후 K: 구르기로 탈출(좌우 입력 방향 적용).
-K: 구르기·공격 캔슬. 좌우 입력 방향, 입력이 없으면 바라보는 방향.
-E: 가까운 문 / 토사물 섭취(+30HP, 최대180). NPC 대화 없음.
-완전히 열린 대문 입구에 걸어 들어가면 E 없이 자동 이동합니다.
-F1: 플레이어·괴수 판정/감지 범위 / R: 태초부터 다시 시작
+공격 중 반대 방향키+J: 즉시 방향 전환 후 다음 콤보. 공중 최대2회.
+히트스톱 중 방향 캔슬 입력은0.12초까지 예약합니다.
+K: 구르기·공격 캔슬. 좌우 입력 방향, 입력이 없으면 현재 바라보는 방향.
+사슬에 끌릴 때0.15초 후 K: 구르기로 탈출.
+E: 가장 가까운 문·포탈 / 토사물(+30HP) / 루갈성2층 샴하트의 축복.
+완전히 열린 대문 입구에 걸어 들어가면 E 없이 자동으로 이동합니다.
+F1: 공격·피격·감지 판정 / F2: 괴수 ▼ 표식·접지 그림자 / F3: 충돌 면 표시
+R: 태초부터 다시 시작(축복·이번 런의 첫 대화 플래그 초기화)
 
 보존 수치
-HP180 / 도끼20,20,20,22 / 이동360 / 점프-695 / 중력1750
-플레이어 배율0.30, 서기36x124, 수그리기36x90, 구르기46x48
-콤보 리셋0.8초 / 히트스톱0.05초
+기본 HP180 / 도끼20,20,20,22 / 이동360 / 점프-695 / 중력1750
+플레이어 배율0.30 / 서기36x124 / 수그리기36x90 / 구르기46x48
+콤보 리셋0.8초 / 히트스톱0.05초 / 구르기 속도780
 구르기0.48초 = 선딜0.03 + 무적0.25 + 후딜0.20
-사망1.6초 뒤 진행 플래그 초기화, HP180, RearGate 시작점x260으로 복귀.
-플레이어는 Main에 하나만 있으며 층 이동 중 HP·전투 상태를 유지합니다.
+사망1.6초 뒤 HP180, RearGate/Spawn_Start(x260)으로 복귀합니다.
+Main의 플레이어 하나를 유지하며 층 이동 중 HP와 축복이 보존됩니다.
 
 레벨 연결
-RearGate ↔ CastleF1 ↔ CastleFront ↔(대문 포탈)↔ CastleOutskirts
+RearGate ↔ CastleF1 ↔ CastleFront ↔(대문)↔ CastleOutskirts
 CastleF1 ↔ CastleF2 ↔ CastleF3 ↔ CastleF4 ↔ CastleF5
+CastleOutskirts ↔ DowntownPassage_F8 ↔ F7 ↔ … ↔ F1 ↔ HomeRoad ↔ NimrodHome
 RearGate ↔ VillaF1 ↔ VillaF2 ↔ VillaF3
+VillaF1(후문) ↔ VillaBackyard ↔ CedarForest_F1 ↔ CedarForest_F2 ↔ CedarBossRoom
+별장 뒤뜰은 전체 안전 구역이며 후문x300에서 숲 포탈x700까지400px입니다.
+집 내부는 괴수가 없는 안전 구역이고 엔키두아는 이름표·3방향 숨쉬기만 합니다.
+다른 일반 NPC는 상호작용·대화가 없습니다.
 
-RearGate: 너비5400. 왼쪽 후문→루갈성1층, 오른쪽 별장 대문→별장1층.
-  x<=350, x>=4950 안전 구역. 기존 괴수·지형 유지.
-CastleF1: 루갈반다·닌순, 왼쪽 정문→성 안쪽 앞뜰, 위층 문·후문 유지.
-CastleF2: 샴하트. CastleF3: 요리사3명. CastleF4: 인안나·여성 팝수칼.
-CastleF5: 옥상 비행 괴수. 1~4층에는 괴수가 없습니다.
-CastleFront: 너비2600, 전체 안전. 대문x600, 안쪽 문지기x880,
-  정문x2200→CastleF1. 괴수와 도심 통로는 별도 황무지로 이동했습니다.
-CastleOutskirts: 너비10000. 대문x9600↔CastleFront, 도심 문x520→DowntownPassage_F8.
-  9080px 길에 광장·계단·협곡 위아래 두 길·폐허2단 통로·잔해·테라스.
-  근접10·원거리5마리, x>=8850 안전. 협곡에도 바닥이 있습니다.
-VillaF1: 하인x520/1480, 중앙x1000 문→2층, 오른쪽x1850 후문은 잠김.
-VillaF2: 너비2200. 재사용 요리사4명, 넓은 식탁, 오른쪽 문→3층.
-VillaF3: 샤마쉬·아야. 왼쪽 문→2층, 위층 문은 잠김.
+샴하트의 축복
+루갈성2층 샴하트에게120px 이내에서 E를 누르면 시간이 정지하고 카메라가
+1.6배로 줌인합니다. “당신이 자꾸 신경쓰여요.”가 자동으로 표시된 뒤 돌아옵니다.
+공격력·공격속도·최대 HP 각각+50%: 도끼30/30/30/33, 최대HP270, 현재HP+90.
+한 런에 한 번, 사망 전까지 유지됩니다. 공격속도 합산 상한은2배입니다.
+구르기·이동·콤보 리셋 실제 시간은 바뀌지 않습니다.
 
-문·대문
-일반 문: E→열림0.6초→걸어 들어가기0.4초→페이드 각0.25초.
-도착 문은 열린 상태로 시작해 한 걸음 나온 뒤 닫힙니다.
-성 대문: 300px 접근→안쪽 문지기3번째 프레임→열림1.2초.
-  대문 밖에서는 문지기 없이 열림. 열린 입구±40px에서 자동 이동.
-  600px 이탈→닫힘1.0초. 닫힌 문에는 충돌 벽이 있습니다.
-  도착 직후 재개방 방지를 위해 접근 범위에서 벗어난 후 재감지합니다.
-별장 대문: 기존 열림1.0초·닫힘0.8초·자동 VillaF1 이동 유지.
-잠긴 집 정문/별장 후문/별장4층 문은 메시지만 표시합니다.
+괴수와 구조물 표시
+5단계 괴수9종의 스프라이트·몸체·근접 판정은3배, 폭발·가스 반경은2배,
+감지·선호 거리·센서는1.5배(최대1100)입니다. HP·피해·속도·시간은 보존합니다.
+일반 우루크 괴수와 비행 괴수는 확대하지 않습니다.
+모든 괴수 머리 위 진홍색 ▼가 선딜 때 밝아지고 발밑에 적갈색 그림자가 보입니다.
+바닥·단차는 따뜻한 윗면 빛, 일방향 발판은 청백색 점선으로 구분합니다.
+코드로 그리는 것은 이 UI 보조 표시와 디버그 판정·말풍선 꼬리뿐입니다.
+모든 캐릭터·문·배경·지형·FX는 생성한 PNG를 사용합니다.
 
-니므롯 모션
-이미지 생성한 새18종 시트 적용. 서 있는 키363px, 프레임640x640,
-발 앵커[320,600], 8px 이상 여백. 기존 시트는 assets/sprites/_legacy_player/.
-이 폴더는 .gdignore로 제외되며 필요 없으면 폴더째 삭제해도 됩니다.
-기존 공격 길이0.33/0.33/0.40/0.56초 유지. 4타7프레임0.34초 시작.
-5단계에서 구르기만 인간의 어깨 구르기12프레임으로 교체했습니다.
-프레임당0.04초, 총0.48초. 머리·몸통·팔다리가 구분되는 접지 모션.
-이전 구르기: assets/sprites/_legacy_player/roll_prev.png. 다른17개 시트 유지.
-docs/motion_review/에18개 GIF·18개 접촉 시트가 있습니다.
-F1 판정과 넓은3타 이미지의 도달 범위 차이는 보고서를 참고하세요.
+삼나무 숲
+사용자 결정에 따라4열×5행,20개 방(4800×3400)으로 확장했습니다.
+두 층 모두 최단 경로16개 방, 갈림길4곳, 막다른 길4곳, 회복 픽업2개입니다.
+수직 발판 체인은80px 높이차·수평200px 이하입니다. 방 바닥은 연결된 곳만
+구멍이 있어 막힌 층으로 S+Space를 사용해 우회할 수 없습니다.
+1층: 파수꾼7·무두 해골3. 2층: 사수5·부유령5·네 팔 마귀4.
+모든 숲 괴수는 토사물5% 드랍. 보스와 소환 사수는 드랍하지 않습니다.
 
-NPC
-왕족·호위7명은 좌/정면/우: |dx|<=140 정면, >=220 측면,
-중간은 현재 방향 유지, 재전환 유예0.5초, 크로스페이드0.12초.
-700px 이상 멀어지면4~8초마다 정면과 초기 측면을 오가며 둘러봅니다.
-루갈반다·닌순은 서로 보는 방향으로 시작. 토인·문지기는 기존 좌우 방식.
-이전 대화에서 생성한5명 디자인의 정면을 그대로 재사용했습니다.
-인안나는 기존3번 은빛 라벤더 디자인, 팝수칼은 여성 호위입니다.
-샤마쉬·아야는 황금빛 머리와 현대 실용 코트로 새로 생성했습니다.
-모든 NPC 이름표는 발 아래 독립 노드라 뒤집히지 않습니다.
-가독성5종: 의상 대비·내부 림라이트·생성 빛 웅덩이/접지 그림자·
-  배경만 톤다운·220px 근접 밝기1.12/이름 알파1.0(0.15초).
-토인 표시 배율0.39(기존×1.30) 유지. 이름표 외곽선 없이 그림자 사용.
-재사용 토인7곳의 평균 배경 대비 경고와 권고는 보고서에 있습니다.
+칼라-우쉬움갈
+HP1200. x450부터 전투 시작, 도착 문 잠금과 보스 HP 바 표시.
+정면 상체 갑피는 피해0.7배, 하체·등 뒤는 정상 피해. 일반 경직 면역.
+횡치기2타·대지 찍기와 가시3개·양 끝 사수2마리 소환.
+HP600 이하에서2초 무적 전환 후 공격 속도+20%, 회전 지연0.5초.
+화염 포효는14틱×2=28 피해. 구르기 무적으로 틱을 피할 수 있습니다.
+HP0 뒤에도1초 붕괴 →0.8초 예고 → 마지막 참수도 일격30피해가 남습니다.
+일격 종료 뒤 문이 열리고5줄의 발화가 시간 정지 없이 자동으로 이어집니다.
 
-아트·오디오
-인물·배경·지형·문·소품은 이미지 생성 PNG. _draw는 F1 디버그 전용.
-바위·풀 Foreground를 모든 레벨에서 제거했고 생성 underground_fill
-타일을 카메라 하단까지 반복해 지면 아래를 채웁니다.
-누락 이미지는 회색 MISSING_TEXTURE+MISSING 라벨만 사용. 현재 누락0.
-프롬프트: assets/image_prompts/stage4_*.md, stage5_*.md
-원본·요청·패킹: assets/source_art/stage4/, stage5/
-BGM: 후문uruk_rear_gate, 실내성castle_hall, 옥상uruk_sky,
-  앞뜰castle_front, 황무지uruk_wasteland, 별장 전층villa_calm,
-  도심 통로 전층passage_descent, 집 가는 길uruk_home_road.
-새 곡48초 루프, WAV44100Hz/모노/16bit. BGM -10dB / SFX 0dB.
-기존 음원 유지. 새 효과음48종과 BGM2곡 추가.
-기존 맵 드랍 유지; 통로1~3층은 폭발 투사체만7%, 4~8층은 전체5%.
+검증·아트 주의점
+검증 결과와 변경 파일 전체 목록: docs/STAGE6_REPORT_KO.md, STAGE6_FILES_KO.txt.
+기존 확대 에셋 일부는 그림 크기와 몸체 판정 차이가 남습니다. 상세 수치와
+NPC 대비 경고를 보고서에 기록했습니다. 생성 아틀라스의 일부 공격 프레임은
+확대 시 흐림·크기 흔들림이 있어 고해상도 재제작과 수동 모션 검토를 권장합니다.
+게임 진행 검증은 자동 테스트와 Linux Compatibility 렌더러에서 수행했습니다.
+Windows 입력 장치·장시간 전투 밸런스·완전한 수동 클리어는 별도 확인이 필요합니다.
 
-데이터
-levels.json: 20레벨·지형·스폰·문·NPC·안전구역·카메라
-npcs.json: 3방향·키·클립·가독성; 재사용 토인의 원본 키 기준359px 보존
-player_visuals.json: 키363·프레임·앵커·18종 규격
-player_attacks.json / enemies.json: 전투
-interactions.json / transitions.json: 문·대문·페이드·HUD
-audio_stage4.json: 황무지 BGM 합성; audio_stage5.json: 신규 오디오
-passage_floors.json: 층별4종 창 구성; stage5_fx.json: 이미지FX
-
-검사 (프로젝트 루트, Godot4.3)
-python -m pip install -r requirements-tools.txt
-godot --headless --editor --path . --quit
-python tools/run_tests.py --godot godot --report docs/STAGE5_TEST_RESULTS.json
+개발 도구(Python3 + Pillow + numpy 필요)
 python tools/validate_assets.py
-python tools/check_player_scale.py
+python tools/check_enemy_clips.py
+python tools/check_enemy_clearance.py
+python tools/check_enemy_visual_bounds.py
+python tools/check_ground_contact.py
 python tools/check_level_reachability.py
-python tools/check_player_motion.py
-
-5단계 연결과 지역
-CastleOutskirts(도심 문x520) ↔ DowntownPassage_F8 ↔ F7 ↔ … ↔ F1
-  ↔ HomeRoad(통로 출구x10400) … 집 정문x400(아직 들어갈 수 없다).
-통로8개 층은 모두 너비3600, 실내 floor_y620. 오른쪽→왼쪽 진행.
-층별: 로비·계단 홀·3단 캣워크·심연 교량·기계 지주 숲·돌진 회랑·
-  저천장 수그리기 터널·수직 통로. 위층으로 되돌아갈 수도 있습니다.
-HomeRoad 너비10800, 출구→집 정문 거리10000px. 주거지·수로·시장·
-  언덕·고가 도로·정원 등8구간, 기존 근접14/원거리8만 배치.
-  x<=900 안전, x>=10000 괴수 스폰 없음. 집 문은 잠김.
-천장100px 터널을 통과하도록 수그린 채 이동120px/s를 추가했습니다.
-
-신규 괴수
-폭발 투사체(HP76): 직격7→목표 도착0.3초 뒤 폭발14.
-벽면 강하(36): 천장/벽 매복→급강하→지상 추격.
-뿌리 화염(55): 위쪽10틱 피해. 선딜/방사 중 도끼로 공격 취소.
-돌진(110): 슈퍼아머 돌진, 벽에 부딪치면0.8초 기절.
-독가스 주머니(40): 죽은 뒤1초 팽창→2초 가스,0.2초마다1 피해.
-환령(18): 지형 관통 추적. 도끼1타에 사망.
-방어 갑피(75): 정면 공격·충격파 가드, 뒤쪽 공격 유효.
-자폭 시체(30): 감지 후1.5초 또는 HP0에 폭발18.
-사슬 수인(160): 꼬리10, 끌어당긴 뒤 찍기16. K 탈출 가능.
-가드는 피해·히트스톱 없이 PNG 스파크/효과음/플레이어50px 후퇴.
-화염·가스 중첩은 다른 소스의 같은 틱 그룹을0.2초마다 제한합니다.
-
-검증 결과
-Godot4.3 테스트15개·1081검사 통과. PNG281개 누락0·오류0.
-플레이어 크기301검사, 지형 규칙438검사, 오디오154검사 통과.
-통로8층과 HomeRoad를 실제 플레이어로 양방향 이동한18검사 포함.
-기존 재사용 토인 평균 대비 경고7개는 실패가 아니며 보고서에 명시.
-렌더 스크린샷30장+구르기 접촉 시트1장; roll.gif 미리보기 제공.
-전체 파일: docs/STAGE5_FILES_KO.txt
-구현·수치·아트·가정·한계: docs/STAGE5_REPORT_KO.md
-테스트: docs/STAGE5_TEST_RESULTS.json
-세부 판정·속도·좌표: docs/STAGE5_NUMERICAL_SPEC_KO.json
-PNG 보존 비교: docs/STAGE5_PLAYER_PNG_HASHES.json
-재생성: tools/ART_PIPELINE_KO.md, tools/build_stage5_assets.py,
-  tools/build_passage_backgrounds.py (보관한 생성 원본으로 재합성).
-추가 검사: python tools/check_stage5_audio.py
-현재 모든 필수 이미지 생성 완료; 미생성 에셋 없음.
-Windows 실행·실제 스피커 청감·장시간 사람의 직접 전투 플레이는 미실행.
+Godot4.3 --headless --path . --script tests/stage6_boss.gd 등 tests/*.gd 실행.
+렌더 캡처: DISPLAY=:99 godot --path . --audio-driver Dummy --script tests/render_stage6.gd
+생성 원본: assets/source_art/stage6/, 생성 프롬프트: assets/image_prompts/stage6_*.md.
+재패킹: python tools/build_stage6_assets.py all (원본 PNG 사용, 아트를 코드로 만들지 않음).
+레벨 재빌드: build_stage6_data.py → fit_stage6_clearance.py → finalize_stage6_layout.py
+→ check_ground_contact.py --fix. 원본 자산을 삭제하면 재패킹할 수 없습니다.
+BGM·효과음 재합성: make_bgm.py --stage6-only / make_sfx.py --stage6-only.

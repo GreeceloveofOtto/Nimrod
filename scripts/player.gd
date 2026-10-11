@@ -97,6 +97,7 @@ var pull_target_x: float = 0.0
 var pull_escaped: bool = false
 var damage_tick_clock: float = 0.0
 var tick_sources: Dictionary = {}
+var modifiers := PlayerModifiers.new()
 
 func _ready() -> void:
     add_to_group("player")
@@ -412,7 +413,7 @@ func _begin_attack(step: int) -> void:
 
 func _update_attack(delta: float) -> void:
     var before: float = attack_clock
-    attack_clock += delta
+    attack_clock += delta * modifiers.multiplier("attack_speed")
     var tuning: Dictionary = attack_data[attack_step]
     if before < float(tuning["active_end"]) and attack_clock >= float(tuning["active_start"]):
         _resolve_axe_hit()
@@ -466,11 +467,16 @@ func _resolve_axe_hit() -> void:
             continue
         attack_already_hit[id] = true
         var tuning: Dictionary = attack_data[attack_step]
-        var damage: int = int(tuning["damage"])
+        var damage: int = roundi(float(tuning["damage"]) * modifiers.multiplier("attack"))
         # Knockback uses the attacker's origin; the axe tip can pass the target.
+        if obj.has_method("set_hit_contact"):
+            var enemy_box: Rect2 = obj.get_hurt_rect()
+            obj.set_hit_contact(Rect2(global_position + area.position, area.size).intersection(enemy_box).get_center())
         var result: Variant = obj.call("take_hit", damage, global_position, attack_step)
         if result is Dictionary and bool(result.get("blocked", false)):
             _guard_recoil()
+            continue
+        if result is Dictionary and int(result.get("damage_dealt", damage)) <= 0:
             continue
         _play_shared_sfx("axe_hit_heavy" if attack_step == 4 else "axe_hit_flesh")
         hitstop_left = HITSTOP_SECONDS
@@ -497,7 +503,7 @@ func _resolve_shockwave() -> void:
         if attack_already_hit.has(id):
             continue
         attack_already_hit[id] = true
-        var damage: int = int(shockwave_data["damage"])
+        var damage: int = roundi(float(shockwave_data["damage"]) * modifiers.multiplier("attack"))
         var result: Variant
         if obj.has_method("take_shockwave_hit"):
             result = obj.call("take_shockwave_hit", damage, global_position, 4)
@@ -505,6 +511,8 @@ func _resolve_shockwave() -> void:
             result = obj.call("take_hit", damage, global_position, 4)
         if result is Dictionary and bool(result.get("blocked", false)):
             _guard_recoil()
+            continue
+        if result is Dictionary and int(result.get("damage_dealt", damage)) <= 0:
             continue
         _play_shared_sfx("axe_hit_heavy")
         hitstop_left = HITSTOP_SECONDS
@@ -674,6 +682,7 @@ func _request_run_restart() -> void:
         get_tree().reload_current_scene()
 
 func reset_run_state() -> void:
+    modifiers.clear()
     _cancel_attack()
     hp = MAX_HP
     facing = 1
@@ -714,10 +723,27 @@ func reset_run_state() -> void:
         _transition_visual = {"clip": "idle", "clock": 0.0}
     damage_received.emit(0, hp)
 
+func get_max_hp() -> int:
+    return roundi(MAX_HP * modifiers.multiplier("max_hp"))
+
+func apply_shamhat_blessing() -> bool:
+    if get_node("/root/GameState").run_flags.get("shamhat_blessing", false):
+        return false
+    get_node("/root/GameState").run_flags["shamhat_blessing"] = true
+    var old_max: int = get_max_hp()
+    modifiers.add_modifier("shamhat_blessing", modifiers.settings["shamhat_blessing"]["modifier"])
+    hp = mini(get_max_hp(), hp + get_max_hp() - old_max)
+    damage_received.emit(0, hp)
+    get_node("/root/Audio").play_sfx("buff_chime")
+    var hud: Node = get_tree().get_first_node_in_group("game_hud")
+    if hud != null:
+        hud.show_toast("샴하트의 축복: 공격력 · 공격속도 · 최대 HP +50%", float(modifiers.settings["shamhat_blessing"]["toast_seconds"]))
+    return true
+
 func heal(amount: int) -> int:
     if amount <= 0 or action == "dead" or transition_locked:
         return 0
-    var restored: int = mini(amount, MAX_HP - hp)
+    var restored: int = mini(amount, get_max_hp() - hp)
     hp += restored
     return restored
 

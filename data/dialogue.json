@@ -1,0 +1,8 @@
+{
+  "font": "res://assets/fonts/NimrodUIKorean-Regular.otf",
+  "font_size": 22,
+  "zoom": 1.6,
+  "camera_seconds": 0.35,
+  "character_seconds": 0.04,
+  "hold_seconds": 1.4
+}

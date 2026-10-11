@@ -1,0 +1,84 @@
+{
+  "clips": [
+    {
+      "name": "nimrod_home_inner_door",
+      "sheet": "props/doors/nimrod_home_inner_door.png",
+      "frame_width": 256,
+      "frame_height": 384,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.6,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        128,
+        384
+      ],
+      "image_size": [
+        1536,
+        384
+      ]
+    },
+    {
+      "name": "villa_back_door_exterior",
+      "sheet": "props/doors/villa_back_door_exterior.png",
+      "frame_width": 320,
+      "frame_height": 420,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.6,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        160,
+        420
+      ],
+      "image_size": [
+        1920,
+        420
+      ]
+    },
+    {
+      "name": "cedar_forest_portal",
+      "sheet": "props/doors/cedar_forest_portal.png",
+      "frame_width": 320,
+      "frame_height": 460,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.6,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        160,
+        460
+      ],
+      "image_size": [
+        1920,
+        460
+      ]
+    },
+    {
+      "name": "cedar_portal",
+      "sheet": "props/doors/cedar_portal.png",
+      "frame_width": 256,
+      "frame_height": 384,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.6,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        128,
+        384
+      ],
+      "image_size": [
+        1536,
+        384
+      ]
+    }
+  ]
+}

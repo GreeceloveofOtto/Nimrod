@@ -97,6 +97,8 @@ func _inside_range(player: Node2D) -> bool:
     return player != null and absf(player.global_position.x - global_position.x) <= interact_range and absf(player.global_position.y - global_position.y) <= float(config.get("vertical_range", 120.0))
 
 func can_interact(player: Node2D) -> bool:
+    if get_node("/root/Dialogue").active:
+        return false
     return _player_available(player) and _inside_range(player)
 
 func _is_nearest(player: Node2D) -> bool:

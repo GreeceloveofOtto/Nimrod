@@ -2,6 +2,51 @@ extends Node
 
 # Replace a source file at the same path to upgrade the temporary synthesized audio.
 const SFX_TABLE: Dictionary = {
+    "cedar_sentinel_windup": "res://assets/audio/sfx/cedar_sentinel_windup.wav",
+    "cedar_sentinel_attack": "res://assets/audio/sfx/cedar_sentinel_attack.wav",
+    "cedar_sentinel_hurt": "res://assets/audio/sfx/cedar_sentinel_hurt.wav",
+    "cedar_sentinel_death": "res://assets/audio/sfx/cedar_sentinel_death.wav",
+    "cedar_colossus_windup": "res://assets/audio/sfx/cedar_colossus_windup.wav",
+    "cedar_colossus_attack": "res://assets/audio/sfx/cedar_colossus_attack.wav",
+    "cedar_colossus_hurt": "res://assets/audio/sfx/cedar_colossus_hurt.wav",
+    "cedar_colossus_death": "res://assets/audio/sfx/cedar_colossus_death.wav",
+    "cedar_archer_windup": "res://assets/audio/sfx/cedar_archer_windup.wav",
+    "cedar_archer_attack": "res://assets/audio/sfx/cedar_archer_attack.wav",
+    "cedar_archer_hurt": "res://assets/audio/sfx/cedar_archer_hurt.wav",
+    "cedar_archer_death": "res://assets/audio/sfx/cedar_archer_death.wav",
+    "cedar_wisp_windup": "res://assets/audio/sfx/cedar_wisp_windup.wav",
+    "cedar_wisp_attack": "res://assets/audio/sfx/cedar_wisp_attack.wav",
+    "cedar_wisp_hurt": "res://assets/audio/sfx/cedar_wisp_hurt.wav",
+    "cedar_wisp_death": "res://assets/audio/sfx/cedar_wisp_death.wav",
+    "cedar_demon_windup": "res://assets/audio/sfx/cedar_demon_windup.wav",
+    "cedar_demon_attack": "res://assets/audio/sfx/cedar_demon_attack.wav",
+    "cedar_demon_hurt": "res://assets/audio/sfx/cedar_demon_hurt.wav",
+    "cedar_demon_death": "res://assets/audio/sfx/cedar_demon_death.wav",
+    "kala_ushumgal_windup": "res://assets/audio/sfx/kala_ushumgal_windup.wav",
+    "kala_ushumgal_attack": "res://assets/audio/sfx/kala_ushumgal_attack.wav",
+    "kala_ushumgal_hurt": "res://assets/audio/sfx/kala_ushumgal_hurt.wav",
+    "kala_ushumgal_death": "res://assets/audio/sfx/kala_ushumgal_death.wav",
+    "sentinel_shield_up": "res://assets/audio/sfx/sentinel_shield_up.wav",
+    "sentinel_shield_break": "res://assets/audio/sfx/sentinel_shield_break.wav",
+    "colossus_slam": "res://assets/audio/sfx/colossus_slam.wav",
+    "colossus_shockwave": "res://assets/audio/sfx/colossus_shockwave.wav",
+    "archer_shot": "res://assets/audio/sfx/archer_shot.wav",
+    "bone_spike_pop": "res://assets/audio/sfx/bone_spike_pop.wav",
+    "wisp_wail_loop": "res://assets/audio/sfx/wisp_wail_loop.wav",
+    "wisp_explode": "res://assets/audio/sfx/wisp_explode.wav",
+    "demon_screech": "res://assets/audio/sfx/demon_screech.wav",
+    "boss_whip_swing": "res://assets/audio/sfx/boss_whip_swing.wav",
+    "boss_slam": "res://assets/audio/sfx/boss_slam.wav",
+    "boss_spike_rise": "res://assets/audio/sfx/boss_spike_rise.wav",
+    "boss_roar_loop": "res://assets/audio/sfx/boss_roar_loop.wav",
+    "boss_phase_roar": "res://assets/audio/sfx/boss_phase_roar.wav",
+    "boss_core_throb": "res://assets/audio/sfx/boss_core_throb.wav",
+    "boss_collapse": "res://assets/audio/sfx/boss_collapse.wav",
+    "boss_final_swing": "res://assets/audio/sfx/boss_final_swing.wav",
+    "armor_hit": "res://assets/audio/sfx/armor_hit.wav",
+    "speech_blip": "res://assets/audio/sfx/speech_blip.wav",
+    "buff_chime": "res://assets/audio/sfx/buff_chime.wav",
+
     "explosive_spitter_windup": "res://assets/audio/sfx/explosive_spitter_windup.wav",
     "explosive_spitter_attack": "res://assets/audio/sfx/explosive_spitter_attack.wav",
     "explosive_spitter_hurt": "res://assets/audio/sfx/explosive_spitter_hurt.wav",
@@ -83,6 +128,10 @@ const SFX_TABLE: Dictionary = {
     "great_gate_close": "res://assets/audio/sfx/great_gate_close.wav"
 }
 const BGM_TABLE: Dictionary = {
+    "nimrod_home": "res://assets/audio/bgm/nimrod_home.wav",
+    "cedar_forest": "res://assets/audio/bgm/cedar_forest.wav",
+    "cedar_boss": "res://assets/audio/bgm/cedar_boss.wav",
+
     "passage_descent": "res://assets/audio/bgm/passage_descent.wav",
     "uruk_home_road": "res://assets/audio/bgm/uruk_home_road.wav",
 
@@ -93,7 +142,7 @@ const BGM_TABLE: Dictionary = {
     "castle_front": "res://assets/audio/bgm/castle_front.wav",
     "uruk_wasteland": "res://assets/audio/bgm/uruk_wasteland.wav"
 }
-const LOOP_SFX: Array[String] = ["beast_ranged_flame_loop", "sky_beast_wingflap_loop", "gas_loop", "wraith_wail_loop"]
+const LOOP_SFX: Array[String] = ["beast_ranged_flame_loop", "sky_beast_wingflap_loop", "gas_loop", "wraith_wail_loop", "wisp_wail_loop", "boss_roar_loop", "boss_core_throb"]
 const SILENT_DB: float = -60.0
 
 var _streams: Dictionary = {}
@@ -103,7 +152,11 @@ var _bgm_name: String = ""
 var _bgm_tween: Tween
 
 func _ready() -> void:
-    var spec: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/audio_stage5.json"))
+    for file in ["res://data/audio_stage5.json", "res://data/audio_stage6.json"]:
+        var spec: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(file))
+        for item in spec.get("sfx", []):
+            sfx_volumes[str(item["name"])] = float(item.get("volume_db", 0.0))
+    var spec: Dictionary = {}
     for item in spec.get("sfx", []):
         sfx_volumes[str(item["name"])] = float(item.get("volume_db", 0.0))
     _bgm = AudioStreamPlayer.new()

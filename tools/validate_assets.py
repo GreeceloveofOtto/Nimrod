@@ -94,7 +94,7 @@ class Validator:
         if len(anchor) != 2 or not (0 <= anchor[0] <= width and 0 <= anchor[1] <= height):
             self.fail(path, "anchor must lie inside frame")
         configured = self.enemy_data.get(Path(path).parent.name, {}) if enemy else {}
-        centered = enemy and configured.get("anchor", anchor)[1] == 320
+        centered = enemy and configured.get("anchor", anchor)[1] == height // 2
         if configured.get("frame_size"):
             if [width,height] != configured["frame_size"] or anchor != configured["anchor"]:
                 self.fail(path, "enemy frame/anchor differ from data/enemies.json")

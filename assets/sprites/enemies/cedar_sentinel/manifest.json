@@ -1,0 +1,249 @@
+{
+  "character": "cedar_sentinel",
+  "aliases": {
+    "attack": "thrust",
+    "recovery": "attack_recovery"
+  },
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/enemies/cedar_sentinel/idle.png",
+      "frame_width": 768,
+      "frame_height": 768,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 1.0,
+      "fps": 6.0,
+      "loop": true,
+      "anchor_px": [
+        384,
+        720
+      ],
+      "image_size": [
+        4608,
+        768
+      ]
+    },
+    {
+      "name": "walk",
+      "sheet": "sprites/enemies/cedar_sentinel/walk.png",
+      "frame_width": 768,
+      "frame_height": 768,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 0.9,
+      "fps": 8.88888888888889,
+      "loop": true,
+      "anchor_px": [
+        384,
+        720
+      ],
+      "image_size": [
+        6144,
+        768
+      ]
+    },
+    {
+      "name": "windup",
+      "sheet": "sprites/enemies/cedar_sentinel/windup.png",
+      "frame_width": 768,
+      "frame_height": 768,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.4,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        384,
+        720
+      ],
+      "image_size": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "thrust",
+      "sheet": "sprites/enemies/cedar_sentinel/thrust.png",
+      "frame_width": 768,
+      "frame_height": 768,
+      "columns": 3,
+      "rows": 1,
+      "frames": 3,
+      "duration_seconds": 0.2,
+      "fps": 15.0,
+      "loop": false,
+      "anchor_px": [
+        384,
+        720
+      ],
+      "image_size": [
+        2304,
+        768
+      ]
+    },
+    {
+      "name": "slash",
+      "sheet": "sprites/enemies/cedar_sentinel/slash.png",
+      "frame_width": 768,
+      "frame_height": 768,
+      "columns": 3,
+      "rows": 1,
+      "frames": 3,
+      "duration_seconds": 0.2,
+      "fps": 15.0,
+      "loop": false,
+      "anchor_px": [
+        384,
+        720
+      ],
+      "image_size": [
+        2304,
+        768
+      ]
+    },
+    {
+      "name": "attack_recovery",
+      "sheet": "sprites/enemies/cedar_sentinel/attack_recovery.png",
+      "frame_width": 768,
+      "frame_height": 768,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.7,
+      "fps": 5.714285714285714,
+      "loop": false,
+      "anchor_px": [
+        384,
+        720
+      ],
+      "image_size": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "shield_up",
+      "sheet": "sprites/enemies/cedar_sentinel/shield_up.png",
+      "frame_width": 768,
+      "frame_height": 768,
+      "columns": 3,
+      "rows": 1,
+      "frames": 3,
+      "duration_seconds": 0.2,
+      "fps": 15.0,
+      "loop": false,
+      "anchor_px": [
+        384,
+        720
+      ],
+      "image_size": [
+        2304,
+        768
+      ]
+    },
+    {
+      "name": "shield_hold",
+      "sheet": "sprites/enemies/cedar_sentinel/shield_hold.png",
+      "frame_width": 768,
+      "frame_height": 768,
+      "columns": 2,
+      "rows": 1,
+      "frames": 2,
+      "duration_seconds": 0.2,
+      "fps": 10.0,
+      "loop": true,
+      "anchor_px": [
+        384,
+        720
+      ],
+      "image_size": [
+        1536,
+        768
+      ]
+    },
+    {
+      "name": "shield_break_stun",
+      "sheet": "sprites/enemies/cedar_sentinel/shield_break_stun.png",
+      "frame_width": 768,
+      "frame_height": 768,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 1.0,
+      "fps": 4.0,
+      "loop": false,
+      "anchor_px": [
+        384,
+        720
+      ],
+      "image_size": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "turn",
+      "sheet": "sprites/enemies/cedar_sentinel/turn.png",
+      "frame_width": 768,
+      "frame_height": 768,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.3,
+      "fps": 13.333333333333334,
+      "loop": false,
+      "anchor_px": [
+        384,
+        720
+      ],
+      "image_size": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "hurt",
+      "sheet": "sprites/enemies/cedar_sentinel/hurt.png",
+      "frame_width": 768,
+      "frame_height": 768,
+      "columns": 2,
+      "rows": 1,
+      "frames": 2,
+      "duration_seconds": 0.2,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        384,
+        720
+      ],
+      "image_size": [
+        1536,
+        768
+      ]
+    },
+    {
+      "name": "death",
+      "sheet": "sprites/enemies/cedar_sentinel/death.png",
+      "frame_width": 768,
+      "frame_height": 768,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.8,
+      "fps": 7.5,
+      "loop": false,
+      "anchor_px": [
+        384,
+        720
+      ],
+      "image_size": [
+        4608,
+        768
+      ]
+    }
+  ]
+}

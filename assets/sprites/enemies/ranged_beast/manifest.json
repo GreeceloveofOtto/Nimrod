@@ -189,5 +189,8 @@
         256
       ]
     }
-  ]
+  ],
+  "aliases": {
+    "attack": "flame_loop"
+  }
 }

@@ -121,5 +121,13 @@
         640
       ]
     }
-  ]
+  ],
+  "aliases": {
+    "idle": "float",
+    "walk": "float",
+    "windup": "bump",
+    "attack": "bump",
+    "recovery": "float",
+    "death": "death_swell"
+  }
 }

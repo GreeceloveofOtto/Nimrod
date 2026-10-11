@@ -1,0 +1,70 @@
+{
+  "fx": [
+    {
+      "name": "bone_spike",
+      "path": "res://assets/sprites/fx/bone_spike.png",
+      "frame_size": [
+        128,
+        256
+      ],
+      "frames": 4,
+      "duration": 0.4,
+      "loop": false
+    },
+    {
+      "name": "soul_flame_cone",
+      "path": "res://assets/sprites/fx/soul_flame_cone.png",
+      "frame_size": [
+        768,
+        384
+      ],
+      "frames": 6,
+      "duration": 0.6,
+      "loop": true
+    },
+    {
+      "name": "bone_arrow",
+      "path": "res://assets/sprites/fx/bone_arrow.png",
+      "frame_size": [
+        96,
+        24
+      ],
+      "frames": 1,
+      "duration": 1,
+      "loop": false
+    },
+    {
+      "name": "bone_spike_ground",
+      "path": "res://assets/sprites/fx/bone_spike_ground.png",
+      "frame_size": [
+        128,
+        128
+      ],
+      "frames": 3,
+      "duration": 0.6,
+      "loop": false
+    },
+    {
+      "name": "blue_flame_explosion",
+      "path": "res://assets/sprites/fx/blue_flame_explosion.png",
+      "frame_size": [
+        256,
+        256
+      ],
+      "frames": 6,
+      "duration": 0.3,
+      "loop": false
+    },
+    {
+      "name": "armor_hit_spark",
+      "path": "res://assets/sprites/fx/armor_hit_spark.png",
+      "frame_size": [
+        192,
+        192
+      ],
+      "frames": 5,
+      "duration": 0.15,
+      "loop": false
+    }
+  ]
+}

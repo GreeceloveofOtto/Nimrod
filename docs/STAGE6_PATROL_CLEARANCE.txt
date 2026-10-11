@@ -1,0 +1,6 @@
+DowntownPassage_F1/explosive_spitter@2100: patrol±100→±54.0
+DowntownPassage_F6/boar_charger@2700: patrol±650→±456.5
+DowntownPassage_F6/boar_charger@900: patrol±650→±566.5
+DowntownPassage_F8/shell_scorpion@900: patrol±100→±98.0
+DowntownPassage_F8/corpse_bomber@1100: patrol±100→±6.0
+DowntownPassage_F8/chain_beastman@1900: patrol±350→±119.0

@@ -1,0 +1,510 @@
+{
+  "sfx": [
+    {
+      "name": "cedar_sentinel_windup",
+      "kind": "growl",
+      "duration": 0.4,
+      "pitch": 65,
+      "seed": 66000,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "cedar_sentinel_attack",
+      "kind": "whoosh",
+      "duration": 0.25,
+      "pitch": 65,
+      "seed": 66001,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "cedar_sentinel_hurt",
+      "kind": "hurt",
+      "duration": 0.2,
+      "pitch": 65,
+      "seed": 66002,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "cedar_sentinel_death",
+      "kind": "death",
+      "duration": 0.7,
+      "pitch": 65,
+      "seed": 66003,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "cedar_colossus_windup",
+      "kind": "growl",
+      "duration": 0.4,
+      "pitch": 86,
+      "seed": 66004,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "cedar_colossus_attack",
+      "kind": "whoosh",
+      "duration": 0.25,
+      "pitch": 86,
+      "seed": 66005,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "cedar_colossus_hurt",
+      "kind": "hurt",
+      "duration": 0.2,
+      "pitch": 86,
+      "seed": 66006,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "cedar_colossus_death",
+      "kind": "death",
+      "duration": 0.7,
+      "pitch": 86,
+      "seed": 66007,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "cedar_archer_windup",
+      "kind": "growl",
+      "duration": 0.4,
+      "pitch": 107,
+      "seed": 66008,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "cedar_archer_attack",
+      "kind": "whoosh",
+      "duration": 0.25,
+      "pitch": 107,
+      "seed": 66009,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "cedar_archer_hurt",
+      "kind": "hurt",
+      "duration": 0.2,
+      "pitch": 107,
+      "seed": 66010,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "cedar_archer_death",
+      "kind": "death",
+      "duration": 0.7,
+      "pitch": 107,
+      "seed": 66011,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "cedar_wisp_windup",
+      "kind": "growl",
+      "duration": 0.4,
+      "pitch": 128,
+      "seed": 66012,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "cedar_wisp_attack",
+      "kind": "whoosh",
+      "duration": 0.25,
+      "pitch": 128,
+      "seed": 66013,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "cedar_wisp_hurt",
+      "kind": "hurt",
+      "duration": 0.2,
+      "pitch": 128,
+      "seed": 66014,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "cedar_wisp_death",
+      "kind": "death",
+      "duration": 0.7,
+      "pitch": 128,
+      "seed": 66015,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "cedar_demon_windup",
+      "kind": "growl",
+      "duration": 0.4,
+      "pitch": 149,
+      "seed": 66016,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "cedar_demon_attack",
+      "kind": "whoosh",
+      "duration": 0.25,
+      "pitch": 149,
+      "seed": 66017,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "cedar_demon_hurt",
+      "kind": "hurt",
+      "duration": 0.2,
+      "pitch": 149,
+      "seed": 66018,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "cedar_demon_death",
+      "kind": "death",
+      "duration": 0.7,
+      "pitch": 149,
+      "seed": 66019,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "kala_ushumgal_windup",
+      "kind": "growl",
+      "duration": 0.4,
+      "pitch": 170,
+      "seed": 66020,
+      "loop": false,
+      "volume_db": -6
+    },
+    {
+      "name": "kala_ushumgal_attack",
+      "kind": "whoosh",
+      "duration": 0.25,
+      "pitch": 170,
+      "seed": 66021,
+      "loop": false,
+      "volume_db": -6
+    },
+    {
+      "name": "kala_ushumgal_hurt",
+      "kind": "hurt",
+      "duration": 0.2,
+      "pitch": 170,
+      "seed": 66022,
+      "loop": false,
+      "volume_db": -6
+    },
+    {
+      "name": "kala_ushumgal_death",
+      "kind": "death",
+      "duration": 0.7,
+      "pitch": 170,
+      "seed": 66023,
+      "loop": false,
+      "volume_db": -6
+    },
+    {
+      "name": "sentinel_shield_up",
+      "kind": "rattle",
+      "duration": 0.2,
+      "pitch": 100,
+      "seed": 66500,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "sentinel_shield_break",
+      "kind": "heavy",
+      "duration": 0.35,
+      "pitch": 117,
+      "seed": 66501,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "colossus_slam",
+      "kind": "heavy",
+      "duration": 0.3,
+      "pitch": 134,
+      "seed": 66502,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "colossus_shockwave",
+      "kind": "wave",
+      "duration": 0.5,
+      "pitch": 151,
+      "seed": 66503,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "archer_shot",
+      "kind": "whoosh",
+      "duration": 0.15,
+      "pitch": 168,
+      "seed": 66504,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "bone_spike_pop",
+      "kind": "rattle",
+      "duration": 0.18,
+      "pitch": 185,
+      "seed": 66505,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "wisp_wail_loop",
+      "kind": "flame_loop",
+      "duration": 0.5,
+      "pitch": 202,
+      "seed": 66506,
+      "loop": true,
+      "volume_db": -15
+    },
+    {
+      "name": "wisp_explode",
+      "kind": "heavy",
+      "duration": 0.35,
+      "pitch": 219,
+      "seed": 66507,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "demon_screech",
+      "kind": "screech",
+      "duration": 0.3,
+      "pitch": 236,
+      "seed": 66508,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "boss_whip_swing",
+      "kind": "whoosh",
+      "duration": 0.35,
+      "pitch": 253,
+      "seed": 66509,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "boss_slam",
+      "kind": "heavy",
+      "duration": 0.5,
+      "pitch": 270,
+      "seed": 66510,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "boss_spike_rise",
+      "kind": "rattle",
+      "duration": 0.25,
+      "pitch": 287,
+      "seed": 66511,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "boss_roar_loop",
+      "kind": "flame_loop",
+      "duration": 0.5,
+      "pitch": 304,
+      "seed": 66512,
+      "loop": true,
+      "volume_db": -15
+    },
+    {
+      "name": "boss_phase_roar",
+      "kind": "screech",
+      "duration": 1.5,
+      "pitch": 321,
+      "seed": 66513,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "boss_core_throb",
+      "kind": "flame_loop",
+      "duration": 0.5,
+      "pitch": 338,
+      "seed": 66514,
+      "loop": true,
+      "volume_db": 0
+    },
+    {
+      "name": "boss_collapse",
+      "kind": "death",
+      "duration": 1,
+      "pitch": 355,
+      "seed": 66515,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "boss_final_swing",
+      "kind": "whoosh",
+      "duration": 0.4,
+      "pitch": 372,
+      "seed": 66516,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "armor_hit",
+      "kind": "rattle",
+      "duration": 0.15,
+      "pitch": 389,
+      "seed": 66517,
+      "loop": false,
+      "volume_db": 0
+    },
+    {
+      "name": "speech_blip",
+      "kind": "speech",
+      "duration": 0.02,
+      "pitch": 406,
+      "seed": 66518,
+      "loop": false,
+      "volume_db": -26
+    },
+    {
+      "name": "buff_chime",
+      "kind": "chime",
+      "duration": 0.6,
+      "pitch": 423,
+      "seed": 66519,
+      "loop": false,
+      "volume_db": 0
+    }
+  ],
+  "bgm": [
+    {
+      "name": "nimrod_home",
+      "duration": 48,
+      "frequencies": [
+        55,
+        82.5,
+        110,
+        165
+      ],
+      "gains": [
+        0.24,
+        0.12,
+        0.08,
+        0.035
+      ],
+      "string_harmonics": 2,
+      "pulse_cycles": 3,
+      "wind_gain": 0.02,
+      "wind_band": [
+        70,
+        1200
+      ],
+      "chime_every": 8,
+      "chime_gain": 0.014,
+      "seed": 67000,
+      "metal_percussion": {
+        "interval": 6,
+        "gain": 0.005,
+        "frequencies": [
+          140,
+          271,
+          423
+        ],
+        "decay": 0.7
+      }
+    },
+    {
+      "name": "cedar_forest",
+      "duration": 48,
+      "frequencies": [
+        31,
+        46.5,
+        62,
+        124
+      ],
+      "gains": [
+        0.24,
+        0.12,
+        0.08,
+        0.035
+      ],
+      "string_harmonics": 2,
+      "pulse_cycles": 3,
+      "wind_gain": 0.02,
+      "wind_band": [
+        70,
+        1200
+      ],
+      "chime_every": 8,
+      "chime_gain": 0.014,
+      "seed": 67001,
+      "metal_percussion": {
+        "interval": 6,
+        "gain": 0.015,
+        "frequencies": [
+          140,
+          271,
+          423
+        ],
+        "decay": 0.7
+      }
+    },
+    {
+      "name": "cedar_boss",
+      "duration": 48,
+      "frequencies": [
+        25,
+        37.5,
+        50,
+        75
+      ],
+      "gains": [
+        0.24,
+        0.12,
+        0.08,
+        0.035
+      ],
+      "string_harmonics": 2,
+      "pulse_cycles": 3,
+      "wind_gain": 0.02,
+      "wind_band": [
+        70,
+        1200
+      ],
+      "chime_every": 8,
+      "chime_gain": 0.014,
+      "seed": 67002,
+      "metal_percussion": {
+        "interval": 6,
+        "gain": 0.07,
+        "frequencies": [
+          140,
+          271,
+          423
+        ],
+        "decay": 0.7
+      }
+    }
+  ]
+}

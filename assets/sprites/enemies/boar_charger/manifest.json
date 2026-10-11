@@ -181,5 +181,9 @@
         640
       ]
     }
-  ]
+  ],
+  "aliases": {
+    "windup": "telegraph",
+    "attack": "charge"
+  }
 }

@@ -1,0 +1,47 @@
+sfx/cedar_sentinel_windup.wav: 44100Hz mono16bit, 0.400s, peak-3.00dBFS
+sfx/cedar_sentinel_attack.wav: 44100Hz mono16bit, 0.250s, peak-3.00dBFS
+sfx/cedar_sentinel_hurt.wav: 44100Hz mono16bit, 0.200s, peak-3.00dBFS
+sfx/cedar_sentinel_death.wav: 44100Hz mono16bit, 0.700s, peak-3.00dBFS
+sfx/cedar_colossus_windup.wav: 44100Hz mono16bit, 0.400s, peak-3.00dBFS
+sfx/cedar_colossus_attack.wav: 44100Hz mono16bit, 0.250s, peak-3.00dBFS
+sfx/cedar_colossus_hurt.wav: 44100Hz mono16bit, 0.200s, peak-3.00dBFS
+sfx/cedar_colossus_death.wav: 44100Hz mono16bit, 0.700s, peak-3.00dBFS
+sfx/cedar_archer_windup.wav: 44100Hz mono16bit, 0.400s, peak-3.00dBFS
+sfx/cedar_archer_attack.wav: 44100Hz mono16bit, 0.250s, peak-3.00dBFS
+sfx/cedar_archer_hurt.wav: 44100Hz mono16bit, 0.200s, peak-3.00dBFS
+sfx/cedar_archer_death.wav: 44100Hz mono16bit, 0.700s, peak-3.00dBFS
+sfx/cedar_wisp_windup.wav: 44100Hz mono16bit, 0.400s, peak-3.00dBFS
+sfx/cedar_wisp_attack.wav: 44100Hz mono16bit, 0.250s, peak-3.00dBFS
+sfx/cedar_wisp_hurt.wav: 44100Hz mono16bit, 0.200s, peak-3.00dBFS
+sfx/cedar_wisp_death.wav: 44100Hz mono16bit, 0.700s, peak-3.00dBFS
+sfx/cedar_demon_windup.wav: 44100Hz mono16bit, 0.400s, peak-3.00dBFS
+sfx/cedar_demon_attack.wav: 44100Hz mono16bit, 0.250s, peak-3.00dBFS
+sfx/cedar_demon_hurt.wav: 44100Hz mono16bit, 0.200s, peak-3.00dBFS
+sfx/cedar_demon_death.wav: 44100Hz mono16bit, 0.700s, peak-3.00dBFS
+sfx/kala_ushumgal_windup.wav: 44100Hz mono16bit, 0.400s, peak-3.00dBFS
+sfx/kala_ushumgal_attack.wav: 44100Hz mono16bit, 0.250s, peak-3.00dBFS
+sfx/kala_ushumgal_hurt.wav: 44100Hz mono16bit, 0.200s, peak-3.00dBFS
+sfx/kala_ushumgal_death.wav: 44100Hz mono16bit, 0.700s, peak-3.00dBFS
+sfx/sentinel_shield_up.wav: 44100Hz mono16bit, 0.200s, peak-3.00dBFS
+sfx/sentinel_shield_break.wav: 44100Hz mono16bit, 0.350s, peak-3.00dBFS
+sfx/colossus_slam.wav: 44100Hz mono16bit, 0.300s, peak-3.00dBFS
+sfx/colossus_shockwave.wav: 44100Hz mono16bit, 0.500s, peak-3.00dBFS
+sfx/archer_shot.wav: 44100Hz mono16bit, 0.150s, peak-3.00dBFS
+sfx/bone_spike_pop.wav: 44100Hz mono16bit, 0.180s, peak-3.00dBFS
+sfx/wisp_wail_loop.wav: 44100Hz mono16bit, 0.500s, peak-3.00dBFS
+sfx/wisp_explode.wav: 44100Hz mono16bit, 0.350s, peak-3.00dBFS
+sfx/demon_screech.wav: 44100Hz mono16bit, 0.300s, peak-3.00dBFS
+sfx/boss_whip_swing.wav: 44100Hz mono16bit, 0.350s, peak-3.00dBFS
+sfx/boss_slam.wav: 44100Hz mono16bit, 0.500s, peak-3.00dBFS
+sfx/boss_spike_rise.wav: 44100Hz mono16bit, 0.250s, peak-3.00dBFS
+sfx/boss_roar_loop.wav: 44100Hz mono16bit, 0.500s, peak-3.00dBFS
+sfx/boss_phase_roar.wav: 44100Hz mono16bit, 1.500s, peak-3.00dBFS
+sfx/boss_core_throb.wav: 44100Hz mono16bit, 0.500s, peak-3.00dBFS
+sfx/boss_collapse.wav: 44100Hz mono16bit, 1.000s, peak-3.00dBFS
+sfx/boss_final_swing.wav: 44100Hz mono16bit, 0.400s, peak-3.00dBFS
+sfx/armor_hit.wav: 44100Hz mono16bit, 0.150s, peak-3.00dBFS
+sfx/speech_blip.wav: 44100Hz mono16bit, 0.020s, peak-3.00dBFS
+sfx/buff_chime.wav: 44100Hz mono16bit, 0.600s, peak-3.00dBFS
+bgm/nimrod_home.wav: 44100Hz mono16bit, 48.000s, peak-3.00dBFS, periodic seam slope228.0, adjacent slope228.0, residual0.0/32768
+bgm/cedar_forest.wav: 44100Hz mono16bit, 48.000s, peak-3.00dBFS, periodic seam slope299.0, adjacent slope299.0, residual0.0/32768
+bgm/cedar_boss.wav: 44100Hz mono16bit, 48.000s, peak-3.00dBFS, periodic seam slope194.0, adjacent slope193.0, residual1.0/32768

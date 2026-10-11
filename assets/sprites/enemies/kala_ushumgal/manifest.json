@@ -1,0 +1,611 @@
+{
+  "character": "kala_ushumgal",
+  "aliases": {
+    "windup": "whip_windup",
+    "attack": "whip_swing",
+    "recovery": "whip_recovery",
+    "hurt": "idle"
+  },
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/enemies/kala_ushumgal/idle.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 1.6,
+      "fps": 5.0,
+      "loop": true,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        12288,
+        1280
+      ]
+    },
+    {
+      "name": "walk",
+      "sheet": "sprites/enemies/kala_ushumgal/walk.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 1.4,
+      "fps": 5.714285714285714,
+      "loop": true,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        12288,
+        1280
+      ]
+    },
+    {
+      "name": "whip_windup",
+      "sheet": "sprites/enemies/kala_ushumgal/whip_windup.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.8,
+      "fps": 6.25,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        7680,
+        1280
+      ]
+    },
+    {
+      "name": "whip_swing",
+      "sheet": "sprites/enemies/kala_ushumgal/whip_swing.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.25,
+      "fps": 16.0,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        6144,
+        1280
+      ]
+    },
+    {
+      "name": "whip_swing_back",
+      "sheet": "sprites/enemies/kala_ushumgal/whip_swing_back.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.25,
+      "fps": 16.0,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        6144,
+        1280
+      ]
+    },
+    {
+      "name": "whip_recovery",
+      "sheet": "sprites/enemies/kala_ushumgal/whip_recovery.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 1.0,
+      "fps": 5.0,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        7680,
+        1280
+      ]
+    },
+    {
+      "name": "slam_windup",
+      "sheet": "sprites/enemies/kala_ushumgal/slam_windup.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.9,
+      "fps": 5.555555555555555,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        7680,
+        1280
+      ]
+    },
+    {
+      "name": "slam",
+      "sheet": "sprites/enemies/kala_ushumgal/slam.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 3,
+      "rows": 1,
+      "frames": 3,
+      "duration_seconds": 0.15,
+      "fps": 20.0,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        4608,
+        1280
+      ]
+    },
+    {
+      "name": "slam_recovery",
+      "sheet": "sprites/enemies/kala_ushumgal/slam_recovery.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 1.2,
+      "fps": 4.166666666666667,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        7680,
+        1280
+      ]
+    },
+    {
+      "name": "summon",
+      "sheet": "sprites/enemies/kala_ushumgal/summon.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 1.8,
+      "fps": 3.333333333333333,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        9216,
+        1280
+      ]
+    },
+    {
+      "name": "turn",
+      "sheet": "sprites/enemies/kala_ushumgal/turn.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.7,
+      "fps": 8.571428571428571,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        9216,
+        1280
+      ]
+    },
+    {
+      "name": "phase_transition",
+      "sheet": "sprites/enemies/kala_ushumgal/phase_transition.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 2.0,
+      "fps": 4.0,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        12288,
+        1280
+      ]
+    },
+    {
+      "name": "roar_windup",
+      "sheet": "sprites/enemies/kala_ushumgal/roar_windup.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.8,
+      "fps": 6.25,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        7680,
+        1280
+      ]
+    },
+    {
+      "name": "roar_loop",
+      "sheet": "sprites/enemies/kala_ushumgal/roar_loop.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.4,
+      "fps": 10.0,
+      "loop": true,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        6144,
+        1280
+      ]
+    },
+    {
+      "name": "roar_recovery",
+      "sheet": "sprites/enemies/kala_ushumgal/roar_recovery.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 1.3,
+      "fps": 3.846153846153846,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        7680,
+        1280
+      ]
+    },
+    {
+      "name": "spines_back",
+      "sheet": "sprites/enemies/kala_ushumgal/spines_back.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.45,
+      "fps": 8.88888888888889,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        6144,
+        1280
+      ]
+    },
+    {
+      "name": "collapse",
+      "sheet": "sprites/enemies/kala_ushumgal/collapse.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 1.0,
+      "fps": 6.0,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        9216,
+        1280
+      ]
+    },
+    {
+      "name": "final_swing_windup",
+      "sheet": "sprites/enemies/kala_ushumgal/final_swing_windup.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.8,
+      "fps": 6.25,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        7680,
+        1280
+      ]
+    },
+    {
+      "name": "final_swing",
+      "sheet": "sprites/enemies/kala_ushumgal/final_swing.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.2,
+      "fps": 20.0,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        6144,
+        1280
+      ]
+    },
+    {
+      "name": "death",
+      "sheet": "sprites/enemies/kala_ushumgal/death.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 1.5,
+      "fps": 5.333333333333333,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        12288,
+        1280
+      ]
+    },
+    {
+      "name": "idle_p2",
+      "sheet": "sprites/enemies/kala_ushumgal/idle_p2.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 1.6,
+      "fps": 5.0,
+      "loop": true,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        12288,
+        1280
+      ]
+    },
+    {
+      "name": "walk_p2",
+      "sheet": "sprites/enemies/kala_ushumgal/walk_p2.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 1.4,
+      "fps": 5.714285714285714,
+      "loop": true,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        12288,
+        1280
+      ]
+    },
+    {
+      "name": "turn_p2",
+      "sheet": "sprites/enemies/kala_ushumgal/turn_p2.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.7,
+      "fps": 8.571428571428571,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        9216,
+        1280
+      ]
+    },
+    {
+      "name": "whip_windup_p2",
+      "sheet": "sprites/enemies/kala_ushumgal/whip_windup_p2.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.8,
+      "fps": 6.25,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        7680,
+        1280
+      ]
+    },
+    {
+      "name": "whip_swing_p2",
+      "sheet": "sprites/enemies/kala_ushumgal/whip_swing_p2.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.25,
+      "fps": 16.0,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        6144,
+        1280
+      ]
+    },
+    {
+      "name": "whip_swing_back_p2",
+      "sheet": "sprites/enemies/kala_ushumgal/whip_swing_back_p2.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.25,
+      "fps": 16.0,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        6144,
+        1280
+      ]
+    },
+    {
+      "name": "whip_recovery_p2",
+      "sheet": "sprites/enemies/kala_ushumgal/whip_recovery_p2.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 1.0,
+      "fps": 5.0,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        7680,
+        1280
+      ]
+    },
+    {
+      "name": "slam_windup_p2",
+      "sheet": "sprites/enemies/kala_ushumgal/slam_windup_p2.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.9,
+      "fps": 5.555555555555555,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        7680,
+        1280
+      ]
+    },
+    {
+      "name": "slam_p2",
+      "sheet": "sprites/enemies/kala_ushumgal/slam_p2.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 3,
+      "rows": 1,
+      "frames": 3,
+      "duration_seconds": 0.15,
+      "fps": 20.0,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        4608,
+        1280
+      ]
+    },
+    {
+      "name": "slam_recovery_p2",
+      "sheet": "sprites/enemies/kala_ushumgal/slam_recovery_p2.png",
+      "frame_width": 1536,
+      "frame_height": 1280,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 1.2,
+      "fps": 4.166666666666667,
+      "loop": false,
+      "anchor_px": [
+        768,
+        1200
+      ],
+      "image_size": [
+        7680,
+        1280
+      ]
+    }
+  ]
+}

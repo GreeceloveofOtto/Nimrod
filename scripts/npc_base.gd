@@ -38,6 +38,8 @@ var name_tag: PanelContainer
 var name_label: Label
 var readability: Dictionary = {}
 var _last_display_name: String = ""
+var interaction_prompt: Node2D
+var interaction_running: bool = false
 
 func _ready() -> void:
     add_to_group("npcs")
@@ -50,6 +52,7 @@ func _ready() -> void:
     if display_name.is_empty():
         display_name = str(stats.get("display_name", npc_id))
     face_player = bool(stats.get("face_player", face_player))
+    interactable = bool(stats.get("interactable", interactable))
     if sheet_manifest.is_empty():
         sheet_manifest = "res://" + str(stats.get("sheet_dir", "assets/sprites/npcs/" + npc_id)) + "/manifest.json"
     facing = -1 if initial_facing < 0 else 1
@@ -80,6 +83,10 @@ func _ready() -> void:
     readability = common.get("readability", {})
     _make_readability_fx()
     _make_name_tag()
+    if interactable:
+        interaction_prompt = load("res://scripts/asset_visual.gd").add_image(self, "res://assets/ui/prompt_e.png", Vector2(-16, -150), Vector2(32, 32), 60)
+        interaction_prompt.name = "InteractionPrompt"
+        interaction_prompt.visible = false
 
 func _rgba(values: Array) -> Color:
     return Color(float(values[0]), float(values[1]), float(values[2]), float(values[3]))
@@ -223,6 +230,12 @@ func _make_missing_visual() -> void:
 
 func _process(delta: float) -> void:
     _update_readability(delta)
+    if interaction_prompt != null:
+        var actor: NimrodPlayer = get_tree().get_first_node_in_group("player") as NimrodPlayer
+        var available: bool = actor != null and not actor.is_transition_locked() and actor.action != "dead" and not interaction_running and not get_node("/root/Dialogue").active and not get_node("/root/GameState").run_flags.get("shamhat_blessing", false)
+        interaction_prompt.visible = available and global_position.distance_to(actor.global_position) <= float(stats.get("interact_range", 120.0))
+        if interaction_prompt.visible and Input.is_action_just_pressed("interact"):
+            interact(actor)
     face_cooldown_left = maxf(0.0, face_cooldown_left - delta)
     look_left -= delta
     if three_way:
@@ -352,6 +365,19 @@ func _refresh_visual() -> void:
         animation_finished = true
         clip_finished.emit(current_clip)
 
-# Deliberately empty: there is no dialogue in this stage.
-func interact(_player: Node2D) -> void:
-    pass
+# Other NPCs keep an inert future interaction hook. Only Shamhat grants a blessing.
+func interact(player: Node2D) -> void:
+    if str(stats.get("interaction", "")) != "shamhat_blessing" or interaction_running or get_node("/root/GameState").run_flags.get("shamhat_blessing", false):
+        return
+    interaction_running = true
+    interacted.emit()
+    if three_way:
+        _change_pose(Pose.FRONT)
+        if pose_tween != null:
+            pose_tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+    await get_node("/root/Dialogue").play(["당신이 자꾸 신경쓰여요."], self)
+    if is_instance_valid(player) and player is NimrodPlayer and not get_node("/root/Dialogue").cancelled:
+        player.apply_shamhat_blessing()
+        if interaction_prompt != null:
+            interaction_prompt.hide()
+    interaction_running = false

@@ -141,5 +141,9 @@
         640
       ]
     }
-  ]
+  ],
+  "aliases": {
+    "walk": "idle",
+    "attack": "spew"
+  }
 }

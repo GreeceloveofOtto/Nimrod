@@ -1,0 +1,124 @@
+{
+  "clips": [
+    {
+      "name": "bone_spike",
+      "sheet": "sprites/fx/bone_spike.png",
+      "frame_width": 128,
+      "frame_height": 256,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.4,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        64,
+        128
+      ],
+      "image_size": [
+        512,
+        256
+      ]
+    },
+    {
+      "name": "soul_flame_cone",
+      "sheet": "sprites/fx/soul_flame_cone.png",
+      "frame_width": 768,
+      "frame_height": 384,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.6,
+      "fps": 10.0,
+      "loop": true,
+      "anchor_px": [
+        384,
+        192
+      ],
+      "image_size": [
+        4608,
+        384
+      ]
+    },
+    {
+      "name": "bone_arrow",
+      "sheet": "sprites/fx/bone_arrow.png",
+      "frame_width": 96,
+      "frame_height": 24,
+      "columns": 1,
+      "rows": 1,
+      "frames": 1,
+      "duration_seconds": 1,
+      "fps": 1.0,
+      "loop": false,
+      "anchor_px": [
+        48,
+        12
+      ],
+      "image_size": [
+        96,
+        24
+      ]
+    },
+    {
+      "name": "bone_spike_ground",
+      "sheet": "sprites/fx/bone_spike_ground.png",
+      "frame_width": 128,
+      "frame_height": 128,
+      "columns": 3,
+      "rows": 1,
+      "frames": 3,
+      "duration_seconds": 0.6,
+      "fps": 5.0,
+      "loop": false,
+      "anchor_px": [
+        64,
+        64
+      ],
+      "image_size": [
+        384,
+        128
+      ]
+    },
+    {
+      "name": "blue_flame_explosion",
+      "sheet": "sprites/fx/blue_flame_explosion.png",
+      "frame_width": 256,
+      "frame_height": 256,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.3,
+      "fps": 20.0,
+      "loop": false,
+      "anchor_px": [
+        128,
+        128
+      ],
+      "image_size": [
+        1536,
+        256
+      ]
+    },
+    {
+      "name": "armor_hit_spark",
+      "sheet": "sprites/fx/armor_hit_spark.png",
+      "frame_width": 192,
+      "frame_height": 192,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.15,
+      "fps": 33.333333333333336,
+      "loop": false,
+      "anchor_px": [
+        96,
+        96
+      ],
+      "image_size": [
+        960,
+        192
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "wall": "/workspace/generated_images/exec-ead3c2e8-8bfb-4f2b-a2a1-4631f62da4c7.png",
+  "sentinel": "/workspace/generated_images/exec-6a1abe72-3f31-4e2e-804e-e8ec07138c75.png",
+  "colossus": "/workspace/generated_images/exec-096e4042-d9ce-4871-9685-1362b7f62c69.png",
+  "archer": "/workspace/generated_images/exec-e7b75518-422f-4dca-b02a-9a9e91296bca.png",
+  "wisp": "/workspace/generated_images/exec-603f0163-7098-4706-bf0a-f5802e05feb7.png",
+  "demon": "/workspace/generated_images/exec-27f4fcb3-a5d2-4e0e-9270-1896984d8f52.png",
+  "boss_base": "/workspace/generated_images/exec-f9183b87-1677-441e-a922-8f1b5a1f5e3a.png",
+  "boss_special": "/workspace/generated_images/exec-52fde05d-a7fe-4b91-9634-0577cfd774c0.png",
+  "boss_p2": "/workspace/generated_images/exec-b87a7943-be9b-48ff-9ae0-2bc6a2b5fa2c.png",
+  "enkidua": "/workspace/generated_images/exec-8fe70dd6-b6b8-4351-b94a-e1b11eb881e5.png",
+  "backgrounds": "/workspace/generated_images/exec-84bd2d26-9330-420d-ae23-418b9968819a.png",
+  "forest_tiles": "/workspace/generated_images/exec-43cb1901-7ade-49db-88ca-bb951db1c2f7.png",
+  "world_props": "/workspace/generated_images/exec-e50d2608-e4b9-48de-802c-4c66a3581da9.png",
+  "doors": "/workspace/generated_images/exec-b37d06a0-4edc-478a-b7e3-86b6ec8b9d11.png",
+  "fx": "/workspace/generated_images/exec-cfcac3fe-6856-4731-ad1e-30b580ca55ae.png",
+  "extra_tiles": "/workspace/generated_images/exec-cd0b36e9-a14d-4e24-952c-283e36622922.png",
+  "boss_turn": "/workspace/generated_images/exec-5fc05306-c7af-47a8-8bba-65c4ad5b849a.png",
+  "boss_idle": "generated-image exec-5d825312-5646-4ce0-940c-f19c9af96f4b",
+  "boss_idle_p2": "generated-image exec-201d9949-c9d1-455a-89d9-263888065aee"
+}

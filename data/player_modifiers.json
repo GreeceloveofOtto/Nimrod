@@ -1,0 +1,11 @@
+{
+  "attack_speed_cap": 2.0,
+  "shamhat_blessing": {
+    "modifier": {
+      "attack": 0.5,
+      "attack_speed": 0.5,
+      "max_hp": 0.5
+    },
+    "toast_seconds": 1.8
+  }
+}

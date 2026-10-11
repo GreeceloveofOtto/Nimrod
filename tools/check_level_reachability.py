@@ -45,6 +45,43 @@ def check(level):
     print(f"REACHABILITY {level['id']}: {checks} checks, {len(errors)} failures; jump height {695**2/(2*1750):.2f}px")
     for error in errors:print('FAIL:',error)
     return not errors
+def check_maze(layout,level):
+    errors=[];checks=0
+    def expect(ok,msg):
+        nonlocal checks
+        checks+=1
+        if not ok:errors.append(msg)
+    cells={c['id']:c for c in layout['cells']};graph={id:set() for id in cells}
+    for a,b in layout['connections']:
+        expect(a in cells and b in cells,'Connection has unknown room')
+        graph[a].add(b);graph[b].add(a)
+        aa=cells[a];bb=cells[b]
+        expect(abs(aa['column']-bb['column'])+abs(aa['row']-bb['row'])==1,'Rooms must be adjacent')
+    paths={layout['entrance']:[layout['entrance']]};todo=[layout['entrance']]
+    while todo:
+        a=todo.pop(0)
+        for b in graph[a]:
+            if b not in paths:paths[b]=paths[a]+[b];todo.append(b)
+    expect(len(paths)==len(cells),'Every branch must be reachable')
+    expect(layout['exit'] in paths and len(paths[layout['exit']])>=14,'Shortest valid route needs14+rooms')
+    expect(sum(len(v)>=3 for v in graph.values())>=4,'Four actual branching rooms required')
+    expect(len(layout['dead_ends'])>=3,'At least three dead ends required')
+    for id in layout['dead_ends']:expect(id in paths and len(graph[id])==1,'Dead end reachable and degree1')
+    platforms={p['id']:p for p in level['platforms']}
+    for chain in layout['platform_chains']:
+        for a,b in zip(chain,chain[1:]):
+            p=platforms[a];q=platforms[b];x,y=p['position'];xx,yy=q['position'];gap=max(0,xx-x-p['width'],x-xx-q['width'])
+            expect(gap<=layout['max_gap'] and abs(y-yy)<=layout['max_rise'],'Maze chain exceeds jump limits')
+        expect(len(chain)>=8,'640px ascent needs eight80px steps')
+    # Solid room floors prohibit S+Space shortcuts between non-connected rooms.
+    for p in platforms.values():
+        if p['id'].startswith('room_'):expect(not p.get('one_way',True),'Room separator must be solid')
+    print(f"MAZE {level['id']}: {checks} checks, {len(errors)} failures; {len(cells)} rooms, shortest path {len(paths.get(layout['exit'],[]))}")
+    for err in errors:print('FAIL:',err)
+    return not errors
+
 if __name__=='__main__':
     levels=json.loads((ROOT/'data/levels.json').read_text())['levels'];results=[check(l) for l in levels if 'reachability' in l]
+    layouts=json.loads((ROOT/'data/cedar_forest_layout.json').read_text())['layouts']
+    results += [check_maze(lay,next(l for l in levels if l['id']==lay['level_id'])) for lay in layouts]
     raise SystemExit(0 if all(results) else 1)

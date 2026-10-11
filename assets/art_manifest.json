@@ -32,7 +32,16 @@
     "sprites/enemies/wraith_ray/manifest.json",
     "sprites/enemies/shell_scorpion/manifest.json",
     "sprites/enemies/corpse_bomber/manifest.json",
-    "sprites/enemies/chain_beastman/manifest.json"
+    "sprites/enemies/chain_beastman/manifest.json",
+    "sprites/enemies/cedar_sentinel/manifest.json",
+    "sprites/enemies/cedar_colossus/manifest.json",
+    "sprites/enemies/cedar_archer/manifest.json",
+    "sprites/enemies/cedar_wisp/manifest.json",
+    "sprites/enemies/cedar_demon/manifest.json",
+    "sprites/npcs/enkidua/manifest.json",
+    "props/doors/stage6_manifest.json",
+    "sprites/fx/stage6_manifest.json",
+    "sprites/enemies/kala_ushumgal/manifest.json"
   ],
   "assets": [
     {
@@ -1053,6 +1062,179 @@
       "width": 3600,
       "height": 960,
       "transparent": false
+    },
+    {
+      "name": "home_interior_bg",
+      "path": "backgrounds/nimrod_home/home_interior_bg.png",
+      "width": 1800,
+      "height": 720,
+      "transparent": false
+    },
+    {
+      "name": "backyard_bg",
+      "path": "backgrounds/villa_backyard/backyard_bg.png",
+      "width": 1500,
+      "height": 720,
+      "transparent": false
+    },
+    {
+      "name": "boss_bg",
+      "path": "backgrounds/cedar/boss_bg.png",
+      "width": 1600,
+      "height": 960,
+      "transparent": false
+    },
+    {
+      "name": "far_tile_2d",
+      "path": "backgrounds/cedar/far_tile_2d.png",
+      "width": 1024,
+      "height": 1024,
+      "transparent": false,
+      "tile_x": true,
+      "tile_y": true
+    },
+    {
+      "name": "mid_trunks_tile_2d",
+      "path": "backgrounds/cedar/mid_trunks_tile_2d.png",
+      "width": 1024,
+      "height": 1024,
+      "transparent": false,
+      "tile_x": true,
+      "tile_y": true
+    },
+    {
+      "name": "home_bed",
+      "path": "props/home_bed.png",
+      "width": 420,
+      "height": 200,
+      "transparent": true
+    },
+    {
+      "name": "home_table",
+      "path": "props/home_table.png",
+      "width": 360,
+      "height": 180,
+      "transparent": true
+    },
+    {
+      "name": "home_shelf",
+      "path": "props/home_shelf.png",
+      "width": 300,
+      "height": 420,
+      "transparent": true
+    },
+    {
+      "name": "home_lamp",
+      "path": "props/home_lamp.png",
+      "width": 120,
+      "height": 260,
+      "transparent": true
+    },
+    {
+      "name": "home_rug",
+      "path": "props/home_rug.png",
+      "width": 420,
+      "height": 60,
+      "transparent": true
+    },
+    {
+      "name": "cedar_stump",
+      "path": "props/cedar_stump.png",
+      "width": 240,
+      "height": 200,
+      "transparent": true
+    },
+    {
+      "name": "skeleton_remains",
+      "path": "props/skeleton_remains.png",
+      "width": 280,
+      "height": 120,
+      "transparent": true
+    },
+    {
+      "name": "hanging_vines",
+      "path": "props/hanging_vines.png",
+      "width": 200,
+      "height": 360,
+      "transparent": true
+    },
+    {
+      "name": "bone_pile",
+      "path": "props/bone_pile.png",
+      "width": 220,
+      "height": 130,
+      "transparent": true
+    },
+    {
+      "name": "cedar_branch_perch",
+      "path": "props/cedar_branch_perch.png",
+      "width": 360,
+      "height": 120,
+      "transparent": true
+    },
+    {
+      "name": "root_floor_tile",
+      "path": "tiles/cedar/root_floor_tile.png",
+      "width": 512,
+      "height": 180,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "root_platform",
+      "path": "tiles/cedar/root_platform.png",
+      "width": 256,
+      "height": 48,
+      "transparent": true,
+      "tile_x": true
+    },
+    {
+      "name": "branch_platform",
+      "path": "tiles/cedar/branch_platform.png",
+      "width": 320,
+      "height": 48,
+      "transparent": true,
+      "tile_x": true
+    },
+    {
+      "name": "wall_trunk_tile",
+      "path": "tiles/cedar/wall_trunk_tile.png",
+      "width": 160,
+      "height": 512,
+      "transparent": false,
+      "tile_y": true
+    },
+    {
+      "name": "canopy_top_tile",
+      "path": "tiles/cedar/canopy_top_tile.png",
+      "width": 512,
+      "height": 160,
+      "transparent": true,
+      "tile_x": true
+    },
+    {
+      "name": "home_floor_tile",
+      "path": "tiles/home/home_floor_tile.png",
+      "width": 512,
+      "height": 180,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "bone_floor_tile",
+      "path": "tiles/cedar/bone_floor_tile.png",
+      "width": 512,
+      "height": 180,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "boss_end_platform",
+      "path": "tiles/cedar/boss_end_platform.png",
+      "width": 280,
+      "height": 56,
+      "transparent": true,
+      "tile_x": true
     }
   ],
   "source_metadata": [
