@@ -5,7 +5,7 @@ Extract-and-test with --verify to check the package independently of the worktre
 import argparse,hashlib,json,os,shutil,subprocess,sys,tempfile,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
-IGNORED={'.git','.godot','archive','__pycache__','.codex','.agents','source_art','reference','sprite_qa','motion_review','generated_images'}
+IGNORED={'.git','.godot','archive','__pycache__','.codex','.agents','source_art','reference','sprite_qa','motion_review','generated_images','artifacts'}
 def files():
  screenshots=sorted((ROOT/'docs/screenshots').glob('*.jpg'),key=lambda p:p.stat().st_mtime,reverse=True)[:20]
  for folder,dirs,names in os.walk(ROOT):

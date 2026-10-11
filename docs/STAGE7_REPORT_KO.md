@@ -71,15 +71,15 @@ NimrodHome/Spawn_Start x330 오른쪽, 지팡이 x620 E범위100, 부모님 그�
 
 ## 검증·전달·남은 항목
 
-최종 전체 실행은87/87 통과했습니다. 아래 상태 파일을 바탕으로 패키징 독립 검사 결과를 추가합니다. 모든 테스트는 Godot4.3 공식 SHA512 확인 바이너리로 실행하며 ERROR/SCRIPT ERROR/WARNING 하나라도 실패로 처리합니다. 25레벨을 각각600프레임씩 재생하는 smoke와 지형을 따로 검증하는15,000프레임 fuzz를 포함합니다. Linux GL Compatibility 화면 캡처7건을 완료했고 비교 전 이미지1장까지 총8JPEG를 남겼습니다. 가상 디스플레이의 V-Sync 미지원 경고는 그래픽 드라이버 경고이며 GDScript 경고와 분리합니다.
+최종 전체 실행은87/87 통과했습니다. 별도 임시폴더에 풀어 다시 실행한 검사도87/87 통과했습니다. 모든 테스트는 Godot4.3 공식 SHA512 확인 바이너리로 실행하며 ERROR/SCRIPT ERROR/WARNING 하나라도 실패로 처리합니다. 25레벨을 각각600프레임씩 재생하는 smoke와 지형을 따로 검증하는15,000프레임 fuzz를 포함합니다. Linux GL Compatibility 화면 캡처7건을 완료했고 비교 전 이미지1장까지 총8JPEG를 남겼습니다. 가상 디스플레이의 V-Sync 미지원 경고는 그래픽 드라이버 경고이며 GDScript 경고와 분리합니다.
 
 - 전체 스크립트/테스트: 87/87 통과(임포트1+GDScript54+실행 테스트32), ERROR/SCRIPT ERROR/WARNING 0건. 실행 로그 메타는 STAGE7_TEST_RESULTS.json.
 - 에셋415개: 누락0/실패0. 생성 시트212개 QA 실패0.
 - 변환 전후1,512프레임: 보이는 픽셀·알파·좌우반전 동일, 실패0.
 - 알파145에셋, 오디오154항목, 구조물312개,18종크기,발판 도달성/11레벨괴수 여유: 통과.
 - screenshot 경로: docs/screenshots/stage7_home_staff.jpg, stage7_parents_axe.jpg, stage7_passage_explosive_spitter.jpg, stage7_passage_boar_charger.jpg, stage7_forest_human_scale.jpg, stage7_boss_scale.jpg, stage7_surface_after_f4.jpg, stage7_surface_before.jpg.
-- ZIP 새 폴더 압축해제 검사: 최종 결과 기록 예정.
+- ZIP 새 폴더 압축해제 검사: 87/87 통과, ERROR/SCRIPT ERROR/WARNING 0건. 에셋/알파/도달성도 각각 종료코드0. 결과 STAGE7_PACKAGE_TEST_RESULTS.json. 패키징 도구 종료코드1은 용량목표 미달에 대한 것이며 실행 검사는 통과했습니다.
 
 Windows 로컬 수동 플레이, 실제 스피커 청취, 모든 모션의 모든 프레임에 대한 인체 해부학적 수동 확인은 실행하지 못했습니다. 자동 접촉시트/타이밍GIF는 모두 만들었고 대표 시트를 육안 확인했습니다. GL 가상 디스플레이에서 강제 --quit-after 종료한 별도 GUI 실행은 초기화 중 코루틴 native 리소스1건 잔여를 보고했지만, 정상 종료를 사용하는 필수 headless 검사와 캡처에서는 발생하지 않았습니다. 전체 스토리 엔딩은 이번 단계 범위 밖이며 기존 보스 처치까지입니다.
 
-공유 ZIP은 원본 archive를 제외합니다. 보관 원본은 현재 클라우드 작업공간에 있으며 다운로드에는 없습니다. GitHub 별도 브랜치를 갱신하고 main은 변경하지 않습니다. 투명 무손실 WebP를 유지해120MB ZIP/100MB 실행 에셋 목표에는 도달하지 못했습니다. 상세 수치와 추가 제안은 SIZE_REPORT_KO.md. 무손실 제한을 완화하는 사용자 답이 없으므로 자동으로 손실 압축하지 않았습니다.
+공유 ZIP은 약264.7MiB, 실행 assets263.49MiB이며 원본 archive를 제외합니다. 보관 원본은 현재 클라우드 작업공간에 있으며 다운로드에는 없습니다. GitHub 별도 브랜치를 갱신하고 main은 변경하지 않습니다. 투명 무손실 WebP를 유지해120MB ZIP/100MB 실행 에셋 목표에는 도달하지 못했습니다. 상세 수치와 추가 제안은 SIZE_REPORT_KO.md. 무손실 제한을 완화하는 사용자 답이 없으므로 자동으로 손실 압축하지 않았습니다.

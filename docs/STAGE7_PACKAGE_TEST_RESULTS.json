@@ -1,0 +1,647 @@
+{
+  "size_goals_passed": false,
+  "functional_checks": [
+    {
+      "command": [
+        "python",
+        "tools/run_headless_checks.py",
+        "--output",
+        "archive/package_verification"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python",
+        "tools/validate_assets.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python",
+        "tools/check_alpha_cleanliness.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python",
+        "tools/check_level_reachability.py"
+      ],
+      "returncode": 0
+    }
+  ],
+  "headless_results": [
+    {
+      "label": "import",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 37.96,
+      "passed": true
+    },
+    {
+      "label": "parse_arena",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_asset_visual",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.27,
+      "passed": true
+    },
+    {
+      "label": "parse_audio_manager",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.15,
+      "passed": true
+    },
+    {
+      "label": "parse_castle_front",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_cedar_fx",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.16,
+      "passed": true
+    },
+    {
+      "label": "parse_cedar_hazard",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_debug_teleport",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.15,
+      "passed": true
+    },
+    {
+      "label": "parse_dialogue_system",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_door_portal",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.15,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_base",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_boar_charger",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_cedar",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_cedar_archer",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_cedar_colossus",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_cedar_demon",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_cedar_sentinel",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_cedar_wisp",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_chain_beastman",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_corpse_bomber",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_explosive_spitter",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_gas_sac",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_kala_ushumgal",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_melee_beast",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_ranged_beast",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_root_spewer",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_shell_scorpion",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_sky_beast",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_stage5",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_wall_diver",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_wraith_ray",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_game_constants",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.15,
+      "passed": true
+    },
+    {
+      "label": "parse_game_hud",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_game_state",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.27,
+      "passed": true
+    },
+    {
+      "label": "parse_gate_controller",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_healing_pickup",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.15,
+      "passed": true
+    },
+    {
+      "label": "parse_image_effect",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.15,
+      "passed": true
+    },
+    {
+      "label": "parse_interior_level",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_level_base",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_main",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_npc_base",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_player",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_player_modifiers",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.15,
+      "passed": true
+    },
+    {
+      "label": "parse_rear_gate",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_rear_gate_layout",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.16,
+      "passed": true
+    },
+    {
+      "label": "parse_scene_manager",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_stage5_fx",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.15,
+      "passed": true
+    },
+    {
+      "label": "parse_stage5_hazard",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_stage5_projectile",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_surface_accent",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.15,
+      "passed": true
+    },
+    {
+      "label": "parse_surface_debug",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.15,
+      "passed": true
+    },
+    {
+      "label": "parse_threat_marker",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_villa_gate",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_villa_gatekeeper",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_weapon_pickup",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "regression",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 3.27,
+      "passed": true
+    },
+    {
+      "label": "stage2_interactions",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 14.24,
+      "passed": true
+    },
+    {
+      "label": "stage2_sky",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 3.35,
+      "passed": true
+    },
+    {
+      "label": "stage2_transitions",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 32.97,
+      "passed": true
+    },
+    {
+      "label": "stage3_front",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 17.05,
+      "passed": true
+    },
+    {
+      "label": "stage4_gate",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 16.3,
+      "passed": true
+    },
+    {
+      "label": "stage4_npc_facing",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 11.08,
+      "passed": true
+    },
+    {
+      "label": "stage4_player_scale",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 2.62,
+      "passed": true
+    },
+    {
+      "label": "stage4_terrain",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 16.99,
+      "passed": true
+    },
+    {
+      "label": "stage4_villa",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 13.14,
+      "passed": true
+    },
+    {
+      "label": "stage5_direction_cancel",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 4.48,
+      "passed": true
+    },
+    {
+      "label": "stage5_enemies",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 4.92,
+      "passed": true
+    },
+    {
+      "label": "stage5_homeroad",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 10.43,
+      "passed": true
+    },
+    {
+      "label": "stage5_passage",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 46.08,
+      "passed": true
+    },
+    {
+      "label": "stage5_terrain",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 60.17,
+      "passed": true
+    },
+    {
+      "label": "stage6_attack_reentrancy",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 4.07,
+      "passed": true
+    },
+    {
+      "label": "stage6_boss",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 5.12,
+      "passed": true
+    },
+    {
+      "label": "stage6_cedar_enemies",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 4.37,
+      "passed": true
+    },
+    {
+      "label": "stage6_clip_coverage",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 6.77,
+      "passed": true
+    },
+    {
+      "label": "stage6_levels",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 14.08,
+      "passed": true
+    },
+    {
+      "label": "stage6_shamhat_buff",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 7.45,
+      "passed": true
+    },
+    {
+      "label": "stage6_surface_accent",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 10.43,
+      "passed": true
+    },
+    {
+      "label": "stage6_threat_marker",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 4.01,
+      "passed": true
+    },
+    {
+      "label": "stage7_attack_safety",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 2.98,
+      "passed": true
+    },
+    {
+      "label": "stage7_image_parity",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 4.57,
+      "passed": true
+    },
+    {
+      "label": "stage7_one_way",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 10.82,
+      "passed": true
+    },
+    {
+      "label": "stage7_smoke",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 135.59,
+      "passed": true
+    },
+    {
+      "label": "stage7_sprite_qa",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 8.1,
+      "passed": true
+    },
+    {
+      "label": "stage7_stuck_fuzz",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 140.67,
+      "passed": true
+    },
+    {
+      "label": "stage7_surface_alignment",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 8.2,
+      "passed": true
+    },
+    {
+      "label": "stage7_trim_parity",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 3.41,
+      "passed": true
+    },
+    {
+      "label": "stage7_weapons",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 18.45,
+      "passed": true
+    }
+  ],
+  "note": "Entire package extracted and passed all checks. Final repack changes reports and excludes old artifacts/ captures only. Runtime/scripts/data/assets compared by SHA256."
+}
