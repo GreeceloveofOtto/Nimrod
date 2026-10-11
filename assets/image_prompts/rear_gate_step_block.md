@@ -2,7 +2,7 @@
 
 목적: 60px와 90px 단차를 위한 석재 블록
 
-저장 경로: `assets/tiles/rear_gate/step_block.png`
+저장 경로: `assets/tiles/rear_gate/step_block.webp`
 
 최종 크기: 512x90px. 프레임 구성: 정지 이미지 1프레임.
 

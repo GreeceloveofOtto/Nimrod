@@ -28,3 +28,9 @@ func set_weapon(value: String) -> void:
         return
     run_flags["weapon"] = value
     weapon_changed.emit(value)
+
+func visit_count(key: String, increment: bool = false) -> int:
+    var flag: String = "visits_" + key
+    if increment:
+        run_flags[flag] = int(run_flags.get(flag, 0)) + 1
+    return int(run_flags.get(flag, 0))

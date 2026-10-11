@@ -16,10 +16,15 @@ func _run() -> void:
     Input.action_release("interact")
     _check(paused and root.get_node("Dialogue").active and npc.pose==NPC.Pose.FRONT,"Real E input pauses world and faces Shamhat front")
     await create_timer(.4,true,false,true).timeout
-    _check(hero.camera.zoom.x > 1.5 and hero.camera.process_mode==Node.PROCESS_MODE_ALWAYS,"Dialogue camera actually processes while paused")
+    _check(hero.camera.zoom.x > 1.3 and hero.camera.zoom.x <= 1.3501 and hero.camera.process_mode==Node.PROCESS_MODE_ALWAYS,"Dialogue camera actually processes while paused")
     await root.get_node("Dialogue").finished
     await process_frame
-    _check(hero.get_max_hp()==270 and hero.hp==190,"E dialogue grants blessing after automatic completion")
+    _check(hero.get_max_hp()==180 and hero.hp==100,"First dialogue gives no blessing")
+    await create_timer(.21,true,false,true).timeout
+    npc.interact(hero)
+    await root.get_node("Dialogue").finished
+    await process_frame
+    _check(hero.get_max_hp()==270 and hero.hp==190,"Second dialogue grants blessing")
     _check(not npc.interaction_prompt.visible,"Blessed NPC hides repeated E prompt")
     root.get_node("GameState").reset_run(false)
     hero.reset_run_state()
@@ -40,7 +45,7 @@ func _run() -> void:
     var offset: Vector2 = hero.camera.offset
     root.get_node("Dialogue").play(["네가 자꾸 신경쓰여."], npc, {"character_seconds":.001,"hold_seconds":.01})
     await process_frame
-    _check(paused and root.get_node("Dialogue").active and not npc.name_tag.visible,"Dialogue freezes world and hides name")
+    _check(paused and root.get_node("Dialogue").active and npc.name_tag.visible,"Dialogue freezes world and retains speaker name")
     await root.get_node("Dialogue").finished
     _check(not paused and not root.get_node("Dialogue").active and hero.camera.zoom.is_equal_approx(zoom) and hero.camera.offset.is_equal_approx(offset),"Dialogue restores pause and camera")
     root.get_node("GameState").reset_run(false)

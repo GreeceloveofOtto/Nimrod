@@ -2,7 +2,7 @@
 
 목적: 반복 가능한 후문 밖 석재 바닥
 
-저장 경로: `assets/tiles/rear_gate/ground_tile.png`
+저장 경로: `assets/tiles/rear_gate/ground_tile.webp`
 
 최종 크기: 512x220px. 프레임 구성: 정지 이미지 1프레임.
 

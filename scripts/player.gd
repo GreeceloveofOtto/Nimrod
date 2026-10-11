@@ -107,9 +107,12 @@ var last_safe_position := Vector2.ZERO
 var stuck_left: float = 0.0
 var stuck_origin := Vector2.ZERO
 var stuck_recoveries: Array[Dictionary] = []
+var compact_escape: bool = false
 
 func _ready() -> void:
     add_to_group("player")
+    visual.scale = Vector2.ONE * VISUAL_SCALE
+    visual.set_meta("canonical_scale", visual.scale)
     _load_attack_data()
     _load_sprites()
     get_node("/root/GameState").weapon_changed.connect(_on_weapon_changed)
@@ -332,6 +335,9 @@ func _integrate_vertical(delta: float) -> void:
     velocity.y = minf(velocity.y, Config.PLAYER_MAX_FALL_SPEED)
 
 func _update_crouch(on_ground: bool) -> void:
+    if compact_escape and not _solid_overlaps(_clearance_box(CROUCH_BOX)):
+        compact_escape = false
+        _set_crouching_collider()
     var target: bool = action == "normal" and on_ground and Input.is_action_pressed("crouch")
     if crouching == target:
         return
@@ -350,15 +356,33 @@ func _update_crouch(on_ground: bool) -> void:
         crouch_exit_left = Config.PLAYER_CROUCH_EXIT_SECONDS
         crouch_enter_left = 0.0
 
-func _can_stand() -> bool:
+func _is_one_way(body: Node) -> bool:
+    if bool(body.get_meta("one_way", false)):
+        return true
+    for child in body.get_children():
+        if child is CollisionShape2D and child.one_way_collision:
+            return true
+    return false
+
+func _solid_overlaps(shape_rect: Rect2, ignore_one_way: bool = true) -> bool:
     var shape := RectangleShape2D.new()
-    shape.size = STAND_BOX - Vector2(2.0, 2.0)
+    shape.size = shape_rect.size
     var query := PhysicsShapeQueryParameters2D.new()
     query.shape = shape
-    query.transform = Transform2D(0.0, global_position + Vector2(0, STAND_CENTER_Y))
+    query.transform = Transform2D(0.0, shape_rect.get_center())
     query.collision_mask = Config.PLAYER_COLLISION_MASK
     query.exclude = [get_rid()]
-    return get_world_2d().direct_space_state.intersect_shape(query, 2).is_empty()
+    for hit in get_world_2d().direct_space_state.intersect_shape(query, 64):
+        var body: Node = hit["collider"]
+        if not ignore_one_way or not _is_one_way(body):
+            return true
+    return false
+
+func _clearance_box(size_px: Vector2) -> Rect2:
+    return Rect2(global_position + Vector2(-size_px.x * .5 + 1.0, -size_px.y + 1.0), size_px - Vector2(2, 2))
+
+func _can_stand() -> bool:
+    return not _solid_overlaps(_clearance_box(STAND_BOX))
 
 func _try_drop_platform() -> void:
     if not is_on_floor() or action != "normal":
@@ -618,12 +642,29 @@ func _cancel_attack() -> void:
     queue_redraw()
 
 func _restore_safe_collider() -> void:
+    compact_escape = false
+    if not _can_stand():
+        var maximum: int = int(movement_data.get("roll_exit_push_max", 24))
+        var start: Vector2 = global_position
+        for distance in range(1, maximum + 1):
+            var candidate := start + Vector2(-roll_direction * distance, 0)
+            if _solid_overlaps(Rect2(candidate + Vector2(-ROLL_BOX.x * .5 + 1, -ROLL_BOX.y + 1), ROLL_BOX - Vector2(2, 2))):
+                break
+            global_position = candidate
+            if _can_stand():
+                break
+        if not _can_stand():
+            global_position = start
     if _can_stand():
         _set_standing_collider()
         crouching = false
-    else:
+    elif not _solid_overlaps(_clearance_box(CROUCH_BOX)):
         _set_crouching_collider()
         crouching = true
+    else:
+        _set_short_collider()
+        crouching = true
+        compact_escape = true
 
 func _set_standing_collider() -> void:
     var box := collider.shape as RectangleShape2D
@@ -746,6 +787,7 @@ func reset_run_state() -> void:
     jump_start_left = 0.0
     landing_left = 0.0
     crouching = false
+    compact_escape = false
     crouch_enter_left = 0.0
     crouch_exit_left = 0.0
     drop_mask_left = 0.0
@@ -951,7 +993,8 @@ func _recover_solid_overlap() -> void:
             global_position += pushes[0]
             moved = true
         if not moved:
-            last_safe_position = global_position
+            if _can_stand():
+                last_safe_position = global_position
             return
 
 func _move_with_surface_rules(delta: float) -> void:
@@ -967,7 +1010,17 @@ func _move_with_surface_rules(delta: float) -> void:
                 if not test_move(global_transform, Vector2(0, -lift - 0.5)) and not test_move(raised, motion):
                     global_position.y -= lift + 0.5
     _corner_forgiveness()
-    move_and_slide()
+    if action == "roll":
+        var subdivisions: int = maxi(1, ceili(absf(velocity.x) * delta / (ROLL_BOX.x * .5)))
+        var speed: Vector2 = velocity
+        for _part in range(subdivisions):
+            velocity = speed / subdivisions
+            move_and_slide()
+            speed = velocity * subdivisions
+        velocity = speed
+        _recover_solid_overlap()
+    else:
+        move_and_slide()
 
 func _corner_forgiveness() -> void:
     if velocity.y >= 0.0 or drop_mask_left > 0.0:
@@ -993,13 +1046,19 @@ func _corner_forgiveness() -> void:
 
 func _track_stuck(delta: float) -> void:
     var wants_move: bool = absf(Input.get_axis("move_left", "move_right")) > 0.01
-    var allowed: bool = action not in ["hurt", "dead"] and not is_on_wall() and hitstop_left <= 0.0 and pull_left <= 0.0
+    var allowed: bool = action not in ["hurt", "dead"] and hitstop_left <= 0.0 and pull_left <= 0.0
     if not wants_move or not allowed or global_position.distance_to(stuck_origin) > float(movement_data.get("stuck_distance", 3.0)):
         stuck_origin = global_position
         stuck_left = 0.0
         return
     stuck_left += delta
     if stuck_left >= float(movement_data.get("stuck_seconds", 0.8)):
+        # A clear collider pressed against a normal boundary is already at its
+        # last safe location. Do not report a teleport that moves nowhere.
+        if _can_stand() and global_position.distance_to(last_safe_position) < 0.1:
+            stuck_left = 0.0
+            stuck_origin = global_position
+            return
         stuck_recoveries.append({"position":global_position, "safe":last_safe_position})
         global_position = last_safe_position
         velocity = Vector2.ZERO

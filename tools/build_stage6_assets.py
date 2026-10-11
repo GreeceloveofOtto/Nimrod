@@ -90,7 +90,7 @@ def npc():
  path='sprites/npcs/enkidua/manifest.json';save(A/path,dict(character='enkidua',height_ratio=1.04,clips=cs));manifests.append(path)
 def world():
  im=atlas('backgrounds');cuts=[0,365,795,im.height]
- for i,(path,size,floor,targetfloor) in enumerate([('backgrounds/nimrod_home/home_interior_bg.webp',(1800,720),281,620),('backgrounds/villa_backyard/backyard_bg.png',(1500,720),360,720),('backgrounds/cedar/boss_bg.png',(1600,960),360,800)]):
+ for i,(path,size,floor,targetfloor) in enumerate([('backgrounds/nimrod_home/home_interior_bg.webp',(1800,720),281,620),('backgrounds/villa_backyard/backyard_bg.webp',(1500,720),360,720),('backgrounds/cedar/boss_bg.webp',(1600,960),360,800)]):
   band=im.crop((0,cuts[i],im.width,cuts[i+1]));floor=min(floor,band.height-1);upper=band.crop((0,0,band.width,floor)).resize((size[0],targetfloor),Image.Resampling.LANCZOS);result=Image.new('RGBA',size);result.alpha_composite(upper)
   if targetfloor<size[1]:result.alpha_composite(band.crop((0,floor,band.width,band.height)).resize((size[0],size[1]-targetfloor),Image.Resampling.LANCZOS),(0,targetfloor))
   still(result,path,size,True)
@@ -102,7 +102,7 @@ def world():
   for j,(name,size,pose) in enumerate(zip(names[i],sizes[i],poses)):
    tile=i==2;path=('tiles/cedar/' if tile else 'props/')+name+'.png';still(pose,path,size,opaque=tile and j in [0,3],tile_x=tile and j!=3,tile_y=tile and j==3)
  im=atlas('extra_tiles')
- for i,(path,size) in enumerate([('tiles/home/home_floor_tile.png',(512,180)),('tiles/cedar/bone_floor_tile.png',(512,180)),('tiles/cedar/boss_end_platform.png',(280,56))]):
+ for i,(path,size) in enumerate([('tiles/home/home_floor_tile.webp',(512,180)),('tiles/cedar/bone_floor_tile.webp',(512,180)),('tiles/cedar/boss_end_platform.webp',(280,56))]):
   pose=foreground(chromakey(im.crop((0,round(i*im.height/3),im.width,round((i+1)*im.height/3)))))[0];still(pose,path,size,i<2,True)
  im=atlas('doors');cs=[]
  for i,(name,frame) in enumerate([('nimrod_home_inner_door',[256,384]),('villa_back_door_exterior',[320,420]),('cedar_forest_portal',[320,460]),('cedar_portal',[256,384])]):

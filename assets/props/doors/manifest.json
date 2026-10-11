@@ -24,7 +24,36 @@
         "y": 10,
         "w": 312,
         "h": 410
-      }
+      },
+      "storage_scale": [
+        1.0,
+        1.0
+      ],
+      "stored_frame_size": [
+        320,
+        420
+      ],
+      "stored_anchor_px": [
+        160.0,
+        420.0
+      ],
+      "storage_trim": {
+        "x": 4.0,
+        "y": 10.0,
+        "w": 312,
+        "h": 410
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 2,
+      "ssim": 1.0
     },
     {
       "name": "castle_interior_door",
@@ -50,7 +79,36 @@
         "y": 10,
         "w": 248,
         "h": 374
-      }
+      },
+      "storage_scale": [
+        1.0,
+        1.0
+      ],
+      "stored_frame_size": [
+        256,
+        384
+      ],
+      "stored_anchor_px": [
+        128.0,
+        384.0
+      ],
+      "storage_trim": {
+        "x": 4.0,
+        "y": 10.0,
+        "w": 248,
+        "h": 374
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 2,
+      "ssim": 1.0
     },
     {
       "name": "castle_rear_door_interior",
@@ -76,7 +134,36 @@
         "y": 10,
         "w": 312,
         "h": 410
-      }
+      },
+      "storage_scale": [
+        1.0,
+        1.0
+      ],
+      "stored_frame_size": [
+        320,
+        420
+      ],
+      "stored_anchor_px": [
+        160.0,
+        420.0
+      ],
+      "storage_trim": {
+        "x": 4.0,
+        "y": 10.0,
+        "w": 312,
+        "h": 410
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 2,
+      "ssim": 1.0
     },
     {
       "name": "villa_gate",
@@ -102,7 +189,38 @@
         "y": 10,
         "w": 472,
         "h": 410
-      }
+      },
+      "storage_scale": [
+        1.0,
+        1.0
+      ],
+      "stored_frame_size": [
+        480,
+        420
+      ],
+      "stored_anchor_px": [
+        240.0,
+        420.0
+      ],
+      "storage_trim": {
+        "x": 4.0,
+        "y": 10.0,
+        "w": 472,
+        "h": 410
+      },
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "effective_density": 2,
+      "ssim": 1.0
     },
     {
       "name": "villa_inner_door",
@@ -128,7 +246,36 @@
         "y": 10,
         "w": 248,
         "h": 374
-      }
+      },
+      "storage_scale": [
+        1.0,
+        1.0
+      ],
+      "stored_frame_size": [
+        256,
+        384
+      ],
+      "stored_anchor_px": [
+        128.0,
+        384.0
+      ],
+      "storage_trim": {
+        "x": 4.0,
+        "y": 10.0,
+        "w": 248,
+        "h": 374
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 2,
+      "ssim": 1.0
     },
     {
       "name": "castle_front_gate_locked",
@@ -154,7 +301,31 @@
         "y": 10,
         "w": 312,
         "h": 410
-      }
+      },
+      "storage_scale": [
+        1.0,
+        1.0
+      ],
+      "stored_frame_size": [
+        320,
+        420
+      ],
+      "stored_anchor_px": [
+        160.0,
+        420.0
+      ],
+      "storage_trim": {
+        "x": 4.0,
+        "y": 10.0,
+        "w": 312,
+        "h": 410
+      },
+      "stored_columns": 1,
+      "frame_map": [
+        0
+      ],
+      "effective_density": 2,
+      "ssim": 1.0
     }
   ]
 }

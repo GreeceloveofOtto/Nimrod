@@ -1,4 +1,4 @@
-NIMROD — 7단계: 공격 크래시 수정·괴수 재제작·발판 정비·맨손/지팡이/도끼
+NIMROD — 8단계: 끼임·접지·이미지 수정·스토리 대화·용량 절감
 Godot 4.3 stable / GDScript / GL Compatibility / 1280×720 / 외부 애드온 없음
 
 실행
@@ -12,8 +12,8 @@ Windows: PLAY_WITH_GODOT.bat. 엔진을 못 찾으면 GODOT_BIN을 설정합니�
 오른쪽을 보는 맨손으로 시작합니다. 맨손에서 J는 공격하지 않습니다.
 집 선반 옆 x620의 삼나무 지팡이: 100px 이내 E → 지팡이 3타(18/18/24).
 루갈성 1층 부모님 둘 중심에서 140px 이내 E: 첫 대화 후 도끼를 받습니다.
-도끼는 지팡이를 교체하며, 다음 상호작용은 발생하지 않습니다.
-부모님 대화는 data/dialogue.json의 use_scripted_dialogue로 생략할 수 있습니다.
+도끼는 지팡이를 교체합니다. 이후 부모님 E는 닌순의 한 줄 인사이며 도끼는 다시 주지 않습니다.
+모든 대화는 자동 진행하며 게임 시간을 완전히 멈춥니다.
 사망·R은 무기/축복/런 플래그를 초기화하고 지팡이를 집에 다시 배치합니다.
 
 조작
@@ -64,13 +64,13 @@ NPC 이름표, 의상 대비/림라이트/빛 웅덩이/그림자/배경 톤 다
 이미지 알파 윗면과 충돌·SurfaceAccent를 연결하고 구조물312개를 ±4px로 검사합니다.
 모든 발판은 일방향이며, 56px 이하 지면 단차 자동 오르기/모서리 보정/끼임 복구를 적용했습니다.
 화면 하단 바위·풀 foreground 장식은 없으며 지면 아래는 타일로 채웁니다.
-샴하트: “네가 자꾸 신경쓰여.” 이후 공격력/공격속도/최대HP+50%, 런당 한 번.
+샴하트: 첫 대화5줄은 버프 없음. 두 번째 “네가 자꾸 신경쓰여.” 이후 공격력/공격속도/최대HP+50%, 런당 한 번. 축복 후 E 숨김.
 
 에셋과 검증
 아트는 이미지 생성 도구의 PNG/WebP입니다. 코드 아트는 없으며 UI 보조·디버그만 그립니다.
 괴수16종167클립, 맨손14/지팡이17클립과 FX14클립을 새로 생성하고 QA했습니다.
-무손실 트림+투명 WebP, 불투명 배경은 색차 검사 후 품질90 WebP, 정밀 타일/UI는 PNG.
-알파 또는 색차 검사에 실패한 배경은 원래 PNG를 유지합니다. 오디오는 OGG Vorbis입니다.
+8단계: 표시 크기에 맞춘 해상도 축소+트림+WebP. 알파 bbox 유지, 알파 평균오차≤1.5/255, 보이는 RGB 평균오차≤3/255. 정밀 타일/UI는 PNG 또는 무손실 WebP.
+RGB 서브샘플링 오차가 큰 파일은 RGB의 손실을 제한하고 원래 알파를 복원한 WebP로 저장합니다. 원본은 archive/에 보존. 오디오는 OGG Vorbis입니다.
 원본/이전 시트/디자인 시트/WAV는 cloud workspace archive/에 보관합니다.
 archive/.gdignore로 엔진에서 제외하며 archive/, 접촉 시트/GIF는 GitHub·다운로드 ZIP에 없습니다.
 런타임 시트로 접촉 시트·GIF를 다시 만들 수 있습니다. 원본 재패킹은 archive/가 필요합니다.
@@ -78,7 +78,7 @@ archive/.gdignore로 엔진에서 제외하며 archive/, 접촉 시트/GIF는 Gi
 개발 도구
 Python 의존성: requirements-tools.txt(Pillow/numpy/scipy/fontTools), 오디오: ffmpeg/ffprobe.
 GODOT_BIN은 Godot4.3 실행 파일 경로. Linux cloud는 /workspace/tools/godot43.
-python tools/run_headless_checks.py : 전체 임포트·54스크립트·32테스트(로그 오류/경고 하나도 실패).
+python tools/run_headless_checks.py : 전체 임포트·54스크립트·39테스트(로그 오류/경고 하나도 실패).
 python tools/validate_assets.py
 python tools/check_sprite_parity.py
 python tools/check_alpha_cleanliness.py
@@ -90,6 +90,18 @@ python tools/review_sprite_sheets.py assets/sprites/player/staff/manifest.json
 패킹: slice_strip/pack_sprites → pack_enemy_sprites/pack_player_weapons → QA → trim_sheets
 → convert_images_webp (--dry-run 후 --apply). 기존 클립 길이·앵커·프레임 수를 보존합니다.
 python tools/make_slim_zip.py --verify : archive·캐시 등을 제외하고 새 폴더에 풀어 전체 검사.
-현재 무손실 규칙을 유지한 패키지는 용량 목표120MB를 넘습니다. SIZE_REPORT_KO.md 참조.
-수정/가정/QA/미실행 범위: docs/STAGE7_REPORT_KO.md, SPRITE_QA_REPORT_KO.md,
-SIZE_REPORT_KO.md, STAGE7_FILES_KO.txt. 최종 검사 결과는 보고서에 기록합니다.
+8단계 용량 목표: assets≤75MiB, 슬림ZIP≤90MiB. 최종 실측은 docs/SIZE_REPORT_KO.md 참조.
+수정/가정/QA/미실행 범위: docs/STAGE8_REPORT_KO.md, SPRITE_QA_REPORT_KO.md,
+SIZE_REPORT_KO.md, STAGE8_FILES_KO.txt. 최종 검사 결과는 보고서에 기록합니다.
+
+8단계 버그 수정과 대화
+- 일방향 발판은 천장 검사에서 제외. 낮은 52px 발판 아래에서도 구르기 후 서기·점프가 가능합니다.
+- 고체 천장은 그대로 막습니다. 구르기 종료 시 최대24px 뒤로 밀기 → 웅크린90px → 구르기48px 기어가기 순으로 복원합니다.
+- 벽에 붙어도 0.8초/3px 이동 정체를 검사하고 실제 마지막 안전 위치로 복구합니다. 동일 안전 위치로의 무의미한 복구는 기록하지 않습니다.
+- 삼나무 벽은 검은 배경 없는 껍질 이미지로 재생성. 7마귀 모두 실제 가지 발판과 줄기 소품 위에 배치합니다.
+- 대화 중 게임 시간 완전 정지. 화면 우측 중앙 대화창과 발화자 이름 칩, 글자당0.04초 자동 진행.
+- 엔키두아, 통로8층 혼잣말, 바깥 문지기, 부모님, 샴하트, 요리사cook_a, 인안나/팝수칼, 별장 문지기 대사 구현.
+- 루갈성 바깥 대문과 별장 대문은 첫 대화 후 열림. 이후 접근 개방. 사망하면 대화 플래그 초기화.
+- 대화 종료 후 E는0.2초 동안 무시. 1/2 순간이동은 진행된 대화 플래그 유지.
+- tools/measure_assets.py, downscale_assets.py, check_enemy_grounding.py로 크기·저장밀도·접지를 점검합니다.
+- 원본 재인코딩 검사는 archive/ 원본이 필요. ZIP은 원본을 제외하며 내장 픽셀 표본·런타임 검사로 독립 검증합니다.

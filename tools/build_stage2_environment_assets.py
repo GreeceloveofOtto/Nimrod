@@ -108,7 +108,7 @@ def main():
                    opaque=True, floor_y=floor - top)
 
         single("villa_f1_hall", "villa_rooftop", [0, 0, 1254, 312],
-               "backgrounds/villa/villa_f1_hall.png", (2000, 720), opaque=True, floor_y=250)
+               "backgrounds/villa/villa_f1_hall.webp", (2000, 720), opaque=True, floor_y=250)
         single("castle_f5_sky", "villa_rooftop", [0, 313, 1254, 314],
                "backgrounds/castle/castle_f5_sky.webp", (1536, 720), opaque=True, ratio=.05, map_width=2400)
         single("castle_f5_far", "villa_rooftop", [0, 627, 1254, 314],

@@ -557,6 +557,7 @@ func _test_rear_gate() -> void:
     hero.position = Vector2(5200, 880)
     _expect(not gate.can_interact(hero), "closed villa gate rejects automatic entry")
     gate.gate_state = gate.GateState.OPEN
+    root.get_node("GameState").run_flags[gate.gate_flag] = true
     hero.position.x = 5161.0
     _expect(gate.can_interact(hero), "fully open villa gate accepts the inner 40 pixel strip")
     hero.position.x = 5159.0

@@ -355,7 +355,7 @@ func _update_dead(delta: float) -> void:
 
 func _death_dialogue() -> void:
     if get_node("/root/GameState").first_time("kala_death_lines"):
-        await get_node("/root/Dialogue").play(stats["death_lines"], self, {"freeze":false, "zoom":false, "hold_seconds":1.6})
+        await get_node("/root/Dialogue").play(stats["death_lines"], self, {"hold_seconds":1.6})
     dialogue_finished = true
 
 func marker_is_dangerous() -> bool:

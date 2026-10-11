@@ -24,7 +24,36 @@
         "y": 10,
         "w": 316,
         "h": 410
-      }
+      },
+      "storage_scale": [
+        1.0,
+        1.0
+      ],
+      "stored_frame_size": [
+        320,
+        420
+      ],
+      "stored_anchor_px": [
+        160.0,
+        420.0
+      ],
+      "storage_trim": {
+        "x": 2.0,
+        "y": 10.0,
+        "w": 316,
+        "h": 410
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 2,
+      "ssim": 1.0
     }
   ]
 }

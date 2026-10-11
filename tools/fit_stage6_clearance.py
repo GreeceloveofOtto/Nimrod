@@ -5,7 +5,7 @@ from pathlib import Path
 R=Path(__file__).resolve().parents[1]
 def load(p):return json.loads((R/p).read_text())
 def save(p,d):(R/p).write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
-def p(id,x,y,w=300):return dict(id=id,position=[x,y],width=w,art='res://assets/tiles/passage/platform.png',art_height=48)
+def p(id,x,y,w=300):return dict(id=id,position=[x,y],width=w,art='res://assets/tiles/passage/platform.webp',art_height=48)
 def chain(l,key,x,bottom,top,w=240):
  a=[];steps=[];y=bottom-90;i=0
  while y>top:

@@ -16,15 +16,24 @@ static func sheet_spec(path: String, defaults: Dictionary = {}) -> Dictionary:
 static func apply_frame(sprite: Sprite2D, spec: Dictionary, frame: int) -> void:
     var original := Vector2(float(spec["frame_width"]), float(spec["frame_height"]))
     var anchor: Array = spec.get("anchor_px", [original.x * 0.5, original.y * 0.5])
-    var crop: Dictionary = spec.get("trim", {"x": 0, "y": 0, "w": original.x, "h": original.y})
+    var crop: Dictionary = spec.get("storage_trim", spec.get("trim", {"x": 0, "y": 0, "w": original.x, "h": original.y}))
+    var density: Array = spec.get("storage_scale", [1.0, 1.0])
+    var factor := Vector2(float(density[0]), float(density[1]))
+    if not sprite.has_meta("canonical_scale"):
+        sprite.set_meta("canonical_scale", sprite.scale)
+    sprite.scale = Vector2(sprite.get_meta("canonical_scale")) / factor
     var size := Vector2(float(crop["w"]), float(crop["h"]))
-    var columns: int = maxi(1, int(spec.get("columns", spec.get("frames", 1))))
-    sprite.region_rect = Rect2(Vector2((frame % columns) * size.x, floori(float(frame) / columns) * size.y), size)
-    var offset := Vector2(float(crop["x"]), float(crop["y"])) + size * 0.5 - Vector2(float(anchor[0]), float(anchor[1]))
-    # Sprite2D flips texture coordinates, so mirror the crop origin explicitly.
+    var stored_frame: int = int(spec.get("frame_map", [])[frame]) if spec.get("frame_map", []).size() > frame else frame
+    var columns: int = maxi(1, int(spec.get("stored_columns", spec.get("columns", spec.get("frames", 1)))))
+    sprite.region_rect = Rect2(Vector2((stored_frame % columns) * size.x, floori(float(stored_frame) / columns) * size.y), size)
+    var offset := Vector2(float(crop["x"]), float(crop["y"])) + size * 0.5 - Vector2(float(anchor[0]), float(anchor[1])) * factor
     if sprite.flip_h:
         offset.x = -offset.x
     sprite.offset = offset
+
+static func frame_display_size(texture: Texture2D, spec: Dictionary, scale_px: Vector2) -> Vector2:
+    var crop: Dictionary = spec.get("storage_trim", spec.get("trim", {"w":spec["frame_width"],"h":spec["frame_height"]}))
+    return Vector2(texture.get_image().get_region(Rect2i(0,0,int(crop["w"]),int(crop["h"]))).get_used_rect().size) * scale_px
 
 # Image assets provide all world artwork. The gray box is a debugging aid only.
 static func add_image(parent: Node, path: String, at: Vector2, size: Vector2, z: int = 0) -> Node2D:
@@ -40,6 +49,12 @@ static func add_image(parent: Node, path: String, at: Vector2, size: Vector2, z:
             sprite.texture = texture
             sprite.centered = false
             sprite.scale = size / texture.get_size()
+            if path.get_file().begins_with("wall_trunk_tile"):
+                var source: Vector2 = texture.get_size()
+                var crop_size := Vector2(source.x, minf(source.y, source.x * size.y / size.x))
+                sprite.region_enabled = true
+                sprite.region_rect = Rect2((source-crop_size)*0.5,crop_size)
+                sprite.scale = size / crop_size
             sprite.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
             holder.add_child(sprite)
             return holder

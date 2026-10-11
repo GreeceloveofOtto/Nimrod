@@ -33,8 +33,10 @@ func _run() -> void:
     await root.get_node("Dialogue").finished
     _check(hero.weapon == "axe" and hero.max_step == 4, "The gift equips the axe after its flight")
     _check(hero.attack_data[4]["damage"] == 22 and hero.weapon_hitstop == .05, "Original axe damage and hitstop remain unchanged")
+    await create_timer(.25).timeout
     parents.interact(hero)
-    _check(not root.get_node("Dialogue").active, "Gift cannot repeat within the same run")
+    _check(root.get_node("Dialogue").active, "Parents repeat the greeting without giving a second axe")
+    await root.get_node("Dialogue").finished
     await state.reset_run()
     _check(manager.current_level.level_id == "NimrodHome" and hero.hp == 180 and hero.weapon == "none", "Restart restores home, HP180 and empty hands")
     _check(not state.run_flags.has("staff_taken") and not state.run_flags.has("teleport_test"), "Restart clears pickup and run flags")

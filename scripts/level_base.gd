@@ -277,7 +277,7 @@ func _make_doors() -> void:
             continue
         door.name = str(entry["door_id"])
         door.position = _vector(entry["position"])
-        for property in ["door_id", "target_level", "target_spawn", "door_art", "locked", "locked_message", "auto_trigger", "interact_range", "arrival_spawn", "exit_direction", "arrival_walk_pixels", "gate_settings_key", "gate_open_seconds", "gate_close_seconds", "auto_transition_level", "auto_transition_spawn", "opens_without_keeper"]:
+        for property in ["door_id", "target_level", "target_spawn", "door_art", "locked", "locked_message", "auto_trigger", "interact_range", "arrival_spawn", "exit_direction", "arrival_walk_pixels", "gate_settings_key", "gate_open_seconds", "gate_close_seconds", "auto_transition_level", "auto_transition_spawn", "opens_without_keeper", "requires_dialogue", "gate_flag"]:
             if entry.has(property):
                 _set_if_present(door, property, entry[property])
         if entry.has("door_art"):
@@ -297,6 +297,7 @@ func _make_npcs() -> void:
         var instance_id: String = str(entry.get("instance_id", entry["id"]))
         npc.name = instance_id
         npc.position = _vector(entry["position"])
+        npc.set_meta("interaction_overrides", entry)
         _set_if_present(npc, "npc_id", str(entry["id"]))
         for property in ["idle_clip", "face_player", "initial_facing", "random_start", "interactable", "gesture_face_player"]:
             if entry.has(property):
@@ -341,6 +342,7 @@ func _spawn_enemies() -> void:
                 var dimensions: Variant = enemy.get("body_size")
                 if dimensions is Vector2:
                     enemy.global_position = constrain_enemy(enemy.global_position, dimensions)
+            enemy.call_deferred("snap_to_ground")
 
 func is_point_safe(point: Vector2) -> bool:
     for zone in safe_zones:

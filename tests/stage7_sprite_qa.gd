@@ -11,9 +11,9 @@ func _run() -> void:
             if not sheet.begins_with("res://"): sheet = "res://assets/" + sheet
             var texture := load(sheet) as Texture2D
             _check(texture != null, "Every enemy clip has a generated texture")
-            var trim: Dictionary = clip.get("trim", {"w":clip["frame_width"], "h":clip["frame_height"]})
-            _check(texture.get_width() == int(trim["w"]) * int(clip["frames"]) and texture.get_height() == int(trim["h"]), "Declared dimensions: %s/%s actual %s expected %s" % [id,clip["name"],texture.get_size(),Vector2(int(trim["w"])*int(clip["frames"]),int(trim["h"]))])
-            _check(not bool(clip["loop"]) and int(clip["frames"]) >= 3 if str(clip["name"]).begins_with("turn") else true, "Turn clips preserve staged turning")
+            var trim: Dictionary = clip.get("storage_trim", clip.get("trim", {"w":clip["frame_width"], "h":clip["frame_height"]}))
+            _check(texture.get_width() == int(trim["w"]) * int(clip.get("stored_columns",clip["frames"])) and texture.get_height() == int(trim["h"]), "Declared dimensions: %s/%s actual %s expected %s" % [id,clip["name"],texture.get_size(),Vector2(int(trim["w"])*int(clip.get("stored_columns",clip["frames"])),int(trim["h"]))])
+            _check(not bool(clip["loop"]) and int(clip.get("stored_columns",clip["frames"])) >= 3 if str(clip["name"]).begins_with("turn") else true, "Turn clips preserve staged turning")
     await manager.go_to("CastleF2", "Spawn_FromBelow", {"instant": true})
     var enemies: Dictionary = registry["world"]["enemy_scripts"]
     for id in enemies:

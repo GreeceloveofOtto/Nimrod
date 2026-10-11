@@ -33,11 +33,11 @@ def main():
             if name == "sky":
                 options.append("--opaque")
             pack("image", name + "_source.png", "backgrounds/rear_gate/" + name + ".png", *options)
-    pack("image", "terrain_source.png", "tiles/rear_gate/ground_tile.png",
+    pack("image", "terrain_source.png", "tiles/rear_gate/ground_tile.webp",
          "--crop", "24,92,1800,215", "--size", "512,220", "--opaque", "--tile-x")
-    pack("image", "terrain_source.png", "tiles/rear_gate/step_block.png",
+    pack("image", "terrain_source.png", "tiles/rear_gate/step_block.webp",
          "--crop", "0,418,1855,218", "--trim", "--size", "512,90")
-    pack("image", "terrain_source.png", "tiles/rear_gate/platform.png",
+    pack("image", "terrain_source.png", "tiles/rear_gate/platform.webp",
          "--crop", "560,696,740,132", "--trim", "--size", "256,48")
     props = [
         ("rear_gate_door", "25,20,575,745", "320,420"),

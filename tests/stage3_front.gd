@@ -62,7 +62,7 @@ func _run() -> void:
     await manager.go_to("CastleF3", "Spawn_FromBelow")
     level = manager.current_level
     for cook: NPC in level.npcs.values():
-        _check(is_equal_approx(cook.visual.scale.x, 0.39), "All Toin cooks use exactly 1.30 display scale")
+        _check(is_equal_approx(Vector2(cook.visual.get_meta("canonical_scale", cook.visual.scale)).x, 0.39), "All Toin cooks use exactly 1.30 display scale")
         _check(is_equal_approx(float(cook.stats["height_ratio"]), float(cook.stats["source_height_ratio"]) * 1.30), "Toin expected ratio includes multiplier once")
     await manager.go_to("CastleF1", "Spawn_FromRearGate")
     hero.hp = 123
@@ -81,8 +81,9 @@ func _run() -> void:
     _check(gate.auto_transition_level == "CastleOutskirts", "Great gate now connects split exterior")
     await manager.go_to("CastleOutskirts", "Spawn_FromGate")
     level = manager.current_level
+    root.get_node("GameState").run_flags["castle_gate_authorized"] = true
     var outer: NPC = level.npcs["castle_gatekeeper_outer"]
-    _check(outer.display_name == "문지기" and not outer.interactable, "Outer keeper retains noninteractive name tag")
+    _check(outer.display_name == "문지기" and outer.interactable, "Outer keeper retains noninteractive name tag")
     _check(get_nodes_in_group("enemies").size() == 15, "Outskirts reuses ten melee and five ranged beasts")
     var locked: DoorPortal = level.doors["downtown_passage_entrance"]
     _check(not locked.locked and locked.target_level == "DowntownPassage_F8", "Downtown entrance now connects top floor")

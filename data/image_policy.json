@@ -1,0 +1,2334 @@
+{
+  "assets/sprites": {
+    "mode": "lossy",
+    "quality": 86,
+    "alpha_quality": 95,
+    "method": 6
+  },
+  "assets/props": {
+    "mode": "lossy",
+    "quality": 86
+  },
+  "assets/backgrounds": {
+    "mode": "lossy",
+    "quality": 82
+  },
+  "assets/tiles": {
+    "mode": "keep"
+  },
+  "assets/ui": {
+    "mode": "keep"
+  },
+  "overrides": {
+    "assets/props/doors/villa_inner_door.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/doors/castle_front_door_interior.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/doors/castle_front_door_exterior.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/doors/downtown_passage_door.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/doors/villa_back_door.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/doors/passage_door.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/doors/nimrod_home_gate.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/doors/villa_back_door_exterior.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/doors/cedar_forest_portal.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/sprites/enemies/ranged_beast/idle.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/sprites/enemies/ranged_beast/walk.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/sprites/enemies/ranged_beast/windup.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/sprites/enemies/ranged_beast/recovery.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/sprites/enemies/ranged_beast/turn.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/sprites/enemies/ranged_beast/hurt.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/sprites/enemies/ranged_beast/death.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/sprites/enemies/sky_beast/dive.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/sprites/enemies/sky_beast/death.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/sprites/npcs/lugalbanda/idle_front.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/papsukkal/idle_front.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 10,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/backgrounds/castle_front/downtown_passage_facade.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/backgrounds/cedar/mid_trunks_tile_2d.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/backgrounds/homeroad/mid_district_tile.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/backgrounds/outskirts/far_landmark.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/backgrounds/passage/wall_tile_b.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/backgrounds/passage/wall_tile_c.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/broken_tower.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/canal_wall_left.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/canal_wall_right.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/cedar_stump.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/chasm_edge_left.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/chasm_edge_right.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/collapsed_bridge.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/crashed_pod_wreck.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/home_bed.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/home_shelf.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/home_table.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/house_ruin_a.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/house_ruin_b.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/passage_pillar_a.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/passage_pillar_b.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/passage_stair_block.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/ruin_wall_a.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/props/ruin_wall_b.webp": {
+      "mode": "lossy",
+      "quality": 94,
+      "reason": "meet RGBMAE<=3 without lossless size cost"
+    },
+    "assets/sprites/player/axe/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/axe/walk.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/axe/crouch_enter.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/axe/crouch_idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/axe/jump_start.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/axe/jump_rise.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/axe/fall.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/axe/land.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/axe/drop_through.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/axe/hurt.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/axe/death.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/axe/attack_1.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/axe/attack_2.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/axe/attack_3.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/axe/attack_4.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/axe/run.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/axe/roll.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/doors/castle_interior_door.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/doors/castle_front_gate_locked.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 10,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/doors/castle_great_gate.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 10,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/doors/downtown_passage_door_anim.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/doors/nimrod_home_inner_door.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/doors/cedar_portal.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/boar_charger/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/boar_charger/walk.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/boar_charger/telegraph.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/boar_charger/charge.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/boar_charger/crash_stun.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/boar_charger/recovery.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/boar_charger/turn.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/boar_charger/hurt.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/boar_charger/death.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_archer/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_archer/walk.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_archer/windup.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_archer/shoot.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_archer/recovery.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_archer/hop_back.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_archer/turn.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_archer/hurt.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_archer/death.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_colossus/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_colossus/walk.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_colossus/slam_windup.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_colossus/slam.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_colossus/slam_recovery.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_colossus/sweep_windup.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_colossus/sweep.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_colossus/sweep_recovery.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_colossus/rear_poke.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_colossus/turn.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_colossus/hurt.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_colossus/death.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_demon/perch.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_demon/tell.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_demon/fall.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_demon/land_stab.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_demon/claw_windup.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_demon/claws.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_demon/recovery.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_demon/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_demon/walk.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_demon/turn.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_demon/hurt.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_demon/death.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_sentinel/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_sentinel/walk.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_sentinel/windup.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_sentinel/thrust.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_sentinel/slash.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_sentinel/attack_recovery.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_sentinel/shield_up.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_sentinel/shield_hold.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_sentinel/shield_break_stun.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_sentinel/turn.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_sentinel/hurt.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_sentinel/death.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_wisp/float.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_wisp/contact.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_wisp/fuse.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_wisp/explode.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_wisp/turn.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/cedar_wisp/hurt.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/chain_beastman/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/chain_beastman/walk.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/chain_beastman/tail_windup.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/chain_beastman/tail_sweep.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/chain_beastman/tail_recovery.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/chain_beastman/chain_windup.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/chain_beastman/chain_throw.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/chain_beastman/pull_hold.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/chain_beastman/smash_windup.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/chain_beastman/smash.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/chain_beastman/smash_recovery.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/chain_beastman/turn.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/chain_beastman/hurt.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/chain_beastman/death.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/corpse_bomber/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/corpse_bomber/scream.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/corpse_bomber/run.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/corpse_bomber/fuse.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/corpse_bomber/explode.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/corpse_bomber/turn.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/corpse_bomber/hurt.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/explosive_spitter/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/explosive_spitter/walk.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/explosive_spitter/windup.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/explosive_spitter/spit.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/explosive_spitter/recovery.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/explosive_spitter/turn.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/explosive_spitter/hurt.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/explosive_spitter/death.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/gas_sac/float.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/gas_sac/bump.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/gas_sac/turn.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/gas_sac/hurt.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/gas_sac/death_swell.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/gas_sac/burst.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/walk.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/whip_windup.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/whip_swing.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/whip_swing_back.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/whip_recovery.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/slam_windup.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/slam.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/slam_recovery.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/summon.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/turn.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/phase_transition.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/roar_windup.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/roar_loop.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/roar_recovery.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/spines_back.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/collapse.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/final_swing_windup.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/final_swing.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/death.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/idle_p2.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/walk_p2.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/turn_p2.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/whip_windup_p2.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/whip_swing_p2.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/whip_swing_back_p2.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/whip_recovery_p2.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/slam_windup_p2.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/slam_p2.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/kala_ushumgal/slam_recovery_p2.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/ranged_beast/flame_loop.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/ranged_beast/flame.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/root_spewer/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/root_spewer/windup.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/root_spewer/spew.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/root_spewer/recovery.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/root_spewer/turn.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/root_spewer/hurt.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/root_spewer/death.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/shell_scorpion/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/shell_scorpion/walk.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/shell_scorpion/guard_block.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/shell_scorpion/claw_windup.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/shell_scorpion/claw_attack.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/shell_scorpion/claw_recovery.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/shell_scorpion/tail_windup.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/shell_scorpion/tail_strike.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/shell_scorpion/tail_recovery.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/shell_scorpion/turn.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/shell_scorpion/hurt.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/shell_scorpion/death.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/sky_beast/fly_idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/sky_beast/windup.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/sky_beast/recovery.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/sky_beast/turn.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/sky_beast/hurt.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/sprites/enemies/wall_diver/perch_ceiling.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/wall_diver/perch_wall.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/wall_diver/tell.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/wall_diver/dive.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/wall_diver/claw.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/wall_diver/recovery.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/wall_diver/crawl.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/wall_diver/turn.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/wall_diver/hurt.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/wall_diver/death.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/wall_diver/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/wall_diver/windup.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/wraith_ray/glide.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/wraith_ray/turn.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/wraith_ray/hurt.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 10,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/enemies/wraith_ray/death.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/fx/hit_spark.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/fx/root_flame.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/fx/explosion.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/fx/gas_cloud.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/fx/guard_spark.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/fx/soul_flame_cone.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/fx/blue_flame_explosion.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/fx/armor_hit_spark.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/aya/idle_front.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/aya/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/cook_a/chop.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/cook_b/stir.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/cook_c/arrange.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/enkidua/idle_front.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/enkidua/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/gatekeeper/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/gatekeeper/open_gate.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/inanna/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/inanna/idle_front.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/lugalbanda/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/ninsun/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/ninsun/idle_front.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 10,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/papsukkal/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 10,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/servant_a/sweep.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/servant_b/sweep.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/shamash/idle_front.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/shamash/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 10,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/shamhat/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/npcs/shamhat/idle_front.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/staff/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/staff/walk.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/staff/crouch_enter.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/staff/crouch_idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/staff/crouch_exit.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/staff/jump_start.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/staff/jump_rise.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/staff/fall.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/staff/land.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/staff/drop_through.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/staff/hurt.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/staff/death.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/staff/run.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/staff/roll.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/staff/attack_1.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/staff/attack_2.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/staff/attack_3.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/unarmed/idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/unarmed/walk.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/unarmed/crouch_enter.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/unarmed/crouch_idle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/unarmed/crouch_exit.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/unarmed/jump_start.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/unarmed/jump_rise.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/unarmed/fall.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/unarmed/land.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/unarmed/drop_through.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/unarmed/hurt.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/unarmed/death.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/unarmed/run.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/sprites/player/unarmed/roll.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/backgrounds/castle_front/castle_facade.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/backgrounds/rear_gate/villa_exterior.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/props/brazier.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/props/castle_banner.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 10,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/castle_front_brazier.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/props/castle_front_statue.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/castle_gate_wall_left.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/castle_gate_wall_right.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/castle_pillar.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/props/dead_tree.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/garden_fence.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/hanging_vines.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/kitchen_dining_table.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/props/kitchen_prep_table.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/props/kitchen_stove.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/props/large_rubble_a.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/props/market_stall_a.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/props/market_stall_b.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/props/passage_arch.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/passage_chandelier.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/passage_gargoyle.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/passage_gear_pillar.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/passage_pipe_cluster.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/passage_window_crimson.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/rear_gate_door.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/ruin_pillar_a.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/ruin_pillar_b.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/props/shrub.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/props/upper_walkway.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/villa_chairs.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/villa_dining_table_wide.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/villa_rug.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/villa_sofa.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    },
+    "assets/props/villa_vase.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/tiles/underground_fill.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/tiles/home/home_floor_tile.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/tiles/rear_gate/ground_tile.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/tiles/rear_gate/step_block.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/tiles/homeroad/ground_tile.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/tiles/homeroad/plaza_tile.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/tiles/homeroad/canal_floor_tile.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/tiles/outskirts/ground_tile.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/tiles/outskirts/plaza_tile.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/tiles/castle/balcony_floor_tile.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/tiles/castle/villa_floor_tile.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/tiles/castle/floor_tile.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/tiles/castle_front/courtyard_tile.webp": {
+      "mode": "lossy",
+      "encoder": "RGB near-lossless",
+      "near_lossless": 40,
+      "quality": 100,
+      "reason": "Bounded RGB preprocessing with exact alpha avoids YUV subsampling error; measured RGBMAE <=3."
+    },
+    "assets/sprites/player/axe/crouch_exit.webp": {
+      "mode": "lossy",
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "quality": 100,
+      "reason": "Whole-image RGBMAE <=3 and exact source alpha; smaller than YUV or near-lossless alternatives"
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # backyard_bg
 목적: 6단계 환경.
-경로: assets/backgrounds/villa_backyard/backyard_bg.png
+경로: assets/backgrounds/villa_backyard/backyard_bg.webp
 크기: 1500x720, 1프레임.
 배경: 불투명.
 

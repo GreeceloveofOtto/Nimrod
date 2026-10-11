@@ -41,7 +41,7 @@
     },
     {
       "name": "castle_f1_hall",
-      "path": "backgrounds/castle/castle_f1_hall.png",
+      "path": "backgrounds/castle/castle_f1_hall.webp",
       "width": 2000,
       "height": 720,
       "transparent": false
@@ -55,21 +55,21 @@
     },
     {
       "name": "castle_f3_kitchen",
-      "path": "backgrounds/castle/castle_f3_kitchen.png",
+      "path": "backgrounds/castle/castle_f3_kitchen.webp",
       "width": 1800,
       "height": 720,
       "transparent": false
     },
     {
       "name": "castle_f4_boudoir",
-      "path": "backgrounds/castle/castle_f4_boudoir.png",
+      "path": "backgrounds/castle/castle_f4_boudoir.webp",
       "width": 1800,
       "height": 720,
       "transparent": false
     },
     {
       "name": "villa_f1_hall",
-      "path": "backgrounds/villa/villa_f1_hall.png",
+      "path": "backgrounds/villa/villa_f1_hall.webp",
       "width": 2000,
       "height": 720,
       "transparent": false
@@ -101,7 +101,7 @@
     },
     {
       "name": "floor_tile",
-      "path": "tiles/castle/floor_tile.png",
+      "path": "tiles/castle/floor_tile.webp",
       "width": 512,
       "height": 180,
       "transparent": false,
@@ -109,7 +109,7 @@
     },
     {
       "name": "balcony_floor_tile",
-      "path": "tiles/castle/balcony_floor_tile.png",
+      "path": "tiles/castle/balcony_floor_tile.webp",
       "width": 512,
       "height": 180,
       "transparent": false,
@@ -117,7 +117,7 @@
     },
     {
       "name": "villa_floor_tile",
-      "path": "tiles/castle/villa_floor_tile.png",
+      "path": "tiles/castle/villa_floor_tile.webp",
       "width": 512,
       "height": 180,
       "transparent": false,

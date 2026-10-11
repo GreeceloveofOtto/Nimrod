@@ -31,21 +31,21 @@ def interior(id, width, name, background):
                 backgrounds=[dict(name="Interior", path="res://assets/backgrounds/villa/" + background + ".png",
                                   size=[width, 720], ratio=1, z=-20, position=[0, 0])],
                 spawns={}, doors=[], npcs=[], enemies=[], decorations=[], steps=[], platforms=[],
-                ceiling=True, floor_art="res://assets/tiles/castle/villa_floor_tile.png",
+                ceiling=True, floor_art="res://assets/tiles/castle/villa_floor_tile.webp",
                 floor_art_size=[512, 180], bg_dim=[.80, .80, .84])
 
 
 def main():
     registry = json.loads((DATA / "levels.json").read_text())
     levels = {e["id"]: e for e in registry["levels"]}
-    registry["world"].update(underground_art="res://assets/tiles/underground_fill.png", underground_size=[512, 512])
+    registry["world"].update(underground_art="res://assets/tiles/underground_fill.webp", underground_size=[512, 512])
     for level in levels.values():
         level["backgrounds"] = [b for b in level["backgrounds"] if "foreground" not in b["path"].lower()]
     front = levels["CastleFront"]
     front.update(width=2600, camera_limits=[0, 0, 2600, 1120], safe_zones=[[0, -200, 2600, 1520]],
                  spawns={"Spawn_FromCastle": [2100, 880], "Spawn_FromGate": [760, 880]},
                  enemies=[], steps=[], platforms=[], floor_sections=[],
-                 floor_art="res://assets/tiles/castle_front/courtyard_tile.png")
+                 floor_art="res://assets/tiles/castle_front/courtyard_tile.webp")
     front["backgrounds"] = [b for b in front["backgrounds"] if "facade" not in b["path"]]
     front["backgrounds"].append(dict(name="CastleFacade", path="res://assets/backgrounds/castle_front/castle_facade.webp",
                                        position=[1100, 160], size=[1500, 720], ratio=1, z=-10))
@@ -64,7 +64,7 @@ def main():
                    display_name="루갈성 대문 밖", bgm="uruk_wasteland", bg_dim=[.88, .88, .92],
                    camera_limits=[0, 0, 10000, 1240], safe_zones=[[8850, -200, 1150, 1800]],
                    spawns={"Spawn_FromGate": [9440, 760], "Spawn_Debug": [1200, 680]}, steps=[], floor_sections=[],
-                   floor_art="res://assets/tiles/outskirts/ground_tile.png", floor_art_size=[512, 200], ceiling=False)
+                   floor_art="res://assets/tiles/outskirts/ground_tile.webp", floor_art_size=[512, 200], ceiling=False)
     outside["backgrounds"] = [dict(name=name, path="res://assets/backgrounds/outskirts/"+file+".png", size=[width,720], ratio=ratio,
                                         z=z, position=[0,0], **({"repeat_size":[2048,0],"repeat_times":6} if repeat else {}))
                               for name,file,width,ratio,z,repeat in [("Sky","sky",1792,.05,-40,False),("FarCity","far_city_tile",2048,.20,-30,True),
@@ -97,7 +97,7 @@ def main():
                            for i,(x,h) in enumerate([(3600,60),(4100,90),(4600,75)])]
     for a,b,e in segments:
         if 1500<=a<3200:
-            outside["obstacles"].append(dict(rect=[a+100,880-e-20,60,20],art="res://assets/tiles/outskirts/ruin_ledge.png"))
+            outside["obstacles"].append(dict(rect=[a+100,880-e-20,60,20],art="res://assets/tiles/outskirts/ruin_ledge.webp"))
     def floor(x):
         return next(880-e for a,b,e in segments if a<=x<b)
     melee=[8350,7000,7450,5400,6200,3400,3900,4600,2800,1100]

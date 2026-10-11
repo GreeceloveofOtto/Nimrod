@@ -147,6 +147,8 @@ func go_to(level_id: String, spawn_name: String, options: Dictionary = {}) -> bo
         if hud != null:
             hud.show_story()
     transition_finished.emit(level_id)
+    if level_id == "DowntownPassage_F8":
+        _passage_soliloquy.call_deferred()
     return true
 
 func restart_run(reset_flags: bool = true) -> void:
@@ -177,3 +179,9 @@ func _fade_to(alpha: float, seconds: float) -> void:
     _fade_tween = create_tween()
     _fade_tween.tween_property(_fade_rect, "modulate:a", alpha, seconds)
     await _fade_tween.finished
+
+func _passage_soliloquy() -> void:
+    var dialogue: Node = get_node("/root/Dialogue")
+    await get_tree().create_timer(float(dialogue.settings["soliloquy_delay"]), false).timeout
+    if is_instance_valid(current_level) and is_instance_valid(player) and str(current_level.level_id) == "DowntownPassage_F8" and not is_transitioning and dialogue.interaction_available("passage_soliloquy"):
+        dialogue.play_interaction("passage_soliloquy", {"player": player})

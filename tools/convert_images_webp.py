@@ -7,16 +7,22 @@ import numpy as np
 from PIL import Image
 ROOT=Path(__file__).resolve().parents[1]
 
+POLICY_PATH=ROOT/'data/image_policy.json'
+POLICY=json.loads(POLICY_PATH.read_text()) if POLICY_PATH.exists() else {}
+
 def convert(path,out):
-    image=Image.open(path).convert('RGBA');alpha=np.array(image.getchannel('A'));transparent=bool(alpha.min()<255)
-    image.save(out,'WEBP',lossless=transparent,quality=100 if transparent else 90,method=6,exact=True)
-    restored=np.array(Image.open(out).convert('RGBA'));original=np.array(image);occupied=original[:,:,3]>0
-    if transparent:
-        error=float(np.abs(original[occupied].astype(float)-restored[occupied].astype(float)).max())
-        valid=np.array_equal(original[:,:,3],restored[:,:,3]) and error==0
-    else:
-        error=float(np.abs(original[:,:,:3].astype(float)-restored[:,:,:3].astype(float)).mean());valid=error<=2
-    return valid,error,transparent
+    from downscale_assets import encode
+    relative=str(path.relative_to(ROOT));folder='assets/'+path.relative_to(ROOT/'assets').parts[0]
+    spec=POLICY.get('overrides',{}).get(str(Path(relative).with_suffix('.webp')),POLICY.get(folder,{'mode':'lossless','quality':86}))
+    image=Image.open(path).convert('RGBA');original=np.array(image);transparent=bool(original[:,:,3].min()<255)
+    if spec.get('mode')=='lossless':image.save(out,'WEBP',lossless=True,method=6,exact=True)
+    elif spec.get('encoder')=='bounded RGB quantization':
+        step=int(spec['rgb_step']);pixels=original.copy();pixels[:,:,:3]=np.minimum(255,np.floor(pixels[:,:,:3].astype(float)/step+.5)*step).astype(np.uint8);Image.fromarray(pixels).save(out,'WEBP',lossless=True,method=6,exact=True)
+    else:encode(image,out,int(spec.get('quality',86)))
+    restored=np.array(Image.open(out).convert('RGBA'));mask=original[:,:,3]>12
+    alpha=float(np.abs(original[:,:,3].astype(float)-restored[:,:,3]).mean());rgb=float(np.abs(original[:,:,:3][mask].astype(float)-restored[:,:,:3][mask]).mean()) if mask.any() else 0
+    same_bbox=image.getchannel('A').getbbox()==Image.fromarray(restored[:,:,3]).getbbox()
+    return same_bbox and alpha<=1.5 and rgb<=3,rgb,transparent
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--apply',action='store_true');p.add_argument('--dry-run',action='store_true');p.add_argument('--folders',nargs='+',default=['assets']);a=p.parse_args();
@@ -31,17 +37,18 @@ def main():
         relative=str(f.relative_to(ROOT));digest=hashlib.sha256(f.read_bytes()).hexdigest()
         candidate=(scratch/f.relative_to(ROOT/'assets')).with_suffix('.webp');candidate.parent.mkdir(parents=True,exist_ok=True)
         cached=previous.get(relative)
-        if cached and cached.get('png_sha256')==digest and candidate.exists():return f,candidate,cached
+        if cached and cached.get('png_sha256')==digest and cached.get('policy')==POLICY and candidate.exists():return f,candidate,cached
         # Tiny UI and pixel-exact terrain stay PNG. Opaque repeating backgrounds
         # also stay PNG if lossy encoding changes their matching tile edges.
         if relative in keep_png or 'tiles' in f.parts or 'ui' in f.parts:
-            return f,candidate,{'path':relative,'png_bytes':f.stat().st_size,'webp_bytes':f.stat().st_size,'transparent':True,'error':0,'accepted':False,'png_sha256':digest,'reason':'pixel-exact tile/UI'}
+            return f,candidate,{'path':relative,'png_bytes':f.stat().st_size,'webp_bytes':f.stat().st_size,'transparent':True,'error':0,'accepted':False,'png_sha256':digest,'reason':'pixel-exact tile/UI','policy':POLICY}
         valid,error,transparent=convert(f,candidate)
         if relative in precise:
             im=Image.open(candidate).convert('RGBA')
-            if im.crop((0,0,1,im.height)).tobytes()!=im.crop((im.width-1,0,im.width,im.height)).tobytes():valid=False
+            left=np.array(im)[:,0,:].astype(float);right=np.array(im)[:,-1,:].astype(float)
+            if np.abs(left-right).mean()>2:valid=False
         accepted=valid and candidate.stat().st_size<f.stat().st_size
-        return f,candidate,{'path':relative,'png_bytes':f.stat().st_size,'webp_bytes':candidate.stat().st_size,'transparent':bool(transparent),'error':error,'accepted':bool(accepted),'png_sha256':digest}
+        return f,candidate,{'path':relative,'png_bytes':f.stat().st_size,'webp_bytes':candidate.stat().st_size,'transparent':bool(transparent),'error':error,'accepted':bool(accepted),'png_sha256':digest,'policy':POLICY}
     source=sorted({f for folder in a.folders for f in (ROOT/folder).rglob('*.png') if not any(x.startswith('_legacy') for x in f.parts) and 'source_art' not in f.parts and 'reference' not in f.parts})
     with ThreadPoolExecutor(max_workers=4) as pool:
         for f,candidate,record in pool.map(prepare,source):

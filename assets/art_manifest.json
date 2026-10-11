@@ -75,7 +75,7 @@
     },
     {
       "name": "ground_tile",
-      "path": "tiles/rear_gate/ground_tile.png",
+      "path": "tiles/rear_gate/ground_tile.webp",
       "width": 512,
       "height": 220,
       "transparent": false,
@@ -83,14 +83,14 @@
     },
     {
       "name": "step_block",
-      "path": "tiles/rear_gate/step_block.png",
+      "path": "tiles/rear_gate/step_block.webp",
       "width": 512,
       "height": 90,
       "transparent": true
     },
     {
       "name": "platform",
-      "path": "tiles/rear_gate/platform.png",
+      "path": "tiles/rear_gate/platform.webp",
       "width": 256,
       "height": 48,
       "transparent": true
@@ -139,7 +139,7 @@
     },
     {
       "name": "castle_f1_hall",
-      "path": "backgrounds/castle/castle_f1_hall.png",
+      "path": "backgrounds/castle/castle_f1_hall.webp",
       "width": 2000,
       "height": 720,
       "transparent": false,
@@ -155,7 +155,7 @@
     },
     {
       "name": "castle_f3_kitchen",
-      "path": "backgrounds/castle/castle_f3_kitchen.png",
+      "path": "backgrounds/castle/castle_f3_kitchen.webp",
       "width": 1800,
       "height": 720,
       "transparent": false,
@@ -164,14 +164,14 @@
     },
     {
       "name": "castle_f4_boudoir",
-      "path": "backgrounds/castle/castle_f4_boudoir.png",
+      "path": "backgrounds/castle/castle_f4_boudoir.webp",
       "width": 1800,
       "height": 720,
       "transparent": false
     },
     {
       "name": "villa_f1_hall",
-      "path": "backgrounds/villa/villa_f1_hall.png",
+      "path": "backgrounds/villa/villa_f1_hall.webp",
       "width": 2000,
       "height": 720,
       "transparent": false
@@ -203,7 +203,7 @@
     },
     {
       "name": "floor_tile",
-      "path": "tiles/castle/floor_tile.png",
+      "path": "tiles/castle/floor_tile.webp",
       "width": 512,
       "height": 180,
       "transparent": false,
@@ -211,7 +211,7 @@
     },
     {
       "name": "balcony_floor_tile",
-      "path": "tiles/castle/balcony_floor_tile.png",
+      "path": "tiles/castle/balcony_floor_tile.webp",
       "width": 512,
       "height": 180,
       "transparent": false,
@@ -219,7 +219,7 @@
     },
     {
       "name": "villa_floor_tile",
-      "path": "tiles/castle/villa_floor_tile.png",
+      "path": "tiles/castle/villa_floor_tile.webp",
       "width": 512,
       "height": 180,
       "transparent": false,
@@ -372,16 +372,8 @@
       "transparent": true
     },
     {
-      "name": "ground_tile",
-      "path": "tiles/castle_front/ground_tile.png",
-      "width": 512,
-      "height": 200,
-      "transparent": false,
-      "tile_x": true
-    },
-    {
       "name": "courtyard_tile",
-      "path": "tiles/castle_front/courtyard_tile.png",
+      "path": "tiles/castle_front/courtyard_tile.webp",
       "width": 512,
       "height": 200,
       "transparent": false,
@@ -527,7 +519,7 @@
     },
     {
       "name": "ground_tile",
-      "path": "tiles/outskirts/ground_tile.png",
+      "path": "tiles/outskirts/ground_tile.webp",
       "width": 512,
       "height": 200,
       "transparent": false,
@@ -535,7 +527,7 @@
     },
     {
       "name": "plaza_tile",
-      "path": "tiles/outskirts/plaza_tile.png",
+      "path": "tiles/outskirts/plaza_tile.webp",
       "width": 512,
       "height": 200,
       "transparent": false,
@@ -543,28 +535,28 @@
     },
     {
       "name": "ruin_platform",
-      "path": "tiles/outskirts/ruin_platform.png",
+      "path": "tiles/outskirts/ruin_platform.webp",
       "width": 256,
       "height": 48,
       "transparent": true
     },
     {
       "name": "bridge_platform",
-      "path": "tiles/outskirts/bridge_platform.png",
+      "path": "tiles/outskirts/bridge_platform.webp",
       "width": 320,
       "height": 48,
       "transparent": true
     },
     {
       "name": "ruin_ledge",
-      "path": "tiles/outskirts/ruin_ledge.png",
+      "path": "tiles/outskirts/ruin_ledge.webp",
       "width": 480,
       "height": 56,
       "transparent": true
     },
     {
       "name": "underground_fill",
-      "path": "tiles/underground_fill.png",
+      "path": "tiles/underground_fill.webp",
       "width": 512,
       "height": 512,
       "transparent": false,
@@ -573,14 +565,14 @@
     },
     {
       "name": "villa_f2_dining",
-      "path": "backgrounds/villa/villa_f2_dining.png",
+      "path": "backgrounds/villa/villa_f2_dining.webp",
       "width": 2200,
       "height": 720,
       "transparent": false
     },
     {
       "name": "villa_f3_chamber",
-      "path": "backgrounds/villa/villa_f3_chamber.png",
+      "path": "backgrounds/villa/villa_f3_chamber.webp",
       "width": 2000,
       "height": 720,
       "transparent": false
@@ -615,7 +607,7 @@
     },
     {
       "name": "wall_tile_a",
-      "path": "backgrounds/passage/wall_tile_a.png",
+      "path": "backgrounds/passage/wall_tile_a.webp",
       "width": 1024,
       "height": 720,
       "transparent": false,
@@ -623,7 +615,7 @@
     },
     {
       "name": "wall_tile_b",
-      "path": "backgrounds/passage/wall_tile_b.png",
+      "path": "backgrounds/passage/wall_tile_b.webp",
       "width": 1024,
       "height": 720,
       "transparent": false,
@@ -631,7 +623,7 @@
     },
     {
       "name": "wall_tile_c",
-      "path": "backgrounds/passage/wall_tile_c.png",
+      "path": "backgrounds/passage/wall_tile_c.webp",
       "width": 1024,
       "height": 720,
       "transparent": false,
@@ -639,7 +631,7 @@
     },
     {
       "name": "wall_tile_d",
-      "path": "backgrounds/passage/wall_tile_d.png",
+      "path": "backgrounds/passage/wall_tile_d.webp",
       "width": 1024,
       "height": 720,
       "transparent": false,
@@ -647,7 +639,7 @@
     },
     {
       "name": "far_abyss_tile",
-      "path": "backgrounds/passage/far_abyss_tile.png",
+      "path": "backgrounds/passage/far_abyss_tile.webp",
       "width": 2048,
       "height": 720,
       "transparent": false,
@@ -718,7 +710,7 @@
     },
     {
       "name": "floor_tile",
-      "path": "tiles/passage/floor_tile.png",
+      "path": "tiles/passage/floor_tile.webp",
       "width": 512,
       "height": 180,
       "transparent": true,
@@ -726,29 +718,14 @@
     },
     {
       "name": "platform",
-      "path": "tiles/passage/platform.png",
+      "path": "tiles/passage/platform.webp",
       "width": 256,
       "height": 48,
       "transparent": true
     },
     {
-      "name": "ledge",
-      "path": "tiles/passage/ledge.png",
-      "width": 480,
-      "height": 56,
-      "transparent": true
-    },
-    {
-      "name": "ceiling_tile",
-      "path": "tiles/passage/ceiling_tile.png",
-      "width": 512,
-      "height": 120,
-      "transparent": true,
-      "tile_x": true
-    },
-    {
       "name": "low_tunnel_ceiling",
-      "path": "tiles/passage/low_tunnel_ceiling.png",
+      "path": "tiles/passage/low_tunnel_ceiling.webp",
       "width": 512,
       "height": 140,
       "transparent": true,
@@ -756,7 +733,7 @@
     },
     {
       "name": "bridge_plank",
-      "path": "tiles/passage/bridge_plank.png",
+      "path": "tiles/passage/bridge_plank.webp",
       "width": 320,
       "height": 48,
       "transparent": true
@@ -872,7 +849,7 @@
     },
     {
       "name": "ground_tile",
-      "path": "tiles/homeroad/ground_tile.png",
+      "path": "tiles/homeroad/ground_tile.webp",
       "width": 512,
       "height": 200,
       "transparent": false,
@@ -880,7 +857,7 @@
     },
     {
       "name": "plaza_tile",
-      "path": "tiles/homeroad/plaza_tile.png",
+      "path": "tiles/homeroad/plaza_tile.webp",
       "width": 512,
       "height": 200,
       "transparent": false,
@@ -888,7 +865,7 @@
     },
     {
       "name": "canal_floor_tile",
-      "path": "tiles/homeroad/canal_floor_tile.png",
+      "path": "tiles/homeroad/canal_floor_tile.webp",
       "width": 512,
       "height": 200,
       "transparent": false,
@@ -896,14 +873,14 @@
     },
     {
       "name": "stone_slab_bridge",
-      "path": "tiles/homeroad/stone_slab_bridge.png",
+      "path": "tiles/homeroad/stone_slab_bridge.webp",
       "width": 360,
       "height": 56,
       "transparent": true
     },
     {
       "name": "balcony_platform",
-      "path": "tiles/homeroad/balcony_platform.png",
+      "path": "tiles/homeroad/balcony_platform.webp",
       "width": 256,
       "height": 48,
       "transparent": true
@@ -973,21 +950,21 @@
     },
     {
       "name": "backyard_bg",
-      "path": "backgrounds/villa_backyard/backyard_bg.png",
+      "path": "backgrounds/villa_backyard/backyard_bg.webp",
       "width": 1500,
       "height": 720,
       "transparent": false
     },
     {
       "name": "boss_bg",
-      "path": "backgrounds/cedar/boss_bg.png",
+      "path": "backgrounds/cedar/boss_bg.webp",
       "width": 1600,
       "height": 960,
       "transparent": false
     },
     {
       "name": "far_tile_2d",
-      "path": "backgrounds/cedar/far_tile_2d.png",
+      "path": "backgrounds/cedar/far_tile_2d.webp",
       "width": 1024,
       "height": 1024,
       "transparent": false,
@@ -1076,23 +1053,15 @@
     },
     {
       "name": "root_floor_tile",
-      "path": "tiles/cedar/root_floor_tile.png",
+      "path": "tiles/cedar/root_floor_tile.webp",
       "width": 512,
       "height": 180,
       "transparent": false,
       "tile_x": true
     },
     {
-      "name": "root_platform",
-      "path": "tiles/cedar/root_platform.png",
-      "width": 256,
-      "height": 48,
-      "transparent": true,
-      "tile_x": true
-    },
-    {
       "name": "branch_platform",
-      "path": "tiles/cedar/branch_platform.png",
+      "path": "tiles/cedar/branch_platform.webp",
       "width": 320,
       "height": 48,
       "transparent": true,
@@ -1107,16 +1076,8 @@
       "tile_y": true
     },
     {
-      "name": "canopy_top_tile",
-      "path": "tiles/cedar/canopy_top_tile.png",
-      "width": 512,
-      "height": 160,
-      "transparent": true,
-      "tile_x": true
-    },
-    {
       "name": "home_floor_tile",
-      "path": "tiles/home/home_floor_tile.png",
+      "path": "tiles/home/home_floor_tile.webp",
       "width": 512,
       "height": 180,
       "transparent": false,
@@ -1124,7 +1085,7 @@
     },
     {
       "name": "bone_floor_tile",
-      "path": "tiles/cedar/bone_floor_tile.png",
+      "path": "tiles/cedar/bone_floor_tile.webp",
       "width": 512,
       "height": 180,
       "transparent": false,
@@ -1132,7 +1093,7 @@
     },
     {
       "name": "boss_end_platform",
-      "path": "tiles/cedar/boss_end_platform.png",
+      "path": "tiles/cedar/boss_end_platform.webp",
       "width": 280,
       "height": 56,
       "transparent": true,

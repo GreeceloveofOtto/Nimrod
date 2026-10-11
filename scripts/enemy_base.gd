@@ -630,3 +630,23 @@ func _notification(what: int) -> void:
         if get_tree().physics_frame.is_connected(_flush_player_effects):
             get_tree().physics_frame.disconnect(_flush_player_effects)
         _queued_player_effects.clear()
+
+# Ground placement uses actual collision surfaces, including one-way platforms.
+func snap_to_ground() -> void:
+    if not is_inside_tree():
+        return
+    if enemy_id in ["sky_beast", "gas_sac", "wraith_ray", "cedar_wisp", "wall_diver"]:
+        return
+    await get_tree().physics_frame
+    if not is_inside_tree():
+        return
+    var bottom: float = collider.position.y + body_size.y * 0.5
+    var feet: Vector2 = global_position + Vector2(0, bottom)
+    var query := PhysicsRayQueryParameters2D.create(feet - Vector2(0, 8), feet + Vector2(0, float(common["ground_snap_range"])), SURFACE_MASK, [get_rid()])
+    var hit: Dictionary = get_world_2d().direct_space_state.intersect_ray(query)
+    if hit.is_empty():
+        push_error("No ground within 600px: " + str(get_parent().level_id) + "/" + name)
+        return
+    global_position.y = float(hit["position"].y) - bottom - float(common["ground_snap_margin"])
+    velocity = Vector2(0, float(common.get("gravity", 1750)) / 60.0)
+    move_and_slide()

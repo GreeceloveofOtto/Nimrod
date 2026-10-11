@@ -1,0 +1,256 @@
+{
+  "enkidua_intro": {
+    "first": [
+      {
+        "speaker": "enkidua",
+        "text": "니므롯, 오늘은 샤마쉬와 아야에게 배정받은 첫 번째 업무가 있는 날이야."
+      },
+      {
+        "speaker": "player",
+        "text": "엔키두아, 너무 걱정하지마. 난 내가 딩이르 전체에서 최고의 이기기라고 확신해. 샤마쉬와 아야도 나를 수칼루로 삼았잖아."
+      },
+      {
+        "speaker": "enkidua",
+        "text": "니므롯, 너무 자만하지마. 너에게 어떤 일이 일어날 지는 아무도 몰라. 투피 시마티를 운용하는 안샤르라면 너의 운명을 바꿀 수 있겠지만 말이야."
+      },
+      {
+        "speaker": "enkidua",
+        "text": "우선, 루갈반다와 닌순을 찾아가. 그들은 우루크 루갈성 안에 있을 거야."
+      },
+      {
+        "speaker": "enkidua",
+        "text": "그들은 너에게 브란눈과 이디그나의 운명을 축복한 후에 샤마쉬와 아야의 수칼루로서 필수적인 도구를 내어줄 거야."
+      },
+      {
+        "speaker": "player",
+        "text": "언제나 고마워, 엔키두아."
+      },
+      {
+        "speaker": "enkidua",
+        "text": "사랑해, 니므롯."
+      }
+    ],
+    "repeat": [
+      {
+        "speaker": "enkidua",
+        "text": "사랑해, 니므롯."
+      }
+    ],
+    "flag": "dialogue_enkidua_intro",
+    "speakers": {
+      "enkidua": "enkidua",
+      "player": "player"
+    },
+    "on_finish": [],
+    "id": "enkidua_intro"
+  },
+  "passage_soliloquy": {
+    "first": [
+      {
+        "speaker": "player",
+        "text": "어째, 괴수들이 이전보다 늘어난 것 같네."
+      },
+      {
+        "speaker": "player",
+        "text": "우리가 여기에 거주하는 것이 과연 옳을까?"
+      }
+    ],
+    "repeat": [],
+    "flag": "dialogue_passage_soliloquy",
+    "speakers": {
+      "player": "player"
+    },
+    "on_finish": [],
+    "id": "passage_soliloquy"
+  },
+  "castle_gatekeeper": {
+    "first": [
+      {
+        "speaker": "castle_gatekeeper_outer",
+        "text": "니므롯, 오늘 샤마쉬와 아야의 수칼루로서 첫 번째 업무가 있는 날이지?"
+      },
+      {
+        "speaker": "castle_gatekeeper_outer",
+        "text": "아버지, 어머니를 만나러 온거지?"
+      },
+      {
+        "speaker": "castle_gatekeeper_outer",
+        "text": "아마 성 안으로 들어가면 바로 있을 거야."
+      },
+      {
+        "speaker": "castle_gatekeeper_outer",
+        "text": "일찍부터 너를 기다리고 있었어."
+      },
+      {
+        "speaker": "player",
+        "text": "언제나 고마워."
+      }
+    ],
+    "repeat": [],
+    "flag": "dialogue_castle_gatekeeper",
+    "speakers": {
+      "castle_gatekeeper_outer": "castle_gatekeeper_outer",
+      "player": "player"
+    },
+    "on_finish": [
+      {
+        "event": "open_gate",
+        "flag": "castle_gate_authorized"
+      }
+    ],
+    "id": "castle_gatekeeper"
+  },
+  "parents_gift": {
+    "first": [
+      {
+        "speaker": "lugalbanda",
+        "text": "니므롯, 사랑하는 내 아들, 누군가의 수칼루가 되는 것을 내가 얼마나 기다렸는지 모른다."
+      },
+      {
+        "speaker": "ninsun",
+        "text": "니므롯, 너의 축복을 빌어. 언제나 행운이 따르길 바라."
+      },
+      {
+        "speaker": "player",
+        "text": "언제나 고마워, 아버지, 어머니."
+      },
+      {
+        "speaker": "lugalbanda",
+        "text": "사랑하는 니므롯, 너를 위해서 선물을 준비했다."
+      },
+      {
+        "speaker": "lugalbanda",
+        "event": "give_axe"
+      },
+      {
+        "speaker": "ninsun",
+        "text": "언제나 곧게 뻗어있는 브란눈과 이디그나처럼 니므롯의 운명을 축복할게."
+      }
+    ],
+    "repeat": [
+      {
+        "speaker": "ninsun",
+        "text": "오늘도 잘생겼구나, 내 아들."
+      }
+    ],
+    "flag": "lugalbanda_gift",
+    "speakers": {
+      "lugalbanda": "lugalbanda",
+      "ninsun": "ninsun",
+      "player": "player"
+    },
+    "on_finish": [],
+    "id": "parents_gift"
+  },
+  "shamhat": {
+    "first": [
+      {
+        "speaker": "shamhat",
+        "text": "니므롯, 축하해. 샤마쉬와 아야의 수칼루라니, 대단한걸?"
+      },
+      {
+        "speaker": "player",
+        "text": "언제나 고마워, 샴하트."
+      },
+      {
+        "speaker": "shamhat",
+        "text": "엔키두아와는 여전히 서로 사랑해?"
+      },
+      {
+        "speaker": "player",
+        "text": "당연한걸."
+      },
+      {
+        "speaker": "shamhat",
+        "text": "…."
+      }
+    ],
+    "repeat": [
+      {
+        "speaker": "shamhat",
+        "text": "네가 자꾸 신경쓰여."
+      }
+    ],
+    "flag": "dialogue_shamhat",
+    "speakers": {
+      "shamhat": "shamhat",
+      "player": "player"
+    },
+    "on_finish": [
+      {
+        "event": "give_blessing",
+        "when": "repeat"
+      }
+    ],
+    "id": "shamhat"
+  },
+  "castle_cook": {
+    "first": [
+      {
+        "speaker": "cook_a",
+        "text": "니므롯, 축하해. 아버지와 어머니가 당신을 위해 전례없는 진수성찬을 준비했어."
+      },
+      {
+        "speaker": "player",
+        "text": "언제나 고마워, 하지만 나는 갈 길이 바쁜걸."
+      },
+      {
+        "speaker": "cook_a",
+        "text": "이런, 내가 실수했군, 어서 가봐."
+      }
+    ],
+    "repeat": [],
+    "flag": "dialogue_castle_cook",
+    "speakers": {
+      "cook_a": "cook_a",
+      "player": "player"
+    },
+    "on_finish": [],
+    "id": "castle_cook"
+  },
+  "inanna": {
+    "first": [
+      {
+        "speaker": "papsukkal",
+        "text": "감히, 인안나와 대화를 시도하려 하는 간 큰 놈이 아직 존재한다니, 누구냐?"
+      }
+    ],
+    "repeat": [
+      {
+        "speaker": "papsukkal",
+        "text": "썩 꺼져!"
+      }
+    ],
+    "flag": "dialogue_inanna",
+    "speakers": {
+      "papsukkal": "papsukkal"
+    },
+    "on_finish": [],
+    "id": "inanna"
+  },
+  "villa_gatekeeper": {
+    "first": [
+      {
+        "speaker": "player",
+        "text": "샤마쉬와 아야의 수칼루로 임명된 니므롯이라고 합니다."
+      },
+      {
+        "speaker": "gatekeeper",
+        "text": "어서오십시오, 샤마쉬와 아야가 기다리고 있습니다."
+      }
+    ],
+    "repeat": [],
+    "flag": "dialogue_villa_gatekeeper",
+    "speakers": {
+      "player": "player",
+      "gatekeeper": "gatekeeper"
+    },
+    "on_finish": [
+      {
+        "event": "open_gate",
+        "flag": "villa_gate_authorized"
+      }
+    ],
+    "id": "villa_gatekeeper"
+  }
+}

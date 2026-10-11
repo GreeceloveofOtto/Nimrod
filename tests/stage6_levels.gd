@@ -10,7 +10,7 @@ func _run() -> void:
     _check(manager.current_level.level_id=="NimrodHome" and hero.hp==140,"Home transition preserves HP")
     _check(manager.current_level.npcs.has("enkidua") and get_nodes_in_group("enemies").is_empty(),"Home NPC and no monsters")
     var npc: NPC = manager.current_level.npcs["enkidua"]
-    _check(npc.three_way and not npc.interactable and npc.display_name=="엔키두아","Enkidua three-way, name and no interaction")
+    _check(npc.three_way and npc.interactable and npc.display_name=="엔키두아","Enkidua three-way, name and no interaction")
     await manager.go_to("VillaF1","Spawn_FromGate")
     var back: DoorPortal = manager.current_level.doors["villa_back_door"]
     _check(not back.locked and back.target_level=="VillaBackyard","Villa backdoor unlocked")

@@ -44,7 +44,7 @@ python tools/pack_sprites.py sheet spark_raw.png assets/sprites/fx/hit_spark.web
 ```bash
 python tools/pack_sprites.py image generated.png assets/props/rear_gate_door.webp --crop 0,0,320,420 --size 320,420
 python tools/pack_sprites.py image generated_sky.png assets/backgrounds/rear_gate/sky.webp --size 1536,720 --opaque
-python tools/pack_sprites.py image generated_ground.png assets/tiles/rear_gate/ground_tile.png --size 512,220 --opaque --tile-x
+python tools/pack_sprites.py image generated_ground.png assets/tiles/rear_gate/ground_tile.webp --size 512,220 --opaque --tile-x
 ```
 
 `--crop`은 생성 아틀라스의 해당 이미지 구역만 분리한다. `--trim`은 단독 장식 이미지의 여백을 줄일 때 쓴다. 배경의 파랄랙스 배치나 지형 상단 정렬을 유지해야 할 때에는 여백을 임의로 제거하지 않는다. `--opaque`는 하늘·바닥처럼 불투명한 원본에만 사용한다. `--tile-x`는 원본의 양쪽 32px 경계 띠를 섞어 첫 열과 마지막 열의 RGBA를 같게 만든다. 석재나 노이즈를 새로 그리지 않는다. 다른 띠 너비는 `--tile-x 16`처럼 지정한다.

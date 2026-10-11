@@ -1,6 +1,6 @@
 # far_tile_2d
 목적: 6단계 환경.
-경로: assets/backgrounds/cedar/far_tile_2d.png
+경로: assets/backgrounds/cedar/far_tile_2d.webp
 크기: 1024x1024, 1프레임.
 배경: 불투명.
 

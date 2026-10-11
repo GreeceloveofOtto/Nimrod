@@ -184,6 +184,7 @@ def pack_sheet(args):
         frame_info.append({"frame": index + 1, "source_bounds": list(source_bounds),
                            "packed_bounds": [x, y, x + resized.width, y + resized.height]})
     save_image(sheet, args.output)
+    apply_storage_policy(args, sheet, True)
     print(json.dumps({"shared_scale": scale, "anchor": list(args.anchor), "frames": frame_info}))
 
 
@@ -217,6 +218,41 @@ def pack_image(args):
     if not args.opaque:
         source = chromakey(source)  # Remove 1-alpha magenta resampling fringe.
     save_image(source, args.output)
+    apply_storage_policy(args, source, False)
+
+
+def apply_storage_policy(args, image, is_sheet):
+    """Automatically normalize new runtime art; preserve canonical geometry sidecar."""
+    from downscale_assets import ROOT, choose_scale, encode, rewrite_paths
+    import shutil
+    output=Path(args.output).resolve()
+    try:relative=output.relative_to(ROOT/'assets')
+    except ValueError:return  # Staging/reference art stays untouched.
+    policy_path=ROOT/'data/image_policy.json'
+    if not policy_path.exists() or getattr(args,'canonical_only',False):return
+    policy=json.loads(policy_path.read_text());folder='assets/'+relative.parts[0];mode=policy.get(folder,{}).get('mode','keep')
+    if mode=='keep':return
+    backup=ROOT/'archive/pack_source'/relative;backup.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(output,backup)
+    spec={}
+    if is_sheet:
+        limits=json.loads((ROOT/'data/density_limits.json').read_text());limit=limits.get(args.density_class,2);w,h=args.frame_width,args.frame_height
+        frames=[image.crop((i*w,0,(i+1)*w,h)) for i in range(args.frames)];boxes=[f.getchannel('A').getbbox() for f in frames];x=max(0,min(b[0] for b in boxes)-3);y=max(0,min(b[1] for b in boxes)-3);right=min(w,max(b[2] for b in boxes)+3);bottom=min(h,max(b[3] for b in boxes)+3);cw,ch=right-x,bottom-y
+        packed=Image.new('RGBA',(cw*args.frames,ch))
+        for i,f in enumerate(frames):packed.paste(f.crop((x,y,right,bottom)),(i*cw,0))
+        scale,sw,sh,quality,density=choose_scale(packed,cw,ch,args.frames,args.visual_scale,limit);image=Image.new('RGBA',(sw*args.frames,sh))
+        for i in range(args.frames):image.paste(packed.crop((i*cw,0,(i+1)*cw,ch)).resize((sw,sh),Image.Resampling.LANCZOS),(i*sw,0))
+        spec={'frame_width':w,'frame_height':h,'anchor_px':list(args.anchor),'frames':args.frames,'columns':args.frames,'rows':1,'trim':{'x':x,'y':y,'w':cw,'h':ch},'storage_trim':{'x':x*sw/cw,'y':y*sh/ch,'w':sw,'h':sh},'storage_scale':[sw/cw,sh/ch],'stored_columns':args.frames,'frame_map':list(range(args.frames)),'stored_frame_size':[round(w*sw/cw),round(h*sh/ch)],'stored_anchor_px':[args.anchor[0]*sw/cw,args.anchor[1]*sh/ch],'image_size':list(image.size),'ssim':quality,'effective_density':density}
+    target=output.with_suffix('.webp');metrics=encode(image,target,policy.get(folder,{}).get('quality',86));spec['encoding']=metrics
+    if output!=target:output.unlink();rewrite_paths({'assets/'+str(relative):str(target.relative_to(ROOT))})
+    target.with_suffix('.storage.json').write_text(json.dumps(spec,indent=2)+'\n')
+    if is_sheet:
+        registry_path=ROOT/'data/sprite_trims.json';registry=json.loads(registry_path.read_text());key='res://'+str(target.relative_to(ROOT));registry[key]=spec;registry_path.write_text(json.dumps(registry,indent=2)+'\n')
+        for manifest in target.parent.glob('*manifest.json'):
+            data=json.loads(manifest.read_text())
+            for clip in data.get('clips',[]):
+                if Path(clip['sheet']).stem==output.stem:clip.update(spec);clip['sheet']=str(Path(clip['sheet']).with_suffix('.webp'))
+            manifest.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+    print(json.dumps({'policy_output':str(target),'metadata':str(target.with_suffix('.storage.json'))}))
 
 
 def main():
@@ -248,6 +284,9 @@ def main():
     sheet.add_argument("--scale", type=float, help="Override atlas-wide scale; same value for every clip")
     sheet.add_argument("--scale-xy", type=lambda value: tuple(float(v) for v in value.split(",")),
                        help="Effects only: existing painted pixels scaled to the desired hitbox aspect (x,y)")
+    sheet.add_argument("--visual-scale",type=float,default=.30)
+    sheet.add_argument("--density-class",choices=("player","npc","enemy","large_enemy","fx"),default="enemy")
+    sheet.add_argument("--canonical-only",action="store_true",help="Only for archived reference/staging sheets")
     sheet.set_defaults(run=pack_sheet)
     single = commands.add_parser("image", help="Crop/resize generated map and prop art")
     single.add_argument("source")

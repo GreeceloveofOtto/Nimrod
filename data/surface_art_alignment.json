@@ -3,7 +3,7 @@
   "minimum_top_coverage": 0.75,
   "assets": [
     {
-      "path": "assets/tiles/passage/platform.png",
+      "path": "assets/tiles/passage/platform.webp",
       "source_region": [
         41,
         14,
@@ -12,7 +12,7 @@
       ]
     },
     {
-      "path": "assets/tiles/passage/bridge_plank.png",
+      "path": "assets/tiles/passage/bridge_plank.webp",
       "source_region": [
         51,
         16,
@@ -21,7 +21,7 @@
       ]
     },
     {
-      "path": "assets/tiles/passage/low_tunnel_ceiling.png",
+      "path": "assets/tiles/passage/low_tunnel_ceiling.webp",
       "source_region": [
         51,
         1,
@@ -32,7 +32,7 @@
       "tile_x": 32
     },
     {
-      "path": "assets/tiles/cedar/boss_end_platform.png",
+      "path": "assets/tiles/cedar/boss_end_platform.webp",
       "source_region": [
         0,
         32,

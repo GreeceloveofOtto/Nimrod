@@ -24,7 +24,36 @@
         "y": 174,
         "w": 252,
         "h": 210
-      }
+      },
+      "storage_scale": [
+        1.0,
+        1.0
+      ],
+      "stored_frame_size": [
+        256,
+        384
+      ],
+      "stored_anchor_px": [
+        128.0,
+        384.0
+      ],
+      "storage_trim": {
+        "x": 2.0,
+        "y": 174.0,
+        "w": 252,
+        "h": 210
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 2,
+      "ssim": 1.0
     },
     {
       "name": "villa_back_door_exterior",
@@ -50,7 +79,36 @@
         "y": 140,
         "w": 316,
         "h": 280
-      }
+      },
+      "storage_scale": [
+        1.0,
+        1.0
+      ],
+      "stored_frame_size": [
+        320,
+        420
+      ],
+      "stored_anchor_px": [
+        160.0,
+        420.0
+      ],
+      "storage_trim": {
+        "x": 2.0,
+        "y": 140.0,
+        "w": 316,
+        "h": 280
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 2,
+      "ssim": 1.0
     },
     {
       "name": "cedar_forest_portal",
@@ -76,7 +134,36 @@
         "y": 139,
         "w": 316,
         "h": 321
-      }
+      },
+      "storage_scale": [
+        1.0,
+        1.0
+      ],
+      "stored_frame_size": [
+        320,
+        460
+      ],
+      "stored_anchor_px": [
+        160.0,
+        460.0
+      ],
+      "storage_trim": {
+        "x": 2.0,
+        "y": 139.0,
+        "w": 316,
+        "h": 321
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 2,
+      "ssim": 1.0
     },
     {
       "name": "cedar_portal",
@@ -102,7 +189,36 @@
         "y": 110,
         "w": 252,
         "h": 274
-      }
+      },
+      "storage_scale": [
+        1.0,
+        1.0
+      ],
+      "stored_frame_size": [
+        256,
+        384
+      ],
+      "stored_anchor_px": [
+        128.0,
+        384.0
+      ],
+      "storage_trim": {
+        "x": 2.0,
+        "y": 110.0,
+        "w": 252,
+        "h": 274
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 2,
+      "ssim": 1.0
     }
   ]
 }

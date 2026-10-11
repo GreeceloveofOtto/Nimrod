@@ -1,6 +1,6 @@
 # root_floor_tile
 목적: 6단계 환경.
-경로: assets/tiles/cedar/root_floor_tile.png
+경로: assets/tiles/cedar/root_floor_tile.webp
 크기: 512x180, 1프레임.
 배경: 불투명.
 

@@ -8,7 +8,7 @@ PALETTES=[('로비 홀',[.50,.32,.65]),('계단 홀',[.32,.32,.62]),('3단 캣�
 
 def door(id,x,y,target,spawn,arrival,art='passage_door',direction=1,**extra):return dict(door_id=id,position=[x,y],target_level=target,target_spawn=spawn,arrival_spawn=arrival,door_art='res://assets/props/doors/'+art+'.png',exit_direction=direction,**extra)
 def platform(id,x,e,w=180,folder='passage',art='platform',floor=620):return dict(id=id,position=[x,floor-e],width=w,art='res://assets/tiles/'+folder+'/'+art+'.png',art_height=48)
-def terrain(segments,floor,folder):return [dict(id='ground_'+str(a),**{'from':a,'to':b},y=floor-e,art='res://assets/tiles/'+folder+'/ground_tile.png' if folder=='homeroad' else 'res://assets/tiles/passage/floor_tile.png') for a,b,e in segments]
+def terrain(segments,floor,folder):return [dict(id='ground_'+str(a),**{'from':a,'to':b},y=floor-e,art='res://assets/tiles/'+folder+'/ground_tile.png' if folder=='homeroad' else 'res://assets/tiles/passage/floor_tile.webp') for a,b,e in segments]
 def ground_at(l,x):return next(g['y'] for g in l['terrain'] if g['from']<=x<g['to'] or x==l['width']==g['to'])
 def enemy(l,id,x,y=None,patrol=180,**extra):
     l['enemies'].append(dict(id=id,position=[x,ground_at(l,x) if y is None else y],patrol_center=x,patrol_range=patrol,**extra))
@@ -24,7 +24,7 @@ def main():
     for n in range(1,9):
         id='DowntownPassage_F'+str(n)
         height=960 if n in [4,8] else 800
-        l=dict(id=id,scene='res://scenes/'+id+'.tscn',width=3600,floor_y=620,bgm='passage_descent',display_name=f'도심 방향 통로 {n}층',theme_name=PALETTES[n-1][0],palette=PALETTES[n-1][1],bg_dim=[.88,.88,.92],ceiling=True,camera_limits=[0,0,3600,height],safe_zones=[[0,-100,420,height+200],[3250,-100,350,height+200]],backgrounds=[dict(name='PassageInterior',path=f'res://assets/backgrounds/passage/passage_f{n}_bg.png',position=[0,0],size=[3600,height],ratio=1,z=-25)],spawns={'Spawn_FromAbove':[3330,620],'Spawn_FromBelow':[300,620]},doors=[],npcs=[],enemies=[],decorations=[],steps=[],platforms=[],obstacles=[],floor_art='res://assets/tiles/passage/floor_tile.png',floor_art_size=[512,180],drop_rule=dict(mode='only_listed',listed={'explosive_spitter':.07}) if n<=3 else dict(mode='all',chance=.05),perches=[],ceilings=[],reachability=dict(max_rise=110,max_gap=200,max_local_platform_elevation=500,chains=[],floor_reference=620,elevation_limits=[-140,400],required_ground_route=[0,3600]))
+        l=dict(id=id,scene='res://scenes/'+id+'.tscn',width=3600,floor_y=620,bgm='passage_descent',display_name=f'도심 방향 통로 {n}층',theme_name=PALETTES[n-1][0],palette=PALETTES[n-1][1],bg_dim=[.88,.88,.92],ceiling=True,camera_limits=[0,0,3600,height],safe_zones=[[0,-100,420,height+200],[3250,-100,350,height+200]],backgrounds=[dict(name='PassageInterior',path=f'res://assets/backgrounds/passage/passage_f{n}_bg.png',position=[0,0],size=[3600,height],ratio=1,z=-25)],spawns={'Spawn_FromAbove':[3330,620],'Spawn_FromBelow':[300,620]},doors=[],npcs=[],enemies=[],decorations=[],steps=[],platforms=[],obstacles=[],floor_art='res://assets/tiles/passage/floor_tile.webp',floor_art_size=[512,180],drop_rule=dict(mode='only_listed',listed={'explosive_spitter':.07}) if n<=3 else dict(mode='all',chance=.05),perches=[],ceilings=[],reachability=dict(max_rise=110,max_gap=200,max_local_platform_elevation=500,chains=[],floor_reference=620,elevation_limits=[-140,400],required_ground_route=[0,3600]))
         if n==8:l['spawns']['Spawn_FromTop']=[3330,620]
         l['doors']=[door('door_up',3450,620,'CastleOutskirts' if n==8 else 'DowntownPassage_F'+str(n+1),'Spawn_FromPassage' if n==8 else 'Spawn_FromBelow','Spawn_FromTop' if n==8 else 'Spawn_FromAbove', 'downtown_passage_door_anim' if n==8 else 'passage_door',-1),door('door_down',220,620,'HomeRoad' if n==1 else 'DowntownPassage_F'+str(n-1),'Spawn_FromPassage' if n==1 else 'Spawn_FromAbove','Spawn_FromBelow',direction=1)]
         segments=[(0,3600,0)]
@@ -44,7 +44,7 @@ def main():
             segments=[(0,700,0),(700,920,-70),(920,2680,-140),(2680,2900,-70),(2900,3600,0)]
             l['platforms']=[platform('bridge_left',780,0,900,art='bridge_plank'),platform('bridge_right',1920,0,900,art='bridge_plank'),platform('gap_step',1680,-70,240),platform('bottom_left_step',780,-70),platform('bottom_right_step',2660,-70)]
             chains=[['bottom_left_step','bridge_left','gap_step','bridge_right','bottom_right_step']]
-            l['backgrounds'].insert(0,dict(name='FarAbyss',path='res://assets/backgrounds/passage/far_abyss_tile.png',position=[0,0],size=[2048,960],ratio=.3,z=-30,repeat_size=[2048,0],repeat_times=4))
+            l['backgrounds'].insert(0,dict(name='FarAbyss',path='res://assets/backgrounds/passage/far_abyss_tile.webp',position=[0,0],size=[2048,960],ratio=.3,z=-30,repeat_size=[2048,0],repeat_times=4))
         elif n==5:
             segments=[(0,600,0),(600,3000,-60),(3000,3600,0)]
             ps=[('p0',740,30),('p1',1000,120),('p2',1260,210),('p3',1520,240),('p4',1780,210),('p5',2040,120),('p6',2300,30),('p7',2560,120),('p8',2820,60)]
@@ -55,7 +55,7 @@ def main():
             segments=[(0,1700,0),(1700,1950,100),(1950,3600,0)]
             l['platforms']=[platform('alcove_left',700,100,300),platform('alcove_right',2450,100,300)]
         elif n==7:
-            l['ceilings']=[dict(rect=[1450,380,1200,140],art='res://assets/tiles/passage/low_tunnel_ceiling.png',clearance=100)]
+            l['ceilings']=[dict(rect=[1450,380,1200,140],art='res://assets/tiles/passage/low_tunnel_ceiling.webp',clearance=100)]
             l['platforms']=[platform('balcony_low',700,90),platform('balcony_high',900,180,300),platform('balcony_exit',1200,90)]
             chains=[['balcony_low','balcony_high','balcony_exit']]
         elif n==8:
@@ -84,7 +84,7 @@ def main():
         prop(l,'passage_chandelier',1700,40,280,360)
         if n in [5,6]:prop(l,'passage_pipe_cluster',2800,100,420,300)
         levels[id]=l
-    home=dict(id='HomeRoad',scene='res://scenes/HomeRoad.tscn',width=10800,floor_y=880,bgm='uruk_home_road',display_name='니므롯의 집 가는 길',bg_dim=[.88,.88,.92],ceiling=False,camera_limits=[0,0,10800,1240],safe_zones=[[0,-200,900,1800]],spawns={'Spawn_FromPassage':[10400,880],'Spawn_Debug':[5000,720]},doors=[door('passage_exit',10400,880,'DowntownPassage_F1','Spawn_FromBelow','Spawn_FromPassage','downtown_passage_door_anim',-1),door('nimrod_home_gate',400,880,'','','','nimrod_home_gate',1,locked=True,locked_message='아직 들어갈 수 없다')],npcs=[],enemies=[],decorations=[],steps=[],platforms=[],obstacles=[],floor_art='res://assets/tiles/homeroad/ground_tile.png',floor_art_size=[512,200],backgrounds=[],reachability=dict(max_rise=110,max_gap=200,max_local_platform_elevation=440,chains=[],floor_reference=880,elevation_limits=[-120,440],required_ground_route=[0,10800],door_distance=10000))
+    home=dict(id='HomeRoad',scene='res://scenes/HomeRoad.tscn',width=10800,floor_y=880,bgm='uruk_home_road',display_name='니므롯의 집 가는 길',bg_dim=[.88,.88,.92],ceiling=False,camera_limits=[0,0,10800,1240],safe_zones=[[0,-200,900,1800]],spawns={'Spawn_FromPassage':[10400,880],'Spawn_Debug':[5000,720]},doors=[door('passage_exit',10400,880,'DowntownPassage_F1','Spawn_FromBelow','Spawn_FromPassage','downtown_passage_door_anim',-1),door('nimrod_home_gate',400,880,'','','','nimrod_home_gate',1,locked=True,locked_message='아직 들어갈 수 없다')],npcs=[],enemies=[],decorations=[],steps=[],platforms=[],obstacles=[],floor_art='res://assets/tiles/homeroad/ground_tile.webp',floor_art_size=[512,200],backgrounds=[],reachability=dict(max_rise=110,max_gap=200,max_local_platform_elevation=440,chains=[],floor_reference=880,elevation_limits=[-120,440],required_ground_route=[0,10800],door_distance=10000))
     for name,file,w,ratio,z in [('Sky','sky',1792,.05,-40),('FarCity','far_tile',2048,.2,-30),('MidDistrict','mid_district_tile',2048,.45,-20)]:home['backgrounds'].append(dict(name=name,path='res://assets/backgrounds/homeroad/'+file+'.png',position=[0,0],size=[w,720],ratio=ratio,z=z,**(dict(repeat_size=[2048,0],repeat_times=6) if ratio>.05 else {})))
     home['backgrounds'] += [dict(name='HomeExterior',path='res://assets/props/nimrod_home_exterior.webp',position=[0,160],size=[1300,720],ratio=1,z=-10),dict(name='PassageExterior',path='res://assets/backgrounds/castle_front/downtown_passage_facade.webp',position=[9700,160],size=[1100,720],ratio=1,z=-10)]
     seg=[(0,1500,0),(1500,1800,0),(1800,2100,40),(2100,2400,80),(2400,2700,40),(2700,4000,0),(4000,4250,0),(4250,4500,80),(4500,4750,160),(4750,4900,240),(4900,5150,160),(5150,5400,80),(5400,6900,0),(6900,7100,-50),(7100,8100,-100),(8100,8300,-50),(8300,10800,0)]

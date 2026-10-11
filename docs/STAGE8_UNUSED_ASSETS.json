@@ -1,0 +1,26 @@
+{
+  "files": [
+    {
+      "path": "assets/tiles/castle_front/ground_tile.webp",
+      "bytes": 172036
+    },
+    {
+      "path": "assets/tiles/passage/ledge.webp",
+      "bytes": 31556
+    },
+    {
+      "path": "assets/tiles/passage/ceiling_tile.webp",
+      "bytes": 77506
+    },
+    {
+      "path": "assets/tiles/cedar/root_platform.webp",
+      "bytes": 18624
+    },
+    {
+      "path": "assets/tiles/cedar/canopy_top_tile.webp",
+      "bytes": 107770
+    }
+  ],
+  "bytes": 407492,
+  "applied": true
+}

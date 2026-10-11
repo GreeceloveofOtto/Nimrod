@@ -2,6 +2,8 @@ extends Node
 
 # Remove this file and its one autoload line to remove the debug shortcuts.
 func _unhandled_input(event: InputEvent) -> void:
+    if get_node("/root/Dialogue").input_blocked():
+        return
     if not GameConstants.ENABLE_DEBUG_TELEPORT or not event is InputEventKey:
         return
     var key := event as InputEventKey

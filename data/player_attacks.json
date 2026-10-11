@@ -118,7 +118,8 @@
     "corner_forgiveness": 10,
     "stuck_seconds": 0.8,
     "stuck_distance": 3,
-    "overlap_epsilon": 0.2
+    "overlap_epsilon": 0.2,
+    "roll_exit_push_max": 24
   },
   "weapons": {
     "axe": {

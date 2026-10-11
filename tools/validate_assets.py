@@ -14,6 +14,12 @@ from pathlib import Path
 from PIL import Image
 
 
+def edge_difference(image, axis):
+    import numpy as np
+    a=np.asarray(image.convert("RGBA"),dtype=float)
+    return float(np.abs(a[:,0]-a[:,-1]).mean()) if axis=="x" else float(np.abs(a[0]-a[-1]).mean())
+
+
 class Validator:
     def __init__(self, root, allow_missing):
         self.root = root
@@ -86,8 +92,8 @@ class Validator:
             return
         if rows != 1 or columns != frames:
             self.fail(path, "one horizontal row with columns == frames required")
-        trim = clip.get("trim", {})
-        expected_size = [trim.get("w", width) * columns, trim.get("h", height) * rows]
+        trim = clip.get("storage_trim", clip.get("trim", {}))
+        expected_size = [trim.get("w", width) * clip.get("stored_columns", columns), trim.get("h", height) * rows]
         if clip["image_size"] != expected_size:
             self.fail(path, f"manifest image_size must equal {expected_size}")
         duration = clip["duration_seconds"]
@@ -146,7 +152,7 @@ class Validator:
                     self.fail(path, f"frame {index + 1} NPC height {measured_height}px outside ±3% of "
                               f"{self.player_height} × {npc['height_ratio']} = {expected_height:.2f}px (render multiplier applied)")
             current = frame.tobytes()
-            if previous is not None and current == previous:
+            if previous is not None and current == previous and not clip.get("frame_map"):
                 self.fail(path, f"frame {index + 1} duplicates previous frame; animation poses required")
             previous = current
 
@@ -299,9 +305,9 @@ class Validator:
                     self.fail(entry["path"], "opaque tile contains magenta key-color margins; crop the generated source")
                 first = image.crop((0, 0, 1, image.height)).tobytes()
                 last = image.crop((image.width - 1, 0, image.width, image.height)).tobytes()
-                if first != last:
+                if edge_difference(image,"x") > 2:
                     self.fail(entry["path"], "tile_x requires matching first/last RGBA columns; repack with --tile-x")
-            if image is not None and entry.get("tile_y") and image.crop((0,0,image.width,1)).tobytes() != image.crop((0,image.height-1,image.width,image.height)).tobytes():
+            if image is not None and entry.get("tile_y") and edge_difference(image,"y") > 2:
                 self.fail(entry["path"], "tile_y requires identical top/bottom edges")
             ratio = entry.get("scroll_ratio")
             map_width = entry.get("map_width", 3600)

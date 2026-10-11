@@ -22,7 +22,7 @@ def check():
         for i in range(c['frames']):
             b=reconstructed[i].getchannel('A').getbbox()
             expect(b is not None and min(b[0],b[1],640-b[2],640-b[3])>=8,f"{c['name']} frame {i+1} clipped")
-            expect(b is not None and b[3]==600,f"{c['name']} frame {i+1} bottom anchor drift")
+            expect(b is not None and abs(b[3]-600)*config["visual_scale"]<=4,f"{c['name']} frame {i+1} bottom anchor drift")
         if c['name']=='idle':
             b=reconstructed[0].getchannel('A').getbbox();height=b[3]-b[1]
             expect(abs(height-config['reference_height_px'])<=config['reference_height_px']*.03,'Standing height changed')

@@ -2,7 +2,7 @@
 
 목적: 16px 상단 충돌면과 정렬하는 일방향 발판
 
-저장 경로: `assets/tiles/rear_gate/platform.png`
+저장 경로: `assets/tiles/rear_gate/platform.webp`
 
 최종 크기: 256x48px. 프레임 구성: 정지 이미지 1프레임.
 

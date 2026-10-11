@@ -33,7 +33,8 @@ func _integrate_motion(delta: float) -> void:
     if enemy_id == "cedar_wisp":
         global_position += velocity * delta
     elif perched:
-        velocity = Vector2.ZERO
+        velocity = Vector2(0, float(common.get("gravity", 1750)) * delta)
+        move_and_slide()
     elif phase == "hop":
         var fraction: float = clampf(state_clock / float(stats["hop"]["seconds"]), 0, 1)
         var desired: Vector2 = hop_start + Vector2(-facing * float(stats["hop"]["distance"]) * fraction, -sin(PI * fraction) * float(stats["hop"]["height"]))

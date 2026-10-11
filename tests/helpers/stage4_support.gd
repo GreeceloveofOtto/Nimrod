@@ -33,6 +33,7 @@ func _start(equip_axe: bool = true) -> void:
     current_scene = main
     await manager.transition_finished
     hero = manager.player
+    root.get_node("GameState").run_flags["dialogue_passage_soliloquy"] = true
     if equip_axe:
         root.get_node("GameState").set_weapon("axe")
     hero.set_physics_process(false)

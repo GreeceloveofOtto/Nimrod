@@ -16,8 +16,8 @@
         128
       ],
       "image_size": [
-        1050,
-        220
+        630,
+        132
       ],
       "qa": {
         "height_tol": 0.35,
@@ -29,7 +29,35 @@
         "y": 6,
         "w": 210,
         "h": 220
-      }
+      },
+      "storage_scale": [
+        0.6,
+        0.6
+      ],
+      "stored_frame_size": [
+        154,
+        154
+      ],
+      "stored_anchor_px": [
+        76.8,
+        76.8
+      ],
+      "storage_trim": {
+        "x": 16.2,
+        "y": 3.6,
+        "w": 126,
+        "h": 132
+      },
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "effective_density": 2.0,
+      "ssim": 0.9340961146779055
     }
   ]
 }

@@ -1,6 +1,6 @@
 # canopy_top_tile
 목적: 6단계 환경.
-경로: assets/tiles/cedar/canopy_top_tile.png
+경로: assets/tiles/cedar/canopy_top_tile.webp
 크기: 512x160, 1프레임.
 배경: #FF00FF 크로마키.
 

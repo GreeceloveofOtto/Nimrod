@@ -72,6 +72,8 @@ func _process(_delta: float) -> void:
         interact(player)
 
 func _unhandled_input(event: InputEvent) -> void:
+    if get_node("/root/Dialogue").input_blocked():
+        return
     if auto_trigger or not event.is_action_pressed("interact") or event.is_echo():
         return
     var player := _player()

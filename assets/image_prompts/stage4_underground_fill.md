@@ -4,7 +4,7 @@
 
 최종 파일·시트 크기:
 
-- assets/tiles/underground_fill.png: 512x512
+- assets/tiles/underground_fill.webp: 512x512
 
 프레임: 1. 배경: 스프라이트·투명 소품은 단색 #FF00FF로 생성 후 크로마키; 불투명 배경은 알파 255.
 

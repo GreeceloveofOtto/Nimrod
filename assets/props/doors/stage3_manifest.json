@@ -24,7 +24,36 @@
         "y": 41,
         "w": 316,
         "h": 379
-      }
+      },
+      "storage_scale": [
+        1.0,
+        1.0
+      ],
+      "stored_frame_size": [
+        320,
+        420
+      ],
+      "stored_anchor_px": [
+        160.0,
+        420.0
+      ],
+      "storage_trim": {
+        "x": 2.0,
+        "y": 41.0,
+        "w": 316,
+        "h": 379
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 2,
+      "ssim": 1.0
     },
     {
       "name": "castle_front_door_exterior",
@@ -50,7 +79,36 @@
         "y": 2,
         "w": 332,
         "h": 458
-      }
+      },
+      "storage_scale": [
+        1.0,
+        1.0
+      ],
+      "stored_frame_size": [
+        360,
+        460
+      ],
+      "stored_anchor_px": [
+        180.0,
+        460.0
+      ],
+      "storage_trim": {
+        "x": 14.0,
+        "y": 2.0,
+        "w": 332,
+        "h": 458
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 2,
+      "ssim": 1.0
     },
     {
       "name": "downtown_passage_door",
@@ -76,7 +134,31 @@
         "y": 21,
         "w": 316,
         "h": 439
-      }
+      },
+      "storage_scale": [
+        1.0,
+        1.0
+      ],
+      "stored_frame_size": [
+        320,
+        460
+      ],
+      "stored_anchor_px": [
+        160.0,
+        460.0
+      ],
+      "storage_trim": {
+        "x": 2.0,
+        "y": 21.0,
+        "w": 316,
+        "h": 439
+      },
+      "stored_columns": 1,
+      "frame_map": [
+        0
+      ],
+      "effective_density": 2,
+      "ssim": 1.0
     },
     {
       "name": "castle_great_gate",
@@ -102,7 +184,38 @@
         "y": 2,
         "w": 576,
         "h": 518
-      }
+      },
+      "storage_scale": [
+        1.0,
+        1.0
+      ],
+      "stored_frame_size": [
+        640,
+        520
+      ],
+      "stored_anchor_px": [
+        320.0,
+        520.0
+      ],
+      "storage_trim": {
+        "x": 32.0,
+        "y": 2.0,
+        "w": 576,
+        "h": 518
+      },
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "effective_density": 2,
+      "ssim": 1.0
     }
   ]
 }

@@ -80,7 +80,7 @@ func test_stats_and_damage() -> void:
     expect(enemy.hp == 110, "sky starts with 110 HP")
     close(enemy.stats["turn_delay"], 0.25, "sky turn delay")
     close(enemy.stats["detect_range"], 700.0, "sky detection range")
-    close(enemy.visual.scale.x, 0.45, "sky visual scale")
+    close(Vector2(enemy.visual.get_meta("canonical_scale",enemy.visual.scale)).x, 0.45, "sky visual scale")
     expect(enemy.collision_layer == 4 and enemy.collision_mask == 3, "sky collision layer/mask preserve attacks and terrain")
     close(enemy.collider.position.y, 0.0, "airborne hurtbox uses center anchor")
     expect(is_instance_valid(enemy.wing_loop), "hover starts the wing loop")

@@ -2,7 +2,7 @@
 
 목적: 2단계 레벨의 생성 이미지 배경·지형·소품
 
-파일: `assets/tiles/castle/floor_tile.png`
+파일: `assets/tiles/castle/floor_tile.webp`
 
 크기: 512 × 180px; 프레임: 1, 한 줄.
 

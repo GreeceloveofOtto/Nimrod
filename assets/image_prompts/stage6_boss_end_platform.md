@@ -1,6 +1,6 @@
 # boss_end_platform
 목적: 6단계 환경.
-경로: assets/tiles/cedar/boss_end_platform.png
+경로: assets/tiles/cedar/boss_end_platform.webp
 크기: 280x56, 1프레임.
 배경: #FF00FF 크로마키.
 

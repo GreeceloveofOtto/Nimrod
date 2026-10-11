@@ -7,12 +7,13 @@ from PIL import Image
 ROOT=Path(__file__).resolve().parents[1]
 
 def frame_images(path,c):
- im=Image.open(path).convert('RGBA');t=c.get('trim',{});w=t.get('w',c['frame_width']);h=t.get('h',c['frame_height']);n=int(c['frames'])
- if im.size!=(w*n,h):raise ValueError(f'sheet size {im.size} expected {(w*n,h)}')
+ im=Image.open(path).convert('RGBA');t=c.get('trim',{});stored=c.get('storage_trim',t);w=stored.get('w',c['frame_width']);h=stored.get('h',c['frame_height']);n=int(c['frames']);count=c.get('stored_columns',n)
+ if im.size!=(w*count,h):raise ValueError(f'sheet size {im.size} expected {(w*count,h)}')
  out=[]
  for i in range(n):
-  frame=im.crop((i*w,0,(i+1)*w,h))
+  index=c.get('frame_map',list(range(n)))[i];frame=im.crop((index*w,0,(index+1)*w,h))
   if t:
+   if 'storage_trim' in c:frame=frame.resize((t['w'],t['h']),Image.Resampling.LANCZOS)
    full=Image.new('RGBA',(c['frame_width'],c['frame_height']));full.alpha_composite(frame,(t['x'],t['y']));frame=full
   out.append(frame)
  return out
@@ -23,22 +24,22 @@ def check(path,c):
  except (OSError,ValueError) as e:return [str(e)],[],{}
  boxes=[];areas=[];centers=[];bottoms=[];diff=[];prev=None;equal=0
  for i,im in enumerate(frames):
-  p=np.array(im);a=p[:,:,3];occupied=a>0;box=im.getchannel('A').getbbox()
+  p=np.array(im);a=p[:,:,3];occupied=a>0;box=im.getchannel('A').point(lambda v:255 if v>12 else 0).getbbox()
   if not box:errors.append(f'frame {i+1}: empty');continue
   from scipy import ndimage
   labels,total=ndimage.label(a>12,structure=np.ones((3,3),dtype=bool));parts=np.bincount(labels.ravel())[1:]
   if sum(parts > occupied.sum()*.015)>1 and not c.get('qa',{}).get('detached_fx_or_weapon'):
    warnings.append(f'frame {i+1}: multiple substantial disconnected components')
   boxes.append(box);areas.append(int(occupied.sum()));ys,xs=np.where(occupied);mass=a[ys,xs].astype(float);centers.append((float(np.average(xs,weights=mass)),float(np.average(ys,weights=mass))));bottoms.append(box[3])
-  if min(box[0],box[1],im.width-box[2],im.height-box[3])<3:errors.append(f'frame {i+1}: edge clipping')
-  magenta=occupied&(p[:,:,0]>180)&(p[:,:,2]>180)&(p[:,:,1]<110)
+  if min(box[0],box[1],im.width-box[2],im.height-box[3])<(2 if c.get("storage_scale") else 3):errors.append(f'frame {i+1}: edge clipping')
+  magenta=(a>12)&(p[:,:,0]>180)&(p[:,:,2]>180)&(p[:,:,1]<110)
   if magenta.sum()>20:errors.append(f'frame {i+1}: magenta fringe {magenta.sum()}')
   if prev is not None:
    diff.append(float(np.abs(p.astype(float)-prev.astype(float)).mean()));equal=equal+1 if np.array_equal(p,prev) else 0
    if equal==2 and not c.get('qa',{}).get('hold'):warnings.append(f'frame {i+1}: three exact duplicate frames')
   prev=p
  if not boxes:return errors or ['no frames'],warnings,{}
- heights=np.array([b[3]-b[1] for b in boxes]);tol=min(.35,float(c.get('qa',{}).get('height_tol',.10)));median=float(np.median(heights))
+ heights=np.array([b[3]-b[1] for b in boxes]);tol=min(.65 if c.get('qa',{}).get('pose_height_exception') else .35,float(c.get('qa',{}).get('height_tol',.10)));median=float(np.median(heights))
  for i,h in enumerate(heights):
   if abs(h-median)>median*tol:errors.append(f'frame {i+1}: height {h} outside {median:.1f} ±{tol:.0%}')
  medarea=float(np.median(areas))

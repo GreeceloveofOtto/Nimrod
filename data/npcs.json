@@ -94,8 +94,8 @@
       "three_way": true,
       "initial_pose": "right",
       "interactable": true,
-      "interaction": "lugalbanda_ninsun_gift",
-      "interact_range": 140
+      "interaction": "parents_gift",
+      "interact_range": 120
     },
     {
       "id": "ninsun",
@@ -121,8 +121,8 @@
       "three_way": true,
       "initial_pose": "left",
       "interactable": true,
-      "interaction": "lugalbanda_ninsun_gift",
-      "interact_range": 140
+      "interaction": "parents_gift",
+      "interact_range": 120
     },
     {
       "id": "shamhat",
@@ -149,7 +149,7 @@
       "initial_pose": "front",
       "interactable": true,
       "interact_range": 120,
-      "interaction": "shamhat_blessing"
+      "interaction": "shamhat"
     },
     {
       "id": "inanna",
@@ -173,7 +173,10 @@
       "face_player": true,
       "random_start": false,
       "three_way": true,
-      "initial_pose": "front"
+      "initial_pose": "front",
+      "interactable": true,
+      "interaction": "inanna",
+      "interact_range": 120
     },
     {
       "id": "papsukkal",
@@ -197,7 +200,10 @@
       "face_player": true,
       "random_start": false,
       "three_way": true,
-      "initial_pose": "front"
+      "initial_pose": "front",
+      "interactable": true,
+      "interaction": "inanna",
+      "interact_range": 120
     },
     {
       "id": "cook_a",
@@ -216,7 +222,9 @@
       "random_start": true,
       "source_height_ratio": 0.7,
       "visual_scale_multiplier": 1.3,
-      "source_reference_height_px": 359
+      "source_reference_height_px": 359,
+      "interactable": false,
+      "interaction": ""
     },
     {
       "id": "cook_b",
@@ -317,7 +325,10 @@
       "random_start": true,
       "source_height_ratio": 0.74,
       "visual_scale_multiplier": 1.3,
-      "source_reference_height_px": 359
+      "source_reference_height_px": 359,
+      "interactable": true,
+      "interaction": "villa_gatekeeper",
+      "interact_range": 120
     },
     {
       "id": "castle_gatekeeper_outer",
@@ -342,7 +353,10 @@
       "random_start": true,
       "source_height_ratio": 0.74,
       "visual_scale_multiplier": 1.3,
-      "source_reference_height_px": 359
+      "source_reference_height_px": 359,
+      "interactable": true,
+      "interaction": "castle_gatekeeper",
+      "interact_range": 120
     },
     {
       "id": "castle_gatekeeper_inner",
@@ -426,7 +440,7 @@
       "three_way": true,
       "face_player": true,
       "initial_pose": "front",
-      "interactable": false,
+      "interactable": true,
       "clips": [
         {
           "name": "idle",
@@ -440,7 +454,9 @@
           "duration": 2.4,
           "loop": true
         }
-      ]
+      ],
+      "interaction": "enkidua_intro",
+      "interact_range": 120
     }
   ]
 }

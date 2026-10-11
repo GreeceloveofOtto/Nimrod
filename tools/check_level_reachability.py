@@ -80,8 +80,22 @@ def check_maze(layout,level):
     for err in errors:print('FAIL:',err)
     return not errors
 
+def check_solid_gaps(levels):
+ errors=[];checks=0
+ for level in levels:
+  ground=level.get('terrain',[]) or [{'from':0,'to':level['width'],'y':level['floor_y']}]
+  # One-way platforms do not form a ceiling and intentionally allow52px gaps.
+  for ceiling in level.get('ceilings',[]):
+   x,y,w,h=ceiling['rect']
+   for floor in ground:
+    if floor['from']<x+w and floor['to']>x:
+     gap=floor['y']-(y+h);checks+=1
+     if 0<gap<54:errors.append(f"{level['id']}: solid ceiling gap {gap}px at {x}")
+ print(f'SOLID_GAPS: {checks} checks, {len(errors)} failures');print('\n'.join(errors));return not errors
+
 if __name__=='__main__':
     levels=json.loads((ROOT/'data/levels.json').read_text())['levels'];results=[check(l) for l in levels if 'reachability' in l]
     layouts=json.loads((ROOT/'data/cedar_forest_layout.json').read_text())['layouts']
+    results.append(check_solid_gaps(levels))
     results += [check_maze(lay,next(l for l in levels if l['id']==lay['level_id'])) for lay in layouts]
     raise SystemExit(0 if all(results) else 1)

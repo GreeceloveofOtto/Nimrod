@@ -57,7 +57,7 @@ def main():
         image('props_atlas.png',box,'props/'+name+'.png',size,trim=True)
     for name,box,size,opaque in [('ground_tile',(12,125,618,261),(512,200),True),('plaza_tile',(638,125,1240,261),(512,200),True),('ruin_platform',(25,320,610,470),(256,48),False),('bridge_platform',(640,320,1240,470),(320,48),False),('ruin_ledge',(0,530,620,685),(480,56),False)]:
         image('tiles_atlas.png',box,'tiles/outskirts/'+name+'.png',size,opaque,trim=not opaque,tile=opaque)
-    image('tiles_atlas.png',(644,515,1235,1210),'tiles/underground_fill.png',(512,512),True,tile=True,tile_y=True)
+    image('tiles_atlas.png',(644,515,1235,1210),'tiles/underground_fill.webp',(512,512),True,tile=True,tile_y=True)
     for name,box,size,line in [('villa_f2_dining',(0,0,1448,532),(2200,720),475),('villa_f3_chamber',(0,548,1448,1086),(2000,720),466)]:
         source=Image.open(S/'villa_atlas.png').convert('RGBA').crop(box)
         # Move the generated floor seam to y620 by resizing its two painted regions.

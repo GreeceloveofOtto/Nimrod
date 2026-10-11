@@ -22,7 +22,9 @@
     "corpse_beep_factor": 0.3,
     "corpse_blink_start": 12,
     "corpse_blink_acceleration": 20,
-    "gas_blink_rate": 30
+    "gas_blink_rate": 30,
+    "ground_snap_margin": 0.01,
+    "ground_snap_range": 600
   },
   "enemies": [
     {

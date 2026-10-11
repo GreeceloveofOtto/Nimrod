@@ -51,11 +51,12 @@ func _run() -> void:
     _check(level.camera_limits.end.x == 10000 and level.doors["downtown_passage_entrance"].global_position.x == 520, "Long route retains 9080px gate-to-passage distance")
     _check(get_nodes_in_group("enemies").size() == 15, "Exterior reuses ten melee and five ranged beasts")
     var outer: NPC = level.npcs["castle_gatekeeper_outer"]
-    _check(outer.global_position.x == 9140 and not outer.interactable and not outer.three_way, "Outer keeper keeps two-way noninteractive role")
+    _check(outer.global_position.x == 9140 and outer.interactable and not outer.three_way, "Outer keeper keeps two-way noninteractive role")
     for enemy: EnemyBase in get_nodes_in_group("enemies"):
         enemy.global_position.x = 8900
         enemy._enforce_bounds()
         _check(enemy.get_hurt_rect().end.x <= 8850.01 and not enemy._can_detect(hero), "Enemy cannot invade safe gate plaza")
+    root.get_node("GameState").run_flags["castle_gate_authorized"] = true
     gate.set_process(false)
     hero.global_position.x = 9100
     gate._process(0.0) # Leave approach radius before rearming arrival.

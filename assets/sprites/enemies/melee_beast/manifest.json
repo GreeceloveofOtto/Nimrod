@@ -23,15 +23,44 @@
         600
       ],
       "image_size": [
-        2538,
-        321
+        1674,
+        212
       ],
       "trim": {
         "x": 108,
         "y": 281,
         "w": 423,
         "h": 321
-      }
+      },
+      "storage_scale": [
+        0.6595744680851063,
+        0.660436137071651
+      ],
+      "stored_frame_size": [
+        422,
+        423
+      ],
+      "stored_anchor_px": [
+        211.06382978723406,
+        396.2616822429907
+      ],
+      "storage_trim": {
+        "x": 71.23404255319149,
+        "y": 185.58255451713396,
+        "w": 279,
+        "h": 212
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 2,
+      "ssim": 0.9986124646171582
     },
     {
       "name": "walk",
@@ -49,15 +78,46 @@
         600
       ],
       "image_size": [
-        3624,
-        319
+        2392,
+        211
       ],
       "trim": {
         "x": 94,
         "y": 283,
         "w": 453,
         "h": 319
-      }
+      },
+      "storage_scale": [
+        0.6600441501103753,
+        0.6614420062695925
+      ],
+      "stored_frame_size": [
+        422,
+        423
+      ],
+      "stored_anchor_px": [
+        211.2141280353201,
+        396.8652037617555
+      ],
+      "storage_trim": {
+        "x": 62.04415011037528,
+        "y": 187.18808777429467,
+        "w": 299,
+        "h": 211
+      },
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "effective_density": 2,
+      "ssim": 0.9986333548516941
     },
     {
       "name": "windup",
@@ -75,14 +135,46 @@
         600
       ],
       "image_size": [
-        2044,
-        287
+        1348,
+        189
       ],
       "trim": {
         "x": 64,
         "y": 315,
         "w": 511,
         "h": 287
+      },
+      "storage_scale": [
+        0.6594911937377691,
+        0.6585365853658537
+      ],
+      "stored_frame_size": [
+        422,
+        421
+      ],
+      "stored_anchor_px": [
+        211.0371819960861,
+        395.1219512195122
+      ],
+      "storage_trim": {
+        "x": 42.20743639921722,
+        "y": 207.4390243902439,
+        "w": 337,
+        "h": 189
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 2,
+      "ssim": 0.9987371921551949,
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.3,
+        "reason": "Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked."
       }
     },
     {
@@ -101,15 +193,41 @@
         600
       ],
       "image_size": [
-        1515,
-        298
+        999,
+        197
       ],
       "trim": {
         "x": 68,
         "y": 304,
         "w": 505,
         "h": 298
-      }
+      },
+      "storage_scale": [
+        0.6594059405940594,
+        0.6610738255033557
+      ],
+      "stored_frame_size": [
+        422,
+        423
+      ],
+      "stored_anchor_px": [
+        211.009900990099,
+        396.6442953020134
+      ],
+      "storage_trim": {
+        "x": 44.83960396039604,
+        "y": 200.96644295302013,
+        "w": 333,
+        "h": 197
+      },
+      "stored_columns": 3,
+      "frame_map": [
+        0,
+        1,
+        2
+      ],
+      "effective_density": 2,
+      "ssim": 0.9985649003342756
     },
     {
       "name": "recovery",
@@ -127,14 +245,46 @@
         600
       ],
       "image_size": [
-        2044,
-        287
+        1348,
+        189
       ],
       "trim": {
         "x": 64,
         "y": 315,
         "w": 511,
         "h": 287
+      },
+      "storage_scale": [
+        0.6594911937377691,
+        0.6585365853658537
+      ],
+      "stored_frame_size": [
+        422,
+        421
+      ],
+      "stored_anchor_px": [
+        211.0371819960861,
+        395.1219512195122
+      ],
+      "storage_trim": {
+        "x": 42.20743639921722,
+        "y": 207.4390243902439,
+        "w": 337,
+        "h": 189
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 2,
+      "ssim": 0.9987371921551949,
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.3,
+        "reason": "Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked."
       }
     },
     {
@@ -153,15 +303,42 @@
         600
       ],
       "image_size": [
-        1856,
-        342
+        1224,
+        226
       ],
       "trim": {
         "x": 88,
         "y": 260,
         "w": 464,
         "h": 342
-      }
+      },
+      "storage_scale": [
+        0.6594827586206896,
+        0.6608187134502924
+      ],
+      "stored_frame_size": [
+        422,
+        423
+      ],
+      "stored_anchor_px": [
+        211.0344827586207,
+        396.49122807017545
+      ],
+      "storage_trim": {
+        "x": 58.03448275862069,
+        "y": 171.81286549707602,
+        "w": 306,
+        "h": 226
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 2,
+      "ssim": 0.9988589834142556
     },
     {
       "name": "hurt",
@@ -179,14 +356,44 @@
         600
       ],
       "image_size": [
-        916,
-        423
+        604,
+        279
       ],
       "trim": {
         "x": 91,
         "y": 179,
         "w": 458,
         "h": 423
+      },
+      "storage_scale": [
+        0.6593886462882096,
+        0.6595744680851063
+      ],
+      "stored_frame_size": [
+        422,
+        422
+      ],
+      "stored_anchor_px": [
+        211.00436681222706,
+        395.74468085106383
+      ],
+      "storage_trim": {
+        "x": 60.004366812227076,
+        "y": 118.06382978723404,
+        "w": 302,
+        "h": 279
+      },
+      "stored_columns": 2,
+      "frame_map": [
+        0,
+        1
+      ],
+      "effective_density": 2,
+      "ssim": 0.9989656509151269,
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.3,
+        "reason": "Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked."
       }
     },
     {
@@ -205,14 +412,48 @@
         600
       ],
       "image_size": [
-        3534,
-        278
+        2334,
+        183
       ],
       "trim": {
         "x": 26,
         "y": 324,
         "w": 589,
         "h": 278
+      },
+      "storage_scale": [
+        0.6604414261460102,
+        0.658273381294964
+      ],
+      "stored_frame_size": [
+        423,
+        421
+      ],
+      "stored_anchor_px": [
+        211.34125636672326,
+        394.9640287769784
+      ],
+      "storage_trim": {
+        "x": 17.171477079796265,
+        "y": 213.28057553956833,
+        "w": 389,
+        "h": 183
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 2,
+      "ssim": 0.9987193091614521,
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.65,
+        "reason": "Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked."
       }
     }
   ]

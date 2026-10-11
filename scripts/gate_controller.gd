@@ -12,6 +12,7 @@ extends DoorPortal
 @export var blocker: CollisionShape2D
 @export var auto_transition_level: String = ""
 @export var auto_transition_spawn: String = ""
+@export var gate_flag: String = ""
 @export var requires_dialogue: bool = false
 @export var opens_without_keeper: bool = false
 @export var gate_settings_key: String = "great_gate"
@@ -34,6 +35,7 @@ var entry_armed: bool = true
 var approach_armed: bool = true
 
 func _ready() -> void:
+    add_to_group("gates")
     if not gate_art.is_empty():
         door_art = gate_art
     auto_trigger = not auto_transition_level.is_empty()
@@ -85,7 +87,7 @@ func _process(_delta: float) -> void:
     if not _player_available(player):
         return
     # TODO: a future dialogue system may authorize the gate here.
-    if gate_requires_dialogue:
+    if _dialogue_locked():
         return
     if gate_state == GateState.CLOSED and approach_armed and distance <= trigger_radius:
         _request_open(player)
@@ -95,7 +97,7 @@ func _process(_delta: float) -> void:
         interact(player)
 
 func can_interact(player: Node2D) -> bool:
-    if auto_transition_level.is_empty() or gate_requires_dialogue or locked or gate_state != GateState.OPEN or not entry_armed:
+    if auto_transition_level.is_empty() or _dialogue_locked() or locked or gate_state != GateState.OPEN or not entry_armed:
         return false
     if not _player_available(player):
         return false
@@ -113,7 +115,7 @@ func _request_open(player: Node2D) -> void:
             push_warning("Gatekeeper missing; gate remains closed")
 
 func keeper_open_frame_reached() -> void:
-    if gate_state != GateState.REQUESTED or gate_requires_dialogue:
+    if gate_state != GateState.REQUESTED or _dialogue_locked():
         return
     gate_state = GateState.OPENING
     _sound(str(gate_config.get("open_sound", "door_open")))
@@ -158,3 +160,12 @@ func play_arrival(player: Node2D) -> void:
     wall_shape.set_deferred("disabled", false)
     # The returning player must leave the entry strip before it can trigger again.
     entry_armed = false
+
+func _dialogue_locked() -> bool:
+    return requires_dialogue and not bool(get_node("/root/GameState").run_flags.get(gate_flag, false))
+
+func authorize_open() -> void:
+    get_node("/root/GameState").run_flags[gate_flag] = true
+    var hero := _player()
+    if hero != null and gate_state == GateState.CLOSED:
+        _request_open(hero)

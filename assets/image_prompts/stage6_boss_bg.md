@@ -1,6 +1,6 @@
 # boss_bg
 목적: 6단계 환경.
-경로: assets/backgrounds/cedar/boss_bg.png
+경로: assets/backgrounds/cedar/boss_bg.webp
 크기: 1600x960, 1프레임.
 배경: 불투명.
 

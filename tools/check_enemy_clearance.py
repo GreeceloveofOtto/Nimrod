@@ -3,6 +3,12 @@
 import json
 from pathlib import Path
 R=Path(__file__).resolve().parents[1]
+OFFSETS=json.loads((R/'data/surface_offsets.json').read_text())
+def platform_rect(p):
+ x,y=p['position'];width=p['width'];edge=OFFSETS.get(p.get('art',''),{})
+ if edge:
+  y+=edge['top_offset_px']*p.get('art_height',48)/edge['image_height'];x+=edge['opaque_x0']*width/edge['image_width'];width*=((edge['opaque_x1']-edge['opaque_x0'])/edge['image_width'])
+ return [x,y,width,16]
 def rect_intersects(a,b):return a[0]<b[0]+b[2]-.01 and a[0]+a[2]>b[0]+.01 and a[1]<b[1]+b[3]-.01 and a[1]+a[3]>b[1]+.01
 def check(level,stats):
  errors=[]
@@ -14,19 +20,18 @@ def check(level,stats):
   for o in level.get('obstacles',[])+level.get('ceilings',[]):
    if rect_intersects(box,o['rect']):errors.append(f"{e['id']}@{x}: body overlaps solid {o['rect']}")
   for p in level.get('platforms',[]):
-   px,py=p['position']
-   if rect_intersects(box,[px,py,p['width'],16]):errors.append(f"{e['id']}@{x}: body overlaps platform {p['id']}")
+   if rect_intersects(box,platform_rect(p)):errors.append(f"{e['id']}@{x}: body overlaps platform {p['id']}")
   # Check the entire configured patrol corridor, not only its spawn point.
   if e['id'] not in ['root_spewer','cedar_demon']:
    corridor=[e.get('patrol_center',x)-w/2-e.get('patrol_range',0),box[1],w+e.get('patrol_range',0)*2,h]
    for o in level.get('obstacles',[])+level.get('ceilings',[]):
     if rect_intersects(corridor,o['rect']):errors.append(f"{e['id']}@{x}: patrol corridor overlaps solid {o['rect']}")
    for p in level.get('platforms',[]):
-    if rect_intersects(corridor,[*p['position'],p['width'],16]):errors.append(f"{e['id']}@{x}: patrol corridor overlaps platform {p['id']}")
+    if rect_intersects(corridor,platform_rect(p)):errors.append(f"{e['id']}@{x}: patrol corridor overlaps platform {p['id']}")
   ceiling=level.get('ceiling_y',0)
   if level.get('ceiling') and box[1]<ceiling+h*.05:errors.append(f"{e['id']}@{x}: ceiling clearance below {h*1.05:.1f}")
   if e['id']=='root_spewer':
-   if not any(p['position'][0]<=x-w/2 and p['position'][0]+p['width']>=x+w/2 and abs(p['position'][1]-y)<2 and p['width']>=w+60 for p in level.get('platforms',[])):
+   if not any(platform_rect(p)[0]<=x-w/2 and platform_rect(p)[0]+platform_rect(p)[2]>=x+w/2 and abs(platform_rect(p)[1]-y)<=4 and p['width']>=w+60 for p in level.get('platforms',[])):
     errors.append(f"{e['id']}@{x}: no {w+60:g}px supported root platform")
   if e['id']=='boar_charger' and level['id']=='DowntownPassage_F6':
    if not any(b-a>=w+800 for a,b in level.get('clearance_lanes',[])):errors.append(f"Boar straight lane <{w+800}px")

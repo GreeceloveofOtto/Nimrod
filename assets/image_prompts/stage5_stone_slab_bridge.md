@@ -1,5 +1,5 @@
 # stone_slab_bridge
-목적: 5단계 환경. 경로: assets/tiles/homeroad/stone_slab_bridge.png
+목적: 5단계 환경. 경로: assets/tiles/homeroad/stone_slab_bridge.webp
 크기: 360x56, 1프레임. 배경: #FF00FF 크로마키.
 
 2D side-view game asset, dark fantasy, ancient Mesopotamian Uruk atmosphere with advanced space-civilization undertones, hand-painted look, clean readable silhouette, consistent with the Nimrod character sprite sheets, no text, no watermark. stone slab bridge, side-view production game asset.

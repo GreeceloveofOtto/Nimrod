@@ -21,8 +21,13 @@ def run(godot,args,label,out,timeout):
  env=os.environ.copy()
  if Path('/workspace/cache').exists():
   for key,part in [('XDG_DATA_HOME','data'),('XDG_CONFIG_HOME','config'),('XDG_CACHE_HOME','cache')]:env.setdefault(key,'/workspace/cache/'+part)
- start=time.monotonic();result=subprocess.run([godot,'--headless','--verbose','--path',str(ROOT)]+args,capture_output=True,text=True,timeout=timeout,env=env)
- log=result.stdout+result.stderr;out.mkdir(parents=True,exist_ok=True);(out/(label+'.log')).write_text(log)
+ start=time.monotonic()
+ try:
+  result=subprocess.run([godot,'--headless','--verbose','--path',str(ROOT)]+args,capture_output=True,text=True,timeout=timeout,env=env);log=result.stdout+result.stderr
+ except subprocess.TimeoutExpired as error:
+  def decode(v):return v.decode(errors='replace') if isinstance(v,bytes) else (v or '')
+  log=decode(error.stdout)+decode(error.stderr)+'\nERROR: test exceeded timeout '+str(timeout)+' seconds\n';result=subprocess.CompletedProcess(args,124)
+ out.mkdir(parents=True,exist_ok=True);(out/(label+'.log')).write_text(log)
  issues=BAD.findall(log);ok=result.returncode==0 and not issues
  print(f'{"PASS" if ok else "FAIL"} {label} ({time.monotonic()-start:.1f}s)',flush=True)
  if not ok:print(log[-6000:],flush=True)

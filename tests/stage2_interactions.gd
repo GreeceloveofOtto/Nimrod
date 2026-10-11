@@ -46,7 +46,7 @@ func _test_npcs() -> void:
     _check(level.npcs.size() == 2, "CastleF1 has Lugalbanda and Ninsun")
     var npc: NPC = level.npcs["lugalbanda"] as NPC
     _check(npc.current_clip == "idle" and bool(npc.clip_data["idle"]["loop"]), "Royal NPC repeats breathing idle")
-    _check(is_equal_approx(npc.visual.scale.x, player.visual.scale.x), "NPC and player use the same sprite scale")
+    _check(is_equal_approx(Vector2(npc.visual.get_meta("canonical_scale",npc.visual.scale)).x, Vector2(player.visual.get_meta("canonical_scale",player.visual.scale)).x), "NPC and player use the same sprite scale")
     npc.set_process(false)
     npc.facing = 1
     npc.visual.flip_h = false
@@ -125,6 +125,7 @@ func _test_villa_gate() -> void:
     var level: Node = manager.current_level
     for enemy in get_nodes_in_group("enemies"):
         enemy.queue_free()
+    root.get_node("GameState").run_flags.erase("villa_gate_authorized")
     var gate: VillaGate = level.doors["villa_gate"] as VillaGate
     var keeper: VillaGatekeeper = level.npcs["gatekeeper"] as VillaGatekeeper
     gate.gate_requires_dialogue = true

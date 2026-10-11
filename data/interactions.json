@@ -178,5 +178,39 @@
     "trigger_half_width": 40,
     "open_sound": "great_gate_open",
     "close_sound": "great_gate_close"
+  },
+  "story": {
+    "enkidua_intro": {
+      "dialogue": "enkidua_intro",
+      "range": 120
+    },
+    "passage_soliloquy": {
+      "dialogue": "passage_soliloquy",
+      "range": 120
+    },
+    "castle_gatekeeper": {
+      "dialogue": "castle_gatekeeper",
+      "range": 120
+    },
+    "parents_gift": {
+      "dialogue": "parents_gift",
+      "range": 120
+    },
+    "shamhat": {
+      "dialogue": "shamhat",
+      "range": 120
+    },
+    "castle_cook": {
+      "dialogue": "castle_cook",
+      "range": 120
+    },
+    "inanna": {
+      "dialogue": "inanna",
+      "range": 120
+    },
+    "villa_gatekeeper": {
+      "dialogue": "villa_gatekeeper",
+      "range": 120
+    }
   }
 }

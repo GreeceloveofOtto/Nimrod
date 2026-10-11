@@ -24,7 +24,36 @@
         "y": 24,
         "w": 252,
         "h": 358
-      }
+      },
+      "storage_scale": [
+        1.0,
+        1.0
+      ],
+      "stored_frame_size": [
+        256,
+        384
+      ],
+      "stored_anchor_px": [
+        128.0,
+        380.0
+      ],
+      "storage_trim": {
+        "x": 2.0,
+        "y": 24.0,
+        "w": 252,
+        "h": 358
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 2,
+      "ssim": 1.0
     },
     {
       "name": "downtown_passage_door_anim",
@@ -50,7 +79,36 @@
         "y": 163,
         "w": 316,
         "h": 295
-      }
+      },
+      "storage_scale": [
+        1.0,
+        1.0
+      ],
+      "stored_frame_size": [
+        320,
+        460
+      ],
+      "stored_anchor_px": [
+        160.0,
+        456.0
+      ],
+      "storage_trim": {
+        "x": 2.0,
+        "y": 163.0,
+        "w": 316,
+        "h": 295
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 2,
+      "ssim": 1.0
     },
     {
       "name": "nimrod_home_gate",
@@ -76,7 +134,36 @@
         "y": 174,
         "w": 316,
         "h": 244
-      }
+      },
+      "storage_scale": [
+        1.0,
+        1.0
+      ],
+      "stored_frame_size": [
+        320,
+        420
+      ],
+      "stored_anchor_px": [
+        160.0,
+        416.0
+      ],
+      "storage_trim": {
+        "x": 2.0,
+        "y": 174.0,
+        "w": 316,
+        "h": 244
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 2,
+      "ssim": 1.0
     }
   ]
 }

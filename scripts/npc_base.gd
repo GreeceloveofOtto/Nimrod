@@ -43,11 +43,13 @@ var interaction_running: bool = false
 
 func _ready() -> void:
     add_to_group("npcs")
+    get_node("/root/GameState").run_reset.connect(_on_run_reset)
     var data: Dictionary = _read_json("res://data/npcs.json")
     common = data.get("common", {})
     for entry in data.get("npcs", []):
         if str(entry.get("id", "")) == npc_id:
-            stats = entry
+            stats = entry.duplicate(true)
+            stats.merge(get_meta("interaction_overrides", {}), true)
             break
     if display_name.is_empty():
         display_name = str(stats.get("display_name", npc_id))
@@ -95,8 +97,7 @@ func _make_readability_fx() -> void:
     var dimensions: Vector2 = Vector2.ZERO
     if textures.has(idle_clip):
         var texture: Texture2D = textures[idle_clip]
-        var image: Image = texture.get_image()
-        dimensions = Vector2(image.get_region(Rect2i(0, 0, 640, 640)).get_used_rect().size) * visual.scale
+        dimensions = AssetVisual.frame_display_size(texture, clip_data[idle_clip], visual.scale)
     else:
         dimensions = Vector2(float(common.get("missing_size", [70, 110])[0]), float(common.get("missing_size", [70, 110])[1])) * float(stats.get("visual_scale_multiplier", 1.0))
     var helper = load("res://scripts/asset_visual.gd")
@@ -236,7 +237,7 @@ func _process(delta: float) -> void:
     _update_readability(delta)
     if interaction_prompt != null:
         var actor: NimrodPlayer = get_tree().get_first_node_in_group("player") as NimrodPlayer
-        var available: bool = actor != null and not actor.is_transition_locked() and actor.action != "dead" and not interaction_running and not get_node("/root/Dialogue").active and not _interaction_complete()
+        var available: bool = actor != null and not actor.is_transition_locked() and actor.action != "dead" and not interaction_running and not get_node("/root/Dialogue").input_blocked() and not _interaction_complete()
         interaction_prompt.visible = available and interaction_center().distance_to(actor.global_position) <= float(stats.get("interact_range", 120.0))
         if interaction_prompt.visible and Input.is_action_just_pressed("interact"):
             interact(actor)
@@ -303,7 +304,7 @@ func _resize_pose_shadow() -> void:
     var texture: Texture2D = textures.get(current_clip) as Texture2D
     if shadow == null or texture == null:
         return
-    var width: float = float(texture.get_image().get_region(Rect2i(0, 0, 640, 640)).get_used_rect().size.x) * visual.scale.x * float(readability["shadow_width_ratio"])
+    var width: float = AssetVisual.frame_display_size(texture, clip_data[current_clip], visual.scale).x * float(readability["shadow_width_ratio"])
     shadow.position.x = -width * 0.5
     var image: Sprite2D = shadow.get_node_or_null("Image") as Sprite2D
     if image != null:
@@ -365,28 +366,19 @@ func _refresh_visual() -> void:
         animation_finished = true
         clip_finished.emit(current_clip)
 
-# Other NPCs keep an inert future interaction hook. Only Shamhat grants a blessing.
-func interact(player: Node2D) -> void:
-    if str(stats.get("interaction", "")) == "lugalbanda_ninsun_gift":
-        await _parent_gift(player)
-        return
-    if str(stats.get("interaction", "")) != "shamhat_blessing" or interaction_running or get_node("/root/GameState").run_flags.get("shamhat_blessing", false):
+func interact(_player: Node2D) -> void:
+    var interaction_id: String = str(stats.get("interaction", ""))
+    if interaction_running or not interactable or not get_node("/root/Dialogue").interaction_available(interaction_id):
         return
     interaction_running = true
     interacted.emit()
-    if three_way:
-        _change_pose(Pose.FRONT)
-        if pose_tween != null:
-            pose_tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
-    await get_node("/root/Dialogue").play(["네가 자꾸 신경쓰여."], self)
-    if is_instance_valid(player) and player is NimrodPlayer and not get_node("/root/Dialogue").cancelled:
-        player.apply_shamhat_blessing()
-        if interaction_prompt != null:
-            interaction_prompt.hide()
+    await get_node("/root/Dialogue").play_interaction(interaction_id)
     interaction_running = false
+    if _interaction_complete() and interaction_prompt != null:
+        interaction_prompt.hide()
 
 func interaction_center() -> Vector2:
-    if str(stats.get("interaction", "")) == "lugalbanda_ninsun_gift":
+    if str(stats.get("interaction", "")) == "parents_gift":
         var father: NPC = get_parent().get_node_or_null("lugalbanda") as NPC
         var mother: NPC = get_parent().get_node_or_null("ninsun") as NPC
         if father != null and mother != null:
@@ -394,23 +386,8 @@ func interaction_center() -> Vector2:
     return global_position
 
 func _interaction_complete() -> bool:
-    var key: String = "lugalbanda_gift" if str(stats.get("interaction", "")) == "lugalbanda_ninsun_gift" else "shamhat_blessing"
-    return bool(get_node("/root/GameState").run_flags.get(key, false))
+    return not get_node("/root/Dialogue").interaction_available(str(stats.get("interaction", "")))
 
-func _parent_gift(actor: Node2D) -> void:
-    if interaction_running or not actor is NimrodPlayer or not get_node("/root/GameState").first_time("lugalbanda_gift"):
-        return
-    var father: NPC = get_parent().get_node_or_null("lugalbanda") as NPC
-    var mother: NPC = get_parent().get_node_or_null("ninsun") as NPC
-    if father == null or mother == null:
-        get_node("/root/GameState").run_flags.erase("lugalbanda_gift")
-        return
-    interaction_running = true
-    interacted.emit()
-    var gift: Dictionary = get_node("/root/Dialogue").settings["parent_gift"]
-    var participants: Dictionary = {"lugalbanda": father, "ninsun": mother, "player": actor}
-    var lines: Array = gift["lines"] if bool(gift["use_scripted_dialogue"]) else [{"speaker":"lugalbanda", "event":"axe_gift"}]
-    await get_node("/root/Dialogue").play(lines, father, {"focus":"group", "participants":participants, "group_zoom_max":gift["group_zoom_max"]})
-    if get_node("/root/Dialogue").cancelled and get_node("/root/GameState").get_weapon() != "axe":
-        get_node("/root/GameState").run_flags.erase("lugalbanda_gift")
+func _on_run_reset() -> void:
+    interactable = bool(stats.get("interactable", false))
     interaction_running = false

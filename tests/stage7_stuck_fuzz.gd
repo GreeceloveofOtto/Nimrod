@@ -54,8 +54,36 @@ func _run() -> void:
         hero.set_physics_process(false)
         for input_name: String in ["move_left", "move_right", "jump", "crouch", "attack", "roll"]:
             Input.action_release(input_name)
+    # Probe actual low one-way steps with roll, crouch, jump and S+Space.
+    await manager.go_to("CedarForest_F1", "Spawn_FromVilla", {"instant": true})
+    hero.reset_run_state()
+    hero.set_transition_locked(false)
+    hero.set_physics_process(true)
+    hero.stuck_recoveries.clear()
+    var step_body := StaticBody2D.new()
+    step_body.collision_layer = 2
+    step_body.set_meta("one_way",true)
+    step_body.position = hero.global_position + Vector2(0,-58)
+    var step_shape := CollisionShape2D.new()
+    var step_rect := RectangleShape2D.new()
+    step_rect.size = Vector2(220,12)
+    step_shape.shape = step_rect
+    step_shape.one_way_collision = true
+    step_body.add_child(step_shape)
+    main.add_child(step_body)
+    for direction in ["move_left","move_right"]:
+        Input.action_press(direction)
+        for action_name in ["roll","crouch","jump","crouch","jump"]:
+            Input.action_press(action_name)
+            for frame in range(12):await physics_frame
+            Input.action_release(action_name)
+        Input.action_release(direction)
+    hero.set_physics_process(false)
+    for incident in hero.stuck_recoveries:
+        incidents.append("CedarForest_F1 low platform: " + str(incident))
+    step_body.queue_free()
     Engine.physics_ticks_per_second = 60
-    var report := FileAccess.open("res://docs/STAGE7_STUCK_REPORT.txt", FileAccess.WRITE)
+    var report := FileAccess.open("res://docs/STAGE8_STUCK_REPORT.txt", FileAccess.WRITE)
     report.store_string("\n".join(incidents))
     report.close()
     _check(incidents.is_empty(), "600 random physics frames per level have no terrain stall recoveries")

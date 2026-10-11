@@ -1,0 +1,11 @@
+{
+  "player": 2,
+  "npc": 2,
+  "enemy": 2,
+  "large_enemy": 1.4,
+  "fx": 1.4,
+  "props": 2,
+  "doors": 2,
+  "sky_far": 1,
+  "ssim_min": 0.93
+}

@@ -112,7 +112,7 @@ def levels():
    # Optional upper platforms receive a chain reaching from the room floor.
    chain=[]
    for i in range(1,7):
-    p=plat('stage6_upper_'+str(i),1420+(i%2)*120,620-i*100,320);p['art']='res://assets/tiles/passage/platform.png';l['platforms'].append(p);chain.append(p['id'])
+    p=plat('stage6_upper_'+str(i),1420+(i%2)*120,620-i*100,320);p['art']='res://assets/tiles/passage/platform.webp';l['platforms'].append(p);chain.append(p['id'])
    l['reachability']['chains'].append(chain);l['reachability']['elevation_limits']=[-180,900];l['reachability']['max_local_platform_elevation']=900
   if n==7:
    # Preserve crouch route while every physical enemy starts in a tall room.
