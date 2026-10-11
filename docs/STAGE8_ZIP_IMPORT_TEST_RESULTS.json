@@ -1,0 +1,436 @@
+{
+  "zip": "/workspace/downloads/Nimrod_stage8_import_fixed_2026-10-11.zip",
+  "asset_bytes": 63252103,
+  "zip_bytes": 64946562,
+  "sha256": "adf9e980fd58d2a49914f632b90f23cb7b8f74cea0d89b6a1e19de8635c44b39",
+  "directory_entries": 83,
+  "godot_zip_import": {
+    "files_written": 1330,
+    "failed_files": []
+  },
+  "size_goals_passed": true,
+  "extracted_project": null,
+  "checks": [],
+  "functional_verification_passed": false,
+  "cause": "Missing explicit ZIP directory entries; Godot does not create parents for file writes",
+  "previous_zip_failures_reproduced": 1318,
+  "native_godot_zip_import": {
+    "version": "4.3.stable.official",
+    "files_written": 1330,
+    "failures": 0,
+    "returncode": 0
+  },
+  "fresh_import_checks": [
+    {
+      "label": "import",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 21.52,
+      "passed": true
+    },
+    {
+      "label": "parse_arena",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_asset_visual",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.15,
+      "passed": true
+    },
+    {
+      "label": "parse_audio_manager",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.15,
+      "passed": true
+    },
+    {
+      "label": "parse_castle_front",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_cedar_fx",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.15,
+      "passed": true
+    },
+    {
+      "label": "parse_cedar_hazard",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_debug_teleport",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.16,
+      "passed": true
+    },
+    {
+      "label": "parse_dialogue_system",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_door_portal",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.15,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_base",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_boar_charger",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_cedar",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_cedar_archer",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_cedar_colossus",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_cedar_demon",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_cedar_sentinel",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_cedar_wisp",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_chain_beastman",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_corpse_bomber",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_explosive_spitter",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_gas_sac",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_kala_ushumgal",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_melee_beast",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_ranged_beast",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_root_spewer",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_shell_scorpion",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_sky_beast",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_stage5",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_wall_diver",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_enemy_wraith_ray",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_game_constants",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.16,
+      "passed": true
+    },
+    {
+      "label": "parse_game_hud",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_game_state",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.15,
+      "passed": true
+    },
+    {
+      "label": "parse_gate_controller",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_healing_pickup",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.15,
+      "passed": true
+    },
+    {
+      "label": "parse_image_effect",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.15,
+      "passed": true
+    },
+    {
+      "label": "parse_interior_level",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_level_base",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_main",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_npc_base",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_player",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_player_modifiers",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.15,
+      "passed": true
+    },
+    {
+      "label": "parse_rear_gate",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.25,
+      "passed": true
+    },
+    {
+      "label": "parse_rear_gate_layout",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.15,
+      "passed": true
+    },
+    {
+      "label": "parse_scene_manager",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_stage5_fx",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.17,
+      "passed": true
+    },
+    {
+      "label": "parse_stage5_hazard",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.26,
+      "passed": true
+    },
+    {
+      "label": "parse_stage5_projectile",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.27,
+      "passed": true
+    },
+    {
+      "label": "parse_surface_accent",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.16,
+      "passed": true
+    },
+    {
+      "label": "parse_surface_debug",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.28,
+      "passed": true
+    },
+    {
+      "label": "parse_threat_marker",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.27,
+      "passed": true
+    },
+    {
+      "label": "parse_villa_gate",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.27,
+      "passed": true
+    },
+    {
+      "label": "parse_villa_gatekeeper",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.28,
+      "passed": true
+    },
+    {
+      "label": "parse_weapon_pickup",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 0.27,
+      "passed": true
+    },
+    {
+      "label": "regression",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 2.72,
+      "passed": true
+    },
+    {
+      "label": "stage8_story_dialogue",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 20.66,
+      "passed": true
+    },
+    {
+      "label": "stage8_low_platform_roll",
+      "returncode": 0,
+      "issues": [],
+      "seconds": 5.38,
+      "passed": true
+    }
+  ],
+  "fresh_import_passed": 58,
+  "prior_game_checks_passed": 94,
+  "game_files_identical_to_previous_verified_zip": 1143,
+  "packaging_regression_test": "passed",
+  "crc": "passed"
+}

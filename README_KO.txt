@@ -2,6 +2,10 @@ NIMROD — 8단계: 끼임·접지·이미지 수정·스토리 대화·용량 �
 Godot 4.3 stable / GDScript / GL Compatibility / 1280×720 / 외부 애드온 없음
 
 실행
+ZIP 가져오기 오류 수정본: Nimrod_stage8_import_fixed_2026-10-11.zip.
+Godot 프로젝트 관리자의 ZIP 가져오기에 필요한 폴더 항목을 포함합니다.
+권장: 탐색기에서 ZIP 전체를 새 폴더에 풀고 Nimrod/project.godot을 선택합니다.
+이전에 가져오기에 실패한 불완전한 폴더에는 덮어쓰지 말고 새 폴더를 사용합니다.
 압축을 새 폴더에 모두 풀고 Godot 4.3으로 project.godot을 가져온 뒤 F5를 누릅니다.
 PNG/WebP/OGG의 첫 임포트가 끝날 때까지 기다립니다. 실행에는 Python이 필요 없습니다.
 Windows: PLAY_WITH_GODOT.bat. 엔진을 못 찾으면 GODOT_BIN을 설정합니다.

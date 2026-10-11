@@ -679,3 +679,5 @@ NIMROD 8단계 변경 경로 전체
 추가	docs/STAGE8_TEST_RESULTS.json
 추가	docs/STAGE8_PACKAGE_TEST_RESULTS.json
 추가	downloads/Nimrod_stage8_slim_2026-10-11.zip
+
+ZIP 가져오기 수정: tools/make_slim_zip.py, tools/check_zip_import.py, tools/check_zip_import.gd, tests/test_zip_import.py, README_KO.txt, docs/STAGE8_ZIP_IMPORT_FIX_KO.md, docs/STAGE8_ZIP_IMPORT_TEST_RESULTS.json. 다운로드 교체: Nimrod_stage8_slim_2026-10-11.zip → Nimrod_stage8_import_fixed_2026-10-11.zip.
