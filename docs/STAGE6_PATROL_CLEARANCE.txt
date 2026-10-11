@@ -1,6 +1,95 @@
-DowntownPassage_F1/explosive_spitter@2100: patrol±100→±54.0
-DowntownPassage_F6/boar_charger@2700: patrol±650→±456.5
-DowntownPassage_F6/boar_charger@900: patrol±650→±566.5
-DowntownPassage_F8/shell_scorpion@900: patrol±100→±98.0
-DowntownPassage_F8/corpse_bomber@1100: patrol±100→±6.0
-DowntownPassage_F8/chain_beastman@1900: patrol±350→±119.0
+최종 배포 데이터 기준 스폰·순찰 범위. 초기 진단에서 축소했던 F8 사슬 수인은 최종 지형 조정 후 ±350을 유지한다.
+지형 충돌 감사: check_enemy_clearance.py 통과. 부유/관통형의 범위는 몸체 지상 순찰 감사 대상과 다르다.
+
+DowntownPassage_F1/melee_beast position=[1700, 620] patrol_center=1700 patrol_range=±100
+DowntownPassage_F1/melee_beast position=[1900, 620] patrol_center=1900 patrol_range=±100
+DowntownPassage_F1/ranged_beast position=[2800, 510] patrol_center=2800 patrol_range=±100
+DowntownPassage_F1/ranged_beast position=[700, 620] patrol_center=700 patrol_range=±100
+DowntownPassage_F1/explosive_spitter position=[2100, 620] patrol_center=2100 patrol_range=±54.0
+DowntownPassage_F1/explosive_spitter position=[900, 560] patrol_center=900 patrol_range=±100
+DowntownPassage_F1/wall_diver position=[2000, 140] patrol_center=2000 patrol_range=±150
+DowntownPassage_F1/wall_diver position=[1100, 390] patrol_center=1100 patrol_range=±150
+DowntownPassage_F2/ranged_beast position=[1450, 420] patrol_center=1450 patrol_range=±100
+DowntownPassage_F2/ranged_beast position=[2300, 420] patrol_center=2300 patrol_range=±100
+DowntownPassage_F2/explosive_spitter position=[2900, 620] patrol_center=2900 patrol_range=±100
+DowntownPassage_F2/explosive_spitter position=[780, 620] patrol_center=780 patrol_range=±100
+DowntownPassage_F2/wall_diver position=[2850, 130] patrol_center=2850 patrol_range=±150
+DowntownPassage_F2/wall_diver position=[1850, 100] patrol_center=1850 patrol_range=±150
+DowntownPassage_F2/wall_diver position=[680, 360] patrol_center=680 patrol_range=±150
+DowntownPassage_F2/root_spewer position=[1400, 420] patrol_center=1400 patrol_range=±100
+DowntownPassage_F2/root_spewer position=[2220, 420] patrol_center=2220 patrol_range=±100
+DowntownPassage_F3/explosive_spitter position=[2800, -40] patrol_center=2800 patrol_range=±100
+DowntownPassage_F3/explosive_spitter position=[1500, 300] patrol_center=1500 patrol_range=±100
+DowntownPassage_F3/wall_diver position=[2900, 120] patrol_center=2900 patrol_range=±150
+DowntownPassage_F3/wall_diver position=[1800, 160] patrol_center=1800 patrol_range=±150
+DowntownPassage_F3/wall_diver position=[650, 350] patrol_center=650 patrol_range=±150
+DowntownPassage_F3/root_spewer position=[1400, 300] patrol_center=1400 patrol_range=±100
+DowntownPassage_F3/root_spewer position=[2300, 300] patrol_center=2300 patrol_range=±100
+DowntownPassage_F3/boar_charger position=[1700, 620] patrol_center=1700 patrol_range=±650
+DowntownPassage_F4/wall_diver position=[2800, 130] patrol_center=2800 patrol_range=±150
+DowntownPassage_F4/wall_diver position=[1800, 160] patrol_center=1800 patrol_range=±150
+DowntownPassage_F4/wall_diver position=[850, 140] patrol_center=850 patrol_range=±150
+DowntownPassage_F4/root_spewer position=[980, 620] patrol_center=980 patrol_range=±100
+DowntownPassage_F4/root_spewer position=[2440, 620] patrol_center=2440 patrol_range=±100
+DowntownPassage_F4/boar_charger position=[1220, 620] patrol_center=1220 patrol_range=±650
+DowntownPassage_F4/gas_sac position=[1600, 220] patrol_center=1600 patrol_range=±100
+DowntownPassage_F4/gas_sac position=[2400, 220] patrol_center=2400 patrol_range=±100
+DowntownPassage_F5/root_spewer position=[1080, 300] patrol_center=1080 patrol_range=±100
+DowntownPassage_F5/root_spewer position=[1600, 300] patrol_center=1600 patrol_range=±100
+DowntownPassage_F5/root_spewer position=[2120, 300] patrol_center=2120 patrol_range=±100
+DowntownPassage_F5/boar_charger position=[1800, 680] patrol_center=1800 patrol_range=±650
+DowntownPassage_F5/gas_sac position=[1400, 150] patrol_center=1400 patrol_range=±100
+DowntownPassage_F5/gas_sac position=[2400, 150] patrol_center=2400 patrol_range=±100
+DowntownPassage_F5/wraith_ray position=[2800, 400] patrol_center=2800 patrol_range=±3600
+DowntownPassage_F5/wraith_ray position=[1100, 430] patrol_center=1100 patrol_range=±3600
+DowntownPassage_F6/boar_charger position=[2700, 620] patrol_center=2700 patrol_range=±456.5
+DowntownPassage_F6/boar_charger position=[900, 620] patrol_center=900 patrol_range=±566.5
+DowntownPassage_F6/gas_sac position=[2600, 150] patrol_center=2600 patrol_range=±100
+DowntownPassage_F6/gas_sac position=[800, 150] patrol_center=800 patrol_range=±100
+DowntownPassage_F6/wraith_ray position=[2200, 450] patrol_center=2200 patrol_range=±3600
+DowntownPassage_F6/wraith_ray position=[600, 440] patrol_center=600 patrol_range=±3600
+DowntownPassage_F6/shell_scorpion position=[3200, 620] patrol_center=3200 patrol_range=±100
+DowntownPassage_F6/shell_scorpion position=[1300, 620] patrol_center=1300 patrol_range=±100
+DowntownPassage_F7/gas_sac position=[2900, 220] patrol_center=2900 patrol_range=±70
+DowntownPassage_F7/gas_sac position=[2900, 220] patrol_center=2900 patrol_range=±70
+DowntownPassage_F7/wraith_ray position=[2800, 430] patrol_center=2800 patrol_range=±3600
+DowntownPassage_F7/wraith_ray position=[1300, 540] patrol_center=1300 patrol_range=±3600
+DowntownPassage_F7/shell_scorpion position=[3100, 620] patrol_center=3100 patrol_range=±70
+DowntownPassage_F7/shell_scorpion position=[800, 620] patrol_center=800 patrol_range=±70
+DowntownPassage_F7/corpse_bomber position=[2900, 620] patrol_center=2900 patrol_range=±70
+DowntownPassage_F7/corpse_bomber position=[800, 620] patrol_center=800 patrol_range=±70
+DowntownPassage_F7/corpse_bomber position=[800, 620] patrol_center=800 patrol_range=±70
+DowntownPassage_F8/wraith_ray position=[3000, 440] patrol_center=3000 patrol_range=±3600
+DowntownPassage_F8/wraith_ray position=[1500, 340] patrol_center=1500 patrol_range=±3600
+DowntownPassage_F8/wraith_ray position=[600, 420] patrol_center=600 patrol_range=±3600
+DowntownPassage_F8/shell_scorpion position=[2200, 620] patrol_center=2200 patrol_range=±100
+DowntownPassage_F8/shell_scorpion position=[550, 620] patrol_center=550 patrol_range=±70
+DowntownPassage_F8/corpse_bomber position=[3200, 620] patrol_center=3200 patrol_range=±50
+DowntownPassage_F8/corpse_bomber position=[700, 620] patrol_center=700 patrol_range=±40
+DowntownPassage_F8/corpse_bomber position=[480, 620] patrol_center=480 patrol_range=±100
+DowntownPassage_F8/chain_beastman position=[1900, 620] patrol_center=1900 patrol_range=±350
+CedarForest_F1/cedar_sentinel position=[2000, 3328] patrol_center=2000 patrol_range=±180
+CedarForest_F1/cedar_sentinel position=[3200, 3328] patrol_center=3200 patrol_range=±180
+CedarForest_F1/cedar_sentinel position=[4400, 3328] patrol_center=4400 patrol_range=±180
+CedarForest_F1/cedar_sentinel position=[4400, 2688] patrol_center=4400 patrol_range=±180
+CedarForest_F1/cedar_sentinel position=[3200, 2688] patrol_center=3200 patrol_range=±180
+CedarForest_F1/cedar_sentinel position=[2000, 2688] patrol_center=2000 patrol_range=±180
+CedarForest_F1/cedar_sentinel position=[2000, 2048] patrol_center=2000 patrol_range=±180
+CedarForest_F1/cedar_colossus position=[3200, 2048] patrol_center=3200 patrol_range=±120
+CedarForest_F1/cedar_colossus position=[4400, 2048] patrol_center=4400 patrol_range=±120
+CedarForest_F1/cedar_colossus position=[4400, 1408] patrol_center=4400 patrol_range=±120
+CedarForest_F2/cedar_archer position=[2000, 3328] patrol_center=2000 patrol_range=±180
+CedarForest_F2/cedar_archer position=[3200, 3328] patrol_center=3200 patrol_range=±180
+CedarForest_F2/cedar_archer position=[4400, 3328] patrol_center=4400 patrol_range=±180
+CedarForest_F2/cedar_archer position=[4400, 2688] patrol_center=4400 patrol_range=±180
+CedarForest_F2/cedar_archer position=[3200, 2688] patrol_center=3200 patrol_range=±180
+CedarForest_F2/cedar_wisp position=[2000, 2448] patrol_center=2000 patrol_range=±180
+CedarForest_F2/cedar_wisp position=[2000, 1808] patrol_center=2000 patrol_range=±180
+CedarForest_F2/cedar_wisp position=[3200, 1808] patrol_center=3200 patrol_range=±180
+CedarForest_F2/cedar_wisp position=[4400, 1808] patrol_center=4400 patrol_range=±180
+CedarForest_F2/cedar_wisp position=[4400, 1168] patrol_center=4400 patrol_range=±180
+CedarForest_F2/cedar_demon position=[3200, 1088] patrol_center=3200 patrol_range=±180
+CedarForest_F2/cedar_demon position=[2000, 1088] patrol_center=2000 patrol_range=±180
+CedarForest_F2/cedar_demon position=[2000, 448] patrol_center=2000 patrol_range=±180
+CedarForest_F2/cedar_demon position=[3200, 448] patrol_center=3200 patrol_range=±180
+CedarBossRoom/kala_ushumgal position=[900, 800] patrol_center=800 patrol_range=±200
