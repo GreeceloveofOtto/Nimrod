@@ -1,5 +1,5 @@
 # 돌진 괴수 / hurt
-목적: 괴수 애니메이션. 경로: assets/sprites/enemies/boar_charger/hurt.png
+목적: 괴수 애니메이션. 경로: assets/sprites/enemies/boar_charger/hurt.webp
 규격: 2 × 768x640, 0.2초, 앵커 [384, 600].
 배경: #FF00FF → pack_sprites.py 크로마키/정렬/합성.
 

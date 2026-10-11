@@ -2,7 +2,7 @@
 
 목적: 긴 무너진 기둥 장식
 
-저장 경로: `assets/props/ruin_pillar_a.png`
+저장 경로: `assets/props/ruin_pillar_a.webp`
 
 최종 크기: 160x300px. 프레임 구성: 정지 이미지 1프레임.
 

@@ -83,7 +83,7 @@ func show_toast(text: String) -> void:
         if hud != null:
             hud.show_toast(text)
 
-func go_to(level_id: String, spawn_name: String) -> bool:
+func go_to(level_id: String, spawn_name: String, options: Dictionary = {}) -> bool:
     if is_transitioning or not is_instance_valid(player) or not is_instance_valid(level_root):
         return false
     if not levels.has(level_id):
@@ -99,7 +99,9 @@ func go_to(level_id: String, spawn_name: String) -> bool:
     get_node("/root/Dialogue").cancel()
     is_transitioning = true
     set_player_locked(true)
-    await _fade_to(1.0, float(config["fade_out_seconds"]))
+    var instant: bool = bool(options.get("instant", false))
+    if not instant:
+        await _fade_to(1.0, float(config["fade_out_seconds"]))
     if not is_instance_valid(level_root) or not is_instance_valid(player):
         return false
     if is_instance_valid(current_level):
@@ -118,7 +120,7 @@ func go_to(level_id: String, spawn_name: String) -> bool:
         player.global_position = spawn.global_position
     player.modulate.a = 1.0
     _update_camera(current_level.camera_limits)
-    Audio.play_bgm(str(current_level.bgm_name), float(config["bgm_fade_seconds"]))
+    get_node("/root/Audio").play_bgm(str(current_level.bgm_name), 0.0 if instant else float(config["bgm_fade_seconds"]))
     var hud := main.get_node_or_null("HUD")
     if hud != null:
         hud.set_level_name(str(current_level.display_name))
@@ -126,28 +128,32 @@ func go_to(level_id: String, spawn_name: String) -> bool:
     var arrival: Node = current_level.find_arrival_door(spawn_name)
     # An arrival door prepares itself before fade-in, then plays its walking
     # and closing sequence while input and incoming damage remain locked.
-    if arrival != null and arrival.has_method("prepare_arrival"):
+    if not instant and arrival != null and arrival.has_method("prepare_arrival"):
         arrival.prepare_arrival(player)
-    await _fade_to(0.0, float(config["fade_in_seconds"]))
+    if not instant:
+        await _fade_to(0.0, float(config["fade_in_seconds"]))
+    else:
+        _fade_rect.modulate.a = 0.0
     if not is_instance_valid(player) or not is_instance_valid(current_level):
         return false
-    if is_instance_valid(arrival) and arrival.has_method("play_arrival"):
+    if not instant and is_instance_valid(arrival) and arrival.has_method("play_arrival"):
         await arrival.play_arrival(player)
     player.end_portal_walk()
     player.modulate.a = 1.0
     set_player_locked(false)
     is_transitioning = false
     show_toast(str(current_level.display_name))
-    if level_id == str(config["start_level"]) and spawn_name == str(config["start_spawn"]) and GameState.first_time("rear_gate_intro"):
+    if level_id == str(config["start_level"]) and spawn_name == str(config["start_spawn"]) and get_node("/root/GameState").first_time("home_intro"):
         if hud != null:
             hud.show_story()
     transition_finished.emit(level_id)
     return true
 
-func restart_run() -> void:
+func restart_run(reset_flags: bool = true) -> void:
     if is_transitioning or not is_instance_valid(player):
         return
-    GameState.reset_run()
+    if reset_flags:
+        get_node("/root/GameState").reset_run(false)
     _reset_on_arrival = true
     await go_to(str(config["start_level"]), str(config["start_spawn"]))
 

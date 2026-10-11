@@ -2,7 +2,7 @@
 
 Purpose: stage 2 character animation.
 
-Output: `assets/sprites/enemies/sky_beast/fly_idle.png`
+Output: `assets/sprites/enemies/sky_beast/fly_idle.webp`
 
 Frames: 6 × 768x640, one horizontal row; duration 0.9s; anchor [384,320].
 

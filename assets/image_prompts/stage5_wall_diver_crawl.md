@@ -1,5 +1,5 @@
 # 벽면 강하 괴수 / crawl
-목적: 괴수 애니메이션. 경로: assets/sprites/enemies/wall_diver/crawl.png
+목적: 괴수 애니메이션. 경로: assets/sprites/enemies/wall_diver/crawl.webp
 규격: 8 × 640x640, 0.7초, 앵커 [320, 320].
 배경: #FF00FF → pack_sprites.py 크로마키/정렬/합성.
 

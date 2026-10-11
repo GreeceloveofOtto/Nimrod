@@ -87,7 +87,7 @@ def main():
             image('villa_props_atlas.png',([0,630,1095,1590][i],0,[630,1095,1590,w][i],h//2),'props/'+name+'.png',size,trim=True)
         from build_stage3_assets import sheet
         strip=chromakey(source.crop((0,h//2,w,h)));poses=[foreground(strip.crop(cell_box(strip,6,1,i,0)))[0] for i in range(6)]
-        c=sheet(poses,'props/doors/villa_back_door.png',(320,420),.6);save_json(A/'props/doors/stage4_manifest.json',{'clips':[c]})
+        c=sheet(poses,'props/doors/villa_back_door.webp',(320,420),.6);save_json(A/'props/doors/stage4_manifest.json',{'clips':[c]})
     master=json.loads((A/'art_manifest.json').read_text());entries={e['path']:e for e in master['assets']};entries.update({e['path']:e for e in ENTRIES})
     for path in (A/'reference').glob('nimrod*.png'):
         im=Image.open(path);entries[str(path.relative_to(A))]=dict(name=path.stem,path=str(path.relative_to(A)),width=im.width,height=im.height,transparent=path.name!='nimrod_design.png')

@@ -1,6 +1,6 @@
 # walk
 목적: 6단계 이미지 생성 애니메이션.
-경로: assets/sprites/enemies/cedar_colossus/walk.png
+경로: assets/sprites/enemies/cedar_colossus/walk.webp
 프레임: 1024x1024, 8프레임, 1.4초, 앵커 [512, 980].
 배경: #FF00FF → pack_sprites.py 크로마키 투명 처리.
 

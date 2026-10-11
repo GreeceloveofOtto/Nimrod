@@ -12,7 +12,7 @@
   "clips": [
     {
       "name": "stir",
-      "sheet": "sprites/npcs/cook_b/stir.png",
+      "sheet": "sprites/npcs/cook_b/stir.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -26,9 +26,15 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        894,
+        262
+      ],
+      "trim": {
+        "x": 246,
+        "y": 340,
+        "w": 149,
+        "h": 262
+      }
     }
   ]
 }

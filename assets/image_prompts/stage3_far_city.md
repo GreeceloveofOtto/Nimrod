@@ -1,7 +1,7 @@
 # far_city
 
 목적: 3단계 게임 에셋.
-경로: assets/backgrounds/castle_front/far_city.png
+경로: assets/backgrounds/castle_front/far_city.webp
 규격: [2048, 720], 프레임 1.
 배경: 투명 스프라이트는 #FF00FF 크로마키, FX는 생성 알파 보존, 하늘·타일·디자인은 불투명.
 후처리: crop/resize/anchor/pack, 타일은 원본 경계 블렌드만.

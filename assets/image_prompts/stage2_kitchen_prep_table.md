@@ -2,7 +2,7 @@
 
 목적: 2단계 레벨의 생성 이미지 배경·지형·소품
 
-파일: `assets/props/kitchen_prep_table.png`
+파일: `assets/props/kitchen_prep_table.webp`
 
 크기: 260 × 150px; 프레임: 1, 한 줄.
 

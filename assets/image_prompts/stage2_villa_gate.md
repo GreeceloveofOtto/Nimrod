@@ -2,7 +2,7 @@
 
 목적: 문 열림; 첫 프레임 완전 닫힘, 마지막 프레임 완전 열림. 닫힘은 역재생.
 
-파일: `assets/props/doors/villa_gate.png`
+파일: `assets/props/doors/villa_gate.webp`
 
 크기: 480 × 420px; 프레임: 8, 한 줄.
 

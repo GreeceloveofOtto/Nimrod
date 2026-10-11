@@ -59,6 +59,7 @@ func _new_fixture() -> void:
     fixture.add_child(ground)
     player = PLAYER_SCENE.instantiate()
     fixture.add_child(player)
+    root.get_node("GameState").set_weapon("axe")
     player.set_physics_process(false)
     player.camera.enabled = false
     _reset_player()
@@ -191,7 +192,7 @@ func _test_jump_and_land() -> void:
     _expect(randomizer != null and randomizer.get_streams_count() == 3, "jump SFX uses a three-stream AudioStreamRandomizer")
     if randomizer != null:
         for index: int in range(3):
-            _expect(randomizer.get_stream(index).resource_path.ends_with("jump_" + ["a", "b", "c"][index] + ".wav"), "jump variant %d uses its generated WAV" % (index + 1))
+            _expect(randomizer.get_stream(index).resource_path.ends_with("jump_" + ["a", "b", "c"][index] + ".ogg"), "jump variant %d uses its generated OGG" % (index + 1))
     player._physics_process(0.01)
     _expect(player.is_on_floor(), "jump scenario starts on physical ground")
     Input.action_press("jump")
@@ -493,6 +494,7 @@ func _test_rear_gate() -> void:
     root.add_child(main)
     current_scene = main
     await manager.transition_finished
+    await manager.go_to("RearGate", "Spawn_Start", {"instant": true})
     var scene: Variant = manager.current_level
     var hero: Variant = main.get_node("Player")
     hero.set_physics_process(false)
@@ -598,9 +600,9 @@ func _test_rear_gate() -> void:
     _expect(manager.current_level.get_instance_id() == old_level_id, "death waits for the original 1.6 second delay")
     hero._physics_process(0.02)
     await manager.transition_finished
-    _expect(manager.current_level.get_instance_id() != old_level_id and manager.current_level.level_id == "RearGate", "death replaces current level with rear gate")
+    _expect(manager.current_level.get_instance_id() != old_level_id and manager.current_level.level_id == "NimrodHome", "death replaces current level with rear gate")
     _expect(main.get_instance_id() == main_id and hero.get_instance_id() == player_id, "death preserves the single Main player instance")
-    _expect(hero.hp == 180 and hero.position.x == 260.0, "run restart restores HP180 at x260")
+    _expect(hero.hp == 180 and hero.position.x == 330.0, "run restart restores HP180 at home x330")
     _expect(not game_state.run_flags.has("regression_before_death"), "run restart clears first-attempt flags")
     main.queue_free()
     current_scene = null

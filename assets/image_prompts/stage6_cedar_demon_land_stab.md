@@ -1,6 +1,6 @@
 # land_stab
 목적: 6단계 이미지 생성 애니메이션.
-경로: assets/sprites/enemies/cedar_demon/land_stab.png
+경로: assets/sprites/enemies/cedar_demon/land_stab.webp
 프레임: 768x768, 4프레임, 0.3초, 앵커 [384, 720].
 배경: #FF00FF → pack_sprites.py 크로마키 투명 처리.
 

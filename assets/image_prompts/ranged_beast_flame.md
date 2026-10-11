@@ -2,7 +2,7 @@
 
 목적: 원거리 괴수 입에서 뻗는 화염 루프
 
-저장 경로: `assets/sprites/enemies/ranged_beast/flame.png`
+저장 경로: `assets/sprites/enemies/ranged_beast/flame.webp`
 
 최종 크기: 3072x256px. 프레임 구성: 6프레임, 프레임당 512x256px, 한 줄, 0.36초 루프.
 

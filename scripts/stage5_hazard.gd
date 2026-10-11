@@ -65,10 +65,10 @@ func _tick() -> void:
     if bounds.intersects(body):
         player.receive_damage(int(spec["damage"]), {"stagger": false, "grant_grace": false, "tick_group": "gas", "tick_source": get_instance_id(), "overlap_interval": float(spec.get("overlap_interval", 0.2))})
 
-func _sound(name: String, looped: bool = false) -> void:
+func _sound(clip_or_sound_name: String, looped: bool = false) -> void:
     var audio := get_node_or_null("/root/Audio")
     if audio == null:
         return
-    var sound: Node = audio.play_sfx(name, global_position)
+    var sound: Node = audio.play_sfx(clip_or_sound_name, global_position)
     if looped and sound != null:
         tree_exiting.connect(audio.stop_sfx.bind(sound), CONNECT_ONE_SHOT)

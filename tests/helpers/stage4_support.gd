@@ -25,7 +25,7 @@ func _freeze(_level: String) -> void:
     for enemy: EnemyBase in get_nodes_in_group("enemies"):
         enemy.set_physics_process(false)
 
-func _start() -> void:
+func _start(equip_axe: bool = true) -> void:
     manager = root.get_node("SceneManager")
     manager.level_changed.connect(_freeze)
     main = load("res://scenes/Main.tscn").instantiate()
@@ -33,13 +33,15 @@ func _start() -> void:
     current_scene = main
     await manager.transition_finished
     hero = manager.player
+    if equip_axe:
+        root.get_node("GameState").set_weapon("axe")
     hero.set_physics_process(false)
 
 func _finish(label: String) -> void:
     manager.set_player_locked(true)
     manager.level_changed.disconnect(_freeze)
     var audio: Node = root.get_node("Audio")
-    audio.stop_bgm(0.0)
+    await audio.drain_streams()
     # Also stop player-local jump/step/land streams before the audio mixer exits.
     var sounds: Array[Node] = root.find_children("*", "AudioStreamPlayer", true, false)
     sounds.append_array(root.find_children("*", "AudioStreamPlayer2D", true, false))
@@ -49,7 +51,11 @@ func _finish(label: String) -> void:
             sound.stream = null
     main.queue_free()
     current_scene = null
+    audio.release_streams()
     # Traversal tests run at time_scale=4. Allow real mixer time for stream release.
-    await create_timer(0.2, true, false, true).timeout
+    # Free AudioStreamPlayer objects before the Godot 4.3 mixer shuts down.
+    # Merely detaching a looping Vorbis stream leaves its native playback alive.
+    audio.queue_free()
+    await create_timer(1.5, true, false, true).timeout
     print("%s: %d checks, %d failures" % [label, checks, failures])
     quit(1 if failures else 0)

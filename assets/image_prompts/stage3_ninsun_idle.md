@@ -1,6 +1,6 @@
 # ninsun idle
 
-목적: 근미래 NPC 숨쉬기. 경로: assets/sprites/npcs/ninsun/idle.png
+목적: 근미래 NPC 숨쉬기. 경로: assets/sprites/npcs/ninsun/idle.webp
 640x640 × 6, 2.4초 루프, 오른쪽, 발 앵커 [320,600], 투명.
 생성 정지 이미지를 pack_sprites.py로 크로마키·앵커 정렬 후 make_breathing_sheet.py, add_rim_light.py 5px/40% 후처리.
 

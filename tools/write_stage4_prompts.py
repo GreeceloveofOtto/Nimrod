@@ -56,7 +56,7 @@ def main():
         'props': ['props/' + n + '.png' for n in ['large_rubble_a', 'large_rubble_b', 'dead_tree', 'crashed_pod_wreck', 'outskirts_lamp']],
         'tiles': ['tiles/outskirts/' + n + '.png' for n in ['ground_tile', 'plaza_tile', 'ruin_platform', 'bridge_platform', 'ruin_ledge']] + ['tiles/underground_fill.png'],
         'villa': ['backgrounds/villa/villa_f2_dining.png', 'backgrounds/villa/villa_f3_chamber.png'],
-        'villa_props': ['props/' + n + '.png' for n in ['villa_dining_table_wide', 'villa_chairs', 'villa_sofa', 'villa_side_table']] + ['props/doors/villa_back_door.png'],
+        'villa_props': ['props/' + n + '.png' for n in ['villa_dining_table_wide', 'villa_chairs', 'villa_sofa', 'villa_side_table']] + ['props/doors/villa_back_door.webp'],
         'nimrod_base': ['reference/nimrod_design.png', 'reference/nimrod_base_right.png', 'reference/nimrod_base_rear.png', 'reference/nimrod_base_three_quarter.png'],
     }
     for key, paths in groups.items():

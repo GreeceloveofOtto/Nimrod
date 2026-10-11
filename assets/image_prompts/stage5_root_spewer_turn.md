@@ -1,5 +1,5 @@
 # 뿌리 화염 괴수 / turn
-목적: 괴수 애니메이션. 경로: assets/sprites/enemies/root_spewer/turn.png
+목적: 괴수 애니메이션. 경로: assets/sprites/enemies/root_spewer/turn.webp
 규격: 4 × 640x640, 0.25초, 앵커 [320, 600].
 배경: #FF00FF → pack_sprites.py 크로마키/정렬/합성.
 

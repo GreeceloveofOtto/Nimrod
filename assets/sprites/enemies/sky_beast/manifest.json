@@ -9,7 +9,7 @@
   "clips": [
     {
       "name": "fly_idle",
-      "sheet": "sprites/enemies/sky_beast/fly_idle.png",
+      "sheet": "sprites/enemies/sky_beast/fly_idle.webp",
       "frame_width": 768,
       "frame_height": 640,
       "columns": 6,
@@ -23,13 +23,24 @@
         320
       ],
       "image_size": [
-        4608,
-        640
-      ]
+        1236,
+        229
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained",
+        "movement": true
+      },
+      "trim": {
+        "x": 280,
+        "y": 217,
+        "w": 206,
+        "h": 229
+      }
     },
     {
       "name": "windup",
-      "sheet": "sprites/enemies/sky_beast/windup.png",
+      "sheet": "sprites/enemies/sky_beast/windup.webp",
       "frame_width": 768,
       "frame_height": 640,
       "columns": 4,
@@ -43,13 +54,23 @@
         320
       ],
       "image_size": [
-        3072,
-        640
-      ]
+        760,
+        220
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 308,
+        "y": 209,
+        "w": 190,
+        "h": 220
+      }
     },
     {
       "name": "dive",
-      "sheet": "sprites/enemies/sky_beast/dive.png",
+      "sheet": "sprites/enemies/sky_beast/dive.webp",
       "frame_width": 768,
       "frame_height": 640,
       "columns": 3,
@@ -63,13 +84,24 @@
         320
       ],
       "image_size": [
-        2304,
-        640
-      ]
+        978,
+        222
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained",
+        "movement": true
+      },
+      "trim": {
+        "x": 216,
+        "y": 208,
+        "w": 326,
+        "h": 222
+      }
     },
     {
       "name": "recovery",
-      "sheet": "sprites/enemies/sky_beast/recovery.png",
+      "sheet": "sprites/enemies/sky_beast/recovery.webp",
       "frame_width": 768,
       "frame_height": 640,
       "columns": 4,
@@ -83,13 +115,23 @@
         320
       ],
       "image_size": [
-        3072,
-        640
-      ]
+        864,
+        213
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 296,
+        "y": 211,
+        "w": 216,
+        "h": 213
+      }
     },
     {
       "name": "turn",
-      "sheet": "sprites/enemies/sky_beast/turn.png",
+      "sheet": "sprites/enemies/sky_beast/turn.webp",
       "frame_width": 768,
       "frame_height": 640,
       "columns": 4,
@@ -103,13 +145,19 @@
         320
       ],
       "image_size": [
-        3072,
-        640
-      ]
+        544,
+        209
+      ],
+      "trim": {
+        "x": 317,
+        "y": 209,
+        "w": 136,
+        "h": 209
+      }
     },
     {
       "name": "hurt",
-      "sheet": "sprites/enemies/sky_beast/hurt.png",
+      "sheet": "sprites/enemies/sky_beast/hurt.webp",
       "frame_width": 768,
       "frame_height": 640,
       "columns": 2,
@@ -123,13 +171,23 @@
         320
       ],
       "image_size": [
-        1536,
-        640
-      ]
+        382,
+        223
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 298,
+        "y": 206,
+        "w": 191,
+        "h": 223
+      }
     },
     {
       "name": "death",
-      "sheet": "sprites/enemies/sky_beast/death.png",
+      "sheet": "sprites/enemies/sky_beast/death.webp",
       "frame_width": 768,
       "frame_height": 640,
       "columns": 6,
@@ -143,9 +201,19 @@
         320
       ],
       "image_size": [
-        4608,
-        640
-      ]
+        870,
+        235
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 309,
+        "y": 203,
+        "w": 145,
+        "h": 235
+      }
     }
   ],
   "aliases": {

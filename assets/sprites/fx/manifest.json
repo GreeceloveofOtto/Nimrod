@@ -2,7 +2,7 @@
   "clips": [
     {
       "name": "hit_spark",
-      "sheet": "sprites/fx/hit_spark.png",
+      "sheet": "sprites/fx/hit_spark.webp",
       "frame_width": 256,
       "frame_height": 256,
       "columns": 5,
@@ -16,9 +16,20 @@
         128
       ],
       "image_size": [
-        1280,
-        256
-      ]
+        1050,
+        220
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "FX flow changes extent while retaining uniform scale",
+        "detached_fx_or_weapon": true
+      },
+      "trim": {
+        "x": 27,
+        "y": 6,
+        "w": 210,
+        "h": 220
+      }
     }
   ]
 }

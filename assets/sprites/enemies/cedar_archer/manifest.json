@@ -6,9 +6,9 @@
   "clips": [
     {
       "name": "idle",
-      "sheet": "sprites/enemies/cedar_archer/idle.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_archer/idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 6,
       "rows": 1,
       "frames": 6,
@@ -16,19 +16,25 @@
       "fps": 6.0,
       "loop": true,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        4608,
-        768
-      ]
+        1410,
+        368
+      ],
+      "trim": {
+        "x": 243,
+        "y": 234,
+        "w": 235,
+        "h": 368
+      }
     },
     {
       "name": "walk",
-      "sheet": "sprites/enemies/cedar_archer/walk.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_archer/walk.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 8,
       "rows": 1,
       "frames": 8,
@@ -36,19 +42,28 @@
       "fps": 8.88888888888889,
       "loop": true,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        6144,
-        768
-      ]
+        1992,
+        375
+      ],
+      "qa": {
+        "movement": true
+      },
+      "trim": {
+        "x": 215,
+        "y": 227,
+        "w": 249,
+        "h": 375
+      }
     },
     {
       "name": "windup",
-      "sheet": "sprites/enemies/cedar_archer/windup.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_archer/windup.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 4,
       "rows": 1,
       "frames": 4,
@@ -56,19 +71,25 @@
       "fps": 8.0,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        3072,
-        768
-      ]
+        1192,
+        390
+      ],
+      "trim": {
+        "x": 214,
+        "y": 212,
+        "w": 298,
+        "h": 390
+      }
     },
     {
       "name": "shoot",
-      "sheet": "sprites/enemies/cedar_archer/shoot.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_archer/shoot.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 3,
       "rows": 1,
       "frames": 3,
@@ -76,19 +97,25 @@
       "fps": 15.0,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        2304,
-        768
-      ]
+        1035,
+        376
+      ],
+      "trim": {
+        "x": 190,
+        "y": 226,
+        "w": 345,
+        "h": 376
+      }
     },
     {
       "name": "recovery",
-      "sheet": "sprites/enemies/cedar_archer/recovery.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_archer/recovery.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 4,
       "rows": 1,
       "frames": 4,
@@ -96,19 +123,25 @@
       "fps": 10.0,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        3072,
-        768
-      ]
+        1256,
+        368
+      ],
+      "trim": {
+        "x": 213,
+        "y": 234,
+        "w": 314,
+        "h": 368
+      }
     },
     {
       "name": "hop_back",
-      "sheet": "sprites/enemies/cedar_archer/hop_back.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_archer/hop_back.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 5,
       "rows": 1,
       "frames": 5,
@@ -116,19 +149,28 @@
       "fps": 12.5,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        3840,
-        768
-      ]
+        1565,
+        399
+      ],
+      "qa": {
+        "movement": true
+      },
+      "trim": {
+        "x": 192,
+        "y": 203,
+        "w": 313,
+        "h": 399
+      }
     },
     {
       "name": "turn",
-      "sheet": "sprites/enemies/cedar_archer/turn.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_archer/turn.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 4,
       "rows": 1,
       "frames": 4,
@@ -136,19 +178,25 @@
       "fps": 20.0,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        3072,
-        768
-      ]
+        1008,
+        368
+      ],
+      "trim": {
+        "x": 222,
+        "y": 234,
+        "w": 252,
+        "h": 368
+      }
     },
     {
       "name": "hurt",
-      "sheet": "sprites/enemies/cedar_archer/hurt.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_archer/hurt.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 2,
       "rows": 1,
       "frames": 2,
@@ -156,19 +204,25 @@
       "fps": 10.0,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        1536,
-        768
-      ]
+        772,
+        391
+      ],
+      "trim": {
+        "x": 163,
+        "y": 211,
+        "w": 386,
+        "h": 391
+      }
     },
     {
       "name": "death",
-      "sheet": "sprites/enemies/cedar_archer/death.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_archer/death.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 6,
       "rows": 1,
       "frames": 6,
@@ -176,13 +230,23 @@
       "fps": 8.571428571428571,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        4608,
-        768
-      ]
+        1818,
+        449
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 201,
+        "y": 153,
+        "w": 303,
+        "h": 449
+      }
     }
   ]
 }

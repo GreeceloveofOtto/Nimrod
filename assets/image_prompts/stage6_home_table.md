@@ -1,6 +1,6 @@
 # home_table
 목적: 6단계 환경.
-경로: assets/props/home_table.png
+경로: assets/props/home_table.webp
 크기: 360x180, 1프레임.
 배경: #FF00FF 크로마키.
 

@@ -1,0 +1,7989 @@
+{
+  "res://assets/sprites/player/axe/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/player/axe/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 10,
+    "rows": 1,
+    "frames": 10,
+    "duration_seconds": 2.2,
+    "fps": 4.545454545454545,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      2420,
+      368
+    ],
+    "trim": {
+      "x": 199,
+      "y": 234,
+      "w": 242,
+      "h": 368
+    }
+  },
+  "res://assets/sprites/player/axe/walk.webp": {
+    "name": "walk",
+    "sheet": "sprites/player/axe/walk.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 10,
+    "rows": 1,
+    "frames": 10,
+    "duration_seconds": 1.05,
+    "fps": 9.523809523809524,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      2840,
+      338
+    ],
+    "trim": {
+      "x": 178,
+      "y": 264,
+      "w": 284,
+      "h": 338
+    }
+  },
+  "res://assets/sprites/player/axe/crouch_enter.webp": {
+    "name": "crouch_enter",
+    "sheet": "sprites/player/axe/crouch_enter.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.14,
+    "fps": 28.57142857142857,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      916,
+      295
+    ],
+    "trim": {
+      "x": 206,
+      "y": 307,
+      "w": 229,
+      "h": 295
+    }
+  },
+  "res://assets/sprites/player/axe/crouch_idle.webp": {
+    "name": "crouch_idle",
+    "sheet": "sprites/player/axe/crouch_idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.8,
+    "fps": 7.5,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1332,
+      209
+    ],
+    "trim": {
+      "x": 209,
+      "y": 393,
+      "w": 222,
+      "h": 209
+    }
+  },
+  "res://assets/sprites/player/axe/crouch_exit.webp": {
+    "name": "crouch_exit",
+    "sheet": "sprites/player/axe/crouch_exit.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.13,
+    "fps": 30.769230769230766,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      2496,
+      307
+    ],
+    "trim": {
+      "x": 8,
+      "y": 295,
+      "w": 624,
+      "h": 307
+    }
+  },
+  "res://assets/sprites/player/axe/jump_start.webp": {
+    "name": "jump_start",
+    "sheet": "sprites/player/axe/jump_start.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.13,
+    "fps": 30.769230769230766,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1160,
+      332
+    ],
+    "trim": {
+      "x": 175,
+      "y": 270,
+      "w": 290,
+      "h": 332
+    }
+  },
+  "res://assets/sprites/player/axe/jump_rise.webp": {
+    "name": "jump_rise",
+    "sheet": "sprites/player/axe/jump_rise.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.42,
+    "fps": 14.285714285714286,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1830,
+      332
+    ],
+    "trim": {
+      "x": 168,
+      "y": 270,
+      "w": 305,
+      "h": 332
+    }
+  },
+  "res://assets/sprites/player/axe/fall.webp": {
+    "name": "fall",
+    "sheet": "sprites/player/axe/fall.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.36,
+    "fps": 16.666666666666668,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1938,
+      361
+    ],
+    "trim": {
+      "x": 158,
+      "y": 241,
+      "w": 323,
+      "h": 361
+    }
+  },
+  "res://assets/sprites/player/axe/land.webp": {
+    "name": "land",
+    "sheet": "sprites/player/axe/land.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.24,
+    "fps": 20.833333333333336,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1925,
+      381
+    ],
+    "trim": {
+      "x": 128,
+      "y": 221,
+      "w": 385,
+      "h": 381
+    }
+  },
+  "res://assets/sprites/player/axe/drop_through.webp": {
+    "name": "drop_through",
+    "sheet": "sprites/player/axe/drop_through.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.22,
+    "fps": 22.727272727272727,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1565,
+      362
+    ],
+    "trim": {
+      "x": 164,
+      "y": 240,
+      "w": 313,
+      "h": 362
+    }
+  },
+  "res://assets/sprites/player/axe/hurt.webp": {
+    "name": "hurt",
+    "sheet": "sprites/player/axe/hurt.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.32,
+    "fps": 15.625,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1580,
+      378
+    ],
+    "trim": {
+      "x": 162,
+      "y": 224,
+      "w": 316,
+      "h": 378
+    }
+  },
+  "res://assets/sprites/player/axe/death.webp": {
+    "name": "death",
+    "sheet": "sprites/player/axe/death.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 0.6,
+    "fps": 13.333333333333334,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      3032,
+      362
+    ],
+    "trim": {
+      "x": 130,
+      "y": 240,
+      "w": 379,
+      "h": 362
+    }
+  },
+  "res://assets/sprites/player/axe/attack_1.webp": {
+    "name": "attack_1",
+    "sheet": "sprites/player/axe/attack_1.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 0.33,
+    "fps": 24.242424242424242,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      3640,
+      376
+    ],
+    "trim": {
+      "x": 92,
+      "y": 226,
+      "w": 455,
+      "h": 376
+    }
+  },
+  "res://assets/sprites/player/axe/attack_2.webp": {
+    "name": "attack_2",
+    "sheet": "sprites/player/axe/attack_2.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 0.33,
+    "fps": 24.242424242424242,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      2976,
+      388
+    ],
+    "trim": {
+      "x": 134,
+      "y": 214,
+      "w": 372,
+      "h": 388
+    }
+  },
+  "res://assets/sprites/player/axe/attack_3.webp": {
+    "name": "attack_3",
+    "sheet": "sprites/player/axe/attack_3.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 10,
+    "rows": 1,
+    "frames": 10,
+    "duration_seconds": 0.4,
+    "fps": 25.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      3560,
+      398
+    ],
+    "trim": {
+      "x": 142,
+      "y": 204,
+      "w": 356,
+      "h": 398
+    }
+  },
+  "res://assets/sprites/player/axe/attack_4.webp": {
+    "name": "attack_4",
+    "sheet": "sprites/player/axe/attack_4.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 10,
+    "rows": 1,
+    "frames": 10,
+    "duration_seconds": 0.56,
+    "fps": 17.857142857142854,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      5300,
+      376
+    ],
+    "frame_boundaries_seconds": [
+      0,
+      0.056,
+      0.112,
+      0.168,
+      0.224,
+      0.28,
+      0.34,
+      0.396,
+      0.452,
+      0.508,
+      0.56
+    ],
+    "trim": {
+      "x": 55,
+      "y": 226,
+      "w": 530,
+      "h": 376
+    }
+  },
+  "res://assets/sprites/player/axe/run.webp": {
+    "name": "run",
+    "sheet": "sprites/player/axe/run.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 10,
+    "rows": 1,
+    "frames": 10,
+    "duration_seconds": 0.82,
+    "fps": 12.195121951219512,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      3090,
+      324
+    ],
+    "trim": {
+      "x": 166,
+      "y": 278,
+      "w": 309,
+      "h": 324
+    }
+  },
+  "res://assets/sprites/player/axe/roll.webp": {
+    "name": "roll",
+    "sheet": "sprites/player/axe/roll.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 12,
+    "rows": 1,
+    "frames": 12,
+    "duration_seconds": 0.48,
+    "fps": 25.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      4848,
+      367
+    ],
+    "trim": {
+      "x": 118,
+      "y": 235,
+      "w": 404,
+      "h": 367
+    }
+  },
+  "res://assets/props/doors/castle_rear_door_exterior.webp": {
+    "name": "castle_rear_door_exterior",
+    "sheet": "props/doors/castle_rear_door_exterior.webp",
+    "frame_width": 320,
+    "frame_height": 420,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      160,
+      420
+    ],
+    "image_size": [
+      1872,
+      410
+    ],
+    "trim": {
+      "x": 4,
+      "y": 10,
+      "w": 312,
+      "h": 410
+    }
+  },
+  "res://assets/props/doors/castle_interior_door.webp": {
+    "name": "castle_interior_door",
+    "sheet": "props/doors/castle_interior_door.webp",
+    "frame_width": 256,
+    "frame_height": 384,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      128,
+      384
+    ],
+    "image_size": [
+      1488,
+      374
+    ],
+    "trim": {
+      "x": 4,
+      "y": 10,
+      "w": 248,
+      "h": 374
+    }
+  },
+  "res://assets/props/doors/castle_rear_door_interior.webp": {
+    "name": "castle_rear_door_interior",
+    "sheet": "props/doors/castle_rear_door_interior.webp",
+    "frame_width": 320,
+    "frame_height": 420,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      160,
+      420
+    ],
+    "image_size": [
+      1872,
+      410
+    ],
+    "trim": {
+      "x": 4,
+      "y": 10,
+      "w": 312,
+      "h": 410
+    }
+  },
+  "res://assets/props/doors/villa_gate.webp": {
+    "name": "villa_gate",
+    "sheet": "props/doors/villa_gate.webp",
+    "frame_width": 480,
+    "frame_height": 420,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 1.0,
+    "fps": 8.0,
+    "loop": false,
+    "anchor_px": [
+      240,
+      420
+    ],
+    "image_size": [
+      3776,
+      410
+    ],
+    "trim": {
+      "x": 4,
+      "y": 10,
+      "w": 472,
+      "h": 410
+    }
+  },
+  "res://assets/props/doors/villa_inner_door.webp": {
+    "name": "villa_inner_door",
+    "sheet": "props/doors/villa_inner_door.webp",
+    "frame_width": 256,
+    "frame_height": 384,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      128,
+      384
+    ],
+    "image_size": [
+      1488,
+      374
+    ],
+    "trim": {
+      "x": 4,
+      "y": 10,
+      "w": 248,
+      "h": 374
+    }
+  },
+  "res://assets/props/doors/castle_front_gate_locked.webp": {
+    "name": "castle_front_gate_locked",
+    "sheet": "props/doors/castle_front_gate_locked.webp",
+    "frame_width": 320,
+    "frame_height": 420,
+    "columns": 1,
+    "rows": 1,
+    "frames": 1,
+    "duration_seconds": 0.6,
+    "fps": 1.6666666666666667,
+    "loop": false,
+    "anchor_px": [
+      160,
+      420
+    ],
+    "image_size": [
+      312,
+      410
+    ],
+    "trim": {
+      "x": 4,
+      "y": 10,
+      "w": 312,
+      "h": 410
+    }
+  },
+  "res://assets/props/doors/castle_front_door_interior.webp": {
+    "name": "castle_front_door_interior",
+    "sheet": "props/doors/castle_front_door_interior.webp",
+    "frame_width": 320,
+    "frame_height": 420,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      160,
+      420
+    ],
+    "image_size": [
+      1896,
+      379
+    ],
+    "trim": {
+      "x": 2,
+      "y": 41,
+      "w": 316,
+      "h": 379
+    }
+  },
+  "res://assets/props/doors/castle_front_door_exterior.webp": {
+    "name": "castle_front_door_exterior",
+    "sheet": "props/doors/castle_front_door_exterior.webp",
+    "frame_width": 360,
+    "frame_height": 460,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      180,
+      460
+    ],
+    "image_size": [
+      1992,
+      458
+    ],
+    "trim": {
+      "x": 14,
+      "y": 2,
+      "w": 332,
+      "h": 458
+    }
+  },
+  "res://assets/props/doors/downtown_passage_door.webp": {
+    "name": "downtown_passage_door",
+    "sheet": "props/doors/downtown_passage_door.webp",
+    "frame_width": 320,
+    "frame_height": 460,
+    "columns": 1,
+    "rows": 1,
+    "frames": 1,
+    "duration_seconds": 0.6,
+    "fps": 1.6666666666666667,
+    "loop": false,
+    "anchor_px": [
+      160,
+      460
+    ],
+    "image_size": [
+      316,
+      439
+    ],
+    "trim": {
+      "x": 2,
+      "y": 21,
+      "w": 316,
+      "h": 439
+    }
+  },
+  "res://assets/props/doors/castle_great_gate.webp": {
+    "name": "castle_great_gate",
+    "sheet": "props/doors/castle_great_gate.webp",
+    "frame_width": 640,
+    "frame_height": 520,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 1.2,
+    "fps": 6.666666666666667,
+    "loop": false,
+    "anchor_px": [
+      320,
+      520
+    ],
+    "image_size": [
+      4608,
+      518
+    ],
+    "trim": {
+      "x": 32,
+      "y": 2,
+      "w": 576,
+      "h": 518
+    }
+  },
+  "res://assets/props/doors/villa_back_door.webp": {
+    "name": "villa_back_door",
+    "sheet": "props/doors/villa_back_door.webp",
+    "frame_width": 320,
+    "frame_height": 420,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      160,
+      420
+    ],
+    "image_size": [
+      1896,
+      410
+    ],
+    "trim": {
+      "x": 2,
+      "y": 10,
+      "w": 316,
+      "h": 410
+    }
+  },
+  "res://assets/props/doors/passage_door.webp": {
+    "name": "passage_door",
+    "sheet": "props/doors/passage_door.webp",
+    "frame_width": 256,
+    "frame_height": 384,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      128,
+      380
+    ],
+    "image_size": [
+      1512,
+      358
+    ],
+    "trim": {
+      "x": 2,
+      "y": 24,
+      "w": 252,
+      "h": 358
+    }
+  },
+  "res://assets/props/doors/downtown_passage_door_anim.webp": {
+    "name": "downtown_passage_door_anim",
+    "sheet": "props/doors/downtown_passage_door_anim.webp",
+    "frame_width": 320,
+    "frame_height": 460,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      160,
+      456
+    ],
+    "image_size": [
+      1896,
+      295
+    ],
+    "trim": {
+      "x": 2,
+      "y": 163,
+      "w": 316,
+      "h": 295
+    }
+  },
+  "res://assets/props/doors/nimrod_home_gate.webp": {
+    "name": "nimrod_home_gate",
+    "sheet": "props/doors/nimrod_home_gate.webp",
+    "frame_width": 320,
+    "frame_height": 420,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      160,
+      416
+    ],
+    "image_size": [
+      1896,
+      244
+    ],
+    "trim": {
+      "x": 2,
+      "y": 174,
+      "w": 316,
+      "h": 244
+    }
+  },
+  "res://assets/props/doors/nimrod_home_inner_door.webp": {
+    "name": "nimrod_home_inner_door",
+    "sheet": "props/doors/nimrod_home_inner_door.webp",
+    "frame_width": 256,
+    "frame_height": 384,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      128,
+      384
+    ],
+    "image_size": [
+      1512,
+      210
+    ],
+    "trim": {
+      "x": 2,
+      "y": 174,
+      "w": 252,
+      "h": 210
+    }
+  },
+  "res://assets/props/doors/villa_back_door_exterior.webp": {
+    "name": "villa_back_door_exterior",
+    "sheet": "props/doors/villa_back_door_exterior.webp",
+    "frame_width": 320,
+    "frame_height": 420,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      160,
+      420
+    ],
+    "image_size": [
+      1896,
+      280
+    ],
+    "trim": {
+      "x": 2,
+      "y": 140,
+      "w": 316,
+      "h": 280
+    }
+  },
+  "res://assets/props/doors/cedar_forest_portal.webp": {
+    "name": "cedar_forest_portal",
+    "sheet": "props/doors/cedar_forest_portal.webp",
+    "frame_width": 320,
+    "frame_height": 460,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      160,
+      460
+    ],
+    "image_size": [
+      1896,
+      321
+    ],
+    "trim": {
+      "x": 2,
+      "y": 139,
+      "w": 316,
+      "h": 321
+    }
+  },
+  "res://assets/props/doors/cedar_portal.webp": {
+    "name": "cedar_portal",
+    "sheet": "props/doors/cedar_portal.webp",
+    "frame_width": 256,
+    "frame_height": 384,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      128,
+      384
+    ],
+    "image_size": [
+      1512,
+      274
+    ],
+    "trim": {
+      "x": 2,
+      "y": 110,
+      "w": 252,
+      "h": 274
+    }
+  },
+  "res://assets/sprites/enemies/boar_charger/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/enemies/boar_charger/idle.webp",
+    "frame_width": 768,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 1.0,
+    "fps": 6.0,
+    "loop": true,
+    "anchor_px": [
+      384,
+      600
+    ],
+    "image_size": [
+      2622,
+      328
+    ],
+    "trim": {
+      "x": 167,
+      "y": 274,
+      "w": 437,
+      "h": 328
+    }
+  },
+  "res://assets/sprites/enemies/boar_charger/walk.webp": {
+    "name": "walk",
+    "sheet": "sprites/enemies/boar_charger/walk.webp",
+    "frame_width": 768,
+    "frame_height": 640,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 0.9,
+    "fps": 8.88888888888889,
+    "loop": true,
+    "anchor_px": [
+      384,
+      600
+    ],
+    "image_size": [
+      3456,
+      326
+    ],
+    "qa": {
+      "movement": true
+    },
+    "trim": {
+      "x": 167,
+      "y": 276,
+      "w": 432,
+      "h": 326
+    }
+  },
+  "res://assets/sprites/enemies/boar_charger/telegraph.webp": {
+    "name": "telegraph",
+    "sheet": "sprites/enemies/boar_charger/telegraph.webp",
+    "frame_width": 768,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.5,
+    "fps": 8.0,
+    "loop": false,
+    "anchor_px": [
+      384,
+      600
+    ],
+    "image_size": [
+      2284,
+      320
+    ],
+    "trim": {
+      "x": 87,
+      "y": 282,
+      "w": 571,
+      "h": 320
+    }
+  },
+  "res://assets/sprites/enemies/boar_charger/charge.webp": {
+    "name": "charge",
+    "sheet": "sprites/enemies/boar_charger/charge.webp",
+    "frame_width": 768,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.3,
+    "fps": 13.333333333333334,
+    "loop": true,
+    "anchor_px": [
+      384,
+      600
+    ],
+    "image_size": [
+      2144,
+      321
+    ],
+    "qa": {
+      "movement": true
+    },
+    "trim": {
+      "x": 102,
+      "y": 281,
+      "w": 536,
+      "h": 321
+    }
+  },
+  "res://assets/sprites/enemies/boar_charger/crash_stun.webp": {
+    "name": "crash_stun",
+    "sheet": "sprites/enemies/boar_charger/crash_stun.webp",
+    "frame_width": 768,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.8,
+    "fps": 5.0,
+    "loop": false,
+    "anchor_px": [
+      384,
+      600
+    ],
+    "image_size": [
+      2216,
+      355
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 98,
+      "y": 247,
+      "w": 554,
+      "h": 355
+    }
+  },
+  "res://assets/sprites/enemies/boar_charger/recovery.webp": {
+    "name": "recovery",
+    "sheet": "sprites/enemies/boar_charger/recovery.webp",
+    "frame_width": 768,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.6,
+    "fps": 6.666666666666667,
+    "loop": false,
+    "anchor_px": [
+      384,
+      600
+    ],
+    "image_size": [
+      2132,
+      352
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 115,
+      "y": 250,
+      "w": 533,
+      "h": 352
+    }
+  },
+  "res://assets/sprites/enemies/boar_charger/turn.webp": {
+    "name": "turn",
+    "sheet": "sprites/enemies/boar_charger/turn.webp",
+    "frame_width": 768,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.45,
+    "fps": 8.88888888888889,
+    "loop": false,
+    "anchor_px": [
+      384,
+      600
+    ],
+    "image_size": [
+      1912,
+      326
+    ],
+    "trim": {
+      "x": 140,
+      "y": 276,
+      "w": 478,
+      "h": 326
+    }
+  },
+  "res://assets/sprites/enemies/boar_charger/hurt.webp": {
+    "name": "hurt",
+    "sheet": "sprites/enemies/boar_charger/hurt.webp",
+    "frame_width": 768,
+    "frame_height": 640,
+    "columns": 2,
+    "rows": 1,
+    "frames": 2,
+    "duration_seconds": 0.2,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      384,
+      600
+    ],
+    "image_size": [
+      878,
+      337
+    ],
+    "trim": {
+      "x": 158,
+      "y": 265,
+      "w": 439,
+      "h": 337
+    }
+  },
+  "res://assets/sprites/enemies/boar_charger/death.webp": {
+    "name": "death",
+    "sheet": "sprites/enemies/boar_charger/death.webp",
+    "frame_width": 768,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.8,
+    "fps": 7.5,
+    "loop": false,
+    "anchor_px": [
+      384,
+      600
+    ],
+    "image_size": [
+      3246,
+      392
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 109,
+      "y": 210,
+      "w": 541,
+      "h": 392
+    }
+  },
+  "res://assets/sprites/enemies/cedar_archer/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/enemies/cedar_archer/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 1.0,
+    "fps": 6.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1410,
+      368
+    ],
+    "trim": {
+      "x": 243,
+      "y": 234,
+      "w": 235,
+      "h": 368
+    }
+  },
+  "res://assets/sprites/enemies/cedar_archer/walk.webp": {
+    "name": "walk",
+    "sheet": "sprites/enemies/cedar_archer/walk.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 0.9,
+    "fps": 8.88888888888889,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1992,
+      375
+    ],
+    "qa": {
+      "movement": true
+    },
+    "trim": {
+      "x": 215,
+      "y": 227,
+      "w": 249,
+      "h": 375
+    }
+  },
+  "res://assets/sprites/enemies/cedar_archer/windup.webp": {
+    "name": "windup",
+    "sheet": "sprites/enemies/cedar_archer/windup.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.5,
+    "fps": 8.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1192,
+      390
+    ],
+    "trim": {
+      "x": 214,
+      "y": 212,
+      "w": 298,
+      "h": 390
+    }
+  },
+  "res://assets/sprites/enemies/cedar_archer/shoot.webp": {
+    "name": "shoot",
+    "sheet": "sprites/enemies/cedar_archer/shoot.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.2,
+    "fps": 15.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1035,
+      376
+    ],
+    "trim": {
+      "x": 190,
+      "y": 226,
+      "w": 345,
+      "h": 376
+    }
+  },
+  "res://assets/sprites/enemies/cedar_archer/recovery.webp": {
+    "name": "recovery",
+    "sheet": "sprites/enemies/cedar_archer/recovery.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.4,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1256,
+      368
+    ],
+    "trim": {
+      "x": 213,
+      "y": 234,
+      "w": 314,
+      "h": 368
+    }
+  },
+  "res://assets/sprites/enemies/cedar_archer/hop_back.webp": {
+    "name": "hop_back",
+    "sheet": "sprites/enemies/cedar_archer/hop_back.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.4,
+    "fps": 12.5,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1565,
+      399
+    ],
+    "qa": {
+      "movement": true
+    },
+    "trim": {
+      "x": 192,
+      "y": 203,
+      "w": 313,
+      "h": 399
+    }
+  },
+  "res://assets/sprites/enemies/cedar_archer/turn.webp": {
+    "name": "turn",
+    "sheet": "sprites/enemies/cedar_archer/turn.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.2,
+    "fps": 20.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1008,
+      368
+    ],
+    "trim": {
+      "x": 222,
+      "y": 234,
+      "w": 252,
+      "h": 368
+    }
+  },
+  "res://assets/sprites/enemies/cedar_archer/hurt.webp": {
+    "name": "hurt",
+    "sheet": "sprites/enemies/cedar_archer/hurt.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 2,
+    "rows": 1,
+    "frames": 2,
+    "duration_seconds": 0.2,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      772,
+      391
+    ],
+    "trim": {
+      "x": 163,
+      "y": 211,
+      "w": 386,
+      "h": 391
+    }
+  },
+  "res://assets/sprites/enemies/cedar_archer/death.webp": {
+    "name": "death",
+    "sheet": "sprites/enemies/cedar_archer/death.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.7,
+    "fps": 8.571428571428571,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1818,
+      449
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 201,
+      "y": 153,
+      "w": 303,
+      "h": 449
+    }
+  },
+  "res://assets/sprites/enemies/cedar_colossus/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/enemies/cedar_colossus/idle.webp",
+    "frame_width": 768,
+    "frame_height": 768,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 1.4,
+    "fps": 4.285714285714286,
+    "loop": true,
+    "anchor_px": [
+      384,
+      720
+    ],
+    "image_size": [
+      1776,
+      585
+    ],
+    "trim": {
+      "x": 250,
+      "y": 137,
+      "w": 296,
+      "h": 585
+    }
+  },
+  "res://assets/sprites/enemies/cedar_colossus/walk.webp": {
+    "name": "walk",
+    "sheet": "sprites/enemies/cedar_colossus/walk.webp",
+    "frame_width": 768,
+    "frame_height": 768,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 1.4,
+    "fps": 5.714285714285714,
+    "loop": true,
+    "anchor_px": [
+      384,
+      720
+    ],
+    "image_size": [
+      4896,
+      594
+    ],
+    "qa": {
+      "movement": true
+    },
+    "trim": {
+      "x": 62,
+      "y": 128,
+      "w": 612,
+      "h": 594
+    }
+  },
+  "res://assets/sprites/enemies/cedar_colossus/slam_windup.webp": {
+    "name": "slam_windup",
+    "sheet": "sprites/enemies/cedar_colossus/slam_windup.webp",
+    "frame_width": 768,
+    "frame_height": 768,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 1.0,
+    "fps": 6.0,
+    "loop": false,
+    "anchor_px": [
+      384,
+      720
+    ],
+    "image_size": [
+      4554,
+      675
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 7,
+      "y": 47,
+      "w": 759,
+      "h": 675
+    }
+  },
+  "res://assets/sprites/enemies/cedar_colossus/slam.webp": {
+    "name": "slam",
+    "sheet": "sprites/enemies/cedar_colossus/slam.webp",
+    "frame_width": 768,
+    "frame_height": 768,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.2,
+    "fps": 15.0,
+    "loop": false,
+    "anchor_px": [
+      384,
+      720
+    ],
+    "image_size": [
+      1224,
+      658
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 191,
+      "y": 64,
+      "w": 408,
+      "h": 658
+    }
+  },
+  "res://assets/sprites/enemies/cedar_colossus/slam_recovery.webp": {
+    "name": "slam_recovery",
+    "sheet": "sprites/enemies/cedar_colossus/slam_recovery.webp",
+    "frame_width": 768,
+    "frame_height": 768,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 1.2,
+    "fps": 4.166666666666667,
+    "loop": false,
+    "anchor_px": [
+      384,
+      720
+    ],
+    "image_size": [
+      2640,
+      695
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 119,
+      "y": 27,
+      "w": 528,
+      "h": 695
+    }
+  },
+  "res://assets/sprites/enemies/cedar_colossus/sweep_windup.webp": {
+    "name": "sweep_windup",
+    "sheet": "sprites/enemies/cedar_colossus/sweep_windup.webp",
+    "frame_width": 768,
+    "frame_height": 768,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.7,
+    "fps": 7.142857142857143,
+    "loop": false,
+    "anchor_px": [
+      384,
+      720
+    ],
+    "image_size": [
+      2875,
+      720
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 91,
+      "y": 2,
+      "w": 575,
+      "h": 720
+    }
+  },
+  "res://assets/sprites/enemies/cedar_colossus/sweep.webp": {
+    "name": "sweep",
+    "sheet": "sprites/enemies/cedar_colossus/sweep.webp",
+    "frame_width": 768,
+    "frame_height": 768,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.2,
+    "fps": 15.0,
+    "loop": false,
+    "anchor_px": [
+      384,
+      720
+    ],
+    "image_size": [
+      1644,
+      644
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 174,
+      "y": 78,
+      "w": 548,
+      "h": 644
+    }
+  },
+  "res://assets/sprites/enemies/cedar_colossus/sweep_recovery.webp": {
+    "name": "sweep_recovery",
+    "sheet": "sprites/enemies/cedar_colossus/sweep_recovery.webp",
+    "frame_width": 768,
+    "frame_height": 768,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.9,
+    "fps": 5.555555555555555,
+    "loop": false,
+    "anchor_px": [
+      384,
+      720
+    ],
+    "image_size": [
+      2790,
+      604
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 149,
+      "y": 118,
+      "w": 558,
+      "h": 604
+    }
+  },
+  "res://assets/sprites/enemies/cedar_colossus/rear_poke.webp": {
+    "name": "rear_poke",
+    "sheet": "sprites/enemies/cedar_colossus/rear_poke.webp",
+    "frame_width": 768,
+    "frame_height": 768,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.4,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      384,
+      720
+    ],
+    "image_size": [
+      2580,
+      705
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 121,
+      "y": 17,
+      "w": 645,
+      "h": 705
+    }
+  },
+  "res://assets/sprites/enemies/cedar_colossus/turn.webp": {
+    "name": "turn",
+    "sheet": "sprites/enemies/cedar_colossus/turn.webp",
+    "frame_width": 768,
+    "frame_height": 768,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      384,
+      720
+    ],
+    "image_size": [
+      2046,
+      586
+    ],
+    "trim": {
+      "x": 224,
+      "y": 136,
+      "w": 341,
+      "h": 586
+    }
+  },
+  "res://assets/sprites/enemies/cedar_colossus/hurt.webp": {
+    "name": "hurt",
+    "sheet": "sprites/enemies/cedar_colossus/hurt.webp",
+    "frame_width": 768,
+    "frame_height": 768,
+    "columns": 2,
+    "rows": 1,
+    "frames": 2,
+    "duration_seconds": 0.2,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      384,
+      720
+    ],
+    "image_size": [
+      1324,
+      628
+    ],
+    "trim": {
+      "x": 45,
+      "y": 94,
+      "w": 662,
+      "h": 628
+    }
+  },
+  "res://assets/sprites/enemies/cedar_colossus/death.webp": {
+    "name": "death",
+    "sheet": "sprites/enemies/cedar_colossus/death.webp",
+    "frame_width": 768,
+    "frame_height": 768,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 1.2,
+    "fps": 6.666666666666667,
+    "loop": false,
+    "anchor_px": [
+      384,
+      720
+    ],
+    "image_size": [
+      3000,
+      698
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 206,
+      "y": 24,
+      "w": 375,
+      "h": 698
+    }
+  },
+  "res://assets/sprites/enemies/cedar_demon/perch.webp": {
+    "name": "perch",
+    "sheet": "sprites/enemies/cedar_demon/perch.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 1.0,
+    "fps": 4.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1556,
+      456
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 160,
+      "y": 146,
+      "w": 389,
+      "h": 456
+    }
+  },
+  "res://assets/sprites/enemies/cedar_demon/tell.webp": {
+    "name": "tell",
+    "sheet": "sprites/enemies/cedar_demon/tell.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.2,
+    "fps": 15.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1023,
+      431
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 155,
+      "y": 171,
+      "w": 341,
+      "h": 431
+    }
+  },
+  "res://assets/sprites/enemies/cedar_demon/fall.webp": {
+    "name": "fall",
+    "sheet": "sprites/enemies/cedar_demon/fall.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.25,
+    "fps": 12.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1389,
+      496
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained",
+      "movement": true
+    },
+    "trim": {
+      "x": 114,
+      "y": 106,
+      "w": 463,
+      "h": 496
+    }
+  },
+  "res://assets/sprites/enemies/cedar_demon/land_stab.webp": {
+    "name": "land_stab",
+    "sheet": "sprites/enemies/cedar_demon/land_stab.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.3,
+    "fps": 13.333333333333334,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1656,
+      483
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 122,
+      "y": 119,
+      "w": 414,
+      "h": 483
+    }
+  },
+  "res://assets/sprites/enemies/cedar_demon/claw_windup.webp": {
+    "name": "claw_windup",
+    "sheet": "sprites/enemies/cedar_demon/claw_windup.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.25,
+    "fps": 16.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1660,
+      432
+    ],
+    "trim": {
+      "x": 128,
+      "y": 170,
+      "w": 415,
+      "h": 432
+    }
+  },
+  "res://assets/sprites/enemies/cedar_demon/claws.webp": {
+    "name": "claws",
+    "sheet": "sprites/enemies/cedar_demon/claws.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      2352,
+      434
+    ],
+    "trim": {
+      "x": 138,
+      "y": 168,
+      "w": 392,
+      "h": 434
+    }
+  },
+  "res://assets/sprites/enemies/cedar_demon/recovery.webp": {
+    "name": "recovery",
+    "sheet": "sprites/enemies/cedar_demon/recovery.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.8,
+    "fps": 5.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1860,
+      438
+    ],
+    "trim": {
+      "x": 125,
+      "y": 164,
+      "w": 465,
+      "h": 438
+    }
+  },
+  "res://assets/sprites/enemies/cedar_demon/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/enemies/cedar_demon/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 1.0,
+    "fps": 6.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1206,
+      415
+    ],
+    "trim": {
+      "x": 248,
+      "y": 187,
+      "w": 201,
+      "h": 415
+    }
+  },
+  "res://assets/sprites/enemies/cedar_demon/walk.webp": {
+    "name": "walk",
+    "sheet": "sprites/enemies/cedar_demon/walk.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 0.8,
+    "fps": 10.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1904,
+      414
+    ],
+    "qa": {
+      "movement": true
+    },
+    "trim": {
+      "x": 210,
+      "y": 188,
+      "w": 238,
+      "h": 414
+    }
+  },
+  "res://assets/sprites/enemies/cedar_demon/turn.webp": {
+    "name": "turn",
+    "sheet": "sprites/enemies/cedar_demon/turn.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.25,
+    "fps": 16.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1732,
+      416
+    ],
+    "trim": {
+      "x": 130,
+      "y": 186,
+      "w": 433,
+      "h": 416
+    }
+  },
+  "res://assets/sprites/enemies/cedar_demon/hurt.webp": {
+    "name": "hurt",
+    "sheet": "sprites/enemies/cedar_demon/hurt.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 2,
+    "rows": 1,
+    "frames": 2,
+    "duration_seconds": 0.2,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      784,
+      425
+    ],
+    "trim": {
+      "x": 127,
+      "y": 177,
+      "w": 392,
+      "h": 425
+    }
+  },
+  "res://assets/sprites/enemies/cedar_demon/death.webp": {
+    "name": "death",
+    "sheet": "sprites/enemies/cedar_demon/death.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.7,
+    "fps": 8.571428571428571,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      2454,
+      446
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 144,
+      "y": 156,
+      "w": 409,
+      "h": 446
+    }
+  },
+  "res://assets/sprites/enemies/cedar_sentinel/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/enemies/cedar_sentinel/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 1.0,
+    "fps": 6.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      828,
+      369
+    ],
+    "trim": {
+      "x": 254,
+      "y": 233,
+      "w": 138,
+      "h": 369
+    }
+  },
+  "res://assets/sprites/enemies/cedar_sentinel/walk.webp": {
+    "name": "walk",
+    "sheet": "sprites/enemies/cedar_sentinel/walk.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 0.9,
+    "fps": 8.88888888888889,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1552,
+      372
+    ],
+    "qa": {
+      "movement": true
+    },
+    "trim": {
+      "x": 218,
+      "y": 230,
+      "w": 194,
+      "h": 372
+    }
+  },
+  "res://assets/sprites/enemies/cedar_sentinel/windup.webp": {
+    "name": "windup",
+    "sheet": "sprites/enemies/cedar_sentinel/windup.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.4,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1960,
+      436
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 131,
+      "y": 166,
+      "w": 490,
+      "h": 436
+    }
+  },
+  "res://assets/sprites/enemies/cedar_sentinel/thrust.webp": {
+    "name": "thrust",
+    "sheet": "sprites/enemies/cedar_sentinel/thrust.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.2,
+    "fps": 15.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1419,
+      369
+    ],
+    "trim": {
+      "x": 104,
+      "y": 233,
+      "w": 473,
+      "h": 369
+    }
+  },
+  "res://assets/sprites/enemies/cedar_sentinel/slash.webp": {
+    "name": "slash",
+    "sheet": "sprites/enemies/cedar_sentinel/slash.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.2,
+    "fps": 15.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1548,
+      406
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 107,
+      "y": 196,
+      "w": 516,
+      "h": 406
+    }
+  },
+  "res://assets/sprites/enemies/cedar_sentinel/attack_recovery.webp": {
+    "name": "attack_recovery",
+    "sheet": "sprites/enemies/cedar_sentinel/attack_recovery.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.7,
+    "fps": 5.714285714285714,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1892,
+      399
+    ],
+    "trim": {
+      "x": 126,
+      "y": 203,
+      "w": 473,
+      "h": 399
+    }
+  },
+  "res://assets/sprites/enemies/cedar_sentinel/shield_up.webp": {
+    "name": "shield_up",
+    "sheet": "sprites/enemies/cedar_sentinel/shield_up.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.2,
+    "fps": 15.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1494,
+      368
+    ],
+    "trim": {
+      "x": 90,
+      "y": 234,
+      "w": 498,
+      "h": 368
+    }
+  },
+  "res://assets/sprites/enemies/cedar_sentinel/shield_hold.webp": {
+    "name": "shield_hold",
+    "sheet": "sprites/enemies/cedar_sentinel/shield_hold.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 2,
+    "rows": 1,
+    "frames": 2,
+    "duration_seconds": 0.2,
+    "fps": 10.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      876,
+      373
+    ],
+    "trim": {
+      "x": 121,
+      "y": 229,
+      "w": 438,
+      "h": 373
+    }
+  },
+  "res://assets/sprites/enemies/cedar_sentinel/shield_break_stun.webp": {
+    "name": "shield_break_stun",
+    "sheet": "sprites/enemies/cedar_sentinel/shield_break_stun.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 1.0,
+    "fps": 4.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1232,
+      368
+    ],
+    "trim": {
+      "x": 173,
+      "y": 234,
+      "w": 308,
+      "h": 368
+    }
+  },
+  "res://assets/sprites/enemies/cedar_sentinel/turn.webp": {
+    "name": "turn",
+    "sheet": "sprites/enemies/cedar_sentinel/turn.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.3,
+    "fps": 13.333333333333334,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1704,
+      376
+    ],
+    "trim": {
+      "x": 138,
+      "y": 226,
+      "w": 426,
+      "h": 376
+    }
+  },
+  "res://assets/sprites/enemies/cedar_sentinel/hurt.webp": {
+    "name": "hurt",
+    "sheet": "sprites/enemies/cedar_sentinel/hurt.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 2,
+    "rows": 1,
+    "frames": 2,
+    "duration_seconds": 0.2,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      736,
+      403
+    ],
+    "trim": {
+      "x": 96,
+      "y": 199,
+      "w": 368,
+      "h": 403
+    }
+  },
+  "res://assets/sprites/enemies/cedar_sentinel/death.webp": {
+    "name": "death",
+    "sheet": "sprites/enemies/cedar_sentinel/death.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.8,
+    "fps": 7.5,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1524,
+      429
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 185,
+      "y": 173,
+      "w": 254,
+      "h": 429
+    }
+  },
+  "res://assets/sprites/enemies/cedar_wisp/float.webp": {
+    "name": "float",
+    "sheet": "sprites/enemies/cedar_wisp/float.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 1.0,
+    "fps": 6.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      912,
+      316
+    ],
+    "trim": {
+      "x": 232,
+      "y": 189,
+      "w": 152,
+      "h": 316
+    }
+  },
+  "res://assets/sprites/enemies/cedar_wisp/contact.webp": {
+    "name": "contact",
+    "sheet": "sprites/enemies/cedar_wisp/contact.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.2,
+    "fps": 15.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      681,
+      315
+    ],
+    "trim": {
+      "x": 235,
+      "y": 189,
+      "w": 227,
+      "h": 315
+    }
+  },
+  "res://assets/sprites/enemies/cedar_wisp/fuse.webp": {
+    "name": "fuse",
+    "sheet": "sprites/enemies/cedar_wisp/fuse.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.5,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      1560,
+      328
+    ],
+    "trim": {
+      "x": 151,
+      "y": 181,
+      "w": 312,
+      "h": 328
+    }
+  },
+  "res://assets/sprites/enemies/cedar_wisp/explode.webp": {
+    "name": "explode",
+    "sheet": "sprites/enemies/cedar_wisp/explode.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.3,
+    "fps": 20.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      1050,
+      339
+    ],
+    "trim": {
+      "x": 235,
+      "y": 166,
+      "w": 175,
+      "h": 339
+    }
+  },
+  "res://assets/sprites/enemies/cedar_wisp/turn.webp": {
+    "name": "turn",
+    "sheet": "sprites/enemies/cedar_wisp/turn.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.15,
+    "fps": 26.666666666666668,
+    "loop": false,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      552,
+      315
+    ],
+    "trim": {
+      "x": 250,
+      "y": 188,
+      "w": 138,
+      "h": 315
+    }
+  },
+  "res://assets/sprites/enemies/cedar_wisp/hurt.webp": {
+    "name": "hurt",
+    "sheet": "sprites/enemies/cedar_wisp/hurt.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 2,
+    "rows": 1,
+    "frames": 2,
+    "duration_seconds": 0.2,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      452,
+      324
+    ],
+    "trim": {
+      "x": 218,
+      "y": 186,
+      "w": 226,
+      "h": 324
+    }
+  },
+  "res://assets/sprites/enemies/chain_beastman/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/enemies/chain_beastman/idle.webp",
+    "frame_width": 896,
+    "frame_height": 768,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 1.2,
+    "fps": 5.0,
+    "loop": true,
+    "anchor_px": [
+      448,
+      720
+    ],
+    "image_size": [
+      2586,
+      604
+    ],
+    "trim": {
+      "x": 217,
+      "y": 118,
+      "w": 431,
+      "h": 604
+    }
+  },
+  "res://assets/sprites/enemies/chain_beastman/walk.webp": {
+    "name": "walk",
+    "sheet": "sprites/enemies/chain_beastman/walk.webp",
+    "frame_width": 896,
+    "frame_height": 768,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 1.2,
+    "fps": 6.666666666666667,
+    "loop": true,
+    "anchor_px": [
+      448,
+      720
+    ],
+    "image_size": [
+      3016,
+      609
+    ],
+    "qa": {
+      "movement": true
+    },
+    "trim": {
+      "x": 250,
+      "y": 113,
+      "w": 377,
+      "h": 609
+    }
+  },
+  "res://assets/sprites/enemies/chain_beastman/tail_windup.webp": {
+    "name": "tail_windup",
+    "sheet": "sprites/enemies/chain_beastman/tail_windup.webp",
+    "frame_width": 896,
+    "frame_height": 768,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.6,
+    "fps": 8.333333333333334,
+    "loop": false,
+    "anchor_px": [
+      448,
+      720
+    ],
+    "image_size": [
+      2505,
+      613
+    ],
+    "trim": {
+      "x": 169,
+      "y": 109,
+      "w": 501,
+      "h": 613
+    }
+  },
+  "res://assets/sprites/enemies/chain_beastman/tail_sweep.webp": {
+    "name": "tail_sweep",
+    "sheet": "sprites/enemies/chain_beastman/tail_sweep.webp",
+    "frame_width": 896,
+    "frame_height": 768,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.2,
+    "fps": 20.0,
+    "loop": false,
+    "anchor_px": [
+      448,
+      720
+    ],
+    "image_size": [
+      2328,
+      598
+    ],
+    "trim": {
+      "x": 208,
+      "y": 124,
+      "w": 582,
+      "h": 598
+    }
+  },
+  "res://assets/sprites/enemies/chain_beastman/tail_recovery.webp": {
+    "name": "tail_recovery",
+    "sheet": "sprites/enemies/chain_beastman/tail_recovery.webp",
+    "frame_width": 896,
+    "frame_height": 768,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.8,
+    "fps": 6.25,
+    "loop": false,
+    "anchor_px": [
+      448,
+      720
+    ],
+    "image_size": [
+      2580,
+      599
+    ],
+    "trim": {
+      "x": 122,
+      "y": 123,
+      "w": 516,
+      "h": 599
+    }
+  },
+  "res://assets/sprites/enemies/chain_beastman/chain_windup.webp": {
+    "name": "chain_windup",
+    "sheet": "sprites/enemies/chain_beastman/chain_windup.webp",
+    "frame_width": 896,
+    "frame_height": 768,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.4,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      448,
+      720
+    ],
+    "image_size": [
+      2600,
+      615
+    ],
+    "trim": {
+      "x": 163,
+      "y": 107,
+      "w": 650,
+      "h": 615
+    }
+  },
+  "res://assets/sprites/enemies/chain_beastman/chain_throw.webp": {
+    "name": "chain_throw",
+    "sheet": "sprites/enemies/chain_beastman/chain_throw.webp",
+    "frame_width": 896,
+    "frame_height": 768,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.35,
+    "fps": 11.428571428571429,
+    "loop": false,
+    "anchor_px": [
+      448,
+      720
+    ],
+    "image_size": [
+      2944,
+      572
+    ],
+    "trim": {
+      "x": 158,
+      "y": 150,
+      "w": 736,
+      "h": 572
+    }
+  },
+  "res://assets/sprites/enemies/chain_beastman/pull_hold.webp": {
+    "name": "pull_hold",
+    "sheet": "sprites/enemies/chain_beastman/pull_hold.webp",
+    "frame_width": 896,
+    "frame_height": 768,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.35,
+    "fps": 8.571428571428571,
+    "loop": true,
+    "anchor_px": [
+      448,
+      720
+    ],
+    "image_size": [
+      1830,
+      598
+    ],
+    "trim": {
+      "x": 138,
+      "y": 124,
+      "w": 610,
+      "h": 598
+    }
+  },
+  "res://assets/sprites/enemies/chain_beastman/smash_windup.webp": {
+    "name": "smash_windup",
+    "sheet": "sprites/enemies/chain_beastman/smash_windup.webp",
+    "frame_width": 896,
+    "frame_height": 768,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.35,
+    "fps": 11.428571428571429,
+    "loop": false,
+    "anchor_px": [
+      448,
+      720
+    ],
+    "image_size": [
+      2232,
+      670
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 151,
+      "y": 52,
+      "w": 558,
+      "h": 670
+    }
+  },
+  "res://assets/sprites/enemies/chain_beastman/smash.webp": {
+    "name": "smash",
+    "sheet": "sprites/enemies/chain_beastman/smash.webp",
+    "frame_width": 896,
+    "frame_height": 768,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.15,
+    "fps": 20.0,
+    "loop": false,
+    "anchor_px": [
+      448,
+      720
+    ],
+    "image_size": [
+      2151,
+      600
+    ],
+    "trim": {
+      "x": 129,
+      "y": 122,
+      "w": 717,
+      "h": 600
+    }
+  },
+  "res://assets/sprites/enemies/chain_beastman/smash_recovery.webp": {
+    "name": "smash_recovery",
+    "sheet": "sprites/enemies/chain_beastman/smash_recovery.webp",
+    "frame_width": 896,
+    "frame_height": 768,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.9,
+    "fps": 5.555555555555555,
+    "loop": false,
+    "anchor_px": [
+      448,
+      720
+    ],
+    "image_size": [
+      2595,
+      640
+    ],
+    "trim": {
+      "x": 207,
+      "y": 82,
+      "w": 519,
+      "h": 640
+    }
+  },
+  "res://assets/sprites/enemies/chain_beastman/turn.webp": {
+    "name": "turn",
+    "sheet": "sprites/enemies/chain_beastman/turn.webp",
+    "frame_width": 896,
+    "frame_height": 768,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.8,
+    "fps": 7.5,
+    "loop": false,
+    "anchor_px": [
+      448,
+      720
+    ],
+    "image_size": [
+      2334,
+      599
+    ],
+    "trim": {
+      "x": 244,
+      "y": 123,
+      "w": 389,
+      "h": 599
+    }
+  },
+  "res://assets/sprites/enemies/chain_beastman/hurt.webp": {
+    "name": "hurt",
+    "sheet": "sprites/enemies/chain_beastman/hurt.webp",
+    "frame_width": 896,
+    "frame_height": 768,
+    "columns": 2,
+    "rows": 1,
+    "frames": 2,
+    "duration_seconds": 0.2,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      448,
+      720
+    ],
+    "image_size": [
+      1000,
+      610
+    ],
+    "trim": {
+      "x": 194,
+      "y": 112,
+      "w": 500,
+      "h": 610
+    }
+  },
+  "res://assets/sprites/enemies/chain_beastman/death.webp": {
+    "name": "death",
+    "sheet": "sprites/enemies/chain_beastman/death.webp",
+    "frame_width": 896,
+    "frame_height": 768,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 1.0,
+    "fps": 8.0,
+    "loop": false,
+    "anchor_px": [
+      448,
+      720
+    ],
+    "image_size": [
+      3168,
+      710
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 246,
+      "y": 12,
+      "w": 396,
+      "h": 710
+    }
+  },
+  "res://assets/sprites/enemies/corpse_bomber/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/enemies/corpse_bomber/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 1.0,
+    "fps": 6.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      816,
+      302
+    ],
+    "trim": {
+      "x": 257,
+      "y": 300,
+      "w": 136,
+      "h": 302
+    }
+  },
+  "res://assets/sprites/enemies/corpse_bomber/scream.webp": {
+    "name": "scream",
+    "sheet": "sprites/enemies/corpse_bomber/scream.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.4,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1028,
+      314
+    ],
+    "trim": {
+      "x": 189,
+      "y": 288,
+      "w": 257,
+      "h": 314
+    }
+  },
+  "res://assets/sprites/enemies/corpse_bomber/run.webp": {
+    "name": "run",
+    "sheet": "sprites/enemies/corpse_bomber/run.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 0.6,
+    "fps": 13.333333333333334,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1968,
+      301
+    ],
+    "qa": {
+      "movement": true
+    },
+    "trim": {
+      "x": 195,
+      "y": 301,
+      "w": 246,
+      "h": 301
+    }
+  },
+  "res://assets/sprites/enemies/corpse_bomber/fuse.webp": {
+    "name": "fuse",
+    "sheet": "sprites/enemies/corpse_bomber/fuse.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.5,
+    "fps": 12.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1308,
+      343
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 212,
+      "y": 259,
+      "w": 218,
+      "h": 343
+    }
+  },
+  "res://assets/sprites/enemies/corpse_bomber/explode.webp": {
+    "name": "explode",
+    "sheet": "sprites/enemies/corpse_bomber/explode.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.3,
+    "fps": 20.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1320,
+      298
+    ],
+    "trim": {
+      "x": 212,
+      "y": 304,
+      "w": 220,
+      "h": 298
+    }
+  },
+  "res://assets/sprites/enemies/corpse_bomber/turn.webp": {
+    "name": "turn",
+    "sheet": "sprites/enemies/corpse_bomber/turn.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.3,
+    "fps": 13.333333333333334,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      852,
+      298
+    ],
+    "trim": {
+      "x": 216,
+      "y": 304,
+      "w": 213,
+      "h": 298
+    }
+  },
+  "res://assets/sprites/enemies/corpse_bomber/hurt.webp": {
+    "name": "hurt",
+    "sheet": "sprites/enemies/corpse_bomber/hurt.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 2,
+    "rows": 1,
+    "frames": 2,
+    "duration_seconds": 0.2,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      480,
+      303
+    ],
+    "trim": {
+      "x": 205,
+      "y": 299,
+      "w": 240,
+      "h": 303
+    }
+  },
+  "res://assets/sprites/enemies/explosive_spitter/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/enemies/explosive_spitter/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.9,
+    "fps": 6.666666666666666,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      2058,
+      294
+    ],
+    "trim": {
+      "x": 140,
+      "y": 308,
+      "w": 343,
+      "h": 294
+    }
+  },
+  "res://assets/sprites/enemies/explosive_spitter/walk.webp": {
+    "name": "walk",
+    "sheet": "sprites/enemies/explosive_spitter/walk.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 0.9,
+    "fps": 8.88888888888889,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      3288,
+      294
+    ],
+    "qa": {
+      "movement": true
+    },
+    "trim": {
+      "x": 74,
+      "y": 308,
+      "w": 411,
+      "h": 294
+    }
+  },
+  "res://assets/sprites/enemies/explosive_spitter/windup.webp": {
+    "name": "windup",
+    "sheet": "sprites/enemies/explosive_spitter/windup.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.6,
+    "fps": 6.666666666666667,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1968,
+      324
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 55,
+      "y": 278,
+      "w": 492,
+      "h": 324
+    }
+  },
+  "res://assets/sprites/enemies/explosive_spitter/spit.webp": {
+    "name": "spit",
+    "sheet": "sprites/enemies/explosive_spitter/spit.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.2,
+    "fps": 15.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1206,
+      295
+    ],
+    "trim": {
+      "x": 123,
+      "y": 307,
+      "w": 402,
+      "h": 295
+    }
+  },
+  "res://assets/sprites/enemies/explosive_spitter/recovery.webp": {
+    "name": "recovery",
+    "sheet": "sprites/enemies/explosive_spitter/recovery.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.5,
+    "fps": 8.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1508,
+      315
+    ],
+    "trim": {
+      "x": 120,
+      "y": 287,
+      "w": 377,
+      "h": 315
+    }
+  },
+  "res://assets/sprites/enemies/explosive_spitter/turn.webp": {
+    "name": "turn",
+    "sheet": "sprites/enemies/explosive_spitter/turn.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.3,
+    "fps": 13.333333333333334,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1480,
+      293
+    ],
+    "trim": {
+      "x": 132,
+      "y": 309,
+      "w": 370,
+      "h": 293
+    }
+  },
+  "res://assets/sprites/enemies/explosive_spitter/hurt.webp": {
+    "name": "hurt",
+    "sheet": "sprites/enemies/explosive_spitter/hurt.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 2,
+    "rows": 1,
+    "frames": 2,
+    "duration_seconds": 0.2,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      772,
+      292
+    ],
+    "trim": {
+      "x": 133,
+      "y": 310,
+      "w": 386,
+      "h": 292
+    }
+  },
+  "res://assets/sprites/enemies/explosive_spitter/death.webp": {
+    "name": "death",
+    "sheet": "sprites/enemies/explosive_spitter/death.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.7,
+    "fps": 8.571428571428571,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1890,
+      312
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 157,
+      "y": 290,
+      "w": 315,
+      "h": 312
+    }
+  },
+  "res://assets/sprites/enemies/gas_sac/float.webp": {
+    "name": "float",
+    "sheet": "sprites/enemies/gas_sac/float.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.9,
+    "fps": 6.666666666666666,
+    "loop": true,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      1434,
+      313
+    ],
+    "trim": {
+      "x": 186,
+      "y": 199,
+      "w": 239,
+      "h": 313
+    }
+  },
+  "res://assets/sprites/enemies/gas_sac/bump.webp": {
+    "name": "bump",
+    "sheet": "sprites/enemies/gas_sac/bump.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.2,
+    "fps": 15.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      948,
+      330
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 156,
+      "y": 192,
+      "w": 316,
+      "h": 330
+    }
+  },
+  "res://assets/sprites/enemies/gas_sac/turn.webp": {
+    "name": "turn",
+    "sheet": "sprites/enemies/gas_sac/turn.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.3,
+    "fps": 13.333333333333334,
+    "loop": false,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      936,
+      306
+    ],
+    "trim": {
+      "x": 205,
+      "y": 193,
+      "w": 234,
+      "h": 306
+    }
+  },
+  "res://assets/sprites/enemies/gas_sac/hurt.webp": {
+    "name": "hurt",
+    "sheet": "sprites/enemies/gas_sac/hurt.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 2,
+    "rows": 1,
+    "frames": 2,
+    "duration_seconds": 0.2,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      592,
+      314
+    ],
+    "trim": {
+      "x": 149,
+      "y": 190,
+      "w": 296,
+      "h": 314
+    }
+  },
+  "res://assets/sprites/enemies/gas_sac/death_swell.webp": {
+    "name": "death_swell",
+    "sheet": "sprites/enemies/gas_sac/death_swell.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 1.0,
+    "fps": 6.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      1494,
+      345
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 211,
+      "y": 177,
+      "w": 249,
+      "h": 345
+    }
+  },
+  "res://assets/sprites/enemies/gas_sac/burst.webp": {
+    "name": "burst",
+    "sheet": "sprites/enemies/gas_sac/burst.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.3,
+    "fps": 16.666666666666668,
+    "loop": false,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      1280,
+      323
+    ],
+    "trim": {
+      "x": 205,
+      "y": 192,
+      "w": 256,
+      "h": 323
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/enemies/kala_ushumgal/idle.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 1.6,
+    "fps": 5.0,
+    "loop": true,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      3216,
+      948
+    ],
+    "trim": {
+      "x": 458,
+      "y": 154,
+      "w": 402,
+      "h": 948
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/walk.webp": {
+    "name": "walk",
+    "sheet": "sprites/enemies/kala_ushumgal/walk.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 1.4,
+    "fps": 5.714285714285714,
+    "loop": true,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      7320,
+      961
+    ],
+    "qa": {
+      "movement": true
+    },
+    "trim": {
+      "x": 213,
+      "y": 141,
+      "w": 915,
+      "h": 961
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/whip_windup.webp": {
+    "name": "whip_windup",
+    "sheet": "sprites/enemies/kala_ushumgal/whip_windup.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.8,
+    "fps": 6.25,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      2955,
+      1005
+    ],
+    "trim": {
+      "x": 327,
+      "y": 97,
+      "w": 591,
+      "h": 1005
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/whip_swing.webp": {
+    "name": "whip_swing",
+    "sheet": "sprites/enemies/kala_ushumgal/whip_swing.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.25,
+    "fps": 16.0,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      3476,
+      1015
+    ],
+    "trim": {
+      "x": 222,
+      "y": 87,
+      "w": 869,
+      "h": 1015
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/whip_swing_back.webp": {
+    "name": "whip_swing_back",
+    "sheet": "sprites/enemies/kala_ushumgal/whip_swing_back.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.25,
+    "fps": 16.0,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      2840,
+      955
+    ],
+    "trim": {
+      "x": 255,
+      "y": 147,
+      "w": 710,
+      "h": 955
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/whip_recovery.webp": {
+    "name": "whip_recovery",
+    "sheet": "sprites/enemies/kala_ushumgal/whip_recovery.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 1.0,
+    "fps": 5.0,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      2850,
+      993
+    ],
+    "trim": {
+      "x": 325,
+      "y": 109,
+      "w": 570,
+      "h": 993
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/slam_windup.webp": {
+    "name": "slam_windup",
+    "sheet": "sprites/enemies/kala_ushumgal/slam_windup.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.9,
+    "fps": 5.555555555555555,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      4370,
+      1030
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 233,
+      "y": 72,
+      "w": 874,
+      "h": 1030
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/slam.webp": {
+    "name": "slam",
+    "sheet": "sprites/enemies/kala_ushumgal/slam.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.15,
+    "fps": 20.0,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      3567,
+      1016
+    ],
+    "trim": {
+      "x": 74,
+      "y": 86,
+      "w": 1189,
+      "h": 1016
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/slam_recovery.webp": {
+    "name": "slam_recovery",
+    "sheet": "sprites/enemies/kala_ushumgal/slam_recovery.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 1.2,
+    "fps": 4.166666666666667,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      3310,
+      998
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 310,
+      "y": 104,
+      "w": 662,
+      "h": 998
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/summon.webp": {
+    "name": "summon",
+    "sheet": "sprites/enemies/kala_ushumgal/summon.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 1.8,
+    "fps": 3.333333333333333,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      3846,
+      1070
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 338,
+      "y": 32,
+      "w": 641,
+      "h": 1070
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/turn.webp": {
+    "name": "turn",
+    "sheet": "sprites/enemies/kala_ushumgal/turn.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.7,
+    "fps": 8.571428571428571,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      3396,
+      1018
+    ],
+    "trim": {
+      "x": 357,
+      "y": 84,
+      "w": 566,
+      "h": 1018
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/phase_transition.webp": {
+    "name": "phase_transition",
+    "sheet": "sprites/enemies/kala_ushumgal/phase_transition.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 2.0,
+    "fps": 4.0,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      3880,
+      1098
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 387,
+      "y": 4,
+      "w": 485,
+      "h": 1098
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/roar_windup.webp": {
+    "name": "roar_windup",
+    "sheet": "sprites/enemies/kala_ushumgal/roar_windup.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.8,
+    "fps": 6.25,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      3045,
+      970
+    ],
+    "trim": {
+      "x": 328,
+      "y": 132,
+      "w": 609,
+      "h": 970
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/roar_loop.webp": {
+    "name": "roar_loop",
+    "sheet": "sprites/enemies/kala_ushumgal/roar_loop.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.4,
+    "fps": 10.0,
+    "loop": true,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      2736,
+      951
+    ],
+    "trim": {
+      "x": 293,
+      "y": 151,
+      "w": 684,
+      "h": 951
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/roar_recovery.webp": {
+    "name": "roar_recovery",
+    "sheet": "sprites/enemies/kala_ushumgal/roar_recovery.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 1.3,
+    "fps": 3.846153846153846,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      3385,
+      1024
+    ],
+    "trim": {
+      "x": 309,
+      "y": 78,
+      "w": 677,
+      "h": 1024
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/spines_back.webp": {
+    "name": "spines_back",
+    "sheet": "sprites/enemies/kala_ushumgal/spines_back.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.45,
+    "fps": 8.88888888888889,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      2764,
+      967
+    ],
+    "trim": {
+      "x": 256,
+      "y": 135,
+      "w": 691,
+      "h": 967
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/collapse.webp": {
+    "name": "collapse",
+    "sheet": "sprites/enemies/kala_ushumgal/collapse.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 1.0,
+    "fps": 6.0,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      3720,
+      1100
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 329,
+      "y": 2,
+      "w": 620,
+      "h": 1100
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/final_swing_windup.webp": {
+    "name": "final_swing_windup",
+    "sheet": "sprites/enemies/kala_ushumgal/final_swing_windup.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.8,
+    "fps": 6.25,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      3060,
+      955
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 360,
+      "y": 147,
+      "w": 612,
+      "h": 955
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/final_swing.webp": {
+    "name": "final_swing",
+    "sheet": "sprites/enemies/kala_ushumgal/final_swing.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.2,
+    "fps": 20.0,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      3156,
+      961
+    ],
+    "trim": {
+      "x": 283,
+      "y": 141,
+      "w": 789,
+      "h": 961
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/death.webp": {
+    "name": "death",
+    "sheet": "sprites/enemies/kala_ushumgal/death.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 1.5,
+    "fps": 5.333333333333333,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      4400,
+      1058
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Kneeling collapse lowers the torso by 20%; all frames retain one uniform scale."
+    },
+    "trim": {
+      "x": 365,
+      "y": 44,
+      "w": 550,
+      "h": 1058
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/idle_p2.webp": {
+    "name": "idle_p2",
+    "sheet": "sprites/enemies/kala_ushumgal/idle_p2.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 1.6,
+    "fps": 5.0,
+    "loop": true,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      3848,
+      1094
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 394,
+      "y": 8,
+      "w": 481,
+      "h": 1094
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/walk_p2.webp": {
+    "name": "walk_p2",
+    "sheet": "sprites/enemies/kala_ushumgal/walk_p2.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 1.4,
+    "fps": 5.714285714285714,
+    "loop": true,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      5016,
+      961
+    ],
+    "trim": {
+      "x": 293,
+      "y": 141,
+      "w": 627,
+      "h": 961
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/turn_p2.webp": {
+    "name": "turn_p2",
+    "sheet": "sprites/enemies/kala_ushumgal/turn_p2.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.7,
+    "fps": 8.571428571428571,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      3408,
+      1003
+    ],
+    "trim": {
+      "x": 325,
+      "y": 99,
+      "w": 568,
+      "h": 1003
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/whip_windup_p2.webp": {
+    "name": "whip_windup_p2",
+    "sheet": "sprites/enemies/kala_ushumgal/whip_windup_p2.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.8,
+    "fps": 6.25,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      3740,
+      1035
+    ],
+    "trim": {
+      "x": 294,
+      "y": 67,
+      "w": 748,
+      "h": 1035
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/whip_swing_p2.webp": {
+    "name": "whip_swing_p2",
+    "sheet": "sprites/enemies/kala_ushumgal/whip_swing_p2.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.25,
+    "fps": 16.0,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      3180,
+      995
+    ],
+    "trim": {
+      "x": 247,
+      "y": 107,
+      "w": 795,
+      "h": 995
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/whip_swing_back_p2.webp": {
+    "name": "whip_swing_back_p2",
+    "sheet": "sprites/enemies/kala_ushumgal/whip_swing_back_p2.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.25,
+    "fps": 16.0,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      2740,
+      989
+    ],
+    "trim": {
+      "x": 262,
+      "y": 113,
+      "w": 685,
+      "h": 989
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/whip_recovery_p2.webp": {
+    "name": "whip_recovery_p2",
+    "sheet": "sprites/enemies/kala_ushumgal/whip_recovery_p2.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 1.0,
+    "fps": 5.0,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      3515,
+      950
+    ],
+    "trim": {
+      "x": 302,
+      "y": 152,
+      "w": 703,
+      "h": 950
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/slam_windup_p2.webp": {
+    "name": "slam_windup_p2",
+    "sheet": "sprites/enemies/kala_ushumgal/slam_windup_p2.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.9,
+    "fps": 5.555555555555555,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      3780,
+      1059
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 256,
+      "y": 43,
+      "w": 756,
+      "h": 1059
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/slam_p2.webp": {
+    "name": "slam_p2",
+    "sheet": "sprites/enemies/kala_ushumgal/slam_p2.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.15,
+    "fps": 20.0,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      3768,
+      1083
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 7,
+      "y": 19,
+      "w": 1256,
+      "h": 1083
+    }
+  },
+  "res://assets/sprites/enemies/kala_ushumgal/slam_recovery_p2.webp": {
+    "name": "slam_recovery_p2",
+    "sheet": "sprites/enemies/kala_ushumgal/slam_recovery_p2.webp",
+    "frame_width": 1280,
+    "frame_height": 1152,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 1.2,
+    "fps": 4.166666666666667,
+    "loop": false,
+    "anchor_px": [
+      640,
+      1100
+    ],
+    "image_size": [
+      3875,
+      1011
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 281,
+      "y": 91,
+      "w": 775,
+      "h": 1011
+    }
+  },
+  "res://assets/sprites/enemies/melee_beast/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/enemies/melee_beast/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 1.0,
+    "fps": 6.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      2538,
+      321
+    ],
+    "trim": {
+      "x": 108,
+      "y": 281,
+      "w": 423,
+      "h": 321
+    }
+  },
+  "res://assets/sprites/enemies/melee_beast/walk.webp": {
+    "name": "walk",
+    "sheet": "sprites/enemies/melee_beast/walk.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 0.9,
+    "fps": 8.88888888888889,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      3624,
+      319
+    ],
+    "trim": {
+      "x": 94,
+      "y": 283,
+      "w": 453,
+      "h": 319
+    }
+  },
+  "res://assets/sprites/enemies/melee_beast/windup.webp": {
+    "name": "windup",
+    "sheet": "sprites/enemies/melee_beast/windup.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.45,
+    "fps": 8.88888888888889,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      2044,
+      287
+    ],
+    "trim": {
+      "x": 64,
+      "y": 315,
+      "w": 511,
+      "h": 287
+    }
+  },
+  "res://assets/sprites/enemies/melee_beast/attack.webp": {
+    "name": "attack",
+    "sheet": "sprites/enemies/melee_beast/attack.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.12,
+    "fps": 25.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1515,
+      298
+    ],
+    "trim": {
+      "x": 68,
+      "y": 304,
+      "w": 505,
+      "h": 298
+    }
+  },
+  "res://assets/sprites/enemies/melee_beast/recovery.webp": {
+    "name": "recovery",
+    "sheet": "sprites/enemies/melee_beast/recovery.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.55,
+    "fps": 7.2727272727272725,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      2044,
+      287
+    ],
+    "trim": {
+      "x": 64,
+      "y": 315,
+      "w": 511,
+      "h": 287
+    }
+  },
+  "res://assets/sprites/enemies/melee_beast/turn.webp": {
+    "name": "turn",
+    "sheet": "sprites/enemies/melee_beast/turn.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.45,
+    "fps": 8.88888888888889,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1856,
+      342
+    ],
+    "trim": {
+      "x": 88,
+      "y": 260,
+      "w": 464,
+      "h": 342
+    }
+  },
+  "res://assets/sprites/enemies/melee_beast/hurt.webp": {
+    "name": "hurt",
+    "sheet": "sprites/enemies/melee_beast/hurt.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 2,
+    "rows": 1,
+    "frames": 2,
+    "duration_seconds": 0.2,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      916,
+      423
+    ],
+    "trim": {
+      "x": 91,
+      "y": 179,
+      "w": 458,
+      "h": 423
+    }
+  },
+  "res://assets/sprites/enemies/melee_beast/death.webp": {
+    "name": "death",
+    "sheet": "sprites/enemies/melee_beast/death.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.7,
+    "fps": 8.571428571428571,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      3534,
+      278
+    ],
+    "trim": {
+      "x": 26,
+      "y": 324,
+      "w": 589,
+      "h": 278
+    }
+  },
+  "res://assets/sprites/enemies/ranged_beast/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/enemies/ranged_beast/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 1.0,
+    "fps": 6.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      2472,
+      559
+    ],
+    "trim": {
+      "x": 114,
+      "y": 43,
+      "w": 412,
+      "h": 559
+    }
+  },
+  "res://assets/sprites/enemies/ranged_beast/walk.webp": {
+    "name": "walk",
+    "sheet": "sprites/enemies/ranged_beast/walk.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 1.0,
+    "fps": 8.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      3712,
+      507
+    ],
+    "trim": {
+      "x": 88,
+      "y": 95,
+      "w": 464,
+      "h": 507
+    }
+  },
+  "res://assets/sprites/enemies/ranged_beast/windup.webp": {
+    "name": "windup",
+    "sheet": "sprites/enemies/ranged_beast/windup.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.5,
+    "fps": 8.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      2496,
+      572
+    ],
+    "trim": {
+      "x": 8,
+      "y": 30,
+      "w": 624,
+      "h": 572
+    }
+  },
+  "res://assets/sprites/enemies/ranged_beast/flame_loop.webp": {
+    "name": "flame_loop",
+    "sheet": "sprites/enemies/ranged_beast/flame_loop.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.36,
+    "fps": 11.11111111111111,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      2348,
+      470
+    ],
+    "trim": {
+      "x": 26,
+      "y": 132,
+      "w": 587,
+      "h": 470
+    }
+  },
+  "res://assets/sprites/enemies/ranged_beast/recovery.webp": {
+    "name": "recovery",
+    "sheet": "sprites/enemies/ranged_beast/recovery.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.8,
+    "fps": 5.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      2156,
+      510
+    ],
+    "trim": {
+      "x": 50,
+      "y": 92,
+      "w": 539,
+      "h": 510
+    }
+  },
+  "res://assets/sprites/enemies/ranged_beast/turn.webp": {
+    "name": "turn",
+    "sheet": "sprites/enemies/ranged_beast/turn.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.25,
+    "fps": 16.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1780,
+      520
+    ],
+    "trim": {
+      "x": 98,
+      "y": 82,
+      "w": 445,
+      "h": 520
+    }
+  },
+  "res://assets/sprites/enemies/ranged_beast/hurt.webp": {
+    "name": "hurt",
+    "sheet": "sprites/enemies/ranged_beast/hurt.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 2,
+    "rows": 1,
+    "frames": 2,
+    "duration_seconds": 0.2,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      928,
+      477
+    ],
+    "trim": {
+      "x": 88,
+      "y": 125,
+      "w": 464,
+      "h": 477
+    }
+  },
+  "res://assets/sprites/enemies/ranged_beast/death.webp": {
+    "name": "death",
+    "sheet": "sprites/enemies/ranged_beast/death.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.8,
+    "fps": 7.5,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      3678,
+      424
+    ],
+    "trim": {
+      "x": 14,
+      "y": 178,
+      "w": 613,
+      "h": 424
+    }
+  },
+  "res://assets/sprites/enemies/ranged_beast/flame.webp": {
+    "name": "flame",
+    "sheet": "sprites/enemies/ranged_beast/flame.webp",
+    "frame_width": 512,
+    "frame_height": 256,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.36,
+    "fps": 16.666666666666668,
+    "loop": true,
+    "anchor_px": [
+      16,
+      128
+    ],
+    "image_size": [
+      2628,
+      132
+    ],
+    "trim": {
+      "x": 14,
+      "y": 62,
+      "w": 438,
+      "h": 132
+    }
+  },
+  "res://assets/sprites/enemies/root_spewer/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/enemies/root_spewer/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 1.2,
+    "fps": 5.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1290,
+      289
+    ],
+    "trim": {
+      "x": 213,
+      "y": 313,
+      "w": 215,
+      "h": 289
+    }
+  },
+  "res://assets/sprites/enemies/root_spewer/windup.webp": {
+    "name": "windup",
+    "sheet": "sprites/enemies/root_spewer/windup.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.5,
+    "fps": 8.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1020,
+      288
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 185,
+      "y": 314,
+      "w": 255,
+      "h": 288
+    }
+  },
+  "res://assets/sprites/enemies/root_spewer/spew.webp": {
+    "name": "spew",
+    "sheet": "sprites/enemies/root_spewer/spew.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.4,
+    "fps": 10.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1752,
+      280
+    ],
+    "trim": {
+      "x": 143,
+      "y": 322,
+      "w": 438,
+      "h": 280
+    }
+  },
+  "res://assets/sprites/enemies/root_spewer/recovery.webp": {
+    "name": "recovery",
+    "sheet": "sprites/enemies/root_spewer/recovery.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.6,
+    "fps": 6.666666666666667,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1012,
+      301
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 183,
+      "y": 301,
+      "w": 253,
+      "h": 301
+    }
+  },
+  "res://assets/sprites/enemies/root_spewer/turn.webp": {
+    "name": "turn",
+    "sheet": "sprites/enemies/root_spewer/turn.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.25,
+    "fps": 16.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      904,
+      273
+    ],
+    "trim": {
+      "x": 206,
+      "y": 329,
+      "w": 226,
+      "h": 273
+    }
+  },
+  "res://assets/sprites/enemies/root_spewer/hurt.webp": {
+    "name": "hurt",
+    "sheet": "sprites/enemies/root_spewer/hurt.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 2,
+    "rows": 1,
+    "frames": 2,
+    "duration_seconds": 0.2,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      546,
+      275
+    ],
+    "trim": {
+      "x": 174,
+      "y": 327,
+      "w": 273,
+      "h": 275
+    }
+  },
+  "res://assets/sprites/enemies/root_spewer/death.webp": {
+    "name": "death",
+    "sheet": "sprites/enemies/root_spewer/death.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.7,
+    "fps": 8.571428571428571,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1212,
+      312
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 215,
+      "y": 290,
+      "w": 202,
+      "h": 312
+    }
+  },
+  "res://assets/sprites/enemies/shell_scorpion/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/enemies/shell_scorpion/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 1.0,
+    "fps": 6.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1866,
+      294
+    ],
+    "trim": {
+      "x": 177,
+      "y": 308,
+      "w": 311,
+      "h": 294
+    }
+  },
+  "res://assets/sprites/enemies/shell_scorpion/walk.webp": {
+    "name": "walk",
+    "sheet": "sprites/enemies/shell_scorpion/walk.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 1.1,
+    "fps": 7.2727272727272725,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      2384,
+      277
+    ],
+    "qa": {
+      "movement": true
+    },
+    "trim": {
+      "x": 180,
+      "y": 325,
+      "w": 298,
+      "h": 277
+    }
+  },
+  "res://assets/sprites/enemies/shell_scorpion/guard_block.webp": {
+    "name": "guard_block",
+    "sheet": "sprites/enemies/shell_scorpion/guard_block.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.2,
+    "fps": 15.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1149,
+      273
+    ],
+    "trim": {
+      "x": 151,
+      "y": 329,
+      "w": 383,
+      "h": 273
+    }
+  },
+  "res://assets/sprites/enemies/shell_scorpion/claw_windup.webp": {
+    "name": "claw_windup",
+    "sheet": "sprites/enemies/shell_scorpion/claw_windup.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.5,
+    "fps": 8.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1592,
+      297
+    ],
+    "trim": {
+      "x": 143,
+      "y": 305,
+      "w": 398,
+      "h": 297
+    }
+  },
+  "res://assets/sprites/enemies/shell_scorpion/claw_attack.webp": {
+    "name": "claw_attack",
+    "sheet": "sprites/enemies/shell_scorpion/claw_attack.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.15,
+    "fps": 20.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1311,
+      277
+    ],
+    "trim": {
+      "x": 124,
+      "y": 325,
+      "w": 437,
+      "h": 277
+    }
+  },
+  "res://assets/sprites/enemies/shell_scorpion/claw_recovery.webp": {
+    "name": "claw_recovery",
+    "sheet": "sprites/enemies/shell_scorpion/claw_recovery.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.7,
+    "fps": 5.714285714285714,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1816,
+      273
+    ],
+    "trim": {
+      "x": 138,
+      "y": 329,
+      "w": 454,
+      "h": 273
+    }
+  },
+  "res://assets/sprites/enemies/shell_scorpion/tail_windup.webp": {
+    "name": "tail_windup",
+    "sheet": "sprites/enemies/shell_scorpion/tail_windup.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.3,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1176,
+      318
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 140,
+      "y": 284,
+      "w": 392,
+      "h": 318
+    }
+  },
+  "res://assets/sprites/enemies/shell_scorpion/tail_strike.webp": {
+    "name": "tail_strike",
+    "sheet": "sprites/enemies/shell_scorpion/tail_strike.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.15,
+    "fps": 20.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1641,
+      279
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 19,
+      "y": 323,
+      "w": 547,
+      "h": 279
+    }
+  },
+  "res://assets/sprites/enemies/shell_scorpion/tail_recovery.webp": {
+    "name": "tail_recovery",
+    "sheet": "sprites/enemies/shell_scorpion/tail_recovery.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.6,
+    "fps": 6.666666666666667,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1604,
+      320
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 144,
+      "y": 282,
+      "w": 401,
+      "h": 320
+    }
+  },
+  "res://assets/sprites/enemies/shell_scorpion/turn.webp": {
+    "name": "turn",
+    "sheet": "sprites/enemies/shell_scorpion/turn.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1974,
+      281
+    ],
+    "trim": {
+      "x": 169,
+      "y": 321,
+      "w": 329,
+      "h": 281
+    }
+  },
+  "res://assets/sprites/enemies/shell_scorpion/hurt.webp": {
+    "name": "hurt",
+    "sheet": "sprites/enemies/shell_scorpion/hurt.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 2,
+    "rows": 1,
+    "frames": 2,
+    "duration_seconds": 0.2,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      876,
+      273
+    ],
+    "trim": {
+      "x": 120,
+      "y": 329,
+      "w": 438,
+      "h": 273
+    }
+  },
+  "res://assets/sprites/enemies/shell_scorpion/death.webp": {
+    "name": "death",
+    "sheet": "sprites/enemies/shell_scorpion/death.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.8,
+    "fps": 7.5,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1668,
+      293
+    ],
+    "trim": {
+      "x": 191,
+      "y": 309,
+      "w": 278,
+      "h": 293
+    }
+  },
+  "res://assets/sprites/enemies/sky_beast/fly_idle.webp": {
+    "name": "fly_idle",
+    "sheet": "sprites/enemies/sky_beast/fly_idle.webp",
+    "frame_width": 768,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.9,
+    "fps": 6.666666666666666,
+    "loop": true,
+    "anchor_px": [
+      384,
+      320
+    ],
+    "image_size": [
+      1236,
+      229
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained",
+      "movement": true
+    },
+    "trim": {
+      "x": 280,
+      "y": 217,
+      "w": 206,
+      "h": 229
+    }
+  },
+  "res://assets/sprites/enemies/sky_beast/windup.webp": {
+    "name": "windup",
+    "sheet": "sprites/enemies/sky_beast/windup.webp",
+    "frame_width": 768,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.4,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      384,
+      320
+    ],
+    "image_size": [
+      760,
+      220
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 308,
+      "y": 209,
+      "w": 190,
+      "h": 220
+    }
+  },
+  "res://assets/sprites/enemies/sky_beast/dive.webp": {
+    "name": "dive",
+    "sheet": "sprites/enemies/sky_beast/dive.webp",
+    "frame_width": 768,
+    "frame_height": 640,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.25,
+    "fps": 12.0,
+    "loop": true,
+    "anchor_px": [
+      384,
+      320
+    ],
+    "image_size": [
+      978,
+      222
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained",
+      "movement": true
+    },
+    "trim": {
+      "x": 216,
+      "y": 208,
+      "w": 326,
+      "h": 222
+    }
+  },
+  "res://assets/sprites/enemies/sky_beast/recovery.webp": {
+    "name": "recovery",
+    "sheet": "sprites/enemies/sky_beast/recovery.webp",
+    "frame_width": 768,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.6,
+    "fps": 6.666666666666667,
+    "loop": false,
+    "anchor_px": [
+      384,
+      320
+    ],
+    "image_size": [
+      864,
+      213
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 296,
+      "y": 211,
+      "w": 216,
+      "h": 213
+    }
+  },
+  "res://assets/sprites/enemies/sky_beast/turn.webp": {
+    "name": "turn",
+    "sheet": "sprites/enemies/sky_beast/turn.webp",
+    "frame_width": 768,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.25,
+    "fps": 16.0,
+    "loop": false,
+    "anchor_px": [
+      384,
+      320
+    ],
+    "image_size": [
+      544,
+      209
+    ],
+    "trim": {
+      "x": 317,
+      "y": 209,
+      "w": 136,
+      "h": 209
+    }
+  },
+  "res://assets/sprites/enemies/sky_beast/hurt.webp": {
+    "name": "hurt",
+    "sheet": "sprites/enemies/sky_beast/hurt.webp",
+    "frame_width": 768,
+    "frame_height": 640,
+    "columns": 2,
+    "rows": 1,
+    "frames": 2,
+    "duration_seconds": 0.2,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      384,
+      320
+    ],
+    "image_size": [
+      382,
+      223
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 298,
+      "y": 206,
+      "w": 191,
+      "h": 223
+    }
+  },
+  "res://assets/sprites/enemies/sky_beast/death.webp": {
+    "name": "death",
+    "sheet": "sprites/enemies/sky_beast/death.webp",
+    "frame_width": 768,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.8,
+    "fps": 7.5,
+    "loop": false,
+    "anchor_px": [
+      384,
+      320
+    ],
+    "image_size": [
+      870,
+      235
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 309,
+      "y": 203,
+      "w": 145,
+      "h": 235
+    }
+  },
+  "res://assets/sprites/enemies/wall_diver/perch_ceiling.webp": {
+    "name": "perch_ceiling",
+    "sheet": "sprites/enemies/wall_diver/perch_ceiling.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.8,
+    "fps": 5.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      868,
+      210
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 210,
+      "y": 217,
+      "w": 217,
+      "h": 210
+    }
+  },
+  "res://assets/sprites/enemies/wall_diver/perch_wall.webp": {
+    "name": "perch_wall",
+    "sheet": "sprites/enemies/wall_diver/perch_wall.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.8,
+    "fps": 5.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      716,
+      230
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 231,
+      "y": 219,
+      "w": 179,
+      "h": 230
+    }
+  },
+  "res://assets/sprites/enemies/wall_diver/tell.webp": {
+    "name": "tell",
+    "sheet": "sprites/enemies/wall_diver/tell.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.2,
+    "fps": 15.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      966,
+      228
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 159,
+      "y": 211,
+      "w": 322,
+      "h": 228
+    }
+  },
+  "res://assets/sprites/enemies/wall_diver/dive.webp": {
+    "name": "dive",
+    "sheet": "sprites/enemies/wall_diver/dive.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.25,
+    "fps": 12.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      729,
+      211
+    ],
+    "qa": {
+      "movement": true
+    },
+    "trim": {
+      "x": 190,
+      "y": 212,
+      "w": 243,
+      "h": 211
+    }
+  },
+  "res://assets/sprites/enemies/wall_diver/claw.webp": {
+    "name": "claw",
+    "sheet": "sprites/enemies/wall_diver/claw.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.2,
+    "fps": 20.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      928,
+      244
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 214,
+      "y": 189,
+      "w": 232,
+      "h": 244
+    }
+  },
+  "res://assets/sprites/enemies/wall_diver/recovery.webp": {
+    "name": "recovery",
+    "sheet": "sprites/enemies/wall_diver/recovery.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.5,
+    "fps": 8.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      912,
+      228
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 209,
+      "y": 211,
+      "w": 228,
+      "h": 228
+    }
+  },
+  "res://assets/sprites/enemies/wall_diver/crawl.webp": {
+    "name": "crawl",
+    "sheet": "sprites/enemies/wall_diver/crawl.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 0.7,
+    "fps": 11.428571428571429,
+    "loop": true,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      1760,
+      224
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained",
+      "movement": true
+    },
+    "trim": {
+      "x": 210,
+      "y": 207,
+      "w": 220,
+      "h": 224
+    }
+  },
+  "res://assets/sprites/enemies/wall_diver/turn.webp": {
+    "name": "turn",
+    "sheet": "sprites/enemies/wall_diver/turn.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.25,
+    "fps": 16.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      796,
+      216
+    ],
+    "trim": {
+      "x": 214,
+      "y": 214,
+      "w": 199,
+      "h": 216
+    }
+  },
+  "res://assets/sprites/enemies/wall_diver/hurt.webp": {
+    "name": "hurt",
+    "sheet": "sprites/enemies/wall_diver/hurt.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 2,
+    "rows": 1,
+    "frames": 2,
+    "duration_seconds": 0.2,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      632,
+      231
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 148,
+      "y": 195,
+      "w": 316,
+      "h": 231
+    }
+  },
+  "res://assets/sprites/enemies/wall_diver/death.webp": {
+    "name": "death",
+    "sheet": "sprites/enemies/wall_diver/death.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      1044,
+      257
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 229,
+      "y": 194,
+      "w": 174,
+      "h": 257
+    }
+  },
+  "res://assets/sprites/enemies/wall_diver/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/enemies/wall_diver/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.8,
+    "fps": 5.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      828,
+      218
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 216,
+      "y": 205,
+      "w": 207,
+      "h": 218
+    }
+  },
+  "res://assets/sprites/enemies/wall_diver/windup.webp": {
+    "name": "windup",
+    "sheet": "sprites/enemies/wall_diver/windup.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.35,
+    "fps": 11.428571428571429,
+    "loop": false,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      892,
+      254
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 204,
+      "y": 189,
+      "w": 223,
+      "h": 254
+    }
+  },
+  "res://assets/sprites/enemies/wraith_ray/glide.webp": {
+    "name": "glide",
+    "sheet": "sprites/enemies/wraith_ray/glide.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 1.0,
+    "fps": 8.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      1456,
+      173
+    ],
+    "qa": {
+      "movement": true
+    },
+    "trim": {
+      "x": 243,
+      "y": 259,
+      "w": 182,
+      "h": 173
+    }
+  },
+  "res://assets/sprites/enemies/wraith_ray/turn.webp": {
+    "name": "turn",
+    "sheet": "sprites/enemies/wraith_ray/turn.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.25,
+    "fps": 16.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      596,
+      169
+    ],
+    "trim": {
+      "x": 245,
+      "y": 259,
+      "w": 149,
+      "h": 169
+    }
+  },
+  "res://assets/sprites/enemies/wraith_ray/hurt.webp": {
+    "name": "hurt",
+    "sheet": "sprites/enemies/wraith_ray/hurt.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 2,
+    "rows": 1,
+    "frames": 2,
+    "duration_seconds": 0.2,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      386,
+      174
+    ],
+    "trim": {
+      "x": 222,
+      "y": 252,
+      "w": 193,
+      "h": 174
+    }
+  },
+  "res://assets/sprites/enemies/wraith_ray/death.webp": {
+    "name": "death",
+    "sheet": "sprites/enemies/wraith_ray/death.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      320
+    ],
+    "image_size": [
+      990,
+      204
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "Visible pose extent changes while one uniform scale is retained"
+    },
+    "trim": {
+      "x": 236,
+      "y": 234,
+      "w": 165,
+      "h": 204
+    }
+  },
+  "res://assets/sprites/fx/hit_spark.webp": {
+    "name": "hit_spark",
+    "sheet": "sprites/fx/hit_spark.webp",
+    "frame_width": 256,
+    "frame_height": 256,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.15,
+    "fps": 33.333333333333336,
+    "loop": false,
+    "anchor_px": [
+      128,
+      128
+    ],
+    "image_size": [
+      1050,
+      220
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "FX flow changes extent while retaining uniform scale",
+      "detached_fx_or_weapon": true
+    },
+    "trim": {
+      "x": 27,
+      "y": 6,
+      "w": 210,
+      "h": 220
+    }
+  },
+  "res://assets/sprites/fx/root_flame.webp": {
+    "name": "root_flame",
+    "sheet": "sprites/fx/root_flame.webp",
+    "frame_width": 256,
+    "frame_height": 512,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": true,
+    "anchor_px": [
+      128,
+      508
+    ],
+    "image_size": [
+      1026,
+      362
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "FX flow changes extent while retaining uniform scale",
+      "detached_fx_or_weapon": true
+    },
+    "trim": {
+      "x": 43,
+      "y": 148,
+      "w": 171,
+      "h": 362
+    }
+  },
+  "res://assets/sprites/fx/spit_projectile.webp": {
+    "name": "spit_projectile",
+    "sheet": "sprites/fx/spit_projectile.webp",
+    "frame_width": 128,
+    "frame_height": 128,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.4,
+    "fps": 10.0,
+    "loop": true,
+    "anchor_px": [
+      64,
+      64
+    ],
+    "image_size": [
+      388,
+      96
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "FX flow changes extent while retaining uniform scale",
+      "detached_fx_or_weapon": true
+    },
+    "trim": {
+      "x": 16,
+      "y": 16,
+      "w": 97,
+      "h": 96
+    }
+  },
+  "res://assets/sprites/fx/explosion.webp": {
+    "name": "explosion",
+    "sheet": "sprites/fx/explosion.webp",
+    "frame_width": 256,
+    "frame_height": 256,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.35,
+    "fps": 17.142857142857142,
+    "loop": false,
+    "anchor_px": [
+      128,
+      128
+    ],
+    "image_size": [
+      1158,
+      218
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "FX flow changes extent while retaining uniform scale",
+      "detached_fx_or_weapon": true
+    },
+    "trim": {
+      "x": 33,
+      "y": 8,
+      "w": 193,
+      "h": 218
+    }
+  },
+  "res://assets/sprites/fx/gas_cloud.webp": {
+    "name": "gas_cloud",
+    "sheet": "sprites/fx/gas_cloud.webp",
+    "frame_width": 256,
+    "frame_height": 256,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": true,
+    "anchor_px": [
+      128,
+      128
+    ],
+    "image_size": [
+      1086,
+      204
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "FX flow changes extent while retaining uniform scale",
+      "detached_fx_or_weapon": true
+    },
+    "trim": {
+      "x": 37,
+      "y": 9,
+      "w": 181,
+      "h": 204
+    }
+  },
+  "res://assets/sprites/fx/guard_spark.webp": {
+    "name": "guard_spark",
+    "sheet": "sprites/fx/guard_spark.webp",
+    "frame_width": 192,
+    "frame_height": 192,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.18,
+    "fps": 27.77777777777778,
+    "loop": false,
+    "anchor_px": [
+      96,
+      96
+    ],
+    "image_size": [
+      660,
+      140
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "FX flow changes extent while retaining uniform scale",
+      "detached_fx_or_weapon": true
+    },
+    "trim": {
+      "x": 27,
+      "y": 25,
+      "w": 132,
+      "h": 140
+    }
+  },
+  "res://assets/sprites/fx/bone_spike.webp": {
+    "name": "bone_spike",
+    "sheet": "sprites/fx/bone_spike.webp",
+    "frame_width": 128,
+    "frame_height": 256,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.4,
+    "fps": 10.0,
+    "loop": false,
+    "anchor_px": [
+      64,
+      128
+    ],
+    "image_size": [
+      468,
+      187
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "FX flow changes extent while retaining uniform scale",
+      "detached_fx_or_weapon": true
+    },
+    "trim": {
+      "x": 5,
+      "y": 2,
+      "w": 117,
+      "h": 187
+    }
+  },
+  "res://assets/sprites/fx/soul_flame_cone.webp": {
+    "name": "soul_flame_cone",
+    "sheet": "sprites/fx/soul_flame_cone.webp",
+    "frame_width": 768,
+    "frame_height": 384,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.6,
+    "fps": 10.0,
+    "loop": true,
+    "anchor_px": [
+      384,
+      192
+    ],
+    "image_size": [
+      3210,
+      326
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "FX flow changes extent while retaining uniform scale",
+      "detached_fx_or_weapon": true
+    },
+    "trim": {
+      "x": 184,
+      "y": 17,
+      "w": 535,
+      "h": 326
+    }
+  },
+  "res://assets/sprites/fx/bone_spike_ground.webp": {
+    "name": "bone_spike_ground",
+    "sheet": "sprites/fx/bone_spike_ground.webp",
+    "frame_width": 128,
+    "frame_height": 128,
+    "columns": 3,
+    "rows": 1,
+    "frames": 3,
+    "duration_seconds": 0.6,
+    "fps": 5.0,
+    "loop": false,
+    "anchor_px": [
+      64,
+      64
+    ],
+    "image_size": [
+      336,
+      96
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "FX flow changes extent while retaining uniform scale",
+      "detached_fx_or_weapon": true
+    },
+    "trim": {
+      "x": 7,
+      "y": 2,
+      "w": 112,
+      "h": 96
+    }
+  },
+  "res://assets/sprites/fx/blue_flame_explosion.webp": {
+    "name": "blue_flame_explosion",
+    "sheet": "sprites/fx/blue_flame_explosion.webp",
+    "frame_width": 256,
+    "frame_height": 256,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.3,
+    "fps": 20.0,
+    "loop": false,
+    "anchor_px": [
+      128,
+      128
+    ],
+    "image_size": [
+      1014,
+      189
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "FX flow changes extent while retaining uniform scale",
+      "detached_fx_or_weapon": true
+    },
+    "trim": {
+      "x": 42,
+      "y": 23,
+      "w": 169,
+      "h": 189
+    }
+  },
+  "res://assets/sprites/fx/armor_hit_spark.webp": {
+    "name": "armor_hit_spark",
+    "sheet": "sprites/fx/armor_hit_spark.webp",
+    "frame_width": 192,
+    "frame_height": 192,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.15,
+    "fps": 33.333333333333336,
+    "loop": false,
+    "anchor_px": [
+      96,
+      96
+    ],
+    "image_size": [
+      610,
+      149
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "FX flow changes extent while retaining uniform scale",
+      "detached_fx_or_weapon": true
+    },
+    "trim": {
+      "x": 34,
+      "y": 21,
+      "w": 122,
+      "h": 149
+    }
+  },
+  "res://assets/sprites/npcs/aya/idle_front.webp": {
+    "name": "idle_front",
+    "sheet": "sprites/npcs/aya/idle_front.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 2.4,
+    "fps": 2.5,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1152,
+      362
+    ],
+    "trim": {
+      "x": 224,
+      "y": 240,
+      "w": 192,
+      "h": 362
+    }
+  },
+  "res://assets/sprites/npcs/aya/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/npcs/aya/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 2.4,
+    "fps": 2.5,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      930,
+      362
+    ],
+    "trim": {
+      "x": 242,
+      "y": 240,
+      "w": 155,
+      "h": 362
+    }
+  },
+  "res://assets/sprites/npcs/cook_a/chop.webp": {
+    "name": "chop",
+    "sheet": "sprites/npcs/cook_a/chop.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 1.2,
+    "fps": 5.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1068,
+      255
+    ],
+    "trim": {
+      "x": 231,
+      "y": 347,
+      "w": 178,
+      "h": 255
+    }
+  },
+  "res://assets/sprites/npcs/cook_b/stir.webp": {
+    "name": "stir",
+    "sheet": "sprites/npcs/cook_b/stir.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 1.6,
+    "fps": 3.75,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      894,
+      262
+    ],
+    "trim": {
+      "x": 246,
+      "y": 340,
+      "w": 149,
+      "h": 262
+    }
+  },
+  "res://assets/sprites/npcs/cook_c/arrange.webp": {
+    "name": "arrange",
+    "sheet": "sprites/npcs/cook_c/arrange.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 2.0,
+    "fps": 3.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1134,
+      270
+    ],
+    "trim": {
+      "x": 226,
+      "y": 332,
+      "w": 189,
+      "h": 270
+    }
+  },
+  "res://assets/sprites/npcs/enkidua/idle_front.webp": {
+    "name": "idle_front",
+    "sheet": "sprites/npcs/enkidua/idle_front.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 2.4,
+    "fps": 2.5,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      864,
+      384
+    ],
+    "trim": {
+      "x": 248,
+      "y": 218,
+      "w": 144,
+      "h": 384
+    }
+  },
+  "res://assets/sprites/npcs/enkidua/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/npcs/enkidua/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 2.4,
+    "fps": 2.5,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      684,
+      384
+    ],
+    "trim": {
+      "x": 263,
+      "y": 218,
+      "w": 114,
+      "h": 384
+    }
+  },
+  "res://assets/sprites/npcs/gatekeeper/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/npcs/gatekeeper/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 2.4,
+    "fps": 2.5,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      678,
+      270
+    ],
+    "trim": {
+      "x": 264,
+      "y": 332,
+      "w": 113,
+      "h": 270
+    }
+  },
+  "res://assets/sprites/npcs/gatekeeper/open_gate.webp": {
+    "name": "open_gate",
+    "sheet": "sprites/npcs/gatekeeper/open_gate.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.8,
+    "fps": 6.25,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      810,
+      270
+    ],
+    "trim": {
+      "x": 239,
+      "y": 332,
+      "w": 162,
+      "h": 270
+    }
+  },
+  "res://assets/sprites/npcs/inanna/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/npcs/inanna/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 2.4,
+    "fps": 2.5,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1374,
+      365
+    ],
+    "trim": {
+      "x": 206,
+      "y": 237,
+      "w": 229,
+      "h": 365
+    }
+  },
+  "res://assets/sprites/npcs/inanna/idle_front.webp": {
+    "name": "idle_front",
+    "sheet": "sprites/npcs/inanna/idle_front.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 2.4,
+    "fps": 2.5,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      2310,
+      369
+    ],
+    "trim": {
+      "x": 128,
+      "y": 233,
+      "w": 385,
+      "h": 369
+    }
+  },
+  "res://assets/sprites/npcs/lugalbanda/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/npcs/lugalbanda/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 2.4,
+    "fps": 2.5,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      942,
+      387
+    ],
+    "trim": {
+      "x": 242,
+      "y": 215,
+      "w": 157,
+      "h": 387
+    }
+  },
+  "res://assets/sprites/npcs/lugalbanda/idle_front.webp": {
+    "name": "idle_front",
+    "sheet": "sprites/npcs/lugalbanda/idle_front.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 2.4,
+    "fps": 2.5,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1020,
+      391
+    ],
+    "trim": {
+      "x": 235,
+      "y": 211,
+      "w": 170,
+      "h": 391
+    }
+  },
+  "res://assets/sprites/npcs/ninsun/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/npcs/ninsun/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 2.4,
+    "fps": 2.5,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      774,
+      358
+    ],
+    "trim": {
+      "x": 256,
+      "y": 244,
+      "w": 129,
+      "h": 358
+    }
+  },
+  "res://assets/sprites/npcs/ninsun/idle_front.webp": {
+    "name": "idle_front",
+    "sheet": "sprites/npcs/ninsun/idle_front.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 2.4,
+    "fps": 2.5,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      984,
+      362
+    ],
+    "trim": {
+      "x": 238,
+      "y": 240,
+      "w": 164,
+      "h": 362
+    }
+  },
+  "res://assets/sprites/npcs/papsukkal/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/npcs/papsukkal/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 2.4,
+    "fps": 2.5,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      684,
+      365
+    ],
+    "trim": {
+      "x": 263,
+      "y": 237,
+      "w": 114,
+      "h": 365
+    }
+  },
+  "res://assets/sprites/npcs/papsukkal/idle_front.webp": {
+    "name": "idle_front",
+    "sheet": "sprites/npcs/papsukkal/idle_front.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 2.4,
+    "fps": 2.5,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      918,
+      369
+    ],
+    "trim": {
+      "x": 244,
+      "y": 233,
+      "w": 153,
+      "h": 369
+    }
+  },
+  "res://assets/sprites/npcs/servant_a/sweep.webp": {
+    "name": "sweep",
+    "sheet": "sprites/npcs/servant_a/sweep.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 1.6,
+    "fps": 5.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1216,
+      255
+    ],
+    "trim": {
+      "x": 244,
+      "y": 347,
+      "w": 152,
+      "h": 255
+    }
+  },
+  "res://assets/sprites/npcs/servant_b/sweep.webp": {
+    "name": "sweep",
+    "sheet": "sprites/npcs/servant_b/sweep.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 1.6,
+    "fps": 5.0,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1224,
+      262
+    ],
+    "trim": {
+      "x": 244,
+      "y": 340,
+      "w": 153,
+      "h": 262
+    }
+  },
+  "res://assets/sprites/npcs/shamash/idle_front.webp": {
+    "name": "idle_front",
+    "sheet": "sprites/npcs/shamash/idle_front.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 2.4,
+    "fps": 2.5,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1116,
+      384
+    ],
+    "trim": {
+      "x": 227,
+      "y": 218,
+      "w": 186,
+      "h": 384
+    }
+  },
+  "res://assets/sprites/npcs/shamash/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/npcs/shamash/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 2.4,
+    "fps": 2.5,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      696,
+      384
+    ],
+    "trim": {
+      "x": 262,
+      "y": 218,
+      "w": 116,
+      "h": 384
+    }
+  },
+  "res://assets/sprites/npcs/shamhat/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/npcs/shamhat/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 2.4,
+    "fps": 2.5,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      996,
+      351
+    ],
+    "trim": {
+      "x": 237,
+      "y": 251,
+      "w": 166,
+      "h": 351
+    }
+  },
+  "res://assets/sprites/npcs/shamhat/idle_front.webp": {
+    "name": "idle_front",
+    "sheet": "sprites/npcs/shamhat/idle_front.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 2.4,
+    "fps": 2.5,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1134,
+      354
+    ],
+    "trim": {
+      "x": 226,
+      "y": 248,
+      "w": 189,
+      "h": 354
+    }
+  },
+  "res://assets/sprites/player/staff/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/player/staff/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 10,
+    "rows": 1,
+    "frames": 10,
+    "duration_seconds": 2.2,
+    "fps": 4.545454545454545,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1640,
+      368
+    ],
+    "qa": {
+      "height_tol": 0.1,
+      "pose_height_exception": false
+    },
+    "trim": {
+      "x": 238,
+      "y": 234,
+      "w": 164,
+      "h": 368
+    }
+  },
+  "res://assets/sprites/player/staff/walk.webp": {
+    "name": "walk",
+    "sheet": "sprites/player/staff/walk.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 10,
+    "rows": 1,
+    "frames": 10,
+    "duration_seconds": 1.05,
+    "fps": 9.523809523809524,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      2780,
+      344
+    ],
+    "qa": {
+      "height_tol": 0.1,
+      "pose_height_exception": false
+    },
+    "trim": {
+      "x": 181,
+      "y": 258,
+      "w": 278,
+      "h": 344
+    }
+  },
+  "res://assets/sprites/player/staff/crouch_enter.webp": {
+    "name": "crouch_enter",
+    "sheet": "sprites/player/staff/crouch_enter.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.14,
+    "fps": 28.57142857142857,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      900,
+      295
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 208,
+      "y": 307,
+      "w": 225,
+      "h": 295
+    }
+  },
+  "res://assets/sprites/player/staff/crouch_idle.webp": {
+    "name": "crouch_idle",
+    "sheet": "sprites/player/staff/crouch_idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.8,
+    "fps": 7.5,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      792,
+      203
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 254,
+      "y": 399,
+      "w": 132,
+      "h": 203
+    }
+  },
+  "res://assets/sprites/player/staff/crouch_exit.webp": {
+    "name": "crouch_exit",
+    "sheet": "sprites/player/staff/crouch_exit.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.13,
+    "fps": 30.769230769230766,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      708,
+      320
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 232,
+      "y": 282,
+      "w": 177,
+      "h": 320
+    }
+  },
+  "res://assets/sprites/player/staff/jump_start.webp": {
+    "name": "jump_start",
+    "sheet": "sprites/player/staff/jump_start.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.13,
+    "fps": 30.769230769230766,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1108,
+      313
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 182,
+      "y": 289,
+      "w": 277,
+      "h": 313
+    }
+  },
+  "res://assets/sprites/player/staff/jump_rise.webp": {
+    "name": "jump_rise",
+    "sheet": "sprites/player/staff/jump_rise.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.42,
+    "fps": 14.285714285714286,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1548,
+      332
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 191,
+      "y": 270,
+      "w": 258,
+      "h": 332
+    }
+  },
+  "res://assets/sprites/player/staff/fall.webp": {
+    "name": "fall",
+    "sheet": "sprites/player/staff/fall.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.36,
+    "fps": 16.666666666666668,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      2004,
+      351
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 153,
+      "y": 251,
+      "w": 334,
+      "h": 351
+    }
+  },
+  "res://assets/sprites/player/staff/land.webp": {
+    "name": "land",
+    "sheet": "sprites/player/staff/land.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.24,
+    "fps": 20.833333333333336,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1955,
+      428
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 124,
+      "y": 174,
+      "w": 391,
+      "h": 428
+    }
+  },
+  "res://assets/sprites/player/staff/drop_through.webp": {
+    "name": "drop_through",
+    "sheet": "sprites/player/staff/drop_through.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.22,
+    "fps": 22.727272727272727,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1700,
+      365
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 150,
+      "y": 237,
+      "w": 340,
+      "h": 365
+    }
+  },
+  "res://assets/sprites/player/staff/hurt.webp": {
+    "name": "hurt",
+    "sheet": "sprites/player/staff/hurt.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.32,
+    "fps": 15.625,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1470,
+      378
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 173,
+      "y": 224,
+      "w": 294,
+      "h": 378
+    }
+  },
+  "res://assets/sprites/player/staff/death.webp": {
+    "name": "death",
+    "sheet": "sprites/player/staff/death.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 0.6,
+    "fps": 13.333333333333334,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1712,
+      362
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 209,
+      "y": 240,
+      "w": 214,
+      "h": 362
+    }
+  },
+  "res://assets/sprites/player/staff/run.webp": {
+    "name": "run",
+    "sheet": "sprites/player/staff/run.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 10,
+    "rows": 1,
+    "frames": 10,
+    "duration_seconds": 0.82,
+    "fps": 12.195121951219512,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      2740,
+      339
+    ],
+    "qa": {
+      "height_tol": 0.1,
+      "pose_height_exception": true,
+      "pose_height_reason": "Forward-leaning run follows existing axe pose height"
+    },
+    "trim": {
+      "x": 183,
+      "y": 263,
+      "w": 274,
+      "h": 339
+    }
+  },
+  "res://assets/sprites/player/staff/roll.webp": {
+    "name": "roll",
+    "sheet": "sprites/player/staff/roll.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 12,
+    "rows": 1,
+    "frames": 12,
+    "duration_seconds": 0.48,
+    "fps": 25.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      3456,
+      373
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 176,
+      "y": 229,
+      "w": 288,
+      "h": 373
+    }
+  },
+  "res://assets/sprites/player/staff/attack_1.webp": {
+    "name": "attack_1",
+    "sheet": "sprites/player/staff/attack_1.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 0.28,
+    "fps": 28.57142857142857,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1968,
+      263
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 220,
+      "y": 339,
+      "w": 246,
+      "h": 263
+    }
+  },
+  "res://assets/sprites/player/staff/attack_2.webp": {
+    "name": "attack_2",
+    "sheet": "sprites/player/staff/attack_2.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 0.28,
+    "fps": 28.57142857142857,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      3216,
+      406
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 177,
+      "y": 196,
+      "w": 402,
+      "h": 406
+    }
+  },
+  "res://assets/sprites/player/staff/attack_3.webp": {
+    "name": "attack_3",
+    "sheet": "sprites/player/staff/attack_3.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 10,
+    "rows": 1,
+    "frames": 10,
+    "duration_seconds": 0.4,
+    "fps": 25.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      4410,
+      368
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 168,
+      "y": 234,
+      "w": 441,
+      "h": 368
+    }
+  },
+  "res://assets/sprites/player/unarmed/idle.webp": {
+    "name": "idle",
+    "sheet": "sprites/player/unarmed/idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 10,
+    "rows": 1,
+    "frames": 10,
+    "duration_seconds": 2.2,
+    "fps": 4.545454545454545,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1450,
+      369
+    ],
+    "qa": {
+      "height_tol": 0.1,
+      "pose_height_exception": false
+    },
+    "trim": {
+      "x": 248,
+      "y": 233,
+      "w": 145,
+      "h": 369
+    }
+  },
+  "res://assets/sprites/player/unarmed/walk.webp": {
+    "name": "walk",
+    "sheet": "sprites/player/unarmed/walk.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 10,
+    "rows": 1,
+    "frames": 10,
+    "duration_seconds": 1.05,
+    "fps": 9.523809523809524,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      2430,
+      344
+    ],
+    "qa": {
+      "height_tol": 0.1,
+      "pose_height_exception": false
+    },
+    "trim": {
+      "x": 198,
+      "y": 258,
+      "w": 243,
+      "h": 344
+    }
+  },
+  "res://assets/sprites/player/unarmed/crouch_enter.webp": {
+    "name": "crouch_enter",
+    "sheet": "sprites/player/unarmed/crouch_enter.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.14,
+    "fps": 28.57142857142857,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      676,
+      295
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 236,
+      "y": 307,
+      "w": 169,
+      "h": 295
+    }
+  },
+  "res://assets/sprites/player/unarmed/crouch_idle.webp": {
+    "name": "crouch_idle",
+    "sheet": "sprites/player/unarmed/crouch_idle.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.8,
+    "fps": 7.5,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1092,
+      213
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 229,
+      "y": 389,
+      "w": 182,
+      "h": 213
+    }
+  },
+  "res://assets/sprites/player/unarmed/crouch_exit.webp": {
+    "name": "crouch_exit",
+    "sheet": "sprites/player/unarmed/crouch_exit.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.13,
+    "fps": 30.769230769230766,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      736,
+      357
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 228,
+      "y": 245,
+      "w": 184,
+      "h": 357
+    }
+  },
+  "res://assets/sprites/player/unarmed/jump_start.webp": {
+    "name": "jump_start",
+    "sheet": "sprites/player/unarmed/jump_start.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "frames": 4,
+    "duration_seconds": 0.13,
+    "fps": 30.769230769230766,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1028,
+      326
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 192,
+      "y": 276,
+      "w": 257,
+      "h": 326
+    }
+  },
+  "res://assets/sprites/player/unarmed/jump_rise.webp": {
+    "name": "jump_rise",
+    "sheet": "sprites/player/unarmed/jump_rise.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.42,
+    "fps": 14.285714285714286,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1350,
+      332
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 208,
+      "y": 270,
+      "w": 225,
+      "h": 332
+    }
+  },
+  "res://assets/sprites/player/unarmed/fall.webp": {
+    "name": "fall",
+    "sheet": "sprites/player/unarmed/fall.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 6,
+    "rows": 1,
+    "frames": 6,
+    "duration_seconds": 0.36,
+    "fps": 16.666666666666668,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1914,
+      351
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 160,
+      "y": 251,
+      "w": 319,
+      "h": 351
+    }
+  },
+  "res://assets/sprites/player/unarmed/land.webp": {
+    "name": "land",
+    "sheet": "sprites/player/unarmed/land.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.24,
+    "fps": 20.833333333333336,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1770,
+      416
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 143,
+      "y": 186,
+      "w": 354,
+      "h": 416
+    }
+  },
+  "res://assets/sprites/player/unarmed/drop_through.webp": {
+    "name": "drop_through",
+    "sheet": "sprites/player/unarmed/drop_through.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.22,
+    "fps": 22.727272727272727,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1675,
+      367
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 152,
+      "y": 235,
+      "w": 335,
+      "h": 367
+    }
+  },
+  "res://assets/sprites/player/unarmed/hurt.webp": {
+    "name": "hurt",
+    "sheet": "sprites/player/unarmed/hurt.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 5,
+    "rows": 1,
+    "frames": 5,
+    "duration_seconds": 0.32,
+    "fps": 15.625,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1410,
+      377
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 179,
+      "y": 225,
+      "w": 282,
+      "h": 377
+    }
+  },
+  "res://assets/sprites/player/unarmed/death.webp": {
+    "name": "death",
+    "sheet": "sprites/player/unarmed/death.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 8,
+    "rows": 1,
+    "frames": 8,
+    "duration_seconds": 0.6,
+    "fps": 13.333333333333334,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      1472,
+      362
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 220,
+      "y": 240,
+      "w": 184,
+      "h": 362
+    }
+  },
+  "res://assets/sprites/player/unarmed/run.webp": {
+    "name": "run",
+    "sheet": "sprites/player/unarmed/run.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 10,
+    "rows": 1,
+    "frames": 10,
+    "duration_seconds": 0.82,
+    "fps": 12.195121951219512,
+    "loop": true,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      2890,
+      328
+    ],
+    "qa": {
+      "height_tol": 0.1,
+      "pose_height_exception": true,
+      "pose_height_reason": "Forward-leaning run follows existing axe pose height"
+    },
+    "trim": {
+      "x": 176,
+      "y": 274,
+      "w": 289,
+      "h": 328
+    }
+  },
+  "res://assets/sprites/player/unarmed/roll.webp": {
+    "name": "roll",
+    "sheet": "sprites/player/unarmed/roll.webp",
+    "frame_width": 640,
+    "frame_height": 640,
+    "columns": 12,
+    "rows": 1,
+    "frames": 12,
+    "duration_seconds": 0.48,
+    "fps": 25.0,
+    "loop": false,
+    "anchor_px": [
+      320,
+      600
+    ],
+    "image_size": [
+      3636,
+      370
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "pose_height_exception": true
+    },
+    "trim": {
+      "x": 168,
+      "y": 232,
+      "w": 303,
+      "h": 370
+    }
+  },
+  "res://assets/sprites/fx/bone_arrow.webp": {
+    "name": "bone_arrow",
+    "sheet": "sprites/fx/bone_arrow.webp",
+    "frame_width": 96,
+    "frame_height": 24,
+    "columns": 1,
+    "rows": 1,
+    "frames": 1,
+    "duration_seconds": 1,
+    "fps": 1.0,
+    "loop": false,
+    "anchor_px": [
+      48,
+      12
+    ],
+    "image_size": [
+      83,
+      15
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "FX flow changes extent while retaining uniform scale",
+      "detached_fx_or_weapon": true
+    },
+    "trim": {
+      "x": 11,
+      "y": 5,
+      "w": 83,
+      "h": 15
+    }
+  },
+  "res://assets/sprites/fx/chain_segment.webp": {
+    "name": "chain_segment",
+    "sheet": "sprites/fx/chain_segment.webp",
+    "frame_width": 64,
+    "frame_height": 24,
+    "columns": 1,
+    "rows": 1,
+    "frames": 1,
+    "duration_seconds": 1,
+    "fps": 1.0,
+    "loop": true,
+    "anchor_px": [
+      32,
+      12
+    ],
+    "image_size": [
+      43,
+      14
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "FX flow changes extent while retaining uniform scale",
+      "detached_fx_or_weapon": true
+    },
+    "trim": {
+      "x": 11,
+      "y": 6,
+      "w": 43,
+      "h": 14
+    }
+  },
+  "res://assets/sprites/fx/chain_hook.webp": {
+    "name": "chain_hook",
+    "sheet": "sprites/fx/chain_hook.webp",
+    "frame_width": 96,
+    "frame_height": 96,
+    "columns": 1,
+    "rows": 1,
+    "frames": 1,
+    "duration_seconds": 1,
+    "fps": 1.0,
+    "loop": true,
+    "anchor_px": [
+      48,
+      48
+    ],
+    "image_size": [
+      78,
+      34
+    ],
+    "qa": {
+      "height_tol": 0.35,
+      "height_reason": "FX flow changes extent while retaining uniform scale",
+      "detached_fx_or_weapon": true
+    },
+    "trim": {
+      "x": 2,
+      "y": 31,
+      "w": 78,
+      "h": 34
+    }
+  }
+}

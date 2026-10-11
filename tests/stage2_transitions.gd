@@ -77,15 +77,16 @@ func _run() -> void:
     game = load("res://scenes/Main.tscn").instantiate()
     root.add_child(game)
     current_scene = game
-    if not await _wait_arrival("RearGate"):
+    if not await _wait_arrival("NimrodHome"):
         quit(1)
         return
     hero = manager.player
     player_id = hero.get_instance_id()
-    _check(hero.global_position.x == 260.0 and hero.hp == 180, "initial RearGate Spawn_Start")
+    _check(hero.global_position.x == 330.0 and hero.hp == 180 and hero.weapon == "none", "initial NimrodHome Spawn_Start without weapon")
     _check(game.get_node("Player") == hero and game.get_node("LevelRoot").get_child_count() == 1, "Main owns one actor and one level")
     _check(state.first_time("transition_test_once"), "first_time first call")
     _check(not state.first_time("transition_test_once"), "first_time repeat call")
+    await manager.go_to("RearGate", "Spawn_Start")
     await _travel("rear_gate_exterior", "CastleF1", "Spawn_FromRearGate")
     var bgm: AudioStreamPlayer = audio.get("_bgm")
     var castle_stream: AudioStream = bgm.stream
@@ -115,8 +116,8 @@ func _run() -> void:
     await create_timer(1.2).timeout
     _check(hero.action == "dead" and str(manager.current_level.level_id) == "VillaF1", "death waits for original 1.6 second timer")
     var death_destination: String = await manager.transition_finished
-    _check(death_destination == "RearGate", "death returns to RearGate")
-    _check(hero.hp == 180 and is_equal_approx(hero.global_position.x, 260.0), "death restores HP180 at x260")
+    _check(death_destination == "NimrodHome", "death returns to NimrodHome")
+    _check(hero.hp == 180 and is_equal_approx(hero.global_position.x, 330.0), "death restores HP180 at home x330")
     _check(hero.get_instance_id() == player_id, "death keeps the persistent player")
     _check(not state.run_flags.has("must_clear_on_death"), "death clears run flags")
     _check(hero.combo_next == 1 and hero.action == "normal", "death clears combat action and combo")
@@ -126,7 +127,7 @@ func _run() -> void:
     await create_timer(0.04).timeout
     Input.action_release("restart")
     var restart_destination: String = await manager.transition_finished
-    _check(restart_destination == "RearGate", "R completes restart")
+    _check(restart_destination == "NimrodHome", "R completes restart")
     _check(hero.hp == 180 and not state.run_flags.has("must_clear_on_restart"), "R restores HP and clears run flags")
     manager.set_player_locked(true)
     game.queue_free()

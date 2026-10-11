@@ -41,7 +41,7 @@
       ]
     },
     {
-      "path": "assets/props/large_rubble_b.png",
+      "path": "assets/props/large_rubble_b.webp",
       "source_region": [
         0,
         59,
@@ -50,7 +50,7 @@
       ]
     },
     {
-      "path": "assets/props/broken_overpass.png",
+      "path": "assets/props/broken_overpass.webp",
       "source_region": [
         0,
         130,

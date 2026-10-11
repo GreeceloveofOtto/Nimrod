@@ -73,9 +73,9 @@ def check_maze(layout,level):
             p=platforms[a];q=platforms[b];x,y=p['position'];xx,yy=q['position'];gap=max(0,xx-x-p['width'],x-xx-q['width'])
             expect(gap<=layout['max_gap'] and abs(y-yy)<=layout['max_rise'],'Maze chain exceeds jump limits')
         expect(len(chain)>=8,'640px ascent needs eight80px steps')
-    # Solid room floors prohibit S+Space shortcuts between non-connected rooms.
+    # Room floors now share the one-way rule; graph doors retain intended navigation.
     for p in platforms.values():
-        if p['id'].startswith('room_'):expect(not p.get('one_way',True),'Room separator must be solid')
+        if p['id'].startswith('room_'):expect(p.get('one_way',False),'Room floor must support S+Space')
     print(f"MAZE {level['id']}: {checks} checks, {len(errors)} failures; {len(cells)} rooms, shortest path {len(paths.get(layout['exit'],[]))}")
     for err in errors:print('FAIL:',err)
     return not errors

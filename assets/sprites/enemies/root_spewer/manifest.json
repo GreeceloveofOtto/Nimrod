@@ -3,7 +3,7 @@
   "clips": [
     {
       "name": "idle",
-      "sheet": "sprites/enemies/root_spewer/idle.png",
+      "sheet": "sprites/enemies/root_spewer/idle.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -17,13 +17,19 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        1290,
+        289
+      ],
+      "trim": {
+        "x": 213,
+        "y": 313,
+        "w": 215,
+        "h": 289
+      }
     },
     {
       "name": "windup",
-      "sheet": "sprites/enemies/root_spewer/windup.png",
+      "sheet": "sprites/enemies/root_spewer/windup.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -37,13 +43,23 @@
         600
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        1020,
+        288
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 185,
+        "y": 314,
+        "w": 255,
+        "h": 288
+      }
     },
     {
       "name": "spew",
-      "sheet": "sprites/enemies/root_spewer/spew.png",
+      "sheet": "sprites/enemies/root_spewer/spew.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -57,13 +73,19 @@
         600
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        1752,
+        280
+      ],
+      "trim": {
+        "x": 143,
+        "y": 322,
+        "w": 438,
+        "h": 280
+      }
     },
     {
       "name": "recovery",
-      "sheet": "sprites/enemies/root_spewer/recovery.png",
+      "sheet": "sprites/enemies/root_spewer/recovery.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -77,13 +99,23 @@
         600
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        1012,
+        301
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 183,
+        "y": 301,
+        "w": 253,
+        "h": 301
+      }
     },
     {
       "name": "turn",
-      "sheet": "sprites/enemies/root_spewer/turn.png",
+      "sheet": "sprites/enemies/root_spewer/turn.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -97,13 +129,19 @@
         600
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        904,
+        273
+      ],
+      "trim": {
+        "x": 206,
+        "y": 329,
+        "w": 226,
+        "h": 273
+      }
     },
     {
       "name": "hurt",
-      "sheet": "sprites/enemies/root_spewer/hurt.png",
+      "sheet": "sprites/enemies/root_spewer/hurt.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 2,
@@ -117,13 +155,19 @@
         600
       ],
       "image_size": [
-        1280,
-        640
-      ]
+        546,
+        275
+      ],
+      "trim": {
+        "x": 174,
+        "y": 327,
+        "w": 273,
+        "h": 275
+      }
     },
     {
       "name": "death",
-      "sheet": "sprites/enemies/root_spewer/death.png",
+      "sheet": "sprites/enemies/root_spewer/death.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -137,9 +181,19 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        1212,
+        312
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 215,
+        "y": 290,
+        "w": 202,
+        "h": 312
+      }
     }
   ],
   "aliases": {

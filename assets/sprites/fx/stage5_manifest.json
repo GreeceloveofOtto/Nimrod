@@ -2,7 +2,7 @@
   "clips": [
     {
       "name": "root_flame",
-      "sheet": "sprites/fx/root_flame.png",
+      "sheet": "sprites/fx/root_flame.webp",
       "frame_width": 256,
       "frame_height": 512,
       "columns": 6,
@@ -16,13 +16,24 @@
         508
       ],
       "image_size": [
-        1536,
-        512
-      ]
+        1026,
+        362
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "FX flow changes extent while retaining uniform scale",
+        "detached_fx_or_weapon": true
+      },
+      "trim": {
+        "x": 43,
+        "y": 148,
+        "w": 171,
+        "h": 362
+      }
     },
     {
       "name": "spit_projectile",
-      "sheet": "sprites/fx/spit_projectile.png",
+      "sheet": "sprites/fx/spit_projectile.webp",
       "frame_width": 128,
       "frame_height": 128,
       "columns": 4,
@@ -36,13 +47,24 @@
         64
       ],
       "image_size": [
-        512,
-        128
-      ]
+        388,
+        96
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "FX flow changes extent while retaining uniform scale",
+        "detached_fx_or_weapon": true
+      },
+      "trim": {
+        "x": 16,
+        "y": 16,
+        "w": 97,
+        "h": 96
+      }
     },
     {
       "name": "explosion",
-      "sheet": "sprites/fx/explosion.png",
+      "sheet": "sprites/fx/explosion.webp",
       "frame_width": 256,
       "frame_height": 256,
       "columns": 6,
@@ -56,13 +78,24 @@
         128
       ],
       "image_size": [
-        1536,
-        256
-      ]
+        1158,
+        218
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "FX flow changes extent while retaining uniform scale",
+        "detached_fx_or_weapon": true
+      },
+      "trim": {
+        "x": 33,
+        "y": 8,
+        "w": 193,
+        "h": 218
+      }
     },
     {
       "name": "gas_cloud",
-      "sheet": "sprites/fx/gas_cloud.png",
+      "sheet": "sprites/fx/gas_cloud.webp",
       "frame_width": 256,
       "frame_height": 256,
       "columns": 6,
@@ -76,13 +109,24 @@
         128
       ],
       "image_size": [
-        1536,
-        256
-      ]
+        1086,
+        204
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "FX flow changes extent while retaining uniform scale",
+        "detached_fx_or_weapon": true
+      },
+      "trim": {
+        "x": 37,
+        "y": 9,
+        "w": 181,
+        "h": 204
+      }
     },
     {
       "name": "guard_spark",
-      "sheet": "sprites/fx/guard_spark.png",
+      "sheet": "sprites/fx/guard_spark.webp",
       "frame_width": 192,
       "frame_height": 192,
       "columns": 5,
@@ -96,13 +140,24 @@
         96
       ],
       "image_size": [
-        960,
-        192
-      ]
+        660,
+        140
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "FX flow changes extent while retaining uniform scale",
+        "detached_fx_or_weapon": true
+      },
+      "trim": {
+        "x": 27,
+        "y": 25,
+        "w": 132,
+        "h": 140
+      }
     },
     {
       "name": "chain_segment",
-      "sheet": "sprites/fx/chain_segment.png",
+      "sheet": "sprites/fx/chain_segment.webp",
       "frame_width": 64,
       "frame_height": 24,
       "columns": 1,
@@ -116,13 +171,24 @@
         12
       ],
       "image_size": [
-        64,
-        24
-      ]
+        43,
+        14
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "FX flow changes extent while retaining uniform scale",
+        "detached_fx_or_weapon": true
+      },
+      "trim": {
+        "x": 11,
+        "y": 6,
+        "w": 43,
+        "h": 14
+      }
     },
     {
       "name": "chain_hook",
-      "sheet": "sprites/fx/chain_hook.png",
+      "sheet": "sprites/fx/chain_hook.webp",
       "frame_width": 96,
       "frame_height": 96,
       "columns": 1,
@@ -136,9 +202,20 @@
         48
       ],
       "image_size": [
-        96,
-        96
-      ]
+        78,
+        34
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "FX flow changes extent while retaining uniform scale",
+        "detached_fx_or_weapon": true
+      },
+      "trim": {
+        "x": 2,
+        "y": 31,
+        "w": 78,
+        "h": 34
+      }
     }
   ]
 }

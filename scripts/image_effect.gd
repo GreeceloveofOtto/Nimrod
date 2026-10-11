@@ -26,7 +26,7 @@ func _ready() -> void:
             sprite.texture = texture
             sprite.region_enabled = true
             sprite.region_rect = Rect2(Vector2.ZERO, Vector2(frame_size))
-            sprite.offset = Vector2(frame_size) * 0.5 - anchor
+            AssetVisual.apply_frame(sprite, _spec(), 0)
             sprite.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
             add_child(sprite)
             return
@@ -54,4 +54,9 @@ func _process(delta: float) -> void:
     if sprite != null:
         var phase: float = fmod(clock, duration) if looped else clock
         var frame: int = clampi(int(phase / duration * frame_count), 0, frame_count - 1)
-        sprite.region_rect.position = Vector2(frame * frame_size.x, 0)
+        AssetVisual.apply_frame(sprite, _spec(), frame)
+
+func _spec() -> Dictionary:
+    var spec: Dictionary = AssetVisual.sheet_spec(sheet_path, {"frame_width": frame_size.x, "frame_height": frame_size.y, "frames": frame_count}).duplicate()
+    spec["anchor_px"] = [anchor.x, anchor.y]
+    return spec

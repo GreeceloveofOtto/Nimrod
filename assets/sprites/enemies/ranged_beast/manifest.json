@@ -9,7 +9,7 @@
   "clips": [
     {
       "name": "idle",
-      "sheet": "sprites/enemies/ranged_beast/idle.png",
+      "sheet": "sprites/enemies/ranged_beast/idle.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -23,13 +23,19 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        2472,
+        559
+      ],
+      "trim": {
+        "x": 114,
+        "y": 43,
+        "w": 412,
+        "h": 559
+      }
     },
     {
       "name": "walk",
-      "sheet": "sprites/enemies/ranged_beast/walk.png",
+      "sheet": "sprites/enemies/ranged_beast/walk.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 8,
@@ -43,13 +49,19 @@
         600
       ],
       "image_size": [
-        5120,
-        640
-      ]
+        3712,
+        507
+      ],
+      "trim": {
+        "x": 88,
+        "y": 95,
+        "w": 464,
+        "h": 507
+      }
     },
     {
       "name": "windup",
-      "sheet": "sprites/enemies/ranged_beast/windup.png",
+      "sheet": "sprites/enemies/ranged_beast/windup.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -63,13 +75,19 @@
         600
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        2496,
+        572
+      ],
+      "trim": {
+        "x": 8,
+        "y": 30,
+        "w": 624,
+        "h": 572
+      }
     },
     {
       "name": "flame_loop",
-      "sheet": "sprites/enemies/ranged_beast/flame_loop.png",
+      "sheet": "sprites/enemies/ranged_beast/flame_loop.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -83,13 +101,19 @@
         600
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        2348,
+        470
+      ],
+      "trim": {
+        "x": 26,
+        "y": 132,
+        "w": 587,
+        "h": 470
+      }
     },
     {
       "name": "recovery",
-      "sheet": "sprites/enemies/ranged_beast/recovery.png",
+      "sheet": "sprites/enemies/ranged_beast/recovery.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -103,13 +127,19 @@
         600
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        2156,
+        510
+      ],
+      "trim": {
+        "x": 50,
+        "y": 92,
+        "w": 539,
+        "h": 510
+      }
     },
     {
       "name": "turn",
-      "sheet": "sprites/enemies/ranged_beast/turn.png",
+      "sheet": "sprites/enemies/ranged_beast/turn.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -123,13 +153,19 @@
         600
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        1780,
+        520
+      ],
+      "trim": {
+        "x": 98,
+        "y": 82,
+        "w": 445,
+        "h": 520
+      }
     },
     {
       "name": "hurt",
-      "sheet": "sprites/enemies/ranged_beast/hurt.png",
+      "sheet": "sprites/enemies/ranged_beast/hurt.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 2,
@@ -143,13 +179,19 @@
         600
       ],
       "image_size": [
-        1280,
-        640
-      ]
+        928,
+        477
+      ],
+      "trim": {
+        "x": 88,
+        "y": 125,
+        "w": 464,
+        "h": 477
+      }
     },
     {
       "name": "death",
-      "sheet": "sprites/enemies/ranged_beast/death.png",
+      "sheet": "sprites/enemies/ranged_beast/death.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -163,15 +205,21 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        3678,
+        424
+      ],
+      "trim": {
+        "x": 14,
+        "y": 178,
+        "w": 613,
+        "h": 424
+      }
     }
   ],
   "effects": [
     {
       "name": "flame",
-      "sheet": "sprites/enemies/ranged_beast/flame.png",
+      "sheet": "sprites/enemies/ranged_beast/flame.webp",
       "frame_width": 512,
       "frame_height": 256,
       "columns": 6,
@@ -185,9 +233,15 @@
         128
       ],
       "image_size": [
-        3072,
-        256
-      ]
+        2628,
+        132
+      ],
+      "trim": {
+        "x": 14,
+        "y": 62,
+        "w": 438,
+        "h": 132
+      }
     }
   ],
   "aliases": {

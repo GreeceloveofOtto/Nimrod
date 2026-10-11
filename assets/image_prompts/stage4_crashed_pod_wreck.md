@@ -4,7 +4,7 @@
 
 최종 파일·시트 크기:
 
-- assets/props/crashed_pod_wreck.png: 420x240
+- assets/props/crashed_pod_wreck.webp: 420x240
 
 프레임: 1. 배경: 스프라이트·투명 소품은 단색 #FF00FF로 생성 후 크로마키; 불투명 배경은 알파 255.
 

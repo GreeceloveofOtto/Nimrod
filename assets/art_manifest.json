@@ -41,12 +41,14 @@
     "sprites/npcs/enkidua/manifest.json",
     "props/doors/stage6_manifest.json",
     "sprites/fx/stage6_manifest.json",
-    "sprites/enemies/kala_ushumgal/manifest.json"
+    "sprites/enemies/kala_ushumgal/manifest.json",
+    "sprites/player/unarmed/manifest.json",
+    "sprites/player/staff/manifest.json"
   ],
   "assets": [
     {
       "name": "rear_gate_sky",
-      "path": "backgrounds/rear_gate/sky.png",
+      "path": "backgrounds/rear_gate/sky.webp",
       "width": 1536,
       "height": 720,
       "transparent": false,
@@ -55,7 +57,7 @@
     },
     {
       "name": "rear_gate_far_city",
-      "path": "backgrounds/rear_gate/far_city.png",
+      "path": "backgrounds/rear_gate/far_city.webp",
       "width": 2112,
       "height": 720,
       "transparent": true,
@@ -64,7 +66,7 @@
     },
     {
       "name": "rear_gate_castle_wall",
-      "path": "backgrounds/rear_gate/castle_wall.png",
+      "path": "backgrounds/rear_gate/castle_wall.webp",
       "width": 3136,
       "height": 720,
       "transparent": true,
@@ -95,42 +97,42 @@
     },
     {
       "name": "rear_gate_door",
-      "path": "props/rear_gate_door.png",
+      "path": "props/rear_gate_door.webp",
       "width": 320,
       "height": 420,
       "transparent": true
     },
     {
       "name": "exit_signpost",
-      "path": "props/exit_signpost.png",
+      "path": "props/exit_signpost.webp",
       "width": 160,
       "height": 240,
       "transparent": true
     },
     {
       "name": "ruin_pillar_a",
-      "path": "props/ruin_pillar_a.png",
+      "path": "props/ruin_pillar_a.webp",
       "width": 160,
       "height": 300,
       "transparent": true
     },
     {
       "name": "ruin_pillar_b",
-      "path": "props/ruin_pillar_b.png",
+      "path": "props/ruin_pillar_b.webp",
       "width": 140,
       "height": 220,
       "transparent": true
     },
     {
       "name": "rubble",
-      "path": "props/rubble.png",
+      "path": "props/rubble.webp",
       "width": 240,
       "height": 100,
       "transparent": true
     },
     {
       "name": "villa_exterior",
-      "path": "backgrounds/rear_gate/villa_exterior.png",
+      "path": "backgrounds/rear_gate/villa_exterior.webp",
       "width": 1500,
       "height": 720,
       "transparent": true
@@ -140,11 +142,13 @@
       "path": "backgrounds/castle/castle_f1_hall.png",
       "width": 2000,
       "height": 720,
-      "transparent": false
+      "transparent": false,
+      "keep_png": true,
+      "keep_png_reason": "Localized native WebP decoder sample exceeds RGB mean 2/255"
     },
     {
       "name": "castle_f2_sanctum",
-      "path": "backgrounds/castle/castle_f2_sanctum.png",
+      "path": "backgrounds/castle/castle_f2_sanctum.webp",
       "width": 1800,
       "height": 720,
       "transparent": false
@@ -154,7 +158,9 @@
       "path": "backgrounds/castle/castle_f3_kitchen.png",
       "width": 1800,
       "height": 720,
-      "transparent": false
+      "transparent": false,
+      "keep_png": true,
+      "keep_png_reason": "Localized decoder parity sample exceeds RGB mean 2/255"
     },
     {
       "name": "castle_f4_boudoir",
@@ -172,7 +178,7 @@
     },
     {
       "name": "castle_f5_sky",
-      "path": "backgrounds/castle/castle_f5_sky.png",
+      "path": "backgrounds/castle/castle_f5_sky.webp",
       "width": 1536,
       "height": 720,
       "transparent": false,
@@ -181,7 +187,7 @@
     },
     {
       "name": "castle_f5_far",
-      "path": "backgrounds/castle/castle_f5_far.png",
+      "path": "backgrounds/castle/castle_f5_far.webp",
       "width": 1664,
       "height": 720,
       "transparent": true,
@@ -190,7 +196,7 @@
     },
     {
       "name": "castle_f5_terrace",
-      "path": "backgrounds/castle/castle_f5_terrace.png",
+      "path": "backgrounds/castle/castle_f5_terrace.webp",
       "width": 2400,
       "height": 720,
       "transparent": true
@@ -221,63 +227,63 @@
     },
     {
       "name": "castle_pillar",
-      "path": "props/castle_pillar.png",
+      "path": "props/castle_pillar.webp",
       "width": 140,
       "height": 300,
       "transparent": true
     },
     {
       "name": "castle_banner",
-      "path": "props/castle_banner.png",
+      "path": "props/castle_banner.webp",
       "width": 190,
       "height": 280,
       "transparent": true
     },
     {
       "name": "brazier",
-      "path": "props/brazier.png",
+      "path": "props/brazier.webp",
       "width": 160,
       "height": 220,
       "transparent": true
     },
     {
       "name": "kitchen_prep_table",
-      "path": "props/kitchen_prep_table.png",
+      "path": "props/kitchen_prep_table.webp",
       "width": 260,
       "height": 150,
       "transparent": true
     },
     {
       "name": "kitchen_stove",
-      "path": "props/kitchen_stove.png",
+      "path": "props/kitchen_stove.webp",
       "width": 230,
       "height": 180,
       "transparent": true
     },
     {
       "name": "kitchen_dining_table",
-      "path": "props/kitchen_dining_table.png",
+      "path": "props/kitchen_dining_table.webp",
       "width": 300,
       "height": 150,
       "transparent": true
     },
     {
       "name": "villa_vase",
-      "path": "props/villa_vase.png",
+      "path": "props/villa_vase.webp",
       "width": 140,
       "height": 220,
       "transparent": true
     },
     {
       "name": "villa_rug",
-      "path": "props/villa_rug.png",
+      "path": "props/villa_rug.webp",
       "width": 320,
       "height": 100,
       "transparent": true
     },
     {
       "name": "healing_vomit",
-      "path": "props/healing_vomit.png",
+      "path": "props/healing_vomit.webp",
       "width": 128,
       "height": 96,
       "transparent": true
@@ -291,7 +297,7 @@
     },
     {
       "name": "sky",
-      "path": "backgrounds/castle_front/sky.png",
+      "path": "backgrounds/castle_front/sky.webp",
       "width": 1536,
       "height": 720,
       "transparent": false,
@@ -300,7 +306,7 @@
     },
     {
       "name": "far_city",
-      "path": "backgrounds/castle_front/far_city.png",
+      "path": "backgrounds/castle_front/far_city.webp",
       "width": 2048,
       "height": 720,
       "transparent": true,
@@ -309,7 +315,7 @@
     },
     {
       "name": "castle_wall",
-      "path": "backgrounds/castle_front/castle_wall.png",
+      "path": "backgrounds/castle_front/castle_wall.webp",
       "width": 2816,
       "height": 720,
       "transparent": true,
@@ -318,49 +324,49 @@
     },
     {
       "name": "downtown_passage_facade",
-      "path": "backgrounds/castle_front/downtown_passage_facade.png",
+      "path": "backgrounds/castle_front/downtown_passage_facade.webp",
       "width": 1100,
       "height": 720,
       "transparent": true
     },
     {
       "name": "castle_facade",
-      "path": "backgrounds/castle_front/castle_facade.png",
+      "path": "backgrounds/castle_front/castle_facade.webp",
       "width": 1500,
       "height": 720,
       "transparent": true
     },
     {
       "name": "castle_gate_wall_left",
-      "path": "props/castle_gate_wall_left.png",
+      "path": "props/castle_gate_wall_left.webp",
       "width": 420,
       "height": 600,
       "transparent": true
     },
     {
       "name": "castle_gate_wall_right",
-      "path": "props/castle_gate_wall_right.png",
+      "path": "props/castle_gate_wall_right.webp",
       "width": 420,
       "height": 600,
       "transparent": true
     },
     {
       "name": "castle_front_brazier",
-      "path": "props/castle_front_brazier.png",
+      "path": "props/castle_front_brazier.webp",
       "width": 180,
       "height": 200,
       "transparent": true
     },
     {
       "name": "castle_front_statue",
-      "path": "props/castle_front_statue.png",
+      "path": "props/castle_front_statue.webp",
       "width": 230,
       "height": 320,
       "transparent": true
     },
     {
       "name": "castle_front_lamp_post",
-      "path": "props/castle_front_lamp_post.png",
+      "path": "props/castle_front_lamp_post.webp",
       "width": 150,
       "height": 260,
       "transparent": true
@@ -383,84 +389,21 @@
     },
     {
       "name": "npc_light_pool",
-      "path": "fx/npc_light_pool.png",
+      "path": "fx/npc_light_pool.webp",
       "width": 512,
       "height": 256,
       "transparent": true
     },
     {
       "name": "contact_shadow",
-      "path": "fx/contact_shadow.png",
+      "path": "fx/contact_shadow.webp",
       "width": 256,
       "height": 64,
       "transparent": true
     },
     {
-      "name": "inanna_candidate_1",
-      "path": "reference/inanna_candidate_1.png",
-      "width": 1254,
-      "height": 314,
-      "transparent": false
-    },
-    {
-      "name": "inanna_candidate_2",
-      "path": "reference/inanna_candidate_2.png",
-      "width": 1254,
-      "height": 313,
-      "transparent": false
-    },
-    {
-      "name": "inanna_candidate_3",
-      "path": "reference/inanna_candidate_3.png",
-      "width": 1254,
-      "height": 313,
-      "transparent": false
-    },
-    {
-      "name": "inanna_candidate_4",
-      "path": "reference/inanna_candidate_4.png",
-      "width": 1254,
-      "height": 314,
-      "transparent": false
-    },
-    {
-      "name": "inanna_design",
-      "path": "reference/inanna_design.png",
-      "width": 1254,
-      "height": 313,
-      "transparent": false
-    },
-    {
-      "name": "lugalbanda_design",
-      "path": "reference/lugalbanda_design.png",
-      "width": 1254,
-      "height": 314,
-      "transparent": false
-    },
-    {
-      "name": "ninsun_design",
-      "path": "reference/ninsun_design.png",
-      "width": 1254,
-      "height": 313,
-      "transparent": false
-    },
-    {
-      "name": "papsukkal_design",
-      "path": "reference/papsukkal_design.png",
-      "width": 1254,
-      "height": 314,
-      "transparent": false
-    },
-    {
-      "name": "shamhat_design",
-      "path": "reference/shamhat_design.png",
-      "width": 1254,
-      "height": 313,
-      "transparent": false
-    },
-    {
       "name": "sky",
-      "path": "backgrounds/outskirts/sky.png",
+      "path": "backgrounds/outskirts/sky.webp",
       "width": 1792,
       "height": 720,
       "transparent": false,
@@ -469,7 +412,7 @@
     },
     {
       "name": "far_city_tile",
-      "path": "backgrounds/outskirts/far_city_tile.png",
+      "path": "backgrounds/outskirts/far_city_tile.webp",
       "width": 2048,
       "height": 720,
       "transparent": true,
@@ -480,7 +423,7 @@
     },
     {
       "name": "mid_ruins_tile",
-      "path": "backgrounds/outskirts/mid_ruins_tile.png",
+      "path": "backgrounds/outskirts/mid_ruins_tile.webp",
       "width": 2048,
       "height": 720,
       "transparent": true,
@@ -491,7 +434,7 @@
     },
     {
       "name": "far_landmark",
-      "path": "backgrounds/outskirts/far_landmark.png",
+      "path": "backgrounds/outskirts/far_landmark.webp",
       "width": 900,
       "height": 720,
       "transparent": true,
@@ -500,84 +443,84 @@
     },
     {
       "name": "ruin_wall_a",
-      "path": "props/ruin_wall_a.png",
+      "path": "props/ruin_wall_a.webp",
       "width": 600,
       "height": 420,
       "transparent": true
     },
     {
       "name": "ruin_wall_b",
-      "path": "props/ruin_wall_b.png",
+      "path": "props/ruin_wall_b.webp",
       "width": 480,
       "height": 360,
       "transparent": true
     },
     {
       "name": "broken_tower",
-      "path": "props/broken_tower.png",
+      "path": "props/broken_tower.webp",
       "width": 360,
       "height": 560,
       "transparent": true
     },
     {
       "name": "chasm_edge_left",
-      "path": "props/chasm_edge_left.png",
+      "path": "props/chasm_edge_left.webp",
       "width": 300,
       "height": 260,
       "transparent": true
     },
     {
       "name": "chasm_edge_right",
-      "path": "props/chasm_edge_right.png",
+      "path": "props/chasm_edge_right.webp",
       "width": 300,
       "height": 260,
       "transparent": true
     },
     {
       "name": "collapsed_bridge",
-      "path": "props/collapsed_bridge.png",
+      "path": "props/collapsed_bridge.webp",
       "width": 960,
       "height": 180,
       "transparent": true
     },
     {
       "name": "upper_walkway",
-      "path": "props/upper_walkway.png",
+      "path": "props/upper_walkway.webp",
       "width": 1000,
       "height": 120,
       "transparent": true
     },
     {
       "name": "large_rubble_a",
-      "path": "props/large_rubble_a.png",
+      "path": "props/large_rubble_a.webp",
       "width": 220,
       "height": 120,
       "transparent": true
     },
     {
       "name": "large_rubble_b",
-      "path": "props/large_rubble_b.png",
+      "path": "props/large_rubble_b.webp",
       "width": 160,
       "height": 90,
       "transparent": true
     },
     {
       "name": "dead_tree",
-      "path": "props/dead_tree.png",
+      "path": "props/dead_tree.webp",
       "width": 240,
       "height": 380,
       "transparent": true
     },
     {
       "name": "crashed_pod_wreck",
-      "path": "props/crashed_pod_wreck.png",
+      "path": "props/crashed_pod_wreck.webp",
       "width": 420,
       "height": 240,
       "transparent": true
     },
     {
       "name": "outskirts_lamp",
-      "path": "props/outskirts_lamp.png",
+      "path": "props/outskirts_lamp.webp",
       "width": 100,
       "height": 260,
       "transparent": true
@@ -643,74 +586,32 @@
       "transparent": false
     },
     {
-      "name": "nimrod_base_rear",
-      "path": "reference/nimrod_base_rear.png",
-      "width": 640,
-      "height": 640,
-      "transparent": true
-    },
-    {
-      "name": "nimrod_base_right",
-      "path": "reference/nimrod_base_right.png",
-      "width": 640,
-      "height": 640,
-      "transparent": true
-    },
-    {
-      "name": "nimrod_design",
-      "path": "reference/nimrod_design.png",
-      "width": 1536,
-      "height": 1024,
-      "transparent": false
-    },
-    {
-      "name": "nimrod_base_three_quarter",
-      "path": "reference/nimrod_base_three_quarter.png",
-      "width": 640,
-      "height": 640,
-      "transparent": true
-    },
-    {
       "name": "villa_dining_table_wide",
-      "path": "props/villa_dining_table_wide.png",
+      "path": "props/villa_dining_table_wide.webp",
       "width": 900,
       "height": 220,
       "transparent": true
     },
     {
       "name": "villa_chairs",
-      "path": "props/villa_chairs.png",
+      "path": "props/villa_chairs.webp",
       "width": 520,
       "height": 150,
       "transparent": true
     },
     {
       "name": "villa_sofa",
-      "path": "props/villa_sofa.png",
+      "path": "props/villa_sofa.webp",
       "width": 360,
       "height": 200,
       "transparent": true
     },
     {
       "name": "villa_side_table",
-      "path": "props/villa_side_table.png",
+      "path": "props/villa_side_table.webp",
       "width": 160,
       "height": 120,
       "transparent": true
-    },
-    {
-      "name": "shamash_design",
-      "path": "reference/shamash_design.png",
-      "width": 1536,
-      "height": 512,
-      "transparent": false
-    },
-    {
-      "name": "aya_design",
-      "path": "reference/aya_design.png",
-      "width": 1536,
-      "height": 512,
-      "transparent": false
     },
     {
       "name": "wall_tile_a",
@@ -754,63 +655,63 @@
     },
     {
       "name": "passage_pillar_a",
-      "path": "props/passage_pillar_a.png",
+      "path": "props/passage_pillar_a.webp",
       "width": 220,
       "height": 620,
       "transparent": true
     },
     {
       "name": "passage_pillar_b",
-      "path": "props/passage_pillar_b.png",
+      "path": "props/passage_pillar_b.webp",
       "width": 260,
       "height": 620,
       "transparent": true
     },
     {
       "name": "passage_arch",
-      "path": "props/passage_arch.png",
+      "path": "props/passage_arch.webp",
       "width": 600,
       "height": 520,
       "transparent": true
     },
     {
       "name": "passage_window_crimson",
-      "path": "props/passage_window_crimson.png",
+      "path": "props/passage_window_crimson.webp",
       "width": 320,
       "height": 420,
       "transparent": true
     },
     {
       "name": "passage_gargoyle",
-      "path": "props/passage_gargoyle.png",
+      "path": "props/passage_gargoyle.webp",
       "width": 240,
       "height": 300,
       "transparent": true
     },
     {
       "name": "passage_chandelier",
-      "path": "props/passage_chandelier.png",
+      "path": "props/passage_chandelier.webp",
       "width": 280,
       "height": 360,
       "transparent": true
     },
     {
       "name": "passage_pipe_cluster",
-      "path": "props/passage_pipe_cluster.png",
+      "path": "props/passage_pipe_cluster.webp",
       "width": 420,
       "height": 300,
       "transparent": true
     },
     {
       "name": "passage_gear_pillar",
-      "path": "props/passage_gear_pillar.png",
+      "path": "props/passage_gear_pillar.webp",
       "width": 200,
       "height": 520,
       "transparent": true
     },
     {
       "name": "passage_stair_block",
-      "path": "props/passage_stair_block.png",
+      "path": "props/passage_stair_block.webp",
       "width": 320,
       "height": 120,
       "transparent": true
@@ -862,7 +763,7 @@
     },
     {
       "name": "sky",
-      "path": "backgrounds/homeroad/sky.png",
+      "path": "backgrounds/homeroad/sky.webp",
       "width": 1792,
       "height": 720,
       "transparent": false,
@@ -871,7 +772,7 @@
     },
     {
       "name": "far_tile",
-      "path": "backgrounds/homeroad/far_tile.png",
+      "path": "backgrounds/homeroad/far_tile.webp",
       "width": 2048,
       "height": 720,
       "transparent": true,
@@ -882,7 +783,7 @@
     },
     {
       "name": "mid_district_tile",
-      "path": "backgrounds/homeroad/mid_district_tile.png",
+      "path": "backgrounds/homeroad/mid_district_tile.webp",
       "width": 2048,
       "height": 720,
       "transparent": true,
@@ -893,7 +794,7 @@
     },
     {
       "name": "nimrod_home_exterior",
-      "path": "props/nimrod_home_exterior.png",
+      "path": "props/nimrod_home_exterior.webp",
       "width": 1300,
       "height": 720,
       "transparent": true,
@@ -901,70 +802,70 @@
     },
     {
       "name": "house_ruin_a",
-      "path": "props/house_ruin_a.png",
+      "path": "props/house_ruin_a.webp",
       "width": 500,
       "height": 380,
       "transparent": true
     },
     {
       "name": "house_ruin_b",
-      "path": "props/house_ruin_b.png",
+      "path": "props/house_ruin_b.webp",
       "width": 420,
       "height": 300,
       "transparent": true
     },
     {
       "name": "broken_overpass",
-      "path": "props/broken_overpass.png",
+      "path": "props/broken_overpass.webp",
       "width": 1100,
       "height": 260,
       "transparent": true
     },
     {
       "name": "canal_wall_left",
-      "path": "props/canal_wall_left.png",
+      "path": "props/canal_wall_left.webp",
       "width": 300,
       "height": 260,
       "transparent": true
     },
     {
       "name": "canal_wall_right",
-      "path": "props/canal_wall_right.png",
+      "path": "props/canal_wall_right.webp",
       "width": 300,
       "height": 260,
       "transparent": true
     },
     {
       "name": "market_stall_a",
-      "path": "props/market_stall_a.png",
+      "path": "props/market_stall_a.webp",
       "width": 260,
       "height": 170,
       "transparent": true
     },
     {
       "name": "market_stall_b",
-      "path": "props/market_stall_b.png",
+      "path": "props/market_stall_b.webp",
       "width": 260,
       "height": 170,
       "transparent": true
     },
     {
       "name": "garden_fence",
-      "path": "props/garden_fence.png",
+      "path": "props/garden_fence.webp",
       "width": 600,
       "height": 140,
       "transparent": true
     },
     {
       "name": "lamp_post_ruined",
-      "path": "props/lamp_post_ruined.png",
+      "path": "props/lamp_post_ruined.webp",
       "width": 100,
       "height": 260,
       "transparent": true
     },
     {
       "name": "shrub",
-      "path": "props/shrub.png",
+      "path": "props/shrub.webp",
       "width": 220,
       "height": 140,
       "transparent": true
@@ -1009,63 +910,63 @@
     },
     {
       "name": "passage_f1_bg",
-      "path": "backgrounds/passage/passage_f1_bg.png",
+      "path": "backgrounds/passage/passage_f1_bg.webp",
       "width": 3600,
       "height": 800,
       "transparent": false
     },
     {
       "name": "passage_f2_bg",
-      "path": "backgrounds/passage/passage_f2_bg.png",
+      "path": "backgrounds/passage/passage_f2_bg.webp",
       "width": 3600,
       "height": 800,
       "transparent": false
     },
     {
       "name": "passage_f3_bg",
-      "path": "backgrounds/passage/passage_f3_bg.png",
+      "path": "backgrounds/passage/passage_f3_bg.webp",
       "width": 3600,
       "height": 800,
       "transparent": false
     },
     {
       "name": "passage_f4_bg",
-      "path": "backgrounds/passage/passage_f4_bg.png",
+      "path": "backgrounds/passage/passage_f4_bg.webp",
       "width": 3600,
       "height": 960,
       "transparent": false
     },
     {
       "name": "passage_f5_bg",
-      "path": "backgrounds/passage/passage_f5_bg.png",
+      "path": "backgrounds/passage/passage_f5_bg.webp",
       "width": 3600,
       "height": 800,
       "transparent": false
     },
     {
       "name": "passage_f6_bg",
-      "path": "backgrounds/passage/passage_f6_bg.png",
+      "path": "backgrounds/passage/passage_f6_bg.webp",
       "width": 3600,
       "height": 800,
       "transparent": false
     },
     {
       "name": "passage_f7_bg",
-      "path": "backgrounds/passage/passage_f7_bg.png",
+      "path": "backgrounds/passage/passage_f7_bg.webp",
       "width": 3600,
       "height": 800,
       "transparent": false
     },
     {
       "name": "passage_f8_bg",
-      "path": "backgrounds/passage/passage_f8_bg.png",
+      "path": "backgrounds/passage/passage_f8_bg.webp",
       "width": 3600,
       "height": 960,
       "transparent": false
     },
     {
       "name": "home_interior_bg",
-      "path": "backgrounds/nimrod_home/home_interior_bg.png",
+      "path": "backgrounds/nimrod_home/home_interior_bg.webp",
       "width": 1800,
       "height": 720,
       "transparent": false
@@ -1095,79 +996,80 @@
     },
     {
       "name": "mid_trunks_tile_2d",
-      "path": "backgrounds/cedar/mid_trunks_tile_2d.png",
+      "path": "backgrounds/cedar/mid_trunks_tile_2d.webp",
       "width": 1024,
       "height": 1024,
-      "transparent": false,
+      "transparent": true,
       "tile_x": true,
-      "tile_y": true
+      "tile_y": true,
+      "edge_exception": "Repeats on both axes; matching RGBA seam columns/rows intentionally contain trunk pixels."
     },
     {
       "name": "home_bed",
-      "path": "props/home_bed.png",
+      "path": "props/home_bed.webp",
       "width": 420,
       "height": 200,
       "transparent": true
     },
     {
       "name": "home_table",
-      "path": "props/home_table.png",
+      "path": "props/home_table.webp",
       "width": 360,
       "height": 180,
       "transparent": true
     },
     {
       "name": "home_shelf",
-      "path": "props/home_shelf.png",
+      "path": "props/home_shelf.webp",
       "width": 300,
       "height": 420,
       "transparent": true
     },
     {
       "name": "home_lamp",
-      "path": "props/home_lamp.png",
+      "path": "props/home_lamp.webp",
       "width": 120,
       "height": 260,
       "transparent": true
     },
     {
       "name": "home_rug",
-      "path": "props/home_rug.png",
+      "path": "props/home_rug.webp",
       "width": 420,
       "height": 60,
       "transparent": true
     },
     {
       "name": "cedar_stump",
-      "path": "props/cedar_stump.png",
+      "path": "props/cedar_stump.webp",
       "width": 240,
       "height": 200,
       "transparent": true
     },
     {
       "name": "skeleton_remains",
-      "path": "props/skeleton_remains.png",
+      "path": "props/skeleton_remains.webp",
       "width": 280,
       "height": 120,
       "transparent": true
     },
     {
       "name": "hanging_vines",
-      "path": "props/hanging_vines.png",
+      "path": "props/hanging_vines.webp",
       "width": 200,
       "height": 360,
       "transparent": true
     },
     {
       "name": "bone_pile",
-      "path": "props/bone_pile.png",
+      "path": "props/bone_pile.webp",
       "width": 220,
       "height": 130,
       "transparent": true
     },
     {
       "name": "cedar_branch_perch",
-      "path": "props/cedar_branch_perch.png",
+      "path": "props/cedar_branch_perch.webp",
       "width": 360,
       "height": 120,
       "transparent": true

@@ -2,7 +2,7 @@
 
 목적: 도끼 타격 시 흰·주황 스파크
 
-저장 경로: `assets/sprites/fx/hit_spark.png`
+저장 경로: `assets/sprites/fx/hit_spark.webp`
 
 최종 크기: 1280x256px. 프레임 구성: 5프레임, 프레임당 256x256px, 한 줄, 0.15초, 비루프.
 

@@ -2,7 +2,7 @@
 
 목적: 안개 속 먼 지구라트와 우루크 도시
 
-저장 경로: `assets/backgrounds/rear_gate/far_city.png`
+저장 경로: `assets/backgrounds/rear_gate/far_city.webp`
 
 최종 크기: 1920x720px. 프레임 구성: 정지 이미지 1프레임.
 

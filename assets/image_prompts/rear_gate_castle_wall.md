@@ -2,7 +2,7 @@
 
 목적: 루갈성 외벽, 첨탑과 횃불
 
-저장 경로: `assets/backgrounds/rear_gate/castle_wall.png`
+저장 경로: `assets/backgrounds/rear_gate/castle_wall.webp`
 
 최종 크기: 2560x720px. 프레임 구성: 정지 이미지 1프레임.
 

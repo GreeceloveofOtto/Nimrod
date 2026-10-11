@@ -1,6 +1,6 @@
 # home_bed
 목적: 6단계 환경.
-경로: assets/props/home_bed.png
+경로: assets/props/home_bed.webp
 크기: 420x200, 1프레임.
 배경: #FF00FF 크로마키.
 

@@ -1,5 +1,5 @@
 # death / hurt
-목적: 괴수 애니메이션. 경로: assets/sprites/enemies/chain_beastman/hurt.png
+목적: 괴수 애니메이션. 경로: assets/sprites/enemies/chain_beastman/hurt.webp
 규격: 2 × 896x768, 0.2초, 앵커 [448, 720].
 배경: #FF00FF → pack_sprites.py 크로마키/정렬/합성.
 

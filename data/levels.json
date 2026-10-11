@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "start_level": "RearGate",
+  "start_level": "NimrodHome",
   "start_spawn": "Spawn_Start",
   "world": {
     "surface_layer": 1,
@@ -90,7 +90,7 @@
       "backgrounds": [
         {
           "name": "Sky",
-          "path": "res://assets/backgrounds/rear_gate/sky.png",
+          "path": "res://assets/backgrounds/rear_gate/sky.webp",
           "size": [
             1536,
             720
@@ -104,7 +104,7 @@
         },
         {
           "name": "FarCity",
-          "path": "res://assets/backgrounds/rear_gate/far_city.png",
+          "path": "res://assets/backgrounds/rear_gate/far_city.webp",
           "size": [
             2112,
             720
@@ -118,7 +118,7 @@
         },
         {
           "name": "CastleWall",
-          "path": "res://assets/backgrounds/rear_gate/castle_wall.png",
+          "path": "res://assets/backgrounds/rear_gate/castle_wall.webp",
           "size": [
             3136,
             720
@@ -132,7 +132,7 @@
         },
         {
           "name": "VillaExterior",
-          "path": "res://assets/backgrounds/rear_gate/villa_exterior.png",
+          "path": "res://assets/backgrounds/rear_gate/villa_exterior.webp",
           "size": [
             1500,
             720
@@ -153,7 +153,7 @@
             150,
             880
           ],
-          "door_art": "res://assets/props/doors/castle_rear_door_exterior.png",
+          "door_art": "res://assets/props/doors/castle_rear_door_exterior.webp",
           "target_level": "CastleF1",
           "target_spawn": "Spawn_FromRearGate",
           "arrival_spawn": "Spawn_FromCastle",
@@ -166,7 +166,7 @@
             5200,
             880
           ],
-          "door_art": "res://assets/props/doors/villa_gate.png",
+          "door_art": "res://assets/props/doors/villa_gate.webp",
           "target_level": "VillaF1",
           "target_spawn": "Spawn_FromGate",
           "arrival_spawn": "Spawn_FromVilla",
@@ -271,7 +271,7 @@
       ],
       "decorations": [
         {
-          "path": "res://assets/props/ruin_pillar_a.png",
+          "path": "res://assets/props/ruin_pillar_a.webp",
           "position": [
             690,
             600
@@ -284,7 +284,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/ruin_pillar_b.png",
+          "path": "res://assets/props/ruin_pillar_b.webp",
           "position": [
             2240,
             640
@@ -297,7 +297,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/rubble.png",
+          "path": "res://assets/props/rubble.webp",
           "position": [
             1730,
             770
@@ -313,17 +313,20 @@
         {
           "x": 900,
           "width": 180,
-          "height": 60
+          "height": 60,
+          "kind": "step"
         },
         {
           "x": 2400,
           "width": 200,
-          "height": 90
+          "height": 90,
+          "kind": "step"
         },
         {
           "x": 4100,
           "width": 180,
-          "height": 70
+          "height": 70,
+          "kind": "step"
         }
       ],
       "platforms": [
@@ -332,28 +335,36 @@
             1120,
             700
           ],
-          "width": 240
+          "width": 240,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "position": [
             1480,
             700
           ],
-          "width": 240
+          "width": 240,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "position": [
             4230,
             700
           ],
-          "width": 240
+          "width": 240,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "position": [
             4590,
             700
           ],
-          "width": 240
+          "width": 240,
+          "kind": "platform",
+          "one_way": true
         }
       ],
       "ceiling": false,
@@ -394,6 +405,10 @@
         "Spawn_FromFront": [
           220,
           620
+        ],
+        "Spawn_Debug": [
+          760,
+          620
         ]
       },
       "backgrounds": [
@@ -419,7 +434,7 @@
             1450,
             620
           ],
-          "door_art": "res://assets/props/doors/castle_interior_door.png",
+          "door_art": "res://assets/props/doors/castle_interior_door.webp",
           "target_level": "CastleF2",
           "target_spawn": "Spawn_FromBelow",
           "arrival_spawn": "Spawn_FromAbove",
@@ -432,7 +447,7 @@
             150,
             620
           ],
-          "door_art": "res://assets/props/doors/castle_front_door_interior.png",
+          "door_art": "res://assets/props/doors/castle_front_door_interior.webp",
           "target_level": "CastleFront",
           "target_spawn": "Spawn_FromCastle",
           "arrival_spawn": "Spawn_FromFront",
@@ -446,7 +461,7 @@
             1850,
             620
           ],
-          "door_art": "res://assets/props/doors/castle_rear_door_interior.png",
+          "door_art": "res://assets/props/doors/castle_rear_door_interior.webp",
           "target_level": "RearGate",
           "target_spawn": "Spawn_FromCastle",
           "arrival_spawn": "Spawn_FromRearGate",
@@ -473,7 +488,7 @@
       "enemies": [],
       "decorations": [
         {
-          "path": "res://assets/props/castle_pillar.png",
+          "path": "res://assets/props/castle_pillar.webp",
           "position": [
             440,
             300
@@ -486,7 +501,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/castle_banner.png",
+          "path": "res://assets/props/castle_banner.webp",
           "position": [
             1200,
             180
@@ -498,7 +513,7 @@
           "z": -5
         },
         {
-          "path": "res://assets/props/brazier.png",
+          "path": "res://assets/props/brazier.webp",
           "position": [
             610,
             450
@@ -552,7 +567,7 @@
       "backgrounds": [
         {
           "name": "Interior",
-          "path": "res://assets/backgrounds/castle/castle_f2_sanctum.png",
+          "path": "res://assets/backgrounds/castle/castle_f2_sanctum.webp",
           "size": [
             1800,
             720
@@ -572,7 +587,7 @@
             220,
             620
           ],
-          "door_art": "res://assets/props/doors/castle_interior_door.png",
+          "door_art": "res://assets/props/doors/castle_interior_door.webp",
           "target_level": "CastleF1",
           "target_spawn": "Spawn_FromAbove",
           "arrival_spawn": "Spawn_FromBelow",
@@ -585,7 +600,7 @@
             1580,
             620
           ],
-          "door_art": "res://assets/props/doors/castle_interior_door.png",
+          "door_art": "res://assets/props/doors/castle_interior_door.webp",
           "target_level": "CastleF3",
           "target_spawn": "Spawn_FromBelow",
           "arrival_spawn": "Spawn_FromAbove",
@@ -605,7 +620,7 @@
       "enemies": [],
       "decorations": [
         {
-          "path": "res://assets/props/castle_pillar.png",
+          "path": "res://assets/props/castle_pillar.webp",
           "position": [
             500,
             300
@@ -618,7 +633,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/brazier.png",
+          "path": "res://assets/props/brazier.webp",
           "position": [
             1160,
             450
@@ -692,7 +707,7 @@
             220,
             620
           ],
-          "door_art": "res://assets/props/doors/castle_interior_door.png",
+          "door_art": "res://assets/props/doors/castle_interior_door.webp",
           "target_level": "CastleF2",
           "target_spawn": "Spawn_FromAbove",
           "arrival_spawn": "Spawn_FromBelow",
@@ -705,7 +720,7 @@
             1580,
             620
           ],
-          "door_art": "res://assets/props/doors/castle_interior_door.png",
+          "door_art": "res://assets/props/doors/castle_interior_door.webp",
           "target_level": "CastleF4",
           "target_spawn": "Spawn_FromBelow",
           "arrival_spawn": "Spawn_FromAbove",
@@ -745,7 +760,7 @@
       "enemies": [],
       "decorations": [
         {
-          "path": "res://assets/props/kitchen_prep_table.png",
+          "path": "res://assets/props/kitchen_prep_table.webp",
           "position": [
             560,
             520
@@ -757,7 +772,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/kitchen_stove.png",
+          "path": "res://assets/props/kitchen_stove.webp",
           "position": [
             915,
             535
@@ -769,7 +784,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/kitchen_dining_table.png",
+          "path": "res://assets/props/kitchen_dining_table.webp",
           "position": [
             1320,
             490
@@ -842,7 +857,7 @@
             220,
             620
           ],
-          "door_art": "res://assets/props/doors/castle_interior_door.png",
+          "door_art": "res://assets/props/doors/castle_interior_door.webp",
           "target_level": "CastleF3",
           "target_spawn": "Spawn_FromAbove",
           "arrival_spawn": "Spawn_FromBelow",
@@ -855,7 +870,7 @@
             1580,
             620
           ],
-          "door_art": "res://assets/props/doors/castle_interior_door.png",
+          "door_art": "res://assets/props/doors/castle_interior_door.webp",
           "target_level": "CastleF5",
           "target_spawn": "Spawn_FromBelow",
           "arrival_spawn": "Spawn_FromAbove",
@@ -882,7 +897,7 @@
       "enemies": [],
       "decorations": [
         {
-          "path": "res://assets/props/castle_banner.png",
+          "path": "res://assets/props/castle_banner.webp",
           "position": [
             610,
             150
@@ -894,7 +909,7 @@
           "z": -4
         },
         {
-          "path": "res://assets/props/brazier.png",
+          "path": "res://assets/props/brazier.webp",
           "position": [
             1210,
             450
@@ -944,7 +959,7 @@
       "backgrounds": [
         {
           "name": "Sky",
-          "path": "res://assets/backgrounds/castle/castle_f5_sky.png",
+          "path": "res://assets/backgrounds/castle/castle_f5_sky.webp",
           "size": [
             1536,
             720
@@ -958,7 +973,7 @@
         },
         {
           "name": "FarCity",
-          "path": "res://assets/backgrounds/castle/castle_f5_far.png",
+          "path": "res://assets/backgrounds/castle/castle_f5_far.webp",
           "size": [
             1664,
             720
@@ -972,7 +987,7 @@
         },
         {
           "name": "Terrace",
-          "path": "res://assets/backgrounds/castle/castle_f5_terrace.png",
+          "path": "res://assets/backgrounds/castle/castle_f5_terrace.webp",
           "size": [
             2400,
             720
@@ -992,7 +1007,7 @@
             220,
             620
           ],
-          "door_art": "res://assets/props/doors/castle_interior_door.png",
+          "door_art": "res://assets/props/doors/castle_interior_door.webp",
           "target_level": "CastleF4",
           "target_spawn": "Spawn_FromAbove",
           "arrival_spawn": "Spawn_FromBelow",
@@ -1085,7 +1100,7 @@
             150,
             620
           ],
-          "door_art": "res://assets/props/doors/villa_inner_door.png",
+          "door_art": "res://assets/props/doors/villa_inner_door.webp",
           "target_level": "RearGate",
           "target_spawn": "Spawn_FromVilla",
           "arrival_spawn": "Spawn_FromGate",
@@ -1098,7 +1113,7 @@
             1000,
             620
           ],
-          "door_art": "res://assets/props/doors/villa_inner_door.png",
+          "door_art": "res://assets/props/doors/villa_inner_door.webp",
           "target_level": "VillaF2",
           "target_spawn": "Spawn_FromBelow",
           "arrival_spawn": "Spawn_FromAbove",
@@ -1110,7 +1125,7 @@
             1850,
             620
           ],
-          "door_art": "res://assets/props/doors/villa_back_door.png",
+          "door_art": "res://assets/props/doors/villa_back_door.webp",
           "target_level": "VillaBackyard",
           "target_spawn": "Spawn_FromBackDoor",
           "arrival_spawn": "Spawn_FromBackyard",
@@ -1147,7 +1162,7 @@
       "enemies": [],
       "decorations": [
         {
-          "path": "res://assets/props/villa_vase.png",
+          "path": "res://assets/props/villa_vase.webp",
           "position": [
             300,
             420
@@ -1160,7 +1175,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/villa_rug.png",
+          "path": "res://assets/props/villa_rug.webp",
           "position": [
             1200,
             590
@@ -1225,7 +1240,7 @@
       "backgrounds": [
         {
           "name": "sky",
-          "path": "res://assets/backgrounds/castle_front/sky.png",
+          "path": "res://assets/backgrounds/castle_front/sky.webp",
           "size": [
             1536,
             720
@@ -1239,7 +1254,7 @@
         },
         {
           "name": "far_city",
-          "path": "res://assets/backgrounds/castle_front/far_city.png",
+          "path": "res://assets/backgrounds/castle_front/far_city.webp",
           "size": [
             2048,
             720
@@ -1253,7 +1268,7 @@
         },
         {
           "name": "castle_wall",
-          "path": "res://assets/backgrounds/castle_front/castle_wall.png",
+          "path": "res://assets/backgrounds/castle_front/castle_wall.webp",
           "size": [
             2816,
             720
@@ -1267,7 +1282,7 @@
         },
         {
           "name": "CastleFacade",
-          "path": "res://assets/backgrounds/castle_front/castle_facade.png",
+          "path": "res://assets/backgrounds/castle_front/castle_facade.webp",
           "position": [
             1100,
             160
@@ -1288,7 +1303,7 @@
             2200,
             880
           ],
-          "door_art": "res://assets/props/doors/castle_front_door_exterior.png",
+          "door_art": "res://assets/props/doors/castle_front_door_exterior.webp",
           "target_level": "CastleF1",
           "target_spawn": "Spawn_FromFront",
           "arrival_spawn": "Spawn_FromCastle",
@@ -1301,7 +1316,7 @@
             600,
             880
           ],
-          "door_art": "res://assets/props/doors/castle_great_gate.png",
+          "door_art": "res://assets/props/doors/castle_great_gate.webp",
           "target_level": "CastleOutskirts",
           "target_spawn": "Spawn_FromGate",
           "arrival_spawn": "Spawn_FromGate",
@@ -1341,7 +1356,7 @@
       "floor_sections": [],
       "decorations": [
         {
-          "path": "res://assets/props/castle_gate_wall_left.png",
+          "path": "res://assets/props/castle_gate_wall_left.webp",
           "position": [
             -140,
             280
@@ -1353,7 +1368,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/castle_gate_wall_right.png",
+          "path": "res://assets/props/castle_gate_wall_right.webp",
           "position": [
             920,
             280
@@ -1365,7 +1380,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/castle_front_brazier.png",
+          "path": "res://assets/props/castle_front_brazier.webp",
           "position": [
             1450,
             680
@@ -1378,7 +1393,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/castle_front_statue.png",
+          "path": "res://assets/props/castle_front_statue.webp",
           "position": [
             1750,
             560
@@ -1391,7 +1406,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/castle_front_lamp_post.png",
+          "path": "res://assets/props/castle_front_lamp_post.webp",
           "position": [
             2340,
             620
@@ -1456,7 +1471,7 @@
       "backgrounds": [
         {
           "name": "Sky",
-          "path": "res://assets/backgrounds/outskirts/sky.png",
+          "path": "res://assets/backgrounds/outskirts/sky.webp",
           "size": [
             1792,
             720
@@ -1470,7 +1485,7 @@
         },
         {
           "name": "FarCity",
-          "path": "res://assets/backgrounds/outskirts/far_city_tile.png",
+          "path": "res://assets/backgrounds/outskirts/far_city_tile.webp",
           "size": [
             2048,
             720
@@ -1489,7 +1504,7 @@
         },
         {
           "name": "MidRuins",
-          "path": "res://assets/backgrounds/outskirts/mid_ruins_tile.png",
+          "path": "res://assets/backgrounds/outskirts/mid_ruins_tile.webp",
           "size": [
             2048,
             720
@@ -1508,7 +1523,7 @@
         },
         {
           "name": "Landmark",
-          "path": "res://assets/backgrounds/outskirts/far_landmark.png",
+          "path": "res://assets/backgrounds/outskirts/far_landmark.webp",
           "size": [
             900,
             720
@@ -1522,7 +1537,7 @@
         },
         {
           "name": "DowntownFacade",
-          "path": "res://assets/backgrounds/castle_front/downtown_passage_facade.png",
+          "path": "res://assets/backgrounds/castle_front/downtown_passage_facade.webp",
           "position": [
             0,
             -40
@@ -1543,7 +1558,7 @@
             9600,
             760
           ],
-          "door_art": "res://assets/props/doors/castle_great_gate.png",
+          "door_art": "res://assets/props/doors/castle_great_gate.webp",
           "target_level": "CastleFront",
           "target_spawn": "Spawn_FromGate",
           "arrival_spawn": "Spawn_FromGate",
@@ -1563,7 +1578,7 @@
             520,
             680
           ],
-          "door_art": "res://assets/props/doors/downtown_passage_door_anim.png",
+          "door_art": "res://assets/props/doors/downtown_passage_door_anim.webp",
           "target_level": "DowntownPassage_F8",
           "target_spawn": "Spawn_FromTop",
           "arrival_spawn": "Spawn_FromPassage",
@@ -1591,7 +1606,8 @@
           "to": 1500,
           "y": 680,
           "elevation": 200,
-          "art": "res://assets/tiles/outskirts/plaza_tile.png"
+          "art": "res://assets/tiles/outskirts/plaza_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_1500",
@@ -1599,7 +1615,8 @@
           "to": 1780,
           "y": 680,
           "elevation": 200,
-          "art": "res://assets/tiles/outskirts/ground_tile.png"
+          "art": "res://assets/tiles/outskirts/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_1780",
@@ -1607,7 +1624,8 @@
           "to": 2060,
           "y": 740,
           "elevation": 140,
-          "art": "res://assets/tiles/outskirts/ground_tile.png"
+          "art": "res://assets/tiles/outskirts/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_2060",
@@ -1615,7 +1633,8 @@
           "to": 2340,
           "y": 790,
           "elevation": 90,
-          "art": "res://assets/tiles/outskirts/ground_tile.png"
+          "art": "res://assets/tiles/outskirts/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_2340",
@@ -1623,7 +1642,8 @@
           "to": 2620,
           "y": 840,
           "elevation": 40,
-          "art": "res://assets/tiles/outskirts/ground_tile.png"
+          "art": "res://assets/tiles/outskirts/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_2620",
@@ -1631,7 +1651,8 @@
           "to": 2900,
           "y": 890,
           "elevation": -10,
-          "art": "res://assets/tiles/outskirts/ground_tile.png"
+          "art": "res://assets/tiles/outskirts/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_2900",
@@ -1639,7 +1660,8 @@
           "to": 3200,
           "y": 940,
           "elevation": -60,
-          "art": "res://assets/tiles/outskirts/ground_tile.png"
+          "art": "res://assets/tiles/outskirts/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_3200",
@@ -1647,7 +1669,8 @@
           "to": 5000,
           "y": 940,
           "elevation": -60,
-          "art": "res://assets/tiles/outskirts/ground_tile.png"
+          "art": "res://assets/tiles/outskirts/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_5000",
@@ -1655,7 +1678,8 @@
           "to": 5200,
           "y": 940,
           "elevation": -60,
-          "art": "res://assets/tiles/outskirts/ground_tile.png"
+          "art": "res://assets/tiles/outskirts/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_5200",
@@ -1663,7 +1687,8 @@
           "to": 6480,
           "y": 920,
           "elevation": -40,
-          "art": "res://assets/tiles/outskirts/ground_tile.png"
+          "art": "res://assets/tiles/outskirts/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_6480",
@@ -1671,7 +1696,8 @@
           "to": 6600,
           "y": 940,
           "elevation": -60,
-          "art": "res://assets/tiles/outskirts/ground_tile.png"
+          "art": "res://assets/tiles/outskirts/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_6600",
@@ -1679,7 +1705,8 @@
           "to": 6800,
           "y": 940,
           "elevation": -60,
-          "art": "res://assets/tiles/outskirts/ground_tile.png"
+          "art": "res://assets/tiles/outskirts/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_6800",
@@ -1687,7 +1714,8 @@
           "to": 7950,
           "y": 1000,
           "elevation": -120,
-          "art": "res://assets/tiles/outskirts/ground_tile.png"
+          "art": "res://assets/tiles/outskirts/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_7950",
@@ -1695,7 +1723,8 @@
           "to": 8050,
           "y": 940,
           "elevation": -60,
-          "art": "res://assets/tiles/outskirts/ground_tile.png"
+          "art": "res://assets/tiles/outskirts/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_8050",
@@ -1703,7 +1732,8 @@
           "to": 8250,
           "y": 895,
           "elevation": -15,
-          "art": "res://assets/tiles/outskirts/ground_tile.png"
+          "art": "res://assets/tiles/outskirts/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_8250",
@@ -1711,7 +1741,8 @@
           "to": 8450,
           "y": 850,
           "elevation": 30,
-          "art": "res://assets/tiles/outskirts/ground_tile.png"
+          "art": "res://assets/tiles/outskirts/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_8450",
@@ -1719,7 +1750,8 @@
           "to": 8650,
           "y": 805,
           "elevation": 75,
-          "art": "res://assets/tiles/outskirts/ground_tile.png"
+          "art": "res://assets/tiles/outskirts/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_8650",
@@ -1727,7 +1759,8 @@
           "to": 8850,
           "y": 760,
           "elevation": 120,
-          "art": "res://assets/tiles/outskirts/ground_tile.png"
+          "art": "res://assets/tiles/outskirts/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_8850",
@@ -1735,7 +1768,8 @@
           "to": 10000,
           "y": 760,
           "elevation": 120,
-          "art": "res://assets/tiles/outskirts/plaza_tile.png"
+          "art": "res://assets/tiles/outskirts/plaza_tile.png",
+          "kind": "floor"
         }
       ],
       "regions": [
@@ -1805,7 +1839,9 @@
           ],
           "width": 180,
           "art": "res://assets/tiles/outskirts/bridge_platform.png",
-          "elevation": -10
+          "elevation": -10,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "bridge_left_high",
@@ -1815,7 +1851,9 @@
           ],
           "width": 180,
           "art": "res://assets/tiles/outskirts/bridge_platform.png",
-          "elevation": 60
+          "elevation": 60,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "bridge",
@@ -1825,7 +1863,9 @@
           ],
           "width": 900,
           "art": "res://assets/tiles/outskirts/bridge_platform.png",
-          "elevation": 60
+          "elevation": 60,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "bridge_right_high",
@@ -1835,7 +1875,9 @@
           ],
           "width": 180,
           "art": "res://assets/tiles/outskirts/bridge_platform.png",
-          "elevation": 60
+          "elevation": 60,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "bridge_right_low",
@@ -1845,7 +1887,9 @@
           ],
           "width": 180,
           "art": "res://assets/tiles/outskirts/bridge_platform.png",
-          "elevation": -10
+          "elevation": -10,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "wall_left_low",
@@ -1855,7 +1899,9 @@
           ],
           "width": 180,
           "art": "res://assets/tiles/outskirts/ruin_platform.png",
-          "elevation": 50
+          "elevation": 50,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "wall_left_high",
@@ -1865,7 +1911,9 @@
           ],
           "width": 180,
           "art": "res://assets/tiles/outskirts/ruin_platform.png",
-          "elevation": 140
+          "elevation": 140,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "upper",
@@ -1875,7 +1923,9 @@
           ],
           "width": 1000,
           "art": "res://assets/tiles/outskirts/ruin_platform.png",
-          "elevation": 140
+          "elevation": 140,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "wall_right_high",
@@ -1885,7 +1935,9 @@
           ],
           "width": 180,
           "art": "res://assets/tiles/outskirts/ruin_platform.png",
-          "elevation": 140
+          "elevation": 140,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "wall_right_low",
@@ -1895,7 +1947,9 @@
           ],
           "width": 180,
           "art": "res://assets/tiles/outskirts/ruin_platform.png",
-          "elevation": 50
+          "elevation": 50,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "rubble_low_left",
@@ -1905,7 +1959,9 @@
           ],
           "width": 180,
           "art": "res://assets/tiles/outskirts/ruin_platform.png",
-          "elevation": 30
+          "elevation": 30,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "rubble_high",
@@ -1915,7 +1971,9 @@
           ],
           "width": 340,
           "art": "res://assets/tiles/outskirts/ruin_platform.png",
-          "elevation": 90
+          "elevation": 90,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "rubble_low_right",
@@ -1925,7 +1983,9 @@
           ],
           "width": 180,
           "art": "res://assets/tiles/outskirts/ruin_platform.png",
-          "elevation": 30
+          "elevation": 30,
+          "kind": "platform",
+          "one_way": true
         }
       ],
       "obstacles": [
@@ -1936,7 +1996,8 @@
             220,
             60
           ],
-          "art": "res://assets/props/large_rubble_a.png"
+          "art": "res://assets/props/large_rubble_a.webp",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -1945,7 +2006,8 @@
             160,
             90
           ],
-          "art": "res://assets/props/large_rubble_b.png"
+          "art": "res://assets/props/large_rubble_b.webp",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -1954,7 +2016,8 @@
             160,
             75
           ],
-          "art": "res://assets/props/large_rubble_b.png"
+          "art": "res://assets/props/large_rubble_b.webp",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -1963,7 +2026,8 @@
             60,
             20
           ],
-          "art": "res://assets/tiles/outskirts/ruin_ledge.png"
+          "art": "res://assets/tiles/outskirts/ruin_ledge.png",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -1972,7 +2036,8 @@
             60,
             20
           ],
-          "art": "res://assets/tiles/outskirts/ruin_ledge.png"
+          "art": "res://assets/tiles/outskirts/ruin_ledge.png",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -1981,7 +2046,8 @@
             60,
             20
           ],
-          "art": "res://assets/tiles/outskirts/ruin_ledge.png"
+          "art": "res://assets/tiles/outskirts/ruin_ledge.png",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -1990,7 +2056,8 @@
             60,
             20
           ],
-          "art": "res://assets/tiles/outskirts/ruin_ledge.png"
+          "art": "res://assets/tiles/outskirts/ruin_ledge.png",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -1999,7 +2066,8 @@
             60,
             20
           ],
-          "art": "res://assets/tiles/outskirts/ruin_ledge.png"
+          "art": "res://assets/tiles/outskirts/ruin_ledge.png",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -2008,7 +2076,8 @@
             60,
             20
           ],
-          "art": "res://assets/tiles/outskirts/ruin_ledge.png"
+          "art": "res://assets/tiles/outskirts/ruin_ledge.png",
+          "kind": "wall"
         }
       ],
       "enemies": [
@@ -2150,7 +2219,7 @@
       ],
       "decorations": [
         {
-          "path": "res://assets/props/castle_gate_wall_left.png",
+          "path": "res://assets/props/castle_gate_wall_left.webp",
           "position": [
             8860,
             160
@@ -2162,7 +2231,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/castle_gate_wall_right.png",
+          "path": "res://assets/props/castle_gate_wall_right.webp",
           "position": [
             9920,
             160
@@ -2174,7 +2243,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/ruin_wall_a.png",
+          "path": "res://assets/props/ruin_wall_a.webp",
           "position": [
             5120,
             520
@@ -2186,7 +2255,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/ruin_wall_b.png",
+          "path": "res://assets/props/ruin_wall_b.webp",
           "position": [
             5970,
             580
@@ -2198,7 +2267,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/broken_tower.png",
+          "path": "res://assets/props/broken_tower.webp",
           "position": [
             4660,
             380
@@ -2210,7 +2279,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/chasm_edge_left.png",
+          "path": "res://assets/props/chasm_edge_left.webp",
           "position": [
             6530,
             820
@@ -2222,7 +2291,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/chasm_edge_right.png",
+          "path": "res://assets/props/chasm_edge_right.webp",
           "position": [
             7850,
             820
@@ -2234,7 +2303,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/collapsed_bridge.png",
+          "path": "res://assets/props/collapsed_bridge.webp",
           "position": [
             6900,
             820
@@ -2246,7 +2315,7 @@
           "z": -4
         },
         {
-          "path": "res://assets/props/upper_walkway.png",
+          "path": "res://assets/props/upper_walkway.webp",
           "position": [
             5300,
             740
@@ -2258,7 +2327,7 @@
           "z": -4
         },
         {
-          "path": "res://assets/props/dead_tree.png",
+          "path": "res://assets/props/dead_tree.webp",
           "position": [
             3490,
             560
@@ -2270,7 +2339,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/crashed_pod_wreck.png",
+          "path": "res://assets/props/crashed_pod_wreck.webp",
           "position": [
             4570,
             700
@@ -2282,7 +2351,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/outskirts_lamp.png",
+          "path": "res://assets/props/outskirts_lamp.webp",
           "position": [
             8780,
             500
@@ -2379,7 +2448,7 @@
             200,
             620
           ],
-          "door_art": "res://assets/props/doors/villa_inner_door.png",
+          "door_art": "res://assets/props/doors/villa_inner_door.webp",
           "target_level": "VillaF1",
           "target_spawn": "Spawn_FromAbove",
           "arrival_spawn": "Spawn_FromBelow",
@@ -2392,7 +2461,7 @@
             2040,
             620
           ],
-          "door_art": "res://assets/props/doors/villa_inner_door.png",
+          "door_art": "res://assets/props/doors/villa_inner_door.webp",
           "target_level": "VillaF3",
           "target_spawn": "Spawn_FromBelow",
           "arrival_spawn": "Spawn_FromAbove",
@@ -2441,7 +2510,7 @@
       "enemies": [],
       "decorations": [
         {
-          "path": "res://assets/props/kitchen_prep_table.png",
+          "path": "res://assets/props/kitchen_prep_table.webp",
           "position": [
             460,
             520
@@ -2453,7 +2522,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/kitchen_stove.png",
+          "path": "res://assets/props/kitchen_stove.webp",
           "position": [
             650,
             535
@@ -2465,7 +2534,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/villa_chairs.png",
+          "path": "res://assets/props/villa_chairs.webp",
           "position": [
             1120,
             470
@@ -2477,7 +2546,7 @@
           "z": -3
         },
         {
-          "path": "res://assets/props/villa_dining_table_wide.png",
+          "path": "res://assets/props/villa_dining_table_wide.webp",
           "position": [
             950,
             530
@@ -2546,7 +2615,7 @@
             200,
             620
           ],
-          "door_art": "res://assets/props/doors/villa_inner_door.png",
+          "door_art": "res://assets/props/doors/villa_inner_door.webp",
           "target_level": "VillaF2",
           "target_spawn": "Spawn_FromAbove",
           "arrival_spawn": "Spawn_FromBelow",
@@ -2559,7 +2628,7 @@
             1800,
             620
           ],
-          "door_art": "res://assets/props/doors/villa_inner_door.png",
+          "door_art": "res://assets/props/doors/villa_inner_door.webp",
           "target_level": "",
           "target_spawn": "",
           "arrival_spawn": "",
@@ -2587,7 +2656,7 @@
       "enemies": [],
       "decorations": [
         {
-          "path": "res://assets/props/villa_sofa.png",
+          "path": "res://assets/props/villa_sofa.webp",
           "position": [
             1240,
             470
@@ -2599,7 +2668,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/villa_side_table.png",
+          "path": "res://assets/props/villa_side_table.webp",
           "position": [
             590,
             520
@@ -2667,7 +2736,7 @@
       "backgrounds": [
         {
           "name": "PassageInterior",
-          "path": "res://assets/backgrounds/passage/passage_f1_bg.png",
+          "path": "res://assets/backgrounds/passage/passage_f1_bg.webp",
           "position": [
             0,
             -560
@@ -2700,7 +2769,7 @@
           "target_level": "DowntownPassage_F2",
           "target_spawn": "Spawn_FromBelow",
           "arrival_spawn": "Spawn_FromAbove",
-          "door_art": "res://assets/props/doors/passage_door.png",
+          "door_art": "res://assets/props/doors/passage_door.webp",
           "exit_direction": -1,
           "ground_contact": true
         },
@@ -2713,7 +2782,7 @@
           "target_level": "HomeRoad",
           "target_spawn": "Spawn_FromPassage",
           "arrival_spawn": "Spawn_FromBelow",
-          "door_art": "res://assets/props/doors/passage_door.png",
+          "door_art": "res://assets/props/doors/passage_door.webp",
           "exit_direction": 1,
           "ground_contact": true
         }
@@ -2797,7 +2866,7 @@
       ],
       "decorations": [
         {
-          "path": "res://assets/props/passage_pillar_a.png",
+          "path": "res://assets/props/passage_pillar_a.webp",
           "position": [
             550,
             0
@@ -2810,7 +2879,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_pillar_a.png",
+          "path": "res://assets/props/passage_pillar_a.webp",
           "position": [
             1200,
             -110.0
@@ -2823,7 +2892,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_pillar_a.png",
+          "path": "res://assets/props/passage_pillar_a.webp",
           "position": [
             2750,
             0
@@ -2836,7 +2905,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_chandelier.png",
+          "path": "res://assets/props/passage_chandelier.webp",
           "position": [
             1700,
             40
@@ -2858,7 +2927,9 @@
           ],
           "width": 500,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "left_access",
@@ -2868,7 +2939,9 @@
           ],
           "width": 300,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "right_access",
@@ -2878,7 +2951,9 @@
           ],
           "width": 300,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         }
       ],
       "obstacles": [],
@@ -2933,35 +3008,40 @@
           "from": 0,
           "to": 900,
           "y": 620,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_900",
           "from": 900,
           "to": 1200,
           "y": 560,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_1200",
           "from": 1200,
           "to": 1500,
           "y": 510,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_1500",
           "from": 1500,
           "to": 1800,
           "y": 560,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_1800",
           "from": 1800,
           "to": 3600,
           "y": 620,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         }
       ],
       "clearance_revision": "stage6",
@@ -3009,7 +3089,7 @@
       "backgrounds": [
         {
           "name": "PassageInterior",
-          "path": "res://assets/backgrounds/passage/passage_f2_bg.png",
+          "path": "res://assets/backgrounds/passage/passage_f2_bg.webp",
           "position": [
             0,
             -560
@@ -3042,7 +3122,7 @@
           "target_level": "DowntownPassage_F3",
           "target_spawn": "Spawn_FromBelow",
           "arrival_spawn": "Spawn_FromAbove",
-          "door_art": "res://assets/props/doors/passage_door.png",
+          "door_art": "res://assets/props/doors/passage_door.webp",
           "exit_direction": -1,
           "ground_contact": true
         },
@@ -3055,7 +3135,7 @@
           "target_level": "DowntownPassage_F1",
           "target_spawn": "Spawn_FromAbove",
           "arrival_spawn": "Spawn_FromBelow",
-          "door_art": "res://assets/props/doors/passage_door.png",
+          "door_art": "res://assets/props/doors/passage_door.webp",
           "exit_direction": 1,
           "ground_contact": true
         }
@@ -3149,7 +3229,7 @@
       ],
       "decorations": [
         {
-          "path": "res://assets/props/passage_pillar_b.png",
+          "path": "res://assets/props/passage_pillar_b.webp",
           "position": [
             550,
             0
@@ -3162,7 +3242,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_pillar_b.png",
+          "path": "res://assets/props/passage_pillar_b.webp",
           "position": [
             1200,
             -120.0
@@ -3175,7 +3255,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_pillar_b.png",
+          "path": "res://assets/props/passage_pillar_b.webp",
           "position": [
             2750,
             0
@@ -3188,7 +3268,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_chandelier.png",
+          "path": "res://assets/props/passage_chandelier.webp",
           "position": [
             1700,
             40
@@ -3210,7 +3290,9 @@
           ],
           "width": 320,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "root_right",
@@ -3220,7 +3302,9 @@
           ],
           "width": 320,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         }
       ],
       "obstacles": [],
@@ -3283,49 +3367,56 @@
           "from": 0,
           "to": 900,
           "y": 620,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_900",
           "from": 900,
           "to": 1200,
           "y": 560,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_1200",
           "from": 1200,
           "to": 1500,
           "y": 500,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_1500",
           "from": 1500,
           "to": 2100,
           "y": 440,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_2100",
           "from": 2100,
           "to": 2400,
           "y": 500,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_2400",
           "from": 2400,
           "to": 2700,
           "y": 560,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_2700",
           "from": 2700,
           "to": 3600,
           "y": 620,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         }
       ],
       "clearance_revision": "stage6",
@@ -3373,7 +3464,7 @@
       "backgrounds": [
         {
           "name": "PassageInterior",
-          "path": "res://assets/backgrounds/passage/passage_f3_bg.png",
+          "path": "res://assets/backgrounds/passage/passage_f3_bg.webp",
           "position": [
             0,
             -560
@@ -3406,7 +3497,7 @@
           "target_level": "DowntownPassage_F4",
           "target_spawn": "Spawn_FromBelow",
           "arrival_spawn": "Spawn_FromAbove",
-          "door_art": "res://assets/props/doors/passage_door.png",
+          "door_art": "res://assets/props/doors/passage_door.webp",
           "exit_direction": -1,
           "ground_contact": true
         },
@@ -3419,7 +3510,7 @@
           "target_level": "DowntownPassage_F2",
           "target_spawn": "Spawn_FromAbove",
           "arrival_spawn": "Spawn_FromBelow",
-          "door_art": "res://assets/props/doors/passage_door.png",
+          "door_art": "res://assets/props/doors/passage_door.webp",
           "exit_direction": 1,
           "ground_contact": true
         }
@@ -3504,7 +3595,7 @@
       ],
       "decorations": [
         {
-          "path": "res://assets/props/passage_pillar_a.png",
+          "path": "res://assets/props/passage_pillar_a.webp",
           "position": [
             550,
             0
@@ -3517,7 +3608,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_pillar_a.png",
+          "path": "res://assets/props/passage_pillar_a.webp",
           "position": [
             1200,
             0
@@ -3530,7 +3621,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_pillar_a.png",
+          "path": "res://assets/props/passage_pillar_a.webp",
           "position": [
             2750,
             0
@@ -3543,7 +3634,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_chandelier.png",
+          "path": "res://assets/props/passage_chandelier.webp",
           "position": [
             1700,
             40
@@ -3565,7 +3656,9 @@
           ],
           "width": 2300,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "upper",
@@ -3575,7 +3668,9 @@
           ],
           "width": 1000,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "left_ascent0",
@@ -3585,7 +3680,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "left_ascent1",
@@ -3595,7 +3692,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "left_ascent2",
@@ -3605,7 +3704,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "right_ascent0",
@@ -3615,7 +3716,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "right_ascent1",
@@ -3625,7 +3728,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "right_ascent2",
@@ -3635,7 +3740,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "right_ascent3",
@@ -3645,7 +3752,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "right_ascent4",
@@ -3655,7 +3764,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "right_ascent5",
@@ -3665,7 +3776,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "right_ascent6",
@@ -3675,7 +3788,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         }
       ],
       "obstacles": [],
@@ -3753,7 +3868,8 @@
           "from": 0,
           "to": 3600,
           "y": 620,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         }
       ],
       "clearance_revision": "stage6",
@@ -3826,7 +3942,7 @@
         },
         {
           "name": "PassageInterior",
-          "path": "res://assets/backgrounds/passage/passage_f4_bg.png",
+          "path": "res://assets/backgrounds/passage/passage_f4_bg.webp",
           "position": [
             0,
             -560
@@ -3859,7 +3975,7 @@
           "target_level": "DowntownPassage_F5",
           "target_spawn": "Spawn_FromBelow",
           "arrival_spawn": "Spawn_FromAbove",
-          "door_art": "res://assets/props/doors/passage_door.png",
+          "door_art": "res://assets/props/doors/passage_door.webp",
           "exit_direction": -1,
           "ground_contact": true
         },
@@ -3872,7 +3988,7 @@
           "target_level": "DowntownPassage_F3",
           "target_spawn": "Spawn_FromAbove",
           "arrival_spawn": "Spawn_FromBelow",
-          "door_art": "res://assets/props/doors/passage_door.png",
+          "door_art": "res://assets/props/doors/passage_door.webp",
           "exit_direction": 1,
           "ground_contact": true
         }
@@ -3957,7 +4073,7 @@
       ],
       "decorations": [
         {
-          "path": "res://assets/props/passage_pillar_b.png",
+          "path": "res://assets/props/passage_pillar_b.webp",
           "position": [
             550,
             0
@@ -3970,7 +4086,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_pillar_b.png",
+          "path": "res://assets/props/passage_pillar_b.webp",
           "position": [
             1200,
             0
@@ -3983,7 +4099,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_pillar_b.png",
+          "path": "res://assets/props/passage_pillar_b.webp",
           "position": [
             2750,
             70.0
@@ -3996,7 +4112,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_chandelier.png",
+          "path": "res://assets/props/passage_chandelier.webp",
           "position": [
             1700,
             40
@@ -4018,7 +4134,9 @@
           ],
           "width": 900,
           "art": "res://assets/tiles/passage/bridge_plank.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "bridge_right",
@@ -4028,7 +4146,9 @@
           ],
           "width": 900,
           "art": "res://assets/tiles/passage/bridge_plank.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "gap_step",
@@ -4038,7 +4158,9 @@
           ],
           "width": 300,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "bottom_left_step",
@@ -4048,7 +4170,9 @@
           ],
           "width": 300,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "bottom_right_step",
@@ -4058,7 +4182,9 @@
           ],
           "width": 300,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         }
       ],
       "obstacles": [],
@@ -4119,35 +4245,40 @@
           "from": 0,
           "to": 700,
           "y": 620,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_700",
           "from": 700,
           "to": 920,
           "y": 690,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_920",
           "from": 920,
           "to": 2680,
           "y": 760,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_2680",
           "from": 2680,
           "to": 2900,
           "y": 690,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_2900",
           "from": 2900,
           "to": 3600,
           "y": 620,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         }
       ],
       "clearance_revision": "stage6",
@@ -4201,7 +4332,7 @@
       "backgrounds": [
         {
           "name": "PassageInterior",
-          "path": "res://assets/backgrounds/passage/passage_f5_bg.png",
+          "path": "res://assets/backgrounds/passage/passage_f5_bg.webp",
           "position": [
             0,
             -560
@@ -4234,7 +4365,7 @@
           "target_level": "DowntownPassage_F6",
           "target_spawn": "Spawn_FromBelow",
           "arrival_spawn": "Spawn_FromAbove",
-          "door_art": "res://assets/props/doors/passage_door.png",
+          "door_art": "res://assets/props/doors/passage_door.webp",
           "exit_direction": -1,
           "ground_contact": true
         },
@@ -4247,7 +4378,7 @@
           "target_level": "DowntownPassage_F4",
           "target_spawn": "Spawn_FromAbove",
           "arrival_spawn": "Spawn_FromBelow",
-          "door_art": "res://assets/props/doors/passage_door.png",
+          "door_art": "res://assets/props/doors/passage_door.webp",
           "exit_direction": 1,
           "ground_contact": true
         }
@@ -4329,7 +4460,7 @@
       ],
       "decorations": [
         {
-          "path": "res://assets/props/passage_gear_pillar.png",
+          "path": "res://assets/props/passage_gear_pillar.webp",
           "position": [
             740,
             180.0
@@ -4342,7 +4473,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_gear_pillar.png",
+          "path": "res://assets/props/passage_gear_pillar.webp",
           "position": [
             1000,
             180.0
@@ -4355,7 +4486,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_gear_pillar.png",
+          "path": "res://assets/props/passage_gear_pillar.webp",
           "position": [
             1260,
             180.0
@@ -4368,7 +4499,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_gear_pillar.png",
+          "path": "res://assets/props/passage_gear_pillar.webp",
           "position": [
             1520,
             180.0
@@ -4381,7 +4512,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_gear_pillar.png",
+          "path": "res://assets/props/passage_gear_pillar.webp",
           "position": [
             1780,
             180.0
@@ -4394,7 +4525,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_gear_pillar.png",
+          "path": "res://assets/props/passage_gear_pillar.webp",
           "position": [
             2040,
             180.0
@@ -4407,7 +4538,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_gear_pillar.png",
+          "path": "res://assets/props/passage_gear_pillar.webp",
           "position": [
             2300,
             180.0
@@ -4420,7 +4551,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_gear_pillar.png",
+          "path": "res://assets/props/passage_gear_pillar.webp",
           "position": [
             2560,
             180.0
@@ -4433,7 +4564,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_gear_pillar.png",
+          "path": "res://assets/props/passage_gear_pillar.webp",
           "position": [
             2820,
             180.0
@@ -4446,7 +4577,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_pillar_a.png",
+          "path": "res://assets/props/passage_pillar_a.webp",
           "position": [
             550,
             -30.0
@@ -4459,7 +4590,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_pillar_a.png",
+          "path": "res://assets/props/passage_pillar_a.webp",
           "position": [
             1200,
             60.0
@@ -4472,7 +4603,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_pillar_a.png",
+          "path": "res://assets/props/passage_pillar_a.webp",
           "position": [
             2750,
             -30.0
@@ -4485,7 +4616,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_chandelier.png",
+          "path": "res://assets/props/passage_chandelier.webp",
           "position": [
             1700,
             40
@@ -4497,7 +4628,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/passage_pipe_cluster.png",
+          "path": "res://assets/props/passage_pipe_cluster.webp",
           "position": [
             2800,
             100
@@ -4519,7 +4650,9 @@
           ],
           "width": 1600,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "high_left",
@@ -4529,7 +4662,9 @@
           ],
           "width": 300,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "high_right",
@@ -4539,7 +4674,9 @@
           ],
           "width": 300,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "machine_left0",
@@ -4549,7 +4686,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "machine_left1",
@@ -4559,7 +4698,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "machine_left2",
@@ -4569,7 +4710,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "machine_left3",
@@ -4579,7 +4722,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "machine_right0",
@@ -4589,7 +4734,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "machine_right1",
@@ -4599,7 +4746,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "machine_right2",
@@ -4609,7 +4758,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "machine_right3",
@@ -4619,7 +4770,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         }
       ],
       "obstacles": [],
@@ -4668,21 +4821,24 @@
           "from": 0,
           "to": 600,
           "y": 620,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_600",
           "from": 600,
           "to": 3000,
           "y": 680,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_3000",
           "from": 3000,
           "to": 3600,
           "y": 620,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         }
       ],
       "clearance_revision": "stage6",
@@ -4736,7 +4892,7 @@
       "backgrounds": [
         {
           "name": "PassageInterior",
-          "path": "res://assets/backgrounds/passage/passage_f6_bg.png",
+          "path": "res://assets/backgrounds/passage/passage_f6_bg.webp",
           "position": [
             0,
             -560
@@ -4769,7 +4925,7 @@
           "target_level": "DowntownPassage_F7",
           "target_spawn": "Spawn_FromBelow",
           "arrival_spawn": "Spawn_FromAbove",
-          "door_art": "res://assets/props/doors/passage_door.png",
+          "door_art": "res://assets/props/doors/passage_door.webp",
           "exit_direction": -1,
           "ground_contact": true
         },
@@ -4782,7 +4938,7 @@
           "target_level": "DowntownPassage_F5",
           "target_spawn": "Spawn_FromAbove",
           "arrival_spawn": "Spawn_FromBelow",
-          "door_art": "res://assets/props/doors/passage_door.png",
+          "door_art": "res://assets/props/doors/passage_door.webp",
           "exit_direction": 1,
           "ground_contact": true
         }
@@ -4864,7 +5020,7 @@
       ],
       "decorations": [
         {
-          "path": "res://assets/props/passage_pillar_b.png",
+          "path": "res://assets/props/passage_pillar_b.webp",
           "position": [
             550,
             0
@@ -4877,7 +5033,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_pillar_b.png",
+          "path": "res://assets/props/passage_pillar_b.webp",
           "position": [
             1200,
             0
@@ -4890,7 +5046,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_pillar_b.png",
+          "path": "res://assets/props/passage_pillar_b.webp",
           "position": [
             2750,
             0
@@ -4903,7 +5059,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_chandelier.png",
+          "path": "res://assets/props/passage_chandelier.webp",
           "position": [
             1700,
             40
@@ -4915,7 +5071,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/passage_pipe_cluster.png",
+          "path": "res://assets/props/passage_pipe_cluster.webp",
           "position": [
             2800,
             100
@@ -4937,7 +5093,9 @@
           ],
           "width": 500,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "alcove_stairs0",
@@ -4947,7 +5105,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "alcove_stairs1",
@@ -4957,7 +5117,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         }
       ],
       "obstacles": [],
@@ -4998,21 +5160,24 @@
           "from": 0,
           "to": 1700,
           "y": 620,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_1700",
           "from": 1700,
           "to": 1950,
           "y": 520,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_1950",
           "from": 1950,
           "to": 3600,
           "y": 620,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         }
       ],
       "clearance_revision": "stage6",
@@ -5070,7 +5235,7 @@
       "backgrounds": [
         {
           "name": "PassageInterior",
-          "path": "res://assets/backgrounds/passage/passage_f7_bg.png",
+          "path": "res://assets/backgrounds/passage/passage_f7_bg.webp",
           "position": [
             0,
             -560
@@ -5103,7 +5268,7 @@
           "target_level": "DowntownPassage_F8",
           "target_spawn": "Spawn_FromBelow",
           "arrival_spawn": "Spawn_FromAbove",
-          "door_art": "res://assets/props/doors/passage_door.png",
+          "door_art": "res://assets/props/doors/passage_door.webp",
           "exit_direction": -1,
           "ground_contact": true
         },
@@ -5116,7 +5281,7 @@
           "target_level": "DowntownPassage_F6",
           "target_spawn": "Spawn_FromAbove",
           "arrival_spawn": "Spawn_FromBelow",
-          "door_art": "res://assets/props/doors/passage_door.png",
+          "door_art": "res://assets/props/doors/passage_door.webp",
           "exit_direction": 1,
           "ground_contact": true
         }
@@ -5207,7 +5372,7 @@
       ],
       "decorations": [
         {
-          "path": "res://assets/props/passage_pillar_a.png",
+          "path": "res://assets/props/passage_pillar_a.webp",
           "position": [
             550,
             0
@@ -5220,7 +5385,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_pillar_a.png",
+          "path": "res://assets/props/passage_pillar_a.webp",
           "position": [
             1200,
             0
@@ -5233,7 +5398,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_pillar_a.png",
+          "path": "res://assets/props/passage_pillar_a.webp",
           "position": [
             2750,
             0
@@ -5246,7 +5411,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_chandelier.png",
+          "path": "res://assets/props/passage_chandelier.webp",
           "position": [
             1700,
             40
@@ -5268,7 +5433,9 @@
           ],
           "width": 300,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "balcony_high",
@@ -5278,7 +5445,9 @@
           ],
           "width": 300,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "balcony_exit",
@@ -5288,7 +5457,9 @@
           ],
           "width": 220,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "balcony_ascent0",
@@ -5298,7 +5469,9 @@
           ],
           "width": 220,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "balcony_ascent1",
@@ -5308,7 +5481,9 @@
           ],
           "width": 220,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "balcony_ascent2",
@@ -5318,7 +5493,9 @@
           ],
           "width": 220,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "balcony_ascent3",
@@ -5328,7 +5505,9 @@
           ],
           "width": 220,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "balcony_ascent4",
@@ -5338,7 +5517,9 @@
           ],
           "width": 220,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         }
       ],
       "obstacles": [],
@@ -5361,7 +5542,8 @@
             140
           ],
           "art": "res://assets/tiles/passage/low_tunnel_ceiling.png",
-          "clearance": 100
+          "clearance": 100,
+          "kind": "ceiling"
         }
       ],
       "reachability": {
@@ -5393,7 +5575,8 @@
           "from": 0,
           "to": 3600,
           "y": 620,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         }
       ],
       "clearance_revision": "stage6",
@@ -5441,7 +5624,7 @@
       "backgrounds": [
         {
           "name": "PassageInterior",
-          "path": "res://assets/backgrounds/passage/passage_f8_bg.png",
+          "path": "res://assets/backgrounds/passage/passage_f8_bg.webp",
           "position": [
             0,
             -560
@@ -5478,7 +5661,7 @@
           "target_level": "CastleOutskirts",
           "target_spawn": "Spawn_FromPassage",
           "arrival_spawn": "Spawn_FromTop",
-          "door_art": "res://assets/props/doors/downtown_passage_door_anim.png",
+          "door_art": "res://assets/props/doors/downtown_passage_door_anim.webp",
           "exit_direction": -1,
           "ground_contact": true
         },
@@ -5491,7 +5674,7 @@
           "target_level": "DowntownPassage_F7",
           "target_spawn": "Spawn_FromAbove",
           "arrival_spawn": "Spawn_FromBelow",
-          "door_art": "res://assets/props/doors/passage_door.png",
+          "door_art": "res://assets/props/doors/passage_door.webp",
           "exit_direction": 1,
           "ground_contact": true
         }
@@ -5582,7 +5765,7 @@
       ],
       "decorations": [
         {
-          "path": "res://assets/props/passage_pillar_b.png",
+          "path": "res://assets/props/passage_pillar_b.webp",
           "position": [
             550,
             0
@@ -5595,7 +5778,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_pillar_b.png",
+          "path": "res://assets/props/passage_pillar_b.webp",
           "position": [
             1200,
             -180.0
@@ -5608,7 +5791,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_pillar_b.png",
+          "path": "res://assets/props/passage_pillar_b.webp",
           "position": [
             2750,
             0
@@ -5621,7 +5804,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/passage_chandelier.png",
+          "path": "res://assets/props/passage_chandelier.webp",
           "position": [
             1700,
             40
@@ -5643,7 +5826,9 @@
           ],
           "width": 600,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "wall_r90",
@@ -5653,7 +5838,9 @@
           ],
           "width": 300,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "wall_r180",
@@ -5663,7 +5850,9 @@
           ],
           "width": 300,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "wall_r270",
@@ -5673,7 +5862,9 @@
           ],
           "width": 300,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stage6_upper_0",
@@ -5683,7 +5874,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stage6_upper_1",
@@ -5693,7 +5886,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stage6_upper_2",
@@ -5703,7 +5898,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stage6_upper_3",
@@ -5713,7 +5910,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stage6_upper_4",
@@ -5723,7 +5922,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stage6_upper_5",
@@ -5733,7 +5934,9 @@
           ],
           "width": 240,
           "art": "res://assets/tiles/passage/platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         }
       ],
       "obstacles": [],
@@ -5778,35 +5981,40 @@
           "from": 0,
           "to": 750,
           "y": 620,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_750",
           "from": 750,
           "to": 1050,
           "y": 530,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_1050",
           "from": 1050,
           "to": 1350,
           "y": 440,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_1350",
           "from": 1350,
           "to": 1650,
           "y": 530,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_1650",
           "from": 1650,
           "to": 3600,
           "y": 620,
-          "art": "res://assets/tiles/passage/floor_tile.png"
+          "art": "res://assets/tiles/passage/floor_tile.png",
+          "kind": "floor"
         }
       ],
       "clearance_revision": "stage6",
@@ -5863,7 +6071,7 @@
           "target_level": "DowntownPassage_F1",
           "target_spawn": "Spawn_FromBelow",
           "arrival_spawn": "Spawn_FromPassage",
-          "door_art": "res://assets/props/doors/downtown_passage_door_anim.png",
+          "door_art": "res://assets/props/doors/downtown_passage_door_anim.webp",
           "exit_direction": -1,
           "ground_contact": true
         },
@@ -5876,7 +6084,7 @@
           "target_level": "NimrodHome",
           "target_spawn": "Spawn_FromGate",
           "arrival_spawn": "Spawn_FromHome",
-          "door_art": "res://assets/props/doors/nimrod_home_gate.png",
+          "door_art": "res://assets/props/doors/nimrod_home_gate.webp",
           "exit_direction": 1,
           "locked": false,
           "locked_message": "아직 들어갈 수 없다",
@@ -6086,7 +6294,7 @@
       ],
       "decorations": [
         {
-          "path": "res://assets/props/house_ruin_a.png",
+          "path": "res://assets/props/house_ruin_a.webp",
           "position": [
             8500,
             500
@@ -6099,7 +6307,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/house_ruin_b.png",
+          "path": "res://assets/props/house_ruin_b.webp",
           "position": [
             9160,
             580
@@ -6112,7 +6320,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/broken_overpass.png",
+          "path": "res://assets/props/broken_overpass.webp",
           "position": [
             2870,
             786
@@ -6124,7 +6332,7 @@
           "z": -4
         },
         {
-          "path": "res://assets/props/canal_wall_left.png",
+          "path": "res://assets/props/canal_wall_left.webp",
           "position": [
             6840,
             780
@@ -6136,7 +6344,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/canal_wall_right.png",
+          "path": "res://assets/props/canal_wall_right.webp",
           "position": [
             8060,
             780
@@ -6148,7 +6356,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/market_stall_a.png",
+          "path": "res://assets/props/market_stall_a.webp",
           "position": [
             5650,
             710
@@ -6161,7 +6369,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/market_stall_b.png",
+          "path": "res://assets/props/market_stall_b.webp",
           "position": [
             6500,
             710
@@ -6174,7 +6382,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/garden_fence.png",
+          "path": "res://assets/props/garden_fence.webp",
           "position": [
             1150,
             740
@@ -6187,7 +6395,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/lamp_post_ruined.png",
+          "path": "res://assets/props/lamp_post_ruined.webp",
           "position": [
             9780,
             620
@@ -6200,7 +6408,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/shrub.png",
+          "path": "res://assets/props/shrub.webp",
           "position": [
             2080,
             820
@@ -6222,7 +6430,9 @@
           ],
           "width": 180,
           "art": "res://assets/tiles/homeroad/balcony_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "balcony",
@@ -6232,7 +6442,9 @@
           ],
           "width": 600,
           "art": "res://assets/tiles/homeroad/balcony_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "balcony_right",
@@ -6242,7 +6454,9 @@
           ],
           "width": 180,
           "art": "res://assets/tiles/homeroad/balcony_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "canal_left_step",
@@ -6252,7 +6466,9 @@
           ],
           "width": 180,
           "art": "res://assets/tiles/homeroad/balcony_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "slab1",
@@ -6262,7 +6478,9 @@
           ],
           "width": 260,
           "art": "res://assets/tiles/homeroad/stone_slab_bridge.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "slab2",
@@ -6272,7 +6490,9 @@
           ],
           "width": 260,
           "art": "res://assets/tiles/homeroad/stone_slab_bridge.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "slab3",
@@ -6282,7 +6502,9 @@
           ],
           "width": 260,
           "art": "res://assets/tiles/homeroad/stone_slab_bridge.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "canal_right_step",
@@ -6292,7 +6514,9 @@
           ],
           "width": 180,
           "art": "res://assets/tiles/homeroad/balcony_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "market_left",
@@ -6302,7 +6526,9 @@
           ],
           "width": 180,
           "art": "res://assets/tiles/homeroad/balcony_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "market_roof",
@@ -6312,7 +6538,9 @@
           ],
           "width": 260,
           "art": "res://assets/tiles/homeroad/balcony_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "market_right",
@@ -6322,7 +6550,9 @@
           ],
           "width": 180,
           "art": "res://assets/tiles/homeroad/balcony_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "overpass_left",
@@ -6332,7 +6562,9 @@
           ],
           "width": 180,
           "art": "res://assets/tiles/homeroad/stone_slab_bridge.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "overpass1",
@@ -6342,7 +6574,9 @@
           ],
           "width": 360,
           "art": "res://assets/tiles/homeroad/stone_slab_bridge.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "overpass2",
@@ -6352,7 +6586,9 @@
           ],
           "width": 360,
           "art": "res://assets/tiles/homeroad/stone_slab_bridge.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "overpass3",
@@ -6362,7 +6598,9 @@
           ],
           "width": 180,
           "art": "res://assets/tiles/homeroad/stone_slab_bridge.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "overpass_right",
@@ -6372,7 +6610,9 @@
           ],
           "width": 180,
           "art": "res://assets/tiles/homeroad/stone_slab_bridge.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         }
       ],
       "obstacles": [
@@ -6383,7 +6623,8 @@
             160,
             60
           ],
-          "art": "res://assets/props/market_stall_a.png"
+          "art": "res://assets/props/market_stall_a.webp",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -6392,7 +6633,8 @@
             160,
             80
           ],
-          "art": "res://assets/props/market_stall_a.png"
+          "art": "res://assets/props/market_stall_a.webp",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -6401,7 +6643,8 @@
             160,
             60
           ],
-          "art": "res://assets/props/market_stall_a.png"
+          "art": "res://assets/props/market_stall_a.webp",
+          "kind": "wall"
         }
       ],
       "floor_art": "res://assets/tiles/homeroad/ground_tile.png",
@@ -6412,7 +6655,7 @@
       "backgrounds": [
         {
           "name": "Sky",
-          "path": "res://assets/backgrounds/homeroad/sky.png",
+          "path": "res://assets/backgrounds/homeroad/sky.webp",
           "position": [
             0,
             0
@@ -6426,7 +6669,7 @@
         },
         {
           "name": "FarCity",
-          "path": "res://assets/backgrounds/homeroad/far_tile.png",
+          "path": "res://assets/backgrounds/homeroad/far_tile.webp",
           "position": [
             0,
             0
@@ -6445,7 +6688,7 @@
         },
         {
           "name": "MidDistrict",
-          "path": "res://assets/backgrounds/homeroad/mid_district_tile.png",
+          "path": "res://assets/backgrounds/homeroad/mid_district_tile.webp",
           "position": [
             0,
             0
@@ -6464,7 +6707,7 @@
         },
         {
           "name": "HomeExterior",
-          "path": "res://assets/props/nimrod_home_exterior.png",
+          "path": "res://assets/props/nimrod_home_exterior.webp",
           "position": [
             0,
             233
@@ -6479,7 +6722,7 @@
         },
         {
           "name": "PassageExterior",
-          "path": "res://assets/backgrounds/castle_front/downtown_passage_facade.png",
+          "path": "res://assets/backgrounds/castle_front/downtown_passage_facade.webp",
           "position": [
             9700,
             160
@@ -6540,119 +6783,136 @@
           "from": 0,
           "to": 1500,
           "y": 880,
-          "art": "res://assets/tiles/homeroad/ground_tile.png"
+          "art": "res://assets/tiles/homeroad/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_1500",
           "from": 1500,
           "to": 1800,
           "y": 880,
-          "art": "res://assets/tiles/homeroad/ground_tile.png"
+          "art": "res://assets/tiles/homeroad/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_1800",
           "from": 1800,
           "to": 2100,
           "y": 840,
-          "art": "res://assets/tiles/homeroad/ground_tile.png"
+          "art": "res://assets/tiles/homeroad/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_2100",
           "from": 2100,
           "to": 2400,
           "y": 800,
-          "art": "res://assets/tiles/homeroad/ground_tile.png"
+          "art": "res://assets/tiles/homeroad/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_2400",
           "from": 2400,
           "to": 2700,
           "y": 840,
-          "art": "res://assets/tiles/homeroad/ground_tile.png"
+          "art": "res://assets/tiles/homeroad/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_2700",
           "from": 2700,
           "to": 4000,
           "y": 880,
-          "art": "res://assets/tiles/homeroad/ground_tile.png"
+          "art": "res://assets/tiles/homeroad/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_4000",
           "from": 4000,
           "to": 4250,
           "y": 880,
-          "art": "res://assets/tiles/homeroad/ground_tile.png"
+          "art": "res://assets/tiles/homeroad/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_4250",
           "from": 4250,
           "to": 4500,
           "y": 800,
-          "art": "res://assets/tiles/homeroad/ground_tile.png"
+          "art": "res://assets/tiles/homeroad/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_4500",
           "from": 4500,
           "to": 4750,
           "y": 720,
-          "art": "res://assets/tiles/homeroad/ground_tile.png"
+          "art": "res://assets/tiles/homeroad/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_4750",
           "from": 4750,
           "to": 4900,
           "y": 640,
-          "art": "res://assets/tiles/homeroad/ground_tile.png"
+          "art": "res://assets/tiles/homeroad/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_4900",
           "from": 4900,
           "to": 5150,
           "y": 720,
-          "art": "res://assets/tiles/homeroad/ground_tile.png"
+          "art": "res://assets/tiles/homeroad/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_5150",
           "from": 5150,
           "to": 5400,
           "y": 800,
-          "art": "res://assets/tiles/homeroad/ground_tile.png"
+          "art": "res://assets/tiles/homeroad/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_5400",
           "from": 5400,
           "to": 6900,
           "y": 880,
-          "art": "res://assets/tiles/homeroad/ground_tile.png"
+          "art": "res://assets/tiles/homeroad/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_6900",
           "from": 6900,
           "to": 7100,
           "y": 930,
-          "art": "res://assets/tiles/homeroad/ground_tile.png"
+          "art": "res://assets/tiles/homeroad/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_7100",
           "from": 7100,
           "to": 8100,
           "y": 980,
-          "art": "res://assets/tiles/homeroad/ground_tile.png"
+          "art": "res://assets/tiles/homeroad/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_8100",
           "from": 8100,
           "to": 8300,
           "y": 930,
-          "art": "res://assets/tiles/homeroad/ground_tile.png"
+          "art": "res://assets/tiles/homeroad/ground_tile.png",
+          "kind": "floor"
         },
         {
           "id": "ground_8300",
           "from": 8300,
           "to": 10800,
           "y": 880,
-          "art": "res://assets/tiles/homeroad/ground_tile.png"
+          "art": "res://assets/tiles/homeroad/ground_tile.png",
+          "kind": "floor"
         }
       ],
       "regions": [
@@ -6758,6 +7018,10 @@
         "Spawn_FromGate": [
           1560,
           620
+        ],
+        "Spawn_Start": [
+          330,
+          620
         ]
       },
       "doors": [
@@ -6767,7 +7031,7 @@
             1650,
             620
           ],
-          "door_art": "res://assets/props/doors/nimrod_home_inner_door.png",
+          "door_art": "res://assets/props/doors/nimrod_home_inner_door.webp",
           "target_level": "HomeRoad",
           "target_spawn": "Spawn_FromHome",
           "arrival_spawn": "Spawn_FromGate",
@@ -6788,7 +7052,7 @@
       "backgrounds": [
         {
           "name": "HomeInterior",
-          "path": "res://assets/backgrounds/nimrod_home/home_interior_bg.png",
+          "path": "res://assets/backgrounds/nimrod_home/home_interior_bg.webp",
           "position": [
             0,
             0
@@ -6803,7 +7067,7 @@
       ],
       "decorations": [
         {
-          "path": "res://assets/props/home_bed.png",
+          "path": "res://assets/props/home_bed.webp",
           "position": [
             120,
             420
@@ -6816,7 +7080,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/home_table.png",
+          "path": "res://assets/props/home_table.webp",
           "position": [
             1170,
             496.0
@@ -6829,7 +7093,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/home_shelf.png",
+          "path": "res://assets/props/home_shelf.webp",
           "position": [
             650,
             200
@@ -6842,7 +7106,7 @@
           "ground_contact": false
         },
         {
-          "path": "res://assets/props/home_lamp.png",
+          "path": "res://assets/props/home_lamp.webp",
           "position": [
             530,
             360
@@ -6855,7 +7119,7 @@
           "ground_contact": false
         },
         {
-          "path": "res://assets/props/home_rug.png",
+          "path": "res://assets/props/home_rug.webp",
           "position": [
             700,
             620
@@ -6870,7 +7134,25 @@
       ],
       "platforms": [],
       "steps": [],
-      "obstacles": []
+      "obstacles": [],
+      "weapon_pickups": [
+        {
+          "id": "cedar_staff",
+          "weapon": "staff",
+          "position": [
+            620,
+            620
+          ],
+          "art": "res://assets/props/cedar_staff_pickup.webp",
+          "size": [
+            48,
+            120
+          ],
+          "range": 100,
+          "flag": "staff_taken",
+          "toast": "삼나무로 만든 지팡이를 얻었다"
+        }
+      ]
     },
     {
       "id": "VillaBackyard",
@@ -6921,7 +7203,7 @@
             300,
             880
           ],
-          "door_art": "res://assets/props/doors/villa_back_door_exterior.png",
+          "door_art": "res://assets/props/doors/villa_back_door_exterior.webp",
           "target_level": "VillaF1",
           "target_spawn": "Spawn_FromBackyard",
           "arrival_spawn": "Spawn_FromBackDoor",
@@ -6934,7 +7216,7 @@
             700,
             880
           ],
-          "door_art": "res://assets/props/doors/cedar_forest_portal.png",
+          "door_art": "res://assets/props/doors/cedar_forest_portal.webp",
           "target_level": "CedarForest_F1",
           "target_spawn": "Spawn_FromVilla",
           "arrival_spawn": "Spawn_FromForest",
@@ -6962,7 +7244,7 @@
       ],
       "decorations": [
         {
-          "path": "res://assets/props/garden_fence.png",
+          "path": "res://assets/props/garden_fence.webp",
           "position": [
             900,
             740
@@ -6975,7 +7257,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/lamp_post_ruined.png",
+          "path": "res://assets/props/lamp_post_ruined.webp",
           "position": [
             1120,
             620
@@ -6988,7 +7270,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/shrub.png",
+          "path": "res://assets/props/shrub.webp",
           "position": [
             1200,
             740
@@ -7047,7 +7329,7 @@
             220,
             3328
           ],
-          "door_art": "res://assets/props/doors/cedar_portal.png",
+          "door_art": "res://assets/props/doors/cedar_portal.webp",
           "target_level": "VillaBackyard",
           "target_spawn": "Spawn_FromForest",
           "arrival_spawn": "Spawn_FromVilla",
@@ -7060,7 +7342,7 @@
             4580,
             768
           ],
-          "door_art": "res://assets/props/doors/cedar_portal.png",
+          "door_art": "res://assets/props/doors/cedar_portal.webp",
           "target_level": "CedarForest_F2",
           "target_spawn": "Spawn_FromBelow",
           "arrival_spawn": "Spawn_FromAbove",
@@ -7219,6 +7501,96 @@
             720,
             640
           ]
+        },
+        {
+          "id": "cedar_sentinel",
+          "position": [
+            600,
+            768
+          ],
+          "patrol_center": 600,
+          "patrol_range": 180,
+          "room_bounds": [
+            240,
+            128,
+            720,
+            640
+          ]
+        },
+        {
+          "id": "cedar_sentinel",
+          "position": [
+            1800,
+            768
+          ],
+          "patrol_center": 1800,
+          "patrol_range": 180,
+          "room_bounds": [
+            1440,
+            128,
+            720,
+            640
+          ]
+        },
+        {
+          "id": "cedar_sentinel",
+          "position": [
+            3000,
+            768
+          ],
+          "patrol_center": 3000,
+          "patrol_range": 180,
+          "room_bounds": [
+            2640,
+            128,
+            720,
+            640
+          ]
+        },
+        {
+          "id": "cedar_sentinel",
+          "position": [
+            600,
+            1408
+          ],
+          "patrol_center": 600,
+          "patrol_range": 180,
+          "room_bounds": [
+            240,
+            768,
+            720,
+            640
+          ]
+        },
+        {
+          "id": "cedar_sentinel",
+          "position": [
+            1800,
+            1408
+          ],
+          "patrol_center": 1800,
+          "patrol_range": 140,
+          "room_bounds": [
+            1440,
+            768,
+            720,
+            640
+          ]
+        },
+        {
+          "id": "cedar_colossus",
+          "position": [
+            3000,
+            1408
+          ],
+          "patrol_center": 3000,
+          "patrol_range": 120,
+          "room_bounds": [
+            2640,
+            768,
+            720,
+            640
+          ]
         }
       ],
       "backgrounds": [
@@ -7244,7 +7616,7 @@
         },
         {
           "name": "CedarMid",
-          "path": "res://assets/backgrounds/cedar/mid_trunks_tile_2d.png",
+          "path": "res://assets/backgrounds/cedar/mid_trunks_tile_2d.webp",
           "position": [
             0,
             0
@@ -7265,7 +7637,7 @@
       ],
       "decorations": [
         {
-          "path": "res://assets/props/cedar_stump.png",
+          "path": "res://assets/props/cedar_stump.webp",
           "position": [
             1000,
             3128
@@ -7278,7 +7650,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/skeleton_remains.png",
+          "path": "res://assets/props/skeleton_remains.webp",
           "position": [
             1600,
             2582.0
@@ -7301,7 +7673,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_1_0",
@@ -7312,7 +7685,8 @@
           "width": 720,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_2_0",
@@ -7323,7 +7697,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_3_0",
@@ -7334,7 +7709,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_0_1",
@@ -7345,7 +7721,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_1_1",
@@ -7356,7 +7733,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_2_1",
@@ -7367,7 +7745,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_3_1",
@@ -7378,7 +7757,8 @@
           "width": 720,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_0_2",
@@ -7389,7 +7769,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_1_2",
@@ -7400,7 +7781,8 @@
           "width": 720,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_2_2",
@@ -7411,7 +7793,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_3_2",
@@ -7422,7 +7805,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_0_3",
@@ -7433,7 +7817,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_1_3",
@@ -7444,7 +7829,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_2_3",
@@ -7455,7 +7841,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_3_3",
@@ -7466,7 +7853,8 @@
           "width": 720,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "stair_3_4_1",
@@ -7476,7 +7864,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_4_2",
@@ -7486,7 +7876,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_4_3",
@@ -7496,7 +7888,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_4_4",
@@ -7506,7 +7900,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_4_5",
@@ -7516,7 +7912,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_4_6",
@@ -7526,7 +7924,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_4_7",
@@ -7536,7 +7936,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_4_8",
@@ -7546,7 +7948,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_3_1",
@@ -7556,7 +7960,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_3_2",
@@ -7566,7 +7972,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_3_3",
@@ -7576,7 +7984,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_3_4",
@@ -7586,7 +7996,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_3_5",
@@ -7596,7 +8008,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_3_6",
@@ -7606,7 +8020,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_3_7",
@@ -7616,7 +8032,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_3_8",
@@ -7626,7 +8044,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_2_1",
@@ -7636,7 +8056,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_2_2",
@@ -7646,7 +8068,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_2_3",
@@ -7656,7 +8080,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_2_4",
@@ -7666,7 +8092,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_2_5",
@@ -7676,7 +8104,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_2_6",
@@ -7686,7 +8116,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_2_7",
@@ -7696,7 +8128,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_2_8",
@@ -7706,7 +8140,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_1_1",
@@ -7716,7 +8152,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_1_2",
@@ -7726,7 +8164,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_1_3",
@@ -7736,7 +8176,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_1_4",
@@ -7746,7 +8188,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_1_5",
@@ -7756,7 +8200,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_1_6",
@@ -7766,7 +8212,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_1_7",
@@ -7776,7 +8224,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_1_8",
@@ -7786,7 +8236,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         }
       ],
       "steps": [],
@@ -7799,7 +8251,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -7809,7 +8262,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -7819,7 +8273,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -7829,7 +8284,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -7839,7 +8295,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -7849,7 +8306,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -7859,7 +8317,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -7869,7 +8328,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -7879,7 +8339,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -7889,7 +8350,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -7899,7 +8361,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -7909,7 +8372,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -7919,7 +8383,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -7929,7 +8394,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -7939,7 +8405,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         }
       ],
       "terrain": [
@@ -7947,7 +8414,8 @@
           "id": "base",
           "from": 0,
           "to": 4800,
-          "y": 3328
+          "y": 3328,
+          "kind": "floor"
         }
       ],
       "drop_rule": {
@@ -8014,7 +8482,7 @@
             220,
             3328
           ],
-          "door_art": "res://assets/props/doors/cedar_portal.png",
+          "door_art": "res://assets/props/doors/cedar_portal.webp",
           "target_level": "CedarForest_F1",
           "target_spawn": "Spawn_FromAbove",
           "arrival_spawn": "Spawn_FromBelow",
@@ -8027,7 +8495,7 @@
             4580,
             768
           ],
-          "door_art": "res://assets/props/doors/cedar_portal.png",
+          "door_art": "res://assets/props/doors/cedar_portal.webp",
           "target_level": "CedarBossRoom",
           "target_spawn": "Spawn_FromForest",
           "arrival_spawn": "Spawn_FromAbove",
@@ -8246,6 +8714,141 @@
             720,
             640
           ]
+        },
+        {
+          "id": "cedar_archer",
+          "position": [
+            600,
+            768
+          ],
+          "patrol_center": 600,
+          "patrol_range": 180,
+          "room_bounds": [
+            240,
+            128,
+            720,
+            640
+          ]
+        },
+        {
+          "id": "cedar_archer",
+          "position": [
+            1800,
+            768
+          ],
+          "patrol_center": 1800,
+          "patrol_range": 180,
+          "room_bounds": [
+            1440,
+            128,
+            720,
+            640
+          ]
+        },
+        {
+          "id": "cedar_archer",
+          "position": [
+            3000,
+            768
+          ],
+          "patrol_center": 3000,
+          "patrol_range": 180,
+          "room_bounds": [
+            2640,
+            128,
+            720,
+            640
+          ]
+        },
+        {
+          "id": "cedar_wisp",
+          "position": [
+            600,
+            1168
+          ],
+          "patrol_center": 600,
+          "patrol_range": 180,
+          "room_bounds": [
+            240,
+            768,
+            720,
+            640
+          ]
+        },
+        {
+          "id": "cedar_wisp",
+          "position": [
+            1800,
+            1168
+          ],
+          "patrol_center": 1800,
+          "patrol_range": 180,
+          "room_bounds": [
+            1440,
+            768,
+            720,
+            640
+          ]
+        },
+        {
+          "id": "cedar_wisp",
+          "position": [
+            3000,
+            1168
+          ],
+          "patrol_center": 3000,
+          "patrol_range": 180,
+          "room_bounds": [
+            2640,
+            768,
+            720,
+            640
+          ]
+        },
+        {
+          "id": "cedar_demon",
+          "position": [
+            4200,
+            1088
+          ],
+          "patrol_center": 4200,
+          "patrol_range": 180,
+          "room_bounds": [
+            3840,
+            768,
+            720,
+            640
+          ]
+        },
+        {
+          "id": "cedar_demon",
+          "position": [
+            600,
+            1728
+          ],
+          "patrol_center": 600,
+          "patrol_range": 180,
+          "room_bounds": [
+            240,
+            1408,
+            720,
+            640
+          ]
+        },
+        {
+          "id": "cedar_demon",
+          "position": [
+            1800,
+            1728
+          ],
+          "patrol_center": 1800,
+          "patrol_range": 180,
+          "room_bounds": [
+            1440,
+            1408,
+            720,
+            640
+          ]
         }
       ],
       "backgrounds": [
@@ -8271,7 +8874,7 @@
         },
         {
           "name": "CedarMid",
-          "path": "res://assets/backgrounds/cedar/mid_trunks_tile_2d.png",
+          "path": "res://assets/backgrounds/cedar/mid_trunks_tile_2d.webp",
           "position": [
             0,
             0
@@ -8292,7 +8895,7 @@
       ],
       "decorations": [
         {
-          "path": "res://assets/props/cedar_stump.png",
+          "path": "res://assets/props/cedar_stump.webp",
           "position": [
             1000,
             3128
@@ -8305,7 +8908,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/skeleton_remains.png",
+          "path": "res://assets/props/skeleton_remains.webp",
           "position": [
             1600,
             2582.0
@@ -8318,7 +8921,7 @@
           "ground_contact": true
         },
         {
-          "path": "res://assets/props/cedar_branch_perch.png",
+          "path": "res://assets/props/cedar_branch_perch.webp",
           "position": [
             3020,
             968
@@ -8330,7 +8933,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/cedar_branch_perch.png",
+          "path": "res://assets/props/cedar_branch_perch.webp",
           "position": [
             1820,
             968
@@ -8342,7 +8945,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/cedar_branch_perch.png",
+          "path": "res://assets/props/cedar_branch_perch.webp",
           "position": [
             1820,
             328
@@ -8354,7 +8957,7 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/cedar_branch_perch.png",
+          "path": "res://assets/props/cedar_branch_perch.webp",
           "position": [
             3020,
             328
@@ -8376,7 +8979,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_1_0",
@@ -8387,7 +8991,8 @@
           "width": 720,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_2_0",
@@ -8398,7 +9003,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_3_0",
@@ -8409,7 +9015,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_0_1",
@@ -8420,7 +9027,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_1_1",
@@ -8431,7 +9039,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_2_1",
@@ -8442,7 +9051,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_3_1",
@@ -8453,7 +9063,8 @@
           "width": 720,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_0_2",
@@ -8464,7 +9075,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_1_2",
@@ -8475,7 +9087,8 @@
           "width": 720,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_2_2",
@@ -8486,7 +9099,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_3_2",
@@ -8497,7 +9111,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_0_3",
@@ -8508,7 +9123,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_1_3",
@@ -8519,7 +9135,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_2_3",
@@ -8530,7 +9147,8 @@
           "width": 1120,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "room_3_3",
@@ -8541,7 +9159,8 @@
           "width": 720,
           "art": "res://assets/tiles/cedar/branch_platform.png",
           "art_height": 48,
-          "one_way": false
+          "one_way": true,
+          "kind": "platform"
         },
         {
           "id": "stair_3_4_1",
@@ -8551,7 +9170,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_4_2",
@@ -8561,7 +9182,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_4_3",
@@ -8571,7 +9194,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_4_4",
@@ -8581,7 +9206,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_4_5",
@@ -8591,7 +9218,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_4_6",
@@ -8601,7 +9230,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_4_7",
@@ -8611,7 +9242,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_4_8",
@@ -8621,7 +9254,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_3_1",
@@ -8631,7 +9266,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_3_2",
@@ -8641,7 +9278,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_3_3",
@@ -8651,7 +9290,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_3_4",
@@ -8661,7 +9302,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_3_5",
@@ -8671,7 +9314,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_3_6",
@@ -8681,7 +9326,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_3_7",
@@ -8691,7 +9338,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_3_8",
@@ -8701,7 +9350,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_2_1",
@@ -8711,7 +9362,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_2_2",
@@ -8721,7 +9374,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_2_3",
@@ -8731,7 +9386,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_2_4",
@@ -8741,7 +9398,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_2_5",
@@ -8751,7 +9410,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_2_6",
@@ -8761,7 +9422,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_2_7",
@@ -8771,7 +9434,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_3_2_8",
@@ -8781,7 +9446,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_1_1",
@@ -8791,7 +9458,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_1_2",
@@ -8801,7 +9470,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_1_3",
@@ -8811,7 +9482,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_1_4",
@@ -8821,7 +9494,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_1_5",
@@ -8831,7 +9506,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_1_6",
@@ -8841,7 +9518,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_1_7",
@@ -8851,7 +9530,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "stair_1_1_8",
@@ -8861,7 +9542,9 @@
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/branch_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         }
       ],
       "steps": [],
@@ -8874,7 +9557,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -8884,7 +9568,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -8894,7 +9579,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -8904,7 +9590,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -8914,7 +9601,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -8924,7 +9612,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -8934,7 +9623,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -8944,7 +9634,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -8954,7 +9645,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -8964,7 +9656,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -8974,7 +9667,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -8984,7 +9678,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -8994,7 +9689,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -9004,7 +9700,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         },
         {
           "rect": [
@@ -9014,7 +9711,8 @@
             140
           ],
           "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall"
+          "role": "wall",
+          "kind": "wall"
         }
       ],
       "terrain": [
@@ -9022,7 +9720,8 @@
           "id": "base",
           "from": 0,
           "to": 4800,
-          "y": 3328
+          "y": 3328,
+          "kind": "floor"
         }
       ],
       "perches": [
@@ -9084,15 +9783,15 @@
     {
       "id": "CedarBossRoom",
       "scene": "res://scenes/CedarBossRoom.tscn",
-      "width": 1600,
-      "floor_y": 800,
+      "width": 1400,
+      "floor_y": 620,
       "bgm": "cedar_boss",
       "display_name": "삼나무 숲의 가장 깊은 곳",
       "camera_limits": [
         0,
         0,
-        1600,
-        900
+        1400,
+        700
       ],
       "safe_zones": [],
       "bg_dim": [
@@ -9109,7 +9808,7 @@
       "spawns": {
         "Spawn_FromForest": [
           250,
-          800
+          620
         ]
       },
       "doors": [
@@ -9117,9 +9816,9 @@
           "door_id": "boss_arrival",
           "position": [
             200,
-            800
+            620
           ],
-          "door_art": "res://assets/props/doors/cedar_portal.png",
+          "door_art": "res://assets/props/doors/cedar_portal.webp",
           "target_level": "CedarForest_F2",
           "target_spawn": "Spawn_FromAbove",
           "arrival_spawn": "Spawn_FromForest",
@@ -9132,10 +9831,10 @@
         {
           "id": "kala_ushumgal",
           "position": [
-            900,
-            800
+            800,
+            620
           ],
-          "patrol_center": 800,
+          "patrol_center": 700,
           "patrol_range": 200
         }
       ],
@@ -9148,8 +9847,8 @@
             0
           ],
           "size": [
-            1600,
-            960
+            1400,
+            700
           ],
           "ratio": 1,
           "z": -10
@@ -9161,21 +9860,25 @@
           "id": "summon_left",
           "position": [
             40,
-            500
+            380
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/boss_end_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         },
         {
           "id": "summon_right",
           "position": [
-            1280,
-            500
+            1080,
+            380
           ],
           "width": 280,
           "art": "res://assets/tiles/cedar/boss_end_platform.png",
-          "art_height": 48
+          "art_height": 48,
+          "kind": "platform",
+          "one_way": true
         }
       ],
       "steps": [],

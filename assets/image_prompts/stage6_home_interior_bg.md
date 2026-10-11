@@ -1,6 +1,6 @@
 # home_interior_bg
 목적: 6단계 환경.
-경로: assets/backgrounds/nimrod_home/home_interior_bg.png
+경로: assets/backgrounds/nimrod_home/home_interior_bg.webp
 크기: 1800x720, 1프레임.
 배경: 불투명.
 

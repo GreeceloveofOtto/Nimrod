@@ -12,7 +12,7 @@
   "clips": [
     {
       "name": "chop",
-      "sheet": "sprites/npcs/cook_a/chop.png",
+      "sheet": "sprites/npcs/cook_a/chop.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -26,9 +26,15 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        1068,
+        255
+      ],
+      "trim": {
+        "x": 231,
+        "y": 347,
+        "w": 178,
+        "h": 255
+      }
     }
   ]
 }

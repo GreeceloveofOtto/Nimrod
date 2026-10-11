@@ -2,7 +2,7 @@
   "clips": [
     {
       "name": "bone_spike",
-      "sheet": "sprites/fx/bone_spike.png",
+      "sheet": "sprites/fx/bone_spike.webp",
       "frame_width": 128,
       "frame_height": 256,
       "columns": 4,
@@ -16,13 +16,24 @@
         128
       ],
       "image_size": [
-        512,
-        256
-      ]
+        468,
+        187
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "FX flow changes extent while retaining uniform scale",
+        "detached_fx_or_weapon": true
+      },
+      "trim": {
+        "x": 5,
+        "y": 2,
+        "w": 117,
+        "h": 187
+      }
     },
     {
       "name": "soul_flame_cone",
-      "sheet": "sprites/fx/soul_flame_cone.png",
+      "sheet": "sprites/fx/soul_flame_cone.webp",
       "frame_width": 768,
       "frame_height": 384,
       "columns": 6,
@@ -36,13 +47,24 @@
         192
       ],
       "image_size": [
-        4608,
-        384
-      ]
+        3210,
+        326
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "FX flow changes extent while retaining uniform scale",
+        "detached_fx_or_weapon": true
+      },
+      "trim": {
+        "x": 184,
+        "y": 17,
+        "w": 535,
+        "h": 326
+      }
     },
     {
       "name": "bone_arrow",
-      "sheet": "sprites/fx/bone_arrow.png",
+      "sheet": "sprites/fx/bone_arrow.webp",
       "frame_width": 96,
       "frame_height": 24,
       "columns": 1,
@@ -56,13 +78,24 @@
         12
       ],
       "image_size": [
-        96,
-        24
-      ]
+        83,
+        15
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "FX flow changes extent while retaining uniform scale",
+        "detached_fx_or_weapon": true
+      },
+      "trim": {
+        "x": 11,
+        "y": 5,
+        "w": 83,
+        "h": 15
+      }
     },
     {
       "name": "bone_spike_ground",
-      "sheet": "sprites/fx/bone_spike_ground.png",
+      "sheet": "sprites/fx/bone_spike_ground.webp",
       "frame_width": 128,
       "frame_height": 128,
       "columns": 3,
@@ -76,13 +109,24 @@
         64
       ],
       "image_size": [
-        384,
-        128
-      ]
+        336,
+        96
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "FX flow changes extent while retaining uniform scale",
+        "detached_fx_or_weapon": true
+      },
+      "trim": {
+        "x": 7,
+        "y": 2,
+        "w": 112,
+        "h": 96
+      }
     },
     {
       "name": "blue_flame_explosion",
-      "sheet": "sprites/fx/blue_flame_explosion.png",
+      "sheet": "sprites/fx/blue_flame_explosion.webp",
       "frame_width": 256,
       "frame_height": 256,
       "columns": 6,
@@ -96,13 +140,24 @@
         128
       ],
       "image_size": [
-        1536,
-        256
-      ]
+        1014,
+        189
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "FX flow changes extent while retaining uniform scale",
+        "detached_fx_or_weapon": true
+      },
+      "trim": {
+        "x": 42,
+        "y": 23,
+        "w": 169,
+        "h": 189
+      }
     },
     {
       "name": "armor_hit_spark",
-      "sheet": "sprites/fx/armor_hit_spark.png",
+      "sheet": "sprites/fx/armor_hit_spark.webp",
       "frame_width": 192,
       "frame_height": 192,
       "columns": 5,
@@ -116,9 +171,20 @@
         96
       ],
       "image_size": [
-        960,
-        192
-      ]
+        610,
+        149
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "FX flow changes extent while retaining uniform scale",
+        "detached_fx_or_weapon": true
+      },
+      "trim": {
+        "x": 34,
+        "y": 21,
+        "w": 122,
+        "h": 149
+      }
     }
   ]
 }

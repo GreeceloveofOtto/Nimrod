@@ -2,7 +2,7 @@
 
 Purpose: stage 2 character animation.
 
-Output: `assets/sprites/npcs/ninsun/idle.png`
+Output: `assets/sprites/npcs/ninsun/idle.webp`
 
 Frames: 6 × 640x640, one horizontal row; duration 2.4s; anchor [320,600].
 

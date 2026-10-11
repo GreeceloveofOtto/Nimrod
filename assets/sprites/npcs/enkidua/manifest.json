@@ -3,7 +3,7 @@
   "clips": [
     {
       "name": "idle_front",
-      "sheet": "sprites/npcs/enkidua/idle_front.png",
+      "sheet": "sprites/npcs/enkidua/idle_front.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -17,13 +17,19 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        864,
+        384
+      ],
+      "trim": {
+        "x": 248,
+        "y": 218,
+        "w": 144,
+        "h": 384
+      }
     },
     {
       "name": "idle",
-      "sheet": "sprites/npcs/enkidua/idle.png",
+      "sheet": "sprites/npcs/enkidua/idle.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -37,9 +43,15 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        684,
+        384
+      ],
+      "trim": {
+        "x": 263,
+        "y": 218,
+        "w": 114,
+        "h": 384
+      }
     }
   ],
   "height_ratio": 1.04

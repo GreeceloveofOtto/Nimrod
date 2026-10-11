@@ -35,10 +35,10 @@ func _run() -> void:
     _check(giant.state == EnemyBase.State.TURN,"Other60percent uses animated turn")
     var archer: CedarEnemy = _add("cedar_archer")
     archer._begin_hop()
-    _check(archer.phase == "hop" and archer.hop_cooldown == 3,"Archer hops within260 with3second cooldown")
+    _check(archer.phase == "hop" and archer.hop_cooldown == 3,"Archer hops within200 with3second cooldown")
     archer.state_clock = .4
     archer._integrate_motion(0)
-    _check(archer.global_position.x <= 681,"Archer moves backwards220 through physics")
+    _check(archer.global_position.x <= 751,"Archer moves backwards150 through physics")
     var wisp: CedarEnemy = _add("cedar_wisp")
     _check(wisp.collision_mask == 0,"Wisp ignores terrain")
     wisp.take_hit(40,Vector2(800,620),1)

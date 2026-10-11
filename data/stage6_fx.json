@@ -2,7 +2,7 @@
   "fx": [
     {
       "name": "bone_spike",
-      "path": "res://assets/sprites/fx/bone_spike.png",
+      "path": "res://assets/sprites/fx/bone_spike.webp",
       "frame_size": [
         128,
         256
@@ -13,7 +13,7 @@
     },
     {
       "name": "soul_flame_cone",
-      "path": "res://assets/sprites/fx/soul_flame_cone.png",
+      "path": "res://assets/sprites/fx/soul_flame_cone.webp",
       "frame_size": [
         768,
         384
@@ -24,7 +24,7 @@
     },
     {
       "name": "bone_arrow",
-      "path": "res://assets/sprites/fx/bone_arrow.png",
+      "path": "res://assets/sprites/fx/bone_arrow.webp",
       "frame_size": [
         96,
         24
@@ -35,7 +35,7 @@
     },
     {
       "name": "bone_spike_ground",
-      "path": "res://assets/sprites/fx/bone_spike_ground.png",
+      "path": "res://assets/sprites/fx/bone_spike_ground.webp",
       "frame_size": [
         128,
         128
@@ -46,7 +46,7 @@
     },
     {
       "name": "blue_flame_explosion",
-      "path": "res://assets/sprites/fx/blue_flame_explosion.png",
+      "path": "res://assets/sprites/fx/blue_flame_explosion.webp",
       "frame_size": [
         256,
         256
@@ -57,7 +57,7 @@
     },
     {
       "name": "armor_hit_spark",
-      "path": "res://assets/sprites/fx/armor_hit_spark.png",
+      "path": "res://assets/sprites/fx/armor_hit_spark.webp",
       "frame_size": [
         192,
         192

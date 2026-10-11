@@ -2,7 +2,7 @@
 
 Purpose: stage 2 character animation.
 
-Output: `assets/sprites/enemies/sky_beast/dive.png`
+Output: `assets/sprites/enemies/sky_beast/dive.webp`
 
 Frames: 3 × 768x640, one horizontal row; duration 0.25s; anchor [384,320].
 

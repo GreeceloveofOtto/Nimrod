@@ -12,7 +12,7 @@
   "clips": [
     {
       "name": "idle",
-      "sheet": "sprites/npcs/gatekeeper/idle.png",
+      "sheet": "sprites/npcs/gatekeeper/idle.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -26,13 +26,19 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        678,
+        270
+      ],
+      "trim": {
+        "x": 264,
+        "y": 332,
+        "w": 113,
+        "h": 270
+      }
     },
     {
       "name": "open_gate",
-      "sheet": "sprites/npcs/gatekeeper/open_gate.png",
+      "sheet": "sprites/npcs/gatekeeper/open_gate.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 5,
@@ -46,9 +52,15 @@
         600
       ],
       "image_size": [
-        3200,
-        640
-      ]
+        810,
+        270
+      ],
+      "trim": {
+        "x": 239,
+        "y": 332,
+        "w": 162,
+        "h": 270
+      }
     }
   ]
 }

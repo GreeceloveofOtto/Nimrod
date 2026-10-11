@@ -2,7 +2,7 @@
 
 Purpose: stage 2 character animation.
 
-Output: `assets/sprites/enemies/sky_beast/hurt.png`
+Output: `assets/sprites/enemies/sky_beast/hurt.webp`
 
 Frames: 2 × 768x640, one horizontal row; duration 0.2s; anchor [384,320].
 

@@ -1,5 +1,5 @@
 # passage_f6_bg
-목적: 5단계 환경. 경로: assets/backgrounds/passage/passage_f6_bg.png
+목적: 5단계 환경. 경로: assets/backgrounds/passage/passage_f6_bg.webp
 크기: 3600x800, 1프레임. 배경: 불투명.
 
 2D side-view game asset, dark fantasy, ancient Mesopotamian Uruk atmosphere with advanced space-civilization undertones, hand-painted look, clean readable silhouette, consistent with the Nimrod character sprite sheets, no text, no watermark. passage f6 bg, side-view production game asset.

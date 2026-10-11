@@ -9,7 +9,7 @@ enum State { IDLE, CHASE, WINDUP, ACTIVE, RECOVERY, TURN, STUN, DEAD }
 const STATS_PATH: String = "res://data/enemies.json"
 const PLAYER_ATTACKS_PATH: String = "res://data/player_attacks.json"
 const IMAGE_EFFECT = preload("res://scripts/image_effect.gd")
-const HIT_SPARK_PATH: String = "res://assets/sprites/fx/hit_spark.png"
+const HIT_SPARK_PATH: String = "res://assets/sprites/fx/hit_spark.webp"
 const HIT_SPARK_FRAME_SIZE: Vector2i = Vector2i(256, 256)
 const HIT_SPARK_FRAMES: int = 5
 const ENEMY_LAYER: int = 4
@@ -58,6 +58,7 @@ var clip_aliases: Dictionary = {}
 var no_drop: bool = false
 var threat_marker: Node2D
 var _clip_warnings: Dictionary = {}
+var _queued_player_effects: Array[Callable] = []
 
 func _ready() -> void:
     collision_layer = ENEMY_LAYER
@@ -404,7 +405,10 @@ func take_shockwave_hit(damage: int, from_pos: Vector2, step: int = 4) -> Dictio
 func _strike_data(step: int, shockwave: bool) -> Dictionary:
     if shockwave:
         return player_attack_stats.get("shockwave", {})
-    for attack in player_attack_stats.get("attacks", []):
+    var hero: NimrodPlayer = get_tree().get_first_node_in_group("player") as NimrodPlayer
+    var weapon: String = hero.weapon if hero != null else "axe"
+    var specification: Dictionary = player_attack_stats.get("weapons", {}).get(weapon, player_attack_stats)
+    for attack in specification.get("attacks", []):
         if int(attack.get("step", 0)) == step:
             return attack
     return {}
@@ -528,8 +532,9 @@ func _scale_stats(data: Dictionary) -> void:
     var factor: float = float(data.get("size_multiplier", 1.0))
     if is_equal_approx(factor, 1.0):
         return
-    var distance_factor: float = 1.0 + (factor - 1.0) * 0.25
-    var area_factor: float = 1.0 + (factor - 1.0) * 0.5
+    var distance_factor: float = float(data.get("range_multiplier", 1.0))
+    var range_cap: float = float(data.get("range_cap", 900.0))
+    var area_factor: float = float(data.get("aoe_multiplier", 1.0))
     data["visual_scale"] = float(data.get("visual_scale", 0.3)) * factor
     for key in ["body_size", "sensor", "sensor_wall", "sensor_ceiling"]:
         if data.has(key):
@@ -540,12 +545,12 @@ func _scale_stats(data: Dictionary) -> void:
         data["body_offset_y"] = float(data["body_offset_y"]) * factor
     for key in ["detect_range", "retreat_distance", "back_range"]:
         if data.has(key):
-            data[key] = minf(1100.0, float(data[key]) * distance_factor)
+            data[key] = minf(range_cap, float(data[key]) * distance_factor)
     if data.has("preferred_distance"):
         for i in range(data["preferred_distance"].size()):
-            data["preferred_distance"][i] = minf(1100.0, float(data["preferred_distance"][i]) * distance_factor)
+            data["preferred_distance"][i] = minf(range_cap, float(data["preferred_distance"][i]) * distance_factor)
     for attack in data.get("attacks", []):
-        attack["range"] = minf(1100.0, float(attack.get("range", 0.0)) * distance_factor)
+        attack["range"] = minf(range_cap, float(attack.get("range", 0.0)) * distance_factor)
         for key in attack.get("hitbox", {}):
             attack["hitbox"][key] = float(attack["hitbox"][key]) * factor
     for key in ["projectile", "explosion", "gas"]:
@@ -558,7 +563,7 @@ func _scale_stats(data: Dictionary) -> void:
             if section.has("collision_radius"):
                 section["collision_radius"] = float(section["collision_radius"]) * factor
     if data.has("chain"):
-        data["chain"]["range"] = minf(1100.0, float(data["chain"]["range"]) * distance_factor)
+        data["chain"]["range"] = minf(range_cap, float(data["chain"]["range"]) * distance_factor)
         data["chain"]["pull_offset"] = float(data["chain"]["pull_offset"]) * factor
 
 func resolve_clip(requested: String) -> String:
@@ -593,12 +598,7 @@ func _show_clip(clip_name: String, seconds: float) -> void:
     if texture == null:
         return
     visual.texture = texture
-    var width: float = float(clip.get("frame_width", FALLBACK_FRAME_SIZE.x))
-    var height: float = float(clip.get("frame_height", FALLBACK_FRAME_SIZE.y))
-    var columns: int = maxi(1, int(clip.get("columns", frames)))
-    visual.region_rect = Rect2(Vector2((current_frame % columns) * width, floori(float(current_frame) / columns) * height), Vector2(width, height))
-    var origin: Array = clip.get("anchor_px", [FALLBACK_ANCHOR.x, FALLBACK_ANCHOR.y])
-    visual.offset = Vector2(width, height) * 0.5 - Vector2(float(origin[0]), float(origin[1]))
+    AssetVisual.apply_frame(visual, clip, current_frame)
 
 func _draw() -> void:
     # Debug geometry only. Creature and effect art always comes from PNGs.
@@ -611,3 +611,22 @@ func _draw() -> void:
         attack_box.position -= global_position
         draw_rect(attack_box, Color(1.0, 0.15, 0.15, 0.25), true)
         draw_rect(attack_box, Color(1.0, 0.15, 0.15, 0.9), false, 2.0)
+
+func queue_player_effect(effect: Callable) -> void:
+    if effect.is_valid() and is_inside_tree():
+        _queued_player_effects.append(effect)
+        if not get_tree().physics_frame.is_connected(_flush_player_effects):
+            get_tree().physics_frame.connect(_flush_player_effects, CONNECT_ONE_SHOT)
+
+func _flush_player_effects() -> void:
+    var effects: Array[Callable] = _queued_player_effects.duplicate()
+    _queued_player_effects.clear()
+    for effect: Callable in effects:
+        if effect.is_valid() and is_inside_tree():
+            effect.call()
+
+func _notification(what: int) -> void:
+    if what == NOTIFICATION_EXIT_TREE:
+        if get_tree().physics_frame.is_connected(_flush_player_effects):
+            get_tree().physics_frame.disconnect(_flush_player_effects)
+        _queued_player_effects.clear()

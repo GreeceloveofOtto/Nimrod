@@ -2,7 +2,7 @@
 
 목적: 별장 방향 출구 표지 오브젝트
 
-저장 경로: `assets/props/exit_signpost.png`
+저장 경로: `assets/props/exit_signpost.webp`
 
 최종 크기: 160x240px. 프레임 구성: 정지 이미지 1프레임.
 

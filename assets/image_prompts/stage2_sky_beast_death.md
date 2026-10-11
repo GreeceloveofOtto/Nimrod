@@ -2,7 +2,7 @@
 
 Purpose: stage 2 character animation.
 
-Output: `assets/sprites/enemies/sky_beast/death.png`
+Output: `assets/sprites/enemies/sky_beast/death.webp`
 
 Frames: 6 × 768x640, one horizontal row; duration 0.8s; anchor [384,320].
 

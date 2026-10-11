@@ -7,9 +7,9 @@
   "clips": [
     {
       "name": "idle",
-      "sheet": "sprites/enemies/cedar_sentinel/idle.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_sentinel/idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 6,
       "rows": 1,
       "frames": 6,
@@ -17,19 +17,25 @@
       "fps": 6.0,
       "loop": true,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        4608,
-        768
-      ]
+        828,
+        369
+      ],
+      "trim": {
+        "x": 254,
+        "y": 233,
+        "w": 138,
+        "h": 369
+      }
     },
     {
       "name": "walk",
-      "sheet": "sprites/enemies/cedar_sentinel/walk.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_sentinel/walk.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 8,
       "rows": 1,
       "frames": 8,
@@ -37,19 +43,28 @@
       "fps": 8.88888888888889,
       "loop": true,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        6144,
-        768
-      ]
+        1552,
+        372
+      ],
+      "qa": {
+        "movement": true
+      },
+      "trim": {
+        "x": 218,
+        "y": 230,
+        "w": 194,
+        "h": 372
+      }
     },
     {
       "name": "windup",
-      "sheet": "sprites/enemies/cedar_sentinel/windup.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_sentinel/windup.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 4,
       "rows": 1,
       "frames": 4,
@@ -57,19 +72,29 @@
       "fps": 10.0,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        3072,
-        768
-      ]
+        1960,
+        436
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 131,
+        "y": 166,
+        "w": 490,
+        "h": 436
+      }
     },
     {
       "name": "thrust",
-      "sheet": "sprites/enemies/cedar_sentinel/thrust.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_sentinel/thrust.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 3,
       "rows": 1,
       "frames": 3,
@@ -77,19 +102,25 @@
       "fps": 15.0,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        2304,
-        768
-      ]
+        1419,
+        369
+      ],
+      "trim": {
+        "x": 104,
+        "y": 233,
+        "w": 473,
+        "h": 369
+      }
     },
     {
       "name": "slash",
-      "sheet": "sprites/enemies/cedar_sentinel/slash.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_sentinel/slash.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 3,
       "rows": 1,
       "frames": 3,
@@ -97,19 +128,29 @@
       "fps": 15.0,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        2304,
-        768
-      ]
+        1548,
+        406
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 107,
+        "y": 196,
+        "w": 516,
+        "h": 406
+      }
     },
     {
       "name": "attack_recovery",
-      "sheet": "sprites/enemies/cedar_sentinel/attack_recovery.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_sentinel/attack_recovery.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 4,
       "rows": 1,
       "frames": 4,
@@ -117,19 +158,25 @@
       "fps": 5.714285714285714,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        3072,
-        768
-      ]
+        1892,
+        399
+      ],
+      "trim": {
+        "x": 126,
+        "y": 203,
+        "w": 473,
+        "h": 399
+      }
     },
     {
       "name": "shield_up",
-      "sheet": "sprites/enemies/cedar_sentinel/shield_up.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_sentinel/shield_up.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 3,
       "rows": 1,
       "frames": 3,
@@ -137,19 +184,25 @@
       "fps": 15.0,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        2304,
-        768
-      ]
+        1494,
+        368
+      ],
+      "trim": {
+        "x": 90,
+        "y": 234,
+        "w": 498,
+        "h": 368
+      }
     },
     {
       "name": "shield_hold",
-      "sheet": "sprites/enemies/cedar_sentinel/shield_hold.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_sentinel/shield_hold.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 2,
       "rows": 1,
       "frames": 2,
@@ -157,19 +210,25 @@
       "fps": 10.0,
       "loop": true,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        1536,
-        768
-      ]
+        876,
+        373
+      ],
+      "trim": {
+        "x": 121,
+        "y": 229,
+        "w": 438,
+        "h": 373
+      }
     },
     {
       "name": "shield_break_stun",
-      "sheet": "sprites/enemies/cedar_sentinel/shield_break_stun.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_sentinel/shield_break_stun.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 4,
       "rows": 1,
       "frames": 4,
@@ -177,19 +236,25 @@
       "fps": 4.0,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        3072,
-        768
-      ]
+        1232,
+        368
+      ],
+      "trim": {
+        "x": 173,
+        "y": 234,
+        "w": 308,
+        "h": 368
+      }
     },
     {
       "name": "turn",
-      "sheet": "sprites/enemies/cedar_sentinel/turn.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_sentinel/turn.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 4,
       "rows": 1,
       "frames": 4,
@@ -197,19 +262,25 @@
       "fps": 13.333333333333334,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        3072,
-        768
-      ]
+        1704,
+        376
+      ],
+      "trim": {
+        "x": 138,
+        "y": 226,
+        "w": 426,
+        "h": 376
+      }
     },
     {
       "name": "hurt",
-      "sheet": "sprites/enemies/cedar_sentinel/hurt.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_sentinel/hurt.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 2,
       "rows": 1,
       "frames": 2,
@@ -217,19 +288,25 @@
       "fps": 10.0,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        1536,
-        768
-      ]
+        736,
+        403
+      ],
+      "trim": {
+        "x": 96,
+        "y": 199,
+        "w": 368,
+        "h": 403
+      }
     },
     {
       "name": "death",
-      "sheet": "sprites/enemies/cedar_sentinel/death.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_sentinel/death.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 6,
       "rows": 1,
       "frames": 6,
@@ -237,13 +314,23 @@
       "fps": 7.5,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        4608,
-        768
-      ]
+        1524,
+        429
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 185,
+        "y": 173,
+        "w": 254,
+        "h": 429
+      }
     }
   ]
 }

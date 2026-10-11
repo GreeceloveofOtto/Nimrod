@@ -1,4 +1,5 @@
-# Optional regeneration/validation tools; no game runtime addons.
-numpy==2.3.5
-Pillow==12.3.0
-fonttools==4.61.1
+Pillow>=10.0
+numpy>=1.24
+scipy>=1.10
+fonttools>=4.0
+# ffmpeg with libvorbis is required for OGG conversion.

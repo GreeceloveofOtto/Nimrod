@@ -47,7 +47,7 @@ def main():
                  enemies=[], steps=[], platforms=[], floor_sections=[],
                  floor_art="res://assets/tiles/castle_front/courtyard_tile.png")
     front["backgrounds"] = [b for b in front["backgrounds"] if "facade" not in b["path"]]
-    front["backgrounds"].append(dict(name="CastleFacade", path="res://assets/backgrounds/castle_front/castle_facade.png",
+    front["backgrounds"].append(dict(name="CastleFacade", path="res://assets/backgrounds/castle_front/castle_facade.webp",
                                        position=[1100, 160], size=[1500, 720], ratio=1, z=-10))
     front["doors"] = [door("castle_front_exterior", 2200, 880, "CastleF1", "Spawn_FromFront", "Spawn_FromCastle", "castle_front_door_exterior", exit_direction=-1),
                       door("castle_great_gate", 600, 880, "CastleOutskirts", "Spawn_FromGate", "Spawn_FromGate", "castle_great_gate",
@@ -69,7 +69,7 @@ def main():
                                         z=z, position=[0,0], **({"repeat_size":[2048,0],"repeat_times":6} if repeat else {}))
                               for name,file,width,ratio,z,repeat in [("Sky","sky",1792,.05,-40,False),("FarCity","far_city_tile",2048,.20,-30,True),
                                   ("MidRuins","mid_ruins_tile",2048,.45,-20,True),("Landmark","far_landmark",900,.20,-25,False)]]
-    outside["backgrounds"].append(dict(name="DowntownFacade",path="res://assets/backgrounds/castle_front/downtown_passage_facade.png",
+    outside["backgrounds"].append(dict(name="DowntownFacade",path="res://assets/backgrounds/castle_front/downtown_passage_facade.webp",
                                          position=[0,-40],size=[1100,720],ratio=1,z=-10))
     outside["doors"] = [door("castle_great_gate",9600,760,"CastleFront","Spawn_FromGate","Spawn_FromGate","castle_great_gate",
                              kind="great_gate",opens_without_keeper=True,gate_settings_key="great_gate",gate_open_seconds=1.2,gate_close_seconds=1.0,

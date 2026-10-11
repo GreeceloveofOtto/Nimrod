@@ -17,10 +17,12 @@ var world_settings: Dictionary = {}
 var arrival_doors: Dictionary = {}
 var doors: Dictionary = {}
 var npcs: Dictionary = {}
+var surface_offsets: Dictionary = {}
 
 func _ready() -> void:
     add_to_group("current_level")
     _load_config()
+    surface_offsets = JSON.parse_string(FileAccess.get_file_as_string("res://data/surface_offsets.json"))
     _make_spawns()
     _make_backgrounds()
     _make_world()
@@ -117,10 +119,10 @@ func _make_world() -> void:
     if config.has("terrain"):
         for segment in config["terrain"]:
             var ground_y: float = float(segment["y"])
-            _make_surface(float(segment["from"]), ground_y, float(segment["to"]) - float(segment["from"]), maxf(ground_height, camera_limits.end.y - ground_y + ground_height), false)
+            _make_surface(float(segment["from"]), ground_y, float(segment["to"]) - float(segment["from"]), maxf(ground_height, camera_limits.end.y - ground_y + ground_height), false, float(config.get("floor_art_size", [512, 200])[1]), str(segment.get("art", config.get("floor_art", ""))))
             _cover_ground(float(segment["from"]), float(segment["to"]), ground_y, str(segment.get("art", config.get("floor_art", ""))), _vector(config.get("floor_art_size", [512, 200])))
     else:
-        _make_surface(-margin, floor_y, width + margin * 2.0, ground_height, false)
+        _make_surface(-margin, floor_y, width + margin * 2.0, ground_height, false, float(config.get("floor_art_size", [512, 200])[1]), str(config.get("floor_art", "")))
     _make_surface(-wall, -margin, wall, floor_y + ground_height + margin * 2.0, false, 0.0)
     _make_surface(width, -margin, wall, floor_y + ground_height + margin * 2.0, false, 0.0)
     if bool(config.get("ceiling", false)):
@@ -142,21 +144,21 @@ func _make_world() -> void:
         var height: float = float(step["height"])
         var x: float = float(step["x"])
         var step_width: float = float(step["width"])
-        _make_surface(x, floor_y - height, step_width, height, false)
+        _make_surface(x, floor_y - height, step_width, height, false, height, str(world_settings["step_art"]))
         Art.add_image(self, str(world_settings["step_art"]), Vector2(x, floor_y - height), Vector2(step_width, height), -3)
     for platform in config.get("platforms", []):
         var at: Vector2 = _vector(platform["position"])
         var platform_width: float = float(platform["width"])
         var art_height: float = float(platform.get("art_height", world_settings["platform_art_height"]))
-        _make_surface(at.x, at.y, platform_width, float(world_settings["platform_collision_height"]), bool(platform.get("one_way", true)), art_height)
+        _make_surface(at.x, at.y, platform_width, float(world_settings["platform_collision_height"]), true, art_height, str(platform.get("art", world_settings["platform_art"])))
         Art.add_image(self, str(platform.get("art", world_settings["platform_art"])), at, Vector2(platform_width, art_height), -3)
     for obstacle in config.get("obstacles", []):
         var bounds: Rect2 = _rect(obstacle["rect"])
-        _make_surface(bounds.position.x, bounds.position.y, bounds.size.x, bounds.size.y, false)
+        _make_surface(bounds.position.x, bounds.position.y, bounds.size.x, bounds.size.y, false, bounds.size.y, str(obstacle["art"]))
         Art.add_image(self, str(obstacle["art"]), bounds.position, bounds.size, -3)
     for ceiling in config.get("ceilings", []):
         var bounds: Rect2 = _rect(ceiling["rect"])
-        var body: StaticBody2D = _make_surface(bounds.position.x, bounds.position.y, bounds.size.x, bounds.size.y, false)
+        var body: StaticBody2D = _make_surface(bounds.position.x, bounds.position.y, bounds.size.x, bounds.size.y, false, bounds.size.y, str(ceiling["art"]), true)
         body.get_node("SurfaceAccent").ceiling_surface = true
         var x: float = bounds.position.x
         while x < bounds.end.x:
@@ -187,11 +189,35 @@ func ground_y_at(x: float) -> float:
             return float(segment["y"])
     return floor_y
 
-func _make_surface(x: float, y: float, width: float, height: float, one_way: bool, art_height: float = -1.0) -> StaticBody2D:
+func _make_surface(x: float, y: float, width: float, height: float, one_way: bool = true, art_height: float = -1.0, art_path: String = "", ceiling_surface: bool = false) -> StaticBody2D:
+    var image_rect := Rect2(x, y, width, art_height if art_height > 0 else height)
+    var edge: Dictionary = surface_offsets.get(art_path, {})
+    var visible_top: float = y
+    var visible_bottom: float = image_rect.end.y
+    if not edge.is_empty():
+        var vertical_scale: float = image_rect.size.y / float(edge["image_height"])
+        visible_top += float(edge["top_offset_px"]) * vertical_scale
+        visible_bottom -= float(edge.get("bottom_offset_px", 0)) * vertical_scale
+        # Repeated floors/ceilings span full tile width; finite platforms use bbox.
+        if one_way or height < float(world_settings.get("ground_collision_height", 220)):
+            var horizontal_scale: float = width / float(edge["image_width"])
+            x += float(edge["opaque_x0"]) * horizontal_scale
+            width = float(edge["opaque_x1"] - edge["opaque_x0"]) * horizontal_scale
+        if ceiling_surface:
+            height = maxf(1.0, visible_bottom - visible_top)
+        y = visible_top
     var body := StaticBody2D.new()
+    body.set_meta("art_path", art_path)
+    body.set_meta("image_rect", image_rect)
+    body.set_meta("image_top", visible_top)
+    body.set_meta("image_bottom", visible_bottom)
+    body.set_meta("ceiling_surface", ceiling_surface)
     body.name = "OneWayPlatform" if one_way else "Floor"
     body.collision_layer = int(world_settings.get("one_way_layer" if one_way else "surface_layer", 0))
     body.collision_mask = 0
+    body.add_to_group("surfaces")
+    body.set_meta("one_way", one_way)
+    body.set_meta("surface_rect", Rect2(x, y, width, height))
     body.position = Vector2(x + width * 0.5, y + height * 0.5)
     add_child(body)
     var hit := CollisionShape2D.new()
@@ -206,12 +232,20 @@ func _make_surface(x: float, y: float, width: float, height: float, one_way: boo
     var accent: Node2D = load("res://scripts/surface_accent.gd").new()
     accent.name = "SurfaceAccent"
     accent.position = -Vector2(width, height) * 0.5
-    accent.dimensions = Vector2(width, art_height if art_height > 0.0 else height)
+    accent.dimensions = Vector2(width, visible_bottom - visible_top)
     accent.one_way = one_way
-    accent.ground_floor = height >= float(world_settings.get("ground_collision_height", 220.0)) and is_equal_approx(y, ground_y_at(x + width * 0.5))
+    accent.ground_floor = height >= float(world_settings.get("ground_collision_height", 220.0)) and is_equal_approx(image_rect.position.y, ground_y_at(x + width * 0.5))
     accent.level_id = level_id
     accent.z_index = -2
     body.add_child(accent)
+    if GameConstants.DEBUG_SURFACE and not art_path.is_empty():
+        var debug: Node2D = load("res://scripts/surface_debug.gd").new()
+        debug.name = "SurfaceDebug"
+        debug.z_index = 80
+        debug.collision_rect = Rect2(-Vector2(width, height) * 0.5, Vector2(width, height))
+        debug.image_top = visible_top - body.global_position.y
+        debug.image_width = width
+        body.add_child(debug)
     return body
 
 func _make_props() -> void:
@@ -339,6 +373,11 @@ func get_flight_bounds() -> Rect2:
     return _rect(config.get("flight_bounds", []))
 
 func _make_pickups() -> void:
+    for item in config.get("weapon_pickups", []):
+        var weapon_item: Node2D = load("res://scripts/weapon_pickup.gd").new()
+        weapon_item.spec = item
+        weapon_item.position = _vector(item["position"])
+        add_child(weapon_item)
     for item in config.get("pickups", []):
         var pickup: Node2D = load("res://scripts/healing_pickup.gd").new()
         pickup.pickup_id = str(item.get("id", "healing_vomit"))

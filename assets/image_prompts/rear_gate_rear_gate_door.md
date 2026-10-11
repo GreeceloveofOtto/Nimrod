@@ -2,7 +2,7 @@
 
 목적: 루갈성 후문 석재 아치와 철제 문
 
-저장 경로: `assets/props/rear_gate_door.png`
+저장 경로: `assets/props/rear_gate_door.webp`
 
 최종 크기: 320x420px. 프레임 구성: 정지 이미지 1프레임.
 

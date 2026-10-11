@@ -1,6 +1,6 @@
 # cedar_stump
 목적: 6단계 환경.
-경로: assets/props/cedar_stump.png
+경로: assets/props/cedar_stump.webp
 크기: 240x200, 1프레임.
 배경: #FF00FF 크로마키.
 

@@ -1,6 +1,6 @@
 extends EnemyBase
 
-const FLAME_PATH: String = "res://assets/sprites/enemies/ranged_beast/flame.png"
+const FLAME_PATH: String = "res://assets/sprites/enemies/ranged_beast/flame.webp"
 const FLAME_FRAME_SIZE: Vector2i = Vector2i(512, 256)
 const FLAME_FRAMES: int = 6
 const FLAME_ANCHOR: Vector2 = Vector2(16.0, 128.0)

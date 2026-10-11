@@ -7,9 +7,9 @@
   "clips": [
     {
       "name": "perch",
-      "sheet": "sprites/enemies/cedar_demon/perch.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_demon/perch.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 4,
       "rows": 1,
       "frames": 4,
@@ -17,19 +17,29 @@
       "fps": 4.0,
       "loop": true,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        3072,
-        768
-      ]
+        1556,
+        456
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 160,
+        "y": 146,
+        "w": 389,
+        "h": 456
+      }
     },
     {
       "name": "tell",
-      "sheet": "sprites/enemies/cedar_demon/tell.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_demon/tell.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 3,
       "rows": 1,
       "frames": 3,
@@ -37,19 +47,29 @@
       "fps": 15.0,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        2304,
-        768
-      ]
+        1023,
+        431
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 155,
+        "y": 171,
+        "w": 341,
+        "h": 431
+      }
     },
     {
       "name": "fall",
-      "sheet": "sprites/enemies/cedar_demon/fall.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_demon/fall.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 3,
       "rows": 1,
       "frames": 3,
@@ -57,19 +77,30 @@
       "fps": 12.0,
       "loop": true,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        2304,
-        768
-      ]
+        1389,
+        496
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained",
+        "movement": true
+      },
+      "trim": {
+        "x": 114,
+        "y": 106,
+        "w": 463,
+        "h": 496
+      }
     },
     {
       "name": "land_stab",
-      "sheet": "sprites/enemies/cedar_demon/land_stab.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_demon/land_stab.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 4,
       "rows": 1,
       "frames": 4,
@@ -77,19 +108,29 @@
       "fps": 13.333333333333334,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        3072,
-        768
-      ]
+        1656,
+        483
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 122,
+        "y": 119,
+        "w": 414,
+        "h": 483
+      }
     },
     {
       "name": "claw_windup",
-      "sheet": "sprites/enemies/cedar_demon/claw_windup.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_demon/claw_windup.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 4,
       "rows": 1,
       "frames": 4,
@@ -97,19 +138,25 @@
       "fps": 16.0,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        3072,
-        768
-      ]
+        1660,
+        432
+      ],
+      "trim": {
+        "x": 128,
+        "y": 170,
+        "w": 415,
+        "h": 432
+      }
     },
     {
       "name": "claws",
-      "sheet": "sprites/enemies/cedar_demon/claws.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_demon/claws.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 6,
       "rows": 1,
       "frames": 6,
@@ -117,19 +164,25 @@
       "fps": 10.0,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        4608,
-        768
-      ]
+        2352,
+        434
+      ],
+      "trim": {
+        "x": 138,
+        "y": 168,
+        "w": 392,
+        "h": 434
+      }
     },
     {
       "name": "recovery",
-      "sheet": "sprites/enemies/cedar_demon/recovery.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_demon/recovery.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 4,
       "rows": 1,
       "frames": 4,
@@ -137,19 +190,25 @@
       "fps": 5.0,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        3072,
-        768
-      ]
+        1860,
+        438
+      ],
+      "trim": {
+        "x": 125,
+        "y": 164,
+        "w": 465,
+        "h": 438
+      }
     },
     {
       "name": "idle",
-      "sheet": "sprites/enemies/cedar_demon/idle.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_demon/idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 6,
       "rows": 1,
       "frames": 6,
@@ -157,19 +216,25 @@
       "fps": 6.0,
       "loop": true,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        4608,
-        768
-      ]
+        1206,
+        415
+      ],
+      "trim": {
+        "x": 248,
+        "y": 187,
+        "w": 201,
+        "h": 415
+      }
     },
     {
       "name": "walk",
-      "sheet": "sprites/enemies/cedar_demon/walk.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_demon/walk.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 8,
       "rows": 1,
       "frames": 8,
@@ -177,19 +242,28 @@
       "fps": 10.0,
       "loop": true,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        6144,
-        768
-      ]
+        1904,
+        414
+      ],
+      "qa": {
+        "movement": true
+      },
+      "trim": {
+        "x": 210,
+        "y": 188,
+        "w": 238,
+        "h": 414
+      }
     },
     {
       "name": "turn",
-      "sheet": "sprites/enemies/cedar_demon/turn.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_demon/turn.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 4,
       "rows": 1,
       "frames": 4,
@@ -197,19 +271,25 @@
       "fps": 16.0,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        3072,
-        768
-      ]
+        1732,
+        416
+      ],
+      "trim": {
+        "x": 130,
+        "y": 186,
+        "w": 433,
+        "h": 416
+      }
     },
     {
       "name": "hurt",
-      "sheet": "sprites/enemies/cedar_demon/hurt.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_demon/hurt.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 2,
       "rows": 1,
       "frames": 2,
@@ -217,19 +297,25 @@
       "fps": 10.0,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        1536,
-        768
-      ]
+        784,
+        425
+      ],
+      "trim": {
+        "x": 127,
+        "y": 177,
+        "w": 392,
+        "h": 425
+      }
     },
     {
       "name": "death",
-      "sheet": "sprites/enemies/cedar_demon/death.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_demon/death.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 6,
       "rows": 1,
       "frames": 6,
@@ -237,13 +323,23 @@
       "fps": 8.571428571428571,
       "loop": false,
       "anchor_px": [
-        384,
-        720
+        320,
+        600
       ],
       "image_size": [
-        4608,
-        768
-      ]
+        2454,
+        446
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 144,
+        "y": 156,
+        "w": 409,
+        "h": 446
+      }
     }
   ]
 }

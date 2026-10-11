@@ -2,7 +2,7 @@
 
 목적: 우루크 근접 괴수 walk 애니메이션
 
-저장 경로: `assets/sprites/enemies/melee_beast/walk.png`
+저장 경로: `assets/sprites/enemies/melee_beast/walk.webp`
 
 최종 크기: 5120x640px. 프레임 구성: 8프레임, 프레임당 640x640px, 한 줄, 오른쪽 기준; 0.9초; 루프 예.
 

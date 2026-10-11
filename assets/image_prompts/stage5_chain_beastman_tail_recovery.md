@@ -1,5 +1,5 @@
 # death / tail_recovery
-목적: 괴수 애니메이션. 경로: assets/sprites/enemies/chain_beastman/tail_recovery.png
+목적: 괴수 애니메이션. 경로: assets/sprites/enemies/chain_beastman/tail_recovery.webp
 규격: 5 × 896x768, 0.8초, 앵커 [448, 720].
 배경: #FF00FF → pack_sprites.py 크로마키/정렬/합성.
 

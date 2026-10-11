@@ -12,7 +12,7 @@
   "clips": [
     {
       "name": "sweep",
-      "sheet": "sprites/npcs/servant_b/sweep.png",
+      "sheet": "sprites/npcs/servant_b/sweep.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 8,
@@ -26,9 +26,15 @@
         600
       ],
       "image_size": [
-        5120,
-        640
-      ]
+        1224,
+        262
+      ],
+      "trim": {
+        "x": 244,
+        "y": 340,
+        "w": 153,
+        "h": 262
+      }
     }
   ]
 }

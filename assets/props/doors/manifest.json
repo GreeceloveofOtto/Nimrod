@@ -2,7 +2,7 @@
   "clips": [
     {
       "name": "castle_rear_door_exterior",
-      "sheet": "props/doors/castle_rear_door_exterior.png",
+      "sheet": "props/doors/castle_rear_door_exterior.webp",
       "frame_width": 320,
       "frame_height": 420,
       "columns": 6,
@@ -16,13 +16,19 @@
         420
       ],
       "image_size": [
-        1920,
-        420
-      ]
+        1872,
+        410
+      ],
+      "trim": {
+        "x": 4,
+        "y": 10,
+        "w": 312,
+        "h": 410
+      }
     },
     {
       "name": "castle_interior_door",
-      "sheet": "props/doors/castle_interior_door.png",
+      "sheet": "props/doors/castle_interior_door.webp",
       "frame_width": 256,
       "frame_height": 384,
       "columns": 6,
@@ -36,13 +42,19 @@
         384
       ],
       "image_size": [
-        1536,
-        384
-      ]
+        1488,
+        374
+      ],
+      "trim": {
+        "x": 4,
+        "y": 10,
+        "w": 248,
+        "h": 374
+      }
     },
     {
       "name": "castle_rear_door_interior",
-      "sheet": "props/doors/castle_rear_door_interior.png",
+      "sheet": "props/doors/castle_rear_door_interior.webp",
       "frame_width": 320,
       "frame_height": 420,
       "columns": 6,
@@ -56,13 +68,19 @@
         420
       ],
       "image_size": [
-        1920,
-        420
-      ]
+        1872,
+        410
+      ],
+      "trim": {
+        "x": 4,
+        "y": 10,
+        "w": 312,
+        "h": 410
+      }
     },
     {
       "name": "villa_gate",
-      "sheet": "props/doors/villa_gate.png",
+      "sheet": "props/doors/villa_gate.webp",
       "frame_width": 480,
       "frame_height": 420,
       "columns": 8,
@@ -76,13 +94,19 @@
         420
       ],
       "image_size": [
-        3840,
-        420
-      ]
+        3776,
+        410
+      ],
+      "trim": {
+        "x": 4,
+        "y": 10,
+        "w": 472,
+        "h": 410
+      }
     },
     {
       "name": "villa_inner_door",
-      "sheet": "props/doors/villa_inner_door.png",
+      "sheet": "props/doors/villa_inner_door.webp",
       "frame_width": 256,
       "frame_height": 384,
       "columns": 6,
@@ -96,13 +120,19 @@
         384
       ],
       "image_size": [
-        1536,
-        384
-      ]
+        1488,
+        374
+      ],
+      "trim": {
+        "x": 4,
+        "y": 10,
+        "w": 248,
+        "h": 374
+      }
     },
     {
       "name": "castle_front_gate_locked",
-      "sheet": "props/doors/castle_front_gate_locked.png",
+      "sheet": "props/doors/castle_front_gate_locked.webp",
       "frame_width": 320,
       "frame_height": 420,
       "columns": 1,
@@ -116,9 +146,15 @@
         420
       ],
       "image_size": [
-        320,
-        420
-      ]
+        312,
+        410
+      ],
+      "trim": {
+        "x": 4,
+        "y": 10,
+        "w": 312,
+        "h": 410
+      }
     }
   ]
 }

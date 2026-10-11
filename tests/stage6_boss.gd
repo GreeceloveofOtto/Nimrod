@@ -45,7 +45,7 @@ func _run() -> void:
     boss._begin_active()
     hero.reset_run_state()
     hero.set_transition_locked(false)
-    hero.global_position = Vector2(1500,800)
+    hero.global_position = boss.global_position + Vector2(300,float(boss.stats["roar"]["origin_y"]))
     for i in range(14):
         boss.state_clock = i*float(boss.stats["roar"]["interval"])*boss._time_factor()
         hero.damage_tick_clock = i*.11
@@ -61,8 +61,8 @@ func _run() -> void:
     boss._stop_roar()
     boss._set_state(EnemyBase.State.CHASE)
     boss.rear_hits.clear()
-    boss.take_hit(20,Vector2(800,600),1)
-    boss.take_hit(20,Vector2(800,600),1)
+    boss.take_hit(20,boss.global_position - Vector2(100,20),1)
+    boss.take_hit(20,boss.global_position - Vector2(100,20),1)
     boss._request_turn(-1)
     _check(boss.phase == "spines" and boss.rear_cooldown == 6 and boss.facing == 1,"Two rear hits trigger delayed spines without instant turn")
     boss._summon_archers()
@@ -72,7 +72,7 @@ func _run() -> void:
         _check(archer.get_drop_chance()==0,"Summoned archer has no drop")
     boss._summon_archers()
     _check(boss.summons.size()==2,"Repeated summon cannot exceed2")
-    hero.global_position = Vector2(1200,800)
+    hero.global_position = boss.global_position + Vector2(160,-50)
     boss.facing=1
     boss.hp = 0
     root.get_node("GameState").run_flags["kala_death_lines"] = true

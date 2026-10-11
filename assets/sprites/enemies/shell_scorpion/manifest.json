@@ -3,7 +3,7 @@
   "clips": [
     {
       "name": "idle",
-      "sheet": "sprites/enemies/shell_scorpion/idle.png",
+      "sheet": "sprites/enemies/shell_scorpion/idle.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -17,13 +17,19 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        1866,
+        294
+      ],
+      "trim": {
+        "x": 177,
+        "y": 308,
+        "w": 311,
+        "h": 294
+      }
     },
     {
       "name": "walk",
-      "sheet": "sprites/enemies/shell_scorpion/walk.png",
+      "sheet": "sprites/enemies/shell_scorpion/walk.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 8,
@@ -37,13 +43,22 @@
         600
       ],
       "image_size": [
-        5120,
-        640
-      ]
+        2384,
+        277
+      ],
+      "qa": {
+        "movement": true
+      },
+      "trim": {
+        "x": 180,
+        "y": 325,
+        "w": 298,
+        "h": 277
+      }
     },
     {
       "name": "guard_block",
-      "sheet": "sprites/enemies/shell_scorpion/guard_block.png",
+      "sheet": "sprites/enemies/shell_scorpion/guard_block.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 3,
@@ -57,13 +72,19 @@
         600
       ],
       "image_size": [
-        1920,
-        640
-      ]
+        1149,
+        273
+      ],
+      "trim": {
+        "x": 151,
+        "y": 329,
+        "w": 383,
+        "h": 273
+      }
     },
     {
       "name": "claw_windup",
-      "sheet": "sprites/enemies/shell_scorpion/claw_windup.png",
+      "sheet": "sprites/enemies/shell_scorpion/claw_windup.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -77,13 +98,19 @@
         600
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        1592,
+        297
+      ],
+      "trim": {
+        "x": 143,
+        "y": 305,
+        "w": 398,
+        "h": 297
+      }
     },
     {
       "name": "claw_attack",
-      "sheet": "sprites/enemies/shell_scorpion/claw_attack.png",
+      "sheet": "sprites/enemies/shell_scorpion/claw_attack.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 3,
@@ -97,13 +124,19 @@
         600
       ],
       "image_size": [
-        1920,
-        640
-      ]
+        1311,
+        277
+      ],
+      "trim": {
+        "x": 124,
+        "y": 325,
+        "w": 437,
+        "h": 277
+      }
     },
     {
       "name": "claw_recovery",
-      "sheet": "sprites/enemies/shell_scorpion/claw_recovery.png",
+      "sheet": "sprites/enemies/shell_scorpion/claw_recovery.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -117,13 +150,19 @@
         600
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        1816,
+        273
+      ],
+      "trim": {
+        "x": 138,
+        "y": 329,
+        "w": 454,
+        "h": 273
+      }
     },
     {
       "name": "tail_windup",
-      "sheet": "sprites/enemies/shell_scorpion/tail_windup.png",
+      "sheet": "sprites/enemies/shell_scorpion/tail_windup.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 3,
@@ -137,13 +176,23 @@
         600
       ],
       "image_size": [
-        1920,
-        640
-      ]
+        1176,
+        318
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 140,
+        "y": 284,
+        "w": 392,
+        "h": 318
+      }
     },
     {
       "name": "tail_strike",
-      "sheet": "sprites/enemies/shell_scorpion/tail_strike.png",
+      "sheet": "sprites/enemies/shell_scorpion/tail_strike.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 3,
@@ -157,13 +206,23 @@
         600
       ],
       "image_size": [
-        1920,
-        640
-      ]
+        1641,
+        279
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 19,
+        "y": 323,
+        "w": 547,
+        "h": 279
+      }
     },
     {
       "name": "tail_recovery",
-      "sheet": "sprites/enemies/shell_scorpion/tail_recovery.png",
+      "sheet": "sprites/enemies/shell_scorpion/tail_recovery.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -177,13 +236,23 @@
         600
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        1604,
+        320
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 144,
+        "y": 282,
+        "w": 401,
+        "h": 320
+      }
     },
     {
       "name": "turn",
-      "sheet": "sprites/enemies/shell_scorpion/turn.png",
+      "sheet": "sprites/enemies/shell_scorpion/turn.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -197,13 +266,19 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        1974,
+        281
+      ],
+      "trim": {
+        "x": 169,
+        "y": 321,
+        "w": 329,
+        "h": 281
+      }
     },
     {
       "name": "hurt",
-      "sheet": "sprites/enemies/shell_scorpion/hurt.png",
+      "sheet": "sprites/enemies/shell_scorpion/hurt.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 2,
@@ -217,13 +292,19 @@
         600
       ],
       "image_size": [
-        1280,
-        640
-      ]
+        876,
+        273
+      ],
+      "trim": {
+        "x": 120,
+        "y": 329,
+        "w": 438,
+        "h": 273
+      }
     },
     {
       "name": "death",
-      "sheet": "sprites/enemies/shell_scorpion/death.png",
+      "sheet": "sprites/enemies/shell_scorpion/death.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -237,9 +318,15 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        1668,
+        293
+      ],
+      "trim": {
+        "x": 191,
+        "y": 309,
+        "w": 278,
+        "h": 293
+      }
     }
   ],
   "aliases": {

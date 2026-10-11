@@ -1,5 +1,5 @@
 # far_tile
-목적: 5단계 환경. 경로: assets/backgrounds/homeroad/far_tile.png
+목적: 5단계 환경. 경로: assets/backgrounds/homeroad/far_tile.webp
 크기: 2048x720, 1프레임. 배경: #FF00FF 크로마키.
 
 2D side-view game asset, dark fantasy, ancient Mesopotamian Uruk atmosphere with advanced space-civilization undertones, hand-painted look, clean readable silhouette, consistent with the Nimrod character sprite sheets, no text, no watermark. far tile, side-view production game asset.

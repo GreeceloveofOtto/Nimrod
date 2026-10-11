@@ -54,13 +54,15 @@ class Validator:
             self.fail(relative, f"cannot load PNG: {error}")
             return None
         self.checked += 1
-        if image.format != "PNG":
-            self.fail(relative, f"format must be PNG, found {image.format}")
+        if image.format not in ["PNG", "WEBP"]:
+            self.fail(relative, f"format must be PNG/WEBP, found {image.format}")
         if image.size != tuple(size):
             self.fail(relative, f"size {image.size}, expected {tuple(size)}")
         if image.mode != "RGBA":
-            self.fail(relative, f"RGBA required, found {image.mode}")
-            return None
+            if transparent:
+                self.fail(relative, f"RGBA required for transparent image, found {image.mode}")
+                return None
+            image = image.convert("RGBA")
         alpha_min, alpha_max = image.getchannel("A").getextrema()
         if alpha_max == 0:
             self.fail(relative, "image has no visible pixels")
@@ -84,7 +86,8 @@ class Validator:
             return
         if rows != 1 or columns != frames:
             self.fail(path, "one horizontal row with columns == frames required")
-        expected_size = [width * columns, height * rows]
+        trim = clip.get("trim", {})
+        expected_size = [trim.get("w", width) * columns, trim.get("h", height) * rows]
         if clip["image_size"] != expected_size:
             self.fail(path, f"manifest image_size must equal {expected_size}")
         duration = clip["duration_seconds"]
@@ -108,13 +111,19 @@ class Validator:
         image = self.open_png(path, expected_size, True)
         if image is None or image.size != tuple(expected_size):
             return
+        from check_sprite_frames import frame_images
+        reconstructed = frame_images(self.assets / path, clip)
         previous = None
-        for index in range(frames):
-            frame = image.crop((index * width, 0, (index + 1) * width, height))
+        for index, frame in enumerate(reconstructed):
             alpha = frame.getchannel("A")
             bounds = alpha.point(lambda value: 255 if value > 12 else 0).getbbox()
             if bounds is None:
                 self.fail(path, f"frame {index + 1} is empty")
+            elif (sky or centered) and (configured.get("art_height_px") or sky):
+                import numpy as np
+                aa=np.asarray(alpha,dtype=float); yy,xx=np.indices(aa.shape); cx=(xx*aa).sum()/aa.sum(); cy=(yy*aa).sum()/aa.sum()
+                if abs(cx-anchor[0])>width*.1 or abs(cy-anchor[1])>width*.1:
+                    self.fail(path, f"frame {index+1} floating mass center exceeds ±10%")
             elif sky or centered:
                 center_x = (bounds[0] + bounds[2]) / 2
                 center_y = (bounds[1] + bounds[3]) / 2
@@ -122,6 +131,9 @@ class Validator:
                     self.fail(path, f"frame {index + 1} not aligned to center anchor: {bounds}")
                 if sky and bounds[2] - bounds[0] > 700:
                     self.fail(path, f"frame {index + 1} exceeds 700px maximum wing span")
+            elif enemy and configured.get("art_height_px"):
+                if abs(bounds[3]-anchor[1])>6:
+                    self.fail(path, f"frame {index+1} does not meet ground anchor")
             elif enemy or npc is not None:
                 center_x = (bounds[0] + bounds[2]) / 2
                 if abs(center_x - anchor[0]) > 4 or abs(bounds[3] - anchor[1]) > 4:
@@ -153,10 +165,16 @@ class Validator:
                 if npc is None:
                     continue
                 folder = self.root / npc["sheet_dir"]
-                sheet = folder / (placement.get("idle_clip", npc["clips"][0]["name"]) + ".png")
+                clip_name = placement.get("idle_clip", npc["clips"][0]["name"])
+                sheet_manifest = json.loads((folder / "manifest.json").read_text())
+                clip = next((c for c in sheet_manifest["clips"] if c["name"] == clip_name), None)
+                if clip is None:
+                    continue
+                from check_sprite_frames import frame_images, paths
+                sheet = paths(folder / "manifest.json", clip)
                 if not sheet.is_file():
                     continue
-                frame = Image.open(sheet).convert("RGBA").crop((0, 0, 640, 640))
+                frame = frame_images(sheet, clip)[0]
                 pixels = np.asarray(frame)
                 mask = pixels[..., 3] > 128
                 if not mask.any():
@@ -197,6 +215,33 @@ class Validator:
                     print(f"WARNING: NPC contrast below 30: {level['id']}/{npc['id']}")
         print(f"NPC contrast warnings: {warnings} (non-failing; light pools/highlights excluded)")
 
+    def check_generated_enemy_frames(self):
+        from check_sprite_frames import check, paths
+        total=0; warning_count=0
+        for enemy in self.enemy_data.values():
+            if "art_height_px" not in enemy and enemy["id"] != "sky_beast":continue
+            path=self.assets/"sprites/enemies"/enemy["id"]/"manifest.json"
+            manifest=json.loads(path.read_text());heights=[]
+            for clip in manifest["clips"]:
+                errors,warnings,metrics=check(paths(path,clip),clip);total+=1;warning_count+=len(warnings)
+                for issue in errors:self.fail(clip["sheet"],issue)
+                if metrics:heights.append((clip["name"],metrics["median_height"]))
+            base=next((h for n,h in heights if n in ["idle","float","fly_idle","glide"]),None)
+            if base:
+                for name,height in heights:
+                    if abs(height-base)>base*.08:self.fail(str(path),f"{name}: cross-clip height differs from idle by more than 8%")
+        print(f"Generated enemy frame QA: {total} clips, {warning_count} non-failing review warnings")
+        supplemental=0
+        for directory in [self.assets/"sprites/fx", self.assets/"sprites/player/unarmed", self.assets/"sprites/player/staff"]:
+            for manifest_path in directory.glob("*.json"):
+                manifest=json.loads(manifest_path.read_text())
+                for clip in manifest.get("clips",[]):
+                    errors,warnings,_metrics=check(paths(manifest_path,clip),clip)
+                    supplemental+=1;warning_count+=len(warnings)
+                    for issue in errors:self.fail(clip["sheet"],issue)
+        print(f"Generated player/FX frame QA: {supplemental} clips, total review warnings {warning_count}")
+
+
     def run(self):
         manifest = self.read_json("art_manifest.json")
         if manifest is None:
@@ -205,8 +250,10 @@ class Validator:
         if npc_path.is_file():
             npc_config = json.loads(npc_path.read_text(encoding="utf-8"))
             self.npc_data = {entry["id"]: entry for entry in npc_config["npcs"]}
-            player = Image.open(self.assets / "sprites/idle.png").convert("RGBA")
-            player_frame = player.crop((0, 0, 640, 640))
+            from check_sprite_frames import frame_images
+            player_manifest = json.loads((self.assets / "animation_manifest.json").read_text())
+            player_clip = next(c for c in player_manifest["clips"] if c["name"] == "idle")
+            player_frame = frame_images(self.assets / player_clip["sheet"], player_clip)[0]
             bounds = player_frame.getchannel("A").point(lambda value: 255 if value > 12 else 0).getbbox()
             if bounds is None:
                 self.fail("sprites/idle.png", "player reference frame is empty")
@@ -248,7 +295,7 @@ class Validator:
                 import numpy as np
                 pixels = np.asarray(image)
                 key_color = (pixels[..., 0] > 220) & (pixels[..., 1] < 60) & (pixels[..., 2] > 220)
-                if key_color.any():
+                if (key_color & (pixels[...,3] > 12)).any():
                     self.fail(entry["path"], "opaque tile contains magenta key-color margins; crop the generated source")
                 first = image.crop((0, 0, 1, image.height)).tobytes()
                 last = image.crop((image.width - 1, 0, image.width, image.height)).tobytes()
@@ -260,13 +307,14 @@ class Validator:
             map_width = entry.get("map_width", 3600)
             if ratio is not None and not entry.get("repeat_x") and not entry.get("localized") and entry["width"] < 1280 + max(0, map_width - 1280) * ratio:
                 self.fail(entry["path"], f"image width insufficient for {map_width}px map parallax travel")
+        self.check_generated_enemy_frames()
         self.check_npc_contrast()
         for relative in self.missing:
             if self.allow_missing:
                 print(f"SKIPPED (MISSING_TEXTURE fallback required): assets/{relative}")
         for error in self.errors:
             print(f"ERROR: {error}")
-        print(f"Checked {self.checked} PNG files; missing {len(self.missing)}; errors {len(self.errors)}.")
+        print(f"Checked {self.checked} PNG/WebP images; missing {len(self.missing)}; errors {len(self.errors)}.")
         if not self.errors and not self.missing:
             print("PASS: all required sheets and map assets match their manifests.")
         elif not self.errors and self.allow_missing:

@@ -1,5 +1,5 @@
 # 방어 갑피 괴수 / walk
-목적: 괴수 애니메이션. 경로: assets/sprites/enemies/shell_scorpion/walk.png
+목적: 괴수 애니메이션. 경로: assets/sprites/enemies/shell_scorpion/walk.webp
 규격: 8 × 640x640, 1.1초, 앵커 [320, 600].
 배경: #FF00FF → pack_sprites.py 크로마키/정렬/합성.
 

@@ -24,20 +24,26 @@ func _run() -> void:
         var level: LevelBase = manager.current_level
         for platform in level.config.get("platforms", []):
             var at := Vector2(platform["position"][0], platform["position"][1])
-            var art_height: float = float(platform.get("art_height", level.world_settings["platform_art_height"]))
             var matched: bool = false
-            for accent: SurfaceAccent in get_nodes_in_group("surface_accents"):
-                if accent.global_position.is_equal_approx(at) and is_equal_approx(accent.dimensions.x, platform["width"]):
-                    matched = is_equal_approx(accent.dimensions.y, art_height)
+            for body: Node in get_nodes_in_group("surfaces"):
+                if not body.has_meta("image_rect"): continue
+                var image_rect: Rect2 = body.get_meta("image_rect")
+                if image_rect.position.is_equal_approx(at) and is_equal_approx(image_rect.size.x, platform["width"]):
+                    var accent: SurfaceAccent = body.get_node_or_null("SurfaceAccent")
+                    var visible_height: float = float(body.get_meta("image_bottom")) - float(body.get_meta("image_top"))
+                    matched = accent != null and absf(accent.global_position.y - float(body.get_meta("image_top"))) <= 4 and absf(accent.dimensions.y - visible_height) <= 4
                     break
-            _check(matched, "%s/%s underside aid follows image height, top remains collision height" % [sample[0], platform["id"]])
+            _check(matched, "%s/%s underside aid follows the measured opaque image bounds" % [sample[0], platform["id"]])
         for ceiling in level.config.get("ceilings", []):
             var rect: Array = ceiling["rect"]
             var found: bool = false
-            for accent: SurfaceAccent in get_nodes_in_group("surface_accents"):
-                if accent.global_position.is_equal_approx(Vector2(rect[0], rect[1])):
-                    found = accent.ceiling_surface
-            _check(found, "Tunnel ceiling accent follows the underside")
+            for body: Node in get_nodes_in_group("surfaces"):
+                if not body.has_meta("image_rect"): continue
+                var image_rect: Rect2 = body.get_meta("image_rect")
+                if image_rect.position.is_equal_approx(Vector2(rect[0],rect[1])):
+                    var accent: SurfaceAccent = body.get_node_or_null("SurfaceAccent")
+                    found = accent != null and accent.ceiling_surface and absf(accent.global_position.y - float(body.get_meta("image_top"))) <= 4
+            _check(found, "Tunnel ceiling accent follows its measured bounds")
         for body in level.get_children():
             if body is StaticBody2D and body.position.x < 0 and body.position.y < level.floor_y:
                 _check(not body.has_node("SurfaceAccent"), "Invisible boundary has no unsupported highlight")

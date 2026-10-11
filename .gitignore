@@ -8,3 +8,9 @@ artifacts/
 
 # Intermediate validated sheets; final PNGs and generated source poses are retained.
 assets/source_art/stage4/player_staged/
+
+archive/
+docs/motion_review/
+docs/sprite_qa/
+*.uid
+__pycache__/

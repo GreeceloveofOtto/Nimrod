@@ -1,0 +1,234 @@
+{
+  "res://assets/props/large_rubble_a.webp": {
+    "top_offset_px": 2,
+    "bottom_offset_px": 4,
+    "opaque_x0": 2,
+    "opaque_x1": 218,
+    "image_width": 220,
+    "image_height": 120
+  },
+  "res://assets/props/large_rubble_b.webp": {
+    "top_offset_px": 2,
+    "bottom_offset_px": 2,
+    "opaque_x0": 2,
+    "opaque_x1": 158,
+    "image_width": 160,
+    "image_height": 90
+  },
+  "res://assets/props/market_stall_a.webp": {
+    "top_offset_px": 33,
+    "bottom_offset_px": 2,
+    "opaque_x0": 2,
+    "opaque_x1": 258,
+    "image_width": 260,
+    "image_height": 170
+  },
+  "res://assets/tiles/castle/balcony_floor_tile.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 0,
+    "opaque_x0": 0,
+    "opaque_x1": 512,
+    "image_width": 512,
+    "image_height": 180
+  },
+  "res://assets/tiles/castle/floor_tile.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 0,
+    "opaque_x0": 0,
+    "opaque_x1": 512,
+    "image_width": 512,
+    "image_height": 180
+  },
+  "res://assets/tiles/castle/villa_floor_tile.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 0,
+    "opaque_x0": 0,
+    "opaque_x1": 512,
+    "image_width": 512,
+    "image_height": 180
+  },
+  "res://assets/tiles/castle_front/courtyard_tile.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 0,
+    "opaque_x0": 0,
+    "opaque_x1": 512,
+    "image_width": 512,
+    "image_height": 200
+  },
+  "res://assets/tiles/cedar/bone_floor_tile.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 0,
+    "opaque_x0": 0,
+    "opaque_x1": 512,
+    "image_width": 512,
+    "image_height": 180
+  },
+  "res://assets/tiles/cedar/boss_end_platform.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 15,
+    "opaque_x0": 0,
+    "opaque_x1": 280,
+    "image_width": 280,
+    "image_height": 56
+  },
+  "res://assets/tiles/cedar/branch_platform.png": {
+    "top_offset_px": 1,
+    "bottom_offset_px": 21,
+    "opaque_x0": 0,
+    "opaque_x1": 320,
+    "image_width": 320,
+    "image_height": 48
+  },
+  "res://assets/tiles/cedar/root_floor_tile.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 0,
+    "opaque_x0": 0,
+    "opaque_x1": 512,
+    "image_width": 512,
+    "image_height": 180
+  },
+  "res://assets/tiles/cedar/wall_trunk_tile.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 0,
+    "opaque_x0": 0,
+    "opaque_x1": 160,
+    "image_width": 160,
+    "image_height": 512
+  },
+  "res://assets/tiles/home/home_floor_tile.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 0,
+    "opaque_x0": 0,
+    "opaque_x1": 512,
+    "image_width": 512,
+    "image_height": 180
+  },
+  "res://assets/tiles/homeroad/balcony_platform.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 13,
+    "opaque_x0": 0,
+    "opaque_x1": 256,
+    "image_width": 256,
+    "image_height": 48
+  },
+  "res://assets/tiles/homeroad/ground_tile.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 0,
+    "opaque_x0": 0,
+    "opaque_x1": 512,
+    "image_width": 512,
+    "image_height": 200
+  },
+  "res://assets/tiles/homeroad/plaza_tile.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 0,
+    "opaque_x0": 0,
+    "opaque_x1": 512,
+    "image_width": 512,
+    "image_height": 200
+  },
+  "res://assets/tiles/homeroad/stone_slab_bridge.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 23,
+    "opaque_x0": 0,
+    "opaque_x1": 360,
+    "image_width": 360,
+    "image_height": 56
+  },
+  "res://assets/tiles/outskirts/bridge_platform.png": {
+    "top_offset_px": 1,
+    "bottom_offset_px": 17,
+    "opaque_x0": 0,
+    "opaque_x1": 320,
+    "image_width": 320,
+    "image_height": 48
+  },
+  "res://assets/tiles/outskirts/ground_tile.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 0,
+    "opaque_x0": 0,
+    "opaque_x1": 512,
+    "image_width": 512,
+    "image_height": 200
+  },
+  "res://assets/tiles/outskirts/plaza_tile.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 0,
+    "opaque_x0": 0,
+    "opaque_x1": 512,
+    "image_width": 512,
+    "image_height": 200
+  },
+  "res://assets/tiles/outskirts/ruin_ledge.png": {
+    "top_offset_px": 3,
+    "bottom_offset_px": 4,
+    "opaque_x0": 0,
+    "opaque_x1": 480,
+    "image_width": 480,
+    "image_height": 56
+  },
+  "res://assets/tiles/outskirts/ruin_platform.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 4,
+    "opaque_x0": 0,
+    "opaque_x1": 256,
+    "image_width": 256,
+    "image_height": 48
+  },
+  "res://assets/tiles/passage/bridge_plank.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 20,
+    "opaque_x0": 0,
+    "opaque_x1": 320,
+    "image_width": 320,
+    "image_height": 48
+  },
+  "res://assets/tiles/passage/floor_tile.png": {
+    "top_offset_px": 2,
+    "bottom_offset_px": 0,
+    "opaque_x0": 0,
+    "opaque_x1": 512,
+    "image_width": 512,
+    "image_height": 180
+  },
+  "res://assets/tiles/passage/low_tunnel_ceiling.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 0,
+    "opaque_x0": 0,
+    "opaque_x1": 512,
+    "image_width": 512,
+    "image_height": 140
+  },
+  "res://assets/tiles/passage/platform.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 5,
+    "opaque_x0": 0,
+    "opaque_x1": 256,
+    "image_width": 256,
+    "image_height": 48
+  },
+  "res://assets/tiles/rear_gate/ground_tile.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 0,
+    "opaque_x0": 0,
+    "opaque_x1": 512,
+    "image_width": 512,
+    "image_height": 220
+  },
+  "res://assets/tiles/rear_gate/platform.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 8,
+    "opaque_x0": 0,
+    "opaque_x1": 256,
+    "image_width": 256,
+    "image_height": 48
+  },
+  "res://assets/tiles/rear_gate/step_block.png": {
+    "top_offset_px": 0,
+    "bottom_offset_px": 0,
+    "opaque_x0": 0,
+    "opaque_x1": 512,
+    "image_width": 512,
+    "image_height": 90
+  }
+}

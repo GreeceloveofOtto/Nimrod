@@ -1,6 +1,6 @@
 # nimrod_home_inner_door
 목적: 6단계 이미지 생성 애니메이션.
-경로: assets/props/doors/nimrod_home_inner_door.png
+경로: assets/props/doors/nimrod_home_inner_door.webp
 프레임: 256x384, 6프레임, 0.6초, 앵커 [128, 384].
 배경: #FF00FF → pack_sprites.py 크로마키 투명 처리.
 

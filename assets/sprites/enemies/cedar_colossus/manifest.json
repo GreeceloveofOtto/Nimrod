@@ -8,9 +8,9 @@
   "clips": [
     {
       "name": "idle",
-      "sheet": "sprites/enemies/cedar_colossus/idle.png",
-      "frame_width": 1024,
-      "frame_height": 1024,
+      "sheet": "sprites/enemies/cedar_colossus/idle.webp",
+      "frame_width": 768,
+      "frame_height": 768,
       "columns": 6,
       "rows": 1,
       "frames": 6,
@@ -18,19 +18,25 @@
       "fps": 4.285714285714286,
       "loop": true,
       "anchor_px": [
-        512,
-        980
+        384,
+        720
       ],
       "image_size": [
-        6144,
-        1024
-      ]
+        1776,
+        585
+      ],
+      "trim": {
+        "x": 250,
+        "y": 137,
+        "w": 296,
+        "h": 585
+      }
     },
     {
       "name": "walk",
-      "sheet": "sprites/enemies/cedar_colossus/walk.png",
-      "frame_width": 1024,
-      "frame_height": 1024,
+      "sheet": "sprites/enemies/cedar_colossus/walk.webp",
+      "frame_width": 768,
+      "frame_height": 768,
       "columns": 8,
       "rows": 1,
       "frames": 8,
@@ -38,19 +44,28 @@
       "fps": 5.714285714285714,
       "loop": true,
       "anchor_px": [
-        512,
-        980
+        384,
+        720
       ],
       "image_size": [
-        8192,
-        1024
-      ]
+        4896,
+        594
+      ],
+      "qa": {
+        "movement": true
+      },
+      "trim": {
+        "x": 62,
+        "y": 128,
+        "w": 612,
+        "h": 594
+      }
     },
     {
       "name": "slam_windup",
-      "sheet": "sprites/enemies/cedar_colossus/slam_windup.png",
-      "frame_width": 1024,
-      "frame_height": 1024,
+      "sheet": "sprites/enemies/cedar_colossus/slam_windup.webp",
+      "frame_width": 768,
+      "frame_height": 768,
       "columns": 6,
       "rows": 1,
       "frames": 6,
@@ -58,19 +73,29 @@
       "fps": 6.0,
       "loop": false,
       "anchor_px": [
-        512,
-        980
+        384,
+        720
       ],
       "image_size": [
-        6144,
-        1024
-      ]
+        4554,
+        675
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 7,
+        "y": 47,
+        "w": 759,
+        "h": 675
+      }
     },
     {
       "name": "slam",
-      "sheet": "sprites/enemies/cedar_colossus/slam.png",
-      "frame_width": 1024,
-      "frame_height": 1024,
+      "sheet": "sprites/enemies/cedar_colossus/slam.webp",
+      "frame_width": 768,
+      "frame_height": 768,
       "columns": 3,
       "rows": 1,
       "frames": 3,
@@ -78,19 +103,29 @@
       "fps": 15.0,
       "loop": false,
       "anchor_px": [
-        512,
-        980
+        384,
+        720
       ],
       "image_size": [
-        3072,
-        1024
-      ]
+        1224,
+        658
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 191,
+        "y": 64,
+        "w": 408,
+        "h": 658
+      }
     },
     {
       "name": "slam_recovery",
-      "sheet": "sprites/enemies/cedar_colossus/slam_recovery.png",
-      "frame_width": 1024,
-      "frame_height": 1024,
+      "sheet": "sprites/enemies/cedar_colossus/slam_recovery.webp",
+      "frame_width": 768,
+      "frame_height": 768,
       "columns": 5,
       "rows": 1,
       "frames": 5,
@@ -98,19 +133,29 @@
       "fps": 4.166666666666667,
       "loop": false,
       "anchor_px": [
-        512,
-        980
+        384,
+        720
       ],
       "image_size": [
-        5120,
-        1024
-      ]
+        2640,
+        695
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 119,
+        "y": 27,
+        "w": 528,
+        "h": 695
+      }
     },
     {
       "name": "sweep_windup",
-      "sheet": "sprites/enemies/cedar_colossus/sweep_windup.png",
-      "frame_width": 1024,
-      "frame_height": 1024,
+      "sheet": "sprites/enemies/cedar_colossus/sweep_windup.webp",
+      "frame_width": 768,
+      "frame_height": 768,
       "columns": 5,
       "rows": 1,
       "frames": 5,
@@ -118,19 +163,29 @@
       "fps": 7.142857142857143,
       "loop": false,
       "anchor_px": [
-        512,
-        980
+        384,
+        720
       ],
       "image_size": [
-        5120,
-        1024
-      ]
+        2875,
+        720
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 91,
+        "y": 2,
+        "w": 575,
+        "h": 720
+      }
     },
     {
       "name": "sweep",
-      "sheet": "sprites/enemies/cedar_colossus/sweep.png",
-      "frame_width": 1024,
-      "frame_height": 1024,
+      "sheet": "sprites/enemies/cedar_colossus/sweep.webp",
+      "frame_width": 768,
+      "frame_height": 768,
       "columns": 3,
       "rows": 1,
       "frames": 3,
@@ -138,19 +193,29 @@
       "fps": 15.0,
       "loop": false,
       "anchor_px": [
-        512,
-        980
+        384,
+        720
       ],
       "image_size": [
-        3072,
-        1024
-      ]
+        1644,
+        644
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 174,
+        "y": 78,
+        "w": 548,
+        "h": 644
+      }
     },
     {
       "name": "sweep_recovery",
-      "sheet": "sprites/enemies/cedar_colossus/sweep_recovery.png",
-      "frame_width": 1024,
-      "frame_height": 1024,
+      "sheet": "sprites/enemies/cedar_colossus/sweep_recovery.webp",
+      "frame_width": 768,
+      "frame_height": 768,
       "columns": 5,
       "rows": 1,
       "frames": 5,
@@ -158,19 +223,29 @@
       "fps": 5.555555555555555,
       "loop": false,
       "anchor_px": [
-        512,
-        980
+        384,
+        720
       ],
       "image_size": [
-        5120,
-        1024
-      ]
+        2790,
+        604
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 149,
+        "y": 118,
+        "w": 558,
+        "h": 604
+      }
     },
     {
       "name": "rear_poke",
-      "sheet": "sprites/enemies/cedar_colossus/rear_poke.png",
-      "frame_width": 1024,
-      "frame_height": 1024,
+      "sheet": "sprites/enemies/cedar_colossus/rear_poke.webp",
+      "frame_width": 768,
+      "frame_height": 768,
       "columns": 4,
       "rows": 1,
       "frames": 4,
@@ -178,19 +253,29 @@
       "fps": 10.0,
       "loop": false,
       "anchor_px": [
-        512,
-        980
+        384,
+        720
       ],
       "image_size": [
-        4096,
-        1024
-      ]
+        2580,
+        705
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 121,
+        "y": 17,
+        "w": 645,
+        "h": 705
+      }
     },
     {
       "name": "turn",
-      "sheet": "sprites/enemies/cedar_colossus/turn.png",
-      "frame_width": 1024,
-      "frame_height": 1024,
+      "sheet": "sprites/enemies/cedar_colossus/turn.webp",
+      "frame_width": 768,
+      "frame_height": 768,
       "columns": 6,
       "rows": 1,
       "frames": 6,
@@ -198,19 +283,25 @@
       "fps": 10.0,
       "loop": false,
       "anchor_px": [
-        512,
-        980
+        384,
+        720
       ],
       "image_size": [
-        6144,
-        1024
-      ]
+        2046,
+        586
+      ],
+      "trim": {
+        "x": 224,
+        "y": 136,
+        "w": 341,
+        "h": 586
+      }
     },
     {
       "name": "hurt",
-      "sheet": "sprites/enemies/cedar_colossus/hurt.png",
-      "frame_width": 1024,
-      "frame_height": 1024,
+      "sheet": "sprites/enemies/cedar_colossus/hurt.webp",
+      "frame_width": 768,
+      "frame_height": 768,
       "columns": 2,
       "rows": 1,
       "frames": 2,
@@ -218,19 +309,25 @@
       "fps": 10.0,
       "loop": false,
       "anchor_px": [
-        512,
-        980
+        384,
+        720
       ],
       "image_size": [
-        2048,
-        1024
-      ]
+        1324,
+        628
+      ],
+      "trim": {
+        "x": 45,
+        "y": 94,
+        "w": 662,
+        "h": 628
+      }
     },
     {
       "name": "death",
-      "sheet": "sprites/enemies/cedar_colossus/death.png",
-      "frame_width": 1024,
-      "frame_height": 1024,
+      "sheet": "sprites/enemies/cedar_colossus/death.webp",
+      "frame_width": 768,
+      "frame_height": 768,
       "columns": 8,
       "rows": 1,
       "frames": 8,
@@ -238,13 +335,23 @@
       "fps": 6.666666666666667,
       "loop": false,
       "anchor_px": [
-        512,
-        980
+        384,
+        720
       ],
       "image_size": [
-        8192,
-        1024
-      ]
+        3000,
+        698
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 206,
+        "y": 24,
+        "w": 375,
+        "h": 698
+      }
     }
   ]
 }

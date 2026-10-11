@@ -2,7 +2,7 @@
 
 목적: 2단계 레벨의 생성 이미지 배경·지형·소품
 
-파일: `assets/props/villa_vase.png`
+파일: `assets/props/villa_vase.webp`
 
 크기: 140 × 220px; 프레임: 1, 한 줄.
 

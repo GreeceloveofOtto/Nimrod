@@ -12,7 +12,7 @@
   "clips": [
     {
       "name": "idle",
-      "sheet": "sprites/npcs/ninsun/idle.png",
+      "sheet": "sprites/npcs/ninsun/idle.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -26,13 +26,19 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        774,
+        358
+      ],
+      "trim": {
+        "x": 256,
+        "y": 244,
+        "w": 129,
+        "h": 358
+      }
     },
     {
       "name": "idle_front",
-      "sheet": "sprites/npcs/ninsun/idle_front.png",
+      "sheet": "sprites/npcs/ninsun/idle_front.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -46,9 +52,15 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        984,
+        362
+      ],
+      "trim": {
+        "x": 238,
+        "y": 240,
+        "w": 164,
+        "h": 362
+      }
     }
   ],
   "design_reference": "reference/ninsun_design.png",

@@ -1,6 +1,6 @@
 # bone_spike
 목적: 6단계 이미지 생성 애니메이션.
-경로: assets/sprites/fx/bone_spike.png
+경로: assets/sprites/fx/bone_spike.webp
 프레임: 128x256, 4프레임, 0.4초, 앵커 [64, 128].
 배경: #FF00FF → pack_sprites.py 크로마키 투명 처리.
 

@@ -95,7 +95,7 @@ def main():
         # The original symmetric mansion doorway is at its horizontal center.
         # Trim empty magenta margins so its base aligns with the map's floor.
         single("villa_exterior", "villa_exterior", [0, 0, 1774, 887],
-               "backgrounds/rear_gate/villa_exterior.png", (1500, 720), trim=True)
+               "backgrounds/rear_gate/villa_exterior.webp", (1500, 720), trim=True)
 
         for name, width, top, bottom, floor in [
             ("castle_f1_hall", 2000, 0, 307, 252),
@@ -110,11 +110,11 @@ def main():
         single("villa_f1_hall", "villa_rooftop", [0, 0, 1254, 312],
                "backgrounds/villa/villa_f1_hall.png", (2000, 720), opaque=True, floor_y=250)
         single("castle_f5_sky", "villa_rooftop", [0, 313, 1254, 314],
-               "backgrounds/castle/castle_f5_sky.png", (1536, 720), opaque=True, ratio=.05, map_width=2400)
+               "backgrounds/castle/castle_f5_sky.webp", (1536, 720), opaque=True, ratio=.05, map_width=2400)
         single("castle_f5_far", "villa_rooftop", [0, 627, 1254, 314],
-               "backgrounds/castle/castle_f5_far.png", (1664, 720), ratio=.20, map_width=2400)
+               "backgrounds/castle/castle_f5_far.webp", (1664, 720), ratio=.20, map_width=2400)
         single("castle_f5_terrace", "villa_rooftop", [0, 941, 1254, 313],
-               "backgrounds/castle/castle_f5_terrace.png", (2400, 720), floor_y=244)
+               "backgrounds/castle/castle_f5_terrace.webp", (2400, 720), floor_y=244)
 
         for name, crop in [
             ("floor_tile", [12, 88, 1424, 258]),

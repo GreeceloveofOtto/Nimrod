@@ -2,7 +2,7 @@
   "clips": [
     {
       "name": "passage_door",
-      "sheet": "props/doors/passage_door.png",
+      "sheet": "props/doors/passage_door.webp",
       "frame_width": 256,
       "frame_height": 384,
       "columns": 6,
@@ -16,13 +16,19 @@
         380
       ],
       "image_size": [
-        1536,
-        384
-      ]
+        1512,
+        358
+      ],
+      "trim": {
+        "x": 2,
+        "y": 24,
+        "w": 252,
+        "h": 358
+      }
     },
     {
       "name": "downtown_passage_door_anim",
-      "sheet": "props/doors/downtown_passage_door_anim.png",
+      "sheet": "props/doors/downtown_passage_door_anim.webp",
       "frame_width": 320,
       "frame_height": 460,
       "columns": 6,
@@ -36,13 +42,19 @@
         456
       ],
       "image_size": [
-        1920,
-        460
-      ]
+        1896,
+        295
+      ],
+      "trim": {
+        "x": 2,
+        "y": 163,
+        "w": 316,
+        "h": 295
+      }
     },
     {
       "name": "nimrod_home_gate",
-      "sheet": "props/doors/nimrod_home_gate.png",
+      "sheet": "props/doors/nimrod_home_gate.webp",
       "frame_width": 320,
       "frame_height": 420,
       "columns": 6,
@@ -56,9 +68,15 @@
         416
       ],
       "image_size": [
-        1920,
-        420
-      ]
+        1896,
+        244
+      ],
+      "trim": {
+        "x": 2,
+        "y": 174,
+        "w": 316,
+        "h": 244
+      }
     }
   ]
 }

@@ -11,7 +11,12 @@ func _run() -> void:
         enemy.position = Vector2(900,620)
         manager.current_level.add_child(enemy)
         enemy.set_physics_process(false)
-        for state in EnemyBase.State.values():
+        var reachable: Array = EnemyBase.State.values()
+        if id in ["gas_sac", "wraith_ray", "corpse_bomber"]:
+            reachable = [EnemyBase.State.IDLE, EnemyBase.State.CHASE, EnemyBase.State.TURN, EnemyBase.State.STUN, EnemyBase.State.DEAD]
+        if id == "shell_scorpion": enemy.phase = "claw"
+        if id == "chain_beastman": enemy.phase = "tail"
+        for state in reachable:
             enemy.state = state
             enemy.state_clock = .05
             enemy._update_visual(.01)
@@ -22,7 +27,7 @@ func _run() -> void:
         if enemy is CedarEnemy:
             for phase in ["shield","shield_break_stun","thrust","slash","slam","sweep","rear_poke","hop","shoot","tell","fall","land_stab","claws","fuse"]:
                 # Request only phases belonging to the selected enemy.
-                if not enemy.clip_data.has(phase) and phase not in ["shield","hop"]:
+                if not enemy.clip_data.has(phase) and not (enemy.enemy_id == "cedar_sentinel" and phase == "shield") and not (enemy.enemy_id == "cedar_archer" and phase == "hop"):
                     continue
                 enemy.phase = phase
                 enemy.state = EnemyBase.State.ACTIVE

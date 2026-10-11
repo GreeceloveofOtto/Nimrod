@@ -1,0 +1,490 @@
+{
+  "step": 17,
+  "frame_size": [
+    640,
+    640
+  ],
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/player/axe/idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 10,
+      "rows": 1,
+      "frames": 10,
+      "duration_seconds": 2.2,
+      "fps": 4.545454545454545,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2420,
+        368
+      ],
+      "trim": {
+        "x": 199,
+        "y": 234,
+        "w": 242,
+        "h": 368
+      }
+    },
+    {
+      "name": "walk",
+      "sheet": "sprites/player/axe/walk.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 10,
+      "rows": 1,
+      "frames": 10,
+      "duration_seconds": 1.05,
+      "fps": 9.523809523809524,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2840,
+        338
+      ],
+      "trim": {
+        "x": 178,
+        "y": 264,
+        "w": 284,
+        "h": 338
+      }
+    },
+    {
+      "name": "crouch_enter",
+      "sheet": "sprites/player/axe/crouch_enter.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.14,
+      "fps": 28.57142857142857,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        916,
+        295
+      ],
+      "trim": {
+        "x": 206,
+        "y": 307,
+        "w": 229,
+        "h": 295
+      }
+    },
+    {
+      "name": "crouch_idle",
+      "sheet": "sprites/player/axe/crouch_idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.8,
+      "fps": 7.5,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1332,
+        209
+      ],
+      "trim": {
+        "x": 209,
+        "y": 393,
+        "w": 222,
+        "h": 209
+      }
+    },
+    {
+      "name": "crouch_exit",
+      "sheet": "sprites/player/axe/crouch_exit.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.13,
+      "fps": 30.769230769230766,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2496,
+        307
+      ],
+      "trim": {
+        "x": 8,
+        "y": 295,
+        "w": 624,
+        "h": 307
+      }
+    },
+    {
+      "name": "jump_start",
+      "sheet": "sprites/player/axe/jump_start.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.13,
+      "fps": 30.769230769230766,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1160,
+        332
+      ],
+      "trim": {
+        "x": 175,
+        "y": 270,
+        "w": 290,
+        "h": 332
+      }
+    },
+    {
+      "name": "jump_rise",
+      "sheet": "sprites/player/axe/jump_rise.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.42,
+      "fps": 14.285714285714286,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1830,
+        332
+      ],
+      "trim": {
+        "x": 168,
+        "y": 270,
+        "w": 305,
+        "h": 332
+      }
+    },
+    {
+      "name": "fall",
+      "sheet": "sprites/player/axe/fall.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.36,
+      "fps": 16.666666666666668,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1938,
+        361
+      ],
+      "trim": {
+        "x": 158,
+        "y": 241,
+        "w": 323,
+        "h": 361
+      }
+    },
+    {
+      "name": "land",
+      "sheet": "sprites/player/axe/land.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.24,
+      "fps": 20.833333333333336,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1925,
+        381
+      ],
+      "trim": {
+        "x": 128,
+        "y": 221,
+        "w": 385,
+        "h": 381
+      }
+    },
+    {
+      "name": "drop_through",
+      "sheet": "sprites/player/axe/drop_through.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.22,
+      "fps": 22.727272727272727,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1565,
+        362
+      ],
+      "trim": {
+        "x": 164,
+        "y": 240,
+        "w": 313,
+        "h": 362
+      }
+    },
+    {
+      "name": "hurt",
+      "sheet": "sprites/player/axe/hurt.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.32,
+      "fps": 15.625,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1580,
+        378
+      ],
+      "trim": {
+        "x": 162,
+        "y": 224,
+        "w": 316,
+        "h": 378
+      }
+    },
+    {
+      "name": "death",
+      "sheet": "sprites/player/axe/death.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 0.6,
+      "fps": 13.333333333333334,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3032,
+        362
+      ],
+      "trim": {
+        "x": 130,
+        "y": 240,
+        "w": 379,
+        "h": 362
+      }
+    },
+    {
+      "name": "attack_1",
+      "sheet": "sprites/player/axe/attack_1.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 0.33,
+      "fps": 24.242424242424242,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3640,
+        376
+      ],
+      "trim": {
+        "x": 92,
+        "y": 226,
+        "w": 455,
+        "h": 376
+      }
+    },
+    {
+      "name": "attack_2",
+      "sheet": "sprites/player/axe/attack_2.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 0.33,
+      "fps": 24.242424242424242,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2976,
+        388
+      ],
+      "trim": {
+        "x": 134,
+        "y": 214,
+        "w": 372,
+        "h": 388
+      }
+    },
+    {
+      "name": "attack_3",
+      "sheet": "sprites/player/axe/attack_3.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 10,
+      "rows": 1,
+      "frames": 10,
+      "duration_seconds": 0.4,
+      "fps": 25.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3560,
+        398
+      ],
+      "trim": {
+        "x": 142,
+        "y": 204,
+        "w": 356,
+        "h": 398
+      }
+    },
+    {
+      "name": "attack_4",
+      "sheet": "sprites/player/axe/attack_4.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 10,
+      "rows": 1,
+      "frames": 10,
+      "duration_seconds": 0.56,
+      "fps": 17.857142857142854,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        5300,
+        376
+      ],
+      "frame_boundaries_seconds": [
+        0,
+        0.056,
+        0.112,
+        0.168,
+        0.224,
+        0.28,
+        0.34,
+        0.396,
+        0.452,
+        0.508,
+        0.56
+      ],
+      "trim": {
+        "x": 55,
+        "y": 226,
+        "w": 530,
+        "h": 376
+      }
+    },
+    {
+      "name": "run",
+      "sheet": "sprites/player/axe/run.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 10,
+      "rows": 1,
+      "frames": 10,
+      "duration_seconds": 0.82,
+      "fps": 12.195121951219512,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3090,
+        324
+      ],
+      "trim": {
+        "x": 166,
+        "y": 278,
+        "w": 309,
+        "h": 324
+      }
+    },
+    {
+      "name": "roll",
+      "sheet": "sprites/player/axe/roll.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 12,
+      "rows": 1,
+      "frames": 12,
+      "duration_seconds": 0.48,
+      "fps": 25.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        4848,
+        367
+      ],
+      "trim": {
+        "x": 118,
+        "y": 235,
+        "w": 404,
+        "h": 367
+      }
+    }
+  ]
+}

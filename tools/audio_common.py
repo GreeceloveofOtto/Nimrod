@@ -50,4 +50,6 @@ def write_wav(path, samples, normalize=True, fade_seconds=0.004):
         output.setsampwidth(2)
         output.setframerate(SAMPLE_RATE)
         output.writeframes(pcm.tobytes())
-    return path
+    from convert_audio_ogg import convert
+    output = convert(path, archive=True)
+    return output

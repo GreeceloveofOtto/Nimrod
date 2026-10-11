@@ -99,7 +99,7 @@ def prompt(npc_id, animation, frames, duration, source, sky=False):
 def main():
     images = {name: chromakey(Image.open(SOURCE / f"{name}.png")) for name in
               ("royals", "cooks", "workers", "servants_upright", "sky_flight", "sky_turn_death")}
-    player = Image.open(ASSETS / "sprites/idle.png").convert("RGBA")
+    player = Image.open(ASSETS / "sprites/player/axe/idle.webp").convert("RGBA")
     player_frame = player.crop((0, 0, 640, 640))
     bounds = player_frame.getchannel("A").point(lambda value: 255 if value > 12 else 0).getbbox()
     player_height = bounds[3] - bounds[1]

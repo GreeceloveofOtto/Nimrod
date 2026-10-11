@@ -2,7 +2,7 @@
 
 목적: 바닥 석재 잔해 장식
 
-저장 경로: `assets/props/rubble.png`
+저장 경로: `assets/props/rubble.webp`
 
 최종 크기: 240x100px. 프레임 구성: 정지 이미지 1프레임.
 

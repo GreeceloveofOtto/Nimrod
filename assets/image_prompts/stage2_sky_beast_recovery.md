@@ -2,7 +2,7 @@
 
 Purpose: stage 2 character animation.
 
-Output: `assets/sprites/enemies/sky_beast/recovery.png`
+Output: `assets/sprites/enemies/sky_beast/recovery.webp`
 
 Frames: 4 × 768x640, one horizontal row; duration 0.6s; anchor [384,320].
 

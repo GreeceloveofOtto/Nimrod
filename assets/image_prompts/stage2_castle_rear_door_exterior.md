@@ -2,7 +2,7 @@
 
 목적: 문 열림; 첫 프레임 완전 닫힘, 마지막 프레임 완전 열림. 닫힘은 역재생.
 
-파일: `assets/props/doors/castle_rear_door_exterior.png`
+파일: `assets/props/doors/castle_rear_door_exterior.webp`
 
 크기: 320 × 420px; 프레임: 6, 한 줄.
 

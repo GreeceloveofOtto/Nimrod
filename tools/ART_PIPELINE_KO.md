@@ -29,8 +29,8 @@ python tools/pack_sprites.py sheet raw.png idle.png --grid-cols 8 --grid-rows 8 
 ## 화염과 스파크
 
 ```bash
-python tools/pack_sprites.py sheet flame_raw.png assets/sprites/enemies/ranged_beast/flame.png --grid-cols 6 --frames 6 --frame-width 512 --frame-height 256 --anchor 16,128 --alignment left-center --fit 480,200
-python tools/pack_sprites.py sheet spark_raw.png assets/sprites/fx/hit_spark.png --grid-cols 5 --frames 5 --frame-width 256 --frame-height 256 --anchor 128,128 --alignment center --fit 220,220
+python tools/pack_sprites.py sheet flame_raw.png assets/sprites/enemies/ranged_beast/flame.webp --grid-cols 6 --frames 6 --frame-width 512 --frame-height 256 --anchor 16,128 --alignment left-center --fit 480,200
+python tools/pack_sprites.py sheet spark_raw.png assets/sprites/fx/hit_spark.webp --grid-cols 5 --frames 5 --frame-width 256 --frame-height 256 --anchor 128,128 --alignment center --fit 220,220
 ```
 
 화염은 왼쪽 방출점에서 오른쪽으로 뻗으며 입 위치에 맞춘다. 스파크는 중심에 정렬한다. 공통 배율 때문에 큰 포즈가 프레임을 벗어나면 도구가 오류를 내므로 원본 구간이나 모든 프레임의 공통 배율을 점검한다.
@@ -42,8 +42,8 @@ python tools/pack_sprites.py sheet spark_raw.png assets/sprites/fx/hit_spark.png
 1단계에서 삭제한 전경 생성 원본 `assets/source_art/foreground_source.png`와 기존 프롬프트는 복원하지 않았다. 2단계 명세에 따라 새 원본 `assets/source_art/stage2_environment/rear_layers.png`에서 폭 5400에 맞는 전경을 새로 패킹했다. 현재 RearGate는 4겹 시차(0.05/0.20/0.45/0.80)를 사용한다. `build_map_assets.py`는 2단계 원본이 있으면 새 배경을 보존하며 기존 지형·소품·이펙트만 재패킹한다.
 
 ```bash
-python tools/pack_sprites.py image generated.png assets/props/rear_gate_door.png --crop 0,0,320,420 --size 320,420
-python tools/pack_sprites.py image generated_sky.png assets/backgrounds/rear_gate/sky.png --size 1536,720 --opaque
+python tools/pack_sprites.py image generated.png assets/props/rear_gate_door.webp --crop 0,0,320,420 --size 320,420
+python tools/pack_sprites.py image generated_sky.png assets/backgrounds/rear_gate/sky.webp --size 1536,720 --opaque
 python tools/pack_sprites.py image generated_ground.png assets/tiles/rear_gate/ground_tile.png --size 512,220 --opaque --tile-x
 ```
 

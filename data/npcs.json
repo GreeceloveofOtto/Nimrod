@@ -45,8 +45,8 @@
       "margin_y": 2,
       "name_offset_y": 14,
       "name_z": 50,
-      "light_pool": "res://assets/fx/npc_light_pool.png",
-      "shadow": "res://assets/fx/contact_shadow.png",
+      "light_pool": "res://assets/fx/npc_light_pool.webp",
+      "shadow": "res://assets/fx/contact_shadow.webp",
       "pool_width_height_ratio": 1.4,
       "pool_center_y": -90,
       "pool_modulate": [
@@ -92,7 +92,10 @@
       "face_player": true,
       "random_start": false,
       "three_way": true,
-      "initial_pose": "right"
+      "initial_pose": "right",
+      "interactable": true,
+      "interaction": "lugalbanda_ninsun_gift",
+      "interact_range": 140
     },
     {
       "id": "ninsun",
@@ -116,7 +119,10 @@
       "face_player": true,
       "random_start": false,
       "three_way": true,
-      "initial_pose": "left"
+      "initial_pose": "left",
+      "interactable": true,
+      "interaction": "lugalbanda_ninsun_gift",
+      "interact_range": 140
     },
     {
       "id": "shamhat",

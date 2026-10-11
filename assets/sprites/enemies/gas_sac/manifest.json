@@ -3,7 +3,7 @@
   "clips": [
     {
       "name": "float",
-      "sheet": "sprites/enemies/gas_sac/float.png",
+      "sheet": "sprites/enemies/gas_sac/float.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -17,13 +17,19 @@
         320
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        1434,
+        313
+      ],
+      "trim": {
+        "x": 186,
+        "y": 199,
+        "w": 239,
+        "h": 313
+      }
     },
     {
       "name": "bump",
-      "sheet": "sprites/enemies/gas_sac/bump.png",
+      "sheet": "sprites/enemies/gas_sac/bump.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 3,
@@ -37,13 +43,23 @@
         320
       ],
       "image_size": [
-        1920,
-        640
-      ]
+        948,
+        330
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 156,
+        "y": 192,
+        "w": 316,
+        "h": 330
+      }
     },
     {
       "name": "turn",
-      "sheet": "sprites/enemies/gas_sac/turn.png",
+      "sheet": "sprites/enemies/gas_sac/turn.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -57,13 +73,19 @@
         320
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        936,
+        306
+      ],
+      "trim": {
+        "x": 205,
+        "y": 193,
+        "w": 234,
+        "h": 306
+      }
     },
     {
       "name": "hurt",
-      "sheet": "sprites/enemies/gas_sac/hurt.png",
+      "sheet": "sprites/enemies/gas_sac/hurt.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 2,
@@ -77,13 +99,19 @@
         320
       ],
       "image_size": [
-        1280,
-        640
-      ]
+        592,
+        314
+      ],
+      "trim": {
+        "x": 149,
+        "y": 190,
+        "w": 296,
+        "h": 314
+      }
     },
     {
       "name": "death_swell",
-      "sheet": "sprites/enemies/gas_sac/death_swell.png",
+      "sheet": "sprites/enemies/gas_sac/death_swell.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -97,13 +125,23 @@
         320
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        1494,
+        345
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 211,
+        "y": 177,
+        "w": 249,
+        "h": 345
+      }
     },
     {
       "name": "burst",
-      "sheet": "sprites/enemies/gas_sac/burst.png",
+      "sheet": "sprites/enemies/gas_sac/burst.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 5,
@@ -117,9 +155,15 @@
         320
       ],
       "image_size": [
-        3200,
-        640
-      ]
+        1280,
+        323
+      ],
+      "trim": {
+        "x": 205,
+        "y": 192,
+        "w": 256,
+        "h": 323
+      }
     }
   ],
   "aliases": {

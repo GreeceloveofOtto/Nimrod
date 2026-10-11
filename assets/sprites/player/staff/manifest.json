@@ -1,0 +1,521 @@
+{
+  "step": 17,
+  "frame_size": [
+    640,
+    640
+  ],
+  "weapon": "staff",
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/player/staff/idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 10,
+      "rows": 1,
+      "frames": 10,
+      "duration_seconds": 2.2,
+      "fps": 4.545454545454545,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1640,
+        368
+      ],
+      "qa": {
+        "height_tol": 0.1,
+        "pose_height_exception": false
+      },
+      "trim": {
+        "x": 238,
+        "y": 234,
+        "w": 164,
+        "h": 368
+      }
+    },
+    {
+      "name": "walk",
+      "sheet": "sprites/player/staff/walk.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 10,
+      "rows": 1,
+      "frames": 10,
+      "duration_seconds": 1.05,
+      "fps": 9.523809523809524,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2780,
+        344
+      ],
+      "qa": {
+        "height_tol": 0.1,
+        "pose_height_exception": false
+      },
+      "trim": {
+        "x": 181,
+        "y": 258,
+        "w": 278,
+        "h": 344
+      }
+    },
+    {
+      "name": "crouch_enter",
+      "sheet": "sprites/player/staff/crouch_enter.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.14,
+      "fps": 28.57142857142857,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        900,
+        295
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 208,
+        "y": 307,
+        "w": 225,
+        "h": 295
+      }
+    },
+    {
+      "name": "crouch_idle",
+      "sheet": "sprites/player/staff/crouch_idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.8,
+      "fps": 7.5,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        792,
+        203
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 254,
+        "y": 399,
+        "w": 132,
+        "h": 203
+      }
+    },
+    {
+      "name": "crouch_exit",
+      "sheet": "sprites/player/staff/crouch_exit.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.13,
+      "fps": 30.769230769230766,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        708,
+        320
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 232,
+        "y": 282,
+        "w": 177,
+        "h": 320
+      }
+    },
+    {
+      "name": "jump_start",
+      "sheet": "sprites/player/staff/jump_start.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.13,
+      "fps": 30.769230769230766,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1108,
+        313
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 182,
+        "y": 289,
+        "w": 277,
+        "h": 313
+      }
+    },
+    {
+      "name": "jump_rise",
+      "sheet": "sprites/player/staff/jump_rise.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.42,
+      "fps": 14.285714285714286,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1548,
+        332
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 191,
+        "y": 270,
+        "w": 258,
+        "h": 332
+      }
+    },
+    {
+      "name": "fall",
+      "sheet": "sprites/player/staff/fall.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.36,
+      "fps": 16.666666666666668,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2004,
+        351
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 153,
+        "y": 251,
+        "w": 334,
+        "h": 351
+      }
+    },
+    {
+      "name": "land",
+      "sheet": "sprites/player/staff/land.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.24,
+      "fps": 20.833333333333336,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1955,
+        428
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 124,
+        "y": 174,
+        "w": 391,
+        "h": 428
+      }
+    },
+    {
+      "name": "drop_through",
+      "sheet": "sprites/player/staff/drop_through.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.22,
+      "fps": 22.727272727272727,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1700,
+        365
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 150,
+        "y": 237,
+        "w": 340,
+        "h": 365
+      }
+    },
+    {
+      "name": "hurt",
+      "sheet": "sprites/player/staff/hurt.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.32,
+      "fps": 15.625,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1470,
+        378
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 173,
+        "y": 224,
+        "w": 294,
+        "h": 378
+      }
+    },
+    {
+      "name": "death",
+      "sheet": "sprites/player/staff/death.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 0.6,
+      "fps": 13.333333333333334,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1712,
+        362
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 209,
+        "y": 240,
+        "w": 214,
+        "h": 362
+      }
+    },
+    {
+      "name": "run",
+      "sheet": "sprites/player/staff/run.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 10,
+      "rows": 1,
+      "frames": 10,
+      "duration_seconds": 0.82,
+      "fps": 12.195121951219512,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2740,
+        339
+      ],
+      "qa": {
+        "height_tol": 0.1,
+        "pose_height_exception": true,
+        "pose_height_reason": "Forward-leaning run follows existing axe pose height"
+      },
+      "trim": {
+        "x": 183,
+        "y": 263,
+        "w": 274,
+        "h": 339
+      }
+    },
+    {
+      "name": "roll",
+      "sheet": "sprites/player/staff/roll.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 12,
+      "rows": 1,
+      "frames": 12,
+      "duration_seconds": 0.48,
+      "fps": 25.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3456,
+        373
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 176,
+        "y": 229,
+        "w": 288,
+        "h": 373
+      }
+    },
+    {
+      "name": "attack_1",
+      "sheet": "sprites/player/staff/attack_1.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 0.28,
+      "fps": 28.57142857142857,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1968,
+        263
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 220,
+        "y": 339,
+        "w": 246,
+        "h": 263
+      }
+    },
+    {
+      "name": "attack_2",
+      "sheet": "sprites/player/staff/attack_2.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 0.28,
+      "fps": 28.57142857142857,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3216,
+        406
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 177,
+        "y": 196,
+        "w": 402,
+        "h": 406
+      }
+    },
+    {
+      "name": "attack_3",
+      "sheet": "sprites/player/staff/attack_3.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 10,
+      "rows": 1,
+      "frames": 10,
+      "duration_seconds": 0.4,
+      "fps": 25.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        4410,
+        368
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 168,
+        "y": 234,
+        "w": 441,
+        "h": 368
+      }
+    }
+  ]
+}

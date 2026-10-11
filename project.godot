@@ -12,6 +12,7 @@ Audio="*res://scripts/audio_manager.gd"
 GameState="*res://scripts/game_state.gd"
 Dialogue="*res://scripts/dialogue_system.gd"
 SceneManager="*res://scripts/scene_manager.gd"
+DebugTeleport="*res://scripts/debug_teleport.gd"
 
 [audio]
 buses/default_bus_layout="res://default_bus_layout.tres"
@@ -80,4 +81,8 @@ threat_markers={
 surface_accents={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"physical_keycode":4194336)]
+}
+debug_surface={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":4194337)]
 }

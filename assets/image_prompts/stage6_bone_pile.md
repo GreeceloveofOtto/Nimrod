@@ -1,6 +1,6 @@
 # bone_pile
 목적: 6단계 환경.
-경로: assets/props/bone_pile.png
+경로: assets/props/bone_pile.webp
 크기: 220x130, 1프레임.
 배경: #FF00FF 크로마키.
 

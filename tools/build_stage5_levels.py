@@ -19,7 +19,7 @@ def main():
     outside=levels['CastleOutskirts'];outside['spawns']['Spawn_FromPassage']=[640,680]
     for d in outside['doors']:
         if d['door_id']=='downtown_passage_entrance':
-            d.update(locked=False,target_level='DowntownPassage_F8',target_spawn='Spawn_FromTop',arrival_spawn='Spawn_FromPassage',exit_direction=1,door_art='res://assets/props/doors/downtown_passage_door_anim.png')
+            d.update(locked=False,target_level='DowntownPassage_F8',target_spawn='Spawn_FromTop',arrival_spawn='Spawn_FromPassage',exit_direction=1,door_art='res://assets/props/doors/downtown_passage_door_anim.webp')
     roster=json.loads((ROOT/'data/passage_floors.json').read_text())
     for n in range(1,9):
         id='DowntownPassage_F'+str(n)
@@ -86,13 +86,13 @@ def main():
         levels[id]=l
     home=dict(id='HomeRoad',scene='res://scenes/HomeRoad.tscn',width=10800,floor_y=880,bgm='uruk_home_road',display_name='니므롯의 집 가는 길',bg_dim=[.88,.88,.92],ceiling=False,camera_limits=[0,0,10800,1240],safe_zones=[[0,-200,900,1800]],spawns={'Spawn_FromPassage':[10400,880],'Spawn_Debug':[5000,720]},doors=[door('passage_exit',10400,880,'DowntownPassage_F1','Spawn_FromBelow','Spawn_FromPassage','downtown_passage_door_anim',-1),door('nimrod_home_gate',400,880,'','','','nimrod_home_gate',1,locked=True,locked_message='아직 들어갈 수 없다')],npcs=[],enemies=[],decorations=[],steps=[],platforms=[],obstacles=[],floor_art='res://assets/tiles/homeroad/ground_tile.png',floor_art_size=[512,200],backgrounds=[],reachability=dict(max_rise=110,max_gap=200,max_local_platform_elevation=440,chains=[],floor_reference=880,elevation_limits=[-120,440],required_ground_route=[0,10800],door_distance=10000))
     for name,file,w,ratio,z in [('Sky','sky',1792,.05,-40),('FarCity','far_tile',2048,.2,-30),('MidDistrict','mid_district_tile',2048,.45,-20)]:home['backgrounds'].append(dict(name=name,path='res://assets/backgrounds/homeroad/'+file+'.png',position=[0,0],size=[w,720],ratio=ratio,z=z,**(dict(repeat_size=[2048,0],repeat_times=6) if ratio>.05 else {})))
-    home['backgrounds'] += [dict(name='HomeExterior',path='res://assets/props/nimrod_home_exterior.png',position=[0,160],size=[1300,720],ratio=1,z=-10),dict(name='PassageExterior',path='res://assets/backgrounds/castle_front/downtown_passage_facade.png',position=[9700,160],size=[1100,720],ratio=1,z=-10)]
+    home['backgrounds'] += [dict(name='HomeExterior',path='res://assets/props/nimrod_home_exterior.webp',position=[0,160],size=[1300,720],ratio=1,z=-10),dict(name='PassageExterior',path='res://assets/backgrounds/castle_front/downtown_passage_facade.webp',position=[9700,160],size=[1100,720],ratio=1,z=-10)]
     seg=[(0,1500,0),(1500,1800,0),(1800,2100,40),(2100,2400,80),(2400,2700,40),(2700,4000,0),(4000,4250,0),(4250,4500,80),(4500,4750,160),(4750,4900,240),(4900,5150,160),(5150,5400,80),(5400,6900,0),(6900,7100,-50),(7100,8100,-100),(8100,8300,-50),(8300,10800,0)]
     home['terrain']=terrain(seg,880,'homeroad')
     def hp(name,x,e,w=180,art='balcony_platform'):home['platforms'].append(platform(name,x,e,w,'homeroad',art,880))
     for name,x,e,w in [('balcony_left',8500,100,180),('balcony',8800,190,600),('balcony_right',9400,100,180),('canal_left_step',7000,-30,180),('slab1',7180,40,260),('slab2',7500,40,260),('slab3',7820,40,260),('canal_right_step',8080,-30,180),('market_left',6010,60,180),('market_roof',6190,120,260),('market_right',6450,60,180),('overpass_left',2800,75,180),('overpass1',2980,150,360),('overpass2',3440,150,360),('overpass3',3800,150,180),('overpass_right',3980,75,180)]:hp(name,x,e,w,'stone_slab_bridge' if name.startswith('slab') or name.startswith('overpass') else 'balcony_platform')
     home['reachability']['chains']=[['balcony_left','balcony','balcony_right'],['canal_left_step','slab1','slab2','slab3','canal_right_step'],['market_left','market_roof','market_right'],['overpass_left','overpass1','overpass2','overpass3','overpass_right']]
-    for x,height in [(5800,60),(6150,80),(6600,60)]:home['obstacles'].append(dict(rect=[x,880-height,160,height],art='res://assets/props/market_stall_a.png'))
+    for x,height in [(5800,60),(6150,80),(6600,60)]:home['obstacles'].append(dict(rect=[x,880-height,160,height],art='res://assets/props/market_stall_a.webp'))
     for x in [9900,8800,8500,7800,7200,6600,6100,5700,4600,3600,3000,2300,1800,1300]:enemy(home,'melee_beast',x,patrol=150)
     for x,y in [(9000,690),(7500,840),(6300,760),(4900,None),(4400,None),(3800,730),(3100,730),(2000,None)]:enemy(home,'ranged_beast',x,y,150)
     for name,x,y,w,h in [('house_ruin_a',8500,500,500,380),('house_ruin_b',9160,580,420,300),('broken_overpass',2870,730,1100,260),('canal_wall_left',6840,780,300,260),('canal_wall_right',8060,780,300,260),('market_stall_a',5650,710,260,170),('market_stall_b',6500,710,260,170),('garden_fence',1150,740,600,140),('lamp_post_ruined',9780,620,100,260),('shrub',2080,820,220,140)]:prop(home,name,x,y,w,h)

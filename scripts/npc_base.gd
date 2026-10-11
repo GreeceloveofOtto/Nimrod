@@ -104,9 +104,9 @@ func _make_readability_fx() -> void:
     var pool: Node2D = helper.add_image(self, str(readability["light_pool"]), Vector2(-width * 0.5, float(readability["pool_center_y"]) - width * 0.25), Vector2(width, width * 0.5), -2)
     pool.name = "LightPool"
     pool.modulate = _rgba(readability["pool_modulate"])
-    var material := CanvasItemMaterial.new()
-    material.blend_mode = CanvasItemMaterial.BLEND_MODE_ADD
-    pool.material = material
+    var pool_material := CanvasItemMaterial.new()
+    pool_material.blend_mode = CanvasItemMaterial.BLEND_MODE_ADD
+    pool.material = pool_material
     for child in pool.get_children():
         if child is CanvasItem:
             child.use_parent_material = true
@@ -155,7 +155,11 @@ func _update_name_text() -> void:
     _center_name_tag.call_deferred()
 
 func _center_name_tag() -> void:
+    if not is_inside_tree():
+        return
     await get_tree().process_frame
+    if not is_inside_tree() or not is_instance_valid(name_tag):
+        return
     name_tag.position = Vector2(-name_tag.size.x * 0.5, float(readability["name_offset_y"]))
 
 func _update_readability(delta: float) -> void:
@@ -232,8 +236,8 @@ func _process(delta: float) -> void:
     _update_readability(delta)
     if interaction_prompt != null:
         var actor: NimrodPlayer = get_tree().get_first_node_in_group("player") as NimrodPlayer
-        var available: bool = actor != null and not actor.is_transition_locked() and actor.action != "dead" and not interaction_running and not get_node("/root/Dialogue").active and not get_node("/root/GameState").run_flags.get("shamhat_blessing", false)
-        interaction_prompt.visible = available and global_position.distance_to(actor.global_position) <= float(stats.get("interact_range", 120.0))
+        var available: bool = actor != null and not actor.is_transition_locked() and actor.action != "dead" and not interaction_running and not get_node("/root/Dialogue").active and not _interaction_complete()
+        interaction_prompt.visible = available and interaction_center().distance_to(actor.global_position) <= float(stats.get("interact_range", 120.0))
         if interaction_prompt.visible and Input.is_action_just_pressed("interact"):
             interact(actor)
     face_cooldown_left = maxf(0.0, face_cooldown_left - delta)
@@ -354,19 +358,18 @@ func _refresh_visual() -> void:
     visual.visible = texture != null
     missing_visual.visible = texture == null
     if texture != null:
-        var width: float = float(clip.get("frame_width", 640))
-        var height: float = float(clip.get("frame_height", 640))
-        var anchor: Array = clip.get("anchor_px", [320, 600])
         visual.texture = texture
-        visual.region_rect = Rect2(current_frame * width, 0.0, width, height)
-        visual.offset = Vector2(width * 0.5 - float(anchor[0]), height * 0.5 - float(anchor[1]))
         visual.flip_h = facing < 0 and (not three_way or pose != Pose.FRONT)
+        AssetVisual.apply_frame(visual, clip, current_frame)
     if not loop and clip_clock >= duration and not animation_finished:
         animation_finished = true
         clip_finished.emit(current_clip)
 
 # Other NPCs keep an inert future interaction hook. Only Shamhat grants a blessing.
 func interact(player: Node2D) -> void:
+    if str(stats.get("interaction", "")) == "lugalbanda_ninsun_gift":
+        await _parent_gift(player)
+        return
     if str(stats.get("interaction", "")) != "shamhat_blessing" or interaction_running or get_node("/root/GameState").run_flags.get("shamhat_blessing", false):
         return
     interaction_running = true
@@ -375,9 +378,39 @@ func interact(player: Node2D) -> void:
         _change_pose(Pose.FRONT)
         if pose_tween != null:
             pose_tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
-    await get_node("/root/Dialogue").play(["당신이 자꾸 신경쓰여요."], self)
+    await get_node("/root/Dialogue").play(["네가 자꾸 신경쓰여."], self)
     if is_instance_valid(player) and player is NimrodPlayer and not get_node("/root/Dialogue").cancelled:
         player.apply_shamhat_blessing()
         if interaction_prompt != null:
             interaction_prompt.hide()
+    interaction_running = false
+
+func interaction_center() -> Vector2:
+    if str(stats.get("interaction", "")) == "lugalbanda_ninsun_gift":
+        var father: NPC = get_parent().get_node_or_null("lugalbanda") as NPC
+        var mother: NPC = get_parent().get_node_or_null("ninsun") as NPC
+        if father != null and mother != null:
+            return (father.global_position + mother.global_position) * 0.5
+    return global_position
+
+func _interaction_complete() -> bool:
+    var key: String = "lugalbanda_gift" if str(stats.get("interaction", "")) == "lugalbanda_ninsun_gift" else "shamhat_blessing"
+    return bool(get_node("/root/GameState").run_flags.get(key, false))
+
+func _parent_gift(actor: Node2D) -> void:
+    if interaction_running or not actor is NimrodPlayer or not get_node("/root/GameState").first_time("lugalbanda_gift"):
+        return
+    var father: NPC = get_parent().get_node_or_null("lugalbanda") as NPC
+    var mother: NPC = get_parent().get_node_or_null("ninsun") as NPC
+    if father == null or mother == null:
+        get_node("/root/GameState").run_flags.erase("lugalbanda_gift")
+        return
+    interaction_running = true
+    interacted.emit()
+    var gift: Dictionary = get_node("/root/Dialogue").settings["parent_gift"]
+    var participants: Dictionary = {"lugalbanda": father, "ninsun": mother, "player": actor}
+    var lines: Array = gift["lines"] if bool(gift["use_scripted_dialogue"]) else [{"speaker":"lugalbanda", "event":"axe_gift"}]
+    await get_node("/root/Dialogue").play(lines, father, {"focus":"group", "participants":participants, "group_zoom_max":gift["group_zoom_max"]})
+    if get_node("/root/Dialogue").cancelled and get_node("/root/GameState").get_weapon() != "axe":
+        get_node("/root/GameState").run_flags.erase("lugalbanda_gift")
     interaction_running = false

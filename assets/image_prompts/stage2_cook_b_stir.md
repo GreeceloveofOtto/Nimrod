@@ -2,7 +2,7 @@
 
 Purpose: stage 2 character animation.
 
-Output: `assets/sprites/npcs/cook_b/stir.png`
+Output: `assets/sprites/npcs/cook_b/stir.webp`
 
 Frames: 6 × 640x640, one horizontal row; duration 1.6s; anchor [320,600].
 

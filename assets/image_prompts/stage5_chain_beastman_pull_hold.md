@@ -1,5 +1,5 @@
 # death / pull_hold
-목적: 괴수 애니메이션. 경로: assets/sprites/enemies/chain_beastman/pull_hold.png
+목적: 괴수 애니메이션. 경로: assets/sprites/enemies/chain_beastman/pull_hold.webp
 규격: 3 × 896x768, 0.35초, 앵커 [448, 720].
 배경: #FF00FF → pack_sprites.py 크로마키/정렬/합성.
 

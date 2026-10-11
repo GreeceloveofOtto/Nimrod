@@ -2,7 +2,7 @@
 
 목적: 우루크 근접 괴수 idle 애니메이션
 
-저장 경로: `assets/sprites/enemies/melee_beast/idle.png`
+저장 경로: `assets/sprites/enemies/melee_beast/idle.webp`
 
 최종 크기: 3840x640px. 프레임 구성: 6프레임, 프레임당 640x640px, 한 줄, 오른쪽 기준; 1.0초; 루프 예.
 

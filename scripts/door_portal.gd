@@ -4,7 +4,7 @@ extends Node2D
 @export var door_id: String = ""
 @export var target_level: String = ""
 @export var target_spawn: String = "Spawn_Start"
-@export_file("*.png") var door_art: String = "res://assets/props/doors/castle_interior_door.png"
+@export_file("*.png", "*.webp") var door_art: String = "res://assets/props/doors/castle_interior_door.webp"
 @export var locked: bool = false
 @export var locked_message: String = "아직 갈 수 없다"
 @export var auto_trigger: bool = false
@@ -197,7 +197,8 @@ func _set_open_progress(value: float) -> void:
     open_progress = clampf(value, 0.0, 1.0)
     if visual != null:
         var frame: int = mini(frame_count - 1, floori(open_progress * frame_count))
-        visual.region_rect = Rect2(Vector2(frame_size.x * frame, 0.0), frame_size)
+        var spec: Dictionary = AssetVisual.sheet_spec(door_art, {"frame_width": frame_size.x, "frame_height": frame_size.y, "frames": frame_count, "anchor_px": [frame_size.x * 0.5, frame_size.y]})
+        AssetVisual.apply_frame(visual, spec, frame)
 
 func _shake_locked() -> void:
     if busy:

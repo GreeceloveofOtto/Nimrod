@@ -162,7 +162,7 @@ func test_dive_and_interrupt() -> void:
 
 func test_turn_and_recovery() -> void:
     var enemy: EnemyBase = spawn_sky()
-    enemy.clip_data["turn"] = {"frames": 4, "duration_seconds": 0.25, "loop": false}
+    # Use the actual 4-frame manifest, including frame/trim/anchor metadata.
     enemy._request_turn(-1)
     enemy.state_clock = 0.124
     enemy._update_turn(0.01)

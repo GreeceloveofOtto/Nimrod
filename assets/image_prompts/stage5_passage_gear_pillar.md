@@ -1,5 +1,5 @@
 # passage_gear_pillar
-목적: 5단계 환경. 경로: assets/props/passage_gear_pillar.png
+목적: 5단계 환경. 경로: assets/props/passage_gear_pillar.webp
 크기: 200x520, 1프레임. 배경: #FF00FF 크로마키.
 
 2D side-view game asset, dark fantasy, ancient Mesopotamian Uruk atmosphere with advanced space-civilization undertones, hand-painted look, clean readable silhouette, consistent with the Nimrod character sprite sheets, no text, no watermark. passage gear pillar, side-view production game asset.

@@ -1,5 +1,5 @@
 # 자폭 시체 / run
-목적: 괴수 애니메이션. 경로: assets/sprites/enemies/corpse_bomber/run.png
+목적: 괴수 애니메이션. 경로: assets/sprites/enemies/corpse_bomber/run.webp
 규격: 8 × 640x640, 0.6초, 앵커 [320, 600].
 배경: #FF00FF → pack_sprites.py 크로마키/정렬/합성.
 

@@ -1,6 +1,6 @@
 # armor_hit_spark
 목적: 6단계 이미지 생성 애니메이션.
-경로: assets/sprites/fx/armor_hit_spark.png
+경로: assets/sprites/fx/armor_hit_spark.webp
 프레임: 192x192, 5프레임, 0.15초, 앵커 [96, 96].
 배경: #FF00FF → pack_sprites.py 크로마키 투명 처리.
 

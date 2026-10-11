@@ -11,9 +11,9 @@
   "clips": [
     {
       "name": "float",
-      "sheet": "sprites/enemies/cedar_wisp/float.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_wisp/float.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 6,
       "rows": 1,
       "frames": 6,
@@ -21,19 +21,25 @@
       "fps": 6.0,
       "loop": true,
       "anchor_px": [
-        384,
-        384
+        320,
+        320
       ],
       "image_size": [
-        4608,
-        768
-      ]
+        912,
+        316
+      ],
+      "trim": {
+        "x": 232,
+        "y": 189,
+        "w": 152,
+        "h": 316
+      }
     },
     {
       "name": "contact",
-      "sheet": "sprites/enemies/cedar_wisp/contact.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_wisp/contact.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 3,
       "rows": 1,
       "frames": 3,
@@ -41,19 +47,25 @@
       "fps": 15.0,
       "loop": false,
       "anchor_px": [
-        384,
-        384
+        320,
+        320
       ],
       "image_size": [
-        2304,
-        768
-      ]
+        681,
+        315
+      ],
+      "trim": {
+        "x": 235,
+        "y": 189,
+        "w": 227,
+        "h": 315
+      }
     },
     {
       "name": "fuse",
-      "sheet": "sprites/enemies/cedar_wisp/fuse.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_wisp/fuse.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 5,
       "rows": 1,
       "frames": 5,
@@ -61,19 +73,25 @@
       "fps": 10.0,
       "loop": false,
       "anchor_px": [
-        384,
-        384
+        320,
+        320
       ],
       "image_size": [
-        3840,
-        768
-      ]
+        1560,
+        328
+      ],
+      "trim": {
+        "x": 151,
+        "y": 181,
+        "w": 312,
+        "h": 328
+      }
     },
     {
       "name": "explode",
-      "sheet": "sprites/enemies/cedar_wisp/explode.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_wisp/explode.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 6,
       "rows": 1,
       "frames": 6,
@@ -81,19 +99,25 @@
       "fps": 20.0,
       "loop": false,
       "anchor_px": [
-        384,
-        384
+        320,
+        320
       ],
       "image_size": [
-        4608,
-        768
-      ]
+        1050,
+        339
+      ],
+      "trim": {
+        "x": 235,
+        "y": 166,
+        "w": 175,
+        "h": 339
+      }
     },
     {
       "name": "turn",
-      "sheet": "sprites/enemies/cedar_wisp/turn.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_wisp/turn.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 4,
       "rows": 1,
       "frames": 4,
@@ -101,19 +125,25 @@
       "fps": 26.666666666666668,
       "loop": false,
       "anchor_px": [
-        384,
-        384
+        320,
+        320
       ],
       "image_size": [
-        3072,
-        768
-      ]
+        552,
+        315
+      ],
+      "trim": {
+        "x": 250,
+        "y": 188,
+        "w": 138,
+        "h": 315
+      }
     },
     {
       "name": "hurt",
-      "sheet": "sprites/enemies/cedar_wisp/hurt.png",
-      "frame_width": 768,
-      "frame_height": 768,
+      "sheet": "sprites/enemies/cedar_wisp/hurt.webp",
+      "frame_width": 640,
+      "frame_height": 640,
       "columns": 2,
       "rows": 1,
       "frames": 2,
@@ -121,13 +151,19 @@
       "fps": 10.0,
       "loop": false,
       "anchor_px": [
-        384,
-        384
+        320,
+        320
       ],
       "image_size": [
-        1536,
-        768
-      ]
+        452,
+        324
+      ],
+      "trim": {
+        "x": 218,
+        "y": 186,
+        "w": 226,
+        "h": 324
+      }
     }
   ]
 }

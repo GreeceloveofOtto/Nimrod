@@ -1,6 +1,6 @@
 # skeleton_remains
 목적: 6단계 환경.
-경로: assets/props/skeleton_remains.png
+경로: assets/props/skeleton_remains.webp
 크기: 280x120, 1프레임.
 배경: #FF00FF 크로마키.
 

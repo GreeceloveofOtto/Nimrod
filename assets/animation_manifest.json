@@ -1,5 +1,5 @@
 {
-  "step": 12,
+  "step": 17,
   "frame_size": [
     640,
     640
@@ -7,7 +7,7 @@
   "clips": [
     {
       "name": "idle",
-      "sheet": "sprites/idle.png",
+      "sheet": "sprites/player/axe/idle.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 10,
@@ -21,13 +21,19 @@
         600
       ],
       "image_size": [
-        6400,
-        640
-      ]
+        2420,
+        368
+      ],
+      "trim": {
+        "x": 199,
+        "y": 234,
+        "w": 242,
+        "h": 368
+      }
     },
     {
       "name": "walk",
-      "sheet": "sprites/walk.png",
+      "sheet": "sprites/player/axe/walk.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 10,
@@ -41,13 +47,19 @@
         600
       ],
       "image_size": [
-        6400,
-        640
-      ]
+        2840,
+        338
+      ],
+      "trim": {
+        "x": 178,
+        "y": 264,
+        "w": 284,
+        "h": 338
+      }
     },
     {
       "name": "crouch_enter",
-      "sheet": "sprites/crouch_enter.png",
+      "sheet": "sprites/player/axe/crouch_enter.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -61,13 +73,19 @@
         600
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        916,
+        295
+      ],
+      "trim": {
+        "x": 206,
+        "y": 307,
+        "w": 229,
+        "h": 295
+      }
     },
     {
       "name": "crouch_idle",
-      "sheet": "sprites/crouch_idle.png",
+      "sheet": "sprites/player/axe/crouch_idle.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -81,13 +99,19 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        1332,
+        209
+      ],
+      "trim": {
+        "x": 209,
+        "y": 393,
+        "w": 222,
+        "h": 209
+      }
     },
     {
       "name": "crouch_exit",
-      "sheet": "sprites/crouch_exit.png",
+      "sheet": "sprites/player/axe/crouch_exit.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -101,13 +125,19 @@
         600
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        2496,
+        307
+      ],
+      "trim": {
+        "x": 8,
+        "y": 295,
+        "w": 624,
+        "h": 307
+      }
     },
     {
       "name": "jump_start",
-      "sheet": "sprites/jump_start.png",
+      "sheet": "sprites/player/axe/jump_start.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -121,13 +151,19 @@
         600
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        1160,
+        332
+      ],
+      "trim": {
+        "x": 175,
+        "y": 270,
+        "w": 290,
+        "h": 332
+      }
     },
     {
       "name": "jump_rise",
-      "sheet": "sprites/jump_rise.png",
+      "sheet": "sprites/player/axe/jump_rise.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -141,13 +177,19 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        1830,
+        332
+      ],
+      "trim": {
+        "x": 168,
+        "y": 270,
+        "w": 305,
+        "h": 332
+      }
     },
     {
       "name": "fall",
-      "sheet": "sprites/fall.png",
+      "sheet": "sprites/player/axe/fall.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -161,13 +203,19 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        1938,
+        361
+      ],
+      "trim": {
+        "x": 158,
+        "y": 241,
+        "w": 323,
+        "h": 361
+      }
     },
     {
       "name": "land",
-      "sheet": "sprites/land.png",
+      "sheet": "sprites/player/axe/land.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 5,
@@ -181,13 +229,19 @@
         600
       ],
       "image_size": [
-        3200,
-        640
-      ]
+        1925,
+        381
+      ],
+      "trim": {
+        "x": 128,
+        "y": 221,
+        "w": 385,
+        "h": 381
+      }
     },
     {
       "name": "drop_through",
-      "sheet": "sprites/drop_through.png",
+      "sheet": "sprites/player/axe/drop_through.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 5,
@@ -201,13 +255,19 @@
         600
       ],
       "image_size": [
-        3200,
-        640
-      ]
+        1565,
+        362
+      ],
+      "trim": {
+        "x": 164,
+        "y": 240,
+        "w": 313,
+        "h": 362
+      }
     },
     {
       "name": "hurt",
-      "sheet": "sprites/hurt.png",
+      "sheet": "sprites/player/axe/hurt.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 5,
@@ -221,13 +281,19 @@
         600
       ],
       "image_size": [
-        3200,
-        640
-      ]
+        1580,
+        378
+      ],
+      "trim": {
+        "x": 162,
+        "y": 224,
+        "w": 316,
+        "h": 378
+      }
     },
     {
       "name": "death",
-      "sheet": "sprites/death.png",
+      "sheet": "sprites/player/axe/death.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 8,
@@ -241,13 +307,19 @@
         600
       ],
       "image_size": [
-        5120,
-        640
-      ]
+        3032,
+        362
+      ],
+      "trim": {
+        "x": 130,
+        "y": 240,
+        "w": 379,
+        "h": 362
+      }
     },
     {
       "name": "attack_1",
-      "sheet": "sprites/attack_1.png",
+      "sheet": "sprites/player/axe/attack_1.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 8,
@@ -261,13 +333,19 @@
         600
       ],
       "image_size": [
-        5120,
-        640
-      ]
+        3640,
+        376
+      ],
+      "trim": {
+        "x": 92,
+        "y": 226,
+        "w": 455,
+        "h": 376
+      }
     },
     {
       "name": "attack_2",
-      "sheet": "sprites/attack_2.png",
+      "sheet": "sprites/player/axe/attack_2.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 8,
@@ -281,13 +359,19 @@
         600
       ],
       "image_size": [
-        5120,
-        640
-      ]
+        2976,
+        388
+      ],
+      "trim": {
+        "x": 134,
+        "y": 214,
+        "w": 372,
+        "h": 388
+      }
     },
     {
       "name": "attack_3",
-      "sheet": "sprites/attack_3.png",
+      "sheet": "sprites/player/axe/attack_3.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 10,
@@ -301,13 +385,19 @@
         600
       ],
       "image_size": [
-        6400,
-        640
-      ]
+        3560,
+        398
+      ],
+      "trim": {
+        "x": 142,
+        "y": 204,
+        "w": 356,
+        "h": 398
+      }
     },
     {
       "name": "attack_4",
-      "sheet": "sprites/attack_4.png",
+      "sheet": "sprites/player/axe/attack_4.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 10,
@@ -321,8 +411,8 @@
         600
       ],
       "image_size": [
-        6400,
-        640
+        5300,
+        376
       ],
       "frame_boundaries_seconds": [
         0,
@@ -336,11 +426,17 @@
         0.452,
         0.508,
         0.56
-      ]
+      ],
+      "trim": {
+        "x": 55,
+        "y": 226,
+        "w": 530,
+        "h": 376
+      }
     },
     {
       "name": "run",
-      "sheet": "sprites/run.png",
+      "sheet": "sprites/player/axe/run.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 10,
@@ -354,13 +450,19 @@
         600
       ],
       "image_size": [
-        6400,
-        640
-      ]
+        3090,
+        324
+      ],
+      "trim": {
+        "x": 166,
+        "y": 278,
+        "w": 309,
+        "h": 324
+      }
     },
     {
       "name": "roll",
-      "sheet": "sprites/roll.png",
+      "sheet": "sprites/player/axe/roll.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 12,
@@ -374,9 +476,15 @@
         600
       ],
       "image_size": [
-        7680,
-        640
-      ]
+        4848,
+        367
+      ],
+      "trim": {
+        "x": 118,
+        "y": 235,
+        "w": 404,
+        "h": 367
+      }
     }
   ]
 }

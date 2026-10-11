@@ -171,6 +171,7 @@ func _run() -> void:
     _check(not wall.perched and wall.phase == "perch_dive" and is_equal_approx(wall.velocity.length(),720),"Perch dives at720px/s")
     wall._land_claw()
     _check(wall.phase == "landing_claw" and wall.get_attack_rect().size == Vector2(150,120),"Landing produces claw and permanent ground mode")
+    await physics_frame
     await process_frame
     var chain: Stage5Enemy = actors["chain_beastman"]
     chain.phase = "tail"
@@ -184,7 +185,10 @@ func _run() -> void:
     chain._begin_active()
     chain.state_clock = .3
     chain._update_chain(0)
-    _check(chain.phase == "pull" and hero.pull_left == .35 and hero.hp == 180,"Chain hit starts damage-free .35sec pull")
+    _check(chain.phase == "pull_pending" and hero.pull_left == 0, "Chain callback defers player effects to next physics frame")
+    await physics_frame
+    await process_frame
+    _check(chain.phase == "pull" and is_equal_approx(hero.pull_left, .35) and hero.hp == 180,"Chain hit starts damage-free .35sec pull")
     hero._physics_process(.1)
     _check(hero.pull_left > 0 and hero.global_position.x < 1300,"Pull moves toward enemy front")
     Input.action_press("roll")

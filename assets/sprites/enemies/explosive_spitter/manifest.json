@@ -3,7 +3,7 @@
   "clips": [
     {
       "name": "idle",
-      "sheet": "sprites/enemies/explosive_spitter/idle.png",
+      "sheet": "sprites/enemies/explosive_spitter/idle.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -17,13 +17,19 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        2058,
+        294
+      ],
+      "trim": {
+        "x": 140,
+        "y": 308,
+        "w": 343,
+        "h": 294
+      }
     },
     {
       "name": "walk",
-      "sheet": "sprites/enemies/explosive_spitter/walk.png",
+      "sheet": "sprites/enemies/explosive_spitter/walk.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 8,
@@ -37,13 +43,22 @@
         600
       ],
       "image_size": [
-        5120,
-        640
-      ]
+        3288,
+        294
+      ],
+      "qa": {
+        "movement": true
+      },
+      "trim": {
+        "x": 74,
+        "y": 308,
+        "w": 411,
+        "h": 294
+      }
     },
     {
       "name": "windup",
-      "sheet": "sprites/enemies/explosive_spitter/windup.png",
+      "sheet": "sprites/enemies/explosive_spitter/windup.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -57,13 +72,23 @@
         600
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        1968,
+        324
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 55,
+        "y": 278,
+        "w": 492,
+        "h": 324
+      }
     },
     {
       "name": "spit",
-      "sheet": "sprites/enemies/explosive_spitter/spit.png",
+      "sheet": "sprites/enemies/explosive_spitter/spit.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 3,
@@ -77,13 +102,19 @@
         600
       ],
       "image_size": [
-        1920,
-        640
-      ]
+        1206,
+        295
+      ],
+      "trim": {
+        "x": 123,
+        "y": 307,
+        "w": 402,
+        "h": 295
+      }
     },
     {
       "name": "recovery",
-      "sheet": "sprites/enemies/explosive_spitter/recovery.png",
+      "sheet": "sprites/enemies/explosive_spitter/recovery.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -97,13 +128,19 @@
         600
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        1508,
+        315
+      ],
+      "trim": {
+        "x": 120,
+        "y": 287,
+        "w": 377,
+        "h": 315
+      }
     },
     {
       "name": "turn",
-      "sheet": "sprites/enemies/explosive_spitter/turn.png",
+      "sheet": "sprites/enemies/explosive_spitter/turn.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -117,13 +154,19 @@
         600
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        1480,
+        293
+      ],
+      "trim": {
+        "x": 132,
+        "y": 309,
+        "w": 370,
+        "h": 293
+      }
     },
     {
       "name": "hurt",
-      "sheet": "sprites/enemies/explosive_spitter/hurt.png",
+      "sheet": "sprites/enemies/explosive_spitter/hurt.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 2,
@@ -137,13 +180,19 @@
         600
       ],
       "image_size": [
-        1280,
-        640
-      ]
+        772,
+        292
+      ],
+      "trim": {
+        "x": 133,
+        "y": 310,
+        "w": 386,
+        "h": 292
+      }
     },
     {
       "name": "death",
-      "sheet": "sprites/enemies/explosive_spitter/death.png",
+      "sheet": "sprites/enemies/explosive_spitter/death.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -157,9 +206,19 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        1890,
+        312
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 157,
+        "y": 290,
+        "w": 315,
+        "h": 312
+      }
     }
   ],
   "aliases": {

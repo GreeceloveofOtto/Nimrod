@@ -61,8 +61,11 @@ func _test_npcs() -> void:
     npc.face_toward(npc.global_position.x + 220.0)
     _check(npc.facing == 1, "NPC can flip after cooldown")
     npc.interacted.connect(func() -> void: interaction_signals += 1)
+    var old_interaction: String = str(npc.stats.get("interaction", ""))
+    npc.stats["interaction"] = ""
     npc.interact(player)
-    _check(interaction_signals == 0, "NPC interact hook is intentionally inert")
+    _check(interaction_signals == 0, "Unconfigured NPC interact hook is intentionally inert")
+    npc.stats["interaction"] = old_interaction
     _check(not npc.is_class("CollisionObject2D"), "NPC does not block the player")
     await manager.go_to("CastleF3", "Spawn_FromBelow")
     level = manager.current_level

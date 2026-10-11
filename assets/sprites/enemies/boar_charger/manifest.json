@@ -3,7 +3,7 @@
   "clips": [
     {
       "name": "idle",
-      "sheet": "sprites/enemies/boar_charger/idle.png",
+      "sheet": "sprites/enemies/boar_charger/idle.webp",
       "frame_width": 768,
       "frame_height": 640,
       "columns": 6,
@@ -17,13 +17,19 @@
         600
       ],
       "image_size": [
-        4608,
-        640
-      ]
+        2622,
+        328
+      ],
+      "trim": {
+        "x": 167,
+        "y": 274,
+        "w": 437,
+        "h": 328
+      }
     },
     {
       "name": "walk",
-      "sheet": "sprites/enemies/boar_charger/walk.png",
+      "sheet": "sprites/enemies/boar_charger/walk.webp",
       "frame_width": 768,
       "frame_height": 640,
       "columns": 8,
@@ -37,13 +43,22 @@
         600
       ],
       "image_size": [
-        6144,
-        640
-      ]
+        3456,
+        326
+      ],
+      "qa": {
+        "movement": true
+      },
+      "trim": {
+        "x": 167,
+        "y": 276,
+        "w": 432,
+        "h": 326
+      }
     },
     {
       "name": "telegraph",
-      "sheet": "sprites/enemies/boar_charger/telegraph.png",
+      "sheet": "sprites/enemies/boar_charger/telegraph.webp",
       "frame_width": 768,
       "frame_height": 640,
       "columns": 4,
@@ -57,13 +72,19 @@
         600
       ],
       "image_size": [
-        3072,
-        640
-      ]
+        2284,
+        320
+      ],
+      "trim": {
+        "x": 87,
+        "y": 282,
+        "w": 571,
+        "h": 320
+      }
     },
     {
       "name": "charge",
-      "sheet": "sprites/enemies/boar_charger/charge.png",
+      "sheet": "sprites/enemies/boar_charger/charge.webp",
       "frame_width": 768,
       "frame_height": 640,
       "columns": 4,
@@ -77,13 +98,22 @@
         600
       ],
       "image_size": [
-        3072,
-        640
-      ]
+        2144,
+        321
+      ],
+      "qa": {
+        "movement": true
+      },
+      "trim": {
+        "x": 102,
+        "y": 281,
+        "w": 536,
+        "h": 321
+      }
     },
     {
       "name": "crash_stun",
-      "sheet": "sprites/enemies/boar_charger/crash_stun.png",
+      "sheet": "sprites/enemies/boar_charger/crash_stun.webp",
       "frame_width": 768,
       "frame_height": 640,
       "columns": 4,
@@ -97,13 +127,23 @@
         600
       ],
       "image_size": [
-        3072,
-        640
-      ]
+        2216,
+        355
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 98,
+        "y": 247,
+        "w": 554,
+        "h": 355
+      }
     },
     {
       "name": "recovery",
-      "sheet": "sprites/enemies/boar_charger/recovery.png",
+      "sheet": "sprites/enemies/boar_charger/recovery.webp",
       "frame_width": 768,
       "frame_height": 640,
       "columns": 4,
@@ -117,13 +157,23 @@
         600
       ],
       "image_size": [
-        3072,
-        640
-      ]
+        2132,
+        352
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 115,
+        "y": 250,
+        "w": 533,
+        "h": 352
+      }
     },
     {
       "name": "turn",
-      "sheet": "sprites/enemies/boar_charger/turn.png",
+      "sheet": "sprites/enemies/boar_charger/turn.webp",
       "frame_width": 768,
       "frame_height": 640,
       "columns": 4,
@@ -137,13 +187,19 @@
         600
       ],
       "image_size": [
-        3072,
-        640
-      ]
+        1912,
+        326
+      ],
+      "trim": {
+        "x": 140,
+        "y": 276,
+        "w": 478,
+        "h": 326
+      }
     },
     {
       "name": "hurt",
-      "sheet": "sprites/enemies/boar_charger/hurt.png",
+      "sheet": "sprites/enemies/boar_charger/hurt.webp",
       "frame_width": 768,
       "frame_height": 640,
       "columns": 2,
@@ -157,13 +213,19 @@
         600
       ],
       "image_size": [
-        1536,
-        640
-      ]
+        878,
+        337
+      ],
+      "trim": {
+        "x": 158,
+        "y": 265,
+        "w": 439,
+        "h": 337
+      }
     },
     {
       "name": "death",
-      "sheet": "sprites/enemies/boar_charger/death.png",
+      "sheet": "sprites/enemies/boar_charger/death.webp",
       "frame_width": 768,
       "frame_height": 640,
       "columns": 6,
@@ -177,9 +239,19 @@
         600
       ],
       "image_size": [
-        4608,
-        640
-      ]
+        3246,
+        392
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 109,
+        "y": 210,
+        "w": 541,
+        "h": 392
+      }
     }
   ],
   "aliases": {

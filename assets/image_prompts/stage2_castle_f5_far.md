@@ -2,7 +2,7 @@
 
 목적: 2단계 레벨의 생성 이미지 배경·지형·소품
 
-파일: `assets/backgrounds/castle/castle_f5_far.png`
+파일: `assets/backgrounds/castle/castle_f5_far.webp`
 
 크기: 1664 × 720px; 프레임: 1, 한 줄.
 

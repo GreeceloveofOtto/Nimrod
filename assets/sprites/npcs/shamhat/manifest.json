@@ -12,7 +12,7 @@
   "clips": [
     {
       "name": "idle",
-      "sheet": "sprites/npcs/shamhat/idle.png",
+      "sheet": "sprites/npcs/shamhat/idle.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -26,13 +26,19 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        996,
+        351
+      ],
+      "trim": {
+        "x": 237,
+        "y": 251,
+        "w": 166,
+        "h": 351
+      }
     },
     {
       "name": "idle_front",
-      "sheet": "sprites/npcs/shamhat/idle_front.png",
+      "sheet": "sprites/npcs/shamhat/idle_front.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -46,9 +52,15 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        1134,
+        354
+      ],
+      "trim": {
+        "x": 226,
+        "y": 248,
+        "w": 189,
+        "h": 354
+      }
     }
   ],
   "design_reference": "reference/shamhat_design.png",

@@ -2,7 +2,7 @@
 
 목적: 짧은 기둥 장식
 
-저장 경로: `assets/props/ruin_pillar_b.png`
+저장 경로: `assets/props/ruin_pillar_b.webp`
 
 최종 크기: 140x220px. 프레임 구성: 정지 이미지 1프레임.
 

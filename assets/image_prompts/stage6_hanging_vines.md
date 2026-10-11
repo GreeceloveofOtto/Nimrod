@@ -1,6 +1,6 @@
 # hanging_vines
 목적: 6단계 환경.
-경로: assets/props/hanging_vines.png
+경로: assets/props/hanging_vines.webp
 크기: 200x360, 1프레임.
 배경: #FF00FF 크로마키.
 

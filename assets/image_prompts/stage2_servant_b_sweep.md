@@ -2,7 +2,7 @@
 
 Purpose: stage 2 character animation.
 
-Output: `assets/sprites/npcs/servant_b/sweep.png`
+Output: `assets/sprites/npcs/servant_b/sweep.webp`
 
 Frames: 8 × 640x640, one horizontal row; duration 1.6s; anchor [320,600].
 

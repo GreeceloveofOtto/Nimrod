@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Verify generated stage5 PCM format, lengths, peaks and loop seam samples."""
-import json,wave
+import json,wave,subprocess
 from pathlib import Path
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
@@ -13,6 +13,14 @@ def main():
     for kind in ['sfx','bgm']:
         for spec in specs[kind]:
             name=spec['name'];p=ROOT/'assets/audio'/kind/(name+'.wav')
+            if not p.exists():
+                p=ROOT/'archive/audio_wav'/kind/(name+'.wav')
+            if not p.exists():
+                encoded=ROOT/'assets/audio'/kind/(name+'.ogg')
+                info=json.loads(subprocess.run(['ffprobe','-v','error','-show_entries','stream=sample_rate,channels,duration','-of','json',str(encoded)],capture_output=True,text=True,check=True).stdout)['streams'][0]
+                expect(int(info['sample_rate'])==44100 and int(info['channels'])==1,name+' encoded mono/44100')
+                expect(abs(float(info['duration'])-spec['duration'])<.025,name+' encoded duration')
+                continue
             with wave.open(str(p)) as w:
                 expect(w.getnchannels()==1 and w.getsampwidth()==2 and w.getframerate()==44100,name+' mono16/44100')
                 expect(abs(w.getnframes()/44100-spec['duration'])<1/44100,name+' duration')

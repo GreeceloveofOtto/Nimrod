@@ -21,13 +21,13 @@ func _run() -> void:
     _check(get_nodes_in_group("enemies").is_empty() and yard.is_point_safe(Vector2(900,880)),"Backyard entirely safe")
     await manager.go_to("CedarForest_F1","Spawn_FromVilla")
     _check(manager.current_level.camera_limits.size==Vector2(4800,3400),"Approved20-room maze dimensions")
-    _check(get_nodes_in_group("enemies").size()==10,"Forest1 seven sentinels and three giants")
+    _check(get_nodes_in_group("enemies").size()==16,"Forest1 twelve sentinels and four colossi")
     var exit: DoorPortal = manager.current_level.doors["forest_exit"]
     await manager.go_to(exit.target_level,exit.target_spawn)
-    _check(manager.current_level.level_id=="CedarForest_F2" and get_nodes_in_group("enemies").size()==14,"Forest2 five archers, five wisps, four demons")
+    _check(manager.current_level.level_id=="CedarForest_F2" and get_nodes_in_group("enemies").size()==23,"Forest2 eight archers, eight wisps, seven demons")
     exit = manager.current_level.doors["forest_exit"]
     await manager.go_to(exit.target_level,exit.target_spawn)
     _check(manager.current_level.level_id=="CedarBossRoom","Top forest portal reaches boss")
     await manager.restart_run()
-    _check(manager.current_level.level_id=="RearGate" and hero.hp==180 and hero.global_position.x==260,"Death returns to original start")
+    _check(manager.current_level.level_id=="NimrodHome" and hero.hp==180 and hero.global_position.x==330,"Death returns to original start")
     await _finish("STAGE6_LEVELS")

@@ -1,7 +1,7 @@
 class_name GateController
 extends DoorPortal
 
-@export_file("*.png") var gate_art: String = ""
+@export_file("*.png", "*.webp") var gate_art: String = ""
 @export var gate_open_seconds: float = 1.2
 @export var gate_close_seconds: float = 1.0
 @export var trigger_radius: float = 300.0

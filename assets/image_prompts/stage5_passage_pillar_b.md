@@ -1,5 +1,5 @@
 # passage_pillar_b
-목적: 5단계 환경. 경로: assets/props/passage_pillar_b.png
+목적: 5단계 환경. 경로: assets/props/passage_pillar_b.webp
 크기: 260x620, 1프레임. 배경: #FF00FF 크로마키.
 
 2D side-view game asset, dark fantasy, ancient Mesopotamian Uruk atmosphere with advanced space-civilization undertones, hand-painted look, clean readable silhouette, consistent with the Nimrod character sprite sheets, no text, no watermark. passage pillar b, side-view production game asset.

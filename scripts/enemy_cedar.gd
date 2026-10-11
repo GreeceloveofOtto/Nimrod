@@ -152,7 +152,7 @@ func _begin_active() -> void:
     if enemy_id == "cedar_archer":
         var player: Node2D = _target()
         var at: Vector2 = global_position - Vector2(0, body_size.y * .65)
-        _hazard({"fx":"bone_arrow", "size":[96,24], "speed":stats["arrow"]["speed"], "damage":stats["arrow"]["damage"], "seconds":2, "range":stats["arrow"]["range"]}, at, at.direction_to(_player_rect(player).get_center()) if player != null else Vector2(facing, 0))
+        _hazard({"fx":"bone_arrow", "size":stats["arrow"]["size"], "speed":stats["arrow"]["speed"], "damage":stats["arrow"]["damage"], "seconds":2, "range":stats["arrow"]["range"]}, at, at.direction_to(_player_rect(player).get_center()) if player != null else Vector2(facing, 0))
         _play_sfx("archer_shot")
     elif enemy_id == "cedar_colossus" and phase == "slam":
         var wave: Dictionary = stats["shockwave"]
@@ -206,7 +206,7 @@ func _begin_hop() -> void:
     hop_cooldown = float(stats["hop"]["cooldown"])
     _set_state(State.ACTIVE)
     var hop: Dictionary = stats["hop"]
-    _hazard({"fx":"bone_spike_ground", "size":[128,128], "seconds":hop["spike_seconds"], "damage":hop["spike_damage"]}, global_position - Vector2(0,64))
+    _hazard({"fx":"bone_spike_ground", "size":hop["spike_size"], "seconds":hop["spike_seconds"], "damage":hop["spike_damage"]}, global_position - Vector2(0,float(hop["spike_size"][1])*.5))
     _play_sfx("bone_spike_pop")
 
 func _hazard(specification: Dictionary, at: Vector2, direction: Vector2 = Vector2.RIGHT) -> CedarHazard:

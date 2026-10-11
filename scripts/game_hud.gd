@@ -14,6 +14,7 @@ var _story_tween: Tween
 var boss_panel: Control
 var boss_fill: ColorRect
 var boss_label: Label
+var controls: Label
 
 func _ready() -> void:
     add_to_group("game_hud")
@@ -36,7 +37,7 @@ func _ready() -> void:
     hp_text.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
     hp_text.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
     title = _new_label("title", "", "title_font_size")
-    _new_label("controls", str(ui.get("controls_text", "")), "controls_font_size")
+    controls = _new_label("controls", str(ui.get("controls_text", "")), "controls_font_size")
     story = _new_label("story", str(config.get("story", "")), "story_font_size")
     story.modulate.a = 0.0
     toast = _new_label("toast", "", "toast_font_size")
@@ -72,6 +73,7 @@ func _process(_delta: float) -> void:
     if not is_instance_valid(player) or hp_fill == null:
         return
     hp_fill.size.x = _ui_rect("hp_fill").size.x * clampf(float(player.hp) / float(player.get_max_hp()), 0.0, 1.0)
+    controls.text = str(ui.get("controls_text", "")).replace("{weapon}", "J " + {"none":"공격 없음", "staff":"지팡이", "axe":"도끼"}.get(player.weapon, "공격 없음"))
     hp_text.text = "HP %d / %d" % [player.hp, player.get_max_hp()]
     var boss: KalaUshumgal
     for enemy in get_tree().get_nodes_in_group("enemies"):

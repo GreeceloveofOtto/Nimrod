@@ -1,6 +1,6 @@
 # shield_up
 목적: 6단계 이미지 생성 애니메이션.
-경로: assets/sprites/enemies/cedar_sentinel/shield_up.png
+경로: assets/sprites/enemies/cedar_sentinel/shield_up.webp
 프레임: 768x768, 3프레임, 0.2초, 앵커 [384, 720].
 배경: #FF00FF → pack_sprites.py 크로마키 투명 처리.
 

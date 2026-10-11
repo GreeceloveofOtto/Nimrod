@@ -3,7 +3,7 @@
     "display_name": "토사물",
     "heal_amount": 30,
     "interact_range": 72.0,
-    "art": "res://assets/props/healing_vomit.png",
+    "art": "res://assets/props/healing_vomit.webp",
     "art_size": [
       64.0,
       48.0

@@ -3,7 +3,7 @@
   "clips": [
     {
       "name": "perch_ceiling",
-      "sheet": "sprites/enemies/wall_diver/perch_ceiling.png",
+      "sheet": "sprites/enemies/wall_diver/perch_ceiling.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -17,13 +17,23 @@
         320
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        868,
+        210
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 210,
+        "y": 217,
+        "w": 217,
+        "h": 210
+      }
     },
     {
       "name": "perch_wall",
-      "sheet": "sprites/enemies/wall_diver/perch_wall.png",
+      "sheet": "sprites/enemies/wall_diver/perch_wall.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -37,13 +47,23 @@
         320
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        716,
+        230
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 231,
+        "y": 219,
+        "w": 179,
+        "h": 230
+      }
     },
     {
       "name": "tell",
-      "sheet": "sprites/enemies/wall_diver/tell.png",
+      "sheet": "sprites/enemies/wall_diver/tell.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 3,
@@ -57,13 +77,23 @@
         320
       ],
       "image_size": [
-        1920,
-        640
-      ]
+        966,
+        228
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 159,
+        "y": 211,
+        "w": 322,
+        "h": 228
+      }
     },
     {
       "name": "dive",
-      "sheet": "sprites/enemies/wall_diver/dive.png",
+      "sheet": "sprites/enemies/wall_diver/dive.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 3,
@@ -77,13 +107,22 @@
         320
       ],
       "image_size": [
-        1920,
-        640
-      ]
+        729,
+        211
+      ],
+      "qa": {
+        "movement": true
+      },
+      "trim": {
+        "x": 190,
+        "y": 212,
+        "w": 243,
+        "h": 211
+      }
     },
     {
       "name": "claw",
-      "sheet": "sprites/enemies/wall_diver/claw.png",
+      "sheet": "sprites/enemies/wall_diver/claw.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -97,13 +136,23 @@
         320
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        928,
+        244
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 214,
+        "y": 189,
+        "w": 232,
+        "h": 244
+      }
     },
     {
       "name": "recovery",
-      "sheet": "sprites/enemies/wall_diver/recovery.png",
+      "sheet": "sprites/enemies/wall_diver/recovery.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -117,13 +166,23 @@
         320
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        912,
+        228
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 209,
+        "y": 211,
+        "w": 228,
+        "h": 228
+      }
     },
     {
       "name": "crawl",
-      "sheet": "sprites/enemies/wall_diver/crawl.png",
+      "sheet": "sprites/enemies/wall_diver/crawl.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 8,
@@ -137,13 +196,24 @@
         320
       ],
       "image_size": [
-        5120,
-        640
-      ]
+        1760,
+        224
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained",
+        "movement": true
+      },
+      "trim": {
+        "x": 210,
+        "y": 207,
+        "w": 220,
+        "h": 224
+      }
     },
     {
       "name": "turn",
-      "sheet": "sprites/enemies/wall_diver/turn.png",
+      "sheet": "sprites/enemies/wall_diver/turn.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -157,13 +227,19 @@
         320
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        796,
+        216
+      ],
+      "trim": {
+        "x": 214,
+        "y": 214,
+        "w": 199,
+        "h": 216
+      }
     },
     {
       "name": "hurt",
-      "sheet": "sprites/enemies/wall_diver/hurt.png",
+      "sheet": "sprites/enemies/wall_diver/hurt.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 2,
@@ -177,13 +253,23 @@
         320
       ],
       "image_size": [
-        1280,
-        640
-      ]
+        632,
+        231
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 148,
+        "y": 195,
+        "w": 316,
+        "h": 231
+      }
     },
     {
       "name": "death",
-      "sheet": "sprites/enemies/wall_diver/death.png",
+      "sheet": "sprites/enemies/wall_diver/death.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -197,13 +283,23 @@
         320
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        1044,
+        257
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 229,
+        "y": 194,
+        "w": 174,
+        "h": 257
+      }
     },
     {
       "name": "idle",
-      "sheet": "sprites/enemies/wall_diver/idle.png",
+      "sheet": "sprites/enemies/wall_diver/idle.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -217,13 +313,23 @@
         320
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        828,
+        218
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 216,
+        "y": 205,
+        "w": 207,
+        "h": 218
+      }
     },
     {
       "name": "windup",
-      "sheet": "sprites/enemies/wall_diver/windup.png",
+      "sheet": "sprites/enemies/wall_diver/windup.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -237,9 +343,19 @@
         320
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        892,
+        254
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 204,
+        "y": 189,
+        "w": 223,
+        "h": 254
+      }
     }
   ],
   "aliases": {

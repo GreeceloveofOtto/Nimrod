@@ -55,7 +55,7 @@ def world():
         poses=row(im,top,bottom,6);scale=min((frame[0]-8)/max(p.width for p in poses),(frame[1]-8)/max(p.height for p in poses))
         door_clips.append(sheet(poses,'props/doors/'+name+'.png',frame,[frame[0]//2,frame[1]-4],.6,False,scale))
     save(A/'props/doors/stage5_manifest.json',{'clips':door_clips});MANIFESTS.append('props/doors/stage5_manifest.json')
-    poses=[foreground(chromakey(im.crop((256*i,773,256*(i+1),h))))[0] for i in range(6)];fx=[sheet(poses,'sprites/fx/root_flame.png',[256,512],[128,508],.6,True,min(240/max(p.width for p in poses),490/max(p.height for p in poses)))]
+    poses=[foreground(chromakey(im.crop((256*i,773,256*(i+1),h))))[0] for i in range(6)];fx=[sheet(poses,'sprites/fx/root_flame.webp',[256,512],[128,508],.6,True,min(240/max(p.width for p in poses),490/max(p.height for p in poses)))]
     im=get('fx');cut=[0,148,352,523,719,819,1024]
     spec=json.loads((R/'data/stage5_fx.json').read_text())['fx']
     for i,f in enumerate(spec):
@@ -141,8 +141,8 @@ def roll():
     for i in [0,11]:assert abs(packed[i].height-363)<=363*.03
     for p in packed[1:7]:assert p.width<=300 and p.height<=220
     legacy=A/'sprites/_legacy_player/roll_prev.png'
-    if not legacy.exists():shutil.copyfile(A/'sprites/roll.png',legacy)
-    shutil.copyfile(candidate,A/'sprites/roll.png');clip['sheet']='sprites/roll.png';clip['name']='roll'
+    if not legacy.exists():shutil.copyfile(A/'sprites/player/axe/roll.webp',legacy)
+    shutil.copyfile(candidate,A/'sprites/player/axe/roll.webp');clip['sheet']='sprites/player/axe/roll.webp';clip['name']='roll'
     m=json.loads((A/'animation_manifest.json').read_text());m['clips']=[clip if c['name']=='roll' else c for c in m['clips']];save(A/'animation_manifest.json',m)
     pv=json.loads((R/'data/player_visuals.json').read_text());next(c for c in pv['clips'] if c['name']=='roll')['frames']=12;save(R/'data/player_visuals.json',pv)
     save(S/'roll_packing.json',spec)

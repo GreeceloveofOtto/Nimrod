@@ -236,7 +236,7 @@ func _begin_active() -> void:
         loop_sound = _play_sfx("beast_ranged_flame_loop")
         var box: Rect2 = get_attack_rect()
         flame_effect = IMAGE_EFFECT.new()
-        flame_effect.configure("res://assets/sprites/fx/root_flame.png", Vector2i(256, 512), 6, 0.6, true, Vector2(128, 508))
+        flame_effect.configure("res://assets/sprites/fx/root_flame.webp", Vector2i(256, 512), 6, 0.6, true, Vector2(128, 508))
         flame_effect.scale = Vector2(box.size.x / 256.0, box.size.y / 512.0)
         add_child(flame_effect)
     elif enemy_id == "chain_beastman":
@@ -387,7 +387,7 @@ func _on_death() -> void:
     _release_pull()
     _hide_chain()
     if enemy_id == "corpse_bomber":
-        _spawn_hazard("explosion", stats["explosion"])
+        queue_player_effect(_spawn_hazard.bind("explosion", stats["explosion"].duplicate(true)))
     super._on_death()
     if enemy_id == "gas_sac":
         _show_clip("death_swell", 0.0)
@@ -447,7 +447,7 @@ func _update_visual(delta: float) -> void:
             if enemy_id == "shell_scorpion":
                 clip = "tail_strike" if phase == "tail" else "claw_attack"
             if enemy_id == "chain_beastman":
-                clip = {"tail": "tail_sweep", "chain_throw": "chain_throw", "pull": "pull_hold", "smash": "smash"}.get(phase, "idle")
+                clip = {"tail": "tail_sweep", "chain_throw": "chain_throw", "pull": "pull_hold", "pull_pending": "chain_throw", "smash": "smash"}.get(phase, "idle")
         State.RECOVERY:
             clip = phase + "_recovery" if enemy_id == "shell_scorpion" else "tail_recovery" if enemy_id == "chain_beastman" and phase == "tail" else "smash_recovery" if enemy_id == "chain_beastman" else "recovery"
         State.TURN:
@@ -472,7 +472,7 @@ func _make_chain() -> void:
     chain_visual.centered = false
     chain_visual.region_enabled = true
     chain_visual.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
-    var path: String = "res://assets/sprites/fx/chain_segment.png"
+    var path: String = "res://assets/sprites/fx/chain_segment.webp"
     if ResourceLoader.exists(path):
         chain_visual.texture = load(path)
     else:
@@ -513,11 +513,9 @@ func _update_chain(_delta: float) -> void:
         var hook := Rect2(global_position + Vector2(minf(0.0, facing * length), height - 12), Vector2(length, 24))
         if _player_is_available(player) and not player.is_roll_invulnerable() and hook.intersects(_player_rect(player)):
             pulled_player = player
-            if player.apply_pull(global_position.x + facing * float(chain["pull_offset"]), float(chain["pull_seconds"])):
-                phase = "pull"
-                _set_state(State.ACTIVE)
-                _play_sfx("chain_pull")
-                return
+            phase = "pull_pending"
+            queue_player_effect(_apply_chain_pull.bind(player, global_position.x + facing * float(chain["pull_offset"]), float(chain["pull_seconds"])))
+            return
         if state_clock >= float(chain["throw_seconds"]):
             _hide_chain()
             _begin_recovery(float(chain["miss_recovery"]))
@@ -536,3 +534,14 @@ func _exit_tree() -> void:
     _release_pull()
     if is_instance_valid(loop_sound):
         get_node("/root/Audio").stop_sfx(loop_sound)
+
+func _apply_chain_pull(player: NimrodPlayer, target_x: float, seconds: float) -> void:
+    if not is_instance_valid(player) or state == State.DEAD or phase != "pull_pending":
+        return
+    if player.apply_pull(target_x, seconds):
+        phase = "pull"
+        _set_state(State.ACTIVE)
+        _play_sfx("chain_pull")
+    else:
+        _hide_chain()
+        _begin_recovery(float(stats["chain"]["miss_recovery"]))

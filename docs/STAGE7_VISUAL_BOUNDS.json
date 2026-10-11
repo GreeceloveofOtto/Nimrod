@@ -1,0 +1,381 @@
+{
+  "reference": {
+    "standard_height_px": 363,
+    "standard_visual_scale": 0.3,
+    "immutable": {
+      "melee_beast": {
+        "body_size": [
+          150.0,
+          90.0
+        ],
+        "visual_scale": 0.33
+      },
+      "ranged_beast": {
+        "body_size": [
+          126.0,
+          198.0
+        ],
+        "visual_scale": 0.36
+      }
+    },
+    "stage5": {
+      "size_multiplier": 1.5,
+      "aoe_multiplier": 1.3,
+      "range_multiplier": 1.2,
+      "range_cap": 900
+    },
+    "cedar": {
+      "cedar_sentinel": {
+        "body_size": [
+          56,
+          112
+        ],
+        "frame_size": [
+          640,
+          640
+        ],
+        "anchor": [
+          320,
+          600
+        ],
+        "art_height_px": 363,
+        "visual_scale": 0.3
+      },
+      "cedar_archer": {
+        "body_size": [
+          60,
+          112
+        ],
+        "frame_size": [
+          640,
+          640
+        ],
+        "anchor": [
+          320,
+          600
+        ],
+        "art_height_px": 363,
+        "visual_scale": 0.3
+      },
+      "cedar_demon": {
+        "body_size": [
+          96,
+          124
+        ],
+        "frame_size": [
+          640,
+          640
+        ],
+        "anchor": [
+          320,
+          600
+        ],
+        "art_height_px": 408,
+        "visual_scale": 0.3
+      },
+      "cedar_wisp": {
+        "body_size": [
+          52,
+          92
+        ],
+        "frame_size": [
+          640,
+          640
+        ],
+        "anchor": [
+          320,
+          320
+        ],
+        "art_height_px": 310,
+        "visual_scale": 0.3
+      },
+      "cedar_colossus": {
+        "body_size": [
+          110,
+          176
+        ],
+        "frame_size": [
+          768,
+          768
+        ],
+        "anchor": [
+          384,
+          720
+        ],
+        "art_height_px": 581,
+        "visual_scale": 0.3
+      },
+      "kala_ushumgal": {
+        "body_size": [
+          240,
+          280
+        ],
+        "frame_size": [
+          1280,
+          1152
+        ],
+        "anchor": [
+          640,
+          1100
+        ],
+        "art_height_px": 944,
+        "visual_scale": 0.3
+      }
+    }
+  },
+  "enemies": [
+    {
+      "id": "melee_beast",
+      "clip": "idle",
+      "painted_height_px": 300,
+      "expected_art_height_px": 272.7272727272727,
+      "display_height": 99.0,
+      "body_size": [
+        150.0,
+        90.0
+      ],
+      "melee_width_ratio": 1.0,
+      "melee_height_ratio": 1.0,
+      "difference_percent": 10.000000000000009
+    },
+    {
+      "id": "ranged_beast",
+      "clip": "idle",
+      "painted_height_px": 551,
+      "expected_art_height_px": 550.0,
+      "display_height": 198.35999999999999,
+      "body_size": [
+        126.0,
+        198.0
+      ],
+      "melee_width_ratio": 0.84,
+      "melee_height_ratio": 2.2,
+      "difference_percent": 0.1818181818181719
+    },
+    {
+      "id": "sky_beast",
+      "clip": "fly_idle",
+      "painted_height_px": 196,
+      "expected_art_height_px": 195.55555555555554,
+      "display_height": 88.2,
+      "body_size": [
+        150.0,
+        88.0
+      ],
+      "melee_width_ratio": 1.0,
+      "melee_height_ratio": 0.9777777777777777,
+      "difference_percent": 0.22727272727274261
+    },
+    {
+      "id": "explosive_spitter",
+      "clip": "idle",
+      "painted_height_px": 287,
+      "expected_art_height_px": 287,
+      "display_height": 129.14999999999998,
+      "body_size": [
+        165.0,
+        129.0
+      ],
+      "melee_width_ratio": 1.1,
+      "melee_height_ratio": 1.4333333333333333,
+      "difference_percent": 0.0
+    },
+    {
+      "id": "wall_diver",
+      "clip": "idle",
+      "painted_height_px": 200,
+      "expected_art_height_px": 200,
+      "display_height": 89.99999999999999,
+      "body_size": [
+        135.0,
+        90.0
+      ],
+      "melee_width_ratio": 0.9,
+      "melee_height_ratio": 1.0,
+      "difference_percent": 0.0
+    },
+    {
+      "id": "root_spewer",
+      "clip": "idle",
+      "painted_height_px": 267,
+      "expected_art_height_px": 267,
+      "display_height": 120.14999999999999,
+      "body_size": [
+        111.0,
+        120.0
+      ],
+      "melee_width_ratio": 0.74,
+      "melee_height_ratio": 1.3333333333333333,
+      "difference_percent": 0.0
+    },
+    {
+      "id": "boar_charger",
+      "clip": "idle",
+      "painted_height_px": 313,
+      "expected_art_height_px": 313,
+      "display_height": 140.85,
+      "body_size": [
+        232.5,
+        141.0
+      ],
+      "melee_width_ratio": 1.55,
+      "melee_height_ratio": 1.5666666666666667,
+      "difference_percent": 0.0
+    },
+    {
+      "id": "gas_sac",
+      "clip": "float",
+      "painted_height_px": 300,
+      "expected_art_height_px": 300,
+      "display_height": 135.0,
+      "body_size": [
+        132.0,
+        135.0
+      ],
+      "melee_width_ratio": 0.88,
+      "melee_height_ratio": 1.5,
+      "difference_percent": 0.0
+    },
+    {
+      "id": "wraith_ray",
+      "clip": "glide",
+      "painted_height_px": 160,
+      "expected_art_height_px": 160,
+      "display_height": 72.0,
+      "body_size": [
+        147.0,
+        72.0
+      ],
+      "melee_width_ratio": 0.98,
+      "melee_height_ratio": 0.8,
+      "difference_percent": 0.0
+    },
+    {
+      "id": "shell_scorpion",
+      "clip": "idle",
+      "painted_height_px": 267,
+      "expected_art_height_px": 267,
+      "display_height": 120.14999999999999,
+      "body_size": [
+        201.0,
+        120.0
+      ],
+      "melee_width_ratio": 1.34,
+      "melee_height_ratio": 1.3333333333333333,
+      "difference_percent": 0.0
+    },
+    {
+      "id": "corpse_bomber",
+      "clip": "idle",
+      "painted_height_px": 293,
+      "expected_art_height_px": 293,
+      "display_height": 131.85,
+      "body_size": [
+        93.0,
+        132.0
+      ],
+      "melee_width_ratio": 0.62,
+      "melee_height_ratio": 1.4666666666666666,
+      "difference_percent": 0.0
+    },
+    {
+      "id": "chain_beastman",
+      "clip": "idle",
+      "painted_height_px": 593,
+      "expected_art_height_px": 593,
+      "display_height": 266.84999999999997,
+      "body_size": [
+        270.0,
+        267.0
+      ],
+      "melee_width_ratio": 1.8,
+      "melee_height_ratio": 2.966666666666667,
+      "difference_percent": 0.0
+    },
+    {
+      "id": "cedar_sentinel",
+      "clip": "idle",
+      "painted_height_px": 363,
+      "expected_art_height_px": 363,
+      "display_height": 108.89999999999999,
+      "body_size": [
+        56,
+        112
+      ],
+      "melee_width_ratio": 0.37333333333333335,
+      "melee_height_ratio": 1.2444444444444445,
+      "difference_percent": 0.0
+    },
+    {
+      "id": "cedar_colossus",
+      "clip": "idle",
+      "painted_height_px": 581,
+      "expected_art_height_px": 581,
+      "display_height": 174.29999999999998,
+      "body_size": [
+        110,
+        176
+      ],
+      "melee_width_ratio": 0.7333333333333333,
+      "melee_height_ratio": 1.9555555555555555,
+      "difference_percent": 0.0
+    },
+    {
+      "id": "cedar_archer",
+      "clip": "idle",
+      "painted_height_px": 363,
+      "expected_art_height_px": 363,
+      "display_height": 108.89999999999999,
+      "body_size": [
+        60,
+        112
+      ],
+      "melee_width_ratio": 0.4,
+      "melee_height_ratio": 1.2444444444444445,
+      "difference_percent": 0.0
+    },
+    {
+      "id": "cedar_wisp",
+      "clip": "float",
+      "painted_height_px": 310,
+      "expected_art_height_px": 310,
+      "display_height": 93.0,
+      "body_size": [
+        52,
+        92
+      ],
+      "melee_width_ratio": 0.3466666666666667,
+      "melee_height_ratio": 1.0222222222222221,
+      "difference_percent": 0.0
+    },
+    {
+      "id": "cedar_demon",
+      "clip": "idle",
+      "painted_height_px": 408,
+      "expected_art_height_px": 408,
+      "display_height": 122.39999999999999,
+      "body_size": [
+        96,
+        124
+      ],
+      "melee_width_ratio": 0.64,
+      "melee_height_ratio": 1.3777777777777778,
+      "difference_percent": 0.0
+    },
+    {
+      "id": "kala_ushumgal",
+      "clip": "idle",
+      "painted_height_px": 944,
+      "expected_art_height_px": 944,
+      "display_height": 283.2,
+      "body_size": [
+        240,
+        280
+      ],
+      "melee_width_ratio": 1.6,
+      "melee_height_ratio": 3.111111111111111,
+      "difference_percent": 0.0
+    }
+  ],
+  "warnings": []
+}

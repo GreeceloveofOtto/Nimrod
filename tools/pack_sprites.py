@@ -93,67 +93,32 @@ def automatic_boxes(source, gap):
     return spans
 
 
-def component_poses(source, count):
-    """Extract existing separate painted figures whose x-projections overlap.
-
-    A scanline union-find labels source pixels without a scipy dependency.
-    Small detached painted details are retained with their nearest body.
-    This only selects/copies original pixels; no art is drawn or synthesized.
+def component_poses(source, count, rows=1):
+    """Crop complete connected figures and retain detached weapon fragments.
+    All returned pixels are copied from the generated source; no poses are drawn.
     """
-    visible = np.asarray(source.getchannel("A")) > 12
-    runs, parents, previous = [], [], []
-
-    def find(index):
-        while parents[index] != index:
-            parents[index] = parents[parents[index]]
-            index = parents[index]
-        return index
-
-    for y, row in enumerate(visible):
-        transitions = np.flatnonzero(np.diff(np.pad(row.astype(np.int8), (1, 1))))
-        current = []
-        for start, end in zip(transitions[::2], transitions[1::2]):
-            index = len(runs)
-            runs.append((y, int(start), int(end)))
-            parents.append(index)
-            for prior in previous:
-                _, prior_start, prior_end = runs[prior]
-                if prior_start <= end and prior_end >= start:
-                    parents[find(index)] = find(prior)
-            current.append(index)
-        previous = current
-    groups = {}
-    for index, run in enumerate(runs):
-        groups.setdefault(find(index), []).append(run)
-    ordered = sorted(groups.values(), key=lambda group: sum(end - start for _, start, end in group), reverse=True)
-    if len(ordered) < count:
-        raise ValueError(f"Only {len(ordered)} disconnected painted components; expected {count}")
-    bodies = ordered[:count]
-    areas = [sum(end - start for _, start, end in group) for group in bodies]
-    if min(areas) < max(areas) * 0.1:
-        raise ValueError("Some painted figures touch; component selection found a tiny fragment instead of a body. Use --boxes.")
-
-    def bounds(group):
-        return (min(start for _, start, _ in group), min(y for y, _, _ in group),
-                max(end for _, _, end in group), max(y for y, _, _ in group) + 1)
-
-    body_bounds = [bounds(group) for group in bodies]
-    for detail in ordered[count:]:
-        left, top, right, bottom = bounds(detail)
-        def distance(box):
-            return max(box[0] - right, left - box[2], 0) ** 2 + max(box[1] - bottom, top - box[3], 0) ** 2
-        nearest = min(range(count), key=lambda index: distance(body_bounds[index]))
-        bodies[nearest].extend(detail)
-    bodies.sort(key=lambda group: (bounds(group)[0] + bounds(group)[2]) / 2)
-    pixels = np.asarray(source)
-    poses = []
-    for group in bodies:
-        left, top, right, bottom = bounds(group)
-        selected = np.zeros((bottom - top, right - left, 4), dtype=np.uint8)
-        for y, start, end in group:
-            selected[y - top, start - left:end - left] = pixels[y, start:end]
-        poses.append(Image.fromarray(selected, "RGBA"))
-    return poses
+    from scipy import ndimage
+    pixels=np.asarray(source)
+    labels,total=ndimage.label(pixels[:,:,3]>12,structure=np.ones((3,3),dtype=bool))
+    areas=np.bincount(labels.ravel());areas[0]=0
+    ordered=np.argsort(areas)[::-1];ordered=ordered[areas[ordered]>0]
+    if len(ordered)<count:raise ValueError(f"Only {len(ordered)} components; expected {count}")
+    bodies=list(ordered[:count]);parts=[[int(i)] for i in bodies]
+    if min(areas[bodies])<max(areas[bodies])*.1:raise ValueError("Joined figures or a missing body; regenerate source")
+    objects=ndimage.find_objects(labels)
+    def bounds(index):
+        y,x=objects[index-1];return [x.start,y.start,x.stop,y.stop]
+    body_bounds=[bounds(i) for i in bodies]
+    for item in ordered[count:]:
+        left,top,right,bottom=bounds(item)
+        def distance(box):return max(box[0]-right,left-box[2],0)**2+max(box[1]-bottom,top-box[3],0)**2
+        nearest=min(range(count),key=lambda i:distance(body_bounds[i]));parts[nearest].append(int(item))
+    poses=[]
+    for group in parts:
+        boxes=[bounds(i) for i in group];left=min(b[0] for b in boxes);top=min(b[1] for b in boxes);right=max(b[2] for b in boxes);bottom=max(b[3] for b in boxes)
+        selected=pixels[top:bottom,left:right].copy();selected[~np.isin(labels[top:bottom,left:right],group)]=0
+        poses.append(((min(rows-1,int(((top+bottom)/2)/source.height*rows)),(left+right)/2),Image.fromarray(selected,"RGBA")))
+    return [p for _,p in sorted(poses,key=lambda entry:entry[0])]
 
 
 def pack_sheet(args):

@@ -1,5 +1,5 @@
 # 추적 환령 / glide
-목적: 괴수 애니메이션. 경로: assets/sprites/enemies/wraith_ray/glide.png
+목적: 괴수 애니메이션. 경로: assets/sprites/enemies/wraith_ray/glide.webp
 규격: 8 × 640x640, 1.0초, 앵커 [320, 320].
 배경: #FF00FF → pack_sprites.py 크로마키/정렬/합성.
 

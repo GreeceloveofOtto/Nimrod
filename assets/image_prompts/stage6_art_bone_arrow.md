@@ -1,6 +1,6 @@
 # bone_arrow
 목적: 6단계 이미지 생성 애니메이션.
-경로: assets/sprites/fx/bone_arrow.png
+경로: assets/sprites/fx/bone_arrow.webp
 프레임: 96x24, 1프레임, 1초, 앵커 [48, 12].
 배경: #FF00FF → pack_sprites.py 크로마키 투명 처리.
 

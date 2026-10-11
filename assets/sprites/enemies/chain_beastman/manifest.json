@@ -3,7 +3,7 @@
   "clips": [
     {
       "name": "idle",
-      "sheet": "sprites/enemies/chain_beastman/idle.png",
+      "sheet": "sprites/enemies/chain_beastman/idle.webp",
       "frame_width": 896,
       "frame_height": 768,
       "columns": 6,
@@ -17,13 +17,19 @@
         720
       ],
       "image_size": [
-        5376,
-        768
-      ]
+        2586,
+        604
+      ],
+      "trim": {
+        "x": 217,
+        "y": 118,
+        "w": 431,
+        "h": 604
+      }
     },
     {
       "name": "walk",
-      "sheet": "sprites/enemies/chain_beastman/walk.png",
+      "sheet": "sprites/enemies/chain_beastman/walk.webp",
       "frame_width": 896,
       "frame_height": 768,
       "columns": 8,
@@ -37,13 +43,22 @@
         720
       ],
       "image_size": [
-        7168,
-        768
-      ]
+        3016,
+        609
+      ],
+      "qa": {
+        "movement": true
+      },
+      "trim": {
+        "x": 250,
+        "y": 113,
+        "w": 377,
+        "h": 609
+      }
     },
     {
       "name": "tail_windup",
-      "sheet": "sprites/enemies/chain_beastman/tail_windup.png",
+      "sheet": "sprites/enemies/chain_beastman/tail_windup.webp",
       "frame_width": 896,
       "frame_height": 768,
       "columns": 5,
@@ -57,13 +72,19 @@
         720
       ],
       "image_size": [
-        4480,
-        768
-      ]
+        2505,
+        613
+      ],
+      "trim": {
+        "x": 169,
+        "y": 109,
+        "w": 501,
+        "h": 613
+      }
     },
     {
       "name": "tail_sweep",
-      "sheet": "sprites/enemies/chain_beastman/tail_sweep.png",
+      "sheet": "sprites/enemies/chain_beastman/tail_sweep.webp",
       "frame_width": 896,
       "frame_height": 768,
       "columns": 4,
@@ -77,13 +98,19 @@
         720
       ],
       "image_size": [
-        3584,
-        768
-      ]
+        2328,
+        598
+      ],
+      "trim": {
+        "x": 208,
+        "y": 124,
+        "w": 582,
+        "h": 598
+      }
     },
     {
       "name": "tail_recovery",
-      "sheet": "sprites/enemies/chain_beastman/tail_recovery.png",
+      "sheet": "sprites/enemies/chain_beastman/tail_recovery.webp",
       "frame_width": 896,
       "frame_height": 768,
       "columns": 5,
@@ -97,13 +124,19 @@
         720
       ],
       "image_size": [
-        4480,
-        768
-      ]
+        2580,
+        599
+      ],
+      "trim": {
+        "x": 122,
+        "y": 123,
+        "w": 516,
+        "h": 599
+      }
     },
     {
       "name": "chain_windup",
-      "sheet": "sprites/enemies/chain_beastman/chain_windup.png",
+      "sheet": "sprites/enemies/chain_beastman/chain_windup.webp",
       "frame_width": 896,
       "frame_height": 768,
       "columns": 4,
@@ -117,13 +150,19 @@
         720
       ],
       "image_size": [
-        3584,
-        768
-      ]
+        2600,
+        615
+      ],
+      "trim": {
+        "x": 163,
+        "y": 107,
+        "w": 650,
+        "h": 615
+      }
     },
     {
       "name": "chain_throw",
-      "sheet": "sprites/enemies/chain_beastman/chain_throw.png",
+      "sheet": "sprites/enemies/chain_beastman/chain_throw.webp",
       "frame_width": 896,
       "frame_height": 768,
       "columns": 4,
@@ -137,13 +176,19 @@
         720
       ],
       "image_size": [
-        3584,
-        768
-      ]
+        2944,
+        572
+      ],
+      "trim": {
+        "x": 158,
+        "y": 150,
+        "w": 736,
+        "h": 572
+      }
     },
     {
       "name": "pull_hold",
-      "sheet": "sprites/enemies/chain_beastman/pull_hold.png",
+      "sheet": "sprites/enemies/chain_beastman/pull_hold.webp",
       "frame_width": 896,
       "frame_height": 768,
       "columns": 3,
@@ -157,13 +202,19 @@
         720
       ],
       "image_size": [
-        2688,
-        768
-      ]
+        1830,
+        598
+      ],
+      "trim": {
+        "x": 138,
+        "y": 124,
+        "w": 610,
+        "h": 598
+      }
     },
     {
       "name": "smash_windup",
-      "sheet": "sprites/enemies/chain_beastman/smash_windup.png",
+      "sheet": "sprites/enemies/chain_beastman/smash_windup.webp",
       "frame_width": 896,
       "frame_height": 768,
       "columns": 4,
@@ -177,13 +228,23 @@
         720
       ],
       "image_size": [
-        3584,
-        768
-      ]
+        2232,
+        670
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 151,
+        "y": 52,
+        "w": 558,
+        "h": 670
+      }
     },
     {
       "name": "smash",
-      "sheet": "sprites/enemies/chain_beastman/smash.png",
+      "sheet": "sprites/enemies/chain_beastman/smash.webp",
       "frame_width": 896,
       "frame_height": 768,
       "columns": 3,
@@ -197,13 +258,19 @@
         720
       ],
       "image_size": [
-        2688,
-        768
-      ]
+        2151,
+        600
+      ],
+      "trim": {
+        "x": 129,
+        "y": 122,
+        "w": 717,
+        "h": 600
+      }
     },
     {
       "name": "smash_recovery",
-      "sheet": "sprites/enemies/chain_beastman/smash_recovery.png",
+      "sheet": "sprites/enemies/chain_beastman/smash_recovery.webp",
       "frame_width": 896,
       "frame_height": 768,
       "columns": 5,
@@ -217,13 +284,19 @@
         720
       ],
       "image_size": [
-        4480,
-        768
-      ]
+        2595,
+        640
+      ],
+      "trim": {
+        "x": 207,
+        "y": 82,
+        "w": 519,
+        "h": 640
+      }
     },
     {
       "name": "turn",
-      "sheet": "sprites/enemies/chain_beastman/turn.png",
+      "sheet": "sprites/enemies/chain_beastman/turn.webp",
       "frame_width": 896,
       "frame_height": 768,
       "columns": 6,
@@ -237,13 +310,19 @@
         720
       ],
       "image_size": [
-        5376,
-        768
-      ]
+        2334,
+        599
+      ],
+      "trim": {
+        "x": 244,
+        "y": 123,
+        "w": 389,
+        "h": 599
+      }
     },
     {
       "name": "hurt",
-      "sheet": "sprites/enemies/chain_beastman/hurt.png",
+      "sheet": "sprites/enemies/chain_beastman/hurt.webp",
       "frame_width": 896,
       "frame_height": 768,
       "columns": 2,
@@ -257,13 +336,19 @@
         720
       ],
       "image_size": [
-        1792,
-        768
-      ]
+        1000,
+        610
+      ],
+      "trim": {
+        "x": 194,
+        "y": 112,
+        "w": 500,
+        "h": 610
+      }
     },
     {
       "name": "death",
-      "sheet": "sprites/enemies/chain_beastman/death.png",
+      "sheet": "sprites/enemies/chain_beastman/death.webp",
       "frame_width": 896,
       "frame_height": 768,
       "columns": 8,
@@ -277,9 +362,19 @@
         720
       ],
       "image_size": [
-        7168,
-        768
-      ]
+        3168,
+        710
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 246,
+        "y": 12,
+        "w": 396,
+        "h": 710
+      }
     }
   ],
   "aliases": {

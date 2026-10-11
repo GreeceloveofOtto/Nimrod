@@ -2,7 +2,7 @@
   "fx": [
     {
       "name": "spit_projectile",
-      "path": "res://assets/sprites/fx/spit_projectile.png",
+      "path": "res://assets/sprites/fx/spit_projectile.webp",
       "frame_size": [
         128,
         128
@@ -13,7 +13,7 @@
     },
     {
       "name": "explosion",
-      "path": "res://assets/sprites/fx/explosion.png",
+      "path": "res://assets/sprites/fx/explosion.webp",
       "frame_size": [
         256,
         256
@@ -24,7 +24,7 @@
     },
     {
       "name": "gas_cloud",
-      "path": "res://assets/sprites/fx/gas_cloud.png",
+      "path": "res://assets/sprites/fx/gas_cloud.webp",
       "frame_size": [
         256,
         256
@@ -35,7 +35,7 @@
     },
     {
       "name": "guard_spark",
-      "path": "res://assets/sprites/fx/guard_spark.png",
+      "path": "res://assets/sprites/fx/guard_spark.webp",
       "frame_size": [
         192,
         192
@@ -46,7 +46,7 @@
     },
     {
       "name": "chain_segment",
-      "path": "res://assets/sprites/fx/chain_segment.png",
+      "path": "res://assets/sprites/fx/chain_segment.webp",
       "frame_size": [
         64,
         24
@@ -57,7 +57,7 @@
     },
     {
       "name": "chain_hook",
-      "path": "res://assets/sprites/fx/chain_hook.png",
+      "path": "res://assets/sprites/fx/chain_hook.webp",
       "frame_size": [
         96,
         96

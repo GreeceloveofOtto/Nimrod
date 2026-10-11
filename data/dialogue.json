@@ -4,5 +4,38 @@
   "zoom": 1.6,
   "camera_seconds": 0.35,
   "character_seconds": 0.04,
-  "hold_seconds": 1.4
+  "hold_seconds": 1.4,
+  "parent_gift": {
+    "use_scripted_dialogue": true,
+    "range": 140,
+    "group_zoom_max": 1.5,
+    "gift_seconds": 0.6,
+    "gift_art": "res://assets/props/axe_gift.webp",
+    "lines": [
+      {
+        "speaker": "lugalbanda",
+        "text": "니므롯, 사랑하는 내 아들, 누군가의 수칼루가 되는 것을 내가 얼마나 기다렸는지 모른다."
+      },
+      {
+        "speaker": "ninsun",
+        "text": "니므롯, 너의 축복을 빌어. 언제나 행운이 따르길 바라."
+      },
+      {
+        "speaker": "player",
+        "text": "언제나 고마워, 아버지, 어머니."
+      },
+      {
+        "speaker": "lugalbanda",
+        "text": "사랑하는 니므롯, 너를 위해서 선물을 준비했다."
+      },
+      {
+        "speaker": "lugalbanda",
+        "event": "axe_gift"
+      },
+      {
+        "speaker": "ninsun",
+        "text": "언제나 곧게 뻗어있는 브란눈과 이디그나처럼 니므롯의 운명을 축복할게."
+      }
+    ]
+  }
 }

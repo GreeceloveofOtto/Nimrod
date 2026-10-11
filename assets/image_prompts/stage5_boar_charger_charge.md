@@ -1,5 +1,5 @@
 # 돌진 괴수 / charge
-목적: 괴수 애니메이션. 경로: assets/sprites/enemies/boar_charger/charge.png
+목적: 괴수 애니메이션. 경로: assets/sprites/enemies/boar_charger/charge.webp
 규격: 4 × 768x640, 0.3초, 앵커 [384, 600].
 배경: #FF00FF → pack_sprites.py 크로마키/정렬/합성.
 

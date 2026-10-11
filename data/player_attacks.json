@@ -113,6 +113,189 @@
     "escape_after": 0.15
   },
   "movement": {
-    "crouch_speed": 120
+    "crouch_speed": 120,
+    "step_up_max": 56,
+    "corner_forgiveness": 10,
+    "stuck_seconds": 0.8,
+    "stuck_distance": 3,
+    "overlap_epsilon": 0.2
+  },
+  "weapons": {
+    "axe": {
+      "max_step": 4,
+      "hitstop": 0.05,
+      "attacks": [
+        {
+          "step": 1,
+          "damage": 20,
+          "knockback": 140,
+          "stagger": 0.18,
+          "duration": 0.33,
+          "active_start": 0.09,
+          "active_end": 0.17,
+          "impulse": 80,
+          "shake": 0.06,
+          "impact_offset": [
+            80,
+            -90
+          ],
+          "hitbox": {
+            "offset_x": 6,
+            "top": -110,
+            "width": 82,
+            "height": 82
+          }
+        },
+        {
+          "step": 2,
+          "damage": 20,
+          "knockback": 160,
+          "stagger": 0.18,
+          "duration": 0.33,
+          "active_start": 0.08,
+          "active_end": 0.16,
+          "impulse": 80,
+          "shake": 0.06,
+          "impact_offset": [
+            80,
+            -90
+          ],
+          "hitbox": {
+            "offset_x": 6,
+            "top": -118,
+            "width": 86,
+            "height": 88
+          }
+        },
+        {
+          "step": 3,
+          "damage": 20,
+          "knockback": 260,
+          "stagger": 0.3,
+          "duration": 0.4,
+          "active_start": 0.14,
+          "active_end": 0.24,
+          "impulse": 80,
+          "shake": 0.1,
+          "impact_offset": [
+            80,
+            -90
+          ],
+          "hitbox": {
+            "offset_x": 6,
+            "top": -128,
+            "width": 120,
+            "height": 110
+          }
+        },
+        {
+          "step": 4,
+          "damage": 22,
+          "knockback": 120,
+          "stagger": 0.25,
+          "duration": 0.56,
+          "active_start": 0.22,
+          "active_end": 0.34,
+          "impulse": 48,
+          "shake": 0.1,
+          "impact_offset": [
+            80,
+            -90
+          ],
+          "hitbox": {
+            "offset_x": 6,
+            "top": -164,
+            "width": 84,
+            "height": 150
+          }
+        }
+      ],
+      "shockwave": {
+        "damage": 22,
+        "knockback": 90,
+        "stagger": 0.15,
+        "start": 0.34,
+        "shake": 0.12,
+        "impact_offset": [
+          110,
+          -10
+        ],
+        "hitbox": {
+          "offset_x": 24,
+          "top": -38,
+          "width": 112,
+          "height": 34
+        }
+      }
+    },
+    "staff": {
+      "max_step": 3,
+      "hitstop": 0.03,
+      "attacks": [
+        {
+          "step": 1,
+          "damage": 18,
+          "knockback": 140,
+          "stagger": 0.18,
+          "duration": 0.28,
+          "active_start": 0.07,
+          "active_end": 0.14,
+          "impulse": 80,
+          "shake": 0.06,
+          "impact_offset": [
+            80,
+            -90
+          ],
+          "hitbox": {
+            "offset_x": 6,
+            "top": -100,
+            "width": 100,
+            "height": 70
+          }
+        },
+        {
+          "step": 2,
+          "damage": 18,
+          "knockback": 160,
+          "stagger": 0.18,
+          "duration": 0.28,
+          "active_start": 0.07,
+          "active_end": 0.14,
+          "impulse": 80,
+          "shake": 0.06,
+          "impact_offset": [
+            80,
+            -90
+          ],
+          "hitbox": {
+            "offset_x": 6,
+            "top": -100,
+            "width": 100,
+            "height": 70
+          }
+        },
+        {
+          "step": 3,
+          "damage": 24,
+          "knockback": 260,
+          "stagger": 0.3,
+          "duration": 0.4,
+          "active_start": 0.12,
+          "active_end": 0.22,
+          "impulse": 80,
+          "shake": 0.1,
+          "impact_offset": [
+            80,
+            -90
+          ],
+          "hitbox": {
+            "offset_x": 6,
+            "top": -100,
+            "width": 130,
+            "height": 80
+          }
+        }
+      ]
+    }
   }
 }

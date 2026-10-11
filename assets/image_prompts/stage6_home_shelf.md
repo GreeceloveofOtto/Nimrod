@@ -1,6 +1,6 @@
 # home_shelf
 목적: 6단계 환경.
-경로: assets/props/home_shelf.png
+경로: assets/props/home_shelf.webp
 크기: 300x420, 1프레임.
 배경: #FF00FF 크로마키.
 

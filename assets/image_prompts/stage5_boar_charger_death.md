@@ -1,5 +1,5 @@
 # 돌진 괴수 / death
-목적: 괴수 애니메이션. 경로: assets/sprites/enemies/boar_charger/death.png
+목적: 괴수 애니메이션. 경로: assets/sprites/enemies/boar_charger/death.webp
 규격: 6 × 768x640, 0.8초, 앵커 [384, 600].
 배경: #FF00FF → pack_sprites.py 크로마키/정렬/합성.
 

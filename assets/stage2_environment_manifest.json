@@ -7,7 +7,7 @@
   "assets": [
     {
       "name": "rear_gate_sky",
-      "path": "backgrounds/rear_gate/sky.png",
+      "path": "backgrounds/rear_gate/sky.webp",
       "width": 1536,
       "height": 720,
       "transparent": false,
@@ -16,7 +16,7 @@
     },
     {
       "name": "rear_gate_far_city",
-      "path": "backgrounds/rear_gate/far_city.png",
+      "path": "backgrounds/rear_gate/far_city.webp",
       "width": 2112,
       "height": 720,
       "transparent": true,
@@ -25,7 +25,7 @@
     },
     {
       "name": "rear_gate_castle_wall",
-      "path": "backgrounds/rear_gate/castle_wall.png",
+      "path": "backgrounds/rear_gate/castle_wall.webp",
       "width": 3136,
       "height": 720,
       "transparent": true,
@@ -34,7 +34,7 @@
     },
     {
       "name": "villa_exterior",
-      "path": "backgrounds/rear_gate/villa_exterior.png",
+      "path": "backgrounds/rear_gate/villa_exterior.webp",
       "width": 1500,
       "height": 720,
       "transparent": true
@@ -48,7 +48,7 @@
     },
     {
       "name": "castle_f2_sanctum",
-      "path": "backgrounds/castle/castle_f2_sanctum.png",
+      "path": "backgrounds/castle/castle_f2_sanctum.webp",
       "width": 1800,
       "height": 720,
       "transparent": false
@@ -76,7 +76,7 @@
     },
     {
       "name": "castle_f5_sky",
-      "path": "backgrounds/castle/castle_f5_sky.png",
+      "path": "backgrounds/castle/castle_f5_sky.webp",
       "width": 1536,
       "height": 720,
       "transparent": false,
@@ -85,7 +85,7 @@
     },
     {
       "name": "castle_f5_far",
-      "path": "backgrounds/castle/castle_f5_far.png",
+      "path": "backgrounds/castle/castle_f5_far.webp",
       "width": 1664,
       "height": 720,
       "transparent": true,
@@ -94,7 +94,7 @@
     },
     {
       "name": "castle_f5_terrace",
-      "path": "backgrounds/castle/castle_f5_terrace.png",
+      "path": "backgrounds/castle/castle_f5_terrace.webp",
       "width": 2400,
       "height": 720,
       "transparent": true
@@ -125,63 +125,63 @@
     },
     {
       "name": "castle_pillar",
-      "path": "props/castle_pillar.png",
+      "path": "props/castle_pillar.webp",
       "width": 140,
       "height": 300,
       "transparent": true
     },
     {
       "name": "castle_banner",
-      "path": "props/castle_banner.png",
+      "path": "props/castle_banner.webp",
       "width": 190,
       "height": 280,
       "transparent": true
     },
     {
       "name": "brazier",
-      "path": "props/brazier.png",
+      "path": "props/brazier.webp",
       "width": 160,
       "height": 220,
       "transparent": true
     },
     {
       "name": "kitchen_prep_table",
-      "path": "props/kitchen_prep_table.png",
+      "path": "props/kitchen_prep_table.webp",
       "width": 260,
       "height": 150,
       "transparent": true
     },
     {
       "name": "kitchen_stove",
-      "path": "props/kitchen_stove.png",
+      "path": "props/kitchen_stove.webp",
       "width": 230,
       "height": 180,
       "transparent": true
     },
     {
       "name": "kitchen_dining_table",
-      "path": "props/kitchen_dining_table.png",
+      "path": "props/kitchen_dining_table.webp",
       "width": 300,
       "height": 150,
       "transparent": true
     },
     {
       "name": "villa_vase",
-      "path": "props/villa_vase.png",
+      "path": "props/villa_vase.webp",
       "width": 140,
       "height": 220,
       "transparent": true
     },
     {
       "name": "villa_rug",
-      "path": "props/villa_rug.png",
+      "path": "props/villa_rug.webp",
       "width": 320,
       "height": 100,
       "transparent": true
     },
     {
       "name": "healing_vomit",
-      "path": "props/healing_vomit.png",
+      "path": "props/healing_vomit.webp",
       "width": 128,
       "height": 96,
       "transparent": true

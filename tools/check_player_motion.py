@@ -3,17 +3,18 @@
 import json, math, sys
 from pathlib import Path
 from PIL import Image, ImageDraw
+from check_sprite_frames import frame_images
 ROOT=Path(__file__).resolve().parents[1]
 
 def main():
     manifest=json.loads((ROOT/'assets/animation_manifest.json').read_text());out=ROOT/'docs/motion_review';out.mkdir(parents=True,exist_ok=True)
     clips=[c for c in manifest['clips'] if len(sys.argv)==1 or c['name'] in sys.argv[1:]]
     for c in clips:
-        source=Image.open(ROOT/'assets'/c['sheet']).convert('RGBA');n=c['frames'];cols=5;size=256
+        source=frame_images(ROOT/'assets'/c['sheet'],c);n=c['frames'];cols=5;size=256
         grid=Image.new('RGB',(cols*size,math.ceil(n/cols)*(size+28)),(30,35,44));draw=ImageDraw.Draw(grid);frames=[];durations=[];previous=None
         boundaries=c.get('frame_boundaries_seconds',[i*c['duration_seconds']/n for i in range(n+1)])
         for i in range(n):
-            f=source.crop((640*i,0,640*(i+1),640));x=(i%cols)*size;y=(i//cols)*(size+28)
+            f=source[i];x=(i%cols)*size;y=(i//cols)*(size+28)
             thumb=f.resize((size,size),Image.Resampling.LANCZOS);grid.paste(thumb,(x,y),thumb)
             draw.line((x,y+240,x+size,y+240),fill=(95,160,190),width=1)
             b=f.getchannel('A').getbbox();foot=(b[0]+b[2])/2

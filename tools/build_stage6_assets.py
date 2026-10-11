@@ -90,7 +90,7 @@ def npc():
  path='sprites/npcs/enkidua/manifest.json';save(A/path,dict(character='enkidua',height_ratio=1.04,clips=cs));manifests.append(path)
 def world():
  im=atlas('backgrounds');cuts=[0,365,795,im.height]
- for i,(path,size,floor,targetfloor) in enumerate([('backgrounds/nimrod_home/home_interior_bg.png',(1800,720),281,620),('backgrounds/villa_backyard/backyard_bg.png',(1500,720),360,720),('backgrounds/cedar/boss_bg.png',(1600,960),360,800)]):
+ for i,(path,size,floor,targetfloor) in enumerate([('backgrounds/nimrod_home/home_interior_bg.webp',(1800,720),281,620),('backgrounds/villa_backyard/backyard_bg.png',(1500,720),360,720),('backgrounds/cedar/boss_bg.png',(1600,960),360,800)]):
   band=im.crop((0,cuts[i],im.width,cuts[i+1]));floor=min(floor,band.height-1);upper=band.crop((0,0,band.width,floor)).resize((size[0],targetfloor),Image.Resampling.LANCZOS);result=Image.new('RGBA',size);result.alpha_composite(upper)
   if targetfloor<size[1]:result.alpha_composite(band.crop((0,floor,band.width,band.height)).resize((size[0],size[1]-targetfloor),Image.Resampling.LANCZOS),(0,targetfloor))
   still(result,path,size,True)

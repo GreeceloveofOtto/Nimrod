@@ -59,8 +59,8 @@ def main():
     # Atlas separators are excluded; no new pixels are painted.
     for (name,width,ratio,opaque),box in zip([('sky',1536,0.05,True),('far_city',2048,0.2,False),('castle_wall',2816,0.45,False)],[(0,0,1254,310),(0,312,1254,627),(0,628,1254,940)]):
         image('layers_atlas.png',box,'backgrounds/castle_front/'+name+'.png',(width,720),not opaque,scroll_ratio=ratio,map_width=4400)
-    image('facades_atlas.png',(0,0,1448,537),'backgrounds/castle_front/downtown_passage_facade.png',(1100,720))
-    image('facades_atlas.png',(0,542,1448,1045),'backgrounds/castle_front/castle_facade.png',(1500,720))
+    image('facades_atlas.png',(0,0,1448,537),'backgrounds/castle_front/downtown_passage_facade.webp',(1100,720))
+    image('facades_atlas.png',(0,542,1448,1045),'backgrounds/castle_front/castle_facade.webp',(1500,720))
     prop=Image.open(SOURCE/'props_atlas.png')
     specs=[('castle_gate_wall_left',(0,0,724,414),(420,600)),('castle_gate_wall_right',(724,0,1448,414),(420,600)),('castle_front_brazier',(0,414,483,873),(180,200)),('castle_front_statue',(483,414,965,873),(230,320)),('castle_front_lamp_post',(965,414,1448,873),(150,260))]
     for name,box,size in specs:image('props_atlas.png',box,'props/'+name+'.png',size,trim=True)
@@ -69,8 +69,8 @@ def main():
     # generated source. No old background image is regenerated or repainted.
     for name,box in [('floor_tile',(12,88,1436,346)),('balcony_floor_tile',(12,435,1436,694))]:
         image('../stage2_environment/tiles.png',box,'tiles/castle/'+name+'.png',(512,180),False,False,True)
-    image('fx_atlas.png',(0,0,1448,766),'fx/npc_light_pool.png',(512,256),trim=True)
-    image('fx_atlas.png',(0,766,1448,1086),'fx/contact_shadow.png',(256,64),trim=True)
+    image('fx_atlas.png',(0,0,1448,766),'fx/npc_light_pool.webp',(512,256),trim=True)
+    image('fx_atlas.png',(0,766,1448,1086),'fx/contact_shadow.webp',(256,64),trim=True)
     doors=chromakey(Image.open(SOURCE/'doors_atlas.png'))
     clips=[]
     for name,box,frames,size in [('castle_front_door_interior',(0,22,1254,266),6,(320,420)),('castle_front_door_exterior',(0,297,1254,573),6,(360,460)),('downtown_passage_door',(0,856,270,1230),1,(320,460))]:
@@ -82,7 +82,7 @@ def main():
         poses=[foreground(great.crop(cell_box(great,4,2,i%4,i//4)))[0] for i in range(8)]
     else:
         strip=doors.crop((0,611,1254,843));poses=[foreground(strip.crop(cell_box(strip,8,1,i,0)))[0] for i in range(8)]
-    clips.append(sheet(poses,'props/doors/castle_great_gate.png',(640,520),1.2))
+    clips.append(sheet(poses,'props/doors/castle_great_gate.webp',(640,520),1.2))
     (ASSETS/'props/doors/stage3_manifest.json').write_text(json.dumps({'clips':clips},indent=2)+'\n')
     # Preserve all four Inanna candidates and the five selected design sheets.
     for name in ['lugalbanda','ninsun','shamhat','papsukkal']:

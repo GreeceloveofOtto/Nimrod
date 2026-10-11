@@ -3,7 +3,7 @@
   "clips": [
     {
       "name": "glide",
-      "sheet": "sprites/enemies/wraith_ray/glide.png",
+      "sheet": "sprites/enemies/wraith_ray/glide.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 8,
@@ -17,13 +17,22 @@
         320
       ],
       "image_size": [
-        5120,
-        640
-      ]
+        1456,
+        173
+      ],
+      "qa": {
+        "movement": true
+      },
+      "trim": {
+        "x": 243,
+        "y": 259,
+        "w": 182,
+        "h": 173
+      }
     },
     {
       "name": "turn",
-      "sheet": "sprites/enemies/wraith_ray/turn.png",
+      "sheet": "sprites/enemies/wraith_ray/turn.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 4,
@@ -37,13 +46,19 @@
         320
       ],
       "image_size": [
-        2560,
-        640
-      ]
+        596,
+        169
+      ],
+      "trim": {
+        "x": 245,
+        "y": 259,
+        "w": 149,
+        "h": 169
+      }
     },
     {
       "name": "hurt",
-      "sheet": "sprites/enemies/wraith_ray/hurt.png",
+      "sheet": "sprites/enemies/wraith_ray/hurt.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 2,
@@ -57,13 +72,19 @@
         320
       ],
       "image_size": [
-        1280,
-        640
-      ]
+        386,
+        174
+      ],
+      "trim": {
+        "x": 222,
+        "y": 252,
+        "w": 193,
+        "h": 174
+      }
     },
     {
       "name": "death",
-      "sheet": "sprites/enemies/wraith_ray/death.png",
+      "sheet": "sprites/enemies/wraith_ray/death.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -77,9 +98,19 @@
         320
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        990,
+        204
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 236,
+        "y": 234,
+        "w": 165,
+        "h": 204
+      }
     }
   ],
   "aliases": {

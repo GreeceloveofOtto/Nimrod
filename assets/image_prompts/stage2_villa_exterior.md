@@ -2,7 +2,7 @@
 
 목적: 2단계 레벨의 생성 이미지 배경·지형·소품
 
-파일: `assets/backgrounds/rear_gate/villa_exterior.png`
+파일: `assets/backgrounds/rear_gate/villa_exterior.webp`
 
 크기: 1500 × 720px; 프레임: 1, 한 줄.
 

@@ -21,7 +21,7 @@ func _run() -> void:
     await process_frame
     _check(hero.get_max_hp()==270 and hero.hp==190,"E dialogue grants blessing after automatic completion")
     _check(not npc.interaction_prompt.visible,"Blessed NPC hides repeated E prompt")
-    root.get_node("GameState").reset_run()
+    root.get_node("GameState").reset_run(false)
     hero.reset_run_state()
     hero.hp = 100
     _check(hero.apply_shamhat_blessing(),"First blessing applies")
@@ -31,18 +31,19 @@ func _run() -> void:
     hero.modifiers.add_modifier("future", {"attack_speed":2.0})
     _check(hero.modifiers.multiplier("attack_speed") == 2.0,"Speed capped2")
     hero.modifiers.modifiers.erase("future")
+    root.get_node("GameState").set_weapon("axe")
     hero._begin_attack(1)
     hero._update_attack(.02)
     _check(is_equal_approx(hero.attack_clock,.03),"Only attack clock speeds up")
     _check(is_equal_approx(NimrodPlayer.ROLL_DURATION,.48) and is_equal_approx(NimrodPlayer.RUN_SPEED,360),"Roll and movement unchanged")
     var zoom: Vector2 = hero.camera.zoom
     var offset: Vector2 = hero.camera.offset
-    root.get_node("Dialogue").play(["당신이 자꾸 신경쓰여요."], npc, {"character_seconds":.001,"hold_seconds":.01})
+    root.get_node("Dialogue").play(["네가 자꾸 신경쓰여."], npc, {"character_seconds":.001,"hold_seconds":.01})
     await process_frame
     _check(paused and root.get_node("Dialogue").active and not npc.name_tag.visible,"Dialogue freezes world and hides name")
     await root.get_node("Dialogue").finished
     _check(not paused and not root.get_node("Dialogue").active and hero.camera.zoom.is_equal_approx(zoom) and hero.camera.offset.is_equal_approx(offset),"Dialogue restores pause and camera")
-    root.get_node("GameState").reset_run()
+    root.get_node("GameState").reset_run(false)
     hero.reset_run_state()
     _check(hero.hp == 180 and hero.get_max_hp() == 180 and not root.get_node("GameState").run_flags.has("shamhat_blessing"),"Death resets run modifier and flags")
     root.get_node("Dialogue").play(["취소 검증"],npc,{"character_seconds":.01})

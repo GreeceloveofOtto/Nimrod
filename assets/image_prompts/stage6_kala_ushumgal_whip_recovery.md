@@ -1,6 +1,6 @@
 # whip_recovery
 목적: 6단계 이미지 생성 애니메이션.
-경로: assets/sprites/enemies/kala_ushumgal/whip_recovery.png
+경로: assets/sprites/enemies/kala_ushumgal/whip_recovery.webp
 프레임: 1536x1280, 5프레임, 1.0초, 앵커 [768, 1200].
 배경: #FF00FF → pack_sprites.py 크로마키 투명 처리.
 

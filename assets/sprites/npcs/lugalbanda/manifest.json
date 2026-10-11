@@ -12,7 +12,7 @@
   "clips": [
     {
       "name": "idle",
-      "sheet": "sprites/npcs/lugalbanda/idle.png",
+      "sheet": "sprites/npcs/lugalbanda/idle.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -26,13 +26,19 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        942,
+        387
+      ],
+      "trim": {
+        "x": 242,
+        "y": 215,
+        "w": 157,
+        "h": 387
+      }
     },
     {
       "name": "idle_front",
-      "sheet": "sprites/npcs/lugalbanda/idle_front.png",
+      "sheet": "sprites/npcs/lugalbanda/idle_front.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -46,9 +52,15 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        1020,
+        391
+      ],
+      "trim": {
+        "x": 235,
+        "y": 211,
+        "w": 170,
+        "h": 391
+      }
     }
   ],
   "design_reference": "reference/lugalbanda_design.png",

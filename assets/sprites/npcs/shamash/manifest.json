@@ -4,7 +4,7 @@
   "clips": [
     {
       "name": "idle_front",
-      "sheet": "sprites/npcs/shamash/idle_front.png",
+      "sheet": "sprites/npcs/shamash/idle_front.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -18,13 +18,19 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        1116,
+        384
+      ],
+      "trim": {
+        "x": 227,
+        "y": 218,
+        "w": 186,
+        "h": 384
+      }
     },
     {
       "name": "idle",
-      "sheet": "sprites/npcs/shamash/idle.png",
+      "sheet": "sprites/npcs/shamash/idle.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -38,9 +44,15 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        696,
+        384
+      ],
+      "trim": {
+        "x": 262,
+        "y": 218,
+        "w": 116,
+        "h": 384
+      }
     }
   ]
 }

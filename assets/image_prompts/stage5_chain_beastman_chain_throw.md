@@ -1,5 +1,5 @@
 # death / chain_throw
-목적: 괴수 애니메이션. 경로: assets/sprites/enemies/chain_beastman/chain_throw.png
+목적: 괴수 애니메이션. 경로: assets/sprites/enemies/chain_beastman/chain_throw.webp
 규격: 4 × 896x768, 0.35초, 앵커 [448, 720].
 배경: #FF00FF → pack_sprites.py 크로마키/정렬/합성.
 

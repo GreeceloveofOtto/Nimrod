@@ -4,7 +4,7 @@
 
 최종 파일·시트 크기:
 
-- assets/sprites/npcs/ninsun/idle_front.png: 3840x640
+- assets/sprites/npcs/ninsun/idle_front.webp: 3840x640
 
 프레임: 6 / 2.4초 루프. 배경: 스프라이트·투명 소품은 단색 #FF00FF로 생성 후 크로마키; 불투명 배경은 알파 255.
 앵커: [320,600], 하단 중앙 정렬.

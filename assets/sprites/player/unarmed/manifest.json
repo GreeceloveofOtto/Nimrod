@@ -1,0 +1,431 @@
+{
+  "step": 17,
+  "frame_size": [
+    640,
+    640
+  ],
+  "weapon": "unarmed",
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/player/unarmed/idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 10,
+      "rows": 1,
+      "frames": 10,
+      "duration_seconds": 2.2,
+      "fps": 4.545454545454545,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1450,
+        369
+      ],
+      "qa": {
+        "height_tol": 0.1,
+        "pose_height_exception": false
+      },
+      "trim": {
+        "x": 248,
+        "y": 233,
+        "w": 145,
+        "h": 369
+      }
+    },
+    {
+      "name": "walk",
+      "sheet": "sprites/player/unarmed/walk.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 10,
+      "rows": 1,
+      "frames": 10,
+      "duration_seconds": 1.05,
+      "fps": 9.523809523809524,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2430,
+        344
+      ],
+      "qa": {
+        "height_tol": 0.1,
+        "pose_height_exception": false
+      },
+      "trim": {
+        "x": 198,
+        "y": 258,
+        "w": 243,
+        "h": 344
+      }
+    },
+    {
+      "name": "crouch_enter",
+      "sheet": "sprites/player/unarmed/crouch_enter.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.14,
+      "fps": 28.57142857142857,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        676,
+        295
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 236,
+        "y": 307,
+        "w": 169,
+        "h": 295
+      }
+    },
+    {
+      "name": "crouch_idle",
+      "sheet": "sprites/player/unarmed/crouch_idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.8,
+      "fps": 7.5,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1092,
+        213
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 229,
+        "y": 389,
+        "w": 182,
+        "h": 213
+      }
+    },
+    {
+      "name": "crouch_exit",
+      "sheet": "sprites/player/unarmed/crouch_exit.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.13,
+      "fps": 30.769230769230766,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        736,
+        357
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 228,
+        "y": 245,
+        "w": 184,
+        "h": 357
+      }
+    },
+    {
+      "name": "jump_start",
+      "sheet": "sprites/player/unarmed/jump_start.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.13,
+      "fps": 30.769230769230766,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1028,
+        326
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 192,
+        "y": 276,
+        "w": 257,
+        "h": 326
+      }
+    },
+    {
+      "name": "jump_rise",
+      "sheet": "sprites/player/unarmed/jump_rise.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.42,
+      "fps": 14.285714285714286,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1350,
+        332
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 208,
+        "y": 270,
+        "w": 225,
+        "h": 332
+      }
+    },
+    {
+      "name": "fall",
+      "sheet": "sprites/player/unarmed/fall.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.36,
+      "fps": 16.666666666666668,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1914,
+        351
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 160,
+        "y": 251,
+        "w": 319,
+        "h": 351
+      }
+    },
+    {
+      "name": "land",
+      "sheet": "sprites/player/unarmed/land.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.24,
+      "fps": 20.833333333333336,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1770,
+        416
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 143,
+        "y": 186,
+        "w": 354,
+        "h": 416
+      }
+    },
+    {
+      "name": "drop_through",
+      "sheet": "sprites/player/unarmed/drop_through.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.22,
+      "fps": 22.727272727272727,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1675,
+        367
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 152,
+        "y": 235,
+        "w": 335,
+        "h": 367
+      }
+    },
+    {
+      "name": "hurt",
+      "sheet": "sprites/player/unarmed/hurt.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.32,
+      "fps": 15.625,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1410,
+        377
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 179,
+        "y": 225,
+        "w": 282,
+        "h": 377
+      }
+    },
+    {
+      "name": "death",
+      "sheet": "sprites/player/unarmed/death.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 0.6,
+      "fps": 13.333333333333334,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1472,
+        362
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 220,
+        "y": 240,
+        "w": 184,
+        "h": 362
+      }
+    },
+    {
+      "name": "run",
+      "sheet": "sprites/player/unarmed/run.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 10,
+      "rows": 1,
+      "frames": 10,
+      "duration_seconds": 0.82,
+      "fps": 12.195121951219512,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2890,
+        328
+      ],
+      "qa": {
+        "height_tol": 0.1,
+        "pose_height_exception": true,
+        "pose_height_reason": "Forward-leaning run follows existing axe pose height"
+      },
+      "trim": {
+        "x": 176,
+        "y": 274,
+        "w": 289,
+        "h": 328
+      }
+    },
+    {
+      "name": "roll",
+      "sheet": "sprites/player/unarmed/roll.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 12,
+      "rows": 1,
+      "frames": 12,
+      "duration_seconds": 0.48,
+      "fps": 25.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        3636,
+        370
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 168,
+        "y": 232,
+        "w": 303,
+        "h": 370
+      }
+    }
+  ]
+}

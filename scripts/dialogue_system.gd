@@ -80,7 +80,9 @@ func play(lines: Array, speaker: Node2D, options: Dictionary = {}) -> void:
     var zoom_in: bool = bool(options.get("zoom", freeze))
     var was_paused: bool = get_tree().paused
     var player: Node2D = get_tree().get_first_node_in_group("player")
-    var camera: Camera2D = player.camera if player != null else null
+    var camera: Camera2D
+    if player != null:
+        camera = player.camera
     var previous_zoom: Vector2 = camera.zoom if camera != null else Vector2.ONE
     var previous_position: Vector2 = camera.position if camera != null else Vector2.ZERO
     var previous_offset: Vector2 = camera.offset if camera != null else Vector2.ZERO
@@ -111,16 +113,36 @@ func play(lines: Array, speaker: Node2D, options: Dictionary = {}) -> void:
         var tween := create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS).set_parallel(true)
         camera_tween = tween
         tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
-        tween.tween_property(camera, "zoom", Vector2.ONE * float(settings["zoom"]), float(settings["camera_seconds"]))
-        tween.tween_property(camera, "offset", speaker_head(speaker) - player.global_position - camera.position, float(settings["camera_seconds"]))
+        var focus_point: Vector2 = speaker_head(speaker)
+        var target_zoom: float = float(settings["zoom"])
+        if str(options.get("focus", "")) == "group":
+            var group_bounds := Rect2(speaker_head(speaker), Vector2.ONE)
+            for participant: Node2D in options.get("participants", {}).values():
+                group_bounds = group_bounds.expand(participant.global_position).expand(speaker_head(participant))
+            focus_point = group_bounds.get_center()
+            var padded: Vector2 = group_bounds.size + Vector2(240, 240)
+            target_zoom = minf(float(options.get("group_zoom_max", 1.5)), minf(1280.0 / padded.x, 720.0 / padded.y))
+        tween.tween_property(camera, "zoom", Vector2.ONE * target_zoom, float(settings["camera_seconds"]))
+        tween.tween_property(camera, "offset", focus_point - player.global_position - camera.position, float(settings["camera_seconds"]))
         await tween.finished
         if token != generation:
             return
     _canvas.show()
     for row in lines:
         var line: String = str(row.get("text", "")) if row is Dictionary else str(row)
-        if row is Dictionary and row.get("speaker") is Node2D:
-            _speaker = row["speaker"]
+        if row is Dictionary:
+            var named_speaker: Variant = row.get("speaker")
+            if named_speaker is Node2D:
+                _speaker = named_speaker
+            elif named_speaker is String:
+                _speaker = options.get("participants", {}).get(named_speaker, speaker)
+            if str(row.get("event", "")) == "axe_gift":
+                _canvas.hide()
+                await give_axe(options.get("participants", {}).get("lugalbanda", speaker), player)
+                if token != generation:
+                    return
+                _canvas.show()
+                continue
         text_label.text = line
         text_label.visible_characters = 0
         balloon.reset_size()
@@ -183,3 +205,22 @@ func cancel() -> void:
     _speaker = null
     active = false
     finished.emit()
+
+func give_axe(father: Node2D, hero: NimrodPlayer) -> void:
+    if not is_instance_valid(hero) or not is_instance_valid(father):
+        return
+    var spec: Dictionary = settings["parent_gift"]
+    var gift := Node2D.new()
+    gift.process_mode = Node.PROCESS_MODE_ALWAYS
+    gift.z_index = 70
+    get_tree().current_scene.add_child(gift)
+    AssetVisual.add_image(gift, str(spec["gift_art"]), Vector2(-33, -21), Vector2(66, 42))
+    gift.global_position = father.global_position + Vector2(20, -68)
+    var tween := gift.create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+    tween.tween_property(gift, "global_position", hero.global_position + Vector2(0, -60), float(spec["gift_seconds"]))
+    await tween.finished
+    gift.queue_free()
+    if cancelled or not is_instance_valid(hero):
+        return
+    get_node("/root/GameState").set_weapon("axe")
+    get_node("/root/SceneManager").show_toast("니므롯의 도끼를 얻었다")

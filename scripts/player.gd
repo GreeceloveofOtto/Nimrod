@@ -99,11 +99,21 @@ var pull_escaped: bool = false
 var damage_tick_clock: float = 0.0
 var tick_sources: Dictionary = {}
 var modifiers := PlayerModifiers.new()
+var weapon: String = "none"
+var max_step: int = 0
+var weapon_hitstop: float = HITSTOP_SECONDS
+var weapons_data: Dictionary = {}
+var last_safe_position := Vector2.ZERO
+var stuck_left: float = 0.0
+var stuck_origin := Vector2.ZERO
+var stuck_recoveries: Array[Dictionary] = []
 
 func _ready() -> void:
     add_to_group("player")
     _load_attack_data()
     _load_sprites()
+    get_node("/root/GameState").weapon_changed.connect(_on_weapon_changed)
+    _on_weapon_changed(get_node("/root/GameState").get_weapon())
     collider.shape = collider.shape.duplicate()
     hit_rectangle.size = Vector2(1, 1)
     _set_standing_collider()
@@ -121,6 +131,7 @@ func _load_attack_data() -> void:
     if not (parsed is Dictionary):
         push_error("Invalid player attack data")
         return
+    weapons_data = parsed.get("weapons", {"axe": {"max_step": 4, "attacks": parsed.get("attacks", []), "shockwave": parsed.get("shockwave", {})}})
     for row: Dictionary in parsed.get("attacks", []):
         attack_data[int(row.get("step", 0))] = row
     shockwave_data = parsed.get("shockwave", {})
@@ -129,7 +140,12 @@ func _load_attack_data() -> void:
     pull_data = parsed.get("pull", {})
 
 func _load_sprites() -> void:
-    var file := FileAccess.open("res://assets/animation_manifest.json", FileAccess.READ)
+    textures.clear()
+    clip_data.clear()
+    var manifest_path: String = "res://assets/sprites/player/" + ("unarmed" if weapon == "none" else weapon) + "/manifest.json"
+    if not FileAccess.file_exists(manifest_path):
+        manifest_path = "res://assets/animation_manifest.json"
+    var file := FileAccess.open(manifest_path, FileAccess.READ)
     if file == null:
         push_error("Missing animation manifest")
         return
@@ -139,14 +155,14 @@ func _load_sprites() -> void:
         return
     for clip_variant in parsed.get("clips", []):
         var clip: Dictionary = clip_variant
-        var name: String = str(clip.get("name", ""))
+        var clip_or_sound_name: String = str(clip.get("name", ""))
         var path: String = "res://assets/" + str(clip.get("sheet", ""))
         var texture := load(path) as Texture2D
         if texture == null:
             push_error("Missing sprite: " + path)
             continue
-        textures[name] = texture
-        clip_data[name] = clip
+        textures[clip_or_sound_name] = texture
+        clip_data[clip_or_sound_name] = clip
 
 func _physics_process(delta: float) -> void:
     if transition_locked:
@@ -155,6 +171,8 @@ func _physics_process(delta: float) -> void:
             _show_clip("run", _portal_walk_clock)
             visual.flip_h = _portal_walk_direction < 0
         return
+    _recover_solid_overlap()
+    _track_stuck(delta)
     if Input.is_action_just_pressed("restart"):
         _request_run_restart()
         return
@@ -174,7 +192,7 @@ func _physics_process(delta: float) -> void:
         death_clock += delta
         velocity.x = move_toward(velocity.x, 0.0, GROUND_ACCEL * delta)
         velocity.y += GRAVITY * delta
-        move_and_slide()
+        _move_with_surface_rules(delta)
         _show_clip("death", death_clock)
         if death_clock >= Config.PLAYER_DEATH_RESTART_SECONDS:
             _request_run_restart()
@@ -190,7 +208,7 @@ func _physics_process(delta: float) -> void:
             var motion_x: float = (pull_target_x - global_position.x) * minf(1.0, delta / maxf(delta, pull_left))
             velocity.x = motion_x / delta
             _integrate_vertical(delta)
-            move_and_slide()
+            _move_with_surface_rules(delta)
             pull_left = maxf(0.0, pull_left - delta)
             _refresh_normal_visual(delta)
             return
@@ -203,7 +221,7 @@ func _physics_process(delta: float) -> void:
         _update_roll(delta)
         _integrate_vertical(delta)
         var roll_y_before: float = velocity.y
-        move_and_slide()
+        _move_with_surface_rules(delta)
         _record_landing(grounded_before_roll, roll_y_before)
         _update_drop_mask(delta)
         if action == "roll":
@@ -219,7 +237,7 @@ func _physics_process(delta: float) -> void:
         velocity.x = move_toward(velocity.x, 0.0, GROUND_ACCEL * delta)
         _integrate_vertical(delta)
         var hurt_y_before: float = velocity.y
-        move_and_slide()
+        _move_with_surface_rules(delta)
         _record_landing(grounded_before_hurt, hurt_y_before)
         _show_clip("hurt", hurt_clock)
         if hurt_clock >= hurt_duration:
@@ -232,7 +250,7 @@ func _physics_process(delta: float) -> void:
         if combo_left <= 0.0:
             combo_next = 1
 
-    if Input.is_action_just_pressed("attack"):
+    if max_step > 0 and Input.is_action_just_pressed("attack"):
         var attack_axis: float = Input.get_axis("move_left", "move_right")
         if action == "attack" and _can_direction_cancel(attack_axis):
             if hitstop_left > 0.0:
@@ -240,10 +258,10 @@ func _physics_process(delta: float) -> void:
                 direction_cancel_buffer_left = float(direction_cancel_data.get("buffer_during_hitstop", 0.12))
             else:
                 _direction_cancel_attack(attack_axis)
-        elif action == "attack" and attack_step < 4:
+        elif action == "attack" and attack_step < max_step:
             buffered_attack = true
         elif action == "normal":
-            var chosen_step: int = 4 if not is_on_floor() else combo_next
+            var chosen_step: int = max_step if not is_on_floor() else combo_next
             _begin_attack(chosen_step)
 
     if hitstop_left > 0.0:
@@ -296,7 +314,7 @@ func _physics_process(delta: float) -> void:
     velocity.x = move_toward(velocity.x, desired_speed, accel * delta)
     _integrate_vertical(delta)
     var y_before: float = velocity.y
-    move_and_slide()
+    _move_with_surface_rules(delta)
     _record_landing(grounded_before, y_before)
 
     _update_footsteps(delta)
@@ -372,9 +390,9 @@ func _can_direction_cancel(axis: float) -> bool:
 func _direction_cancel_attack(axis: float) -> void:
     if action != "attack" or not _can_direction_cancel(axis):
         return
-    var next_step: int = (attack_step % 4) + 1 if bool(direction_cancel_data.get("keep_combo", true)) else 1
+    var next_step: int = (attack_step % max_step) + 1 if bool(direction_cancel_data.get("keep_combo", true)) else 1
     if not is_on_floor():
-        next_step = 4
+        next_step = max_step
         air_direction_cancels += 1
     _cancel_attack()
     facing = 1 if axis > 0.0 else -1
@@ -394,13 +412,15 @@ func apply_pull(target_x: float, seconds: float) -> bool:
     return true
 
 func _begin_attack(step: int) -> void:
-    if not attack_data.has(clampi(step, 1, 4)):
+    if max_step == 0 or not attack_data.has(clampi(step, 1, max_step)):
+        return
+    if not attack_data.has(clampi(step, 1, max_step)):
         return
     if crouching and not _can_stand():
         return
     attack_generation += 1
     action = "attack"
-    attack_step = clampi(step, 1, 4)
+    attack_step = clampi(step, 1, max_step)
     attack_clock = 0.0
     buffered_attack = false
     attack_already_hit.clear()
@@ -424,22 +444,22 @@ func _update_attack(delta: float) -> void:
         _resolve_axe_hit()
         if action != "attack" or attack_generation != generation:
             return
-    if attack_step == 4 and not shockwave_done and attack_clock >= float(shockwave_data["start"]):
+    if weapon == "axe" and attack_step == 4 and not shockwave_done and attack_clock >= float(shockwave_data["start"]):
         _resolve_shockwave()
         if action != "attack" or attack_generation != generation:
             return
         shockwave_done = true
     if attack_clock >= float(tuning["duration"]):
         var finished_step: int = attack_step
-        if buffered_attack and finished_step < 4 and is_on_floor():
+        if buffered_attack and finished_step < max_step and is_on_floor():
             _begin_attack(finished_step + 1)
             return
         action = "normal"
         attack_step = 0
         attack_clock = 0.0
         buffered_attack = false
-        combo_next = finished_step + 1 if finished_step < 4 else 1
-        combo_left = COMBO_RESET_SECONDS if finished_step < 4 else 0.0
+        combo_next = finished_step + 1 if finished_step < max_step else 1
+        combo_left = COMBO_RESET_SECONDS if finished_step < max_step else 0.0
         debug_rect = Rect2()
         shockwave_rect = Rect2()
     _refresh_attack_visual()
@@ -497,12 +517,12 @@ func _resolve_axe_hit() -> void:
         if result is Dictionary and int(result.get("damage_dealt", damage)) <= 0:
             continue
         _play_shared_sfx("axe_hit_heavy" if strike == 4 else "axe_hit_flesh")
-        hitstop_left = HITSTOP_SECONDS
+        hitstop_left = weapon_hitstop
         shake_time = maxf(shake_time, float(tuning["shake"]))
         attack_connected.emit(damage, strike)
 
 func _resolve_shockwave() -> void:
-    if action != "attack" or attack_step != 4:
+    if action != "attack" or weapon != "axe" or attack_step != 4:
         return
     var generation: int = attack_generation
     shockwave_rect = _configured_hitbox(shockwave_data)
@@ -540,7 +560,7 @@ func _resolve_shockwave() -> void:
         if result is Dictionary and int(result.get("damage_dealt", damage)) <= 0:
             continue
         _play_shared_sfx("axe_hit_heavy")
-        hitstop_left = HITSTOP_SECONDS
+        hitstop_left = weapon_hitstop
         shake_time = maxf(shake_time, float(shockwave_data["shake"]))
         attack_connected.emit(damage, 4)
 
@@ -741,6 +761,9 @@ func reset_run_state() -> void:
     damage_tick_clock = 0.0
     end_portal_walk()
     _set_standing_collider()
+    last_safe_position = global_position
+    stuck_origin = global_position
+    stuck_left = 0.0
     collision_mask = Config.PLAYER_COLLISION_MASK
     camera.offset = Vector2.ZERO
     modulate = Color.WHITE
@@ -773,10 +796,10 @@ func heal(amount: int) -> int:
     hp += restored
     return restored
 
-func _play_shared_sfx(name: String) -> void:
+func _play_shared_sfx(clip_or_sound_name: String) -> void:
     var audio: Node = get_node_or_null("/root/Audio")
     if audio != null and audio.has_method("play_sfx"):
-        audio.call("play_sfx", name, global_position)
+        audio.call("play_sfx", clip_or_sound_name, global_position)
 
 func _record_landing(was_grounded: bool, vertical_speed: float) -> void:
     if not was_grounded and is_on_floor():
@@ -816,18 +839,18 @@ func _refresh_normal_visual(delta: float) -> void:
         clip_name = "run"
     _show_clip(clip_name, specific_t, delta)
 
-func _show_clip(name: String, explicit_time: float = -1.0, delta: float = 0.0) -> void:
-    if not clip_data.has(name):
+func _show_clip(clip_or_sound_name: String, explicit_time: float = -1.0, delta: float = 0.0) -> void:
+    if not clip_data.has(clip_or_sound_name):
         return
-    if displayed_clip != name:
-        displayed_clip = name
+    if displayed_clip != clip_or_sound_name:
+        displayed_clip = clip_or_sound_name
         display_clock = 0.0
-        visual.texture = textures[name]
+        visual.texture = textures[clip_or_sound_name]
     if explicit_time >= 0.0:
         display_clock = explicit_time
     else:
         display_clock += delta
-    var clip: Dictionary = clip_data[name]
+    var clip: Dictionary = clip_data[clip_or_sound_name]
     var count: int = int(clip.get("frames", 1))
     var duration: float = maxf(0.001, float(clip.get("duration_seconds", 1.0)))
     var looped: bool = bool(clip.get("loop", false))
@@ -840,15 +863,8 @@ func _show_clip(name: String, explicit_time: float = -1.0, delta: float = 0.0) -
             if local_t < float(boundaries[frame + 1]):
                 index = frame
                 break
-    var width: int = int(clip.get("frame_width", 512))
-    var height: int = int(clip.get("frame_height", 512))
-    var cols: int = int(clip.get("columns", 1))
-    visual.region_rect = Rect2(Vector2((index % cols) * width, floori(float(index) / float(cols)) * height), Vector2(width, height))
-    var anchor: Array = clip.get("anchor_px", [256, 468])
-    var anchor_x: float = float(anchor[0])
-    var anchor_y: float = float(anchor[1])
-    visual.offset = Vector2(width * 0.5 - anchor_x, height * 0.5 - anchor_y)
     visual.flip_h = facing < 0
+    AssetVisual.apply_frame(visual, clip, index)
     visual.modulate = Color("e2fcff") if flash_time > 0.0 else Color.WHITE
 
 func _update_camera_shake(delta: float) -> void:
@@ -883,3 +899,109 @@ func _draw() -> void:
         if shockwave_rect.size != Vector2.ZERO:
             draw_rect(shockwave_rect, Color(1.0, 0.9, 0.3, 0.22), true)
             draw_rect(shockwave_rect, Color(1.0, 0.9, 0.3, 0.85), false, 2.0)
+
+func _on_weapon_changed(value: String) -> void:
+    var saved_clip: String = displayed_clip
+    var saved_clock: float = display_clock
+    if action == "attack":
+        _cancel_attack()
+    weapon = value
+    var tuning: Dictionary = weapons_data.get(weapon, {})
+    max_step = int(tuning.get("max_step", 0))
+    weapon_hitstop = float(tuning.get("hitstop", HITSTOP_SECONDS))
+    attack_data.clear()
+    for row: Dictionary in tuning.get("attacks", []):
+        attack_data[int(row["step"])] = row
+    shockwave_data = tuning.get("shockwave", {})
+    combo_next = 1
+    _load_sprites()
+    displayed_clip = ""
+    _show_clip(saved_clip if clip_data.has(saved_clip) else "idle", saved_clock)
+
+func _solid_box(body: Node) -> Rect2:
+    if body is StaticBody2D:
+        for child in body.get_children():
+            if child is CollisionShape2D and not child.disabled and child.shape is RectangleShape2D and not child.one_way_collision:
+                return Rect2(child.global_position - child.shape.size * 0.5, child.shape.size)
+    return Rect2()
+
+func _hero_box() -> Rect2:
+    var size_px: Vector2 = (collider.shape as RectangleShape2D).size
+    return Rect2(collider.global_position - size_px * 0.5, size_px)
+
+func _recover_solid_overlap() -> void:
+    var epsilon: float = float(movement_data.get("overlap_epsilon", 0.2))
+    for _attempt in range(4):
+        var query := PhysicsShapeQueryParameters2D.new()
+        var shape := RectangleShape2D.new()
+        shape.size = (collider.shape as RectangleShape2D).size - Vector2.ONE * epsilon * 2.0
+        query.shape = shape
+        query.transform = Transform2D(0.0, collider.global_position)
+        query.collision_mask = 1
+        query.exclude = [get_rid()]
+        var hits: Array[Dictionary] = get_world_2d().direct_space_state.intersect_shape(query, 8)
+        var moved: bool = false
+        for hit in hits:
+            var box: Rect2 = _solid_box(hit["collider"])
+            var hero_box: Rect2 = _hero_box()
+            if not box.has_area() or not box.intersects(hero_box.grow(-epsilon)):
+                continue
+            var pushes: Array[Vector2] = [Vector2(box.position.x - hero_box.end.x - epsilon, 0), Vector2(box.end.x - hero_box.position.x + epsilon, 0), Vector2(0, box.position.y - hero_box.end.y - epsilon), Vector2(0, box.end.y - hero_box.position.y + epsilon)]
+            pushes.sort_custom(func(a: Vector2, b: Vector2) -> bool: return a.length_squared() < b.length_squared())
+            global_position += pushes[0]
+            moved = true
+        if not moved:
+            last_safe_position = global_position
+            return
+
+func _move_with_surface_rules(delta: float) -> void:
+    if is_on_floor() and absf(velocity.x) > 0.01:
+        var collision := KinematicCollision2D.new()
+        var motion := Vector2(velocity.x * delta, 0.0)
+        if test_move(global_transform, motion, collision) and absf(collision.get_normal().x) > 0.5:
+            var surface: Rect2 = _solid_box(collision.get_collider())
+            var lift: float = global_position.y - surface.position.y
+            var maximum: float = float(movement_data.get("step_up_max", 56.0))
+            if surface.has_area() and lift > 0.0 and lift <= maximum:
+                var raised := global_transform.translated(Vector2(0, -lift - 0.5))
+                if not test_move(global_transform, Vector2(0, -lift - 0.5)) and not test_move(raised, motion):
+                    global_position.y -= lift + 0.5
+    _corner_forgiveness()
+    move_and_slide()
+
+func _corner_forgiveness() -> void:
+    if velocity.y >= 0.0 or drop_mask_left > 0.0:
+        return
+    var foot: Rect2 = _hero_box()
+    var allowance: float = float(movement_data.get("corner_forgiveness", 10.0))
+    for body in get_tree().get_nodes_in_group("surfaces"):
+        if not bool(body.get_meta("one_way", false)):
+            continue
+        var bounds: Rect2 = body.get_meta("surface_rect", Rect2())
+        var overlap_x: float = minf(foot.end.x, bounds.end.x) - maxf(foot.position.x, bounds.position.x)
+        # Forgive a near-miss at an edge; a normal jump through the middle
+        # must keep its upward velocity, including through stacked platforms.
+        if overlap_x <= 0.0 or overlap_x > allowance:
+            continue
+        var gap: float = foot.end.y - bounds.position.y
+        if gap >= 0.0 and gap <= allowance and foot.end.x > bounds.position.x + 1 and foot.position.x < bounds.end.x - 1:
+            var correction := Vector2(0, -gap - 0.5)
+            if not test_move(global_transform, correction):
+                global_position += correction
+                velocity.y = 0.0
+                return
+
+func _track_stuck(delta: float) -> void:
+    var wants_move: bool = absf(Input.get_axis("move_left", "move_right")) > 0.01
+    var allowed: bool = action not in ["hurt", "dead"] and not is_on_wall() and hitstop_left <= 0.0 and pull_left <= 0.0
+    if not wants_move or not allowed or global_position.distance_to(stuck_origin) > float(movement_data.get("stuck_distance", 3.0)):
+        stuck_origin = global_position
+        stuck_left = 0.0
+        return
+    stuck_left += delta
+    if stuck_left >= float(movement_data.get("stuck_seconds", 0.8)):
+        stuck_recoveries.append({"position":global_position, "safe":last_safe_position})
+        global_position = last_safe_position
+        velocity = Vector2.ZERO
+        stuck_left = 0.0
+        print("ANTI_STUCK recovered at " + str(global_position))

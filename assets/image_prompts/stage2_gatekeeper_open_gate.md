@@ -2,7 +2,7 @@
 
 Purpose: stage 2 character animation.
 
-Output: `assets/sprites/npcs/gatekeeper/open_gate.png`
+Output: `assets/sprites/npcs/gatekeeper/open_gate.webp`
 
 Frames: 5 × 640x640, one horizontal row; duration 0.8s; anchor [320,600].
 

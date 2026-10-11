@@ -2,7 +2,7 @@
 
 Purpose: stage 2 character animation.
 
-Output: `assets/sprites/npcs/cook_a/chop.png`
+Output: `assets/sprites/npcs/cook_a/chop.webp`
 
 Frames: 6 × 640x640, one horizontal row; duration 1.2s; anchor [320,600].
 

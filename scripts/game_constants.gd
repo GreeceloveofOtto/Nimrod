@@ -60,8 +60,13 @@ const PLAYER_SHAKE_SPEED: Vector2 = Vector2(53.0, 41.0)
 const PLAYER_SHAKE_STRENGTH: float = 2.2
 const PLAYER_ATTACK_SOUND_PATHS: Array[String] = [
     "",
-    "res://assets/audio/attack1.wav",
-    "res://assets/audio/attack2.wav",
-    "res://assets/audio/attack3.wav",
-    "res://assets/audio/attack4.wav"
+    "res://assets/audio/attack1.ogg",
+    "res://assets/audio/attack2.ogg",
+    "res://assets/audio/attack3.ogg",
+    "res://assets/audio/attack4.ogg"
 ]
+
+const START_LEVEL: String = "NimrodHome"
+const START_SPAWN: String = "Spawn_Start"
+const ENABLE_DEBUG_TELEPORT: bool = true
+const DEBUG_SURFACE: bool = true

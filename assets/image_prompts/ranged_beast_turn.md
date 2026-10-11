@@ -2,7 +2,7 @@
 
 목적: 우루크 원거리 괴수 turn 애니메이션
 
-저장 경로: `assets/sprites/enemies/ranged_beast/turn.png`
+저장 경로: `assets/sprites/enemies/ranged_beast/turn.webp`
 
 최종 크기: 2560x640px. 프레임 구성: 4프레임, 프레임당 640x640px, 한 줄, 오른쪽 기준; 0.25초; 루프 아니오.
 

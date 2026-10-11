@@ -10,10 +10,10 @@ for lay in lays:
   if not plat['id'].startswith('room_'):continue
   _,c,row=plat['id'].split('_');c=int(c);row=int(row);plat['one_way']=False
   if any(set(edge)=={f'{c}_{row}',f'{c}_{row+1}'} for edge in lay['connections']):plat['position'][0]=c*1200+440;plat['width']=720
- l['decorations']=[{'path':'res://assets/props/cedar_stump.png','position':[1000,3128],'size':[240,200],'z':-2,'ground_contact':True},{'path':'res://assets/props/skeleton_remains.png','position':[1600,2568],'size':[280,120],'z':-2,'ground_contact':True}]
+ l['decorations']=[{'path':'res://assets/props/cedar_stump.webp','position':[1000,3128],'size':[240,200],'z':-2,'ground_contact':True},{'path':'res://assets/props/skeleton_remains.webp','position':[1600,2568],'size':[280,120],'z':-2,'ground_contact':True}]
  for e in l['enemies']:
   c=int(e['position'][0]//1200);e['position'][0]=c*1200+800;e['patrol_center']=e['position'][0];e['patrol_range']=120 if e['id']=='cedar_colossus' else 180;y=e['position'][1];row=min(4,int((y-129)//640));e['room_bounds']=[c*1200+440,128+row*640,720,640]
-  if e['id']=='cedar_demon':l['decorations'].append({'path':'res://assets/props/cedar_branch_perch.png','position':[e['position'][0]-180,y-120],'size':[360,120],'z':-2})
+  if e['id']=='cedar_demon':l['decorations'].append({'path':'res://assets/props/cedar_branch_perch.webp','position':[e['position'][0]-180,y-120],'size':[360,120],'z':-2})
 l=next(x for x in d['levels'] if x['id']=='DowntownPassage_F8')
 for plat in l['platforms']:
  if plat['id'].startswith('stage6_upper'):plat['position'][0]=840+70*(int(plat['id'].rsplit('_',1)[1])%2)

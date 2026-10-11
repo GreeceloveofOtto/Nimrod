@@ -1,5 +1,5 @@
 # 자폭 시체 / fuse
-목적: 괴수 애니메이션. 경로: assets/sprites/enemies/corpse_bomber/fuse.png
+목적: 괴수 애니메이션. 경로: assets/sprites/enemies/corpse_bomber/fuse.webp
 규격: 6 × 640x640, 0.5초, 앵커 [320, 600].
 배경: #FF00FF → pack_sprites.py 크로마키/정렬/합성.
 

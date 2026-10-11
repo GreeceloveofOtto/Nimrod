@@ -12,7 +12,7 @@
   "clips": [
     {
       "name": "arrange",
-      "sheet": "sprites/npcs/cook_c/arrange.png",
+      "sheet": "sprites/npcs/cook_c/arrange.webp",
       "frame_width": 640,
       "frame_height": 640,
       "columns": 6,
@@ -26,9 +26,15 @@
         600
       ],
       "image_size": [
-        3840,
-        640
-      ]
+        1134,
+        270
+      ],
+      "trim": {
+        "x": 226,
+        "y": 332,
+        "w": 189,
+        "h": 270
+      }
     }
   ]
 }

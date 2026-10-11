@@ -49,16 +49,16 @@ def main():
     for name, crop, size in props:
         pack("image", "props_source.png", "props/" + name + ".png",
              "--crop", crop, "--trim", "--size", size)
-    pack("sheet", "fx_source.png", "sprites/enemies/ranged_beast/flame.png",
+    pack("sheet", "fx_source.png", "sprites/enemies/ranged_beast/flame.webp",
          "--crop", "0,110,1774,225", "--frames", "6", "--grid-cols", "6",
          "--frame-width", "512", "--frame-height", "256", "--anchor", "16,128",
          "--alignment", "left-center", "--fit", "480,200", "--scale-xy", "1.65,1.05")
     # Spark source poses expand and fade; retain their size variation.
-    pack("sheet", "fx_source.png", "sprites/fx/hit_spark.png",
+    pack("sheet", "fx_source.png", "sprites/fx/hit_spark.webp",
          "--crop", "0,445,1774,420", "--frames", "5", "--grid-cols", "5",
          "--frame-width", "256", "--frame-height", "256", "--anchor", "128,128",
          "--alignment", "center", "--fit", "220,220", "--scale", "0.60")
-    flame = Image.open(ROOT / "assets/sprites/enemies/ranged_beast/flame.png")
+    flame = Image.open(ROOT / "assets/sprites/enemies/ranged_beast/flame.webp")
     boxes = [flame.crop((i * 512, 0, (i + 1) * 512, 256)).getchannel("A").getbbox()
              for i in range(6)]
     art_size = [max(b[2] - b[0] for b in boxes), max(b[3] - b[1] for b in boxes)]

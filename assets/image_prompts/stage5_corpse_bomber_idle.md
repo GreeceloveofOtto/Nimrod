@@ -1,5 +1,5 @@
 # 자폭 시체 / idle
-목적: 괴수 애니메이션. 경로: assets/sprites/enemies/corpse_bomber/idle.png
+목적: 괴수 애니메이션. 경로: assets/sprites/enemies/corpse_bomber/idle.webp
 규격: 6 × 640x640, 1.0초, 앵커 [320, 600].
 배경: #FF00FF → pack_sprites.py 크로마키/정렬/합성.
 

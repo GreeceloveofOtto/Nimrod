@@ -1,5 +1,5 @@
 # passage_stair_block
-목적: 5단계 환경. 경로: assets/props/passage_stair_block.png
+목적: 5단계 환경. 경로: assets/props/passage_stair_block.webp
 크기: 320x120, 1프레임. 배경: #FF00FF 크로마키.
 
 2D side-view game asset, dark fantasy, ancient Mesopotamian Uruk atmosphere with advanced space-civilization undertones, hand-painted look, clean readable silhouette, consistent with the Nimrod character sprite sheets, no text, no watermark. passage stair block, side-view production game asset.

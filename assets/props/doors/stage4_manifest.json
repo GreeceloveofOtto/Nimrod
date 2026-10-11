@@ -2,7 +2,7 @@
   "clips": [
     {
       "name": "villa_back_door",
-      "sheet": "props/doors/villa_back_door.png",
+      "sheet": "props/doors/villa_back_door.webp",
       "frame_width": 320,
       "frame_height": 420,
       "columns": 6,
@@ -16,9 +16,15 @@
         420
       ],
       "image_size": [
-        1920,
-        420
-      ]
+        1896,
+        410
+      ],
+      "trim": {
+        "x": 2,
+        "y": 10,
+        "w": 316,
+        "h": 410
+      }
     }
   ]
 }

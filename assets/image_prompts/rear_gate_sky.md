@@ -2,7 +2,7 @@
 
 목적: 남청색 하늘에서 붉은 지평선, 구름과 거대한 달
 
-저장 경로: `assets/backgrounds/rear_gate/sky.png`
+저장 경로: `assets/backgrounds/rear_gate/sky.webp`
 
 최종 크기: 1536x720px. 프레임 구성: 정지 이미지 1프레임.
 
