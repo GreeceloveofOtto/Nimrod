@@ -1,1 +1,935 @@
-{"clips":[{"name":"hit_spark","sheet":"sprites/fx/hit_spark.webp","frame_width":256,"frame_height":256,"columns":5,"rows":1,"frames":5,"duration_seconds":0.15,"fps":33.333333333333336,"loop":false,"anchor_px":[128,128],"image_size":[630,132],"qa":{"height_tol":0.35,"height_reason":"FX flow changes extent while retaining uniform scale","detached_fx_or_weapon":true},"trim":{"x":27,"y":6,"w":210,"h":220},"storage_scale":[0.6,0.6],"stored_frame_size":[154,154],"stored_anchor_px":[76.8,76.8],"storage_trim":{"x":16.2,"y":3.6,"w":126,"h":132},"stored_columns":5,"frame_map":[0,1,2,3,4],"effective_density":2.0,"ssim":0.9340961146779055},{"name":"anur_light_projectile","sheet":"sprites/fx/anur_light_projectile.webp","frame_width":128,"frame_height":64,"frames":4,"columns":4,"rows":1,"duration_seconds":0.3,"fps":13.333333333333334,"loop":true,"anchor_px":[64,32],"image_size":[232,23],"qa":{"pose_height_exception":true,"height_tol":0.65,"detached_fx_or_weapon":true,"movement":false},"trim":{"x":10,"y":18,"w":74,"h":29},"storage_trim":{"x":7.837837837837838,"y":14.275862068965518,"w":58,"h":23},"storage_scale":[0.7837837837837838,0.7931034482758621],"stored_columns":4,"frame_map":[0,1,2,3],"stored_frame_size":[100,51],"stored_anchor_px":[50.16216216216216,25.379310344827587],"ssim":0.9371593491740103,"effective_density":2.6,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"anur_light_cast","sheet":"sprites/fx/anur_light_cast.webp","frame_width":192,"frame_height":192,"frames":4,"columns":4,"rows":1,"duration_seconds":0.2,"fps":20.0,"loop":false,"anchor_px":[96,96],"image_size":[416,84],"qa":{"pose_height_exception":true,"height_tol":0.65,"detached_fx_or_weapon":true,"movement":false,"fade_out_fx":true},"trim":{"x":9,"y":32,"w":157,"h":127},"storage_trim":{"x":5.961783439490445,"y":21.165354330708663,"w":104,"h":84},"storage_scale":[0.6624203821656051,0.6614173228346457],"stored_columns":4,"frame_map":[0,1,2,3],"stored_frame_size":[127,127],"stored_anchor_px":[63.59235668789809,63.496062992125985],"ssim":0.9437378353476931,"effective_density":2.2,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"anur_light_impact","sheet":"sprites/fx/anur_light_impact.webp","frame_width":192,"frame_height":192,"frames":5,"columns":5,"rows":1,"duration_seconds":0.25,"fps":20.0,"loop":false,"anchor_px":[96,96],"image_size":[410,46],"qa":{"pose_height_exception":true,"height_tol":0.65,"detached_fx_or_weapon":true,"movement":false,"fade_out_fx":true},"trim":{"x":59,"y":60,"w":124,"h":70},"storage_trim":{"x":39.016129032258064,"y":39.42857142857143,"w":82,"h":46},"storage_scale":[0.6612903225806451,0.6571428571428571],"stored_columns":5,"frame_map":[0,1,2,3,4],"stored_frame_size":[127,126],"stored_anchor_px":[63.483870967741936,63.08571428571429],"ssim":0.9364116492534564,"effective_density":2.2,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"humbaba_flame_cone","sheet":"sprites/fx/humbaba_flame_cone.webp","frame_width":768,"frame_height":384,"frames":6,"columns":6,"rows":1,"duration_seconds":0.4,"fps":15.0,"loop":true,"anchor_px":[384,192],"image_size":[1794,136],"qa":{"pose_height_exception":true,"height_tol":0.65,"detached_fx_or_weapon":true,"movement":false},"trim":{"x":46,"y":29,"w":712,"h":325},"storage_trim":{"x":19.31741573033708,"y":12.135384615384615,"w":299,"h":136},"storage_scale":[0.4199438202247191,0.41846153846153844],"stored_columns":6,"frame_map":[0,1,2,3,4,5],"stored_frame_size":[323,161],"stored_anchor_px":[161.25842696629215,80.34461538461538],"ssim":0.9920738636314137,"effective_density":1.4,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"humbaba_ember_aura","sheet":"sprites/fx/humbaba_ember_aura.webp","frame_width":512,"frame_height":512,"frames":6,"columns":6,"rows":1,"duration_seconds":0.8,"fps":7.5,"loop":true,"anchor_px":[256,256],"image_size":[1236,143],"qa":{"pose_height_exception":true,"height_tol":0.65,"detached_fx_or_weapon":true,"movement":false},"trim":{"x":8,"y":88,"w":491,"h":340},"storage_trim":{"x":3.3564154786150713,"y":37.01176470588236,"w":206,"h":143},"storage_scale":[0.4195519348268839,0.42058823529411765],"stored_columns":6,"frame_map":[0,1,2,3,4,5],"stored_frame_size":[215,215],"stored_anchor_px":[107.40529531568228,107.67058823529412],"ssim":0.9901744767688098,"effective_density":1.4,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"humbaba_bite_spark","sheet":"sprites/fx/humbaba_bite_spark.webp","frame_width":192,"frame_height":192,"frames":4,"columns":4,"rows":1,"duration_seconds":0.2,"fps":20.0,"loop":false,"anchor_px":[96,96],"image_size":[412,59],"qa":{"pose_height_exception":true,"height_tol":0.65,"detached_fx_or_weapon":true,"movement":false,"fade_out_fx":true},"trim":{"x":9,"y":47,"w":171,"h":98},"storage_trim":{"x":5.421052631578948,"y":28.29591836734694,"w":103,"h":59},"storage_scale":[0.6023391812865497,0.6020408163265306],"stored_columns":4,"frame_map":[0,1,2,3],"stored_frame_size":[116,116],"stored_anchor_px":[57.824561403508774,57.795918367346935],"ssim":0.937331563094715,"effective_density":2.0,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"gugalanna_shockwave","sheet":"sprites/fx/gugalanna_shockwave.webp","frame_width":512,"frame_height":96,"frames":4,"columns":4,"rows":1,"duration_seconds":0.4,"fps":10.0,"loop":false,"anchor_px":[256,48],"image_size":[300,37],"qa":{"pose_height_exception":true,"height_tol":0.85,"detached_fx_or_weapon":true,"movement":false,"fade_out_fx":true},"trim":{"x":192,"y":16,"w":138,"h":69},"storage_trim":{"x":104.34782608695652,"y":8.579710144927537,"w":75,"h":37},"storage_scale":[0.5434782608695652,0.5362318840579711],"stored_columns":4,"frame_map":[0,1,2,3],"stored_frame_size":[278,51],"stored_anchor_px":[139.1304347826087,25.73913043478261],"ssim":0.9304694607367101,"effective_density":1.8,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"gugalanna_lightning","sheet":"sprites/fx/gugalanna_lightning.webp","frame_width":256,"frame_height":512,"frames":4,"columns":4,"rows":1,"duration_seconds":0.35,"fps":11.428571428571429,"loop":false,"anchor_px":[128,256],"image_size":[500,100],"qa":{"pose_height_exception":true,"height_tol":0.85,"detached_fx_or_weapon":true,"movement":false,"fade_out_fx":true},"trim":{"x":14,"y":120,"w":231,"h":185},"storage_trim":{"x":7.575757575757576,"y":64.86486486486487,"w":125,"h":100},"storage_scale":[0.5411255411255411,0.5405405405405406],"stored_columns":4,"frame_map":[0,1,2,3],"stored_frame_size":[139,277],"stored_anchor_px":[69.26406926406926,138.3783783783784],"ssim":0.9426324657012021,"effective_density":1.8,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"gugalanna_rake_arc","sheet":"sprites/fx/gugalanna_rake_arc.webp","frame_width":768,"frame_height":384,"frames":5,"columns":5,"rows":1,"duration_seconds":0.4,"fps":12.5,"loop":false,"anchor_px":[384,192],"image_size":[1240,147],"qa":{"pose_height_exception":true,"height_tol":0.85,"detached_fx_or_weapon":true,"movement":false,"fade_out_fx":true},"trim":{"x":133,"y":22,"w":590,"h":351},"storage_trim":{"x":55.905084745762714,"y":9.213675213675213,"w":248,"h":147},"storage_scale":[0.42033898305084744,0.4188034188034188],"stored_columns":5,"frame_map":[0,1,2,3,4],"stored_frame_size":[323,161],"stored_anchor_px":[161.41016949152544,80.41025641025641],"ssim":0.9711861639830529,"effective_density":1.4,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"gugalanna_dust","sheet":"sprites/fx/gugalanna_dust.webp","frame_width":256,"frame_height":256,"frames":5,"columns":5,"rows":1,"duration_seconds":0.5,"fps":10.0,"loop":false,"anchor_px":[128,128],"image_size":[555,78],"qa":{"pose_height_exception":true,"height_tol":0.85,"detached_fx_or_weapon":true,"movement":false,"fade_out_fx":true},"trim":{"x":14,"y":60,"w":231,"h":162},"storage_trim":{"x":6.7272727272727275,"y":28.88888888888889,"w":111,"h":78},"storage_scale":[0.4805194805194805,0.48148148148148145],"stored_columns":5,"frame_map":[0,1,2,3,4],"stored_frame_size":[123,123],"stored_anchor_px":[61.506493506493506,61.629629629629626],"ssim":0.9426265327252693,"effective_density":1.6,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"severed_arm","sheet":"sprites/fx/severed_arm.webp","frame_width":192,"frame_height":192,"frames":4,"columns":4,"rows":1,"duration_seconds":1.0,"fps":4.0,"loop":false,"anchor_px":[96,96],"image_size":[364,65],"qa":{"pose_height_exception":true,"height_tol":0.85,"detached_fx_or_weapon":true,"movement":false,"fade_out_fx":true},"trim":{"x":11,"y":35,"w":169,"h":120},"storage_trim":{"x":5.923076923076923,"y":18.958333333333332,"w":91,"h":65},"storage_scale":[0.5384615384615384,0.5416666666666666],"stored_columns":4,"frame_map":[0,1,2,3],"stored_frame_size":[103,104],"stored_anchor_px":[51.69230769230769,52.0],"ssim":0.9358166055463872,"effective_density":1.8,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}}]}
+{
+  "clips": [
+    {
+      "name": "hit_spark",
+      "sheet": "sprites/fx/hit_spark.webp",
+      "frame_width": 256,
+      "frame_height": 256,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.15,
+      "fps": 33.333333333333336,
+      "loop": false,
+      "anchor_px": [
+        128,
+        128
+      ],
+      "image_size": [
+        650,
+        136
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "FX flow changes extent while retaining uniform scale",
+        "detached_fx_or_weapon": true
+      },
+      "trim": {
+        "x": 27,
+        "y": 6,
+        "w": 210,
+        "h": 220
+      },
+      "storage_scale": [
+        0.6,
+        0.6
+      ],
+      "stored_frame_size": [
+        154,
+        154
+      ],
+      "stored_anchor_px": [
+        76.8,
+        76.8
+      ],
+      "storage_trim": {
+        "x": 14.2,
+        "y": 1.5999999999999996,
+        "w": 130,
+        "h": 136
+      },
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "effective_density": 2.0,
+      "ssim": 0.9340961146779055,
+      "stored_content_size": [
+        126,
+        132
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        130,
+        136
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "anur_light_projectile",
+      "sheet": "sprites/fx/anur_light_projectile.webp",
+      "frame_width": 128,
+      "frame_height": 64,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 0.3,
+      "fps": 13.333333333333334,
+      "loop": true,
+      "anchor_px": [
+        64,
+        32
+      ],
+      "image_size": [
+        248,
+        27
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.65,
+        "detached_fx_or_weapon": true,
+        "movement": false
+      },
+      "trim": {
+        "x": 10,
+        "y": 18,
+        "w": 74,
+        "h": 29
+      },
+      "storage_trim": {
+        "x": 5.837837837837838,
+        "y": 12.275862068965518,
+        "w": 62,
+        "h": 27
+      },
+      "storage_scale": [
+        0.7837837837837838,
+        0.7931034482758621
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        100,
+        51
+      ],
+      "stored_anchor_px": [
+        50.16216216216216,
+        25.379310344827587
+      ],
+      "ssim": 0.9371593491740103,
+      "effective_density": 2.6,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        58,
+        23
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        62,
+        27
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "anur_light_cast",
+      "sheet": "sprites/fx/anur_light_cast.webp",
+      "frame_width": 192,
+      "frame_height": 192,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 0.2,
+      "fps": 20.0,
+      "loop": false,
+      "anchor_px": [
+        96,
+        96
+      ],
+      "image_size": [
+        432,
+        88
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.65,
+        "detached_fx_or_weapon": true,
+        "movement": false,
+        "fade_out_fx": true
+      },
+      "trim": {
+        "x": 9,
+        "y": 32,
+        "w": 157,
+        "h": 127
+      },
+      "storage_trim": {
+        "x": 3.9617834394904454,
+        "y": 19.165354330708663,
+        "w": 108,
+        "h": 88
+      },
+      "storage_scale": [
+        0.6624203821656051,
+        0.6614173228346457
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        127,
+        127
+      ],
+      "stored_anchor_px": [
+        63.59235668789809,
+        63.496062992125985
+      ],
+      "ssim": 0.9437378353476931,
+      "effective_density": 2.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        104,
+        84
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        108,
+        88
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "anur_light_impact",
+      "sheet": "sprites/fx/anur_light_impact.webp",
+      "frame_width": 192,
+      "frame_height": 192,
+      "frames": 5,
+      "columns": 5,
+      "rows": 1,
+      "duration_seconds": 0.25,
+      "fps": 20.0,
+      "loop": false,
+      "anchor_px": [
+        96,
+        96
+      ],
+      "image_size": [
+        430,
+        50
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.65,
+        "detached_fx_or_weapon": true,
+        "movement": false,
+        "fade_out_fx": true
+      },
+      "trim": {
+        "x": 59,
+        "y": 60,
+        "w": 124,
+        "h": 70
+      },
+      "storage_trim": {
+        "x": 37.016129032258064,
+        "y": 37.42857142857143,
+        "w": 86,
+        "h": 50
+      },
+      "storage_scale": [
+        0.6612903225806451,
+        0.6571428571428571
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        127,
+        126
+      ],
+      "stored_anchor_px": [
+        63.483870967741936,
+        63.08571428571429
+      ],
+      "ssim": 0.9364116492534564,
+      "effective_density": 2.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        82,
+        46
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        86,
+        50
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "humbaba_flame_cone",
+      "sheet": "sprites/fx/humbaba_flame_cone.webp",
+      "frame_width": 768,
+      "frame_height": 384,
+      "frames": 6,
+      "columns": 6,
+      "rows": 1,
+      "duration_seconds": 0.4,
+      "fps": 15.0,
+      "loop": true,
+      "anchor_px": [
+        384,
+        192
+      ],
+      "image_size": [
+        1818,
+        140
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.65,
+        "detached_fx_or_weapon": true,
+        "movement": false
+      },
+      "trim": {
+        "x": 46,
+        "y": 29,
+        "w": 712,
+        "h": 325
+      },
+      "storage_trim": {
+        "x": 17.31741573033708,
+        "y": 10.135384615384615,
+        "w": 303,
+        "h": 140
+      },
+      "storage_scale": [
+        0.4199438202247191,
+        0.41846153846153844
+      ],
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stored_frame_size": [
+        323,
+        161
+      ],
+      "stored_anchor_px": [
+        161.25842696629215,
+        80.34461538461538
+      ],
+      "ssim": 0.9920738636314137,
+      "effective_density": 1.4,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        299,
+        136
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        303,
+        140
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "humbaba_ember_aura",
+      "sheet": "sprites/fx/humbaba_ember_aura.webp",
+      "frame_width": 512,
+      "frame_height": 512,
+      "frames": 6,
+      "columns": 6,
+      "rows": 1,
+      "duration_seconds": 0.8,
+      "fps": 7.5,
+      "loop": true,
+      "anchor_px": [
+        256,
+        256
+      ],
+      "image_size": [
+        1260,
+        147
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.65,
+        "detached_fx_or_weapon": true,
+        "movement": false
+      },
+      "trim": {
+        "x": 8,
+        "y": 88,
+        "w": 491,
+        "h": 340
+      },
+      "storage_trim": {
+        "x": 1.3564154786150713,
+        "y": 35.01176470588236,
+        "w": 210,
+        "h": 147
+      },
+      "storage_scale": [
+        0.4195519348268839,
+        0.42058823529411765
+      ],
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stored_frame_size": [
+        215,
+        215
+      ],
+      "stored_anchor_px": [
+        107.40529531568228,
+        107.67058823529412
+      ],
+      "ssim": 0.9901744767688098,
+      "effective_density": 1.4,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        206,
+        143
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        210,
+        147
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "humbaba_bite_spark",
+      "sheet": "sprites/fx/humbaba_bite_spark.webp",
+      "frame_width": 192,
+      "frame_height": 192,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 0.2,
+      "fps": 20.0,
+      "loop": false,
+      "anchor_px": [
+        96,
+        96
+      ],
+      "image_size": [
+        428,
+        63
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.65,
+        "detached_fx_or_weapon": true,
+        "movement": false,
+        "fade_out_fx": true
+      },
+      "trim": {
+        "x": 9,
+        "y": 47,
+        "w": 171,
+        "h": 98
+      },
+      "storage_trim": {
+        "x": 3.421052631578948,
+        "y": 26.29591836734694,
+        "w": 107,
+        "h": 63
+      },
+      "storage_scale": [
+        0.6023391812865497,
+        0.6020408163265306
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        116,
+        116
+      ],
+      "stored_anchor_px": [
+        57.824561403508774,
+        57.795918367346935
+      ],
+      "ssim": 0.937331563094715,
+      "effective_density": 2.0,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        103,
+        59
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        107,
+        63
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "gugalanna_shockwave",
+      "sheet": "sprites/fx/gugalanna_shockwave.webp",
+      "frame_width": 512,
+      "frame_height": 96,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 0.4,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        256,
+        48
+      ],
+      "image_size": [
+        316,
+        41
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.85,
+        "detached_fx_or_weapon": true,
+        "movement": false,
+        "fade_out_fx": true
+      },
+      "trim": {
+        "x": 192,
+        "y": 16,
+        "w": 138,
+        "h": 69
+      },
+      "storage_trim": {
+        "x": 102.34782608695652,
+        "y": 6.579710144927537,
+        "w": 79,
+        "h": 41
+      },
+      "storage_scale": [
+        0.5434782608695652,
+        0.5362318840579711
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        278,
+        51
+      ],
+      "stored_anchor_px": [
+        139.1304347826087,
+        25.73913043478261
+      ],
+      "ssim": 0.9304694607367101,
+      "effective_density": 1.8,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        75,
+        37
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        79,
+        41
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "gugalanna_lightning",
+      "sheet": "sprites/fx/gugalanna_lightning.webp",
+      "frame_width": 256,
+      "frame_height": 512,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 0.35,
+      "fps": 11.428571428571429,
+      "loop": false,
+      "anchor_px": [
+        128,
+        256
+      ],
+      "image_size": [
+        516,
+        104
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.85,
+        "detached_fx_or_weapon": true,
+        "movement": false,
+        "fade_out_fx": true
+      },
+      "trim": {
+        "x": 14,
+        "y": 120,
+        "w": 231,
+        "h": 185
+      },
+      "storage_trim": {
+        "x": 5.575757575757576,
+        "y": 62.86486486486487,
+        "w": 129,
+        "h": 104
+      },
+      "storage_scale": [
+        0.5411255411255411,
+        0.5405405405405406
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        139,
+        277
+      ],
+      "stored_anchor_px": [
+        69.26406926406926,
+        138.3783783783784
+      ],
+      "ssim": 0.9426324657012021,
+      "effective_density": 1.8,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        125,
+        100
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        129,
+        104
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "gugalanna_rake_arc",
+      "sheet": "sprites/fx/gugalanna_rake_arc.webp",
+      "frame_width": 768,
+      "frame_height": 384,
+      "frames": 5,
+      "columns": 5,
+      "rows": 1,
+      "duration_seconds": 0.4,
+      "fps": 12.5,
+      "loop": false,
+      "anchor_px": [
+        384,
+        192
+      ],
+      "image_size": [
+        1260,
+        151
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.85,
+        "detached_fx_or_weapon": true,
+        "movement": false,
+        "fade_out_fx": true
+      },
+      "trim": {
+        "x": 133,
+        "y": 22,
+        "w": 590,
+        "h": 351
+      },
+      "storage_trim": {
+        "x": 53.90508474576271,
+        "y": 7.213675213675215,
+        "w": 252,
+        "h": 151
+      },
+      "storage_scale": [
+        0.42033898305084744,
+        0.4188034188034188
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        323,
+        161
+      ],
+      "stored_anchor_px": [
+        161.41016949152544,
+        80.41025641025641
+      ],
+      "ssim": 0.9711861639830529,
+      "effective_density": 1.4,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        248,
+        147
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        252,
+        151
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "gugalanna_dust",
+      "sheet": "sprites/fx/gugalanna_dust.webp",
+      "frame_width": 256,
+      "frame_height": 256,
+      "frames": 5,
+      "columns": 5,
+      "rows": 1,
+      "duration_seconds": 0.5,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        128,
+        128
+      ],
+      "image_size": [
+        575,
+        82
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.85,
+        "detached_fx_or_weapon": true,
+        "movement": false,
+        "fade_out_fx": true
+      },
+      "trim": {
+        "x": 14,
+        "y": 60,
+        "w": 231,
+        "h": 162
+      },
+      "storage_trim": {
+        "x": 4.7272727272727275,
+        "y": 26.888888888888886,
+        "w": 115,
+        "h": 82
+      },
+      "storage_scale": [
+        0.4805194805194805,
+        0.48148148148148145
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        123,
+        123
+      ],
+      "stored_anchor_px": [
+        61.506493506493506,
+        61.629629629629626
+      ],
+      "ssim": 0.9426265327252693,
+      "effective_density": 1.6,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        111,
+        78
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        115,
+        82
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "severed_arm",
+      "sheet": "sprites/fx/severed_arm.webp",
+      "frame_width": 192,
+      "frame_height": 192,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 1.0,
+      "fps": 4.0,
+      "loop": false,
+      "anchor_px": [
+        96,
+        96
+      ],
+      "image_size": [
+        380,
+        69
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.85,
+        "detached_fx_or_weapon": true,
+        "movement": false,
+        "fade_out_fx": true
+      },
+      "trim": {
+        "x": 11,
+        "y": 35,
+        "w": 169,
+        "h": 120
+      },
+      "storage_trim": {
+        "x": 3.9230769230769225,
+        "y": 16.958333333333332,
+        "w": 95,
+        "h": 69
+      },
+      "storage_scale": [
+        0.5384615384615384,
+        0.5416666666666666
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        103,
+        104
+      ],
+      "stored_anchor_px": [
+        51.69230769230769,
+        52.0
+      ],
+      "ssim": 0.9358166055463872,
+      "effective_density": 1.8,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        91,
+        65
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        95,
+        69
+      ],
+      "stored_gutter": 2
+    }
+  ]
+}

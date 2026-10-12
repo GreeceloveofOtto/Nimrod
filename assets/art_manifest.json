@@ -1,1 +1,4481 @@
-{"schema_version":1,"source_policy":"All monster, background, terrain, prop and effect art is image-generated. PIL only chromakeys, crops, rescales, aligns and packs existing generated images.","sprite_manifests":["sprites/enemies/melee_beast/manifest.json","sprites/enemies/ranged_beast/manifest.json","sprites/fx/manifest.json","sprites/npcs/lugalbanda/manifest.json","sprites/npcs/ninsun/manifest.json","sprites/npcs/shamhat/manifest.json","sprites/npcs/inanna/manifest.json","sprites/npcs/papsukkal/manifest.json","sprites/npcs/cook_a/manifest.json","sprites/npcs/cook_b/manifest.json","sprites/npcs/cook_c/manifest.json","sprites/npcs/servant_a/manifest.json","sprites/npcs/servant_b/manifest.json","sprites/npcs/gatekeeper/manifest.json","sprites/enemies/sky_beast/manifest.json","props/doors/manifest.json","props/doors/stage3_manifest.json","sprites/npcs/shamash/manifest.json","sprites/npcs/aya/manifest.json","props/doors/stage4_manifest.json","props/doors/stage5_manifest.json","sprites/fx/stage5_manifest.json","sprites/enemies/explosive_spitter/manifest.json","sprites/enemies/wall_diver/manifest.json","sprites/enemies/root_spewer/manifest.json","sprites/enemies/boar_charger/manifest.json","sprites/enemies/gas_sac/manifest.json","sprites/enemies/wraith_ray/manifest.json","sprites/enemies/shell_scorpion/manifest.json","sprites/enemies/corpse_bomber/manifest.json","sprites/enemies/chain_beastman/manifest.json","sprites/enemies/cedar_sentinel/manifest.json","sprites/enemies/cedar_colossus/manifest.json","sprites/enemies/cedar_archer/manifest.json","sprites/enemies/cedar_wisp/manifest.json","sprites/enemies/cedar_demon/manifest.json","sprites/npcs/enkidua/manifest.json","props/doors/stage6_manifest.json","sprites/fx/stage6_manifest.json","sprites/enemies/kala_ushumgal/manifest.json","sprites/player/unarmed/manifest.json","sprites/player/staff/manifest.json","sprites/enemies/humbaba/manifest.json","sprites/player/axe_onearm/manifest.json","sprites/player/axe_prosthetic/manifest.json","sprites/player/cutscene/manifest.json","sprites/enemies/gugalanna/manifest.json"],"assets":[{"name":"rear_gate_sky","path":"backgrounds/rear_gate/sky.webp","width":1536,"height":720,"transparent":false,"scroll_ratio":0.05,"map_width":5400},{"name":"rear_gate_far_city","path":"backgrounds/rear_gate/far_city.webp","width":1373,"height":468,"transparent":true,"scroll_ratio":0.2,"map_width":5400,"logical_width":2112,"logical_height":720},{"name":"rear_gate_castle_wall","path":"backgrounds/rear_gate/castle_wall.webp","width":2352,"height":540,"transparent":true,"scroll_ratio":0.45,"map_width":5400,"logical_width":3136,"logical_height":720},{"name":"ground_tile","path":"tiles/rear_gate/ground_tile.webp","width":512,"height":220,"transparent":false,"tile_x":true},{"name":"step_block","path":"tiles/rear_gate/step_block.webp","width":512,"height":90,"transparent":true},{"name":"platform","path":"tiles/rear_gate/platform.webp","width":256,"height":48,"transparent":true},{"name":"rear_gate_door","path":"props/rear_gate_door.webp","width":272,"height":357,"transparent":true,"logical_width":320,"logical_height":420},{"name":"exit_signpost","path":"props/exit_signpost.webp","width":160,"height":240,"transparent":true},{"name":"ruin_pillar_a","path":"props/ruin_pillar_a.webp","width":160,"height":300,"transparent":true},{"name":"ruin_pillar_b","path":"props/ruin_pillar_b.webp","width":140,"height":220,"transparent":true},{"name":"rubble","path":"props/rubble.webp","width":240,"height":100,"transparent":true},{"name":"villa_exterior","path":"backgrounds/rear_gate/villa_exterior.webp","width":975,"height":468,"transparent":true,"logical_width":1500,"logical_height":720},{"name":"castle_f1_hall","path":"backgrounds/castle/castle_f1_hall.webp","width":1500,"height":540,"transparent":false,"keep_png":true,"keep_png_reason":"Localized native WebP decoder sample exceeds RGB mean 2/255","logical_width":2000,"logical_height":720},{"name":"castle_f2_sanctum","path":"backgrounds/castle/castle_f2_sanctum.webp","width":1170,"height":468,"transparent":false,"logical_width":1800,"logical_height":720},{"name":"castle_f3_kitchen","path":"backgrounds/castle/castle_f3_kitchen.webp","width":1530,"height":612,"transparent":false,"keep_png":true,"keep_png_reason":"Localized decoder parity sample exceeds RGB mean 2/255","logical_width":1800,"logical_height":720},{"name":"castle_f4_boudoir","path":"backgrounds/castle/castle_f4_boudoir.webp","width":1710,"height":684,"transparent":false,"logical_width":1800,"logical_height":720},{"name":"villa_f1_hall","path":"backgrounds/villa/villa_f1_hall.webp","width":1900,"height":684,"transparent":false,"logical_width":2000,"logical_height":720},{"name":"castle_f5_sky","path":"backgrounds/castle/castle_f5_sky.webp","width":1536,"height":720,"transparent":false,"scroll_ratio":0.05,"map_width":2400},{"name":"castle_f5_far","path":"backgrounds/castle/castle_f5_far.webp","width":1082,"height":468,"transparent":true,"scroll_ratio":0.2,"map_width":2400,"logical_width":1664,"logical_height":720},{"name":"castle_f5_terrace","path":"backgrounds/castle/castle_f5_terrace.webp","width":2400,"height":720,"transparent":true},{"name":"floor_tile","path":"tiles/castle/floor_tile.webp","width":512,"height":180,"transparent":false,"tile_x":true},{"name":"balcony_floor_tile","path":"tiles/castle/balcony_floor_tile.webp","width":512,"height":180,"transparent":false,"tile_x":true},{"name":"villa_floor_tile","path":"tiles/castle/villa_floor_tile.webp","width":512,"height":180,"transparent":false,"tile_x":true},{"name":"castle_pillar","path":"props/castle_pillar.webp","width":140,"height":300,"transparent":true},{"name":"castle_banner","path":"props/castle_banner.webp","width":190,"height":280,"transparent":true},{"name":"brazier","path":"props/brazier.webp","width":160,"height":220,"transparent":true},{"name":"kitchen_prep_table","path":"props/kitchen_prep_table.webp","width":260,"height":150,"transparent":true},{"name":"kitchen_stove","path":"props/kitchen_stove.webp","width":230,"height":180,"transparent":true},{"name":"kitchen_dining_table","path":"props/kitchen_dining_table.webp","width":300,"height":150,"transparent":true},{"name":"villa_vase","path":"props/villa_vase.webp","width":140,"height":220,"transparent":true},{"name":"villa_rug","path":"props/villa_rug.webp","width":320,"height":100,"transparent":true},{"name":"healing_vomit","path":"props/healing_vomit.webp","width":128,"height":96,"transparent":true},{"name":"prompt_e","path":"ui/prompt_e.png","width":64,"height":64,"transparent":true},{"name":"sky","path":"backgrounds/castle_front/sky.webp","width":1536,"height":720,"transparent":false,"scroll_ratio":0.05,"map_width":4400},{"name":"far_city","path":"backgrounds/castle_front/far_city.webp","width":1331,"height":468,"transparent":true,"scroll_ratio":0.2,"map_width":4400,"logical_width":2048,"logical_height":720},{"name":"castle_wall","path":"backgrounds/castle_front/castle_wall.webp","width":1830,"height":468,"transparent":true,"scroll_ratio":0.45,"map_width":4400,"logical_width":2816,"logical_height":720},{"name":"downtown_passage_facade","path":"backgrounds/castle_front/downtown_passage_facade.webp","width":825,"height":540,"transparent":true,"logical_width":1100,"logical_height":720},{"name":"castle_facade","path":"backgrounds/castle_front/castle_facade.webp","width":975,"height":468,"transparent":true,"logical_width":1500,"logical_height":720},{"name":"castle_gate_wall_left","path":"props/castle_gate_wall_left.webp","width":315,"height":450,"transparent":true,"logical_width":420,"logical_height":600},{"name":"castle_gate_wall_right","path":"props/castle_gate_wall_right.webp","width":315,"height":450,"transparent":true,"logical_width":420,"logical_height":600},{"name":"castle_front_brazier","path":"props/castle_front_brazier.webp","width":180,"height":200,"transparent":true},{"name":"castle_front_statue","path":"props/castle_front_statue.webp","width":172,"height":240,"transparent":true,"logical_width":230,"logical_height":320},{"name":"castle_front_lamp_post","path":"props/castle_front_lamp_post.webp","width":150,"height":260,"transparent":true},{"name":"courtyard_tile","path":"tiles/castle_front/courtyard_tile.webp","width":512,"height":200,"transparent":false,"tile_x":true},{"name":"npc_light_pool","path":"fx/npc_light_pool.webp","width":512,"height":256,"transparent":true},{"name":"contact_shadow","path":"fx/contact_shadow.webp","width":256,"height":64,"transparent":true},{"name":"sky","path":"backgrounds/outskirts/sky.webp","width":1344,"height":540,"transparent":false,"scroll_ratio":0.05,"map_width":10000,"logical_width":1792,"logical_height":720},{"name":"far_city_tile","path":"backgrounds/outskirts/far_city_tile.webp","width":2048,"height":720,"transparent":true,"tile_x":true,"scroll_ratio":0.2,"repeat_x":true,"map_width":10000},{"name":"mid_ruins_tile","path":"backgrounds/outskirts/mid_ruins_tile.webp","width":2048,"height":720,"transparent":true,"tile_x":true,"scroll_ratio":0.45,"repeat_x":true,"map_width":10000},{"name":"far_landmark","path":"backgrounds/outskirts/far_landmark.webp","width":900,"height":720,"transparent":true,"scroll_ratio":0.2,"localized":true},{"name":"ruin_wall_a","path":"props/ruin_wall_a.webp","width":390,"height":273,"transparent":true,"logical_width":600,"logical_height":420},{"name":"ruin_wall_b","path":"props/ruin_wall_b.webp","width":360,"height":270,"transparent":true,"logical_width":480,"logical_height":360},{"name":"broken_tower","path":"props/broken_tower.webp","width":234,"height":364,"transparent":true,"logical_width":360,"logical_height":560},{"name":"chasm_edge_left","path":"props/chasm_edge_left.webp","width":300,"height":260,"transparent":true},{"name":"chasm_edge_right","path":"props/chasm_edge_right.webp","width":300,"height":260,"transparent":true},{"name":"collapsed_bridge","path":"props/collapsed_bridge.webp","width":624,"height":117,"transparent":true,"logical_width":960,"logical_height":180},{"name":"upper_walkway","path":"props/upper_walkway.webp","width":750,"height":90,"transparent":true,"logical_width":1000,"logical_height":120},{"name":"large_rubble_a","path":"props/large_rubble_a.webp","width":220,"height":120,"transparent":true},{"name":"large_rubble_b","path":"props/large_rubble_b.webp","width":160,"height":90,"transparent":true},{"name":"dead_tree","path":"props/dead_tree.webp","width":240,"height":380,"transparent":true},{"name":"crashed_pod_wreck","path":"props/crashed_pod_wreck.webp","width":420,"height":240,"transparent":true},{"name":"outskirts_lamp","path":"props/outskirts_lamp.webp","width":100,"height":260,"transparent":true},{"name":"ground_tile","path":"tiles/outskirts/ground_tile.webp","width":512,"height":200,"transparent":false,"tile_x":true},{"name":"plaza_tile","path":"tiles/outskirts/plaza_tile.webp","width":512,"height":200,"transparent":false,"tile_x":true},{"name":"ruin_platform","path":"tiles/outskirts/ruin_platform.webp","width":256,"height":48,"transparent":true},{"name":"bridge_platform","path":"tiles/outskirts/bridge_platform.webp","width":320,"height":48,"transparent":true},{"name":"ruin_ledge","path":"tiles/outskirts/ruin_ledge.webp","width":480,"height":56,"transparent":true},{"name":"underground_fill","path":"tiles/underground_fill.webp","width":512,"height":512,"transparent":false,"tile_x":true,"tile_y":true},{"name":"villa_f2_dining","path":"backgrounds/villa/villa_f2_dining.webp","width":2090,"height":684,"transparent":false,"logical_width":2200,"logical_height":720},{"name":"villa_f3_chamber","path":"backgrounds/villa/villa_f3_chamber.webp","width":1900,"height":684,"transparent":false,"logical_width":2000,"logical_height":720},{"name":"villa_dining_table_wide","path":"props/villa_dining_table_wide.webp","width":585,"height":143,"transparent":true,"logical_width":900,"logical_height":220},{"name":"villa_chairs","path":"props/villa_chairs.webp","width":390,"height":112,"transparent":true,"logical_width":520,"logical_height":150},{"name":"villa_sofa","path":"props/villa_sofa.webp","width":270,"height":150,"transparent":true,"logical_width":360,"logical_height":200},{"name":"villa_side_table","path":"props/villa_side_table.webp","width":160,"height":120,"transparent":true},{"name":"wall_tile_a","path":"backgrounds/passage/wall_tile_a.webp","width":1024,"height":720,"transparent":false,"tile_x":true},{"name":"wall_tile_b","path":"backgrounds/passage/wall_tile_b.webp","width":1024,"height":720,"transparent":false,"tile_x":true},{"name":"wall_tile_c","path":"backgrounds/passage/wall_tile_c.webp","width":1024,"height":720,"transparent":false,"tile_x":true},{"name":"wall_tile_d","path":"backgrounds/passage/wall_tile_d.webp","width":1024,"height":720,"transparent":false,"tile_x":true},{"name":"far_abyss_tile","path":"backgrounds/passage/far_abyss_tile.webp","width":2048,"height":720,"transparent":false,"tile_x":true},{"name":"passage_pillar_a","path":"props/passage_pillar_a.webp","width":220,"height":620,"transparent":true},{"name":"passage_pillar_b","path":"props/passage_pillar_b.webp","width":195,"height":465,"transparent":true,"logical_width":260,"logical_height":620},{"name":"passage_arch","path":"props/passage_arch.webp","width":390,"height":338,"transparent":true,"logical_width":600,"logical_height":520},{"name":"passage_window_crimson","path":"props/passage_window_crimson.webp","width":208,"height":273,"transparent":true,"logical_width":320,"logical_height":420},{"name":"passage_gargoyle","path":"props/passage_gargoyle.webp","width":240,"height":300,"transparent":true},{"name":"passage_chandelier","path":"props/passage_chandelier.webp","width":280,"height":360,"transparent":true},{"name":"passage_pipe_cluster","path":"props/passage_pipe_cluster.webp","width":315,"height":225,"transparent":true,"logical_width":420,"logical_height":300},{"name":"passage_gear_pillar","path":"props/passage_gear_pillar.webp","width":200,"height":520,"transparent":true},{"name":"passage_stair_block","path":"props/passage_stair_block.webp","width":320,"height":120,"transparent":true},{"name":"floor_tile","path":"tiles/passage/floor_tile.webp","width":512,"height":180,"transparent":true,"tile_x":true},{"name":"platform","path":"tiles/passage/platform.webp","width":256,"height":48,"transparent":true},{"name":"low_tunnel_ceiling","path":"tiles/passage/low_tunnel_ceiling.webp","width":512,"height":140,"transparent":true,"tile_x":true},{"name":"bridge_plank","path":"tiles/passage/bridge_plank.webp","width":320,"height":48,"transparent":true},{"name":"sky","path":"backgrounds/homeroad/sky.webp","width":1792,"height":720,"transparent":false,"map_width":10800,"scroll_ratio":0.05},{"name":"far_tile","path":"backgrounds/homeroad/far_tile.webp","width":2048,"height":720,"transparent":true,"tile_x":true,"map_width":10800,"scroll_ratio":0.2,"repeat_x":true},{"name":"mid_district_tile","path":"backgrounds/homeroad/mid_district_tile.webp","width":2048,"height":720,"transparent":true,"tile_x":true,"map_width":10800,"scroll_ratio":0.45,"repeat_x":true},{"name":"nimrod_home_exterior","path":"props/nimrod_home_exterior.webp","width":845,"height":468,"transparent":true,"localized":true,"logical_width":1300,"logical_height":720},{"name":"house_ruin_a","path":"props/house_ruin_a.webp","width":325,"height":247,"transparent":true,"logical_width":500,"logical_height":380},{"name":"house_ruin_b","path":"props/house_ruin_b.webp","width":315,"height":225,"transparent":true,"logical_width":420,"logical_height":300},{"name":"broken_overpass","path":"props/broken_overpass.webp","width":1100,"height":260,"transparent":true},{"name":"canal_wall_left","path":"props/canal_wall_left.webp","width":300,"height":260,"transparent":true},{"name":"canal_wall_right","path":"props/canal_wall_right.webp","width":300,"height":260,"transparent":true},{"name":"market_stall_a","path":"props/market_stall_a.webp","width":260,"height":170,"transparent":true},{"name":"market_stall_b","path":"props/market_stall_b.webp","width":260,"height":170,"transparent":true},{"name":"garden_fence","path":"props/garden_fence.webp","width":450,"height":105,"transparent":true,"logical_width":600,"logical_height":140},{"name":"lamp_post_ruined","path":"props/lamp_post_ruined.webp","width":100,"height":260,"transparent":true},{"name":"shrub","path":"props/shrub.webp","width":220,"height":140,"transparent":true},{"name":"ground_tile","path":"tiles/homeroad/ground_tile.webp","width":512,"height":200,"transparent":false,"tile_x":true},{"name":"plaza_tile","path":"tiles/homeroad/plaza_tile.webp","width":512,"height":200,"transparent":false,"tile_x":true},{"name":"canal_floor_tile","path":"tiles/homeroad/canal_floor_tile.webp","width":512,"height":200,"transparent":false,"tile_x":true},{"name":"stone_slab_bridge","path":"tiles/homeroad/stone_slab_bridge.webp","width":360,"height":56,"transparent":true},{"name":"balcony_platform","path":"tiles/homeroad/balcony_platform.webp","width":256,"height":48,"transparent":true},{"name":"passage_f1_bg","path":"backgrounds/passage/passage_f1_bg.webp","width":2340,"height":520,"transparent":false,"logical_width":3600,"logical_height":800},{"name":"passage_f2_bg","path":"backgrounds/passage/passage_f2_bg.webp","width":2340,"height":520,"transparent":false,"logical_width":3600,"logical_height":800},{"name":"passage_f3_bg","path":"backgrounds/passage/passage_f3_bg.webp","width":2340,"height":520,"transparent":false,"logical_width":3600,"logical_height":800},{"name":"passage_f4_bg","path":"backgrounds/passage/passage_f4_bg.webp","width":2340,"height":624,"transparent":false,"logical_width":3600,"logical_height":960},{"name":"passage_f5_bg","path":"backgrounds/passage/passage_f5_bg.webp","width":2340,"height":520,"transparent":false,"logical_width":3600,"logical_height":800},{"name":"passage_f6_bg","path":"backgrounds/passage/passage_f6_bg.webp","width":2340,"height":520,"transparent":false,"logical_width":3600,"logical_height":800},{"name":"passage_f7_bg","path":"backgrounds/passage/passage_f7_bg.webp","width":2340,"height":520,"transparent":false,"logical_width":3600,"logical_height":800},{"name":"passage_f8_bg","path":"backgrounds/passage/passage_f8_bg.webp","width":2340,"height":624,"transparent":false,"logical_width":3600,"logical_height":960},{"name":"home_interior_bg","path":"backgrounds/nimrod_home/home_interior_bg.webp","width":1170,"height":468,"transparent":false,"logical_width":1800,"logical_height":720},{"name":"backyard_bg","path":"backgrounds/villa_backyard/backyard_bg.webp","width":1500,"height":720,"transparent":false},{"name":"boss_bg","path":"backgrounds/cedar/boss_bg.webp","width":1520,"height":912,"transparent":false,"logical_width":1600,"logical_height":960},{"name":"far_tile_2d","path":"backgrounds/cedar/far_tile_2d.webp","width":1024,"height":1024,"transparent":false,"tile_x":true,"tile_y":true},{"name":"mid_trunks_tile_2d","path":"backgrounds/cedar/mid_trunks_tile_2d.webp","width":1024,"height":1024,"transparent":true,"tile_x":true,"tile_y":true,"edge_exception":"Repeats on both axes; matching RGBA seam columns/rows intentionally contain trunk pixels."},{"name":"home_bed","path":"props/home_bed.webp","width":420,"height":200,"transparent":true},{"name":"home_table","path":"props/home_table.webp","width":360,"height":180,"transparent":true},{"name":"home_shelf","path":"props/home_shelf.webp","width":225,"height":315,"transparent":true,"logical_width":300,"logical_height":420},{"name":"home_lamp","path":"props/home_lamp.webp","width":120,"height":260,"transparent":true},{"name":"home_rug","path":"props/home_rug.webp","width":420,"height":60,"transparent":true},{"name":"cedar_stump","path":"props/cedar_stump.webp","width":240,"height":200,"transparent":true},{"name":"skeleton_remains","path":"props/skeleton_remains.webp","width":280,"height":120,"transparent":true},{"name":"hanging_vines","path":"props/hanging_vines.webp","width":200,"height":360,"transparent":true},{"name":"bone_pile","path":"props/bone_pile.webp","width":220,"height":130,"transparent":true},{"name":"cedar_branch_perch","path":"props/cedar_branch_perch.webp","width":360,"height":120,"transparent":true},{"name":"root_floor_tile","path":"tiles/cedar/root_floor_tile.webp","width":512,"height":180,"transparent":false,"tile_x":true},{"name":"branch_platform","path":"tiles/cedar/branch_platform.webp","width":320,"height":48,"transparent":true,"tile_x":true},{"name":"home_floor_tile","path":"tiles/home/home_floor_tile.webp","width":512,"height":180,"transparent":false,"tile_x":true},{"name":"bone_floor_tile","path":"tiles/cedar/bone_floor_tile.webp","width":512,"height":180,"transparent":false,"tile_x":true},{"name":"boss_end_platform","path":"tiles/cedar/boss_end_platform.webp","width":280,"height":56,"transparent":true,"tile_x":true},{"path":"sprites/enemies/humbaba/idle.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":1120,"height":249},{"path":"sprites/enemies/humbaba/bite_windup.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":740,"height":232},{"path":"sprites/enemies/humbaba/bite.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":693,"height":201},{"path":"sprites/enemies/humbaba/bite_recovery.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":668,"height":173},{"path":"sprites/enemies/humbaba/claw_windup.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":596,"height":187},{"path":"sprites/enemies/humbaba/claw_swipe.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":1674,"height":249},{"path":"sprites/enemies/humbaba/claw_recovery.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":512,"height":186},{"path":"sprites/enemies/humbaba/breath_windup.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":580,"height":187},{"path":"sprites/enemies/humbaba/breath_loop.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":992,"height":314},{"path":"sprites/enemies/humbaba/breath_recovery.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":568,"height":175},{"path":"sprites/enemies/humbaba/tail_windup.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":450,"height":158},{"path":"sprites/enemies/humbaba/tail_strike.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":330,"height":190},{"path":"sprites/enemies/humbaba/tail_recovery.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":432,"height":187},{"path":"sprites/enemies/humbaba/turn.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":882,"height":241},{"path":"sprites/enemies/humbaba/phase_roar.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":1096,"height":249},{"path":"sprites/enemies/humbaba/death.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":1592,"height":187},{"path":"sprites/enemies/humbaba/walk.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":1088,"height":187},{"path":"sprites/npcs/shamash/walk.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":720,"height":138},{"path":"sprites/npcs/shamash/sit_down.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":300,"height":140},{"path":"sprites/npcs/shamash/sit_idle.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":528,"height":129},{"path":"sprites/npcs/shamash/stand_up.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":312,"height":143},{"path":"sprites/npcs/aya/walk.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":928,"height":152},{"path":"sprites/npcs/aya/sit_down.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":432,"height":152},{"path":"sprites/npcs/aya/sit_idle.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":568,"height":188},{"path":"sprites/npcs/aya/stand_up.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":392,"height":150},{"path":"sprites/player/unarmed/sit_down.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":376,"height":155},{"path":"sprites/player/unarmed/sit_idle.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":642,"height":142},{"path":"sprites/player/unarmed/stand_up.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":384,"height":175},{"path":"sprites/fx/anur_light_projectile.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":232,"height":23},{"path":"sprites/fx/anur_light_cast.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":416,"height":84},{"path":"sprites/fx/anur_light_impact.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":410,"height":46},{"path":"sprites/fx/humbaba_flame_cone.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":1794,"height":136},{"path":"sprites/fx/humbaba_ember_aura.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":1236,"height":143},{"path":"sprites/fx/humbaba_bite_spark.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":412,"height":59},{"path":"props/villa_dining_table_prep.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":585,"height":143,"logical_width":900,"logical_height":220},{"path":"props/villa_dining_table_full.webp","transparent":true,"source":"stage9 image generator","status":"generated","width":585,"height":143,"logical_width":900,"logical_height":220},{"path":"props/gugalanna_helm.webp","width":160,"height":160,"transparent":true},{"path":"props/space_pod.webp","width":360,"height":195,"transparent":true,"logical_width":480,"logical_height":260},{"path":"props/melammu_pickup.webp","width":128,"height":128,"transparent":true},{"path":"props/home_bed_blood.webp","width":273,"height":130,"transparent":true,"logical_width":420,"logical_height":200},{"path":"backgrounds/stage10/villa_f4_sky.webp","width":998,"height":468,"transparent":false,"logical_width":1536,"logical_height":720},{"path":"backgrounds/stage10/homefront_far_tile.webp","width":1536,"height":540,"transparent":true,"tile_x":true,"logical_width":2048,"logical_height":720},{"path":"backgrounds/stage10/homefront_sky.webp","width":998,"height":468,"transparent":false,"logical_width":1536,"logical_height":720},{"path":"backgrounds/stage10/dilmun_sky.webp","width":1792,"height":720,"transparent":false},{"path":"backgrounds/stage10/villa_f4_terrace.webp","width":1430,"height":468,"transparent":true,"logical_width":2200,"logical_height":720},{"path":"backgrounds/stage10/dilmun_far_tile.webp","width":2048,"height":720,"transparent":true,"tile_x":true},{"path":"tiles/stage10/dilmun_ground_tile.webp","width":512,"height":200,"transparent":false,"tile_x":true}],"source_metadata":["source_art/beast_provenance.json","source_art/stage2_environment/generation.json","source_art/stage2_environment/packing.json","source_art/stage2_characters/provenance.json","source_art/stage2_characters/generation_prompts.json","source_art/stage3/generation_prompts.json","source_art/stage3/provenance.json","source_art/stage4/generation_prompts.json","source_art/stage4/player_packing.json","source_art/stage5/enemy_generation_prompts.json","source_art/stage5/world_generation_prompts.json","source_art/stage5/supplementary_generation_prompts.json","source_art/stage5/provenance.json","source_art/stage5/roll_packing.json"]}
+{
+  "schema_version": 1,
+  "source_policy": "All monster, background, terrain, prop and effect art is image-generated. PIL only chromakeys, crops, rescales, aligns and packs existing generated images.",
+  "sprite_manifests": [
+    "sprites/enemies/melee_beast/manifest.json",
+    "sprites/enemies/ranged_beast/manifest.json",
+    "sprites/fx/manifest.json",
+    "sprites/npcs/lugalbanda/manifest.json",
+    "sprites/npcs/ninsun/manifest.json",
+    "sprites/npcs/shamhat/manifest.json",
+    "sprites/npcs/inanna/manifest.json",
+    "sprites/npcs/papsukkal/manifest.json",
+    "sprites/npcs/cook_a/manifest.json",
+    "sprites/npcs/cook_b/manifest.json",
+    "sprites/npcs/cook_c/manifest.json",
+    "sprites/npcs/servant_a/manifest.json",
+    "sprites/npcs/servant_b/manifest.json",
+    "sprites/npcs/gatekeeper/manifest.json",
+    "sprites/enemies/sky_beast/manifest.json",
+    "props/doors/manifest.json",
+    "props/doors/stage3_manifest.json",
+    "sprites/npcs/shamash/manifest.json",
+    "sprites/npcs/aya/manifest.json",
+    "props/doors/stage4_manifest.json",
+    "props/doors/stage5_manifest.json",
+    "sprites/fx/stage5_manifest.json",
+    "sprites/enemies/explosive_spitter/manifest.json",
+    "sprites/enemies/wall_diver/manifest.json",
+    "sprites/enemies/root_spewer/manifest.json",
+    "sprites/enemies/boar_charger/manifest.json",
+    "sprites/enemies/gas_sac/manifest.json",
+    "sprites/enemies/wraith_ray/manifest.json",
+    "sprites/enemies/shell_scorpion/manifest.json",
+    "sprites/enemies/corpse_bomber/manifest.json",
+    "sprites/enemies/chain_beastman/manifest.json",
+    "sprites/enemies/cedar_sentinel/manifest.json",
+    "sprites/enemies/cedar_colossus/manifest.json",
+    "sprites/enemies/cedar_archer/manifest.json",
+    "sprites/enemies/cedar_wisp/manifest.json",
+    "sprites/enemies/cedar_demon/manifest.json",
+    "sprites/npcs/enkidua/manifest.json",
+    "props/doors/stage6_manifest.json",
+    "sprites/fx/stage6_manifest.json",
+    "sprites/enemies/kala_ushumgal/manifest.json",
+    "sprites/player/unarmed/manifest.json",
+    "sprites/player/staff/manifest.json",
+    "sprites/enemies/humbaba/manifest.json",
+    "sprites/player/axe_onearm/manifest.json",
+    "sprites/player/cutscene/manifest.json",
+    "sprites/enemies/gugalanna/manifest.json",
+    "sprites/fx/stage11_manifest.json",
+    "sprites/npcs/shimati/manifest.json",
+    "sprites/npcs/urshanabi/manifest.json",
+    "sprites/player/axe_prosthetic_helm_r50/manifest.json",
+    "sprites/player/axe_prosthetic_helm_r90/manifest.json",
+    "sprites/player/axe_onearm_helm/manifest.json",
+    "sprites/player/axe/manifest.json",
+    "sprites/player/axe_prosthetic_helm/manifest.json",
+    "sprites/player/axe_prosthetic_helm_r40/manifest.json"
+  ],
+  "assets": [
+    {
+      "name": "rear_gate_sky",
+      "path": "backgrounds/rear_gate/sky.webp",
+      "width": 1536,
+      "height": 720,
+      "transparent": false,
+      "scroll_ratio": 0.05,
+      "map_width": 5400
+    },
+    {
+      "name": "rear_gate_far_city",
+      "path": "backgrounds/rear_gate/far_city.webp",
+      "width": 1373,
+      "height": 468,
+      "transparent": true,
+      "scroll_ratio": 0.2,
+      "map_width": 5400,
+      "logical_width": 2112,
+      "logical_height": 720
+    },
+    {
+      "name": "rear_gate_castle_wall",
+      "path": "backgrounds/rear_gate/castle_wall.webp",
+      "width": 2352,
+      "height": 540,
+      "transparent": true,
+      "scroll_ratio": 0.45,
+      "map_width": 5400,
+      "logical_width": 3136,
+      "logical_height": 720
+    },
+    {
+      "name": "ground_tile",
+      "path": "tiles/rear_gate/ground_tile.webp",
+      "width": 512,
+      "height": 220,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "step_block",
+      "path": "tiles/rear_gate/step_block.webp",
+      "width": 512,
+      "height": 90,
+      "transparent": true
+    },
+    {
+      "name": "platform",
+      "path": "tiles/rear_gate/platform.webp",
+      "width": 256,
+      "height": 48,
+      "transparent": true
+    },
+    {
+      "name": "rear_gate_door",
+      "path": "props/rear_gate_door.webp",
+      "width": 272,
+      "height": 357,
+      "transparent": true,
+      "logical_width": 320,
+      "logical_height": 420
+    },
+    {
+      "name": "exit_signpost",
+      "path": "props/exit_signpost.webp",
+      "width": 160,
+      "height": 240,
+      "transparent": true
+    },
+    {
+      "name": "ruin_pillar_a",
+      "path": "props/ruin_pillar_a.webp",
+      "width": 160,
+      "height": 300,
+      "transparent": true
+    },
+    {
+      "name": "ruin_pillar_b",
+      "path": "props/ruin_pillar_b.webp",
+      "width": 140,
+      "height": 220,
+      "transparent": true
+    },
+    {
+      "name": "rubble",
+      "path": "props/rubble.webp",
+      "width": 240,
+      "height": 100,
+      "transparent": true
+    },
+    {
+      "name": "villa_exterior",
+      "path": "backgrounds/rear_gate/villa_exterior.webp",
+      "width": 975,
+      "height": 468,
+      "transparent": true,
+      "logical_width": 1500,
+      "logical_height": 720
+    },
+    {
+      "name": "castle_f1_hall",
+      "path": "backgrounds/castle/castle_f1_hall.webp",
+      "width": 1500,
+      "height": 540,
+      "transparent": false,
+      "keep_png": true,
+      "keep_png_reason": "Localized native WebP decoder sample exceeds RGB mean 2/255",
+      "logical_width": 2000,
+      "logical_height": 720
+    },
+    {
+      "name": "castle_f2_sanctum",
+      "path": "backgrounds/castle/castle_f2_sanctum.webp",
+      "width": 1170,
+      "height": 468,
+      "transparent": false,
+      "logical_width": 1800,
+      "logical_height": 720
+    },
+    {
+      "name": "castle_f3_kitchen",
+      "path": "backgrounds/castle/castle_f3_kitchen.webp",
+      "width": 1530,
+      "height": 612,
+      "transparent": false,
+      "keep_png": true,
+      "keep_png_reason": "Localized decoder parity sample exceeds RGB mean 2/255",
+      "logical_width": 1800,
+      "logical_height": 720
+    },
+    {
+      "name": "castle_f4_boudoir",
+      "path": "backgrounds/castle/castle_f4_boudoir.webp",
+      "width": 1710,
+      "height": 684,
+      "transparent": false,
+      "logical_width": 1800,
+      "logical_height": 720
+    },
+    {
+      "name": "villa_f1_hall",
+      "path": "backgrounds/villa/villa_f1_hall.webp",
+      "width": 1900,
+      "height": 684,
+      "transparent": false,
+      "logical_width": 2000,
+      "logical_height": 720
+    },
+    {
+      "name": "castle_f5_sky",
+      "path": "backgrounds/castle/castle_f5_sky.webp",
+      "width": 1536,
+      "height": 720,
+      "transparent": false,
+      "scroll_ratio": 0.05,
+      "map_width": 2400
+    },
+    {
+      "name": "castle_f5_far",
+      "path": "backgrounds/castle/castle_f5_far.webp",
+      "width": 1082,
+      "height": 468,
+      "transparent": true,
+      "scroll_ratio": 0.2,
+      "map_width": 2400,
+      "logical_width": 1664,
+      "logical_height": 720
+    },
+    {
+      "name": "castle_f5_terrace",
+      "path": "backgrounds/castle/castle_f5_terrace.webp",
+      "width": 2400,
+      "height": 720,
+      "transparent": true
+    },
+    {
+      "name": "floor_tile",
+      "path": "tiles/castle/floor_tile.webp",
+      "width": 512,
+      "height": 180,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "balcony_floor_tile",
+      "path": "tiles/castle/balcony_floor_tile.webp",
+      "width": 512,
+      "height": 180,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "villa_floor_tile",
+      "path": "tiles/castle/villa_floor_tile.webp",
+      "width": 512,
+      "height": 180,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "castle_pillar",
+      "path": "props/castle_pillar.webp",
+      "width": 140,
+      "height": 300,
+      "transparent": true
+    },
+    {
+      "name": "castle_banner",
+      "path": "props/castle_banner.webp",
+      "width": 190,
+      "height": 280,
+      "transparent": true
+    },
+    {
+      "name": "brazier",
+      "path": "props/brazier.webp",
+      "width": 160,
+      "height": 220,
+      "transparent": true
+    },
+    {
+      "name": "kitchen_prep_table",
+      "path": "props/kitchen_prep_table.webp",
+      "width": 260,
+      "height": 150,
+      "transparent": true
+    },
+    {
+      "name": "kitchen_stove",
+      "path": "props/kitchen_stove.webp",
+      "width": 230,
+      "height": 180,
+      "transparent": true
+    },
+    {
+      "name": "kitchen_dining_table",
+      "path": "props/kitchen_dining_table.webp",
+      "width": 300,
+      "height": 150,
+      "transparent": true
+    },
+    {
+      "name": "villa_vase",
+      "path": "props/villa_vase.webp",
+      "width": 140,
+      "height": 220,
+      "transparent": true
+    },
+    {
+      "name": "villa_rug",
+      "path": "props/villa_rug.webp",
+      "width": 320,
+      "height": 100,
+      "transparent": true
+    },
+    {
+      "name": "healing_vomit",
+      "path": "props/healing_vomit.webp",
+      "width": 128,
+      "height": 96,
+      "transparent": true
+    },
+    {
+      "name": "prompt_e",
+      "path": "ui/prompt_e.png",
+      "width": 64,
+      "height": 64,
+      "transparent": true
+    },
+    {
+      "name": "sky",
+      "path": "backgrounds/castle_front/sky.webp",
+      "width": 1536,
+      "height": 720,
+      "transparent": false,
+      "scroll_ratio": 0.05,
+      "map_width": 4400
+    },
+    {
+      "name": "far_city",
+      "path": "backgrounds/castle_front/far_city.webp",
+      "width": 1331,
+      "height": 468,
+      "transparent": true,
+      "scroll_ratio": 0.2,
+      "map_width": 4400,
+      "logical_width": 2048,
+      "logical_height": 720
+    },
+    {
+      "name": "castle_wall",
+      "path": "backgrounds/castle_front/castle_wall.webp",
+      "width": 1830,
+      "height": 468,
+      "transparent": true,
+      "scroll_ratio": 0.45,
+      "map_width": 4400,
+      "logical_width": 2816,
+      "logical_height": 720
+    },
+    {
+      "name": "downtown_passage_facade",
+      "path": "backgrounds/castle_front/downtown_passage_facade.webp",
+      "width": 825,
+      "height": 540,
+      "transparent": true,
+      "logical_width": 1100,
+      "logical_height": 720
+    },
+    {
+      "name": "castle_facade",
+      "path": "backgrounds/castle_front/castle_facade.webp",
+      "width": 975,
+      "height": 468,
+      "transparent": true,
+      "logical_width": 1500,
+      "logical_height": 720
+    },
+    {
+      "name": "castle_gate_wall_left",
+      "path": "props/castle_gate_wall_left.webp",
+      "width": 315,
+      "height": 450,
+      "transparent": true,
+      "logical_width": 420,
+      "logical_height": 600
+    },
+    {
+      "name": "castle_gate_wall_right",
+      "path": "props/castle_gate_wall_right.webp",
+      "width": 315,
+      "height": 450,
+      "transparent": true,
+      "logical_width": 420,
+      "logical_height": 600
+    },
+    {
+      "name": "castle_front_brazier",
+      "path": "props/castle_front_brazier.webp",
+      "width": 180,
+      "height": 200,
+      "transparent": true
+    },
+    {
+      "name": "castle_front_statue",
+      "path": "props/castle_front_statue.webp",
+      "width": 172,
+      "height": 240,
+      "transparent": true,
+      "logical_width": 230,
+      "logical_height": 320
+    },
+    {
+      "name": "castle_front_lamp_post",
+      "path": "props/castle_front_lamp_post.webp",
+      "width": 150,
+      "height": 260,
+      "transparent": true
+    },
+    {
+      "name": "courtyard_tile",
+      "path": "tiles/castle_front/courtyard_tile.webp",
+      "width": 512,
+      "height": 200,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "npc_light_pool",
+      "path": "fx/npc_light_pool.webp",
+      "width": 512,
+      "height": 256,
+      "transparent": true
+    },
+    {
+      "name": "contact_shadow",
+      "path": "fx/contact_shadow.webp",
+      "width": 256,
+      "height": 64,
+      "transparent": true
+    },
+    {
+      "name": "sky",
+      "path": "backgrounds/outskirts/sky.webp",
+      "width": 1344,
+      "height": 540,
+      "transparent": false,
+      "scroll_ratio": 0.05,
+      "map_width": 10000,
+      "logical_width": 1792,
+      "logical_height": 720
+    },
+    {
+      "name": "far_city_tile",
+      "path": "backgrounds/outskirts/far_city_tile.webp",
+      "width": 2048,
+      "height": 720,
+      "transparent": true,
+      "tile_x": true,
+      "scroll_ratio": 0.2,
+      "repeat_x": true,
+      "map_width": 10000
+    },
+    {
+      "name": "mid_ruins_tile",
+      "path": "backgrounds/outskirts/mid_ruins_tile.webp",
+      "width": 2048,
+      "height": 720,
+      "transparent": true,
+      "tile_x": true,
+      "scroll_ratio": 0.45,
+      "repeat_x": true,
+      "map_width": 10000
+    },
+    {
+      "name": "far_landmark",
+      "path": "backgrounds/outskirts/far_landmark.webp",
+      "width": 900,
+      "height": 720,
+      "transparent": true,
+      "scroll_ratio": 0.2,
+      "localized": true
+    },
+    {
+      "name": "ruin_wall_a",
+      "path": "props/ruin_wall_a.webp",
+      "width": 390,
+      "height": 273,
+      "transparent": true,
+      "logical_width": 600,
+      "logical_height": 420
+    },
+    {
+      "name": "ruin_wall_b",
+      "path": "props/ruin_wall_b.webp",
+      "width": 360,
+      "height": 270,
+      "transparent": true,
+      "logical_width": 480,
+      "logical_height": 360
+    },
+    {
+      "name": "broken_tower",
+      "path": "props/broken_tower.webp",
+      "width": 234,
+      "height": 364,
+      "transparent": true,
+      "logical_width": 360,
+      "logical_height": 560
+    },
+    {
+      "name": "chasm_edge_left",
+      "path": "props/chasm_edge_left.webp",
+      "width": 300,
+      "height": 260,
+      "transparent": true
+    },
+    {
+      "name": "chasm_edge_right",
+      "path": "props/chasm_edge_right.webp",
+      "width": 300,
+      "height": 260,
+      "transparent": true
+    },
+    {
+      "name": "collapsed_bridge",
+      "path": "props/collapsed_bridge.webp",
+      "width": 624,
+      "height": 117,
+      "transparent": true,
+      "logical_width": 960,
+      "logical_height": 180
+    },
+    {
+      "name": "upper_walkway",
+      "path": "props/upper_walkway.webp",
+      "width": 750,
+      "height": 90,
+      "transparent": true,
+      "logical_width": 1000,
+      "logical_height": 120
+    },
+    {
+      "name": "large_rubble_a",
+      "path": "props/large_rubble_a.webp",
+      "width": 220,
+      "height": 120,
+      "transparent": true
+    },
+    {
+      "name": "large_rubble_b",
+      "path": "props/large_rubble_b.webp",
+      "width": 160,
+      "height": 90,
+      "transparent": true
+    },
+    {
+      "name": "dead_tree",
+      "path": "props/dead_tree.webp",
+      "width": 240,
+      "height": 380,
+      "transparent": true
+    },
+    {
+      "name": "crashed_pod_wreck",
+      "path": "props/crashed_pod_wreck.webp",
+      "width": 420,
+      "height": 240,
+      "transparent": true
+    },
+    {
+      "name": "outskirts_lamp",
+      "path": "props/outskirts_lamp.webp",
+      "width": 100,
+      "height": 260,
+      "transparent": true
+    },
+    {
+      "name": "ground_tile",
+      "path": "tiles/outskirts/ground_tile.webp",
+      "width": 512,
+      "height": 200,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "plaza_tile",
+      "path": "tiles/outskirts/plaza_tile.webp",
+      "width": 512,
+      "height": 200,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "ruin_platform",
+      "path": "tiles/outskirts/ruin_platform.webp",
+      "width": 256,
+      "height": 48,
+      "transparent": true
+    },
+    {
+      "name": "bridge_platform",
+      "path": "tiles/outskirts/bridge_platform.webp",
+      "width": 320,
+      "height": 48,
+      "transparent": true
+    },
+    {
+      "name": "ruin_ledge",
+      "path": "tiles/outskirts/ruin_ledge.webp",
+      "width": 480,
+      "height": 56,
+      "transparent": true
+    },
+    {
+      "name": "underground_fill",
+      "path": "tiles/underground_fill.webp",
+      "width": 512,
+      "height": 512,
+      "transparent": false,
+      "tile_x": true,
+      "tile_y": true
+    },
+    {
+      "name": "villa_f2_dining",
+      "path": "backgrounds/villa/villa_f2_dining.webp",
+      "width": 2090,
+      "height": 684,
+      "transparent": false,
+      "logical_width": 2200,
+      "logical_height": 720
+    },
+    {
+      "name": "villa_f3_chamber",
+      "path": "backgrounds/villa/villa_f3_chamber.webp",
+      "width": 1900,
+      "height": 684,
+      "transparent": false,
+      "logical_width": 2000,
+      "logical_height": 720
+    },
+    {
+      "name": "villa_dining_table_wide",
+      "path": "props/villa_dining_table_wide.webp",
+      "width": 585,
+      "height": 143,
+      "transparent": true,
+      "logical_width": 900,
+      "logical_height": 220
+    },
+    {
+      "name": "villa_chairs",
+      "path": "props/villa_chairs.webp",
+      "width": 390,
+      "height": 112,
+      "transparent": true,
+      "logical_width": 520,
+      "logical_height": 150
+    },
+    {
+      "name": "villa_sofa",
+      "path": "props/villa_sofa.webp",
+      "width": 270,
+      "height": 150,
+      "transparent": true,
+      "logical_width": 360,
+      "logical_height": 200
+    },
+    {
+      "name": "villa_side_table",
+      "path": "props/villa_side_table.webp",
+      "width": 160,
+      "height": 120,
+      "transparent": true
+    },
+    {
+      "name": "wall_tile_a",
+      "path": "backgrounds/passage/wall_tile_a.webp",
+      "width": 1024,
+      "height": 720,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "wall_tile_b",
+      "path": "backgrounds/passage/wall_tile_b.webp",
+      "width": 1024,
+      "height": 720,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "wall_tile_c",
+      "path": "backgrounds/passage/wall_tile_c.webp",
+      "width": 1024,
+      "height": 720,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "wall_tile_d",
+      "path": "backgrounds/passage/wall_tile_d.webp",
+      "width": 1024,
+      "height": 720,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "far_abyss_tile",
+      "path": "backgrounds/passage/far_abyss_tile.webp",
+      "width": 2048,
+      "height": 720,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "passage_pillar_a",
+      "path": "props/passage_pillar_a.webp",
+      "width": 220,
+      "height": 620,
+      "transparent": true
+    },
+    {
+      "name": "passage_pillar_b",
+      "path": "props/passage_pillar_b.webp",
+      "width": 195,
+      "height": 465,
+      "transparent": true,
+      "logical_width": 260,
+      "logical_height": 620
+    },
+    {
+      "name": "passage_arch",
+      "path": "props/passage_arch.webp",
+      "width": 390,
+      "height": 338,
+      "transparent": true,
+      "logical_width": 600,
+      "logical_height": 520
+    },
+    {
+      "name": "passage_window_crimson",
+      "path": "props/passage_window_crimson.webp",
+      "width": 208,
+      "height": 273,
+      "transparent": true,
+      "logical_width": 320,
+      "logical_height": 420
+    },
+    {
+      "name": "passage_gargoyle",
+      "path": "props/passage_gargoyle.webp",
+      "width": 240,
+      "height": 300,
+      "transparent": true
+    },
+    {
+      "name": "passage_chandelier",
+      "path": "props/passage_chandelier.webp",
+      "width": 280,
+      "height": 360,
+      "transparent": true
+    },
+    {
+      "name": "passage_pipe_cluster",
+      "path": "props/passage_pipe_cluster.webp",
+      "width": 315,
+      "height": 225,
+      "transparent": true,
+      "logical_width": 420,
+      "logical_height": 300
+    },
+    {
+      "name": "passage_gear_pillar",
+      "path": "props/passage_gear_pillar.webp",
+      "width": 200,
+      "height": 520,
+      "transparent": true
+    },
+    {
+      "name": "passage_stair_block",
+      "path": "props/passage_stair_block.webp",
+      "width": 320,
+      "height": 120,
+      "transparent": true
+    },
+    {
+      "name": "floor_tile",
+      "path": "tiles/passage/floor_tile.webp",
+      "width": 512,
+      "height": 180,
+      "transparent": true,
+      "tile_x": true
+    },
+    {
+      "name": "platform",
+      "path": "tiles/passage/platform.webp",
+      "width": 256,
+      "height": 48,
+      "transparent": true
+    },
+    {
+      "name": "low_tunnel_ceiling",
+      "path": "tiles/passage/low_tunnel_ceiling.webp",
+      "width": 512,
+      "height": 140,
+      "transparent": true,
+      "tile_x": true
+    },
+    {
+      "name": "bridge_plank",
+      "path": "tiles/passage/bridge_plank.webp",
+      "width": 320,
+      "height": 48,
+      "transparent": true
+    },
+    {
+      "name": "sky",
+      "path": "backgrounds/homeroad/sky.webp",
+      "width": 1792,
+      "height": 720,
+      "transparent": false,
+      "map_width": 10800,
+      "scroll_ratio": 0.05
+    },
+    {
+      "name": "far_tile",
+      "path": "backgrounds/homeroad/far_tile.webp",
+      "width": 2048,
+      "height": 720,
+      "transparent": true,
+      "tile_x": true,
+      "map_width": 10800,
+      "scroll_ratio": 0.2,
+      "repeat_x": true
+    },
+    {
+      "name": "mid_district_tile",
+      "path": "backgrounds/homeroad/mid_district_tile.webp",
+      "width": 2048,
+      "height": 720,
+      "transparent": true,
+      "tile_x": true,
+      "map_width": 10800,
+      "scroll_ratio": 0.45,
+      "repeat_x": true
+    },
+    {
+      "name": "nimrod_home_exterior",
+      "path": "props/nimrod_home_exterior.webp",
+      "width": 845,
+      "height": 468,
+      "transparent": true,
+      "localized": true,
+      "logical_width": 1300,
+      "logical_height": 720
+    },
+    {
+      "name": "house_ruin_a",
+      "path": "props/house_ruin_a.webp",
+      "width": 325,
+      "height": 247,
+      "transparent": true,
+      "logical_width": 500,
+      "logical_height": 380
+    },
+    {
+      "name": "house_ruin_b",
+      "path": "props/house_ruin_b.webp",
+      "width": 315,
+      "height": 225,
+      "transparent": true,
+      "logical_width": 420,
+      "logical_height": 300
+    },
+    {
+      "name": "broken_overpass",
+      "path": "props/broken_overpass.webp",
+      "width": 1100,
+      "height": 260,
+      "transparent": true
+    },
+    {
+      "name": "canal_wall_left",
+      "path": "props/canal_wall_left.webp",
+      "width": 300,
+      "height": 260,
+      "transparent": true
+    },
+    {
+      "name": "canal_wall_right",
+      "path": "props/canal_wall_right.webp",
+      "width": 300,
+      "height": 260,
+      "transparent": true
+    },
+    {
+      "name": "market_stall_a",
+      "path": "props/market_stall_a.webp",
+      "width": 260,
+      "height": 170,
+      "transparent": true
+    },
+    {
+      "name": "market_stall_b",
+      "path": "props/market_stall_b.webp",
+      "width": 260,
+      "height": 170,
+      "transparent": true
+    },
+    {
+      "name": "garden_fence",
+      "path": "props/garden_fence.webp",
+      "width": 450,
+      "height": 105,
+      "transparent": true,
+      "logical_width": 600,
+      "logical_height": 140
+    },
+    {
+      "name": "lamp_post_ruined",
+      "path": "props/lamp_post_ruined.webp",
+      "width": 100,
+      "height": 260,
+      "transparent": true
+    },
+    {
+      "name": "shrub",
+      "path": "props/shrub.webp",
+      "width": 220,
+      "height": 140,
+      "transparent": true
+    },
+    {
+      "name": "ground_tile",
+      "path": "tiles/homeroad/ground_tile.webp",
+      "width": 512,
+      "height": 200,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "plaza_tile",
+      "path": "tiles/homeroad/plaza_tile.webp",
+      "width": 512,
+      "height": 200,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "canal_floor_tile",
+      "path": "tiles/homeroad/canal_floor_tile.webp",
+      "width": 512,
+      "height": 200,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "stone_slab_bridge",
+      "path": "tiles/homeroad/stone_slab_bridge.webp",
+      "width": 360,
+      "height": 56,
+      "transparent": true
+    },
+    {
+      "name": "balcony_platform",
+      "path": "tiles/homeroad/balcony_platform.webp",
+      "width": 256,
+      "height": 48,
+      "transparent": true
+    },
+    {
+      "name": "passage_f1_bg",
+      "path": "backgrounds/passage/passage_f1_bg.webp",
+      "width": 2340,
+      "height": 520,
+      "transparent": false,
+      "logical_width": 3600,
+      "logical_height": 800
+    },
+    {
+      "name": "passage_f2_bg",
+      "path": "backgrounds/passage/passage_f2_bg.webp",
+      "width": 2340,
+      "height": 520,
+      "transparent": false,
+      "logical_width": 3600,
+      "logical_height": 800
+    },
+    {
+      "name": "passage_f3_bg",
+      "path": "backgrounds/passage/passage_f3_bg.webp",
+      "width": 2340,
+      "height": 520,
+      "transparent": false,
+      "logical_width": 3600,
+      "logical_height": 800
+    },
+    {
+      "name": "passage_f4_bg",
+      "path": "backgrounds/passage/passage_f4_bg.webp",
+      "width": 2340,
+      "height": 624,
+      "transparent": false,
+      "logical_width": 3600,
+      "logical_height": 960
+    },
+    {
+      "name": "passage_f5_bg",
+      "path": "backgrounds/passage/passage_f5_bg.webp",
+      "width": 2340,
+      "height": 520,
+      "transparent": false,
+      "logical_width": 3600,
+      "logical_height": 800
+    },
+    {
+      "name": "passage_f6_bg",
+      "path": "backgrounds/passage/passage_f6_bg.webp",
+      "width": 2340,
+      "height": 520,
+      "transparent": false,
+      "logical_width": 3600,
+      "logical_height": 800
+    },
+    {
+      "name": "passage_f7_bg",
+      "path": "backgrounds/passage/passage_f7_bg.webp",
+      "width": 2340,
+      "height": 520,
+      "transparent": false,
+      "logical_width": 3600,
+      "logical_height": 800
+    },
+    {
+      "name": "passage_f8_bg",
+      "path": "backgrounds/passage/passage_f8_bg.webp",
+      "width": 2340,
+      "height": 624,
+      "transparent": false,
+      "logical_width": 3600,
+      "logical_height": 960
+    },
+    {
+      "name": "home_interior_bg",
+      "path": "backgrounds/nimrod_home/home_interior_bg.webp",
+      "width": 1170,
+      "height": 468,
+      "transparent": false,
+      "logical_width": 1800,
+      "logical_height": 720
+    },
+    {
+      "name": "backyard_bg",
+      "path": "backgrounds/villa_backyard/backyard_bg.webp",
+      "width": 1500,
+      "height": 720,
+      "transparent": false
+    },
+    {
+      "name": "boss_bg",
+      "path": "backgrounds/cedar/boss_bg.webp",
+      "width": 1520,
+      "height": 912,
+      "transparent": false,
+      "logical_width": 1600,
+      "logical_height": 960
+    },
+    {
+      "name": "far_tile_2d",
+      "path": "backgrounds/cedar/far_tile_2d.webp",
+      "width": 1024,
+      "height": 1024,
+      "transparent": false,
+      "tile_x": true,
+      "tile_y": true
+    },
+    {
+      "name": "mid_trunks_tile_2d",
+      "path": "backgrounds/cedar/mid_trunks_tile_2d.webp",
+      "width": 1024,
+      "height": 1024,
+      "transparent": true,
+      "tile_x": true,
+      "tile_y": true,
+      "edge_exception": "Repeats on both axes; matching RGBA seam columns/rows intentionally contain trunk pixels."
+    },
+    {
+      "name": "home_bed",
+      "path": "props/home_bed.webp",
+      "width": 420,
+      "height": 200,
+      "transparent": true
+    },
+    {
+      "name": "home_table",
+      "path": "props/home_table.webp",
+      "width": 360,
+      "height": 180,
+      "transparent": true
+    },
+    {
+      "name": "home_shelf",
+      "path": "props/home_shelf.webp",
+      "width": 225,
+      "height": 315,
+      "transparent": true,
+      "logical_width": 300,
+      "logical_height": 420
+    },
+    {
+      "name": "home_lamp",
+      "path": "props/home_lamp.webp",
+      "width": 120,
+      "height": 260,
+      "transparent": true
+    },
+    {
+      "name": "home_rug",
+      "path": "props/home_rug.webp",
+      "width": 420,
+      "height": 60,
+      "transparent": true
+    },
+    {
+      "name": "cedar_stump",
+      "path": "props/cedar_stump.webp",
+      "width": 240,
+      "height": 200,
+      "transparent": true
+    },
+    {
+      "name": "skeleton_remains",
+      "path": "props/skeleton_remains.webp",
+      "width": 280,
+      "height": 120,
+      "transparent": true
+    },
+    {
+      "name": "hanging_vines",
+      "path": "props/hanging_vines.webp",
+      "width": 200,
+      "height": 360,
+      "transparent": true
+    },
+    {
+      "name": "bone_pile",
+      "path": "props/bone_pile.webp",
+      "width": 220,
+      "height": 130,
+      "transparent": true
+    },
+    {
+      "name": "cedar_branch_perch",
+      "path": "props/cedar_branch_perch.webp",
+      "width": 360,
+      "height": 120,
+      "transparent": true
+    },
+    {
+      "name": "root_floor_tile",
+      "path": "tiles/cedar/root_floor_tile.webp",
+      "width": 512,
+      "height": 180,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "branch_platform",
+      "path": "tiles/cedar/branch_platform.webp",
+      "width": 320,
+      "height": 48,
+      "transparent": true,
+      "tile_x": true
+    },
+    {
+      "name": "home_floor_tile",
+      "path": "tiles/home/home_floor_tile.webp",
+      "width": 512,
+      "height": 180,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "bone_floor_tile",
+      "path": "tiles/cedar/bone_floor_tile.webp",
+      "width": 512,
+      "height": 180,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "boss_end_platform",
+      "path": "tiles/cedar/boss_end_platform.webp",
+      "width": 280,
+      "height": 56,
+      "transparent": true,
+      "tile_x": true
+    },
+    {
+      "path": "sprites/enemies/humbaba/idle.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 1296,
+      "height": 285
+    },
+    {
+      "path": "sprites/enemies/humbaba/bite_windup.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 855,
+      "height": 266
+    },
+    {
+      "path": "sprites/enemies/humbaba/bite.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 795,
+      "height": 231
+    },
+    {
+      "path": "sprites/enemies/humbaba/bite_recovery.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 1024,
+      "height": 265
+    },
+    {
+      "path": "sprites/enemies/humbaba/claw_windup.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 912,
+      "height": 285
+    },
+    {
+      "path": "sprites/enemies/humbaba/claw_swipe.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 1908,
+      "height": 285
+    },
+    {
+      "path": "sprites/enemies/humbaba/claw_recovery.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 784,
+      "height": 283
+    },
+    {
+      "path": "sprites/enemies/humbaba/breath_windup.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 895,
+      "height": 285
+    },
+    {
+      "path": "sprites/enemies/humbaba/breath_loop.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 1104,
+      "height": 349
+    },
+    {
+      "path": "sprites/enemies/humbaba/breath_recovery.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 872,
+      "height": 266
+    },
+    {
+      "path": "sprites/enemies/humbaba/tail_windup.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 690,
+      "height": 242
+    },
+    {
+      "path": "sprites/enemies/humbaba/tail_strike.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 510,
+      "height": 289
+    },
+    {
+      "path": "sprites/enemies/humbaba/tail_recovery.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 664,
+      "height": 285
+    },
+    {
+      "name": "turn",
+      "path": "sprites/enemies/humbaba/turn.webp",
+      "width": 1050,
+      "height": 284,
+      "transparent": true
+    },
+    {
+      "path": "sprites/enemies/humbaba/phase_roar.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 1272,
+      "height": 285
+    },
+    {
+      "path": "sprites/enemies/humbaba/death.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 2424,
+      "height": 285
+    },
+    {
+      "path": "sprites/enemies/humbaba/walk.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 1672,
+      "height": 285
+    },
+    {
+      "path": "sprites/npcs/shamash/walk.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 752,
+      "height": 142
+    },
+    {
+      "path": "sprites/npcs/shamash/sit_down.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 316,
+      "height": 144
+    },
+    {
+      "path": "sprites/npcs/shamash/sit_idle.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 552,
+      "height": 133
+    },
+    {
+      "path": "sprites/npcs/shamash/stand_up.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 328,
+      "height": 147
+    },
+    {
+      "path": "sprites/npcs/aya/walk.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 960,
+      "height": 156
+    },
+    {
+      "path": "sprites/npcs/aya/sit_down.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 448,
+      "height": 156
+    },
+    {
+      "path": "sprites/npcs/aya/sit_idle.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 416,
+      "height": 136
+    },
+    {
+      "path": "sprites/npcs/aya/stand_up.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 408,
+      "height": 154
+    },
+    {
+      "path": "sprites/player/unarmed/sit_down.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 392,
+      "height": 159
+    },
+    {
+      "path": "sprites/player/unarmed/sit_idle.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 666,
+      "height": 146
+    },
+    {
+      "path": "sprites/player/unarmed/stand_up.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 400,
+      "height": 179
+    },
+    {
+      "path": "sprites/fx/anur_light_projectile.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 248,
+      "height": 27
+    },
+    {
+      "path": "sprites/fx/anur_light_cast.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 432,
+      "height": 88
+    },
+    {
+      "path": "sprites/fx/anur_light_impact.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 430,
+      "height": 50
+    },
+    {
+      "path": "sprites/fx/humbaba_flame_cone.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 1818,
+      "height": 140
+    },
+    {
+      "path": "sprites/fx/humbaba_ember_aura.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 1260,
+      "height": 147
+    },
+    {
+      "path": "sprites/fx/humbaba_bite_spark.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 428,
+      "height": 63
+    },
+    {
+      "path": "props/villa_dining_table_prep.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 585,
+      "height": 143,
+      "logical_width": 900,
+      "logical_height": 220
+    },
+    {
+      "path": "props/villa_dining_table_full.webp",
+      "transparent": true,
+      "source": "stage9 image generator",
+      "status": "generated",
+      "width": 585,
+      "height": 143,
+      "logical_width": 900,
+      "logical_height": 220
+    },
+    {
+      "path": "props/gugalanna_helm.webp",
+      "width": 160,
+      "height": 160,
+      "transparent": true
+    },
+    {
+      "path": "props/space_pod.webp",
+      "width": 360,
+      "height": 195,
+      "transparent": true,
+      "logical_width": 480,
+      "logical_height": 260
+    },
+    {
+      "path": "props/melammu_pickup.webp",
+      "width": 128,
+      "height": 128,
+      "transparent": true
+    },
+    {
+      "path": "props/home_bed_blood.webp",
+      "width": 273,
+      "height": 130,
+      "transparent": true,
+      "logical_width": 420,
+      "logical_height": 200
+    },
+    {
+      "path": "backgrounds/stage10/villa_f4_sky.webp",
+      "width": 998,
+      "height": 468,
+      "transparent": false,
+      "logical_width": 1536,
+      "logical_height": 720
+    },
+    {
+      "path": "backgrounds/stage10/homefront_far_tile.webp",
+      "width": 1536,
+      "height": 540,
+      "transparent": true,
+      "tile_x": true,
+      "logical_width": 2048,
+      "logical_height": 720
+    },
+    {
+      "path": "backgrounds/stage10/homefront_sky.webp",
+      "width": 998,
+      "height": 468,
+      "transparent": false,
+      "logical_width": 1536,
+      "logical_height": 720
+    },
+    {
+      "path": "backgrounds/stage10/dilmun_sky.webp",
+      "width": 1792,
+      "height": 720,
+      "transparent": false
+    },
+    {
+      "path": "backgrounds/stage10/villa_f4_terrace.webp",
+      "width": 1430,
+      "height": 468,
+      "transparent": true,
+      "logical_width": 2200,
+      "logical_height": 720
+    },
+    {
+      "path": "backgrounds/stage10/dilmun_far_tile.webp",
+      "width": 2048,
+      "height": 720,
+      "transparent": true,
+      "tile_x": true
+    },
+    {
+      "path": "tiles/stage10/dilmun_ground_tile.webp",
+      "width": 512,
+      "height": 200,
+      "transparent": false,
+      "tile_x": true
+    },
+    {
+      "name": "small_rock",
+      "path": "props/small_rock.webp",
+      "width": 260,
+      "height": 180,
+      "transparent": true
+    },
+    {
+      "name": "cedar_staff_pickup",
+      "path": "props/cedar_staff_pickup.webp",
+      "width": 120,
+      "height": 300,
+      "transparent": true
+    },
+    {
+      "name": "axe_gift",
+      "path": "props/axe_gift.webp",
+      "width": 220,
+      "height": 140,
+      "transparent": true
+    },
+    {
+      "name": "ferry_boat",
+      "path": "props/ferry_boat.webp",
+      "width": 420,
+      "height": 180,
+      "transparent": true
+    },
+    {
+      "name": "paper_note",
+      "path": "props/paper_note.webp",
+      "width": 96,
+      "height": 72,
+      "transparent": true
+    },
+    {
+      "name": "shimati_stall",
+      "path": "props/shimati_stall.webp",
+      "width": 480,
+      "height": 300,
+      "transparent": true
+    },
+    {
+      "name": "ground_tile",
+      "path": "tiles/deathsea/ground_tile.png",
+      "width": 512,
+      "height": 200,
+      "transparent": false
+    },
+    {
+      "name": "stars_tile",
+      "path": "backgrounds/deathsea/stars_tile.webp",
+      "width": 1024,
+      "height": 1024,
+      "transparent": false
+    },
+    {
+      "name": "bone_arrow",
+      "path": "sprites/fx/bone_arrow.webp",
+      "width": 64,
+      "height": 15,
+      "transparent": true
+    },
+    {
+      "name": "severed_arm",
+      "path": "sprites/fx/severed_arm.webp",
+      "width": 380,
+      "height": 69,
+      "transparent": true
+    },
+    {
+      "name": "gugalanna_dust",
+      "path": "sprites/fx/gugalanna_dust.webp",
+      "width": 575,
+      "height": 82,
+      "transparent": true
+    },
+    {
+      "name": "gugalanna_shockwave",
+      "path": "sprites/fx/gugalanna_shockwave.webp",
+      "width": 316,
+      "height": 41,
+      "transparent": true
+    },
+    {
+      "name": "chain_hook",
+      "path": "sprites/fx/chain_hook.webp",
+      "width": 51,
+      "height": 24,
+      "transparent": true
+    },
+    {
+      "name": "chain_segment",
+      "path": "sprites/fx/chain_segment.webp",
+      "width": 38,
+      "height": 15,
+      "transparent": true
+    },
+    {
+      "name": "root_flame",
+      "path": "sprites/fx/root_flame.webp",
+      "width": 576,
+      "height": 199,
+      "transparent": true
+    },
+    {
+      "name": "spit_projectile",
+      "path": "sprites/fx/spit_projectile.webp",
+      "width": 296,
+      "height": 73,
+      "transparent": true
+    },
+    {
+      "name": "bone_spike_ground",
+      "path": "sprites/fx/bone_spike_ground.webp",
+      "width": 213,
+      "height": 62,
+      "transparent": true
+    },
+    {
+      "name": "bone_spike",
+      "path": "sprites/fx/bone_spike.webp",
+      "width": 268,
+      "height": 105,
+      "transparent": true
+    },
+    {
+      "name": "gugalanna_rake_arc",
+      "path": "sprites/fx/gugalanna_rake_arc.webp",
+      "width": 1260,
+      "height": 151,
+      "transparent": true
+    },
+    {
+      "name": "gas_cloud",
+      "path": "sprites/fx/gas_cloud.webp",
+      "width": 546,
+      "height": 102,
+      "transparent": true
+    },
+    {
+      "name": "armor_hit_spark",
+      "path": "sprites/fx/armor_hit_spark.webp",
+      "width": 460,
+      "height": 111,
+      "transparent": true
+    },
+    {
+      "name": "soul_flame_cone",
+      "path": "sprites/fx/soul_flame_cone.webp",
+      "width": 1374,
+      "height": 141,
+      "transparent": true
+    },
+    {
+      "name": "devour_bite",
+      "path": "sprites/fx/devour_bite.webp",
+      "width": 380,
+      "height": 175,
+      "transparent": true
+    },
+    {
+      "name": "mote",
+      "path": "sprites/fx/mote.webp",
+      "width": 128,
+      "height": 44,
+      "transparent": true
+    },
+    {
+      "name": "gugalanna_lightning",
+      "path": "sprites/fx/gugalanna_lightning.webp",
+      "width": 516,
+      "height": 104,
+      "transparent": true
+    },
+    {
+      "name": "hit_spark",
+      "path": "sprites/fx/hit_spark.webp",
+      "width": 650,
+      "height": 136,
+      "transparent": true
+    },
+    {
+      "name": "guard_spark",
+      "path": "sprites/fx/guard_spark.webp",
+      "width": 495,
+      "height": 105,
+      "transparent": true
+    },
+    {
+      "name": "blue_flame_explosion",
+      "path": "sprites/fx/blue_flame_explosion.webp",
+      "width": 630,
+      "height": 117,
+      "transparent": true
+    },
+    {
+      "name": "explosion",
+      "path": "sprites/fx/explosion.webp",
+      "width": 720,
+      "height": 135,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/npcs/gatekeeper/idle.webp",
+      "width": 415,
+      "height": 194,
+      "transparent": true
+    },
+    {
+      "name": "open_gate",
+      "path": "sprites/npcs/gatekeeper/open_gate.webp",
+      "width": 525,
+      "height": 172,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/npcs/aya/idle.webp",
+      "width": 485,
+      "height": 221,
+      "transparent": true
+    },
+    {
+      "name": "idle_front",
+      "path": "sprites/npcs/aya/idle_front.webp",
+      "width": 432,
+      "height": 199,
+      "transparent": true
+    },
+    {
+      "name": "chop",
+      "path": "sprites/npcs/cook_a/chop.webp",
+      "width": 774,
+      "height": 183,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/npcs/ninsun/idle.webp",
+      "width": 445,
+      "height": 240,
+      "transparent": true
+    },
+    {
+      "name": "idle_front",
+      "path": "sprites/npcs/ninsun/idle_front.webp",
+      "width": 408,
+      "height": 221,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/npcs/shimati/idle.webp",
+      "width": 730,
+      "height": 225,
+      "transparent": true
+    },
+    {
+      "name": "give_paper",
+      "path": "sprites/npcs/shimati/give_paper.webp",
+      "width": 732,
+      "height": 224,
+      "transparent": true
+    },
+    {
+      "name": "idle_front",
+      "path": "sprites/npcs/shimati/idle_front.webp",
+      "width": 500,
+      "height": 248,
+      "transparent": true
+    },
+    {
+      "name": "bed_asleep",
+      "path": "sprites/npcs/enkidua/bed_asleep.webp",
+      "width": 1974,
+      "height": 104,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/npcs/enkidua/idle.webp",
+      "width": 395,
+      "height": 257,
+      "transparent": true
+    },
+    {
+      "name": "bed_awake",
+      "path": "sprites/npcs/enkidua/bed_awake.webp",
+      "width": 1974,
+      "height": 104,
+      "transparent": true
+    },
+    {
+      "name": "idle_front",
+      "path": "sprites/npcs/enkidua/idle_front.webp",
+      "width": 495,
+      "height": 257,
+      "transparent": true
+    },
+    {
+      "name": "stir",
+      "path": "sprites/npcs/cook_b/stir.webp",
+      "width": 654,
+      "height": 188,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/npcs/shamash/idle.webp",
+      "width": 296,
+      "height": 234,
+      "transparent": true
+    },
+    {
+      "name": "idle_front",
+      "path": "sprites/npcs/shamash/idle_front.webp",
+      "width": 464,
+      "height": 234,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/npcs/inanna/idle.webp",
+      "width": 775,
+      "height": 245,
+      "transparent": true
+    },
+    {
+      "name": "idle_front",
+      "path": "sprites/npcs/inanna/idle_front.webp",
+      "width": 848,
+      "height": 203,
+      "transparent": true
+    },
+    {
+      "name": "dice_loop",
+      "path": "sprites/npcs/urshanabi/dice_loop.webp",
+      "width": 1368,
+      "height": 174,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/npcs/lugalbanda/idle.webp",
+      "width": 585,
+      "height": 283,
+      "transparent": true
+    },
+    {
+      "name": "idle_front",
+      "path": "sprites/npcs/lugalbanda/idle_front.webp",
+      "width": 480,
+      "height": 215,
+      "transparent": true
+    },
+    {
+      "name": "sweep",
+      "path": "sprites/npcs/servant_b/sweep.webp",
+      "width": 792,
+      "height": 167,
+      "transparent": true
+    },
+    {
+      "name": "sweep",
+      "path": "sprites/npcs/servant_a/sweep.webp",
+      "width": 792,
+      "height": 163,
+      "transparent": true
+    },
+    {
+      "name": "arrange",
+      "path": "sprites/npcs/cook_c/arrange.webp",
+      "width": 732,
+      "height": 172,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/npcs/shamhat/idle.webp",
+      "width": 520,
+      "height": 215,
+      "transparent": true
+    },
+    {
+      "name": "idle_front",
+      "path": "sprites/npcs/shamhat/idle_front.webp",
+      "width": 424,
+      "height": 195,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/npcs/papsukkal/idle.webp",
+      "width": 395,
+      "height": 245,
+      "transparent": true
+    },
+    {
+      "name": "idle_front",
+      "path": "sprites/npcs/papsukkal/idle_front.webp",
+      "width": 348,
+      "height": 203,
+      "transparent": true
+    },
+    {
+      "name": "float",
+      "path": "sprites/enemies/gas_sac/float.webp",
+      "width": 930,
+      "height": 201,
+      "transparent": true
+    },
+    {
+      "name": "death_swell",
+      "path": "sprites/enemies/gas_sac/death_swell.webp",
+      "width": 966,
+      "height": 221,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/enemies/gas_sac/hurt.webp",
+      "width": 380,
+      "height": 202,
+      "transparent": true
+    },
+    {
+      "name": "bump",
+      "path": "sprites/enemies/gas_sac/bump.webp",
+      "width": 525,
+      "height": 182,
+      "transparent": true
+    },
+    {
+      "name": "burst",
+      "path": "sprites/enemies/gas_sac/burst.webp",
+      "width": 825,
+      "height": 207,
+      "transparent": true
+    },
+    {
+      "name": "turn",
+      "path": "sprites/enemies/gas_sac/turn.webp",
+      "width": 604,
+      "height": 197,
+      "transparent": true
+    },
+    {
+      "name": "recovery",
+      "path": "sprites/enemies/cedar_archer/recovery.webp",
+      "width": 696,
+      "height": 203,
+      "transparent": true
+    },
+    {
+      "name": "walk",
+      "path": "sprites/enemies/cedar_archer/walk.webp",
+      "width": 1104,
+      "height": 206,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/enemies/cedar_archer/idle.webp",
+      "width": 786,
+      "height": 203,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/enemies/cedar_archer/hurt.webp",
+      "width": 424,
+      "height": 215,
+      "transparent": true
+    },
+    {
+      "name": "hop_back",
+      "path": "sprites/enemies/cedar_archer/hop_back.webp",
+      "width": 865,
+      "height": 219,
+      "transparent": true
+    },
+    {
+      "name": "shoot",
+      "path": "sprites/enemies/cedar_archer/shoot.webp",
+      "width": 570,
+      "height": 207,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/enemies/cedar_archer/death.webp",
+      "width": 1008,
+      "height": 246,
+      "transparent": true
+    },
+    {
+      "name": "windup",
+      "path": "sprites/enemies/cedar_archer/windup.webp",
+      "width": 660,
+      "height": 215,
+      "transparent": true
+    },
+    {
+      "name": "turn",
+      "path": "sprites/enemies/cedar_archer/turn.webp",
+      "width": 560,
+      "height": 203,
+      "transparent": true
+    },
+    {
+      "name": "tell",
+      "path": "sprites/enemies/wall_diver/tell.webp",
+      "width": 534,
+      "height": 127,
+      "transparent": true
+    },
+    {
+      "name": "recovery",
+      "path": "sprites/enemies/wall_diver/recovery.webp",
+      "width": 592,
+      "height": 148,
+      "transparent": true
+    },
+    {
+      "name": "perch_wall",
+      "path": "sprites/enemies/wall_diver/perch_wall.webp",
+      "width": 468,
+      "height": 149,
+      "transparent": true
+    },
+    {
+      "name": "perch_ceiling",
+      "path": "sprites/enemies/wall_diver/perch_ceiling.webp",
+      "width": 564,
+      "height": 136,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/enemies/wall_diver/idle.webp",
+      "width": 652,
+      "height": 114,
+      "transparent": true
+    },
+    {
+      "name": "dive",
+      "path": "sprites/enemies/wall_diver/dive.webp",
+      "width": 471,
+      "height": 137,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/enemies/wall_diver/hurt.webp",
+      "width": 406,
+      "height": 150,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/enemies/wall_diver/death.webp",
+      "width": 774,
+      "height": 189,
+      "transparent": true
+    },
+    {
+      "name": "windup",
+      "path": "sprites/enemies/wall_diver/windup.webp",
+      "width": 576,
+      "height": 164,
+      "transparent": true
+    },
+    {
+      "name": "turn",
+      "path": "sprites/enemies/wall_diver/turn.webp",
+      "width": 516,
+      "height": 140,
+      "transparent": true
+    },
+    {
+      "name": "claw",
+      "path": "sprites/enemies/wall_diver/claw.webp",
+      "width": 600,
+      "height": 158,
+      "transparent": true
+    },
+    {
+      "name": "crawl",
+      "path": "sprites/enemies/wall_diver/crawl.webp",
+      "width": 1144,
+      "height": 145,
+      "transparent": true
+    },
+    {
+      "name": "phase_transition",
+      "path": "sprites/enemies/kala_ushumgal/phase_transition.webp",
+      "width": 1544,
+      "height": 432,
+      "transparent": true
+    },
+    {
+      "name": "walk",
+      "path": "sprites/enemies/kala_ushumgal/walk.webp",
+      "width": 2448,
+      "height": 321,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/enemies/kala_ushumgal/idle.webp",
+      "width": 1288,
+      "height": 374,
+      "transparent": true
+    },
+    {
+      "name": "roar_loop",
+      "path": "sprites/enemies/kala_ushumgal/roar_loop.webp",
+      "width": 1248,
+      "height": 432,
+      "transparent": true
+    },
+    {
+      "name": "whip_swing",
+      "path": "sprites/enemies/kala_ushumgal/whip_swing.webp",
+      "width": 1372,
+      "height": 400,
+      "transparent": true
+    },
+    {
+      "name": "roar_windup",
+      "path": "sprites/enemies/kala_ushumgal/roar_windup.webp",
+      "width": 1210,
+      "height": 382,
+      "transparent": true
+    },
+    {
+      "name": "whip_recovery",
+      "path": "sprites/enemies/kala_ushumgal/whip_recovery.webp",
+      "width": 1300,
+      "height": 451,
+      "transparent": true
+    },
+    {
+      "name": "whip_windup",
+      "path": "sprites/enemies/kala_ushumgal/whip_windup.webp",
+      "width": 1170,
+      "height": 396,
+      "transparent": true
+    },
+    {
+      "name": "spines_back",
+      "path": "sprites/enemies/kala_ushumgal/spines_back.webp",
+      "width": 1092,
+      "height": 381,
+      "transparent": true
+    },
+    {
+      "name": "slam_recovery",
+      "path": "sprites/enemies/kala_ushumgal/slam_recovery.webp",
+      "width": 1310,
+      "height": 393,
+      "transparent": true
+    },
+    {
+      "name": "final_swing",
+      "path": "sprites/enemies/kala_ushumgal/final_swing.webp",
+      "width": 1248,
+      "height": 379,
+      "transparent": true
+    },
+    {
+      "name": "summon",
+      "path": "sprites/enemies/kala_ushumgal/summon.webp",
+      "width": 1524,
+      "height": 421,
+      "transparent": true
+    },
+    {
+      "name": "collapse",
+      "path": "sprites/enemies/kala_ushumgal/collapse.webp",
+      "width": 1476,
+      "height": 433,
+      "transparent": true
+    },
+    {
+      "name": "whip_swing_back",
+      "path": "sprites/enemies/kala_ushumgal/whip_swing_back.webp",
+      "width": 1124,
+      "height": 376,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/enemies/kala_ushumgal/death.webp",
+      "width": 1744,
+      "height": 417,
+      "transparent": true
+    },
+    {
+      "name": "final_swing_windup",
+      "path": "sprites/enemies/kala_ushumgal/final_swing_windup.webp",
+      "width": 1215,
+      "height": 376,
+      "transparent": true
+    },
+    {
+      "name": "turn",
+      "path": "sprites/enemies/kala_ushumgal/turn.webp",
+      "width": 1362,
+      "height": 374,
+      "transparent": true
+    },
+    {
+      "name": "slam",
+      "path": "sprites/enemies/kala_ushumgal/slam.webp",
+      "width": 1188,
+      "height": 339,
+      "transparent": true
+    },
+    {
+      "name": "slam_windup",
+      "path": "sprites/enemies/kala_ushumgal/slam_windup.webp",
+      "width": 1460,
+      "height": 344,
+      "transparent": true
+    },
+    {
+      "name": "roar_recovery",
+      "path": "sprites/enemies/kala_ushumgal/roar_recovery.webp",
+      "width": 1340,
+      "height": 403,
+      "transparent": true
+    },
+    {
+      "name": "run",
+      "path": "sprites/enemies/corpse_bomber/run.webp",
+      "width": 1272,
+      "height": 194,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/enemies/corpse_bomber/idle.webp",
+      "width": 612,
+      "height": 221,
+      "transparent": true
+    },
+    {
+      "name": "scream",
+      "path": "sprites/enemies/corpse_bomber/scream.webp",
+      "width": 664,
+      "height": 202,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/enemies/corpse_bomber/hurt.webp",
+      "width": 310,
+      "height": 195,
+      "transparent": true
+    },
+    {
+      "name": "turn",
+      "path": "sprites/enemies/corpse_bomber/turn.webp",
+      "width": 552,
+      "height": 191,
+      "transparent": true
+    },
+    {
+      "name": "fuse",
+      "path": "sprites/enemies/corpse_bomber/fuse.webp",
+      "width": 846,
+      "height": 220,
+      "transparent": true
+    },
+    {
+      "name": "explode",
+      "path": "sprites/enemies/corpse_bomber/explode.webp",
+      "width": 972,
+      "height": 219,
+      "transparent": true
+    },
+    {
+      "name": "sweep",
+      "path": "sprites/enemies/cedar_colossus/sweep.webp",
+      "width": 702,
+      "height": 274,
+      "transparent": true
+    },
+    {
+      "name": "walk",
+      "path": "sprites/enemies/cedar_colossus/walk.webp",
+      "width": 1792,
+      "height": 218,
+      "transparent": true
+    },
+    {
+      "name": "sweep_recovery",
+      "path": "sprites/enemies/cedar_colossus/sweep_recovery.webp",
+      "width": 1360,
+      "height": 294,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/enemies/cedar_colossus/idle.webp",
+      "width": 990,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/enemies/cedar_colossus/hurt.webp",
+      "width": 644,
+      "height": 305,
+      "transparent": true
+    },
+    {
+      "name": "rear_poke",
+      "path": "sprites/enemies/cedar_colossus/rear_poke.webp",
+      "width": 944,
+      "height": 258,
+      "transparent": true
+    },
+    {
+      "name": "sweep_windup",
+      "path": "sprites/enemies/cedar_colossus/sweep_windup.webp",
+      "width": 1055,
+      "height": 263,
+      "transparent": true
+    },
+    {
+      "name": "slam_recovery",
+      "path": "sprites/enemies/cedar_colossus/slam_recovery.webp",
+      "width": 1130,
+      "height": 296,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/enemies/cedar_colossus/death.webp",
+      "width": 1472,
+      "height": 339,
+      "transparent": true
+    },
+    {
+      "name": "turn",
+      "path": "sprites/enemies/cedar_colossus/turn.webp",
+      "width": 1128,
+      "height": 320,
+      "transparent": true
+    },
+    {
+      "name": "slam",
+      "path": "sprites/enemies/cedar_colossus/slam.webp",
+      "width": 672,
+      "height": 359,
+      "transparent": true
+    },
+    {
+      "name": "slam_windup",
+      "path": "sprites/enemies/cedar_colossus/slam_windup.webp",
+      "width": 1662,
+      "height": 247,
+      "transparent": true
+    },
+    {
+      "name": "claw_windup",
+      "path": "sprites/enemies/cedar_demon/claw_windup.webp",
+      "width": 912,
+      "height": 237,
+      "transparent": true
+    },
+    {
+      "name": "tell",
+      "path": "sprites/enemies/cedar_demon/tell.webp",
+      "width": 564,
+      "height": 237,
+      "transparent": true
+    },
+    {
+      "name": "recovery",
+      "path": "sprites/enemies/cedar_demon/recovery.webp",
+      "width": 908,
+      "height": 214,
+      "transparent": true
+    },
+    {
+      "name": "perch",
+      "path": "sprites/enemies/cedar_demon/perch.webp",
+      "width": 836,
+      "height": 202,
+      "transparent": true
+    },
+    {
+      "name": "walk",
+      "path": "sprites/enemies/cedar_demon/walk.webp",
+      "width": 1064,
+      "height": 228,
+      "transparent": true
+    },
+    {
+      "name": "claws",
+      "path": "sprites/enemies/cedar_demon/claws.webp",
+      "width": 1152,
+      "height": 212,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/enemies/cedar_demon/idle.webp",
+      "width": 678,
+      "height": 228,
+      "transparent": true
+    },
+    {
+      "name": "fall",
+      "path": "sprites/enemies/cedar_demon/fall.webp",
+      "width": 678,
+      "height": 242,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/enemies/cedar_demon/hurt.webp",
+      "width": 384,
+      "height": 208,
+      "transparent": true
+    },
+    {
+      "name": "land_stab",
+      "path": "sprites/enemies/cedar_demon/land_stab.webp",
+      "width": 812,
+      "height": 236,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/enemies/cedar_demon/death.webp",
+      "width": 1200,
+      "height": 218,
+      "transparent": true
+    },
+    {
+      "name": "turn",
+      "path": "sprites/enemies/cedar_demon/turn.webp",
+      "width": 952,
+      "height": 229,
+      "transparent": true
+    },
+    {
+      "name": "recovery",
+      "path": "sprites/enemies/boar_charger/recovery.webp",
+      "width": 1168,
+      "height": 194,
+      "transparent": true
+    },
+    {
+      "name": "walk",
+      "path": "sprites/enemies/boar_charger/walk.webp",
+      "width": 1616,
+      "height": 147,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/enemies/boar_charger/idle.webp",
+      "width": 1512,
+      "height": 175,
+      "transparent": true
+    },
+    {
+      "name": "charge",
+      "path": "sprites/enemies/boar_charger/charge.webp",
+      "width": 1172,
+      "height": 177,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/enemies/boar_charger/hurt.webp",
+      "width": 562,
+      "height": 216,
+      "transparent": true
+    },
+    {
+      "name": "crash_stun",
+      "path": "sprites/enemies/boar_charger/crash_stun.webp",
+      "width": 1212,
+      "height": 196,
+      "transparent": true
+    },
+    {
+      "name": "telegraph",
+      "path": "sprites/enemies/boar_charger/telegraph.webp",
+      "width": 1248,
+      "height": 177,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/enemies/boar_charger/death.webp",
+      "width": 1482,
+      "height": 180,
+      "transparent": true
+    },
+    {
+      "name": "turn",
+      "path": "sprites/enemies/boar_charger/turn.webp",
+      "width": 1236,
+      "height": 204,
+      "transparent": true
+    },
+    {
+      "name": "glide",
+      "path": "sprites/enemies/wraith_ray/glide.webp",
+      "width": 816,
+      "height": 97,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/enemies/wraith_ray/hurt.webp",
+      "width": 252,
+      "height": 114,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/enemies/wraith_ray/death.webp",
+      "width": 558,
+      "height": 114,
+      "transparent": true
+    },
+    {
+      "name": "turn",
+      "path": "sprites/enemies/wraith_ray/turn.webp",
+      "width": 392,
+      "height": 110,
+      "transparent": true
+    },
+    {
+      "name": "float",
+      "path": "sprites/enemies/cedar_wisp/float.webp",
+      "width": 570,
+      "height": 194,
+      "transparent": true
+    },
+    {
+      "name": "contact",
+      "path": "sprites/enemies/cedar_wisp/contact.webp",
+      "width": 420,
+      "height": 193,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/enemies/cedar_wisp/hurt.webp",
+      "width": 280,
+      "height": 198,
+      "transparent": true
+    },
+    {
+      "name": "turn",
+      "path": "sprites/enemies/cedar_wisp/turn.webp",
+      "width": 380,
+      "height": 212,
+      "transparent": true
+    },
+    {
+      "name": "fuse",
+      "path": "sprites/enemies/cedar_wisp/fuse.webp",
+      "width": 955,
+      "height": 201,
+      "transparent": true
+    },
+    {
+      "name": "explode",
+      "path": "sprites/enemies/cedar_wisp/explode.webp",
+      "width": 654,
+      "height": 207,
+      "transparent": true
+    },
+    {
+      "name": "recovery",
+      "path": "sprites/enemies/root_spewer/recovery.webp",
+      "width": 564,
+      "height": 167,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/enemies/root_spewer/idle.webp",
+      "width": 684,
+      "height": 150,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/enemies/root_spewer/hurt.webp",
+      "width": 352,
+      "height": 177,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/enemies/root_spewer/death.webp",
+      "width": 786,
+      "height": 201,
+      "transparent": true
+    },
+    {
+      "name": "windup",
+      "path": "sprites/enemies/root_spewer/windup.webp",
+      "width": 568,
+      "height": 160,
+      "transparent": true
+    },
+    {
+      "name": "turn",
+      "path": "sprites/enemies/root_spewer/turn.webp",
+      "width": 584,
+      "height": 176,
+      "transparent": true
+    },
+    {
+      "name": "spew",
+      "path": "sprites/enemies/root_spewer/spew.webp",
+      "width": 964,
+      "height": 155,
+      "transparent": true
+    },
+    {
+      "name": "stomp_recovery",
+      "path": "sprites/enemies/gugalanna/stomp_recovery.webp",
+      "width": 1545,
+      "height": 403,
+      "transparent": true
+    },
+    {
+      "name": "walk",
+      "path": "sprites/enemies/gugalanna/walk.webp",
+      "width": 3072,
+      "height": 390,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/enemies/gugalanna/idle.webp",
+      "width": 2464,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "name": "uppercut_windup",
+      "path": "sprites/enemies/gugalanna/uppercut_windup.webp",
+      "width": 1520,
+      "height": 403,
+      "transparent": true
+    },
+    {
+      "name": "rake",
+      "path": "sprites/enemies/gugalanna/rake.webp",
+      "width": 2160,
+      "height": 403,
+      "transparent": true
+    },
+    {
+      "name": "rake_windup",
+      "path": "sprites/enemies/gugalanna/rake_windup.webp",
+      "width": 2328,
+      "height": 403,
+      "transparent": true
+    },
+    {
+      "name": "rake_recovery",
+      "path": "sprites/enemies/gugalanna/rake_recovery.webp",
+      "width": 2175,
+      "height": 403,
+      "transparent": true
+    },
+    {
+      "name": "uppercut",
+      "path": "sprites/enemies/gugalanna/uppercut.webp",
+      "width": 1116,
+      "height": 491,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/enemies/gugalanna/death.webp",
+      "width": 4620,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "name": "charge_recovery",
+      "path": "sprites/enemies/gugalanna/charge_recovery.webp",
+      "width": 1604,
+      "height": 364,
+      "transparent": true
+    },
+    {
+      "name": "stomp",
+      "path": "sprites/enemies/gugalanna/stomp.webp",
+      "width": 1314,
+      "height": 388,
+      "transparent": true
+    },
+    {
+      "name": "charge_crash",
+      "path": "sprites/enemies/gugalanna/charge_crash.webp",
+      "width": 1540,
+      "height": 411,
+      "transparent": true
+    },
+    {
+      "name": "stomp_windup",
+      "path": "sprites/enemies/gugalanna/stomp_windup.webp",
+      "width": 1848,
+      "height": 397,
+      "transparent": true
+    },
+    {
+      "name": "turn",
+      "path": "sprites/enemies/gugalanna/turn.webp",
+      "width": 2322,
+      "height": 403,
+      "transparent": true
+    },
+    {
+      "name": "charge_loop",
+      "path": "sprites/enemies/gugalanna/charge_loop.webp",
+      "width": 1488,
+      "height": 358,
+      "transparent": true
+    },
+    {
+      "name": "charge_windup",
+      "path": "sprites/enemies/gugalanna/charge_windup.webp",
+      "width": 2060,
+      "height": 403,
+      "transparent": true
+    },
+    {
+      "name": "uppercut_recovery",
+      "path": "sprites/enemies/gugalanna/uppercut_recovery.webp",
+      "width": 1625,
+      "height": 403,
+      "transparent": true
+    },
+    {
+      "name": "claw_windup",
+      "path": "sprites/enemies/shell_scorpion/claw_windup.webp",
+      "width": 876,
+      "height": 164,
+      "transparent": true
+    },
+    {
+      "name": "walk",
+      "path": "sprites/enemies/shell_scorpion/walk.webp",
+      "width": 1104,
+      "height": 129,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/enemies/shell_scorpion/idle.webp",
+      "width": 1206,
+      "height": 175,
+      "transparent": true
+    },
+    {
+      "name": "claw_recovery",
+      "path": "sprites/enemies/shell_scorpion/claw_recovery.webp",
+      "width": 996,
+      "height": 151,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/enemies/shell_scorpion/hurt.webp",
+      "width": 638,
+      "height": 201,
+      "transparent": true
+    },
+    {
+      "name": "guard_block",
+      "path": "sprites/enemies/shell_scorpion/guard_block.webp",
+      "width": 735,
+      "height": 176,
+      "transparent": true
+    },
+    {
+      "name": "tail_windup",
+      "path": "sprites/enemies/shell_scorpion/tail_windup.webp",
+      "width": 753,
+      "height": 204,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/enemies/shell_scorpion/death.webp",
+      "width": 1074,
+      "height": 189,
+      "transparent": true
+    },
+    {
+      "name": "claw_attack",
+      "path": "sprites/enemies/shell_scorpion/claw_attack.webp",
+      "width": 837,
+      "height": 179,
+      "transparent": true
+    },
+    {
+      "name": "turn",
+      "path": "sprites/enemies/shell_scorpion/turn.webp",
+      "width": 1098,
+      "height": 150,
+      "transparent": true
+    },
+    {
+      "name": "tail_recovery",
+      "path": "sprites/enemies/shell_scorpion/tail_recovery.webp",
+      "width": 884,
+      "height": 177,
+      "transparent": true
+    },
+    {
+      "name": "tail_strike",
+      "path": "sprites/enemies/shell_scorpion/tail_strike.webp",
+      "width": 897,
+      "height": 155,
+      "transparent": true
+    },
+    {
+      "name": "fly_idle",
+      "path": "sprites/enemies/sky_beast/fly_idle.webp",
+      "width": 690,
+      "height": 128,
+      "transparent": true
+    },
+    {
+      "name": "recovery",
+      "path": "sprites/enemies/sky_beast/recovery.webp",
+      "width": 484,
+      "height": 119,
+      "transparent": true
+    },
+    {
+      "name": "dive",
+      "path": "sprites/enemies/sky_beast/dive.webp",
+      "width": 540,
+      "height": 124,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/enemies/sky_beast/hurt.webp",
+      "width": 214,
+      "height": 124,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/enemies/sky_beast/death.webp",
+      "width": 492,
+      "height": 131,
+      "transparent": true
+    },
+    {
+      "name": "windup",
+      "path": "sprites/enemies/sky_beast/windup.webp",
+      "width": 428,
+      "height": 123,
+      "transparent": true
+    },
+    {
+      "name": "turn",
+      "path": "sprites/enemies/sky_beast/turn.webp",
+      "width": 360,
+      "height": 136,
+      "transparent": true
+    },
+    {
+      "name": "recovery",
+      "path": "sprites/enemies/melee_beast/recovery.webp",
+      "width": 556,
+      "height": 80,
+      "transparent": true
+    },
+    {
+      "name": "walk",
+      "path": "sprites/enemies/melee_beast/walk.webp",
+      "width": 992,
+      "height": 85,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/enemies/melee_beast/idle.webp",
+      "width": 720,
+      "height": 85,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/enemies/melee_beast/hurt.webp",
+      "width": 250,
+      "height": 116,
+      "transparent": true
+    },
+    {
+      "name": "attack",
+      "path": "sprites/enemies/melee_beast/attack.webp",
+      "width": 414,
+      "height": 83,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/enemies/melee_beast/death.webp",
+      "width": 960,
+      "height": 78,
+      "transparent": true
+    },
+    {
+      "name": "windup",
+      "path": "sprites/enemies/melee_beast/windup.webp",
+      "width": 556,
+      "height": 80,
+      "transparent": true
+    },
+    {
+      "name": "turn",
+      "path": "sprites/enemies/melee_beast/turn.webp",
+      "width": 508,
+      "height": 85,
+      "transparent": true
+    },
+    {
+      "name": "recovery",
+      "path": "sprites/enemies/ranged_beast/recovery.webp",
+      "width": 640,
+      "height": 151,
+      "transparent": true
+    },
+    {
+      "name": "walk",
+      "path": "sprites/enemies/ranged_beast/walk.webp",
+      "width": 1104,
+      "height": 151,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/enemies/ranged_beast/idle.webp",
+      "width": 738,
+      "height": 165,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/enemies/ranged_beast/hurt.webp",
+      "width": 276,
+      "height": 142,
+      "transparent": true
+    },
+    {
+      "name": "flame",
+      "path": "sprites/enemies/ranged_beast/flame.webp",
+      "width": 972,
+      "height": 52,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/enemies/ranged_beast/death.webp",
+      "width": 1086,
+      "height": 127,
+      "transparent": true
+    },
+    {
+      "name": "windup",
+      "path": "sprites/enemies/ranged_beast/windup.webp",
+      "width": 736,
+      "height": 169,
+      "transparent": true
+    },
+    {
+      "name": "flame_loop",
+      "path": "sprites/enemies/ranged_beast/flame_loop.webp",
+      "width": 696,
+      "height": 140,
+      "transparent": true
+    },
+    {
+      "name": "turn",
+      "path": "sprites/enemies/ranged_beast/turn.webp",
+      "width": 568,
+      "height": 164,
+      "transparent": true
+    },
+    {
+      "name": "tail_sweep",
+      "path": "sprites/enemies/chain_beastman/tail_sweep.webp",
+      "width": 1272,
+      "height": 327,
+      "transparent": true
+    },
+    {
+      "name": "walk",
+      "path": "sprites/enemies/chain_beastman/walk.webp",
+      "width": 1392,
+      "height": 278,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/enemies/chain_beastman/idle.webp",
+      "width": 1470,
+      "height": 326,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/enemies/chain_beastman/hurt.webp",
+      "width": 638,
+      "height": 388,
+      "transparent": true
+    },
+    {
+      "name": "chain_throw",
+      "path": "sprites/enemies/chain_beastman/chain_throw.webp",
+      "width": 1340,
+      "height": 261,
+      "transparent": true
+    },
+    {
+      "name": "pull_hold",
+      "path": "sprites/enemies/chain_beastman/pull_hold.webp",
+      "width": 999,
+      "height": 327,
+      "transparent": true
+    },
+    {
+      "name": "tail_windup",
+      "path": "sprites/enemies/chain_beastman/tail_windup.webp",
+      "width": 1375,
+      "height": 335,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/enemies/chain_beastman/death.webp",
+      "width": 1456,
+      "height": 323,
+      "transparent": true
+    },
+    {
+      "name": "smash_windup",
+      "path": "sprites/enemies/chain_beastman/smash_windup.webp",
+      "width": 1220,
+      "height": 366,
+      "transparent": true
+    },
+    {
+      "name": "smash",
+      "path": "sprites/enemies/chain_beastman/smash.webp",
+      "width": 1173,
+      "height": 328,
+      "transparent": true
+    },
+    {
+      "name": "chain_windup",
+      "path": "sprites/enemies/chain_beastman/chain_windup.webp",
+      "width": 1420,
+      "height": 336,
+      "transparent": true
+    },
+    {
+      "name": "turn",
+      "path": "sprites/enemies/chain_beastman/turn.webp",
+      "width": 1494,
+      "height": 381,
+      "transparent": true
+    },
+    {
+      "name": "tail_recovery",
+      "path": "sprites/enemies/chain_beastman/tail_recovery.webp",
+      "width": 1415,
+      "height": 327,
+      "transparent": true
+    },
+    {
+      "name": "smash_recovery",
+      "path": "sprites/enemies/chain_beastman/smash_recovery.webp",
+      "width": 1420,
+      "height": 350,
+      "transparent": true
+    },
+    {
+      "name": "walk",
+      "path": "sprites/enemies/cedar_sentinel/walk.webp",
+      "width": 960,
+      "height": 227,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/enemies/cedar_sentinel/idle.webp",
+      "width": 522,
+      "height": 224,
+      "transparent": true
+    },
+    {
+      "name": "shield_hold",
+      "path": "sprites/enemies/cedar_sentinel/shield_hold.webp",
+      "width": 428,
+      "height": 183,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/enemies/cedar_sentinel/hurt.webp",
+      "width": 406,
+      "height": 222,
+      "transparent": true
+    },
+    {
+      "name": "shield_up",
+      "path": "sprites/enemies/cedar_sentinel/shield_up.webp",
+      "width": 639,
+      "height": 159,
+      "transparent": true
+    },
+    {
+      "name": "slash",
+      "path": "sprites/enemies/cedar_sentinel/slash.webp",
+      "width": 663,
+      "height": 175,
+      "transparent": true
+    },
+    {
+      "name": "thrust",
+      "path": "sprites/enemies/cedar_sentinel/thrust.webp",
+      "width": 693,
+      "height": 181,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/enemies/cedar_sentinel/death.webp",
+      "width": 846,
+      "height": 236,
+      "transparent": true
+    },
+    {
+      "name": "windup",
+      "path": "sprites/enemies/cedar_sentinel/windup.webp",
+      "width": 840,
+      "height": 187,
+      "transparent": true
+    },
+    {
+      "name": "turn",
+      "path": "sprites/enemies/cedar_sentinel/turn.webp",
+      "width": 740,
+      "height": 180,
+      "transparent": true
+    },
+    {
+      "name": "shield_break_stun",
+      "path": "sprites/enemies/cedar_sentinel/shield_break_stun.webp",
+      "width": 680,
+      "height": 203,
+      "transparent": true
+    },
+    {
+      "name": "attack_recovery",
+      "path": "sprites/enemies/cedar_sentinel/attack_recovery.webp",
+      "width": 812,
+      "height": 172,
+      "transparent": true
+    },
+    {
+      "name": "recovery",
+      "path": "sprites/enemies/explosive_spitter/recovery.webp",
+      "width": 832,
+      "height": 174,
+      "transparent": true
+    },
+    {
+      "name": "spit",
+      "path": "sprites/enemies/explosive_spitter/spit.webp",
+      "width": 771,
+      "height": 190,
+      "transparent": true
+    },
+    {
+      "name": "walk",
+      "path": "sprites/enemies/explosive_spitter/walk.webp",
+      "width": 1504,
+      "height": 135,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/enemies/explosive_spitter/idle.webp",
+      "width": 1134,
+      "height": 163,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/enemies/explosive_spitter/hurt.webp",
+      "width": 494,
+      "height": 188,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/enemies/explosive_spitter/death.webp",
+      "width": 1044,
+      "height": 172,
+      "transparent": true
+    },
+    {
+      "name": "windup",
+      "path": "sprites/enemies/explosive_spitter/windup.webp",
+      "width": 1080,
+      "height": 179,
+      "transparent": true
+    },
+    {
+      "name": "turn",
+      "path": "sprites/enemies/explosive_spitter/turn.webp",
+      "width": 948,
+      "height": 189,
+      "transparent": true
+    },
+    {
+      "name": "attack_2",
+      "path": "sprites/player/axe_onearm/attack_2.webp",
+      "width": 1272,
+      "height": 166,
+      "transparent": true
+    },
+    {
+      "name": "jump_rise",
+      "path": "sprites/player/axe_onearm/jump_rise.webp",
+      "width": 894,
+      "height": 162,
+      "transparent": true
+    },
+    {
+      "name": "attack_3",
+      "path": "sprites/player/axe_onearm/attack_3.webp",
+      "width": 1530,
+      "height": 170,
+      "transparent": true
+    },
+    {
+      "name": "run",
+      "path": "sprites/player/axe_onearm/run.webp",
+      "width": 1330,
+      "height": 139,
+      "transparent": true
+    },
+    {
+      "name": "drop_through",
+      "path": "sprites/player/axe_onearm/drop_through.webp",
+      "width": 675,
+      "height": 155,
+      "transparent": true
+    },
+    {
+      "name": "walk",
+      "path": "sprites/player/axe_onearm/walk.webp",
+      "width": 1220,
+      "height": 145,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/player/axe_onearm/idle.webp",
+      "width": 1340,
+      "height": 202,
+      "transparent": true
+    },
+    {
+      "name": "fall",
+      "path": "sprites/player/axe_onearm/fall.webp",
+      "width": 948,
+      "height": 176,
+      "transparent": true
+    },
+    {
+      "name": "land",
+      "path": "sprites/player/axe_onearm/land.webp",
+      "width": 825,
+      "height": 163,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/player/axe_onearm/hurt.webp",
+      "width": 775,
+      "height": 184,
+      "transparent": true
+    },
+    {
+      "name": "crouch_exit",
+      "path": "sprites/player/axe_onearm/crouch_exit.webp",
+      "width": 1212,
+      "height": 150,
+      "transparent": true
+    },
+    {
+      "name": "attack_4",
+      "path": "sprites/player/axe_onearm/attack_4.webp",
+      "width": 1940,
+      "height": 139,
+      "transparent": true
+    },
+    {
+      "name": "roll",
+      "path": "sprites/player/axe_onearm/roll.webp",
+      "width": 2076,
+      "height": 157,
+      "transparent": true
+    },
+    {
+      "name": "crouch_idle",
+      "path": "sprites/player/axe_onearm/crouch_idle.webp",
+      "width": 738,
+      "height": 116,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/player/axe_onearm/death.webp",
+      "width": 1296,
+      "height": 155,
+      "transparent": true
+    },
+    {
+      "name": "melammu_absorb",
+      "path": "sprites/player/axe_onearm/melammu_absorb.webp",
+      "width": 702,
+      "height": 156,
+      "transparent": true
+    },
+    {
+      "name": "jump_start",
+      "path": "sprites/player/axe_onearm/jump_start.webp",
+      "width": 568,
+      "height": 162,
+      "transparent": true
+    },
+    {
+      "name": "arm_loss_hit",
+      "path": "sprites/player/axe_onearm/arm_loss_hit.webp",
+      "width": 815,
+      "height": 223,
+      "transparent": true
+    },
+    {
+      "name": "crouch_enter",
+      "path": "sprites/player/axe_onearm/crouch_enter.webp",
+      "width": 508,
+      "height": 162,
+      "transparent": true
+    },
+    {
+      "name": "attack_1",
+      "path": "sprites/player/axe_onearm/attack_1.webp",
+      "width": 1336,
+      "height": 139,
+      "transparent": true
+    },
+    {
+      "name": "attack_2",
+      "path": "sprites/player/staff/attack_2.webp",
+      "width": 1384,
+      "height": 175,
+      "transparent": true
+    },
+    {
+      "name": "jump_rise",
+      "path": "sprites/player/staff/jump_rise.webp",
+      "width": 858,
+      "height": 183,
+      "transparent": true
+    },
+    {
+      "name": "attack_3",
+      "path": "sprites/player/staff/attack_3.webp",
+      "width": 1360,
+      "height": 114,
+      "transparent": true
+    },
+    {
+      "name": "run",
+      "path": "sprites/player/staff/run.webp",
+      "width": 1360,
+      "height": 167,
+      "transparent": true
+    },
+    {
+      "name": "drop_through",
+      "path": "sprites/player/staff/drop_through.webp",
+      "width": 940,
+      "height": 201,
+      "transparent": true
+    },
+    {
+      "name": "walk",
+      "path": "sprites/player/staff/walk.webp",
+      "width": 1300,
+      "height": 158,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/player/staff/idle.webp",
+      "width": 1120,
+      "height": 247,
+      "transparent": true
+    },
+    {
+      "name": "fall",
+      "path": "sprites/player/staff/fall.webp",
+      "width": 1104,
+      "height": 194,
+      "transparent": true
+    },
+    {
+      "name": "land",
+      "path": "sprites/player/staff/land.webp",
+      "width": 1075,
+      "height": 235,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/player/staff/hurt.webp",
+      "width": 990,
+      "height": 253,
+      "transparent": true
+    },
+    {
+      "name": "crouch_exit",
+      "path": "sprites/player/staff/crouch_exit.webp",
+      "width": 524,
+      "height": 234,
+      "transparent": true
+    },
+    {
+      "name": "roll",
+      "path": "sprites/player/staff/roll.webp",
+      "width": 1500,
+      "height": 161,
+      "transparent": true
+    },
+    {
+      "name": "crouch_idle",
+      "path": "sprites/player/staff/crouch_idle.webp",
+      "width": 594,
+      "height": 150,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/player/staff/death.webp",
+      "width": 1056,
+      "height": 221,
+      "transparent": true
+    },
+    {
+      "name": "jump_start",
+      "path": "sprites/player/staff/jump_start.webp",
+      "width": 680,
+      "height": 192,
+      "transparent": true
+    },
+    {
+      "name": "crouch_enter",
+      "path": "sprites/player/staff/crouch_enter.webp",
+      "width": 556,
+      "height": 181,
+      "transparent": true
+    },
+    {
+      "name": "attack_1",
+      "path": "sprites/player/staff/attack_1.webp",
+      "width": 1096,
+      "height": 146,
+      "transparent": true
+    },
+    {
+      "name": "attack_2",
+      "path": "sprites/player/axe_prosthetic_helm_r50/attack_2.webp",
+      "width": 1480,
+      "height": 152,
+      "transparent": true
+    },
+    {
+      "name": "jump_rise",
+      "path": "sprites/player/axe_prosthetic_helm_r50/jump_rise.webp",
+      "width": 978,
+      "height": 150,
+      "transparent": true
+    },
+    {
+      "name": "attack_3",
+      "path": "sprites/player/axe_prosthetic_helm_r50/attack_3.webp",
+      "width": 1380,
+      "height": 125,
+      "transparent": true
+    },
+    {
+      "name": "run",
+      "path": "sprites/player/axe_prosthetic_helm_r50/run.webp",
+      "width": 1190,
+      "height": 117,
+      "transparent": true
+    },
+    {
+      "name": "drop_through",
+      "path": "sprites/player/axe_prosthetic_helm_r50/drop_through.webp",
+      "width": 490,
+      "height": 159,
+      "transparent": true
+    },
+    {
+      "name": "walk",
+      "path": "sprites/player/axe_prosthetic_helm_r50/walk.webp",
+      "width": 1820,
+      "height": 199,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/player/axe_prosthetic_helm_r50/idle.webp",
+      "width": 770,
+      "height": 149,
+      "transparent": true
+    },
+    {
+      "name": "fall",
+      "path": "sprites/player/axe_prosthetic_helm_r50/fall.webp",
+      "width": 1020,
+      "height": 159,
+      "transparent": true
+    },
+    {
+      "name": "land",
+      "path": "sprites/player/axe_prosthetic_helm_r50/land.webp",
+      "width": 820,
+      "height": 168,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/player/axe_prosthetic_helm_r50/hurt.webp",
+      "width": 685,
+      "height": 141,
+      "transparent": true
+    },
+    {
+      "name": "crouch_exit",
+      "path": "sprites/player/axe_prosthetic_helm_r50/crouch_exit.webp",
+      "width": 488,
+      "height": 174,
+      "transparent": true
+    },
+    {
+      "name": "attack_4",
+      "path": "sprites/player/axe_prosthetic_helm_r50/attack_4.webp",
+      "width": 1540,
+      "height": 125,
+      "transparent": true
+    },
+    {
+      "name": "roll",
+      "path": "sprites/player/axe_prosthetic_helm_r50/roll.webp",
+      "width": 1620,
+      "height": 149,
+      "transparent": true
+    },
+    {
+      "name": "crouch_idle",
+      "path": "sprites/player/axe_prosthetic_helm_r50/crouch_idle.webp",
+      "width": 756,
+      "height": 108,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/player/axe_prosthetic_helm_r50/death.webp",
+      "width": 1304,
+      "height": 125,
+      "transparent": true
+    },
+    {
+      "name": "devour",
+      "path": "sprites/player/axe_prosthetic_helm_r50/devour.webp",
+      "width": 1136,
+      "height": 126,
+      "transparent": true
+    },
+    {
+      "name": "jump_start",
+      "path": "sprites/player/axe_prosthetic_helm_r50/jump_start.webp",
+      "width": 712,
+      "height": 175,
+      "transparent": true
+    },
+    {
+      "name": "crouch_enter",
+      "path": "sprites/player/axe_prosthetic_helm_r50/crouch_enter.webp",
+      "width": 524,
+      "height": 174,
+      "transparent": true
+    },
+    {
+      "name": "attack_1",
+      "path": "sprites/player/axe_prosthetic_helm_r50/attack_1.webp",
+      "width": 1264,
+      "height": 125,
+      "transparent": true
+    },
+    {
+      "name": "jump_rise",
+      "path": "sprites/player/unarmed/jump_rise.webp",
+      "width": 834,
+      "height": 203,
+      "transparent": true
+    },
+    {
+      "name": "run",
+      "path": "sprites/player/unarmed/run.webp",
+      "width": 1430,
+      "height": 161,
+      "transparent": true
+    },
+    {
+      "name": "drop_through",
+      "path": "sprites/player/unarmed/drop_through.webp",
+      "width": 925,
+      "height": 202,
+      "transparent": true
+    },
+    {
+      "name": "walk",
+      "path": "sprites/player/unarmed/walk.webp",
+      "width": 1300,
+      "height": 180,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/player/unarmed/idle.webp",
+      "width": 1000,
+      "height": 248,
+      "transparent": true
+    },
+    {
+      "name": "fall",
+      "path": "sprites/player/unarmed/fall.webp",
+      "width": 1170,
+      "height": 215,
+      "transparent": true
+    },
+    {
+      "name": "land",
+      "path": "sprites/player/unarmed/land.webp",
+      "width": 975,
+      "height": 229,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/player/unarmed/hurt.webp",
+      "width": 950,
+      "height": 253,
+      "transparent": true
+    },
+    {
+      "name": "crouch_exit",
+      "path": "sprites/player/unarmed/crouch_exit.webp",
+      "width": 500,
+      "height": 240,
+      "transparent": true
+    },
+    {
+      "name": "roll",
+      "path": "sprites/player/unarmed/roll.webp",
+      "width": 1572,
+      "height": 159,
+      "transparent": true
+    },
+    {
+      "name": "crouch_idle",
+      "path": "sprites/player/unarmed/crouch_idle.webp",
+      "width": 810,
+      "height": 157,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/player/unarmed/death.webp",
+      "width": 912,
+      "height": 221,
+      "transparent": true
+    },
+    {
+      "name": "jump_start",
+      "path": "sprites/player/unarmed/jump_start.webp",
+      "width": 696,
+      "height": 219,
+      "transparent": true
+    },
+    {
+      "name": "crouch_enter",
+      "path": "sprites/player/unarmed/crouch_enter.webp",
+      "width": 464,
+      "height": 199,
+      "transparent": true
+    },
+    {
+      "name": "attack_2",
+      "path": "sprites/player/axe_prosthetic_helm_r90/attack_2.webp",
+      "width": 1312,
+      "height": 152,
+      "transparent": true
+    },
+    {
+      "name": "jump_rise",
+      "path": "sprites/player/axe_prosthetic_helm_r90/jump_rise.webp",
+      "width": 942,
+      "height": 157,
+      "transparent": true
+    },
+    {
+      "name": "attack_3",
+      "path": "sprites/player/axe_prosthetic_helm_r90/attack_3.webp",
+      "width": 2550,
+      "height": 185,
+      "transparent": true
+    },
+    {
+      "name": "run",
+      "path": "sprites/player/axe_prosthetic_helm_r90/run.webp",
+      "width": 1420,
+      "height": 145,
+      "transparent": true
+    },
+    {
+      "name": "drop_through",
+      "path": "sprites/player/axe_prosthetic_helm_r90/drop_through.webp",
+      "width": 700,
+      "height": 169,
+      "transparent": true
+    },
+    {
+      "name": "walk",
+      "path": "sprites/player/axe_prosthetic_helm_r90/walk.webp",
+      "width": 1120,
+      "height": 154,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/player/axe_prosthetic_helm_r90/idle.webp",
+      "width": 930,
+      "height": 154,
+      "transparent": true
+    },
+    {
+      "name": "fall",
+      "path": "sprites/player/axe_prosthetic_helm_r90/fall.webp",
+      "width": 810,
+      "height": 165,
+      "transparent": true
+    },
+    {
+      "name": "land",
+      "path": "sprites/player/axe_prosthetic_helm_r90/land.webp",
+      "width": 950,
+      "height": 175,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/player/axe_prosthetic_helm_r90/hurt.webp",
+      "width": 730,
+      "height": 169,
+      "transparent": true
+    },
+    {
+      "name": "crouch_exit",
+      "path": "sprites/player/axe_prosthetic_helm_r90/crouch_exit.webp",
+      "width": 612,
+      "height": 175,
+      "transparent": true
+    },
+    {
+      "name": "attack_4",
+      "path": "sprites/player/axe_prosthetic_helm_r90/attack_4.webp",
+      "width": 1440,
+      "height": 129,
+      "transparent": true
+    },
+    {
+      "name": "roll",
+      "path": "sprites/player/axe_prosthetic_helm_r90/roll.webp",
+      "width": 2568,
+      "height": 205,
+      "transparent": true
+    },
+    {
+      "name": "crouch_idle",
+      "path": "sprites/player/axe_prosthetic_helm_r90/crouch_idle.webp",
+      "width": 642,
+      "height": 112,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/player/axe_prosthetic_helm_r90/death.webp",
+      "width": 1456,
+      "height": 129,
+      "transparent": true
+    },
+    {
+      "name": "devour",
+      "path": "sprites/player/axe_prosthetic_helm_r90/devour.webp",
+      "width": 1344,
+      "height": 150,
+      "transparent": true
+    },
+    {
+      "name": "jump_start",
+      "path": "sprites/player/axe_prosthetic_helm_r90/jump_start.webp",
+      "width": 668,
+      "height": 167,
+      "transparent": true
+    },
+    {
+      "name": "crouch_enter",
+      "path": "sprites/player/axe_prosthetic_helm_r90/crouch_enter.webp",
+      "width": 560,
+      "height": 159,
+      "transparent": true
+    },
+    {
+      "name": "attack_1",
+      "path": "sprites/player/axe_prosthetic_helm_r90/attack_1.webp",
+      "width": 1152,
+      "height": 129,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/player/axe_onearm_helm/idle.webp",
+      "width": 1070,
+      "height": 245,
+      "transparent": true
+    },
+    {
+      "name": "helm_equip",
+      "path": "sprites/player/axe_onearm_helm/helm_equip.webp",
+      "width": 635,
+      "height": 240,
+      "transparent": true
+    },
+    {
+      "name": "attack_2",
+      "path": "sprites/player/axe/attack_2.webp",
+      "width": 1816,
+      "height": 237,
+      "transparent": true
+    },
+    {
+      "name": "jump_rise",
+      "path": "sprites/player/axe/jump_rise.webp",
+      "width": 1014,
+      "height": 183,
+      "transparent": true
+    },
+    {
+      "name": "attack_3",
+      "path": "sprites/player/axe/attack_3.webp",
+      "width": 2180,
+      "height": 243,
+      "transparent": true
+    },
+    {
+      "name": "run",
+      "path": "sprites/player/axe/run.webp",
+      "width": 1890,
+      "height": 198,
+      "transparent": true
+    },
+    {
+      "name": "drop_through",
+      "path": "sprites/player/axe/drop_through.webp",
+      "width": 675,
+      "height": 156,
+      "transparent": true
+    },
+    {
+      "name": "walk",
+      "path": "sprites/player/axe/walk.webp",
+      "width": 1230,
+      "height": 146,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/player/axe/idle.webp",
+      "width": 1200,
+      "height": 181,
+      "transparent": true
+    },
+    {
+      "name": "fall",
+      "path": "sprites/player/axe/fall.webp",
+      "width": 1068,
+      "height": 199,
+      "transparent": true
+    },
+    {
+      "name": "land",
+      "path": "sprites/player/axe/land.webp",
+      "width": 830,
+      "height": 164,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/player/axe/hurt.webp",
+      "width": 685,
+      "height": 163,
+      "transparent": true
+    },
+    {
+      "name": "crouch_exit",
+      "path": "sprites/player/axe/crouch_exit.webp",
+      "width": 1064,
+      "height": 133,
+      "transparent": true
+    },
+    {
+      "name": "attack_4",
+      "path": "sprites/player/axe/attack_4.webp",
+      "width": 2580,
+      "height": 184,
+      "transparent": true
+    },
+    {
+      "name": "roll",
+      "path": "sprites/player/axe/roll.webp",
+      "width": 2664,
+      "height": 202,
+      "transparent": true
+    },
+    {
+      "name": "crouch_idle",
+      "path": "sprites/player/axe/crouch_idle.webp",
+      "width": 906,
+      "height": 142,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/player/axe/death.webp",
+      "width": 1304,
+      "height": 156,
+      "transparent": true
+    },
+    {
+      "name": "jump_start",
+      "path": "sprites/player/axe/jump_start.webp",
+      "width": 644,
+      "height": 183,
+      "transparent": true
+    },
+    {
+      "name": "crouch_enter",
+      "path": "sprites/player/axe/crouch_enter.webp",
+      "width": 620,
+      "height": 199,
+      "transparent": true
+    },
+    {
+      "name": "attack_1",
+      "path": "sprites/player/axe/attack_1.webp",
+      "width": 2000,
+      "height": 207,
+      "transparent": true
+    },
+    {
+      "name": "attack_2",
+      "path": "sprites/player/axe_prosthetic_helm/attack_2.webp",
+      "width": 1512,
+      "height": 231,
+      "transparent": true
+    },
+    {
+      "name": "jump_rise",
+      "path": "sprites/player/axe_prosthetic_helm/jump_rise.webp",
+      "width": 834,
+      "height": 213,
+      "transparent": true
+    },
+    {
+      "name": "attack_3",
+      "path": "sprites/player/axe_prosthetic_helm/attack_3.webp",
+      "width": 2200,
+      "height": 197,
+      "transparent": true
+    },
+    {
+      "name": "run",
+      "path": "sprites/player/axe_prosthetic_helm/run.webp",
+      "width": 1260,
+      "height": 117,
+      "transparent": true
+    },
+    {
+      "name": "drop_through",
+      "path": "sprites/player/axe_prosthetic_helm/drop_through.webp",
+      "width": 575,
+      "height": 221,
+      "transparent": true
+    },
+    {
+      "name": "walk",
+      "path": "sprites/player/axe_prosthetic_helm/walk.webp",
+      "width": 980,
+      "height": 125,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/player/axe_prosthetic_helm/idle.webp",
+      "width": 980,
+      "height": 149,
+      "transparent": true
+    },
+    {
+      "name": "fall",
+      "path": "sprites/player/axe_prosthetic_helm/fall.webp",
+      "width": 660,
+      "height": 197,
+      "transparent": true
+    },
+    {
+      "name": "land",
+      "path": "sprites/player/axe_prosthetic_helm/land.webp",
+      "width": 750,
+      "height": 200,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/player/axe_prosthetic_helm/hurt.webp",
+      "width": 620,
+      "height": 208,
+      "transparent": true
+    },
+    {
+      "name": "crouch_exit",
+      "path": "sprites/player/axe_prosthetic_helm/crouch_exit.webp",
+      "width": 584,
+      "height": 254,
+      "transparent": true
+    },
+    {
+      "name": "attack_4",
+      "path": "sprites/player/axe_prosthetic_helm/attack_4.webp",
+      "width": 1870,
+      "height": 202,
+      "transparent": true
+    },
+    {
+      "name": "roll",
+      "path": "sprites/player/axe_prosthetic_helm/roll.webp",
+      "width": 1596,
+      "height": 149,
+      "transparent": true
+    },
+    {
+      "name": "crouch_idle",
+      "path": "sprites/player/axe_prosthetic_helm/crouch_idle.webp",
+      "width": 828,
+      "height": 108,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/player/axe_prosthetic_helm/death.webp",
+      "width": 1728,
+      "height": 221,
+      "transparent": true
+    },
+    {
+      "name": "devour",
+      "path": "sprites/player/axe_prosthetic_helm/devour.webp",
+      "width": 1776,
+      "height": 248,
+      "transparent": true
+    },
+    {
+      "name": "jump_start",
+      "path": "sprites/player/axe_prosthetic_helm/jump_start.webp",
+      "width": 608,
+      "height": 254,
+      "transparent": true
+    },
+    {
+      "name": "crouch_enter",
+      "path": "sprites/player/axe_prosthetic_helm/crouch_enter.webp",
+      "width": 504,
+      "height": 196,
+      "transparent": true
+    },
+    {
+      "name": "attack_1",
+      "path": "sprites/player/axe_prosthetic_helm/attack_1.webp",
+      "width": 1648,
+      "height": 252,
+      "transparent": true
+    },
+    {
+      "name": "cry_loop",
+      "path": "sprites/player/cutscene/cry_loop.webp",
+      "width": 690,
+      "height": 155,
+      "transparent": true
+    },
+    {
+      "name": "cry_collapse",
+      "path": "sprites/player/cutscene/cry_collapse.webp",
+      "width": 720,
+      "height": 155,
+      "transparent": true
+    },
+    {
+      "name": "attack_2",
+      "path": "sprites/player/axe_prosthetic_helm_r40/attack_2.webp",
+      "width": 1496,
+      "height": 174,
+      "transparent": true
+    },
+    {
+      "name": "jump_rise",
+      "path": "sprites/player/axe_prosthetic_helm_r40/jump_rise.webp",
+      "width": 1044,
+      "height": 168,
+      "transparent": true
+    },
+    {
+      "name": "attack_3",
+      "path": "sprites/player/axe_prosthetic_helm_r40/attack_3.webp",
+      "width": 2460,
+      "height": 221,
+      "transparent": true
+    },
+    {
+      "name": "run",
+      "path": "sprites/player/axe_prosthetic_helm_r40/run.webp",
+      "width": 2370,
+      "height": 210,
+      "transparent": true
+    },
+    {
+      "name": "walk",
+      "path": "sprites/player/axe_prosthetic_helm_r40/walk.webp",
+      "width": 1780,
+      "height": 199,
+      "transparent": true
+    },
+    {
+      "name": "idle",
+      "path": "sprites/player/axe_prosthetic_helm_r40/idle.webp",
+      "width": 930,
+      "height": 149,
+      "transparent": true
+    },
+    {
+      "name": "fall",
+      "path": "sprites/player/axe_prosthetic_helm_r40/fall.webp",
+      "width": 918,
+      "height": 164,
+      "transparent": true
+    },
+    {
+      "name": "hurt",
+      "path": "sprites/player/axe_prosthetic_helm_r40/hurt.webp",
+      "width": 770,
+      "height": 171,
+      "transparent": true
+    },
+    {
+      "name": "attack_4",
+      "path": "sprites/player/axe_prosthetic_helm_r40/attack_4.webp",
+      "width": 1710,
+      "height": 154,
+      "transparent": true
+    },
+    {
+      "name": "roll",
+      "path": "sprites/player/axe_prosthetic_helm_r40/roll.webp",
+      "width": 1608,
+      "height": 149,
+      "transparent": true
+    },
+    {
+      "name": "crouch_idle",
+      "path": "sprites/player/axe_prosthetic_helm_r40/crouch_idle.webp",
+      "width": 966,
+      "height": 229,
+      "transparent": true
+    },
+    {
+      "name": "death",
+      "path": "sprites/player/axe_prosthetic_helm_r40/death.webp",
+      "width": 1864,
+      "height": 223,
+      "transparent": true
+    },
+    {
+      "name": "devour",
+      "path": "sprites/player/axe_prosthetic_helm_r40/devour.webp",
+      "width": 1408,
+      "height": 132,
+      "transparent": true
+    },
+    {
+      "name": "jump_start",
+      "path": "sprites/player/axe_prosthetic_helm_r40/jump_start.webp",
+      "width": 716,
+      "height": 169,
+      "transparent": true
+    },
+    {
+      "name": "attack_1",
+      "path": "sprites/player/axe_prosthetic_helm_r40/attack_1.webp",
+      "width": 1744,
+      "height": 197,
+      "transparent": true
+    },
+    {
+      "name": "downtown_passage_door",
+      "path": "props/doors/downtown_passage_door.webp",
+      "width": 241,
+      "height": 334,
+      "transparent": true
+    },
+    {
+      "name": "castle_front_door_exterior",
+      "path": "props/doors/castle_front_door_exterior.webp",
+      "width": 1518,
+      "height": 348,
+      "transparent": true
+    },
+    {
+      "name": "villa_gate",
+      "path": "props/doors/villa_gate.webp",
+      "width": 2864,
+      "height": 312,
+      "transparent": true
+    },
+    {
+      "name": "nimrod_home_gate",
+      "path": "props/doors/nimrod_home_gate.webp",
+      "width": 1446,
+      "height": 187,
+      "transparent": true
+    },
+    {
+      "name": "villa_back_door",
+      "path": "props/doors/villa_back_door.webp",
+      "width": 1446,
+      "height": 312,
+      "transparent": true
+    },
+    {
+      "name": "passage_door",
+      "path": "props/doors/passage_door.webp",
+      "width": 1158,
+      "height": 273,
+      "transparent": true
+    },
+    {
+      "name": "castle_rear_door_exterior",
+      "path": "props/doors/castle_rear_door_exterior.webp",
+      "width": 1428,
+      "height": 312,
+      "transparent": true
+    },
+    {
+      "name": "cedar_forest_portal",
+      "path": "props/doors/cedar_forest_portal.webp",
+      "width": 1446,
+      "height": 245,
+      "transparent": true
+    },
+    {
+      "name": "castle_great_gate",
+      "path": "props/doors/castle_great_gate.webp",
+      "width": 3488,
+      "height": 393,
+      "transparent": true
+    },
+    {
+      "name": "cedar_portal",
+      "path": "props/doors/cedar_portal.webp",
+      "width": 1158,
+      "height": 210,
+      "transparent": true
+    },
+    {
+      "name": "castle_interior_door",
+      "path": "props/doors/castle_interior_door.webp",
+      "width": 1140,
+      "height": 285,
+      "transparent": true
+    },
+    {
+      "name": "villa_inner_door",
+      "path": "props/doors/villa_inner_door.webp",
+      "width": 1140,
+      "height": 285,
+      "transparent": true
+    },
+    {
+      "name": "downtown_passage_door_anim",
+      "path": "props/doors/downtown_passage_door_anim.webp",
+      "width": 1446,
+      "height": 226,
+      "transparent": true
+    },
+    {
+      "name": "villa_back_door_exterior",
+      "path": "props/doors/villa_back_door_exterior.webp",
+      "width": 1446,
+      "height": 214,
+      "transparent": true
+    },
+    {
+      "name": "nimrod_home_inner_door",
+      "path": "props/doors/nimrod_home_inner_door.webp",
+      "width": 1158,
+      "height": 162,
+      "transparent": true
+    },
+    {
+      "name": "castle_rear_door_interior",
+      "path": "props/doors/castle_rear_door_interior.webp",
+      "width": 1428,
+      "height": 312,
+      "transparent": true
+    },
+    {
+      "name": "castle_front_door_interior",
+      "path": "props/doors/castle_front_door_interior.webp",
+      "width": 1446,
+      "height": 289,
+      "transparent": true
+    },
+    {
+      "name": "castle_front_gate_locked",
+      "path": "props/doors/castle_front_gate_locked.webp",
+      "width": 238,
+      "height": 312,
+      "transparent": true
+    },
+    {
+      "name": "villa_chair_seat",
+      "path": "props/villa_chair_seat.webp",
+      "width": 97,
+      "height": 112,
+      "transparent": true
+    }
+  ],
+  "source_metadata": [
+    "source_art/beast_provenance.json",
+    "source_art/stage2_environment/generation.json",
+    "source_art/stage2_environment/packing.json",
+    "source_art/stage2_characters/provenance.json",
+    "source_art/stage2_characters/generation_prompts.json",
+    "source_art/stage3/generation_prompts.json",
+    "source_art/stage3/provenance.json",
+    "source_art/stage4/generation_prompts.json",
+    "source_art/stage4/player_packing.json",
+    "source_art/stage5/enemy_generation_prompts.json",
+    "source_art/stage5/world_generation_prompts.json",
+    "source_art/stage5/supplementary_generation_prompts.json",
+    "source_art/stage5/provenance.json",
+    "source_art/stage5/roll_packing.json"
+  ]
+}

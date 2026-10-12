@@ -1,1 +1,1361 @@
-{"character":"kala_ushumgal","aliases":{"windup":"whip_windup","attack":"whip_swing","recovery":"whip_recovery","hurt":"idle","idle_p2":"idle","walk_p2":"walk","turn_p2":"turn","whip_windup_p2":"whip_windup","whip_swing_p2":"whip_swing","whip_swing_back_p2":"whip_swing_back","whip_recovery_p2":"whip_recovery","slam_windup_p2":"slam_windup","slam_p2":"slam","slam_recovery_p2":"slam_recovery"},"clips":[{"name":"idle","sheet":"sprites/enemies/kala_ushumgal/idle.webp","frame_width":1280,"frame_height":1152,"columns":8,"rows":1,"frames":8,"duration_seconds":1.6,"fps":5.0,"loop":true,"anchor_px":[640,1100],"image_size":[1352,398],"trim":{"x":458,"y":154,"w":402,"h":948},"storage_scale":[0.42039800995024873,0.41983122362869196],"stored_frame_size":[538,484],"stored_anchor_px":[269.0547263681592,461.8143459915612],"storage_trim":{"x":192.54228855721394,"y":64.65400843881856,"w":169,"h":398},"stored_columns":8,"frame_map":[0,1,2,3,4,5,6,7],"effective_density":1.4,"ssim":0.9514895781321839},{"name":"walk","sheet":"sprites/enemies/kala_ushumgal/walk.webp","frame_width":1280,"frame_height":1152,"columns":8,"rows":1,"frames":8,"duration_seconds":1.4,"fps":5.714285714285714,"loop":true,"anchor_px":[640,1100],"image_size":[2192,288],"qa":{"movement":true},"trim":{"x":213,"y":141,"w":915,"h":961},"storage_scale":[0.2994535519125683,0.29968782518210196],"stored_frame_size":[383,345],"stored_anchor_px":[191.65027322404373,329.6566077003122],"storage_trim":{"x":63.78360655737705,"y":42.25598335067638,"w":274,"h":288},"stored_columns":8,"frame_map":[0,1,2,3,4,5,6,7],"effective_density":1.0,"ssim":0.9469274043008661},{"name":"whip_windup","sheet":"sprites/enemies/kala_ushumgal/whip_windup.webp","frame_width":1280,"frame_height":1152,"columns":5,"rows":1,"frames":5,"duration_seconds":0.8,"fps":6.25,"loop":false,"anchor_px":[640,1100],"image_size":[1240,422],"trim":{"x":327,"y":97,"w":591,"h":1005},"storage_scale":[0.4196277495769882,0.4199004975124378],"stored_frame_size":[537,484],"stored_anchor_px":[268.5617597292724,461.8905472636816],"storage_trim":{"x":137.21827411167513,"y":40.73034825870647,"w":248,"h":422},"stored_columns":5,"frame_map":[0,1,2,3,4],"effective_density":1.4,"ssim":0.951983429429004},{"name":"whip_swing","sheet":"sprites/enemies/kala_ushumgal/whip_swing.webp","frame_width":1280,"frame_height":1152,"columns":4,"rows":1,"frames":4,"duration_seconds":0.25,"fps":16.0,"loop":false,"anchor_px":[640,1100],"image_size":[1252,365],"trim":{"x":222,"y":87,"w":869,"h":1015},"storage_scale":[0.36018411967779057,0.35960591133004927],"stored_frame_size":[461,414],"stored_anchor_px":[230.51783659378597,395.5665024630542],"storage_trim":{"x":79.9608745684695,"y":31.285714285714285,"w":313,"h":365},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":1.2,"ssim":0.9360495643325726},{"name":"whip_swing_back","sheet":"sprites/enemies/kala_ushumgal/whip_swing_back.webp","frame_width":1280,"frame_height":1152,"columns":4,"rows":1,"frames":4,"duration_seconds":0.25,"fps":16.0,"loop":false,"anchor_px":[640,1100],"image_size":[1192,401],"trim":{"x":255,"y":147,"w":710,"h":955},"storage_scale":[0.4197183098591549,0.4198952879581152],"stored_frame_size":[537,484],"stored_anchor_px":[268.61971830985914,461.8848167539267],"storage_trim":{"x":107.02816901408451,"y":61.72460732984293,"w":298,"h":401},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":1.4,"ssim":0.9466022337641101},{"name":"whip_recovery","sheet":"sprites/enemies/kala_ushumgal/whip_recovery.webp","frame_width":1280,"frame_height":1152,"columns":5,"rows":1,"frames":5,"duration_seconds":1.0,"fps":5.0,"loop":false,"anchor_px":[640,1100],"image_size":[1195,417],"trim":{"x":325,"y":109,"w":570,"h":993},"storage_scale":[0.4192982456140351,0.4199395770392749],"stored_frame_size":[537,484],"stored_anchor_px":[268.35087719298247,461.9335347432024],"storage_trim":{"x":136.2719298245614,"y":45.77341389728097,"w":239,"h":417},"stored_columns":5,"frame_map":[0,1,2,3,4],"effective_density":1.4,"ssim":0.9461806825861985},{"name":"slam_windup","sheet":"sprites/enemies/kala_ushumgal/slam_windup.webp","frame_width":1280,"frame_height":1152,"columns":5,"rows":1,"frames":5,"duration_seconds":0.9,"fps":5.555555555555555,"loop":false,"anchor_px":[640,1100],"image_size":[1310,309],"qa":{"height_tol":0.35,"height_reason":"Visible pose extent changes while one uniform scale is retained"},"trim":{"x":233,"y":72,"w":874,"h":1030},"storage_scale":[0.2997711670480549,0.3],"stored_frame_size":[384,346],"stored_anchor_px":[191.85354691075514,330.0],"storage_trim":{"x":69.8466819221968,"y":21.6,"w":262,"h":309},"stored_columns":5,"frame_map":[0,1,2,3,4],"effective_density":1.0,"ssim":0.9308956912112735},{"name":"slam","sheet":"sprites/enemies/kala_ushumgal/slam.webp","frame_width":1280,"frame_height":1152,"columns":3,"rows":1,"frames":3,"duration_seconds":0.15,"fps":20.0,"loop":false,"anchor_px":[640,1100],"image_size":[1284,366],"trim":{"x":74,"y":86,"w":1189,"h":1016},"storage_scale":[0.3599663582842725,0.36023622047244097],"stored_frame_size":[461,415],"stored_anchor_px":[230.3784693019344,396.25984251968504],"storage_trim":{"x":26.637510513036165,"y":30.980314960629922,"w":428,"h":366},"stored_columns":3,"frame_map":[0,1,2],"effective_density":1.2,"ssim":0.948455470896019},{"name":"slam_recovery","sheet":"sprites/enemies/kala_ushumgal/slam_recovery.webp","frame_width":1280,"frame_height":1152,"columns":5,"rows":1,"frames":5,"duration_seconds":1.2,"fps":4.166666666666667,"loop":false,"anchor_px":[640,1100],"image_size":[1190,359],"qa":{"height_tol":0.35,"height_reason":"Visible pose extent changes while one uniform scale is retained"},"trim":{"x":310,"y":104,"w":662,"h":998},"storage_scale":[0.3595166163141994,0.35971943887775554],"stored_frame_size":[460,414],"stored_anchor_px":[230.09063444108762,395.69138276553105],"storage_trim":{"x":111.45015105740181,"y":37.410821643286575,"w":238,"h":359},"stored_columns":5,"frame_map":[0,1,2,3,4],"effective_density":1.2,"ssim":0.9353648462049073},{"name":"summon","sheet":"sprites/enemies/kala_ushumgal/summon.webp","frame_width":1280,"frame_height":1152,"columns":6,"rows":1,"frames":6,"duration_seconds":1.8,"fps":3.333333333333333,"loop":false,"anchor_px":[640,1100],"image_size":[1386,385],"qa":{"height_tol":0.35,"height_reason":"Visible pose extent changes while one uniform scale is retained"},"trim":{"x":338,"y":32,"w":641,"h":1070},"storage_scale":[0.36037441497659906,0.3598130841121495],"stored_frame_size":[461,415],"stored_anchor_px":[230.6396255850234,395.7943925233645],"storage_trim":{"x":121.80655226209048,"y":11.514018691588785,"w":231,"h":385},"stored_columns":6,"frame_map":[0,1,2,3,4,5],"effective_density":1.2,"ssim":0.9331793036497877},{"name":"turn","sheet":"sprites/enemies/kala_ushumgal/turn.webp","frame_width":1280,"frame_height":1152,"columns":6,"rows":1,"frames":6,"duration_seconds":0.7,"fps":8.571428571428571,"loop":false,"anchor_px":[640,1100],"image_size":[1428,428],"trim":{"x":357,"y":84,"w":566,"h":1018},"storage_scale":[0.4204946996466431,0.4204322200392927],"stored_frame_size":[538,484],"stored_anchor_px":[269.11660777385157,462.475442043222],"storage_trim":{"x":150.1166077738516,"y":35.316306483300586,"w":238,"h":428},"stored_columns":6,"frame_map":[0,1,2,3,4,5],"effective_density":1.4,"ssim":0.9560844877851487},{"name":"phase_transition","sheet":"sprites/enemies/kala_ushumgal/phase_transition.webp","frame_width":1280,"frame_height":1152,"columns":8,"rows":1,"frames":8,"duration_seconds":2.0,"fps":4.0,"loop":false,"anchor_px":[640,1100],"image_size":[1400,395],"qa":{"height_tol":0.35,"height_reason":"Visible pose extent changes while one uniform scale is retained"},"trim":{"x":387,"y":4,"w":485,"h":1098},"storage_scale":[0.36082474226804123,0.35974499089253187],"stored_frame_size":[462,414],"stored_anchor_px":[230.9278350515464,395.71948998178505],"storage_trim":{"x":139.63917525773195,"y":1.4389799635701275,"w":175,"h":395},"stored_columns":8,"frame_map":[0,1,2,3,4,5,6,7],"effective_density":1.2,"ssim":0.9334952295954947},{"name":"roar_windup","sheet":"sprites/enemies/kala_ushumgal/roar_windup.webp","frame_width":1280,"frame_height":1152,"columns":5,"rows":1,"frames":5,"duration_seconds":0.8,"fps":6.25,"loop":false,"anchor_px":[640,1100],"image_size":[1280,407],"trim":{"x":328,"y":132,"w":609,"h":970},"storage_scale":[0.42036124794745483,0.4195876288659794],"stored_frame_size":[538,483],"stored_anchor_px":[269.0311986863711,461.54639175257734],"storage_trim":{"x":137.8784893267652,"y":55.38556701030928,"w":256,"h":407},"stored_columns":5,"frame_map":[0,1,2,3,4],"effective_density":1.4,"ssim":0.9494352375573343},{"name":"roar_loop","sheet":"sprites/enemies/kala_ushumgal/roar_loop.webp","frame_width":1280,"frame_height":1152,"columns":4,"rows":1,"frames":4,"duration_seconds":0.4,"fps":10.0,"loop":true,"anchor_px":[640,1100],"image_size":[1148,399],"trim":{"x":293,"y":151,"w":684,"h":951},"storage_scale":[0.4195906432748538,0.4195583596214511],"stored_frame_size":[537,483],"stored_anchor_px":[268.53801169590645,461.51419558359623],"storage_trim":{"x":122.94005847953217,"y":63.353312302839115,"w":287,"h":399},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":1.4,"ssim":0.940816275176327},{"name":"roar_recovery","sheet":"sprites/enemies/kala_ushumgal/roar_recovery.webp","frame_width":1280,"frame_height":1152,"columns":5,"rows":1,"frames":5,"duration_seconds":1.3,"fps":3.846153846153846,"loop":false,"anchor_px":[640,1100],"image_size":[1220,369],"trim":{"x":309,"y":78,"w":677,"h":1024},"storage_scale":[0.3604135893648449,0.3603515625],"stored_frame_size":[461,415],"stored_anchor_px":[230.66469719350073,396.38671875],"storage_trim":{"x":111.36779911373708,"y":28.107421875,"w":244,"h":369},"stored_columns":5,"frame_map":[0,1,2,3,4],"effective_density":1.2,"ssim":0.9331918200093186},{"name":"spines_back","sheet":"sprites/enemies/kala_ushumgal/spines_back.webp","frame_width":1280,"frame_height":1152,"columns":4,"rows":1,"frames":4,"duration_seconds":0.45,"fps":8.88888888888889,"loop":false,"anchor_px":[640,1100],"image_size":[1160,406],"trim":{"x":256,"y":135,"w":691,"h":967},"storage_scale":[0.4196816208393632,0.41985522233712513],"stored_frame_size":[537,484],"stored_anchor_px":[268.59623733719246,461.8407445708376],"storage_trim":{"x":107.43849493487699,"y":56.68045501551189,"w":290,"h":406},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":1.4,"ssim":0.9511707116529518},{"name":"collapse","sheet":"sprites/enemies/kala_ushumgal/collapse.webp","frame_width":1280,"frame_height":1152,"columns":6,"rows":1,"frames":6,"duration_seconds":1.0,"fps":6.0,"loop":false,"anchor_px":[640,1100],"image_size":[1560,462],"qa":{"height_tol":0.35,"height_reason":"Visible pose extent changes while one uniform scale is retained"},"trim":{"x":329,"y":2,"w":620,"h":1100},"storage_scale":[0.41935483870967744,0.42],"stored_frame_size":[537,484],"stored_anchor_px":[268.38709677419354,462.0],"storage_trim":{"x":137.96774193548387,"y":0.84,"w":260,"h":462},"stored_columns":6,"frame_map":[0,1,2,3,4,5],"effective_density":1.4,"ssim":0.9603708077588909},{"name":"final_swing_windup","sheet":"sprites/enemies/kala_ushumgal/final_swing_windup.webp","frame_width":1280,"frame_height":1152,"columns":5,"rows":1,"frames":5,"duration_seconds":0.8,"fps":6.25,"loop":false,"anchor_px":[640,1100],"image_size":[1285,401],"qa":{"height_tol":0.35,"height_reason":"Visible pose extent changes while one uniform scale is retained"},"trim":{"x":360,"y":147,"w":612,"h":955},"storage_scale":[0.4199346405228758,0.4198952879581152],"stored_frame_size":[538,484],"stored_anchor_px":[268.75816993464053,461.8848167539267],"storage_trim":{"x":151.1764705882353,"y":61.72460732984293,"w":257,"h":401},"stored_columns":5,"frame_map":[0,1,2,3,4],"effective_density":1.4,"ssim":0.9536318522177663},{"name":"final_swing","sheet":"sprites/enemies/kala_ushumgal/final_swing.webp","frame_width":1280,"frame_height":1152,"columns":4,"rows":1,"frames":4,"duration_seconds":0.2,"fps":20.0,"loop":false,"anchor_px":[640,1100],"image_size":[1324,404],"trim":{"x":283,"y":141,"w":789,"h":961},"storage_scale":[0.41951837769328265,0.42039542143600417],"stored_frame_size":[537,484],"stored_anchor_px":[268.4917617237009,462.4349635796046],"storage_trim":{"x":118.72370088719899,"y":59.27575442247659,"w":331,"h":404},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":1.4,"ssim":0.9514949441595258},{"name":"death","sheet":"sprites/enemies/kala_ushumgal/death.webp","frame_width":1280,"frame_height":1152,"columns":8,"rows":1,"frames":8,"duration_seconds":1.5,"fps":5.333333333333333,"loop":false,"anchor_px":[640,1100],"image_size":[1584,381],"qa":{"height_tol":0.35,"height_reason":"Kneeling collapse lowers the torso by 20%; all frames retain one uniform scale."},"trim":{"x":365,"y":44,"w":550,"h":1058},"storage_scale":[0.36,0.3601134215500945],"stored_frame_size":[461,415],"stored_anchor_px":[230.4,396.124763705104],"storage_trim":{"x":131.4,"y":15.844990548204159,"w":198,"h":381},"stored_columns":8,"frame_map":[0,1,2,3,4,5,6,7],"effective_density":1.2,"ssim":0.9459045788245353}]}
+{
+  "character": "kala_ushumgal",
+  "aliases": {
+    "windup": "whip_windup",
+    "attack": "whip_swing",
+    "recovery": "whip_recovery",
+    "hurt": "idle",
+    "idle_p2": "idle",
+    "walk_p2": "walk",
+    "turn_p2": "turn",
+    "whip_windup_p2": "whip_windup",
+    "whip_swing_p2": "whip_swing",
+    "whip_swing_back_p2": "whip_swing_back",
+    "whip_recovery_p2": "whip_recovery",
+    "slam_windup_p2": "slam_windup",
+    "slam_p2": "slam",
+    "slam_recovery_p2": "slam_recovery"
+  },
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/enemies/kala_ushumgal/idle.webp",
+      "frame_width": 1280,
+      "frame_height": 1152,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 1.6,
+      "fps": 5.0,
+      "loop": true,
+      "anchor_px": [
+        640,
+        1100
+      ],
+      "image_size": [
+        1288,
+        374
+      ],
+      "trim": {
+        "x": 458,
+        "y": 154,
+        "w": 402,
+        "h": 948
+      },
+      "storage_scale": [
+        0.39054726368159204,
+        0.39029535864978904
+      ],
+      "stored_frame_size": [
+        500,
+        450
+      ],
+      "stored_anchor_px": [
+        249.9502487562189,
+        429.32489451476795
+      ],
+      "storage_trim": {
+        "x": 176.87064676616916,
+        "y": 58.10548523206751,
+        "w": 161,
+        "h": 374
+      },
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "effective_density": 1.3,
+      "ssim": 0.9341763166643844,
+      "stored_content_size": [
+        157,
+        370
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        161,
+        374
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "walk",
+      "sheet": "sprites/enemies/kala_ushumgal/walk.webp",
+      "frame_width": 1280,
+      "frame_height": 1152,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 1.4,
+      "fps": 5.714285714285714,
+      "loop": true,
+      "anchor_px": [
+        640,
+        1100
+      ],
+      "image_size": [
+        2448,
+        321
+      ],
+      "qa": {
+        "movement": true
+      },
+      "trim": {
+        "x": 213,
+        "y": 141,
+        "w": 915,
+        "h": 961
+      },
+      "storage_scale": [
+        0.3300546448087432,
+        0.3298647242455775
+      ],
+      "stored_frame_size": [
+        422,
+        380
+      ],
+      "stored_anchor_px": [
+        211.23497267759564,
+        362.85119667013527
+      ],
+      "storage_trim": {
+        "x": 68.3016393442623,
+        "y": 44.51092611862643,
+        "w": 306,
+        "h": 321
+      },
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "effective_density": 1.1,
+      "ssim": 0.9621994572531611,
+      "stored_content_size": [
+        302,
+        317
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        306,
+        321
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "whip_windup",
+      "sheet": "sprites/enemies/kala_ushumgal/whip_windup.webp",
+      "frame_width": 1280,
+      "frame_height": 1152,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.8,
+      "fps": 6.25,
+      "loop": false,
+      "anchor_px": [
+        640,
+        1100
+      ],
+      "image_size": [
+        1170,
+        396
+      ],
+      "trim": {
+        "x": 327,
+        "y": 97,
+        "w": 591,
+        "h": 1005
+      },
+      "storage_scale": [
+        0.38917089678510997,
+        0.3900497512437811
+      ],
+      "stored_frame_size": [
+        498,
+        449
+      ],
+      "stored_anchor_px": [
+        249.06937394247038,
+        429.0547263681592
+      ],
+      "storage_trim": {
+        "x": 125.25888324873095,
+        "y": 35.83482587064677,
+        "w": 234,
+        "h": 396
+      },
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "effective_density": 1.3,
+      "ssim": 0.9361997300831568,
+      "stored_content_size": [
+        230,
+        392
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        234,
+        396
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "whip_swing",
+      "sheet": "sprites/enemies/kala_ushumgal/whip_swing.webp",
+      "frame_width": 1280,
+      "frame_height": 1152,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.25,
+      "fps": 16.0,
+      "loop": false,
+      "anchor_px": [
+        640,
+        1100
+      ],
+      "image_size": [
+        1372,
+        400
+      ],
+      "trim": {
+        "x": 222,
+        "y": 87,
+        "w": 869,
+        "h": 1015
+      },
+      "storage_scale": [
+        0.39010356731875717,
+        0.3901477832512315
+      ],
+      "stored_frame_size": [
+        499,
+        449
+      ],
+      "stored_anchor_px": [
+        249.6662830840046,
+        429.1625615763547
+      ],
+      "storage_trim": {
+        "x": 84.60299194476409,
+        "y": 31.942857142857143,
+        "w": 343,
+        "h": 400
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 1.3,
+      "ssim": 0.9513102805206274,
+      "stored_content_size": [
+        339,
+        396
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        343,
+        400
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "whip_swing_back",
+      "sheet": "sprites/enemies/kala_ushumgal/whip_swing_back.webp",
+      "frame_width": 1280,
+      "frame_height": 1152,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.25,
+      "fps": 16.0,
+      "loop": false,
+      "anchor_px": [
+        640,
+        1100
+      ],
+      "image_size": [
+        1124,
+        376
+      ],
+      "trim": {
+        "x": 255,
+        "y": 147,
+        "w": 710,
+        "h": 955
+      },
+      "storage_scale": [
+        0.3901408450704225,
+        0.38952879581151834
+      ],
+      "stored_frame_size": [
+        499,
+        449
+      ],
+      "stored_anchor_px": [
+        249.69014084507043,
+        428.4816753926702
+      ],
+      "storage_trim": {
+        "x": 97.48591549295774,
+        "y": 55.2607329842932,
+        "w": 281,
+        "h": 376
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 1.3,
+      "ssim": 0.9306978035224985,
+      "stored_content_size": [
+        277,
+        372
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        281,
+        376
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "whip_recovery",
+      "sheet": "sprites/enemies/kala_ushumgal/whip_recovery.webp",
+      "frame_width": 1280,
+      "frame_height": 1152,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 1.0,
+      "fps": 5.0,
+      "loop": false,
+      "anchor_px": [
+        640,
+        1100
+      ],
+      "image_size": [
+        1300,
+        451
+      ],
+      "trim": {
+        "x": 325,
+        "y": 109,
+        "w": 570,
+        "h": 993
+      },
+      "storage_scale": [
+        0.44912280701754387,
+        0.4501510574018127
+      ],
+      "stored_frame_size": [
+        575,
+        519
+      ],
+      "stored_anchor_px": [
+        287.43859649122805,
+        495.16616314199393
+      ],
+      "storage_trim": {
+        "x": 143.96491228070175,
+        "y": 47.066465256797585,
+        "w": 260,
+        "h": 451
+      },
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "effective_density": 1.5,
+      "ssim": 0.9594810827846223,
+      "stored_content_size": [
+        256,
+        447
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        260,
+        451
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "slam_windup",
+      "sheet": "sprites/enemies/kala_ushumgal/slam_windup.webp",
+      "frame_width": 1280,
+      "frame_height": 1152,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.9,
+      "fps": 5.555555555555555,
+      "loop": false,
+      "anchor_px": [
+        640,
+        1100
+      ],
+      "image_size": [
+        1460,
+        344
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 233,
+        "y": 72,
+        "w": 874,
+        "h": 1030
+      },
+      "storage_scale": [
+        0.3295194508009153,
+        0.3300970873786408
+      ],
+      "stored_frame_size": [
+        422,
+        380
+      ],
+      "stored_anchor_px": [
+        210.89244851258582,
+        363.1067961165049
+      ],
+      "storage_trim": {
+        "x": 74.77803203661327,
+        "y": 21.766990291262136,
+        "w": 292,
+        "h": 344
+      },
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "effective_density": 1.1,
+      "ssim": 0.9485519867624683,
+      "stored_content_size": [
+        288,
+        340
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        292,
+        344
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "slam",
+      "sheet": "sprites/enemies/kala_ushumgal/slam.webp",
+      "frame_width": 1280,
+      "frame_height": 1152,
+      "columns": 3,
+      "rows": 1,
+      "frames": 3,
+      "duration_seconds": 0.15,
+      "fps": 20.0,
+      "loop": false,
+      "anchor_px": [
+        640,
+        1100
+      ],
+      "image_size": [
+        1188,
+        339
+      ],
+      "trim": {
+        "x": 74,
+        "y": 86,
+        "w": 1189,
+        "h": 1016
+      },
+      "storage_scale": [
+        0.3296888141295206,
+        0.3297244094488189
+      ],
+      "stored_frame_size": [
+        422,
+        380
+      ],
+      "stored_anchor_px": [
+        211.0008410428932,
+        362.6968503937008
+      ],
+      "storage_trim": {
+        "x": 22.396972245584525,
+        "y": 26.356299212598426,
+        "w": 396,
+        "h": 339
+      },
+      "stored_columns": 3,
+      "frame_map": [
+        0,
+        1,
+        2
+      ],
+      "effective_density": 1.1,
+      "ssim": 0.9331608463449245,
+      "stored_content_size": [
+        392,
+        335
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        396,
+        339
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "slam_recovery",
+      "sheet": "sprites/enemies/kala_ushumgal/slam_recovery.webp",
+      "frame_width": 1280,
+      "frame_height": 1152,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 1.2,
+      "fps": 4.166666666666667,
+      "loop": false,
+      "anchor_px": [
+        640,
+        1100
+      ],
+      "image_size": [
+        1310,
+        393
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 310,
+        "y": 104,
+        "w": 662,
+        "h": 998
+      },
+      "storage_scale": [
+        0.38972809667673713,
+        0.3897795591182365
+      ],
+      "stored_frame_size": [
+        499,
+        449
+      ],
+      "stored_anchor_px": [
+        249.4259818731118,
+        428.7575150300601
+      ],
+      "storage_trim": {
+        "x": 118.81570996978851,
+        "y": 38.5370741482966,
+        "w": 262,
+        "h": 393
+      },
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "effective_density": 1.3,
+      "ssim": 0.9510881317442506,
+      "stored_content_size": [
+        258,
+        389
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        262,
+        393
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "summon",
+      "sheet": "sprites/enemies/kala_ushumgal/summon.webp",
+      "frame_width": 1280,
+      "frame_height": 1152,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 1.8,
+      "fps": 3.333333333333333,
+      "loop": false,
+      "anchor_px": [
+        640,
+        1100
+      ],
+      "image_size": [
+        1524,
+        421
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 338,
+        "y": 32,
+        "w": 641,
+        "h": 1070
+      },
+      "storage_scale": [
+        0.39001560062402496,
+        0.3897196261682243
+      ],
+      "stored_frame_size": [
+        499,
+        449
+      ],
+      "stored_anchor_px": [
+        249.60998439937597,
+        428.69158878504675
+      ],
+      "storage_trim": {
+        "x": 129.82527301092043,
+        "y": 10.471028037383178,
+        "w": 254,
+        "h": 421
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 1.3,
+      "ssim": 0.9495866354954187,
+      "stored_content_size": [
+        250,
+        417
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        254,
+        421
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "turn",
+      "sheet": "sprites/enemies/kala_ushumgal/turn.webp",
+      "frame_width": 1280,
+      "frame_height": 1152,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.7,
+      "fps": 8.571428571428571,
+      "loop": false,
+      "anchor_px": [
+        640,
+        1100
+      ],
+      "image_size": [
+        1362,
+        374
+      ],
+      "trim": {
+        "x": 354,
+        "y": 154,
+        "w": 571,
+        "h": 948
+      },
+      "storage_scale": [
+        0.3905429071803853,
+        0.39029535864978904
+      ],
+      "stored_frame_size": [
+        500,
+        450
+      ],
+      "stored_anchor_px": [
+        249.94746059544659,
+        429.32489451476795
+      ],
+      "storage_trim": {
+        "x": 136.2521891418564,
+        "y": 58.10548523206751,
+        "w": 227,
+        "h": 374
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 1.3,
+      "ssim": 0.9371165580907085,
+      "stored_content_size": [
+        223,
+        370
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        227,
+        374
+      ],
+      "stored_gutter": 2,
+      "qa": {
+        "expected_pose_heights": [
+          944,
+          944,
+          944,
+          944,
+          944,
+          944
+        ],
+        "neutral_normalization": "isotropic source scaling, foot/centre anchor preserved",
+        "movement": true
+      },
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.862049184040096,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "phase_transition",
+      "sheet": "sprites/enemies/kala_ushumgal/phase_transition.webp",
+      "frame_width": 1280,
+      "frame_height": 1152,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 2.0,
+      "fps": 4.0,
+      "loop": false,
+      "anchor_px": [
+        640,
+        1100
+      ],
+      "image_size": [
+        1544,
+        432
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 387,
+        "y": 4,
+        "w": 485,
+        "h": 1098
+      },
+      "storage_scale": [
+        0.38969072164948454,
+        0.38979963570127507
+      ],
+      "stored_frame_size": [
+        499,
+        449
+      ],
+      "stored_anchor_px": [
+        249.4020618556701,
+        428.77959927140256
+      ],
+      "storage_trim": {
+        "x": 148.81030927835053,
+        "y": -0.4408014571948997,
+        "w": 193,
+        "h": 432
+      },
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "effective_density": 1.3,
+      "ssim": 0.9502776716094956,
+      "stored_content_size": [
+        189,
+        428
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        193,
+        432
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "roar_windup",
+      "sheet": "sprites/enemies/kala_ushumgal/roar_windup.webp",
+      "frame_width": 1280,
+      "frame_height": 1152,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.8,
+      "fps": 6.25,
+      "loop": false,
+      "anchor_px": [
+        640,
+        1100
+      ],
+      "image_size": [
+        1210,
+        382
+      ],
+      "trim": {
+        "x": 328,
+        "y": 132,
+        "w": 609,
+        "h": 970
+      },
+      "storage_scale": [
+        0.39080459770114945,
+        0.38969072164948454
+      ],
+      "stored_frame_size": [
+        500,
+        449
+      ],
+      "stored_anchor_px": [
+        250.11494252873564,
+        428.659793814433
+      ],
+      "storage_trim": {
+        "x": 126.183908045977,
+        "y": 49.43917525773196,
+        "w": 242,
+        "h": 382
+      },
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "effective_density": 1.3,
+      "ssim": 0.9339412688141983,
+      "stored_content_size": [
+        238,
+        378
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        242,
+        382
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "roar_loop",
+      "sheet": "sprites/enemies/kala_ushumgal/roar_loop.webp",
+      "frame_width": 1280,
+      "frame_height": 1152,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.4,
+      "fps": 10.0,
+      "loop": true,
+      "anchor_px": [
+        640,
+        1100
+      ],
+      "image_size": [
+        1248,
+        432
+      ],
+      "trim": {
+        "x": 293,
+        "y": 151,
+        "w": 684,
+        "h": 951
+      },
+      "storage_scale": [
+        0.4502923976608187,
+        0.4500525762355415
+      ],
+      "stored_frame_size": [
+        576,
+        518
+      ],
+      "stored_anchor_px": [
+        288.187134502924,
+        495.0578338590957
+      ],
+      "storage_trim": {
+        "x": 129.93567251461988,
+        "y": 65.95793901156676,
+        "w": 312,
+        "h": 432
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 1.5,
+      "ssim": 0.9540692038149262,
+      "stored_content_size": [
+        308,
+        428
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        312,
+        432
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "roar_recovery",
+      "sheet": "sprites/enemies/kala_ushumgal/roar_recovery.webp",
+      "frame_width": 1280,
+      "frame_height": 1152,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 1.3,
+      "fps": 3.846153846153846,
+      "loop": false,
+      "anchor_px": [
+        640,
+        1100
+      ],
+      "image_size": [
+        1340,
+        403
+      ],
+      "trim": {
+        "x": 309,
+        "y": 78,
+        "w": 677,
+        "h": 1024
+      },
+      "storage_scale": [
+        0.38995568685376664,
+        0.3896484375
+      ],
+      "stored_frame_size": [
+        499,
+        449
+      ],
+      "stored_anchor_px": [
+        249.57163958641064,
+        428.61328125
+      ],
+      "storage_trim": {
+        "x": 118.4963072378139,
+        "y": 28.392578125,
+        "w": 268,
+        "h": 403
+      },
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "effective_density": 1.3,
+      "ssim": 0.9489964425450038,
+      "stored_content_size": [
+        264,
+        399
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        268,
+        403
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "spines_back",
+      "sheet": "sprites/enemies/kala_ushumgal/spines_back.webp",
+      "frame_width": 1280,
+      "frame_height": 1152,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.45,
+      "fps": 8.88888888888889,
+      "loop": false,
+      "anchor_px": [
+        640,
+        1100
+      ],
+      "image_size": [
+        1092,
+        381
+      ],
+      "trim": {
+        "x": 256,
+        "y": 135,
+        "w": 691,
+        "h": 967
+      },
+      "storage_scale": [
+        0.38929088277858176,
+        0.38986556359875907
+      ],
+      "stored_frame_size": [
+        498,
+        449
+      ],
+      "stored_anchor_px": [
+        249.14616497829232,
+        428.85211995863494
+      ],
+      "storage_trim": {
+        "x": 97.65846599131693,
+        "y": 50.63185108583247,
+        "w": 273,
+        "h": 381
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 1.3,
+      "ssim": 0.9361916604937849,
+      "stored_content_size": [
+        269,
+        377
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        273,
+        381
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "collapse",
+      "sheet": "sprites/enemies/kala_ushumgal/collapse.webp",
+      "frame_width": 1280,
+      "frame_height": 1152,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 1.0,
+      "fps": 6.0,
+      "loop": false,
+      "anchor_px": [
+        640,
+        1100
+      ],
+      "image_size": [
+        1476,
+        433
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 329,
+        "y": 2,
+        "w": 620,
+        "h": 1100
+      },
+      "storage_scale": [
+        0.3903225806451613,
+        0.39
+      ],
+      "stored_frame_size": [
+        500,
+        449
+      ],
+      "stored_anchor_px": [
+        249.80645161290323,
+        429.0
+      ],
+      "storage_trim": {
+        "x": 126.41612903225806,
+        "y": -1.22,
+        "w": 246,
+        "h": 433
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 1.3,
+      "ssim": 0.9465005134733271,
+      "stored_content_size": [
+        242,
+        429
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        246,
+        433
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "final_swing_windup",
+      "sheet": "sprites/enemies/kala_ushumgal/final_swing_windup.webp",
+      "frame_width": 1280,
+      "frame_height": 1152,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.8,
+      "fps": 6.25,
+      "loop": false,
+      "anchor_px": [
+        640,
+        1100
+      ],
+      "image_size": [
+        1215,
+        376
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 360,
+        "y": 147,
+        "w": 612,
+        "h": 955
+      },
+      "storage_scale": [
+        0.39052287581699346,
+        0.38952879581151834
+      ],
+      "stored_frame_size": [
+        500,
+        449
+      ],
+      "stored_anchor_px": [
+        249.9346405228758,
+        428.4816753926702
+      ],
+      "storage_trim": {
+        "x": 138.58823529411765,
+        "y": 55.2607329842932,
+        "w": 243,
+        "h": 376
+      },
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "effective_density": 1.3,
+      "ssim": 0.9404269518447471,
+      "stored_content_size": [
+        239,
+        372
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        243,
+        376
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "final_swing",
+      "sheet": "sprites/enemies/kala_ushumgal/final_swing.webp",
+      "frame_width": 1280,
+      "frame_height": 1152,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.2,
+      "fps": 20.0,
+      "loop": false,
+      "anchor_px": [
+        640,
+        1100
+      ],
+      "image_size": [
+        1248,
+        379
+      ],
+      "trim": {
+        "x": 283,
+        "y": 141,
+        "w": 789,
+        "h": 961
+      },
+      "storage_scale": [
+        0.39036755386565275,
+        0.39021852237252863
+      ],
+      "stored_frame_size": [
+        500,
+        450
+      ],
+      "stored_anchor_px": [
+        249.83523447401774,
+        429.2403746097815
+      ],
+      "storage_trim": {
+        "x": 108.47401774397973,
+        "y": 53.02081165452654,
+        "w": 312,
+        "h": 379
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 1.3,
+      "ssim": 0.9378442474971028,
+      "stored_content_size": [
+        308,
+        375
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        312,
+        379
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "death",
+      "sheet": "sprites/enemies/kala_ushumgal/death.webp",
+      "frame_width": 1280,
+      "frame_height": 1152,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 1.5,
+      "fps": 5.333333333333333,
+      "loop": false,
+      "anchor_px": [
+        640,
+        1100
+      ],
+      "image_size": [
+        1744,
+        417
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Kneeling collapse lowers the torso by 20%; all frames retain one uniform scale."
+      },
+      "trim": {
+        "x": 365,
+        "y": 44,
+        "w": 550,
+        "h": 1058
+      },
+      "storage_scale": [
+        0.3890909090909091,
+        0.390359168241966
+      ],
+      "stored_frame_size": [
+        498,
+        450
+      ],
+      "stored_anchor_px": [
+        249.01818181818183,
+        429.39508506616255
+      ],
+      "storage_trim": {
+        "x": 140.01818181818183,
+        "y": 15.175803402646505,
+        "w": 218,
+        "h": 417
+      },
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "effective_density": 1.3,
+      "ssim": 0.9617437056271233,
+      "stored_content_size": [
+        214,
+        413
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        218,
+        417
+      ],
+      "stored_gutter": 2
+    }
+  ]
+}

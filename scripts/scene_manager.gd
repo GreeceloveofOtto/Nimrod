@@ -68,7 +68,8 @@ func unbind_main(value: Node) -> void:
     _fade_rect.modulate.a = 0.0
 
 func _start_game() -> void:
-    await go_to(str(config["start_level"]), str(config["start_spawn"]))
+    if not await get_node("/root/Save").resume(false):
+        await go_to(str(config["start_level"]), str(config["start_spawn"]))
 
 # A door locks the actor before its opening animation; this is deliberately
 # separate from is_transitioning so that its subsequent go_to call is accepted.
@@ -147,8 +148,9 @@ func go_to(level_id: String, spawn_name: String, options: Dictionary = {}) -> bo
         if hud != null:
             hud.show_story()
     transition_finished.emit(level_id)
-    get_node("/root/Chapter").on_arrival.call_deferred(level_id)
-    if level_id == "DowntownPassage_F8":
+    if not bool(options.get("debug_reload",false)):
+        get_node("/root/Chapter").on_arrival.call_deferred(level_id)
+    if level_id == "DowntownPassage_F8" and not bool(options.get("debug_reload",false)):
         _passage_soliloquy.call_deferred()
     return true
 
@@ -188,3 +190,8 @@ func _passage_soliloquy() -> void:
     await get_tree().create_timer(float(dialogue.settings["soliloquy_delay"]), false).timeout
     if is_instance_valid(current_level) and is_instance_valid(player) and str(current_level.level_id) == "DowntownPassage_F8" and not is_transitioning and dialogue.interaction_available("passage_soliloquy"):
         dialogue.play_interaction("passage_soliloquy", {"player": player})
+
+func handle_death() -> void:
+    if str(get_node("/root/Save").settings.get("death_respawn", "last_save")) == "last_save" and await get_node("/root/Save").resume(true):
+        return
+    await restart_run()

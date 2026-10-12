@@ -1,0 +1,696 @@
+변경·삭제 파일 (M 수정, D 삭제)
+M	README_KO.txt
+M	assets/animation_manifest.json
+M	assets/art_manifest.json
+M	assets/fonts/NimrodUIKorean-Regular.otf
+M	assets/props/axe_gift.webp
+M	assets/props/bone_pile.webp
+M	assets/props/castle_front_lamp_post.webp
+M	assets/props/cedar_branch_perch.webp
+M	assets/props/cedar_staff_pickup.webp
+M	assets/props/doors/castle_front_door_exterior.webp
+M	assets/props/doors/castle_front_door_interior.webp
+M	assets/props/doors/castle_front_gate_locked.webp
+M	assets/props/doors/castle_great_gate.webp
+M	assets/props/doors/castle_interior_door.webp
+M	assets/props/doors/castle_rear_door_exterior.webp
+M	assets/props/doors/castle_rear_door_interior.webp
+M	assets/props/doors/cedar_forest_portal.webp
+M	assets/props/doors/cedar_portal.webp
+M	assets/props/doors/downtown_passage_door.webp
+M	assets/props/doors/downtown_passage_door_anim.webp
+M	assets/props/doors/manifest.json
+M	assets/props/doors/nimrod_home_gate.webp
+M	assets/props/doors/nimrod_home_inner_door.webp
+M	assets/props/doors/passage_door.webp
+M	assets/props/doors/stage3_manifest.json
+M	assets/props/doors/stage4_manifest.json
+M	assets/props/doors/stage5_manifest.json
+M	assets/props/doors/stage6_manifest.json
+M	assets/props/doors/villa_back_door.webp
+M	assets/props/doors/villa_back_door_exterior.webp
+M	assets/props/doors/villa_gate.webp
+M	assets/props/doors/villa_inner_door.webp
+M	assets/props/healing_vomit.webp
+M	assets/props/home_lamp.webp
+M	assets/props/home_rug.webp
+M	assets/props/lamp_post_ruined.webp
+M	assets/props/large_rubble_a.webp
+M	assets/props/large_rubble_b.webp
+M	assets/props/melammu_pickup.webp
+M	assets/props/outskirts_lamp.webp
+M	assets/props/rubble.webp
+M	assets/props/skeleton_remains.webp
+M	assets/props/villa_side_table.webp
+M	assets/sprites/enemies/boar_charger/charge.webp
+M	assets/sprites/enemies/boar_charger/crash_stun.webp
+M	assets/sprites/enemies/boar_charger/death.webp
+M	assets/sprites/enemies/boar_charger/hurt.webp
+M	assets/sprites/enemies/boar_charger/idle.webp
+M	assets/sprites/enemies/boar_charger/manifest.json
+M	assets/sprites/enemies/boar_charger/recovery.webp
+M	assets/sprites/enemies/boar_charger/telegraph.webp
+M	assets/sprites/enemies/boar_charger/turn.webp
+M	assets/sprites/enemies/boar_charger/walk.webp
+M	assets/sprites/enemies/cedar_archer/death.webp
+M	assets/sprites/enemies/cedar_archer/hop_back.webp
+M	assets/sprites/enemies/cedar_archer/hurt.webp
+M	assets/sprites/enemies/cedar_archer/idle.webp
+M	assets/sprites/enemies/cedar_archer/manifest.json
+M	assets/sprites/enemies/cedar_archer/recovery.webp
+M	assets/sprites/enemies/cedar_archer/shoot.webp
+M	assets/sprites/enemies/cedar_archer/turn.webp
+M	assets/sprites/enemies/cedar_archer/walk.webp
+M	assets/sprites/enemies/cedar_archer/windup.webp
+M	assets/sprites/enemies/cedar_colossus/death.webp
+M	assets/sprites/enemies/cedar_colossus/hurt.webp
+M	assets/sprites/enemies/cedar_colossus/idle.webp
+M	assets/sprites/enemies/cedar_colossus/manifest.json
+M	assets/sprites/enemies/cedar_colossus/rear_poke.webp
+M	assets/sprites/enemies/cedar_colossus/slam.webp
+M	assets/sprites/enemies/cedar_colossus/slam_recovery.webp
+M	assets/sprites/enemies/cedar_colossus/slam_windup.webp
+M	assets/sprites/enemies/cedar_colossus/sweep.webp
+M	assets/sprites/enemies/cedar_colossus/sweep_recovery.webp
+M	assets/sprites/enemies/cedar_colossus/sweep_windup.webp
+M	assets/sprites/enemies/cedar_colossus/turn.webp
+M	assets/sprites/enemies/cedar_colossus/walk.webp
+M	assets/sprites/enemies/cedar_demon/claw_windup.webp
+M	assets/sprites/enemies/cedar_demon/claws.webp
+M	assets/sprites/enemies/cedar_demon/death.webp
+M	assets/sprites/enemies/cedar_demon/fall.webp
+M	assets/sprites/enemies/cedar_demon/hurt.webp
+M	assets/sprites/enemies/cedar_demon/idle.webp
+M	assets/sprites/enemies/cedar_demon/land_stab.webp
+M	assets/sprites/enemies/cedar_demon/manifest.json
+M	assets/sprites/enemies/cedar_demon/perch.webp
+M	assets/sprites/enemies/cedar_demon/recovery.webp
+M	assets/sprites/enemies/cedar_demon/tell.webp
+M	assets/sprites/enemies/cedar_demon/turn.webp
+M	assets/sprites/enemies/cedar_demon/walk.webp
+M	assets/sprites/enemies/cedar_sentinel/attack_recovery.webp
+M	assets/sprites/enemies/cedar_sentinel/death.webp
+M	assets/sprites/enemies/cedar_sentinel/hurt.webp
+M	assets/sprites/enemies/cedar_sentinel/idle.webp
+M	assets/sprites/enemies/cedar_sentinel/manifest.json
+M	assets/sprites/enemies/cedar_sentinel/shield_break_stun.webp
+M	assets/sprites/enemies/cedar_sentinel/shield_hold.webp
+M	assets/sprites/enemies/cedar_sentinel/shield_up.webp
+M	assets/sprites/enemies/cedar_sentinel/slash.webp
+M	assets/sprites/enemies/cedar_sentinel/thrust.webp
+M	assets/sprites/enemies/cedar_sentinel/turn.webp
+M	assets/sprites/enemies/cedar_sentinel/walk.webp
+M	assets/sprites/enemies/cedar_sentinel/windup.webp
+M	assets/sprites/enemies/cedar_wisp/contact.webp
+M	assets/sprites/enemies/cedar_wisp/explode.webp
+M	assets/sprites/enemies/cedar_wisp/float.webp
+M	assets/sprites/enemies/cedar_wisp/fuse.webp
+M	assets/sprites/enemies/cedar_wisp/hurt.webp
+M	assets/sprites/enemies/cedar_wisp/manifest.json
+M	assets/sprites/enemies/cedar_wisp/turn.webp
+M	assets/sprites/enemies/chain_beastman/chain_throw.webp
+M	assets/sprites/enemies/chain_beastman/chain_windup.webp
+M	assets/sprites/enemies/chain_beastman/death.webp
+M	assets/sprites/enemies/chain_beastman/hurt.webp
+M	assets/sprites/enemies/chain_beastman/idle.webp
+M	assets/sprites/enemies/chain_beastman/manifest.json
+M	assets/sprites/enemies/chain_beastman/pull_hold.webp
+M	assets/sprites/enemies/chain_beastman/smash.webp
+M	assets/sprites/enemies/chain_beastman/smash_recovery.webp
+M	assets/sprites/enemies/chain_beastman/smash_windup.webp
+M	assets/sprites/enemies/chain_beastman/tail_recovery.webp
+M	assets/sprites/enemies/chain_beastman/tail_sweep.webp
+M	assets/sprites/enemies/chain_beastman/tail_windup.webp
+M	assets/sprites/enemies/chain_beastman/turn.webp
+M	assets/sprites/enemies/chain_beastman/walk.webp
+M	assets/sprites/enemies/corpse_bomber/explode.webp
+M	assets/sprites/enemies/corpse_bomber/fuse.webp
+M	assets/sprites/enemies/corpse_bomber/hurt.webp
+M	assets/sprites/enemies/corpse_bomber/idle.webp
+M	assets/sprites/enemies/corpse_bomber/manifest.json
+M	assets/sprites/enemies/corpse_bomber/run.webp
+M	assets/sprites/enemies/corpse_bomber/scream.webp
+M	assets/sprites/enemies/corpse_bomber/turn.webp
+M	assets/sprites/enemies/explosive_spitter/death.webp
+M	assets/sprites/enemies/explosive_spitter/hurt.webp
+M	assets/sprites/enemies/explosive_spitter/idle.webp
+M	assets/sprites/enemies/explosive_spitter/manifest.json
+M	assets/sprites/enemies/explosive_spitter/recovery.webp
+M	assets/sprites/enemies/explosive_spitter/spit.webp
+M	assets/sprites/enemies/explosive_spitter/turn.webp
+M	assets/sprites/enemies/explosive_spitter/walk.webp
+M	assets/sprites/enemies/explosive_spitter/windup.webp
+M	assets/sprites/enemies/gas_sac/bump.webp
+M	assets/sprites/enemies/gas_sac/burst.webp
+M	assets/sprites/enemies/gas_sac/death_swell.webp
+M	assets/sprites/enemies/gas_sac/float.webp
+M	assets/sprites/enemies/gas_sac/hurt.webp
+M	assets/sprites/enemies/gas_sac/manifest.json
+M	assets/sprites/enemies/gas_sac/turn.webp
+M	assets/sprites/enemies/gugalanna/charge_crash.webp
+M	assets/sprites/enemies/gugalanna/charge_loop.webp
+M	assets/sprites/enemies/gugalanna/charge_recovery.webp
+M	assets/sprites/enemies/gugalanna/charge_windup.webp
+M	assets/sprites/enemies/gugalanna/death.webp
+M	assets/sprites/enemies/gugalanna/idle.webp
+M	assets/sprites/enemies/gugalanna/manifest.json
+M	assets/sprites/enemies/gugalanna/rake.webp
+M	assets/sprites/enemies/gugalanna/rake_recovery.webp
+M	assets/sprites/enemies/gugalanna/rake_windup.webp
+M	assets/sprites/enemies/gugalanna/stomp.webp
+M	assets/sprites/enemies/gugalanna/stomp_recovery.webp
+M	assets/sprites/enemies/gugalanna/stomp_windup.webp
+M	assets/sprites/enemies/gugalanna/turn.webp
+M	assets/sprites/enemies/gugalanna/uppercut.webp
+M	assets/sprites/enemies/gugalanna/uppercut_recovery.webp
+M	assets/sprites/enemies/gugalanna/uppercut_windup.webp
+M	assets/sprites/enemies/gugalanna/walk.webp
+M	assets/sprites/enemies/humbaba/bite.webp
+M	assets/sprites/enemies/humbaba/bite_recovery.webp
+M	assets/sprites/enemies/humbaba/bite_windup.webp
+M	assets/sprites/enemies/humbaba/breath_loop.webp
+M	assets/sprites/enemies/humbaba/breath_recovery.webp
+M	assets/sprites/enemies/humbaba/breath_windup.webp
+M	assets/sprites/enemies/humbaba/claw_recovery.webp
+M	assets/sprites/enemies/humbaba/claw_swipe.webp
+M	assets/sprites/enemies/humbaba/claw_windup.webp
+M	assets/sprites/enemies/humbaba/death.webp
+M	assets/sprites/enemies/humbaba/idle.webp
+M	assets/sprites/enemies/humbaba/manifest.json
+M	assets/sprites/enemies/humbaba/phase_roar.webp
+M	assets/sprites/enemies/humbaba/tail_recovery.webp
+M	assets/sprites/enemies/humbaba/tail_strike.webp
+M	assets/sprites/enemies/humbaba/tail_windup.webp
+M	assets/sprites/enemies/humbaba/turn.webp
+M	assets/sprites/enemies/humbaba/walk.webp
+M	assets/sprites/enemies/kala_ushumgal/collapse.webp
+M	assets/sprites/enemies/kala_ushumgal/death.webp
+M	assets/sprites/enemies/kala_ushumgal/final_swing.webp
+M	assets/sprites/enemies/kala_ushumgal/final_swing_windup.webp
+M	assets/sprites/enemies/kala_ushumgal/idle.webp
+M	assets/sprites/enemies/kala_ushumgal/manifest.json
+M	assets/sprites/enemies/kala_ushumgal/phase_transition.webp
+M	assets/sprites/enemies/kala_ushumgal/roar_loop.webp
+M	assets/sprites/enemies/kala_ushumgal/roar_recovery.webp
+M	assets/sprites/enemies/kala_ushumgal/roar_windup.webp
+M	assets/sprites/enemies/kala_ushumgal/slam.webp
+M	assets/sprites/enemies/kala_ushumgal/slam_recovery.webp
+M	assets/sprites/enemies/kala_ushumgal/slam_windup.webp
+M	assets/sprites/enemies/kala_ushumgal/spines_back.webp
+M	assets/sprites/enemies/kala_ushumgal/summon.webp
+M	assets/sprites/enemies/kala_ushumgal/turn.webp
+M	assets/sprites/enemies/kala_ushumgal/walk.webp
+M	assets/sprites/enemies/kala_ushumgal/whip_recovery.webp
+M	assets/sprites/enemies/kala_ushumgal/whip_swing.webp
+M	assets/sprites/enemies/kala_ushumgal/whip_swing_back.webp
+M	assets/sprites/enemies/kala_ushumgal/whip_windup.webp
+M	assets/sprites/enemies/melee_beast/attack.webp
+M	assets/sprites/enemies/melee_beast/death.webp
+M	assets/sprites/enemies/melee_beast/hurt.webp
+M	assets/sprites/enemies/melee_beast/idle.webp
+M	assets/sprites/enemies/melee_beast/manifest.json
+M	assets/sprites/enemies/melee_beast/recovery.webp
+M	assets/sprites/enemies/melee_beast/turn.webp
+M	assets/sprites/enemies/melee_beast/walk.webp
+M	assets/sprites/enemies/melee_beast/windup.webp
+M	assets/sprites/enemies/ranged_beast/death.webp
+M	assets/sprites/enemies/ranged_beast/flame.webp
+M	assets/sprites/enemies/ranged_beast/flame_loop.webp
+M	assets/sprites/enemies/ranged_beast/hurt.webp
+M	assets/sprites/enemies/ranged_beast/idle.webp
+M	assets/sprites/enemies/ranged_beast/manifest.json
+M	assets/sprites/enemies/ranged_beast/recovery.webp
+M	assets/sprites/enemies/ranged_beast/turn.webp
+M	assets/sprites/enemies/ranged_beast/walk.webp
+M	assets/sprites/enemies/ranged_beast/windup.webp
+M	assets/sprites/enemies/root_spewer/death.webp
+M	assets/sprites/enemies/root_spewer/hurt.webp
+M	assets/sprites/enemies/root_spewer/idle.webp
+M	assets/sprites/enemies/root_spewer/manifest.json
+M	assets/sprites/enemies/root_spewer/recovery.webp
+M	assets/sprites/enemies/root_spewer/spew.webp
+M	assets/sprites/enemies/root_spewer/turn.webp
+M	assets/sprites/enemies/root_spewer/windup.webp
+M	assets/sprites/enemies/shell_scorpion/claw_attack.webp
+M	assets/sprites/enemies/shell_scorpion/claw_recovery.webp
+M	assets/sprites/enemies/shell_scorpion/claw_windup.webp
+M	assets/sprites/enemies/shell_scorpion/death.webp
+M	assets/sprites/enemies/shell_scorpion/guard_block.webp
+M	assets/sprites/enemies/shell_scorpion/hurt.webp
+M	assets/sprites/enemies/shell_scorpion/idle.webp
+M	assets/sprites/enemies/shell_scorpion/manifest.json
+M	assets/sprites/enemies/shell_scorpion/tail_recovery.webp
+M	assets/sprites/enemies/shell_scorpion/tail_strike.webp
+M	assets/sprites/enemies/shell_scorpion/tail_windup.webp
+M	assets/sprites/enemies/shell_scorpion/turn.webp
+M	assets/sprites/enemies/shell_scorpion/walk.webp
+M	assets/sprites/enemies/sky_beast/death.webp
+M	assets/sprites/enemies/sky_beast/dive.webp
+M	assets/sprites/enemies/sky_beast/fly_idle.webp
+M	assets/sprites/enemies/sky_beast/hurt.webp
+M	assets/sprites/enemies/sky_beast/manifest.json
+M	assets/sprites/enemies/sky_beast/recovery.webp
+M	assets/sprites/enemies/sky_beast/turn.webp
+M	assets/sprites/enemies/sky_beast/windup.webp
+M	assets/sprites/enemies/wall_diver/claw.webp
+M	assets/sprites/enemies/wall_diver/crawl.webp
+M	assets/sprites/enemies/wall_diver/death.webp
+M	assets/sprites/enemies/wall_diver/dive.webp
+M	assets/sprites/enemies/wall_diver/hurt.webp
+M	assets/sprites/enemies/wall_diver/idle.webp
+M	assets/sprites/enemies/wall_diver/manifest.json
+M	assets/sprites/enemies/wall_diver/perch_ceiling.webp
+M	assets/sprites/enemies/wall_diver/perch_wall.webp
+M	assets/sprites/enemies/wall_diver/recovery.webp
+M	assets/sprites/enemies/wall_diver/tell.webp
+M	assets/sprites/enemies/wall_diver/turn.webp
+M	assets/sprites/enemies/wall_diver/windup.webp
+M	assets/sprites/enemies/wraith_ray/death.webp
+M	assets/sprites/enemies/wraith_ray/glide.webp
+M	assets/sprites/enemies/wraith_ray/hurt.webp
+M	assets/sprites/enemies/wraith_ray/manifest.json
+M	assets/sprites/enemies/wraith_ray/turn.webp
+M	assets/sprites/fx/anur_light_cast.webp
+M	assets/sprites/fx/anur_light_impact.webp
+M	assets/sprites/fx/anur_light_projectile.webp
+M	assets/sprites/fx/armor_hit_spark.webp
+M	assets/sprites/fx/blue_flame_explosion.webp
+M	assets/sprites/fx/bone_arrow.webp
+M	assets/sprites/fx/bone_spike.webp
+M	assets/sprites/fx/bone_spike_ground.webp
+M	assets/sprites/fx/chain_hook.webp
+M	assets/sprites/fx/chain_segment.webp
+M	assets/sprites/fx/explosion.webp
+M	assets/sprites/fx/gas_cloud.webp
+M	assets/sprites/fx/guard_spark.webp
+M	assets/sprites/fx/gugalanna_dust.webp
+M	assets/sprites/fx/gugalanna_lightning.webp
+M	assets/sprites/fx/gugalanna_rake_arc.webp
+M	assets/sprites/fx/gugalanna_shockwave.webp
+M	assets/sprites/fx/hit_spark.webp
+M	assets/sprites/fx/humbaba_bite_spark.webp
+M	assets/sprites/fx/humbaba_ember_aura.webp
+M	assets/sprites/fx/humbaba_flame_cone.webp
+M	assets/sprites/fx/manifest.json
+M	assets/sprites/fx/root_flame.webp
+M	assets/sprites/fx/severed_arm.webp
+M	assets/sprites/fx/soul_flame_cone.webp
+M	assets/sprites/fx/spit_projectile.webp
+M	assets/sprites/fx/stage5_manifest.json
+M	assets/sprites/fx/stage6_manifest.json
+M	assets/sprites/npcs/aya/idle.webp
+M	assets/sprites/npcs/aya/idle_front.webp
+M	assets/sprites/npcs/aya/manifest.json
+M	assets/sprites/npcs/aya/sit_down.webp
+M	assets/sprites/npcs/aya/sit_idle.webp
+M	assets/sprites/npcs/aya/stand_up.webp
+M	assets/sprites/npcs/aya/walk.webp
+M	assets/sprites/npcs/cook_a/chop.webp
+M	assets/sprites/npcs/cook_a/manifest.json
+M	assets/sprites/npcs/cook_b/manifest.json
+M	assets/sprites/npcs/cook_b/stir.webp
+M	assets/sprites/npcs/cook_c/arrange.webp
+M	assets/sprites/npcs/cook_c/manifest.json
+M	assets/sprites/npcs/enkidua/bed_asleep.webp
+M	assets/sprites/npcs/enkidua/bed_awake.webp
+M	assets/sprites/npcs/enkidua/idle.webp
+M	assets/sprites/npcs/enkidua/idle_front.webp
+M	assets/sprites/npcs/enkidua/manifest.json
+M	assets/sprites/npcs/gatekeeper/idle.webp
+M	assets/sprites/npcs/gatekeeper/manifest.json
+M	assets/sprites/npcs/gatekeeper/open_gate.webp
+M	assets/sprites/npcs/inanna/idle.webp
+M	assets/sprites/npcs/inanna/idle_front.webp
+M	assets/sprites/npcs/inanna/manifest.json
+M	assets/sprites/npcs/lugalbanda/idle.webp
+M	assets/sprites/npcs/lugalbanda/idle_front.webp
+M	assets/sprites/npcs/lugalbanda/manifest.json
+M	assets/sprites/npcs/ninsun/idle.webp
+M	assets/sprites/npcs/ninsun/idle_front.webp
+M	assets/sprites/npcs/ninsun/manifest.json
+M	assets/sprites/npcs/papsukkal/idle.webp
+M	assets/sprites/npcs/papsukkal/idle_front.webp
+M	assets/sprites/npcs/papsukkal/manifest.json
+M	assets/sprites/npcs/servant_a/manifest.json
+M	assets/sprites/npcs/servant_a/sweep.webp
+M	assets/sprites/npcs/servant_b/manifest.json
+M	assets/sprites/npcs/servant_b/sweep.webp
+M	assets/sprites/npcs/shamash/idle.webp
+M	assets/sprites/npcs/shamash/idle_front.webp
+M	assets/sprites/npcs/shamash/manifest.json
+M	assets/sprites/npcs/shamash/sit_down.webp
+M	assets/sprites/npcs/shamash/sit_idle.webp
+M	assets/sprites/npcs/shamash/stand_up.webp
+M	assets/sprites/npcs/shamash/walk.webp
+M	assets/sprites/npcs/shamhat/idle.webp
+M	assets/sprites/npcs/shamhat/idle_front.webp
+M	assets/sprites/npcs/shamhat/manifest.json
+M	assets/sprites/player/axe/attack_1.webp
+M	assets/sprites/player/axe/attack_2.webp
+M	assets/sprites/player/axe/attack_3.webp
+M	assets/sprites/player/axe/attack_4.webp
+M	assets/sprites/player/axe/crouch_enter.webp
+M	assets/sprites/player/axe/crouch_exit.webp
+M	assets/sprites/player/axe/crouch_idle.webp
+M	assets/sprites/player/axe/death.webp
+M	assets/sprites/player/axe/drop_through.webp
+M	assets/sprites/player/axe/fall.webp
+M	assets/sprites/player/axe/hurt.webp
+M	assets/sprites/player/axe/idle.webp
+M	assets/sprites/player/axe/jump_rise.webp
+M	assets/sprites/player/axe/jump_start.webp
+M	assets/sprites/player/axe/land.webp
+M	assets/sprites/player/axe/manifest.json
+M	assets/sprites/player/axe/roll.webp
+M	assets/sprites/player/axe/run.webp
+M	assets/sprites/player/axe/walk.webp
+M	assets/sprites/player/axe_onearm/arm_loss_hit.webp
+M	assets/sprites/player/axe_onearm/attack_1.webp
+M	assets/sprites/player/axe_onearm/attack_2.webp
+M	assets/sprites/player/axe_onearm/attack_3.webp
+M	assets/sprites/player/axe_onearm/attack_4.webp
+M	assets/sprites/player/axe_onearm/crouch_enter.webp
+M	assets/sprites/player/axe_onearm/crouch_exit.webp
+M	assets/sprites/player/axe_onearm/crouch_idle.webp
+M	assets/sprites/player/axe_onearm/death.webp
+M	assets/sprites/player/axe_onearm/drop_through.webp
+M	assets/sprites/player/axe_onearm/fall.webp
+M	assets/sprites/player/axe_onearm/hurt.webp
+M	assets/sprites/player/axe_onearm/idle.webp
+M	assets/sprites/player/axe_onearm/jump_rise.webp
+M	assets/sprites/player/axe_onearm/jump_start.webp
+M	assets/sprites/player/axe_onearm/land.webp
+M	assets/sprites/player/axe_onearm/manifest.json
+M	assets/sprites/player/axe_onearm/melammu_absorb.webp
+M	assets/sprites/player/axe_onearm/roll.webp
+M	assets/sprites/player/axe_onearm/run.webp
+M	assets/sprites/player/axe_onearm/walk.webp
+D	assets/sprites/player/axe_prosthetic/attack_1.webp
+D	assets/sprites/player/axe_prosthetic/attack_2.webp
+D	assets/sprites/player/axe_prosthetic/attack_3.webp
+D	assets/sprites/player/axe_prosthetic/attack_4.webp
+D	assets/sprites/player/axe_prosthetic/crouch_enter.webp
+D	assets/sprites/player/axe_prosthetic/crouch_exit.webp
+D	assets/sprites/player/axe_prosthetic/crouch_idle.webp
+D	assets/sprites/player/axe_prosthetic/death.webp
+D	assets/sprites/player/axe_prosthetic/drop_through.webp
+D	assets/sprites/player/axe_prosthetic/fall.webp
+D	assets/sprites/player/axe_prosthetic/hurt.webp
+D	assets/sprites/player/axe_prosthetic/idle.webp
+D	assets/sprites/player/axe_prosthetic/jump_rise.webp
+D	assets/sprites/player/axe_prosthetic/jump_start.webp
+D	assets/sprites/player/axe_prosthetic/land.webp
+D	assets/sprites/player/axe_prosthetic/manifest.json
+D	assets/sprites/player/axe_prosthetic/roll.webp
+D	assets/sprites/player/axe_prosthetic/run.webp
+D	assets/sprites/player/axe_prosthetic/walk.webp
+M	assets/sprites/player/cutscene/cry_collapse.webp
+M	assets/sprites/player/cutscene/cry_loop.webp
+M	assets/sprites/player/cutscene/manifest.json
+M	assets/sprites/player/staff/attack_1.webp
+M	assets/sprites/player/staff/attack_2.webp
+M	assets/sprites/player/staff/attack_3.webp
+M	assets/sprites/player/staff/crouch_enter.webp
+M	assets/sprites/player/staff/crouch_exit.webp
+M	assets/sprites/player/staff/crouch_idle.webp
+M	assets/sprites/player/staff/death.webp
+M	assets/sprites/player/staff/drop_through.webp
+M	assets/sprites/player/staff/fall.webp
+M	assets/sprites/player/staff/hurt.webp
+M	assets/sprites/player/staff/idle.webp
+M	assets/sprites/player/staff/jump_rise.webp
+M	assets/sprites/player/staff/jump_start.webp
+M	assets/sprites/player/staff/land.webp
+M	assets/sprites/player/staff/manifest.json
+M	assets/sprites/player/staff/roll.webp
+M	assets/sprites/player/staff/run.webp
+M	assets/sprites/player/staff/walk.webp
+M	assets/sprites/player/unarmed/crouch_enter.webp
+M	assets/sprites/player/unarmed/crouch_exit.webp
+M	assets/sprites/player/unarmed/crouch_idle.webp
+M	assets/sprites/player/unarmed/death.webp
+M	assets/sprites/player/unarmed/drop_through.webp
+M	assets/sprites/player/unarmed/fall.webp
+M	assets/sprites/player/unarmed/hurt.webp
+M	assets/sprites/player/unarmed/idle.webp
+M	assets/sprites/player/unarmed/jump_rise.webp
+M	assets/sprites/player/unarmed/jump_start.webp
+M	assets/sprites/player/unarmed/land.webp
+M	assets/sprites/player/unarmed/manifest.json
+M	assets/sprites/player/unarmed/roll.webp
+M	assets/sprites/player/unarmed/run.webp
+M	assets/sprites/player/unarmed/sit_down.webp
+M	assets/sprites/player/unarmed/sit_idle.webp
+M	assets/sprites/player/unarmed/stand_up.webp
+M	assets/sprites/player/unarmed/walk.webp
+M	assets/stage2_character_manifest.json
+M	assets/stage2_environment_manifest.json
+M	assets/tiles/castle/balcony_floor_tile.webp
+M	assets/tiles/castle/floor_tile.webp
+M	assets/tiles/castle/villa_floor_tile.webp
+M	assets/tiles/cedar/bone_floor_tile.webp
+M	assets/tiles/cedar/boss_end_platform.webp
+M	assets/tiles/cedar/branch_platform.webp
+M	assets/tiles/cedar/root_floor_tile.webp
+M	assets/tiles/home/home_floor_tile.webp
+M	assets/tiles/homeroad/balcony_platform.webp
+M	assets/tiles/homeroad/canal_floor_tile.webp
+M	assets/tiles/homeroad/ground_tile.webp
+M	assets/tiles/homeroad/plaza_tile.webp
+M	assets/tiles/homeroad/stone_slab_bridge.webp
+M	assets/tiles/outskirts/bridge_platform.webp
+M	assets/tiles/outskirts/ground_tile.webp
+M	assets/tiles/outskirts/plaza_tile.webp
+M	assets/tiles/outskirts/ruin_ledge.webp
+M	assets/tiles/outskirts/ruin_platform.webp
+M	assets/tiles/passage/bridge_plank.webp
+M	assets/tiles/passage/floor_tile.webp
+M	assets/tiles/passage/low_tunnel_ceiling.webp
+M	assets/tiles/passage/platform.webp
+M	assets/tiles/rear_gate/ground_tile.webp
+M	assets/tiles/rear_gate/platform.webp
+M	assets/tiles/rear_gate/step_block.webp
+M	assets/tiles/stage10/dilmun_ground_tile.webp
+M	data/alpha_expectations.json
+M	data/cutscenes.json
+M	data/density_limits.json
+M	data/dialogue.json
+M	data/enemies.json
+M	data/image_encoding_quality.json
+M	data/image_mapping.json
+M	data/image_parity_samples.json
+M	data/image_policy.json
+M	data/levels.json
+M	data/npcs.json
+M	data/sprite_trims.json
+M	data/storage_quality.json
+M	data/story.json
+M	data/transitions.json
+M	docs/SIZE_REPORT_KO.md
+M	docs/SPRITE_QA_REPORT_KO.md
+M	docs/STAGE6_GROUND_CONTACT.txt
+M	docs/STAGE7_VISUAL_BOUNDS.json
+M	docs/STAGE8_GROUNDING_RUNTIME.txt
+M	project.godot
+M	scripts/asset_visual.gd
+M	scripts/audio_manager.gd
+M	scripts/chapter_events.gd
+M	scripts/debug_teleport.gd
+M	scripts/dialogue_system.gd
+M	scripts/enemy_base.gd
+M	scripts/enemy_cedar.gd
+M	scripts/enemy_stage5.gd
+M	scripts/game_hud.gd
+M	scripts/level_base.gd
+M	scripts/npc_base.gd
+M	scripts/player.gd
+M	scripts/scene_manager.gd
+M	scripts/story_state.gd
+M	tests/fixtures/stage10_dialogue_original.json
+M	tests/fixtures/stage9_dialogue_original.json
+M	tests/stage10_dilmun.gd
+M	tests/stage10_prosthetic.gd
+M	tests/stage10_sprite_sets.gd
+M	tests/stage10_story_flow.gd
+M	tests/stage6_shamhat_buff.gd
+M	tests/stage8_story_dialogue.gd
+M	tools/build_image_parity_fixtures.py
+M	tools/check_enemy_grounding.py
+M	tools/check_enemy_visual_bounds.py
+M	tools/check_ground_contact.py
+M	tools/check_sprite_frames.py
+M	tools/downscale_assets.py
+M	tools/make_bgm.py
+M	tools/make_sfx.py
+M	tools/make_slim_zip.py
+M	tools/measure_assets.py
+M	tools/pack_sprites.py
+M	tools/run_headless_checks.py
+
+추가 파일
+assets/audio/bgm/deathsea_drone.ogg
+assets/audio/sfx/devour_chomp.ogg
+assets/audio/sfx/devour_gulp.ogg
+assets/audio/sfx/dice_roll.ogg
+assets/audio/sfx/rampage_cure.ogg
+assets/audio/sfx/rampage_heartbeat_loop.ogg
+assets/audio/sfx/save_chime.ogg
+assets/backgrounds/deathsea/stars_tile.webp
+assets/props/ferry_boat.webp
+assets/props/paper_note.webp
+assets/props/shimati_stall.webp
+assets/props/small_rock.webp
+assets/props/villa_chair_seat.webp
+assets/sprites/fx/devour_bite.webp
+assets/sprites/fx/mote.webp
+assets/sprites/fx/stage11_manifest.json
+assets/sprites/npcs/shimati/give_paper.webp
+assets/sprites/npcs/shimati/idle.webp
+assets/sprites/npcs/shimati/idle_front.webp
+assets/sprites/npcs/shimati/manifest.json
+assets/sprites/npcs/urshanabi/dice_loop.webp
+assets/sprites/npcs/urshanabi/manifest.json
+assets/sprites/player/axe_onearm_helm/helm_equip.webp
+assets/sprites/player/axe_onearm_helm/idle.webp
+assets/sprites/player/axe_onearm_helm/manifest.json
+assets/sprites/player/axe_prosthetic_helm/attack_1.webp
+assets/sprites/player/axe_prosthetic_helm/attack_2.webp
+assets/sprites/player/axe_prosthetic_helm/attack_3.webp
+assets/sprites/player/axe_prosthetic_helm/attack_4.webp
+assets/sprites/player/axe_prosthetic_helm/crouch_enter.webp
+assets/sprites/player/axe_prosthetic_helm/crouch_exit.webp
+assets/sprites/player/axe_prosthetic_helm/crouch_idle.webp
+assets/sprites/player/axe_prosthetic_helm/death.webp
+assets/sprites/player/axe_prosthetic_helm/devour.webp
+assets/sprites/player/axe_prosthetic_helm/drop_through.webp
+assets/sprites/player/axe_prosthetic_helm/fall.webp
+assets/sprites/player/axe_prosthetic_helm/hurt.webp
+assets/sprites/player/axe_prosthetic_helm/idle.webp
+assets/sprites/player/axe_prosthetic_helm/jump_rise.webp
+assets/sprites/player/axe_prosthetic_helm/jump_start.webp
+assets/sprites/player/axe_prosthetic_helm/land.webp
+assets/sprites/player/axe_prosthetic_helm/manifest.json
+assets/sprites/player/axe_prosthetic_helm/roll.webp
+assets/sprites/player/axe_prosthetic_helm/run.webp
+assets/sprites/player/axe_prosthetic_helm/walk.webp
+assets/sprites/player/axe_prosthetic_helm_r40/attack_1.webp
+assets/sprites/player/axe_prosthetic_helm_r40/attack_2.webp
+assets/sprites/player/axe_prosthetic_helm_r40/attack_3.webp
+assets/sprites/player/axe_prosthetic_helm_r40/attack_4.webp
+assets/sprites/player/axe_prosthetic_helm_r40/crouch_idle.webp
+assets/sprites/player/axe_prosthetic_helm_r40/death.webp
+assets/sprites/player/axe_prosthetic_helm_r40/devour.webp
+assets/sprites/player/axe_prosthetic_helm_r40/fall.webp
+assets/sprites/player/axe_prosthetic_helm_r40/hurt.webp
+assets/sprites/player/axe_prosthetic_helm_r40/idle.webp
+assets/sprites/player/axe_prosthetic_helm_r40/jump_rise.webp
+assets/sprites/player/axe_prosthetic_helm_r40/jump_start.webp
+assets/sprites/player/axe_prosthetic_helm_r40/manifest.json
+assets/sprites/player/axe_prosthetic_helm_r40/roll.webp
+assets/sprites/player/axe_prosthetic_helm_r40/run.webp
+assets/sprites/player/axe_prosthetic_helm_r40/walk.webp
+assets/sprites/player/axe_prosthetic_helm_r50/attack_1.webp
+assets/sprites/player/axe_prosthetic_helm_r50/attack_2.webp
+assets/sprites/player/axe_prosthetic_helm_r50/attack_3.webp
+assets/sprites/player/axe_prosthetic_helm_r50/attack_4.webp
+assets/sprites/player/axe_prosthetic_helm_r50/crouch_enter.webp
+assets/sprites/player/axe_prosthetic_helm_r50/crouch_exit.webp
+assets/sprites/player/axe_prosthetic_helm_r50/crouch_idle.webp
+assets/sprites/player/axe_prosthetic_helm_r50/death.webp
+assets/sprites/player/axe_prosthetic_helm_r50/devour.webp
+assets/sprites/player/axe_prosthetic_helm_r50/drop_through.webp
+assets/sprites/player/axe_prosthetic_helm_r50/fall.webp
+assets/sprites/player/axe_prosthetic_helm_r50/hurt.webp
+assets/sprites/player/axe_prosthetic_helm_r50/idle.webp
+assets/sprites/player/axe_prosthetic_helm_r50/jump_rise.webp
+assets/sprites/player/axe_prosthetic_helm_r50/jump_start.webp
+assets/sprites/player/axe_prosthetic_helm_r50/land.webp
+assets/sprites/player/axe_prosthetic_helm_r50/manifest.json
+assets/sprites/player/axe_prosthetic_helm_r50/roll.webp
+assets/sprites/player/axe_prosthetic_helm_r50/run.webp
+assets/sprites/player/axe_prosthetic_helm_r50/walk.webp
+assets/sprites/player/axe_prosthetic_helm_r90/attack_1.webp
+assets/sprites/player/axe_prosthetic_helm_r90/attack_2.webp
+assets/sprites/player/axe_prosthetic_helm_r90/attack_3.webp
+assets/sprites/player/axe_prosthetic_helm_r90/attack_4.webp
+assets/sprites/player/axe_prosthetic_helm_r90/crouch_enter.webp
+assets/sprites/player/axe_prosthetic_helm_r90/crouch_exit.webp
+assets/sprites/player/axe_prosthetic_helm_r90/crouch_idle.webp
+assets/sprites/player/axe_prosthetic_helm_r90/death.webp
+assets/sprites/player/axe_prosthetic_helm_r90/devour.webp
+assets/sprites/player/axe_prosthetic_helm_r90/drop_through.webp
+assets/sprites/player/axe_prosthetic_helm_r90/fall.webp
+assets/sprites/player/axe_prosthetic_helm_r90/hurt.webp
+assets/sprites/player/axe_prosthetic_helm_r90/idle.webp
+assets/sprites/player/axe_prosthetic_helm_r90/jump_rise.webp
+assets/sprites/player/axe_prosthetic_helm_r90/jump_start.webp
+assets/sprites/player/axe_prosthetic_helm_r90/land.webp
+assets/sprites/player/axe_prosthetic_helm_r90/manifest.json
+assets/sprites/player/axe_prosthetic_helm_r90/roll.webp
+assets/sprites/player/axe_prosthetic_helm_r90/run.webp
+assets/sprites/player/axe_prosthetic_helm_r90/walk.webp
+assets/tiles/deathsea/ground_tile.png
+data/audio_stage11.json
+data/prop_contacts.json
+data/rampage.json
+data/save_settings.json
+data/stage11_asset_inventory.json
+docs/STAGE11_ALPHA_REPORT.txt
+docs/STAGE11_FILES_KO.txt
+docs/STAGE11_PROP_CONTACT.txt
+docs/STAGE11_REPORT_KO.md
+docs/STAGE11_SAVE_FORMAT_KO.md
+docs/STAGE11_STORY_FLOW_KO.md
+docs/screenshots/stage11_bed_contact.png
+docs/screenshots/stage11_choice_menu.png
+docs/screenshots/stage11_deathsea.png
+docs/screenshots/stage11_dilmun.png
+docs/screenshots/stage11_helm.png
+docs/screenshots/stage11_r40.png
+docs/screenshots/stage11_r50.png
+docs/screenshots/stage11_r90.png
+docs/size_compare/stage11_background.jpg
+docs/size_compare/stage11_gugalanna.jpg
+docs/size_compare/stage11_melee.jpg
+docs/size_compare/stage11_npc.jpg
+docs/size_compare/stage11_player_r90.jpg
+docs/size_compare/stage11_ranged.jpg
+downloads/Nimrod_stage11_2026-10-12.zip
+scenes/DeathSea.tscn
+scripts/afterimage_effect.gd
+scripts/choice_menu.gd
+scripts/rampage.gd
+scripts/rampage_hud.gd
+scripts/save_manager.gd
+scripts/travel_zone.gd
+tests/fixtures/stage11_dialogue_original.json
+tests/stage11_choice_menu.gd
+tests/stage11_deathsea.gd
+tests/stage11_demon_drop.gd
+tests/stage11_devour.gd
+tests/stage11_dialogue_skip.gd
+tests/stage11_forms.gd
+tests/stage11_frame_bleed.gd
+tests/stage11_helmet_sets.gd
+tests/stage11_prop_contact.gd
+tests/stage11_rampage.gd
+tests/stage11_save.gd
+tests/stage11_shimati.gd
+tests/stage11_story_dialogue.gd
+tools/build_stage11_art.py
+tools/capture_stage11.gd
+tools/check_all_sprite_frames.py
+tools/check_prop_contact.py
+tools/finalize_stage11_assets.py
+tools/fix_subject_particle.py
+tools/measure_stage11.py
+tools/normalize_stage11_poses.py
+tools/stage11_merge_loops.py
+tools/stage11_palette.py
+tools/stage11_quality_compare.py
+tools/stage11_repack.py
+
+보관 이동
+투구 없는 의수: archive/stage11/removed_axe_prosthetic
+사용하지 않는 정규화 PNG22개: archive/stage11/unused_canonical
+모든 패킹 전 원본: archive/pack_source, pack_source_history, stage11_before_repack

@@ -4,7 +4,7 @@ func _run() -> void:
     for stage in range(8,16):
         story_state.debug_stage(stage)
         _check(story_state.stage()==stage,"Cumulative stage %d" % stage)
-        _check(hero.selected_sprite_set()==("axe_prosthetic" if stage>=14 else "axe_onearm"),"Chapter sprite set %d" % stage)
+        _check(hero.selected_sprite_set()==("axe_prosthetic_helm" if stage>=14 else "axe_onearm_helm" if stage>=13 else "axe_onearm"),"Chapter sprite set %d" % stage)
         await _go("NimrodHome")
         _check(manager.current_level.npcs.has("enkidua_bed")== (stage>=9 and stage<12),"Home bed presence %d" % stage)
         _check(manager.current_level.npcs.has("inanna")== (stage==10),"Inanna home presence %d" % stage)

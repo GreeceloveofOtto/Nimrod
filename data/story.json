@@ -84,7 +84,8 @@
       "stage": 13,
       "flags": [
         "gugalanna_intro_done",
-        "gugalanna_defeated"
+        "gugalanna_defeated",
+        "helmet_equipped"
       ]
     },
     {
@@ -97,7 +98,21 @@
       "stage": 15,
       "flags": [
         "rooftop_done",
-        "dilmun_arrived"
+        "dilmun_arrived",
+        "rampage_unlocked"
+      ]
+    },
+    {
+      "stage": 16,
+      "flags": [
+        "shimati_done",
+        "death_sea_paper"
+      ]
+    },
+    {
+      "stage": 17,
+      "flags": [
+        "deathsea_arrived"
       ]
     }
   ],

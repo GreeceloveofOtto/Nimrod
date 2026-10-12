@@ -31,7 +31,7 @@ func _run() -> void:
     _check(not state.run_flags.get("shamhat_blessing",false),"First Shamhat conversation gives no blessing")
     await d.play_interaction("shamhat")
     _check(state.run_flags.get("shamhat_blessing",false) and hero.get_max_hp()==270,"Second conversation blesses and increases max HP")
-    _check(not d.interaction_available("shamhat"),"Blessed Shamhat loses E prompt")
+    _check(d.interaction_available("shamhat"),"Blessed Shamhat keeps menu and repeat conversation")
     await manager.go_to("CastleF3", "Spawn_FromBelow", {"instant": true})
     _check(manager.current_level.npcs.cook_a.interactable and not manager.current_level.npcs.cook_b.interactable,"Only nearest CastleF3 cook_a interacts")
     await d.play_interaction("castle_cook")

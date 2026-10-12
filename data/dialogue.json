@@ -153,7 +153,7 @@
             },
             {
               "speaker": "enkidua",
-              "text": "너가 나를 추천한 거 아니야? 내가 고맙지."
+              "text": "네가 나를 추천한 거 아니야? 내가 고맙지."
             },
             {
               "speaker": "player",
@@ -967,7 +967,7 @@
         },
         {
           "speaker": "enkidua",
-          "text": "너가 나를 추천한 거 아니야? 내가 고맙지."
+          "text": "네가 나를 추천한 거 아니야? 내가 고맙지."
         },
         {
           "speaker": "player",
@@ -1496,7 +1496,7 @@
         },
         {
           "speaker": "player",
-          "text": "너가 못하겠다면, 내가 너의 운명을 기필코 바꿔놓겠어."
+          "text": "네가 못하겠다면, 내가 너의 운명을 기필코 바꿔놓겠어."
         },
         {
           "speaker": "enkidua",
@@ -1665,7 +1665,7 @@
             },
             {
               "speaker": "player",
-              "text": "너가 못하겠다면, 내가 너의 운명을 기필코 바꿔놓겠어."
+              "text": "네가 못하겠다면, 내가 너의 운명을 기필코 바꿔놓겠어."
             },
             {
               "speaker": "enkidua",
@@ -1735,7 +1735,68 @@
           ]
         }
       ]
+    },
+    "shimati_intro": {
+      "when": {
+        "all": [
+          "dilmun_arrived"
+        ],
+        "none": [
+          "shimati_done"
+        ]
+      },
+      "first": [
+        {
+          "speaker": "player",
+          "text": "개척되지도 않은 이 땅에서 무엇을 팔고 있는거요?"
+        },
+        {
+          "speaker": "shimati",
+          "text": "난 무언가를 팔고 있는 것이 아니야. 당신의 운명 속 한 명의 등장인물일 뿐이지."
+        },
+        {
+          "speaker": "player",
+          "text": "그렇다면 당신은 나에게 영생과 부활에 대해서 알려줄 수 있겠어?"
+        },
+        {
+          "speaker": "shimati",
+          "text": "아쉽게도 그 역할을 맡진 않았지."
+        },
+        {
+          "speaker": "player",
+          "text": "기대하던 대답은 아니군. 아, 이제 어디로 가야하지? 난 이제 마지막이야."
+        },
+        {
+          "speaker": "player",
+          "text": "아누르의 빛이 비치는 딩이르의 별들을 모두 돌아다녔어."
+        },
+        {
+          "speaker": "shimati",
+          "text": "저 너머, 죽음의 바다라고 불리는 공간을 넘으면 우트나피쉬팀이라고 하는 자가 있지."
+        },
+        {
+          "speaker": "shimati",
+          "text": "그는 아주 오래전에 죽음의 바다에 빠져 죽은 이후 계속 되살아나고 있어. 내가 직접 보았지, 정말 신기하더군. 십만 년보다 오래 살 수 있다니."
+        },
+        {
+          "speaker": "shimati",
+          "text": "죽음의 바다를 건너기 위해서는 이게 필요할 거야."
+        }
+      ],
+      "repeat": [],
+      "flag": "dialogue_shimati",
+      "speakers": [
+        "player",
+        "shimati"
+      ],
+      "on_finish": [
+        {
+          "event": "give_paper"
+        }
+      ]
     }
   },
-  "hold_per_character": 0.05
+  "hold_per_character": 0.05,
+  "skip_start_grace": 0.25,
+  "skip_debounce": 0.12
 }

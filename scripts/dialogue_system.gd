@@ -11,6 +11,7 @@ var hidden_items: Array[CanvasItem] = []
 var camera_tween: Tween
 var settings: Dictionary = {}
 var balloon: PanelContainer
+var content_box: VBoxContainer
 var text_label: Label
 var name_chip: PanelContainer
 var name_label: Label
@@ -21,6 +22,9 @@ var highlighted: Node2D
 var highlight_color: Color = Color.WHITE
 var highlight_name_alpha: float = 1.0
 var participants: Dictionary = {}
+var skip_requested: bool = false
+var skip_delay: float = 0.0
+var skip_hint: Label
 var live_timer: SceneTreeTimer
 var paused_actors: Dictionary = {}
 var test_timing_scale := 1.0
@@ -45,12 +49,14 @@ func _ready() -> void:
     style.content_margin_bottom = 14
     balloon.add_theme_stylebox_override("panel", style)
     _canvas.add_child(balloon)
+    content_box = VBoxContainer.new()
+    balloon.add_child(content_box)
     text_label = Label.new()
     text_label.add_theme_font_override("font", load(str(settings["font"])) as Font)
     text_label.add_theme_font_size_override("font_size", int(settings["font_size"]))
     text_label.add_theme_color_override("font_color", Color("f2e9d0"))
     text_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-    balloon.add_child(text_label)
+    content_box.add_child(text_label)
     name_chip = PanelContainer.new()
     name_chip.name = "SpeakerChip"
     name_chip.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -60,11 +66,19 @@ func _ready() -> void:
     name_label.add_theme_font_size_override("font_size", 20)
     name_label.add_theme_color_override("font_color", Color("f2e9d0"))
     name_chip.add_child(name_label)
+    skip_hint = Label.new()
+    skip_hint.text = "E 넘기기"
+    skip_hint.modulate.a = .6
+    skip_hint.add_theme_font_override("font",load(str(settings["font"])))
+    skip_hint.add_theme_font_size_override("font_size",16)
+    skip_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+    content_box.add_child(skip_hint)
     _layout()
     _canvas.hide()
 
 func _process(delta: float) -> void:
     input_grace_left = maxf(0, input_grace_left - delta)
+    skip_delay = maxf(0,skip_delay-delta)
     if active:
         _layout()
 
@@ -108,7 +122,7 @@ func interaction_available(id: String) -> bool:
     if spec.is_empty():
         return false
     var flags: Dictionary = get_node("/root/GameState").run_flags
-    if bool(spec.get("blessing_gate", id == "shamhat")) and flags.get("shamhat_blessing", false):
+    if id != "shamhat" and bool(spec.get("blessing_gate", false)) and flags.get("shamhat_blessing", false):
         return false
     return not (spec.get("repeat", []) if flags.get(str(spec["flag"]), false) else spec.get("first", [])).is_empty()
 
@@ -180,6 +194,8 @@ func _event(event: Dictionary, nodes: Dictionary) -> void:
             get_node("/root/Cutscene").play.call_deferred(str(event["cutscene"]))
         "time_skip":
             get_node("/root/Cutscene").play.call_deferred("skip_" + str(event.get("id", "castle_return")))
+        "give_paper":
+            await get_node("/root/Chapter").give_paper()
         "equip_prosthetic":
             await get_node("/root/Chapter").equip_prosthetic()
 
@@ -221,6 +237,8 @@ func play(lines: Array, speaker: Node2D, options: Dictionary = {}) -> void:
     if active or lines.is_empty() or not is_instance_valid(speaker):
         return
     active = true
+    skip_requested = false
+    skip_delay = float(settings["skip_start_grace"])
     cancelled = false
     generation += 1
     var token: int = generation
@@ -299,6 +317,7 @@ func play(lines: Array, speaker: Node2D, options: Dictionary = {}) -> void:
             await _event(spec, participants)
             _canvas.show()
             continue
+        skip_requested = false
         _set_speaker(actor, speaker_id)
         var line: String = str(spec.get("text", ""))
         text_label.text = line
@@ -307,13 +326,16 @@ func play(lines: Array, speaker: Node2D, options: Dictionary = {}) -> void:
         _layout()
         line_changed.emit(speaker_id, line)
         for i in range(line.length()):
+            if skip_requested:
+                break
             text_label.visible_characters = i + 1
             if line[i] != " ":
                 get_node("/root/Audio").play_sfx("speech_blip", null, 0.04)
             await _timer(float(options.get("character_seconds", settings["character_seconds"])))
             if token != generation:
                 return
-        await _timer(float(options.get("hold_seconds", maxf(float(settings["hold_seconds"]), float(settings.get("hold_per_character", 0.05)) * line.length()))))
+        if not skip_requested:
+            await _timer(float(options.get("hold_seconds", maxf(float(settings["hold_seconds"]), float(settings.get("hold_per_character", 0.05)) * line.length()))))
         if token != generation:
             return
     _canvas.hide()
@@ -385,3 +407,19 @@ func give_axe(father: Node2D, hero: NimrodPlayer) -> void:
         return
     get_node("/root/GameState").set_weapon("axe")
     get_node("/root/SceneManager").show_toast("니므롯의 도끼를 얻었다")
+
+func skip_line() -> bool:
+    if not active or skip_delay > 0 or not _canvas.visible:
+        return false
+    skip_requested = true
+    skip_delay = float(settings["skip_debounce"])
+    if live_timer != null:
+        var timer: SceneTreeTimer = live_timer
+        live_timer = null
+        timer.timeout.emit()
+    return true
+
+func _unhandled_input(event: InputEvent) -> void:
+    if active and event.is_action_pressed("interact") and not event.is_echo():
+        skip_line()
+        get_viewport().set_input_as_handled()

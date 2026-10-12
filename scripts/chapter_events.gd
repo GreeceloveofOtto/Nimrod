@@ -47,6 +47,11 @@ func _process(_delta: float) -> void:
         vignette.material.set_shader_parameter("tint",Vector3.ZERO)
 
 func on_arrival(level_id: String) -> void:
+    if level_id == "Dilmun":
+        get_node("/root/Rampage").unlock()
+        get_node("/root/Story").set_flag("dilmun_arrived")
+    elif level_id == "DeathSea":
+        get_node("/root/Story").set_flag("deathsea_arrived")
     if level_id == "VillaF4" and get_node("/root/Story").is_flag("prosthetic_equipped") and not get_node("/root/Story").is_flag("rooftop_done"):
         get_node("/root/Cutscene").play("rooftop")
 
@@ -64,7 +69,8 @@ func refresh_level(level: LevelBase) -> void:
             bed.interactable = bed.idle_clip == "bed_awake"
         var blood: Node2D = level.get_node_or_null("BedBlood")
         if story.is_flag("bed_blood") and not is_instance_valid(blood):
-            blood = AssetVisual.add_image(level,"res://assets/props/home_bed_blood.webp",Vector2(120,420),Vector2(420,200),1)
+            var contact: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/prop_contacts.json"))
+            blood = AssetVisual.add_image(level,"res://assets/props/home_bed_blood.webp",Vector2(float(contact["blood_position"][0]),float(contact["blood_position"][1])),Vector2(float(contact["blood_size"][0]),float(contact["blood_size"][1])),1)
             blood.name = "BedBlood"
         elif not story.is_flag("bed_blood") and is_instance_valid(blood):
             blood.queue_free()
@@ -206,10 +212,42 @@ func event(id: String) -> void:
             hero.facing = -1
             hero.cinematic_set = "cutscene"
             hero.sync_story_state()
+        "paper_transfer":
+            var npc: NPC = manager.current_level.npcs.get("shimati")
+            if is_instance_valid(npc):
+                var paper: Node2D = AssetVisual.add_image(manager.current_level,"res://assets/props/paper_note.webp",Vector2.ZERO,Vector2(48,36),70)
+                get_node("/root/Cutscene")._control(paper)
+                paper.global_position = npc.global_position+Vector2(npc.facing*20,-65)
+                npc.play_clip("idle")
+                var tween := create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+                tween.tween_property(paper,"global_position",hero.global_position+Vector2(10,-65),.6*get_node("/root/Cutscene").timing_scale)
+                await tween.finished
+                paper.queue_free()
+                story.set_flag("death_sea_paper")
+                manager.show_toast("종이를 받았다")
+                var mote: Node2D = load("res://scripts/image_effect.gd").new()
+                mote.configure("res://assets/sprites/fx/mote.webp",Vector2i(64,64),4,2.,false,Vector2(32,32))
+                manager.current_level.add_child(mote)
+                mote.global_position = npc.global_position-Vector2(0,60)
+                get_node("/root/Cutscene")._control(mote)
         "helm":
             if not story.is_flag("gugalanna_helm"):
                 story.set_flag("gugalanna_helm")
                 manager.show_toast(str(story.settings["helm_toast"]))
+            if not story.is_flag("helmet_equipped"):
+                var was_locked: bool = manager.player_locked
+                manager.set_player_locked(true)
+                story.set_flag("helmet_equipped")
+                hero.cinematic_set = "axe_onearm_helm"
+                hero.sync_story_state()
+                hero.cinematic_clip = "helm_equip"
+                hero.cinematic_clock = 0
+                await get_tree().create_timer(.6*get_node("/root/Cutscene").timing_scale,true,false,true).timeout
+                hero.cinematic_clip = ""
+                hero.cinematic_set = ""
+                hero.sync_story_state()
+                hero._show_clip("idle",0)
+                manager.set_player_locked(was_locked or not get_node("/root/Cutscene").active)
 
 func equip_prosthetic() -> void:
     get_node("/root/Story").set_flag("prosthetic_equipped")
@@ -245,3 +283,14 @@ func schedule_helm_departure() -> void:
     var manager: Node = get_node("/root/SceneManager")
     if is_instance_valid(manager.current_level) and manager.current_level.level_id=="HomeFront" and get_node("/root/Story").is_flag("gugalanna_helm") and not get_node("/root/Cutscene").active:
         get_node("/root/Cutscene").play("after_gugalanna")
+
+func give_paper() -> void:
+    var manager: Node = get_node("/root/SceneManager")
+    var npc: NPC = manager.current_level.npcs.get("shimati")
+    if not is_instance_valid(npc):
+        return
+    var runner: Node = get_node("/root/Cutscene")
+    npc.facing = -1 if manager.player.global_position.x<npc.global_position.x else 1
+    npc.pose = npc.facing
+    # Use the runner to own paused actors and restore input even if a level is freed.
+    await runner.play("shimati_paper")

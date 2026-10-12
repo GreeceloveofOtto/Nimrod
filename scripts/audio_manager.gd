@@ -2,6 +2,13 @@ extends Node
 
 # Replace a source file at the same path to upgrade the temporary synthesized audio.
 const SFX_TABLE: Dictionary = {
+    "devour_chomp": "res://assets/audio/sfx/devour_chomp.ogg",
+    "devour_gulp": "res://assets/audio/sfx/devour_gulp.ogg",
+    "rampage_heartbeat_loop": "res://assets/audio/sfx/rampage_heartbeat_loop.ogg",
+    "rampage_cure": "res://assets/audio/sfx/rampage_cure.ogg",
+    "save_chime": "res://assets/audio/sfx/save_chime.ogg",
+    "dice_roll": "res://assets/audio/sfx/dice_roll.ogg",
+
     "melammu_heartbeat": "res://assets/audio/sfx/melammu_heartbeat.ogg",
     "sob_loop": "res://assets/audio/sfx/sob_loop.ogg",
     "arm_cut": "res://assets/audio/sfx/arm_cut.ogg",
@@ -151,6 +158,7 @@ const SFX_TABLE: Dictionary = {
     "great_gate_close": "res://assets/audio/sfx/great_gate_close.ogg"
 }
 const BGM_TABLE: Dictionary = {
+    "deathsea_drone": "res://assets/audio/bgm/deathsea_drone.ogg",
     "home_sorrow": "res://assets/audio/bgm/home_sorrow.ogg",
     "dilmun_wind": "res://assets/audio/bgm/dilmun_wind.ogg",
     "nimrod_home": "res://assets/audio/bgm/nimrod_home.ogg",
@@ -167,7 +175,7 @@ const BGM_TABLE: Dictionary = {
     "castle_front": "res://assets/audio/bgm/castle_front.ogg",
     "uruk_wasteland": "res://assets/audio/bgm/uruk_wasteland.ogg"
 }
-const LOOP_SFX: Array[String] = ["beast_ranged_flame_loop", "sky_beast_wingflap_loop", "gas_loop", "wraith_wail_loop", "wisp_wail_loop", "boss_roar_loop", "boss_core_throb", "humbaba_breath_loop", "sob_loop"]
+const LOOP_SFX: Array[String] = ["beast_ranged_flame_loop", "sky_beast_wingflap_loop", "gas_loop", "wraith_wail_loop", "wisp_wail_loop", "boss_roar_loop", "boss_core_throb", "humbaba_breath_loop", "sob_loop", "rampage_heartbeat_loop"]
 const SILENT_DB: float = -60.0
 
 var _streams: Dictionary = {}

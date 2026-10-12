@@ -1,5 +1,6 @@
 {
   "player": 2,
+  "player_stage11": 1.0,
   "npc": 2,
   "enemy": 1.6,
   "large_enemy": 1.2,
@@ -7,5 +8,11 @@
   "props": 2,
   "doors": 2,
   "sky_far": 1,
-  "ssim_min": 0.93
+  "ssim_min": 0.93,
+  "minimums": {
+    "player": 0.8,
+    "npc": 0.8,
+    "enemy": 0.8,
+    "large_enemy": 0.9
+  }
 }

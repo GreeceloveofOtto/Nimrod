@@ -22,10 +22,12 @@ func _run() -> void:
     _check(hero.get_max_hp()==180 and hero.hp==100,"First dialogue gives no blessing")
     await create_timer(.21,true,false,true).timeout
     npc.interact(hero)
-    await root.get_node("Dialogue").finished
+    await process_frame
+    _check(root.get_node("Choice").active,"Repeated E opens choice menu")
+    await root.get_node("Choice").choose(0)
     await process_frame
     _check(hero.get_max_hp()==270 and hero.hp==190,"Second dialogue grants blessing")
-    _check(not npc.interaction_prompt.visible,"Blessed NPC hides repeated E prompt")
+    _check(root.get_node("Dialogue").interaction_available("shamhat"),"Blessed NPC retains repeat conversation menu")
     root.get_node("GameState").reset_run(false)
     hero.reset_run_state()
     hero.hp = 100

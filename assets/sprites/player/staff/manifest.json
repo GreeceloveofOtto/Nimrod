@@ -1,1 +1,1224 @@
-{"step":17,"frame_size":[640,640],"weapon":"staff","clips":[{"name":"idle","sheet":"sprites/player/staff/idle.webp","frame_width":640,"frame_height":640,"columns":10,"rows":1,"frames":10,"duration_seconds":2.2,"fps":4.545454545454545,"loop":true,"anchor_px":[320,600],"image_size":[1080,243],"qa":{"height_tol":0.1,"pose_height_exception":false},"trim":{"x":238,"y":234,"w":164,"h":368},"storage_scale":[0.6585365853658537,0.6603260869565217],"stored_frame_size":[421,423],"stored_anchor_px":[210.73170731707316,396.19565217391306],"storage_trim":{"x":156.73170731707316,"y":154.5163043478261,"w":108,"h":243},"stored_columns":10,"frame_map":[0,1,2,3,4,5,6,7,8,9],"effective_density":2.2,"ssim":0.9402125894997753},{"name":"walk","sheet":"sprites/player/staff/walk.webp","frame_width":640,"frame_height":640,"columns":10,"rows":1,"frames":10,"duration_seconds":1.05,"fps":9.523809523809524,"loop":true,"anchor_px":[320,600],"image_size":[1330,165],"qa":{"height_tol":0.1,"pose_height_exception":false},"trim":{"x":181,"y":258,"w":278,"h":344},"storage_scale":[0.4784172661870504,0.4796511627906977],"stored_frame_size":[306,307],"stored_anchor_px":[153.0935251798561,287.7906976744186],"storage_trim":{"x":86.59352517985612,"y":123.75,"w":133,"h":165},"stored_columns":10,"frame_map":[0,1,2,3,4,5,6,7,8,9],"effective_density":1.6,"ssim":0.9466649383937799},{"name":"crouch_enter","sheet":"sprites/player/staff/crouch_enter.webp","frame_width":640,"frame_height":640,"columns":4,"rows":1,"frames":4,"duration_seconds":0.14,"fps":28.57142857142857,"loop":false,"anchor_px":[320,600],"image_size":[540,177],"qa":{"height_tol":0.35,"pose_height_exception":true},"trim":{"x":208,"y":307,"w":225,"h":295},"storage_scale":[0.6,0.6],"stored_frame_size":[384,384],"stored_anchor_px":[192.0,360.0],"storage_trim":{"x":124.8,"y":184.2,"w":135,"h":177},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":2.0,"ssim":0.9351586051635019},{"name":"crouch_idle","sheet":"sprites/player/staff/crouch_idle.webp","frame_width":640,"frame_height":640,"columns":6,"rows":1,"frames":6,"duration_seconds":0.8,"fps":7.5,"loop":true,"anchor_px":[320,600],"image_size":[570,146],"qa":{"height_tol":0.35,"pose_height_exception":true},"trim":{"x":254,"y":399,"w":132,"h":203},"storage_scale":[0.7196969696969697,0.7192118226600985],"stored_frame_size":[461,460],"stored_anchor_px":[230.3030303030303,431.5270935960591],"storage_trim":{"x":182.8030303030303,"y":286.9655172413793,"w":95,"h":146},"stored_columns":6,"frame_map":[0,1,2,3,4,5],"effective_density":2.4,"ssim":0.9390888811228919},{"name":"crouch_exit","sheet":"sprites/player/staff/crouch_exit.webp","frame_width":640,"frame_height":640,"columns":4,"rows":1,"frames":4,"duration_seconds":0.13,"fps":30.769230769230766,"loop":false,"anchor_px":[320,600],"image_size":[508,230],"qa":{"height_tol":0.35,"pose_height_exception":true},"trim":{"x":232,"y":282,"w":177,"h":320},"storage_scale":[0.7175141242937854,0.71875],"stored_frame_size":[459,460],"stored_anchor_px":[229.6045197740113,431.25],"storage_trim":{"x":166.4632768361582,"y":202.6875,"w":127,"h":230},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":2.4,"ssim":0.9444920318368752},{"name":"jump_start","sheet":"sprites/player/staff/jump_start.webp","frame_width":640,"frame_height":640,"columns":4,"rows":1,"frames":4,"duration_seconds":0.13,"fps":30.769230769230766,"loop":false,"anchor_px":[320,600],"image_size":[664,188],"qa":{"height_tol":0.35,"pose_height_exception":true},"trim":{"x":182,"y":289,"w":277,"h":313},"storage_scale":[0.5992779783393501,0.6006389776357828],"stored_frame_size":[384,384],"stored_anchor_px":[191.76895306859205,360.38338658146967],"storage_trim":{"x":109.06859205776173,"y":173.5846645367412,"w":166,"h":188},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":2.0,"ssim":0.9374540969988922},{"name":"jump_rise","sheet":"sprites/player/staff/jump_rise.webp","frame_width":640,"frame_height":640,"columns":6,"rows":1,"frames":6,"duration_seconds":0.42,"fps":14.285714285714286,"loop":false,"anchor_px":[320,600],"image_size":[834,179],"qa":{"height_tol":0.35,"pose_height_exception":true},"trim":{"x":191,"y":270,"w":258,"h":332},"storage_scale":[0.5387596899224806,0.5391566265060241],"stored_frame_size":[345,345],"stored_anchor_px":[172.4031007751938,323.49397590361446],"storage_trim":{"x":102.90310077519379,"y":145.5722891566265,"w":139,"h":179},"stored_columns":6,"frame_map":[0,1,2,3,4,5],"effective_density":1.8,"ssim":0.9346206592803925},{"name":"fall","sheet":"sprites/player/staff/fall.webp","frame_width":640,"frame_height":640,"columns":6,"rows":1,"frames":6,"duration_seconds":0.36,"fps":16.666666666666668,"loop":true,"anchor_px":[320,600],"image_size":[1080,190],"qa":{"height_tol":0.35,"pose_height_exception":true},"trim":{"x":153,"y":251,"w":334,"h":351},"storage_scale":[0.5389221556886228,0.5413105413105413],"stored_frame_size":[345,346],"stored_anchor_px":[172.4550898203593,324.78632478632477],"storage_trim":{"x":82.45508982035928,"y":135.86894586894587,"w":180,"h":190},"stored_columns":6,"frame_map":[0,1,2,3,4,5],"effective_density":1.8,"ssim":0.9473805418820508},{"name":"land","sheet":"sprites/player/staff/land.webp","frame_width":640,"frame_height":640,"columns":5,"rows":1,"frames":5,"duration_seconds":0.24,"fps":20.833333333333336,"loop":false,"anchor_px":[320,600],"image_size":[1055,231],"qa":{"height_tol":0.35,"pose_height_exception":true},"trim":{"x":124,"y":174,"w":391,"h":428},"storage_scale":[0.5396419437340153,0.5397196261682243],"stored_frame_size":[345,345],"stored_anchor_px":[172.6854219948849,323.8317757009346],"storage_trim":{"x":66.9156010230179,"y":93.91121495327103,"w":211,"h":231},"stored_columns":5,"frame_map":[0,1,2,3,4],"effective_density":1.8,"ssim":0.9467428661605964},{"name":"drop_through","sheet":"sprites/player/staff/drop_through.webp","frame_width":640,"frame_height":640,"columns":5,"rows":1,"frames":5,"duration_seconds":0.22,"fps":22.727272727272727,"loop":false,"anchor_px":[320,600],"image_size":[920,197],"qa":{"height_tol":0.35,"pose_height_exception":true},"trim":{"x":150,"y":237,"w":340,"h":365},"storage_scale":[0.5411764705882353,0.5397260273972603],"stored_frame_size":[346,345],"stored_anchor_px":[173.1764705882353,323.83561643835617],"storage_trim":{"x":81.17647058823529,"y":127.91506849315068,"w":184,"h":197},"stored_columns":5,"frame_map":[0,1,2,3,4],"effective_density":1.8,"ssim":0.9341631958141856},{"name":"hurt","sheet":"sprites/player/staff/hurt.webp","frame_width":640,"frame_height":640,"columns":5,"rows":1,"frames":5,"duration_seconds":0.32,"fps":15.625,"loop":false,"anchor_px":[320,600],"image_size":[970,249],"qa":{"height_tol":0.35,"pose_height_exception":true},"trim":{"x":173,"y":224,"w":294,"h":378},"storage_scale":[0.6598639455782312,0.6587301587301587],"stored_frame_size":[422,422],"stored_anchor_px":[211.156462585034,395.23809523809524],"storage_trim":{"x":114.15646258503402,"y":147.55555555555554,"w":194,"h":249},"stored_columns":5,"frame_map":[0,1,2,3,4],"effective_density":2.2,"ssim":0.9403887381607616},{"name":"death","sheet":"sprites/player/staff/death.webp","frame_width":640,"frame_height":640,"columns":8,"rows":1,"frames":8,"duration_seconds":0.6,"fps":13.333333333333334,"loop":false,"anchor_px":[320,600],"image_size":[1024,217],"qa":{"height_tol":0.35,"pose_height_exception":true},"trim":{"x":209,"y":240,"w":214,"h":362},"storage_scale":[0.5981308411214953,0.5994475138121547],"stored_frame_size":[383,384],"stored_anchor_px":[191.4018691588785,359.6685082872928],"storage_trim":{"x":125.00934579439253,"y":143.86740331491714,"w":128,"h":217},"stored_columns":8,"frame_map":[0,1,2,3,4,5,6,7],"effective_density":2.0,"ssim":0.9373011871714625},{"name":"run","sheet":"sprites/player/staff/run.webp","frame_width":640,"frame_height":640,"columns":10,"rows":1,"frames":10,"duration_seconds":0.82,"fps":12.195121951219512,"loop":true,"anchor_px":[320,600],"image_size":[1320,163],"qa":{"height_tol":0.1,"pose_height_exception":true,"pose_height_reason":"Forward-leaning run follows existing axe pose height"},"trim":{"x":183,"y":263,"w":274,"h":339},"storage_scale":[0.48175182481751827,0.4808259587020649],"stored_frame_size":[308,308],"stored_anchor_px":[154.16058394160584,288.49557522123894],"storage_trim":{"x":88.16058394160584,"y":126.45722713864306,"w":132,"h":163},"stored_columns":10,"frame_map":[0,1,2,3,4,5,6,7,8,9],"effective_density":1.6,"ssim":0.9492751602373928},{"name":"roll","sheet":"sprites/player/staff/roll.webp","frame_width":640,"frame_height":640,"columns":12,"rows":1,"frames":12,"duration_seconds":0.48,"fps":25.0,"loop":false,"anchor_px":[320,600],"image_size":[1452,157],"qa":{"height_tol":0.35,"pose_height_exception":true},"trim":{"x":176,"y":229,"w":288,"h":373},"storage_scale":[0.4201388888888889,0.42091152815013405],"stored_frame_size":[269,269],"stored_anchor_px":[134.44444444444446,252.54691689008044],"storage_trim":{"x":73.94444444444444,"y":96.3887399463807,"w":121,"h":157},"stored_columns":12,"frame_map":[0,1,2,3,4,5,6,7,8,9,10,11],"effective_density":1.4,"ssim":0.9305978233947885},{"name":"attack_1","sheet":"sprites/player/staff/attack_1.webp","frame_width":640,"frame_height":640,"columns":8,"rows":1,"frames":8,"duration_seconds":0.28,"fps":28.57142857142857,"loop":false,"anchor_px":[320,600],"image_size":[1064,142],"qa":{"height_tol":0.35,"pose_height_exception":true},"trim":{"x":220,"y":339,"w":246,"h":263},"storage_scale":[0.540650406504065,0.5399239543726235],"stored_frame_size":[346,346],"stored_anchor_px":[173.0081300813008,323.95437262357416],"storage_trim":{"x":118.9430894308943,"y":183.03422053231938,"w":133,"h":142},"stored_columns":8,"frame_map":[0,1,2,3,4,5,6,7],"effective_density":1.8,"ssim":0.9460034372269398},{"name":"attack_2","sheet":"sprites/player/staff/attack_2.webp","frame_width":640,"frame_height":640,"columns":8,"rows":1,"frames":8,"duration_seconds":0.28,"fps":28.57142857142857,"loop":false,"anchor_px":[320,600],"image_size":[1352,171],"qa":{"height_tol":0.35,"pose_height_exception":true},"trim":{"x":177,"y":196,"w":402,"h":406},"storage_scale":[0.42039800995024873,0.4211822660098522],"stored_frame_size":[269,270],"stored_anchor_px":[134.5273631840796,252.70935960591132],"storage_trim":{"x":74.41044776119404,"y":82.55172413793103,"w":169,"h":171},"stored_columns":8,"frame_map":[0,1,2,3,4,5,6,7],"effective_density":1.4,"ssim":0.9498498424508309},{"name":"attack_3","sheet":"sprites/player/staff/attack_3.webp","frame_width":640,"frame_height":640,"columns":10,"rows":1,"frames":10,"duration_seconds":0.4,"fps":25.0,"loop":false,"anchor_px":[320,600],"image_size":[1590,132],"qa":{"height_tol":0.35,"pose_height_exception":true},"trim":{"x":168,"y":234,"w":441,"h":368},"storage_scale":[0.36054421768707484,0.358695652173913],"stored_frame_size":[231,230],"stored_anchor_px":[115.37414965986395,215.2173913043478],"storage_trim":{"x":60.57142857142857,"y":83.93478260869566,"w":159,"h":132},"stored_columns":10,"frame_map":[0,1,2,3,4,5,6,7,8,9],"effective_density":1.2,"ssim":0.9631658447784484}]}
+{
+  "step": 17,
+  "frame_size": [
+    640,
+    640
+  ],
+  "weapon": "staff",
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/player/staff/idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 10,
+      "rows": 1,
+      "frames": 10,
+      "duration_seconds": 2.2,
+      "fps": 4.545454545454545,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1120,
+        247
+      ],
+      "qa": {
+        "height_tol": 0.1,
+        "pose_height_exception": false
+      },
+      "trim": {
+        "x": 238,
+        "y": 234,
+        "w": 164,
+        "h": 368
+      },
+      "storage_scale": [
+        0.6585365853658537,
+        0.6603260869565217
+      ],
+      "stored_frame_size": [
+        421,
+        423
+      ],
+      "stored_anchor_px": [
+        210.73170731707316,
+        396.19565217391306
+      ],
+      "storage_trim": {
+        "x": 154.7317073170732,
+        "y": 152.5163043478261,
+        "w": 112,
+        "h": 247
+      },
+      "stored_columns": 10,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "effective_density": 2.2,
+      "ssim": 0.9402125894997753,
+      "stored_content_size": [
+        108,
+        243
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        112,
+        247
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "walk",
+      "sheet": "sprites/player/staff/walk.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 10,
+      "rows": 1,
+      "frames": 10,
+      "duration_seconds": 1.05,
+      "fps": 9.523809523809524,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1300,
+        158
+      ],
+      "qa": {
+        "height_tol": 0.1,
+        "pose_height_exception": false,
+        "expected_pose_heights": [
+          363,
+          363,
+          363,
+          363,
+          363,
+          363,
+          363,
+          363,
+          363,
+          363
+        ]
+      },
+      "trim": {
+        "x": 170,
+        "y": 235,
+        "w": 301,
+        "h": 367
+      },
+      "storage_scale": [
+        0.4186046511627907,
+        0.4196185286103542
+      ],
+      "stored_frame_size": [
+        268,
+        269
+      ],
+      "stored_anchor_px": [
+        133.95348837209303,
+        251.77111716621255
+      ],
+      "storage_trim": {
+        "x": 69.16279069767442,
+        "y": 96.61035422343323,
+        "w": 130,
+        "h": 158
+      },
+      "stored_columns": 10,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "effective_density": 1.4,
+      "ssim": 0.9368059155079899,
+      "stored_content_size": [
+        126,
+        154
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        130,
+        158
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.9726532583978416,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "crouch_enter",
+      "sheet": "sprites/player/staff/crouch_enter.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.14,
+      "fps": 28.57142857142857,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        556,
+        181
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 208,
+        "y": 307,
+        "w": 225,
+        "h": 295
+      },
+      "storage_scale": [
+        0.6,
+        0.6
+      ],
+      "stored_frame_size": [
+        384,
+        384
+      ],
+      "stored_anchor_px": [
+        192.0,
+        360.0
+      ],
+      "storage_trim": {
+        "x": 122.8,
+        "y": 182.2,
+        "w": 139,
+        "h": 181
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 2.0,
+      "ssim": 0.9351586051635019,
+      "stored_content_size": [
+        135,
+        177
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        139,
+        181
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "crouch_idle",
+      "sheet": "sprites/player/staff/crouch_idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.8,
+      "fps": 7.5,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        594,
+        150
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 254,
+        "y": 399,
+        "w": 132,
+        "h": 203
+      },
+      "storage_scale": [
+        0.7196969696969697,
+        0.7192118226600985
+      ],
+      "stored_frame_size": [
+        461,
+        460
+      ],
+      "stored_anchor_px": [
+        230.3030303030303,
+        431.5270935960591
+      ],
+      "storage_trim": {
+        "x": 180.8030303030303,
+        "y": 284.9655172413793,
+        "w": 99,
+        "h": 150
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 2.4,
+      "ssim": 0.9390888811228919,
+      "stored_content_size": [
+        95,
+        146
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        99,
+        150
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "crouch_exit",
+      "sheet": "sprites/player/staff/crouch_exit.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.13,
+      "fps": 30.769230769230766,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        524,
+        234
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 232,
+        "y": 282,
+        "w": 177,
+        "h": 320
+      },
+      "storage_scale": [
+        0.7175141242937854,
+        0.71875
+      ],
+      "stored_frame_size": [
+        459,
+        460
+      ],
+      "stored_anchor_px": [
+        229.6045197740113,
+        431.25
+      ],
+      "storage_trim": {
+        "x": 164.4632768361582,
+        "y": 200.6875,
+        "w": 131,
+        "h": 234
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 2.4,
+      "ssim": 0.9444920318368752,
+      "stored_content_size": [
+        127,
+        230
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        131,
+        234
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "jump_start",
+      "sheet": "sprites/player/staff/jump_start.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.13,
+      "fps": 30.769230769230766,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        680,
+        192
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 182,
+        "y": 289,
+        "w": 277,
+        "h": 313
+      },
+      "storage_scale": [
+        0.5992779783393501,
+        0.6006389776357828
+      ],
+      "stored_frame_size": [
+        384,
+        384
+      ],
+      "stored_anchor_px": [
+        191.76895306859205,
+        360.38338658146967
+      ],
+      "storage_trim": {
+        "x": 107.06859205776173,
+        "y": 171.58466453674123,
+        "w": 170,
+        "h": 192
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 2.0,
+      "ssim": 0.9374540969988922,
+      "stored_content_size": [
+        166,
+        188
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        170,
+        192
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "jump_rise",
+      "sheet": "sprites/player/staff/jump_rise.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.42,
+      "fps": 14.285714285714286,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        858,
+        183
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 191,
+        "y": 270,
+        "w": 258,
+        "h": 332
+      },
+      "storage_scale": [
+        0.5387596899224806,
+        0.5391566265060241
+      ],
+      "stored_frame_size": [
+        345,
+        345
+      ],
+      "stored_anchor_px": [
+        172.4031007751938,
+        323.49397590361446
+      ],
+      "storage_trim": {
+        "x": 100.90310077519379,
+        "y": 143.5722891566265,
+        "w": 143,
+        "h": 183
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 1.8,
+      "ssim": 0.9346206592803925,
+      "stored_content_size": [
+        139,
+        179
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        143,
+        183
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "fall",
+      "sheet": "sprites/player/staff/fall.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.36,
+      "fps": 16.666666666666668,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1104,
+        194
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 153,
+        "y": 251,
+        "w": 334,
+        "h": 351
+      },
+      "storage_scale": [
+        0.5389221556886228,
+        0.5413105413105413
+      ],
+      "stored_frame_size": [
+        345,
+        346
+      ],
+      "stored_anchor_px": [
+        172.4550898203593,
+        324.78632478632477
+      ],
+      "storage_trim": {
+        "x": 80.45508982035929,
+        "y": 133.86894586894587,
+        "w": 184,
+        "h": 194
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 1.8,
+      "ssim": 0.9473805418820508,
+      "stored_content_size": [
+        180,
+        190
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        184,
+        194
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "land",
+      "sheet": "sprites/player/staff/land.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.24,
+      "fps": 20.833333333333336,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1075,
+        235
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 124,
+        "y": 174,
+        "w": 391,
+        "h": 428
+      },
+      "storage_scale": [
+        0.5396419437340153,
+        0.5397196261682243
+      ],
+      "stored_frame_size": [
+        345,
+        345
+      ],
+      "stored_anchor_px": [
+        172.6854219948849,
+        323.8317757009346
+      ],
+      "storage_trim": {
+        "x": 64.9156010230179,
+        "y": 91.91121495327103,
+        "w": 215,
+        "h": 235
+      },
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "effective_density": 1.8,
+      "ssim": 0.9467428661605964,
+      "stored_content_size": [
+        211,
+        231
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        215,
+        235
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "drop_through",
+      "sheet": "sprites/player/staff/drop_through.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.22,
+      "fps": 22.727272727272727,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        940,
+        201
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 150,
+        "y": 237,
+        "w": 340,
+        "h": 365
+      },
+      "storage_scale": [
+        0.5411764705882353,
+        0.5397260273972603
+      ],
+      "stored_frame_size": [
+        346,
+        345
+      ],
+      "stored_anchor_px": [
+        173.1764705882353,
+        323.83561643835617
+      ],
+      "storage_trim": {
+        "x": 79.17647058823529,
+        "y": 125.91506849315068,
+        "w": 188,
+        "h": 201
+      },
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "effective_density": 1.8,
+      "ssim": 0.9341631958141856,
+      "stored_content_size": [
+        184,
+        197
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        188,
+        201
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "hurt",
+      "sheet": "sprites/player/staff/hurt.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.32,
+      "fps": 15.625,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        990,
+        253
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 173,
+        "y": 224,
+        "w": 294,
+        "h": 378
+      },
+      "storage_scale": [
+        0.6598639455782312,
+        0.6587301587301587
+      ],
+      "stored_frame_size": [
+        422,
+        422
+      ],
+      "stored_anchor_px": [
+        211.156462585034,
+        395.23809523809524
+      ],
+      "storage_trim": {
+        "x": 112.156462585034,
+        "y": 145.55555555555554,
+        "w": 198,
+        "h": 253
+      },
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "effective_density": 2.2,
+      "ssim": 0.9403887381607616,
+      "stored_content_size": [
+        194,
+        249
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        198,
+        253
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "death",
+      "sheet": "sprites/player/staff/death.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 0.6,
+      "fps": 13.333333333333334,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1056,
+        221
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 209,
+        "y": 240,
+        "w": 214,
+        "h": 362
+      },
+      "storage_scale": [
+        0.5981308411214953,
+        0.5994475138121547
+      ],
+      "stored_frame_size": [
+        383,
+        384
+      ],
+      "stored_anchor_px": [
+        191.4018691588785,
+        359.6685082872928
+      ],
+      "storage_trim": {
+        "x": 123.00934579439252,
+        "y": 141.8674033149171,
+        "w": 132,
+        "h": 221
+      },
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "effective_density": 2.0,
+      "ssim": 0.9373011871714625,
+      "stored_content_size": [
+        128,
+        217
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        132,
+        221
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "run",
+      "sheet": "sprites/player/staff/run.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 10,
+      "rows": 1,
+      "frames": 10,
+      "duration_seconds": 0.82,
+      "fps": 12.195121951219512,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1360,
+        167
+      ],
+      "qa": {
+        "height_tol": 0.1,
+        "pose_height_exception": true,
+        "pose_height_reason": "Forward-leaning run follows existing axe pose height"
+      },
+      "trim": {
+        "x": 183,
+        "y": 263,
+        "w": 274,
+        "h": 339
+      },
+      "storage_scale": [
+        0.48175182481751827,
+        0.4808259587020649
+      ],
+      "stored_frame_size": [
+        308,
+        308
+      ],
+      "stored_anchor_px": [
+        154.16058394160584,
+        288.49557522123894
+      ],
+      "storage_trim": {
+        "x": 86.16058394160585,
+        "y": 124.45722713864306,
+        "w": 136,
+        "h": 167
+      },
+      "stored_columns": 10,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "effective_density": 1.6,
+      "ssim": 0.9492751602373928,
+      "stored_content_size": [
+        132,
+        163
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        136,
+        167
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "roll",
+      "sheet": "sprites/player/staff/roll.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 12,
+      "rows": 1,
+      "frames": 12,
+      "duration_seconds": 0.48,
+      "fps": 25.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1500,
+        161
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 176,
+        "y": 229,
+        "w": 288,
+        "h": 373
+      },
+      "storage_scale": [
+        0.4201388888888889,
+        0.42091152815013405
+      ],
+      "stored_frame_size": [
+        269,
+        269
+      ],
+      "stored_anchor_px": [
+        134.44444444444446,
+        252.54691689008044
+      ],
+      "storage_trim": {
+        "x": 71.94444444444444,
+        "y": 94.3887399463807,
+        "w": 125,
+        "h": 161
+      },
+      "stored_columns": 12,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "effective_density": 1.4,
+      "ssim": 0.9305978233947885,
+      "stored_content_size": [
+        121,
+        157
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        125,
+        161
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "attack_1",
+      "sheet": "sprites/player/staff/attack_1.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 0.28,
+      "fps": 28.57142857142857,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1096,
+        146
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 220,
+        "y": 339,
+        "w": 246,
+        "h": 263
+      },
+      "storage_scale": [
+        0.540650406504065,
+        0.5399239543726235
+      ],
+      "stored_frame_size": [
+        346,
+        346
+      ],
+      "stored_anchor_px": [
+        173.0081300813008,
+        323.95437262357416
+      ],
+      "storage_trim": {
+        "x": 116.9430894308943,
+        "y": 181.03422053231938,
+        "w": 137,
+        "h": 146
+      },
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "effective_density": 1.8,
+      "ssim": 0.9460034372269398,
+      "stored_content_size": [
+        133,
+        142
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        137,
+        146
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "attack_2",
+      "sheet": "sprites/player/staff/attack_2.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 0.28,
+      "fps": 28.57142857142857,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1384,
+        175
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 177,
+        "y": 196,
+        "w": 402,
+        "h": 406
+      },
+      "storage_scale": [
+        0.42039800995024873,
+        0.4211822660098522
+      ],
+      "stored_frame_size": [
+        269,
+        270
+      ],
+      "stored_anchor_px": [
+        134.5273631840796,
+        252.70935960591132
+      ],
+      "storage_trim": {
+        "x": 72.41044776119402,
+        "y": 80.55172413793103,
+        "w": 173,
+        "h": 175
+      },
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "effective_density": 1.4,
+      "ssim": 0.9498498424508309,
+      "stored_content_size": [
+        169,
+        171
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        173,
+        175
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "attack_3",
+      "sheet": "sprites/player/staff/attack_3.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 10,
+      "rows": 1,
+      "frames": 10,
+      "duration_seconds": 0.4,
+      "fps": 25.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1360,
+        114
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "pose_height_exception": true
+      },
+      "trim": {
+        "x": 168,
+        "y": 234,
+        "w": 441,
+        "h": 368
+      },
+      "storage_scale": [
+        0.29931972789115646,
+        0.29891304347826086
+      ],
+      "stored_frame_size": [
+        192,
+        191
+      ],
+      "stored_anchor_px": [
+        95.78231292517007,
+        179.34782608695653
+      ],
+      "storage_trim": {
+        "x": 48.285714285714285,
+        "y": 67.94565217391305,
+        "w": 136,
+        "h": 114
+      },
+      "stored_columns": 10,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "effective_density": 1.0,
+      "ssim": 0.9411414445299005,
+      "stored_content_size": [
+        132,
+        110
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        136,
+        114
+      ],
+      "stored_gutter": 2
+    }
+  ]
+}

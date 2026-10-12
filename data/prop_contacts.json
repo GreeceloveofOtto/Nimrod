@@ -1,0 +1,79 @@
+{
+  "mattress_roi_x_fraction": [
+    0.43,
+    1.0
+  ],
+  "bed_surface_y": 546.0,
+  "bed_center_x": 330.0,
+  "blood_position": [
+    120,
+    538.723
+  ],
+  "blood_size": [
+    420,
+    86
+  ],
+  "body_position": [
+    330.0,
+    545.7
+  ],
+  "chair_contacts": [
+    {
+      "level": "VillaF2",
+      "actor": "player",
+      "x": 1220,
+      "actor_y": 620,
+      "actor_seat_y_px": 473,
+      "anchor_y": 600,
+      "visual_scale": 0.3,
+      "prop_position": [
+        1175,
+        520
+      ],
+      "prop_size": [
+        90,
+        100
+      ],
+      "prop_path": "assets/props/villa_chair_seat.webp",
+      "seat_row_px": 70
+    },
+    {
+      "level": "VillaF2",
+      "actor": "aya",
+      "x": 1480,
+      "actor_y": 620,
+      "actor_seat_y_px": 480,
+      "anchor_y": 600,
+      "visual_scale": 0.3,
+      "prop_position": [
+        1435,
+        520
+      ],
+      "prop_size": [
+        90,
+        100
+      ],
+      "prop_path": "assets/props/villa_chair_seat.webp",
+      "seat_row_px": 70
+    },
+    {
+      "level": "VillaF2",
+      "actor": "shamash",
+      "x": 1620,
+      "actor_y": 620,
+      "actor_seat_y_px": 480,
+      "anchor_y": 600,
+      "visual_scale": 0.3,
+      "prop_position": [
+        1575,
+        520
+      ],
+      "prop_size": [
+        90,
+        100
+      ],
+      "prop_path": "assets/props/villa_chair_seat.webp",
+      "seat_row_px": 70
+    }
+  ]
+}

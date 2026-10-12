@@ -664,3 +664,22 @@ func take_light_hit(damage: int, from_pos: Vector2, stagger: float) -> Dictionar
     var result: Dictionary = take_hit(damage,from_pos,1)
     light_stagger_override = -1
     return result
+
+# Devour bypasses armor, guard and stagger immunity, but respects cinematic invulnerability.
+func take_fixed_damage(amount: int, from_pos: Vector2) -> Dictionary:
+    if hp <= 0 or state == State.DEAD or not cinematic_clip.is_empty():
+        return {"blocked":false,"damage_dealt":0}
+    if enemy_id in ["humbaba","gugalanna"] and not bool(get("battle_started")):
+        return {"blocked":false,"damage_dealt":0}
+    if enemy_id == "humbaba" and (bool(get("phase_roaring")) or bool(get("opening_pending"))):
+        return {"blocked":false,"damage_dealt":0}
+    if enemy_id == "kala_ushumgal" and str(get("phase")) == "phase_transition":
+        return {"blocked":false,"damage_dealt":0}
+    var dealt: int = mini(hp,amount)
+    hp -= amount
+    hitstop_left = float(common.get("hitstop_seconds",.05))
+    _spawn_hit_spark(from_pos)
+    damaged.emit(dealt,hp)
+    if hp <= 0:
+        _die()
+    return {"blocked":false,"damage_dealt":dealt}

@@ -1,0 +1,72 @@
+{
+  "sfx": [
+    {
+      "name": "devour_chomp",
+      "duration": 0.22,
+      "kind": "impact",
+      "pitch": 95,
+      "loop": false
+    },
+    {
+      "name": "devour_gulp",
+      "duration": 0.3,
+      "kind": "inhale",
+      "pitch": 75,
+      "loop": false
+    },
+    {
+      "name": "rampage_heartbeat_loop",
+      "duration": 2,
+      "kind": "heartbeat",
+      "pitch": 95,
+      "loop": true
+    },
+    {
+      "name": "rampage_cure",
+      "duration": 0.6,
+      "kind": "chime",
+      "pitch": 440,
+      "loop": false
+    },
+    {
+      "name": "save_chime",
+      "duration": 0.5,
+      "kind": "chime",
+      "pitch": 660,
+      "loop": false
+    },
+    {
+      "name": "dice_roll",
+      "duration": 0.35,
+      "kind": "rattle",
+      "pitch": 240,
+      "loop": false
+    }
+  ],
+  "bgm": [
+    {
+      "name": "deathsea_drone",
+      "duration": 40.0,
+      "frequencies": [
+        32,
+        48,
+        64
+      ],
+      "gains": [
+        0.18,
+        0.07,
+        0.025
+      ],
+      "string_harmonics": 4,
+      "pulse_cycles": 1,
+      "seed": 1110,
+      "wind_band": [
+        45,
+        350
+      ],
+      "wind_gain": 0.008,
+      "chime_every": 20,
+      "chime_gain": 0
+    }
+  ]
+}

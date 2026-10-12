@@ -1,1 +1,642 @@
-{"character":"ranged_beast","frame_size":[640,640],"orientation":"faces screen right; engine flips at turn frame 3","render":"Image-generated art, chromakey and atlas packing with tools/pack_sprites.py","clips":[{"name":"idle","sheet":"sprites/enemies/ranged_beast/idle.webp","frame_width":640,"frame_height":640,"columns":6,"rows":1,"frames":6,"duration_seconds":1.0,"fps":6.0,"loop":true,"anchor_px":[320,600],"image_size":[1068,241],"trim":{"x":114,"y":43,"w":412,"h":559},"storage_scale":[0.4320388349514563,0.43112701252236135],"stored_frame_size":[277,276],"stored_anchor_px":[138.25242718446603,258.67620751341684],"storage_trim":{"x":49.25242718446602,"y":18.53846153846154,"w":178,"h":241},"stored_columns":6,"frame_map":[0,1,2,3,4,5],"effective_density":1.2,"ssim":0.9979352942424216},{"name":"walk","sheet":"sprites/enemies/ranged_beast/walk.webp","frame_width":640,"frame_height":640,"columns":8,"rows":1,"frames":8,"duration_seconds":1.0,"fps":8.0,"loop":true,"anchor_px":[320,600],"image_size":[1600,219],"trim":{"x":88,"y":95,"w":464,"h":507},"storage_scale":[0.43103448275862066,0.4319526627218935],"stored_frame_size":[276,276],"stored_anchor_px":[137.93103448275863,259.1715976331361],"storage_trim":{"x":37.93103448275862,"y":41.03550295857988,"w":200,"h":219},"stored_columns":8,"frame_map":[0,1,2,3,4,5,6,7],"effective_density":1.2,"ssim":0.9984335075209948,"qa":{"pose_height_exception":true,"height_tol":0.3,"reason":"Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked."}},{"name":"windup","sheet":"sprites/enemies/ranged_beast/windup.webp","frame_width":640,"frame_height":640,"columns":4,"rows":1,"frames":4,"duration_seconds":0.5,"fps":8.0,"loop":false,"anchor_px":[320,600],"image_size":[1080,247],"trim":{"x":8,"y":30,"w":624,"h":572},"storage_scale":[0.4326923076923077,0.4318181818181818],"stored_frame_size":[277,276],"stored_anchor_px":[138.46153846153845,259.09090909090907],"storage_trim":{"x":3.4615384615384617,"y":12.954545454545455,"w":270,"h":247},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":1.2,"ssim":0.998717768735195},{"name":"flame_loop","sheet":"sprites/enemies/ranged_beast/flame_loop.webp","frame_width":640,"frame_height":640,"columns":4,"rows":1,"frames":4,"duration_seconds":0.36,"fps":11.11111111111111,"loop":true,"anchor_px":[320,600],"image_size":[1016,203],"trim":{"x":26,"y":132,"w":587,"h":470},"storage_scale":[0.43270868824531517,0.4319148936170213],"stored_frame_size":[277,276],"stored_anchor_px":[138.46678023850086,259.1489361702128],"storage_trim":{"x":11.250425894378195,"y":57.01276595744681,"w":254,"h":203},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":1.2,"ssim":0.9928914542427465,"qa":{"pose_height_exception":true,"height_tol":0.3,"reason":"Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked."}},{"name":"recovery","sheet":"sprites/enemies/ranged_beast/recovery.webp","frame_width":640,"frame_height":640,"columns":4,"rows":1,"frames":4,"duration_seconds":0.8,"fps":5.0,"loop":false,"anchor_px":[320,600],"image_size":[932,220],"trim":{"x":50,"y":92,"w":539,"h":510},"storage_scale":[0.4322820037105751,0.43137254901960786],"stored_frame_size":[277,276],"stored_anchor_px":[138.33024118738405,258.8235294117647],"storage_trim":{"x":21.614100185528756,"y":39.68627450980392,"w":233,"h":220},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":1.2,"ssim":0.9985750489669214,"qa":{"pose_height_exception":true,"height_tol":0.3,"reason":"Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked."}},{"name":"turn","sheet":"sprites/enemies/ranged_beast/turn.webp","frame_width":640,"frame_height":640,"columns":4,"rows":1,"frames":4,"duration_seconds":0.25,"fps":16.0,"loop":false,"anchor_px":[320,600],"image_size":[768,225],"trim":{"x":98,"y":82,"w":445,"h":520},"storage_scale":[0.4314606741573034,0.4326923076923077],"stored_frame_size":[276,277],"stored_anchor_px":[138.06741573033707,259.61538461538464],"storage_trim":{"x":42.28314606741573,"y":35.48076923076923,"w":192,"h":225},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":1.2,"ssim":0.9983006243836642},{"name":"hurt","sheet":"sprites/enemies/ranged_beast/hurt.webp","frame_width":640,"frame_height":640,"columns":2,"rows":1,"frames":2,"duration_seconds":0.2,"fps":10.0,"loop":false,"anchor_px":[320,600],"image_size":[400,206],"trim":{"x":88,"y":125,"w":464,"h":477},"storage_scale":[0.43103448275862066,0.43186582809224316],"stored_frame_size":[276,276],"stored_anchor_px":[137.93103448275863,259.1194968553459],"storage_trim":{"x":37.93103448275862,"y":53.9832285115304,"w":200,"h":206},"stored_columns":2,"frame_map":[0,1],"effective_density":1.2,"ssim":0.9980820531201459,"qa":{"pose_height_exception":true,"height_tol":0.3,"reason":"Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked."}},{"name":"death","sheet":"sprites/enemies/ranged_beast/death.webp","frame_width":640,"frame_height":640,"columns":6,"rows":1,"frames":6,"duration_seconds":0.8,"fps":7.5,"loop":false,"anchor_px":[320,600],"image_size":[1590,183],"trim":{"x":14,"y":178,"w":613,"h":424},"storage_scale":[0.43230016313213704,0.43160377358490565],"stored_frame_size":[277,276],"stored_anchor_px":[138.33605220228384,258.9622641509434],"storage_trim":{"x":6.052202283849918,"y":76.8254716981132,"w":265,"h":183},"stored_columns":6,"frame_map":[0,1,2,3,4,5],"effective_density":1.2,"ssim":0.9926228340454868,"qa":{"pose_height_exception":true,"height_tol":0.65,"reason":"Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked."}}],"effects":[{"name":"flame","sheet":"sprites/enemies/ranged_beast/flame.webp","frame_width":512,"frame_height":256,"columns":6,"rows":1,"frames":6,"duration_seconds":0.36,"fps":16.666666666666668,"loop":true,"anchor_px":[16,128],"image_size":[1134,57],"trim":{"x":14,"y":62,"w":438,"h":132},"storage_scale":[0.4315068493150685,0.4318181818181818],"stored_frame_size":[221,111],"stored_anchor_px":[6.904109589041096,55.27272727272727],"storage_trim":{"x":6.041095890410959,"y":26.772727272727273,"w":189,"h":57},"stored_columns":6,"frame_map":[0,1,2,3,4,5],"effective_density":1.2,"ssim":0.9564031412415416}],"aliases":{"attack":"flame_loop"}}
+{
+  "character": "ranged_beast",
+  "frame_size": [
+    640,
+    640
+  ],
+  "orientation": "faces screen right; engine flips at turn frame 3",
+  "render": "Image-generated art, chromakey and atlas packing with tools/pack_sprites.py",
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/enemies/ranged_beast/idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 1.0,
+      "fps": 6.0,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        738,
+        165
+      ],
+      "trim": {
+        "x": 114,
+        "y": 43,
+        "w": 412,
+        "h": 559
+      },
+      "storage_scale": [
+        0.28883495145631066,
+        0.2880143112701252
+      ],
+      "stored_frame_size": [
+        185,
+        184
+      ],
+      "stored_anchor_px": [
+        92.42718446601941,
+        172.80858676207512
+      ],
+      "storage_trim": {
+        "x": 30.927184466019412,
+        "y": 10.384615384615385,
+        "w": 123,
+        "h": 165
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 0.8,
+      "ssim": 0.9874731399253651,
+      "stored_content_size": [
+        119,
+        161
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        123,
+        165
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "walk",
+      "sheet": "sprites/enemies/ranged_beast/walk.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 1.0,
+      "fps": 8.0,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1104,
+        151
+      ],
+      "trim": {
+        "x": 88,
+        "y": 95,
+        "w": 464,
+        "h": 507
+      },
+      "storage_scale": [
+        0.28879310344827586,
+        0.28994082840236685
+      ],
+      "stored_frame_size": [
+        185,
+        186
+      ],
+      "stored_anchor_px": [
+        92.41379310344827,
+        173.96449704142012
+      ],
+      "storage_trim": {
+        "x": 23.413793103448274,
+        "y": 25.54437869822485,
+        "w": 138,
+        "h": 151
+      },
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "effective_density": 0.8,
+      "ssim": 0.9876825442260321,
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.3,
+        "reason": "Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked."
+      },
+      "stored_content_size": [
+        134,
+        147
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        138,
+        151
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "windup",
+      "sheet": "sprites/enemies/ranged_beast/windup.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.5,
+      "fps": 8.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        736,
+        169
+      ],
+      "trim": {
+        "x": 8,
+        "y": 30,
+        "w": 624,
+        "h": 572
+      },
+      "storage_scale": [
+        0.28846153846153844,
+        0.28846153846153844
+      ],
+      "stored_frame_size": [
+        185,
+        185
+      ],
+      "stored_anchor_px": [
+        92.3076923076923,
+        173.07692307692307
+      ],
+      "storage_trim": {
+        "x": 0.3076923076923075,
+        "y": 6.653846153846153,
+        "w": 184,
+        "h": 169
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 0.8,
+      "ssim": 0.9911738076301302,
+      "stored_content_size": [
+        180,
+        165
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        184,
+        169
+      ],
+      "stored_gutter": 2,
+      "qa": {
+        "pose_height_exception": true,
+        "posture_reason": "Forward bend / raised arms changes silhouette while anatomy remains fixed"
+      }
+    },
+    {
+      "name": "flame_loop",
+      "sheet": "sprites/enemies/ranged_beast/flame_loop.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.36,
+      "fps": 11.11111111111111,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        696,
+        140
+      ],
+      "trim": {
+        "x": 26,
+        "y": 132,
+        "w": 587,
+        "h": 470
+      },
+      "storage_scale": [
+        0.28960817717206133,
+        0.28936170212765955
+      ],
+      "stored_frame_size": [
+        185,
+        185
+      ],
+      "stored_anchor_px": [
+        92.67461669505963,
+        173.61702127659575
+      ],
+      "storage_trim": {
+        "x": 5.529812606473595,
+        "y": 36.195744680851064,
+        "w": 174,
+        "h": 140
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 0.8,
+      "ssim": 0.9569165600255575,
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.3,
+        "reason": "Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked."
+      },
+      "stored_content_size": [
+        170,
+        136
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        174,
+        140
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "recovery",
+      "sheet": "sprites/enemies/ranged_beast/recovery.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.8,
+      "fps": 5.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        640,
+        151
+      ],
+      "trim": {
+        "x": 50,
+        "y": 92,
+        "w": 539,
+        "h": 510
+      },
+      "storage_scale": [
+        0.2894248608534323,
+        0.28823529411764703
+      ],
+      "stored_frame_size": [
+        185,
+        184
+      ],
+      "stored_anchor_px": [
+        92.61595547309832,
+        172.94117647058823
+      ],
+      "storage_trim": {
+        "x": 12.471243042671613,
+        "y": 24.517647058823528,
+        "w": 160,
+        "h": 151
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 0.8,
+      "ssim": 0.9908224170544576,
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.3,
+        "reason": "Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked.",
+        "posture_reason": "Forward bend / raised arms changes silhouette while anatomy remains fixed"
+      },
+      "stored_content_size": [
+        156,
+        147
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        160,
+        151
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "turn",
+      "sheet": "sprites/enemies/ranged_beast/turn.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.25,
+      "fps": 16.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        568,
+        164
+      ],
+      "trim": {
+        "x": 80,
+        "y": 47,
+        "w": 479,
+        "h": 555
+      },
+      "storage_scale": [
+        0.2881002087682672,
+        0.2882882882882883
+      ],
+      "stored_frame_size": [
+        184,
+        185
+      ],
+      "stored_anchor_px": [
+        92.19206680584551,
+        172.97297297297297
+      ],
+      "storage_trim": {
+        "x": 21.048016701461375,
+        "y": 11.54954954954955,
+        "w": 142,
+        "h": 164
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 0.8,
+      "ssim": 0.9926822691816981,
+      "stored_content_size": [
+        138,
+        160
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        142,
+        164
+      ],
+      "stored_gutter": 2,
+      "qa": {
+        "expected_pose_heights": [
+          551,
+          551,
+          551,
+          551
+        ],
+        "neutral_normalization": "isotropic source scaling, foot/centre anchor preserved",
+        "movement": true
+      },
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.91713189565552,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "hurt",
+      "sheet": "sprites/enemies/ranged_beast/hurt.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 2,
+      "rows": 1,
+      "frames": 2,
+      "duration_seconds": 0.2,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        276,
+        142
+      ],
+      "trim": {
+        "x": 88,
+        "y": 125,
+        "w": 464,
+        "h": 477
+      },
+      "storage_scale": [
+        0.28879310344827586,
+        0.2893081761006289
+      ],
+      "stored_frame_size": [
+        185,
+        185
+      ],
+      "stored_anchor_px": [
+        92.41379310344827,
+        173.58490566037736
+      ],
+      "storage_trim": {
+        "x": 23.413793103448274,
+        "y": 34.16352201257862,
+        "w": 138,
+        "h": 142
+      },
+      "stored_columns": 2,
+      "frame_map": [
+        0,
+        1
+      ],
+      "effective_density": 0.8,
+      "ssim": 0.9882601228968474,
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.3,
+        "reason": "Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked.",
+        "posture_reason": "Forward bend / raised arms changes silhouette while anatomy remains fixed"
+      },
+      "stored_content_size": [
+        134,
+        138
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        138,
+        142
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "death",
+      "sheet": "sprites/enemies/ranged_beast/death.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.8,
+      "fps": 7.5,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1086,
+        127
+      ],
+      "trim": {
+        "x": 14,
+        "y": 178,
+        "w": 613,
+        "h": 424
+      },
+      "storage_scale": [
+        0.28874388254486133,
+        0.29009433962264153
+      ],
+      "stored_frame_size": [
+        185,
+        186
+      ],
+      "stored_anchor_px": [
+        92.39804241435563,
+        174.0566037735849
+      ],
+      "storage_trim": {
+        "x": 2.0424143556280585,
+        "y": 49.63679245283019,
+        "w": 181,
+        "h": 127
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 0.8,
+      "ssim": 0.9564430788657606,
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.65,
+        "reason": "Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked.",
+        "posture_reason": "Forward bend / raised arms changes silhouette while anatomy remains fixed"
+      },
+      "stored_content_size": [
+        177,
+        123
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        181,
+        127
+      ],
+      "stored_gutter": 2
+    }
+  ],
+  "effects": [
+    {
+      "name": "flame",
+      "sheet": "sprites/enemies/ranged_beast/flame.webp",
+      "frame_width": 512,
+      "frame_height": 256,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.36,
+      "fps": 16.666666666666668,
+      "loop": true,
+      "anchor_px": [
+        16,
+        128
+      ],
+      "image_size": [
+        972,
+        52
+      ],
+      "trim": {
+        "x": 14,
+        "y": 62,
+        "w": 438,
+        "h": 132
+      },
+      "storage_scale": [
+        0.3607305936073059,
+        0.36363636363636365
+      ],
+      "stored_frame_size": [
+        185,
+        93
+      ],
+      "stored_anchor_px": [
+        5.771689497716895,
+        46.54545454545455
+      ],
+      "storage_trim": {
+        "x": 3.050228310502283,
+        "y": 20.545454545454547,
+        "w": 162,
+        "h": 52
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 1.0,
+      "ssim": 0.9312667848194885,
+      "stored_content_size": [
+        158,
+        48
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        162,
+        52
+      ],
+      "stored_gutter": 2
+    }
+  ],
+  "aliases": {
+    "attack": "flame_loop"
+  }
+}

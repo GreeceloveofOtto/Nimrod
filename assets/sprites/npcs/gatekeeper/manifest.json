@@ -1,1 +1,145 @@
-{"character":"gatekeeper","frame_size":[640,640],"orientation":"right-facing; flip_h for left","height_ratio":0.74,"height_reference_px":359,"height_reference_method":"idle frame 0 alpha > 12","height_validation":"every frame alpha>12 bbox height within 3 percent of player height times height_ratio","clips":[{"name":"idle","sheet":"sprites/npcs/gatekeeper/idle.webp","frame_width":640,"frame_height":640,"columns":6,"rows":1,"frames":6,"duration_seconds":2.4,"fps":2.5,"loop":true,"anchor_px":[320,600],"image_size":[440,211],"trim":{"x":264,"y":332,"w":113,"h":270},"storage_scale":[0.7787610619469026,0.7814814814814814],"stored_frame_size":[498,500],"stored_anchor_px":[249.20353982300884,468.8888888888889],"storage_trim":{"x":205.5929203539823,"y":259.45185185185187,"w":88,"h":211},"stored_columns":5,"frame_map":[0,1,2,2,3,4],"effective_density":2,"ssim":0.9700973490957411,"temporal_ssim_min":0.9959708329919575,"logical_duration_unchanged":true},{"name":"open_gate","sheet":"sprites/npcs/gatekeeper/open_gate.webp","frame_width":640,"frame_height":640,"columns":5,"rows":1,"frames":5,"duration_seconds":0.8,"fps":6.25,"loop":false,"anchor_px":[320,600],"image_size":[505,168],"trim":{"x":239,"y":332,"w":162,"h":270},"storage_scale":[0.6234567901234568,0.6222222222222222],"stored_frame_size":[399,398],"stored_anchor_px":[199.50617283950618,373.3333333333333],"storage_trim":{"x":149.00617283950618,"y":206.57777777777778,"w":101,"h":168},"stored_columns":5,"frame_map":[0,1,2,3,4],"effective_density":1.6,"ssim":0.9483885138213766}]}
+{
+  "character": "gatekeeper",
+  "frame_size": [
+    640,
+    640
+  ],
+  "orientation": "right-facing; flip_h for left",
+  "height_ratio": 0.74,
+  "height_reference_px": 359,
+  "height_reference_method": "idle frame 0 alpha > 12",
+  "height_validation": "every frame alpha>12 bbox height within 3 percent of player height times height_ratio",
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/npcs/gatekeeper/idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 2.4,
+      "fps": 2.5,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        415,
+        194
+      ],
+      "trim": {
+        "x": 264,
+        "y": 332,
+        "w": 113,
+        "h": 270
+      },
+      "storage_scale": [
+        0.6991150442477876,
+        0.7037037037037037
+      ],
+      "stored_frame_size": [
+        447,
+        450
+      ],
+      "stored_anchor_px": [
+        223.71681415929203,
+        422.22222222222223
+      ],
+      "storage_trim": {
+        "x": 182.56637168141592,
+        "y": 231.62962962962965,
+        "w": 83,
+        "h": 194
+      },
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        2,
+        3,
+        4
+      ],
+      "effective_density": 1.8,
+      "ssim": 0.9515556906972314,
+      "temporal_ssim_min": 0.9959708329919575,
+      "logical_duration_unchanged": true,
+      "stored_content_size": [
+        79,
+        190
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        83,
+        194
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "open_gate",
+      "sheet": "sprites/npcs/gatekeeper/open_gate.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.8,
+      "fps": 6.25,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        525,
+        172
+      ],
+      "trim": {
+        "x": 239,
+        "y": 332,
+        "w": 162,
+        "h": 270
+      },
+      "storage_scale": [
+        0.6234567901234568,
+        0.6222222222222222
+      ],
+      "stored_frame_size": [
+        399,
+        398
+      ],
+      "stored_anchor_px": [
+        199.50617283950618,
+        373.3333333333333
+      ],
+      "storage_trim": {
+        "x": 147.00617283950618,
+        "y": 204.57777777777778,
+        "w": 105,
+        "h": 172
+      },
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "effective_density": 1.6,
+      "ssim": 0.9483885138213766,
+      "stored_content_size": [
+        101,
+        168
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        105,
+        172
+      ],
+      "stored_gutter": 2
+    }
+  ]
+}

@@ -91,6 +91,7 @@ func _update_idle(delta: float) -> void:
         var diff: Vector2 = player.global_position - global_position
         var sensor: Array = stats["sensor_ceiling"] if perch_kind == "ceiling" else stats["sensor_wall"]
         var detected: bool = absf(diff.x) <= float(sensor[0]) and (diff.y >= 0.0 and diff.y <= float(sensor[1]) if perch_kind == "ceiling" else absf(diff.y) <= float(sensor[1]))
+        detected = detected or (diff.length() <= float(stats.get("detect_range",700)) and _perch_line_clear(player))
         if detected:
             var toward: int = 1 if diff.x >= 0.0 else -1
             if toward != facing:
@@ -545,3 +546,7 @@ func _apply_chain_pull(player: NimrodPlayer, target_x: float, seconds: float) ->
     else:
         _hide_chain()
         _begin_recovery(float(stats["chain"]["miss_recovery"]))
+
+func _perch_line_clear(player: Node2D) -> bool:
+    var query := PhysicsRayQueryParameters2D.create(global_position,_player_rect(player).get_center(),collision_mask,[get_rid(),player.get_rid()])
+    return get_world_2d().direct_space_state.intersect_ray(query).is_empty()

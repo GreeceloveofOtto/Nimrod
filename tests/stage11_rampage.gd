@@ -1,0 +1,54 @@
+extends "res://tests/helpers/stage9_support.gd"
+func _run() -> void:
+    await _start9()
+    story_state.debug_stage(15)
+    var rampage: Node = root.get_node("Rampage")
+    _check(rampage.unlocked() and rampage.value()==0,"Dilmun unlocks rampage at zero")
+    rampage.add(12)
+    _check(rampage.value()==12,"Devour gain is twelve")
+    var value: int = rampage.value()
+    await _wait(.15)
+    _check(rampage.value()==value,"No passive decay")
+    _check(is_equal_approx(hero.modifiers.multiplier("attack"),1.35+.36),"Per-point attack is additive to story bonuses")
+    _check(hero.get_max_hp()==roundi(245*1.36),"Per-point HP uses flat HP before percentages")
+    var before_max: int = hero.get_max_hp()
+    var before_hp: int = hero.hp
+    rampage.set_value(20)
+    _check(hero.hp==before_hp+hero.get_max_hp()-before_max,"Maximum increases heal exactly the difference")
+    _check(is_equal_approx(hero.modifiers.multiplier("attack_speed"),1.7),"Attack speed combines prosthetic and rampage")
+    for pair in [[30,0],[31,1],[40,1],[41,2],[50,2],[51,3],[90,3]]:
+        rampage.set_value(pair[0])
+        _check(rampage.tier()==pair[1],"Strict tier boundary "+str(pair[0]))
+    _check(is_equal_approx(hero.modifiers.multiplier("attack_speed"),2),"Total attack speed caps at two")
+    rampage.set_value(50)
+    var enemy: EnemyBase = load("res://scripts/enemy_melee_beast.gd").new()
+    manager.current_level.add_child(enemy)
+    enemy.set_physics_process(false)
+    enemy.hp = 0
+    rampage.basic_kill(enemy)
+    rampage.basic_kill(enemy)
+    _check(rampage.value()==51,"Basic kill adds one exactly once")
+    hero.hp = 50
+    _check(rampage.cure(hero) and rampage.value()==40 and hero.hp==20,"Cure pays 30 HP and removes eleven")
+    hero.hp = 30
+    _check(not rampage.cure(hero) and hero.hp==30,"Cannot pay cost that leaves less than one HP")
+    rampage.set_value(-20)
+    _check(rampage.value()==0,"Lower clamp")
+    hero.debug_hp_floor = true
+    hero.hp = 100
+    hero.damage_grace = 0
+    hero.receive_damage(1000,{"stagger":false,"grant_grace":false})
+    _check(hero.hp==1,"Developer HP floor applies to ordinary damage")
+    rampage.set_death_suspended(true)
+    rampage.set_value(99)
+    _check(hero.action!="dead" and rampage.tier()==4,"Suspension permits tier four below one hundred")
+    _check(is_instance_valid(rampage.heartbeat),"Tier four heartbeat exists")
+    rampage.set_value(1000)
+    _check(rampage.value()==100 and hero.action=="dead" and hero.hp==0,"Max rampage always kills including Y and suspension")
+    root.get_node("GameState").reset_run(false)
+    hero.reset_run_state()
+    _check(not rampage.unlocked() and rampage.value()==0 and not rampage.death_suspended,"New run clears unlock/value/exception")
+    rampage.unlock()
+    rampage.set_value(91)
+    _check(hero.action=="dead","Unsuspended ninety-one kills")
+    await _finish("STAGE11_RAMPAGE")

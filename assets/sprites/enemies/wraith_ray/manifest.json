@@ -1,1 +1,284 @@
-{"character":"wraith_ray","clips":[{"name":"glide","sheet":"sprites/enemies/wraith_ray/glide.webp","frame_width":640,"frame_height":640,"columns":8,"rows":1,"frames":8,"duration_seconds":1.0,"fps":8.0,"loop":true,"anchor_px":[320,320],"image_size":[784,93],"qa":{"movement":true},"trim":{"x":243,"y":259,"w":182,"h":173},"storage_scale":[0.5384615384615384,0.5375722543352601],"stored_frame_size":[345,344],"stored_anchor_px":[172.30769230769232,172.02312138728323],"storage_trim":{"x":130.84615384615384,"y":139.23121387283237,"w":98,"h":93},"stored_columns":8,"frame_map":[0,1,2,3,4,5,6,7],"effective_density":1.2,"ssim":0.9542859961650695},{"name":"turn","sheet":"sprites/enemies/wraith_ray/turn.webp","frame_width":640,"frame_height":640,"columns":4,"rows":1,"frames":4,"duration_seconds":0.25,"fps":16.0,"loop":false,"anchor_px":[320,320],"image_size":[376,106],"trim":{"x":245,"y":259,"w":149,"h":169},"storage_scale":[0.6308724832214765,0.6272189349112426],"stored_frame_size":[404,401],"stored_anchor_px":[201.8791946308725,200.71005917159763],"storage_trim":{"x":154.56375838926175,"y":162.44970414201183,"w":94,"h":106},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":1.4,"ssim":0.9531773024992461},{"name":"hurt","sheet":"sprites/enemies/wraith_ray/hurt.webp","frame_width":640,"frame_height":640,"columns":2,"rows":1,"frames":2,"duration_seconds":0.2,"fps":10.0,"loop":false,"anchor_px":[320,320],"image_size":[244,110],"trim":{"x":222,"y":252,"w":193,"h":174},"storage_scale":[0.6321243523316062,0.632183908045977],"stored_frame_size":[405,405],"stored_anchor_px":[202.279792746114,202.29885057471265],"storage_trim":{"x":140.33160621761658,"y":159.31034482758622,"w":122,"h":110},"stored_columns":2,"frame_map":[0,1],"effective_density":1.4,"ssim":0.9399278198805397},{"name":"death","sheet":"sprites/enemies/wraith_ray/death.webp","frame_width":640,"frame_height":640,"columns":6,"rows":1,"frames":6,"duration_seconds":0.6,"fps":10.0,"loop":false,"anchor_px":[320,320],"image_size":[534,110],"qa":{"height_tol":0.35,"height_reason":"Visible pose extent changes while one uniform scale is retained"},"trim":{"x":236,"y":234,"w":165,"h":204},"storage_scale":[0.5393939393939394,0.5392156862745098],"stored_frame_size":[345,345],"stored_anchor_px":[172.6060606060606,172.54901960784315],"storage_trim":{"x":127.2969696969697,"y":126.17647058823529,"w":89,"h":110},"stored_columns":6,"frame_map":[0,1,2,3,4,5],"effective_density":1.2,"ssim":0.939314925373708}],"aliases":{"idle":"glide","walk":"glide","windup":"glide","attack":"glide","recovery":"glide"}}
+{
+  "character": "wraith_ray",
+  "clips": [
+    {
+      "name": "glide",
+      "sheet": "sprites/enemies/wraith_ray/glide.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 1.0,
+      "fps": 8.0,
+      "loop": true,
+      "anchor_px": [
+        320,
+        320
+      ],
+      "image_size": [
+        816,
+        97
+      ],
+      "qa": {
+        "movement": true
+      },
+      "trim": {
+        "x": 243,
+        "y": 259,
+        "w": 182,
+        "h": 173
+      },
+      "storage_scale": [
+        0.5384615384615384,
+        0.5375722543352601
+      ],
+      "stored_frame_size": [
+        345,
+        344
+      ],
+      "stored_anchor_px": [
+        172.30769230769232,
+        172.02312138728323
+      ],
+      "storage_trim": {
+        "x": 128.84615384615384,
+        "y": 137.23121387283237,
+        "w": 102,
+        "h": 97
+      },
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "effective_density": 1.2,
+      "ssim": 0.9542859961650695,
+      "stored_content_size": [
+        98,
+        93
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        102,
+        97
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "turn",
+      "sheet": "sprites/enemies/wraith_ray/turn.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.25,
+      "fps": 16.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        320
+      ],
+      "image_size": [
+        392,
+        110
+      ],
+      "trim": {
+        "x": 245,
+        "y": 259,
+        "w": 149,
+        "h": 169
+      },
+      "storage_scale": [
+        0.6308724832214765,
+        0.6272189349112426
+      ],
+      "stored_frame_size": [
+        404,
+        401
+      ],
+      "stored_anchor_px": [
+        201.8791946308725,
+        200.71005917159763
+      ],
+      "storage_trim": {
+        "x": 152.56375838926175,
+        "y": 160.44970414201183,
+        "w": 98,
+        "h": 110
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 1.4,
+      "ssim": 0.9531773024992461,
+      "stored_content_size": [
+        94,
+        106
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        98,
+        110
+      ],
+      "stored_gutter": 2,
+      "qa": {
+        "pose_height_exception": true,
+        "posture_reason": "Wing flapping / smoke silhouette; floating mass-centre is checked separately",
+        "movement": true
+      }
+    },
+    {
+      "name": "hurt",
+      "sheet": "sprites/enemies/wraith_ray/hurt.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 2,
+      "rows": 1,
+      "frames": 2,
+      "duration_seconds": 0.2,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        320
+      ],
+      "image_size": [
+        252,
+        114
+      ],
+      "trim": {
+        "x": 222,
+        "y": 252,
+        "w": 193,
+        "h": 174
+      },
+      "storage_scale": [
+        0.6321243523316062,
+        0.632183908045977
+      ],
+      "stored_frame_size": [
+        405,
+        405
+      ],
+      "stored_anchor_px": [
+        202.279792746114,
+        202.29885057471265
+      ],
+      "storage_trim": {
+        "x": 138.33160621761658,
+        "y": 157.31034482758622,
+        "w": 126,
+        "h": 114
+      },
+      "stored_columns": 2,
+      "frame_map": [
+        0,
+        1
+      ],
+      "effective_density": 1.4,
+      "ssim": 0.9399278198805397,
+      "stored_content_size": [
+        122,
+        110
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        126,
+        114
+      ],
+      "stored_gutter": 2,
+      "qa": {
+        "pose_height_exception": true,
+        "posture_reason": "Wing flapping / smoke silhouette; floating mass-centre is checked separately"
+      }
+    },
+    {
+      "name": "death",
+      "sheet": "sprites/enemies/wraith_ray/death.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.6,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        320
+      ],
+      "image_size": [
+        558,
+        114
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 236,
+        "y": 234,
+        "w": 165,
+        "h": 204
+      },
+      "storage_scale": [
+        0.5393939393939394,
+        0.5392156862745098
+      ],
+      "stored_frame_size": [
+        345,
+        345
+      ],
+      "stored_anchor_px": [
+        172.6060606060606,
+        172.54901960784315
+      ],
+      "storage_trim": {
+        "x": 125.29696969696971,
+        "y": 124.17647058823529,
+        "w": 93,
+        "h": 114
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 1.2,
+      "ssim": 0.939314925373708,
+      "stored_content_size": [
+        89,
+        110
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        93,
+        114
+      ],
+      "stored_gutter": 2
+    }
+  ],
+  "aliases": {
+    "idle": "glide",
+    "walk": "glide",
+    "windup": "glide",
+    "attack": "glide",
+    "recovery": "glide"
+  }
+}

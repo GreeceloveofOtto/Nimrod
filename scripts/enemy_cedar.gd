@@ -7,6 +7,9 @@ var guard_broken_left: float = 0.0
 var hop_cooldown: float = 0.0
 var hop_start := Vector2.ZERO
 var perched: bool = false
+var drop_pending: bool = false
+var drop_origin := Vector2.ZERO
+var drop_supports: Array[PhysicsBody2D] = []
 var next_pattern: int = 0
 var tick_index: int = 0
 var forced_roll: float = -1.0
@@ -58,7 +61,12 @@ func _update_idle(delta: float) -> void:
         if hero != null:
             var sensor: Array = stats["perch_sensor"]
             var difference: Vector2 = hero.global_position - global_position
-            if _player_is_available(hero) and absf(difference.x) <= float(sensor[0]) and difference.y > 0 and difference.y <= float(sensor[1]):
+            if _player_is_available(hero) and ((absf(difference.x) <= float(sensor[0]) and difference.y >= 40 and difference.y <= float(sensor[1])) or (difference.length() <= float(stats["detect_range"]) and _perch_line_clear(hero))):
+                var desired: int = -1 if difference.x < 0 else 1
+                if desired != facing:
+                    drop_pending = true
+                    _request_turn(desired)
+                    return
                 phase = "tell"
                 _set_state(State.WINDUP)
                 _play_sfx("demon_screech")
@@ -139,9 +147,16 @@ func _update_windup(delta: float) -> void:
             _set_state(State.CHASE)
             phase = ""
     elif phase == "tell":
-        if state_clock >= float(clip_data.get("tell", {}).get("duration_seconds", .2)):
+        if state_clock >= float(stats.get("drop_tell", .15)):
             phase = "fall"
             perched = false
+            drop_origin = global_position
+            for surface: PhysicsBody2D in get_tree().get_nodes_in_group("surfaces"):
+                var rect: Rect2 = surface.get_meta("surface_rect",Rect2())
+                if bool(surface.get_meta("one_way",false)) and absf(rect.position.y-global_position.y)<12 and rect.grow(3).has_point(global_position):
+                    add_collision_exception_with(surface)
+                    drop_supports.append(surface)
+            global_position.y += 2
             _set_state(State.ACTIVE)
     elif state_clock >= float(attack_stats["windup"]):
         _begin_active()
@@ -168,8 +183,15 @@ func _update_active(delta: float) -> void:
             _begin_recovery(.1)
         return
     if phase == "fall":
-        velocity = Vector2(0, float(stats["fall_speed"]))
-        if is_on_floor():
+        var hero: Node2D = _target()
+        var desired_x: float = clampf(hero.global_position.x if hero != null else drop_origin.x,drop_origin.x-float(stats["drop_homing"]),drop_origin.x+float(stats["drop_homing"]))
+        velocity = Vector2(clampf((desired_x-global_position.x)/maxf(delta,.001),-float(stats["drop_homing_speed"]),float(stats["drop_homing_speed"])),float(stats["fall_speed"]))
+        if global_position.y-drop_origin.y>body_size.y+12:
+            for support in drop_supports:
+                if is_instance_valid(support):
+                    remove_collision_exception_with(support)
+            drop_supports.clear()
+        if is_on_floor() and global_position.y>drop_origin.y+8:
             phase = "land_stab"
             attack_stats = stats["attacks"][1]
             _set_state(State.ACTIVE)
@@ -252,6 +274,8 @@ func _receive_hit(damage: int, from_pos: Vector2, step: int, shockwave: bool) ->
                 _set_state(State.WINDUP)
                 _play_sfx("sentinel_shield_up")
             return result
+    if enemy_id == "cedar_demon":
+        drop_pending = false
     perched = false if enemy_id == "cedar_demon" else perched
     return super._receive_hit(damage, from_pos, step, shockwave)
 
@@ -289,7 +313,7 @@ func marker_blinks() -> bool:
 func _update_visual(delta: float) -> void:
     if visual == null:
         return
-    if perched:
+    if perched and state != State.TURN:
         display_clock += delta
         _show_clip("perch", display_clock)
     elif state in [State.WINDUP, State.ACTIVE, State.RECOVERY] and not phase.is_empty():
@@ -313,3 +337,20 @@ func _update_visual(delta: float) -> void:
 func _exit_tree() -> void:
     if is_instance_valid(loop_sound):
         get_node("/root/Audio").stop_sfx(loop_sound)
+
+func _perch_line_clear(hero: Node2D) -> bool:
+    var ignored: Array[RID] = [get_rid(),hero.get_rid()]
+    for surface: PhysicsBody2D in get_tree().get_nodes_in_group("surfaces"):
+        var rect: Rect2 = surface.get_meta("surface_rect",Rect2())
+        if bool(surface.get_meta("one_way",false)) and absf(rect.position.y-global_position.y)<12 and rect.grow(3).has_point(global_position):
+            ignored.append(surface.get_rid())
+    var query := PhysicsRayQueryParameters2D.create(global_position-Vector2(0,body_size.y*.5),hero.global_position-Vector2(0,50),collision_mask,ignored)
+    return get_world_2d().direct_space_state.intersect_ray(query).is_empty()
+
+func _update_turn(delta: float) -> void:
+    super._update_turn(delta)
+    if drop_pending and state != State.TURN:
+        drop_pending = false
+        phase = "tell"
+        _set_state(State.WINDUP)
+        _play_sfx("demon_screech")

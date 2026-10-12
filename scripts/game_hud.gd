@@ -65,6 +65,9 @@ func _ready() -> void:
     boss_label.add_theme_font_size_override("font_size", 18)
     boss_panel.add_child(boss_label)
 
+    var rampage_ui: Control = load("res://scripts/rampage_hud.gd").new()
+    rampage_ui.position = Vector2(18,90)
+    add_child(rampage_ui)
     skill_slot = Panel.new()
     skill_slot.position = Vector2(28,90)
     skill_slot.size = Vector2(42,42)
@@ -91,8 +94,11 @@ func set_level_name(value: String) -> void:
     title.text = value
 
 func _process(_delta: float) -> void:
+    skill_slot.position = Vector2(18,142) if get_node("/root/Rampage").unlocked() else Vector2(28,90)
     if not is_instance_valid(player) or hp_fill == null:
         return
+    var stage_key: String = str(get_node("/root/Story").stage())
+    story.text = str(config.get("story_by_stage",{}).get(stage_key,config.get("story","")))
     hp_fill.size.x = _ui_rect("hp_fill").size.x * clampf(float(player.hp) / float(player.get_max_hp()), 0.0, 1.0)
     controls.text = str(ui.get("controls_text", "")).replace("{weapon}", "J " + {"none":"공격 없음", "staff":"지팡이", "axe":"도끼"}.get(player.weapon, "공격 없음"))
     hp_text.text = "HP %d / %d" % [player.hp, player.get_max_hp()]

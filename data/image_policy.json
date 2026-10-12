@@ -3836,6 +3836,32 @@
     "assets/tiles/stage10/dilmun_ground_tile.webp": {
       "mode": "lossless",
       "quality": 100
+    },
+    "assets/sprites/npcs/shimati/idle.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.936459615844281,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/npcs/shimati/idle_front.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9516234252818845,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    }
+  },
+  "trim_margin": 2,
+  "stored_gutter": 2,
+  "exceptions": {
+    "assets/backgrounds/deathsea/stars_tile.webp": {
+      "mode": "lossless",
+      "reason": "Preserve approved near-black opaque starfield boundary luminance after grading"
     }
   }
 }

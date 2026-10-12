@@ -12,7 +12,11 @@ def check():
   for e in l.get('enemies',[]):
    if e['id'] in ['sky_beast','gas_sac','wraith_ray','cedar_wisp','wall_diver']:continue
    x,y=e['position'];support=[z for a,b,z in surfaces if a<=x<=b and y-8<=z<=y+600];ok=bool(support)
-   if e['id']=='cedar_demon':ok=ok and any(p.get('perch_support') and p['position'][0]<=x<=p['position'][0]+p['width'] and abs(p['position'][1]+p['art_height']*37/120-y)<1 for p in l.get('platforms',[]))
+   if e['id']=='cedar_demon':
+    ok=ok and any(p.get('perch_support') and p['position'][0]<=x<=p['position'][0]+p['width'] and abs(p['position'][1]+p['art_height']*37/120-y)<1 for p in l.get('platforms',[]))
+    room_ground=[t['y'] for t in l.get('terrain',[]) if t['from']<=x<=t['to']]+[p['position'][1] for p in l.get('platforms',[]) if not p.get('perch_support') and p['position'][0]<=x<=p['position'][0]+p['width']]
+    room_ground=[z for z in room_ground if z>y+20]
+    ok=ok and bool(room_ground) and min(room_ground)-y>=260
    rows.append(f"{l['id']} / {e['id']} {x},{y}: {'PASS' if ok else 'FAIL'}")
    if not ok:errors.append(rows[-1])
  out=ROOT/'docs/STAGE8_GROUNDING_REPORT.txt';out.write_text(f'STATIC: {len(rows)} spawns, {len(errors)} failures\n'+'\n'.join(rows)+'\n');print(f'GROUNDING: {len(rows)} spawns, {len(errors)} failures');print('\n'.join(errors));return int(bool(errors))

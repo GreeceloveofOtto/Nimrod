@@ -62,11 +62,16 @@
     ],
     "hp_font_size": 18,
     "title_font_size": 24,
-    "controls_font_size": 16,
+    "controls_font_size": 14,
     "story_font_size": 19,
     "toast_font_size": 26,
     "canvas_layer": 20,
     "fade_canvas_layer": 100,
-    "controls_text": "A/D 이동  Space 점프  E 상호작용  {weapon}  K 구르기  S 수그리기  S+Space 내려가기  1·2 순간이동  F5 집에서 처음부터"
+    "controls_text": "A/D 이동  Space 점프  E 상호작용  {weapon}  K 구르기  S 수그리기  S+Space 내려가기  1·2 순간이동  F5 집에서 처음부터  L 포식"
+  },
+  "story_by_stage": {
+    "15": "시마티를 찾아 죽음의 바다로 가는 길을 알아낸다.",
+    "16": "딜문 오른쪽 이동 구역에서 죽음의 바다로 향한다.",
+    "17": "죽음의 바다에 도착했다. 바위와 배를 살펴본다."
   }
 }

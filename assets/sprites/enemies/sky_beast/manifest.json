@@ -1,1 +1,489 @@
-{"character":"sky_beast","frame_size":[768,640],"orientation":"right-facing; turn frame 3 is near-symmetric frontal","render":"Image-generated animation poses; chromakey, shared per-clip scale and center packing only","clips":[{"name":"fly_idle","sheet":"sprites/enemies/sky_beast/fly_idle.webp","frame_width":768,"frame_height":640,"columns":6,"rows":1,"frames":6,"duration_seconds":0.9,"fps":6.666666666666666,"loop":true,"anchor_px":[384,320],"image_size":[666,124],"qa":{"height_tol":0.35,"height_reason":"Visible pose extent changes while one uniform scale is retained","movement":true},"trim":{"x":280,"y":217,"w":206,"h":229},"storage_scale":[0.5388349514563107,0.5414847161572053],"stored_frame_size":[414,347],"stored_anchor_px":[206.9126213592233,173.27510917030568],"storage_trim":{"x":150.873786407767,"y":117.50218340611353,"w":111,"h":124},"stored_columns":6,"frame_map":[0,1,2,3,4,5],"effective_density":1.2,"ssim":0.9382322351107945},{"name":"windup","sheet":"sprites/enemies/sky_beast/windup.webp","frame_width":768,"frame_height":640,"columns":4,"rows":1,"frames":4,"duration_seconds":0.4,"fps":10.0,"loop":false,"anchor_px":[384,320],"image_size":[412,119],"qa":{"height_tol":0.35,"height_reason":"Visible pose extent changes while one uniform scale is retained"},"trim":{"x":308,"y":209,"w":190,"h":220},"storage_scale":[0.5421052631578948,0.5409090909090909],"stored_frame_size":[416,346],"stored_anchor_px":[208.16842105263157,173.0909090909091],"storage_trim":{"x":166.96842105263158,"y":113.05,"w":103,"h":119},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":1.2,"ssim":0.9333596403142008},{"name":"dive","sheet":"sprites/enemies/sky_beast/dive.webp","frame_width":768,"frame_height":640,"columns":3,"rows":1,"frames":3,"duration_seconds":0.25,"fps":12.0,"loop":true,"anchor_px":[384,320],"image_size":[528,120],"qa":{"height_tol":0.35,"height_reason":"Visible pose extent changes while one uniform scale is retained","movement":true},"trim":{"x":216,"y":208,"w":326,"h":222},"storage_scale":[0.5398773006134969,0.5405405405405406],"stored_frame_size":[415,346],"stored_anchor_px":[207.31288343558282,172.97297297297297],"storage_trim":{"x":116.61349693251533,"y":112.43243243243244,"w":176,"h":120},"stored_columns":3,"frame_map":[0,1,2],"effective_density":1.2,"ssim":0.9415538219067577},{"name":"recovery","sheet":"sprites/enemies/sky_beast/recovery.webp","frame_width":768,"frame_height":640,"columns":4,"rows":1,"frames":4,"duration_seconds":0.6,"fps":6.666666666666667,"loop":false,"anchor_px":[384,320],"image_size":[468,115],"qa":{"height_tol":0.35,"height_reason":"Visible pose extent changes while one uniform scale is retained"},"trim":{"x":296,"y":211,"w":216,"h":213},"storage_scale":[0.5416666666666666,0.539906103286385],"stored_frame_size":[416,346],"stored_anchor_px":[208.0,172.7699530516432],"storage_trim":{"x":160.33333333333334,"y":113.92018779342723,"w":117,"h":115},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":1.2,"ssim":0.9304919852270395},{"name":"turn","sheet":"sprites/enemies/sky_beast/turn.webp","frame_width":768,"frame_height":640,"columns":4,"rows":1,"frames":4,"duration_seconds":0.25,"fps":16.0,"loop":false,"anchor_px":[384,320],"image_size":[344,132],"trim":{"x":317,"y":209,"w":136,"h":209},"storage_scale":[0.6323529411764706,0.631578947368421],"stored_frame_size":[486,404],"stored_anchor_px":[242.8235294117647,202.10526315789474],"storage_trim":{"x":200.4558823529412,"y":132.0,"w":86,"h":132},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":1.4,"ssim":0.949884028734464},{"name":"hurt","sheet":"sprites/enemies/sky_beast/hurt.webp","frame_width":768,"frame_height":640,"columns":2,"rows":1,"frames":2,"duration_seconds":0.2,"fps":10.0,"loop":false,"anchor_px":[384,320],"image_size":[206,120],"qa":{"height_tol":0.35,"height_reason":"Visible pose extent changes while one uniform scale is retained"},"trim":{"x":298,"y":206,"w":191,"h":223},"storage_scale":[0.5392670157068062,0.5381165919282511],"stored_frame_size":[414,344],"stored_anchor_px":[207.07853403141362,172.19730941704037],"storage_trim":{"x":160.70157068062827,"y":110.85201793721973,"w":103,"h":120},"stored_columns":2,"frame_map":[0,1],"effective_density":1.2,"ssim":0.9418380218745686},{"name":"death","sheet":"sprites/enemies/sky_beast/death.webp","frame_width":768,"frame_height":640,"columns":6,"rows":1,"frames":6,"duration_seconds":0.8,"fps":7.5,"loop":false,"anchor_px":[384,320],"image_size":[468,127],"qa":{"height_tol":0.35,"height_reason":"Visible pose extent changes while one uniform scale is retained"},"trim":{"x":309,"y":203,"w":145,"h":235},"storage_scale":[0.5379310344827586,0.5404255319148936],"stored_frame_size":[413,346],"stored_anchor_px":[206.5655172413793,172.93617021276594],"storage_trim":{"x":166.2206896551724,"y":109.70638297872341,"w":78,"h":127},"stored_columns":6,"frame_map":[0,1,2,3,4,5],"effective_density":1.2,"ssim":0.9332604995140205}],"aliases":{"idle":"fly_idle","walk":"fly_idle","attack":"dive"}}
+{
+  "character": "sky_beast",
+  "frame_size": [
+    768,
+    640
+  ],
+  "orientation": "right-facing; turn frame 3 is near-symmetric frontal",
+  "render": "Image-generated animation poses; chromakey, shared per-clip scale and center packing only",
+  "clips": [
+    {
+      "name": "fly_idle",
+      "sheet": "sprites/enemies/sky_beast/fly_idle.webp",
+      "frame_width": 768,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.9,
+      "fps": 6.666666666666666,
+      "loop": true,
+      "anchor_px": [
+        384,
+        320
+      ],
+      "image_size": [
+        690,
+        128
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained",
+        "movement": true
+      },
+      "trim": {
+        "x": 280,
+        "y": 217,
+        "w": 206,
+        "h": 229
+      },
+      "storage_scale": [
+        0.5388349514563107,
+        0.5414847161572053
+      ],
+      "stored_frame_size": [
+        414,
+        347
+      ],
+      "stored_anchor_px": [
+        206.9126213592233,
+        173.27510917030568
+      ],
+      "storage_trim": {
+        "x": 148.873786407767,
+        "y": 115.50218340611355,
+        "w": 115,
+        "h": 128
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 1.2,
+      "ssim": 0.9382322351107945,
+      "stored_content_size": [
+        111,
+        124
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        115,
+        128
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "windup",
+      "sheet": "sprites/enemies/sky_beast/windup.webp",
+      "frame_width": 768,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.4,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        384,
+        320
+      ],
+      "image_size": [
+        428,
+        123
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 308,
+        "y": 209,
+        "w": 190,
+        "h": 220
+      },
+      "storage_scale": [
+        0.5421052631578948,
+        0.5409090909090909
+      ],
+      "stored_frame_size": [
+        416,
+        346
+      ],
+      "stored_anchor_px": [
+        208.16842105263157,
+        173.0909090909091
+      ],
+      "storage_trim": {
+        "x": 164.96842105263158,
+        "y": 111.05,
+        "w": 107,
+        "h": 123
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 1.2,
+      "ssim": 0.9333596403142008,
+      "stored_content_size": [
+        103,
+        119
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        107,
+        123
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "dive",
+      "sheet": "sprites/enemies/sky_beast/dive.webp",
+      "frame_width": 768,
+      "frame_height": 640,
+      "columns": 3,
+      "rows": 1,
+      "frames": 3,
+      "duration_seconds": 0.25,
+      "fps": 12.0,
+      "loop": true,
+      "anchor_px": [
+        384,
+        320
+      ],
+      "image_size": [
+        540,
+        124
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained",
+        "movement": true
+      },
+      "trim": {
+        "x": 216,
+        "y": 208,
+        "w": 326,
+        "h": 222
+      },
+      "storage_scale": [
+        0.5398773006134969,
+        0.5405405405405406
+      ],
+      "stored_frame_size": [
+        415,
+        346
+      ],
+      "stored_anchor_px": [
+        207.31288343558282,
+        172.97297297297297
+      ],
+      "storage_trim": {
+        "x": 114.61349693251533,
+        "y": 110.43243243243244,
+        "w": 180,
+        "h": 124
+      },
+      "stored_columns": 3,
+      "frame_map": [
+        0,
+        1,
+        2
+      ],
+      "effective_density": 1.2,
+      "ssim": 0.9415538219067577,
+      "stored_content_size": [
+        176,
+        120
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        180,
+        124
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "recovery",
+      "sheet": "sprites/enemies/sky_beast/recovery.webp",
+      "frame_width": 768,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.6,
+      "fps": 6.666666666666667,
+      "loop": false,
+      "anchor_px": [
+        384,
+        320
+      ],
+      "image_size": [
+        484,
+        119
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 296,
+        "y": 211,
+        "w": 216,
+        "h": 213
+      },
+      "storage_scale": [
+        0.5416666666666666,
+        0.539906103286385
+      ],
+      "stored_frame_size": [
+        416,
+        346
+      ],
+      "stored_anchor_px": [
+        208.0,
+        172.7699530516432
+      ],
+      "storage_trim": {
+        "x": 158.33333333333331,
+        "y": 111.92018779342723,
+        "w": 121,
+        "h": 119
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 1.2,
+      "ssim": 0.9304919852270395,
+      "stored_content_size": [
+        117,
+        115
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        121,
+        119
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "turn",
+      "sheet": "sprites/enemies/sky_beast/turn.webp",
+      "frame_width": 768,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.25,
+      "fps": 16.0,
+      "loop": false,
+      "anchor_px": [
+        384,
+        320
+      ],
+      "image_size": [
+        360,
+        136
+      ],
+      "trim": {
+        "x": 317,
+        "y": 209,
+        "w": 136,
+        "h": 209
+      },
+      "storage_scale": [
+        0.6323529411764706,
+        0.631578947368421
+      ],
+      "stored_frame_size": [
+        486,
+        404
+      ],
+      "stored_anchor_px": [
+        242.8235294117647,
+        202.10526315789474
+      ],
+      "storage_trim": {
+        "x": 198.45588235294116,
+        "y": 130.0,
+        "w": 90,
+        "h": 136
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 1.4,
+      "ssim": 0.949884028734464,
+      "stored_content_size": [
+        86,
+        132
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        90,
+        136
+      ],
+      "stored_gutter": 2,
+      "qa": {
+        "pose_height_exception": true,
+        "posture_reason": "Wing flapping / smoke silhouette; floating mass-centre is checked separately",
+        "movement": true
+      }
+    },
+    {
+      "name": "hurt",
+      "sheet": "sprites/enemies/sky_beast/hurt.webp",
+      "frame_width": 768,
+      "frame_height": 640,
+      "columns": 2,
+      "rows": 1,
+      "frames": 2,
+      "duration_seconds": 0.2,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        384,
+        320
+      ],
+      "image_size": [
+        214,
+        124
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 298,
+        "y": 206,
+        "w": 191,
+        "h": 223
+      },
+      "storage_scale": [
+        0.5392670157068062,
+        0.5381165919282511
+      ],
+      "stored_frame_size": [
+        414,
+        344
+      ],
+      "stored_anchor_px": [
+        207.07853403141362,
+        172.19730941704037
+      ],
+      "storage_trim": {
+        "x": 158.70157068062827,
+        "y": 108.85201793721973,
+        "w": 107,
+        "h": 124
+      },
+      "stored_columns": 2,
+      "frame_map": [
+        0,
+        1
+      ],
+      "effective_density": 1.2,
+      "ssim": 0.9418380218745686,
+      "stored_content_size": [
+        103,
+        120
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        107,
+        124
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "death",
+      "sheet": "sprites/enemies/sky_beast/death.webp",
+      "frame_width": 768,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.8,
+      "fps": 7.5,
+      "loop": false,
+      "anchor_px": [
+        384,
+        320
+      ],
+      "image_size": [
+        492,
+        131
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 309,
+        "y": 203,
+        "w": 145,
+        "h": 235
+      },
+      "storage_scale": [
+        0.5379310344827586,
+        0.5404255319148936
+      ],
+      "stored_frame_size": [
+        413,
+        346
+      ],
+      "stored_anchor_px": [
+        206.5655172413793,
+        172.93617021276594
+      ],
+      "storage_trim": {
+        "x": 164.2206896551724,
+        "y": 107.70638297872341,
+        "w": 82,
+        "h": 131
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 1.2,
+      "ssim": 0.9332604995140205,
+      "stored_content_size": [
+        78,
+        127
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        82,
+        131
+      ],
+      "stored_gutter": 2
+    }
+  ],
+  "aliases": {
+    "idle": "fly_idle",
+    "walk": "fly_idle",
+    "attack": "dive"
+  }
+}

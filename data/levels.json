@@ -2603,18 +2603,6 @@
           "z": -2
         },
         {
-          "path": "res://assets/props/villa_chairs.webp",
-          "position": [
-            1120,
-            470
-          ],
-          "size": [
-            520,
-            150
-          ],
-          "z": -3
-        },
-        {
           "path": "res://assets/props/villa_dining_table_wide.webp",
           "position": [
             950,
@@ -2631,6 +2619,45 @@
             "full": "assets/props/villa_dining_table_full.webp",
             "prep": "assets/props/villa_dining_table_prep.webp"
           }
+        },
+        {
+          "path": "res://assets/props/villa_chair_seat.webp",
+          "position": [
+            1175,
+            520
+          ],
+          "size": [
+            90,
+            100
+          ],
+          "z": -3,
+          "contact_mode": "chair_seat"
+        },
+        {
+          "path": "res://assets/props/villa_chair_seat.webp",
+          "position": [
+            1435,
+            520
+          ],
+          "size": [
+            90,
+            100
+          ],
+          "z": -3,
+          "contact_mode": "chair_seat"
+        },
+        {
+          "path": "res://assets/props/villa_chair_seat.webp",
+          "position": [
+            1575,
+            520
+          ],
+          "size": [
+            90,
+            100
+          ],
+          "z": -3,
+          "contact_mode": "chair_seat"
         }
       ],
       "steps": [],
@@ -2981,7 +3008,7 @@
           "id": "wall_diver",
           "position": [
             1100,
-            390
+            360
           ],
           "patrol_center": 1100,
           "patrol_range": 150,
@@ -3105,7 +3132,7 @@
           "name": "Perch_1100",
           "position": [
             1100,
-            390
+            360
           ],
           "kind": "wall"
         }
@@ -7208,8 +7235,8 @@
           "id": "enkidua",
           "instance_id": "enkidua_bed",
           "position": [
-            320,
-            520
+            330.0,
+            545.7
           ],
           "idle_clip": "bed_awake",
           "three_way": false,
@@ -10226,9 +10253,37 @@
           "z": -2,
           "ground_contact": true,
           "contact_mode": "landing_feet"
+        },
+        {
+          "path": "res://assets/props/shimati_stall.webp",
+          "position": [
+            3980,
+            580
+          ],
+          "size": [
+            480,
+            300
+          ],
+          "z": -2,
+          "ground_contact": true
         }
       ],
-      "npcs": [],
+      "npcs": [
+        {
+          "id": "shimati",
+          "position": [
+            4560,
+            880
+          ],
+          "interactable": true,
+          "interaction": "shimati_intro",
+          "presence": {
+            "none": [
+              "shimati_done"
+            ]
+          }
+        }
+      ],
       "pickups": [],
       "id": "Dilmun",
       "scene": "res://scenes/Dilmun.tscn",
@@ -10277,6 +10332,129 @@
             0
           ],
           "repeat_times": 6
+        }
+      ],
+      "travel_zones": [
+        {
+          "position": [
+            8800,
+            880
+          ],
+          "width": 160,
+          "target_level": "DeathSea",
+          "target_spawn": "Spawn_FromDilmun",
+          "required_flag": "death_sea_paper"
+        }
+      ]
+    },
+    {
+      "id": "DeathSea",
+      "scene": "res://scenes/DeathSea.tscn",
+      "width": 1800,
+      "floor_y": 880,
+      "camera_limits": [
+        0,
+        0,
+        1800,
+        1120
+      ],
+      "walk_bounds": [
+        0,
+        1400
+      ],
+      "safe_zones": [],
+      "bgm": "deathsea_drone",
+      "display_name": "죽음의 바다",
+      "bg_dim": [
+        0.88,
+        0.88,
+        0.92
+      ],
+      "ceiling": false,
+      "floor_art": "res://assets/tiles/deathsea/ground_tile.png",
+      "floor_art_size": [
+        512,
+        200
+      ],
+      "terrain": [
+        {
+          "from": 0,
+          "to": 1400,
+          "y": 880
+        }
+      ],
+      "enemies": [],
+      "doors": [],
+      "pickups": [],
+      "obstacles": [],
+      "platforms": [],
+      "steps": [],
+      "spawns": {
+        "Spawn_FromDilmun": [
+          600,
+          880
+        ]
+      },
+      "npcs": [
+        {
+          "id": "urshanabi",
+          "position": [
+            900,
+            743.0
+          ],
+          "idle_clip": "dice_loop",
+          "interactable": false,
+          "face_player": false
+        }
+      ],
+      "decorations": [
+        {
+          "path": "res://assets/props/small_rock.webp",
+          "position": [
+            770,
+            700
+          ],
+          "size": [
+            260,
+            180
+          ],
+          "z": -2,
+          "ground_contact": true
+        },
+        {
+          "path": "res://assets/props/ferry_boat.webp",
+          "position": [
+            1300,
+            700
+          ],
+          "size": [
+            420,
+            180
+          ],
+          "z": -2,
+          "ground_contact": false
+        }
+      ],
+      "backgrounds": [
+        {
+          "name": "Space",
+          "path": "res://assets/backgrounds/deathsea/stars_tile.webp",
+          "position": [
+            0,
+            0
+          ],
+          "size": [
+            1024,
+            1024
+          ],
+          "ratio": 0.05,
+          "ratio_y": 0.05,
+          "z": -40,
+          "repeat_size": [
+            1024,
+            1024
+          ],
+          "repeat_times": 3
         }
       ]
     }

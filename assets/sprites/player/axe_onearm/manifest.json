@@ -1,1 +1,1784 @@
-{"step":18,"frame_size":[640,640],"clips":[{"name":"idle","duration_seconds":2.2,"fps":4.545454545454545,"loop":true,"sheet":"sprites/player/axe_onearm/idle.webp","frame_width":640,"frame_height":640,"frames":10,"columns":10,"rows":1,"anchor_px":[320,600],"image_size":[1300,198],"qa":{"expected_pose_heights":[363,362,362,362,362,363,364,363,363,363],"expected_pose_height_tolerance":0.03,"pose_height_exception":false,"detached_fx_or_weapon":false},"trim":{"x":200,"y":235,"w":240,"h":366},"storage_trim":{"x":108.33333333333333,"y":127.1311475409836,"w":130,"h":198},"storage_scale":[0.5416666666666666,0.5409836065573771],"stored_columns":10,"frame_map":[0,1,2,3,4,5,6,7,8,9],"stored_frame_size":[347,346],"stored_anchor_px":[173.33333333333334,324.59016393442624],"ssim":0.9431563596936923,"effective_density":1.8,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"walk","duration_seconds":1.05,"fps":9.523809523809524,"loop":true,"sheet":"sprites/player/axe_onearm/walk.webp","frame_width":640,"frame_height":640,"frames":10,"columns":10,"rows":1,"anchor_px":[320,600],"image_size":[1180,141],"qa":{"expected_pose_heights":[334,329,328,325,325,329,332,329,328,328],"expected_pose_height_tolerance":0.03,"pose_height_exception":true,"detached_fx_or_weapon":false},"trim":{"x":179,"y":265,"w":282,"h":336},"storage_trim":{"x":74.90070921985816,"y":111.20535714285714,"w":118,"h":141},"storage_scale":[0.41843971631205673,0.41964285714285715],"stored_columns":10,"frame_map":[0,1,2,3,4,5,6,7,8,9],"stored_frame_size":[268,269],"stored_anchor_px":[133.90070921985816,251.78571428571428],"ssim":0.9383432181062401,"effective_density":1.4,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"crouch_enter","duration_seconds":0.14,"fps":28.57142857142857,"loop":false,"sheet":"sprites/player/axe_onearm/crouch_enter.webp","frame_width":640,"frame_height":640,"frames":4,"columns":4,"rows":1,"anchor_px":[320,600],"image_size":[492,158],"qa":{"expected_pose_heights":[291,257,222,173],"expected_pose_height_tolerance":0.03,"pose_height_exception":true,"detached_fx_or_weapon":false},"trim":{"x":207,"y":308,"w":227,"h":293},"storage_trim":{"x":112.16299559471365,"y":166.08873720136518,"w":123,"h":158},"storage_scale":[0.5418502202643172,0.5392491467576792],"stored_columns":4,"frame_map":[0,1,2,3],"stored_frame_size":[347,345],"stored_anchor_px":[173.3920704845815,323.54948805460754],"ssim":0.9365881411517952,"effective_density":1.8,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"crouch_idle","duration_seconds":0.8,"fps":7.5,"loop":true,"sheet":"sprites/player/axe_onearm/crouch_idle.webp","frame_width":640,"frame_height":640,"frames":6,"columns":6,"rows":1,"anchor_px":[320,600],"image_size":[714,112],"qa":{"expected_pose_heights":[191,183,198,205,190,204],"expected_pose_height_tolerance":0.03,"pose_height_exception":true,"detached_fx_or_weapon":false},"trim":{"x":210,"y":394,"w":220,"h":207},"storage_trim":{"x":113.5909090909091,"y":213.17874396135267,"w":119,"h":112},"storage_scale":[0.5409090909090909,0.5410628019323671],"stored_columns":6,"frame_map":[0,1,2,3,4,5],"stored_frame_size":[346,346],"stored_anchor_px":[173.0909090909091,324.6376811594203],"ssim":0.9312976906601991,"effective_density":1.8,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"crouch_exit","duration_seconds":0.13,"fps":30.769230769230766,"loop":false,"sheet":"sprites/player/axe_onearm/crouch_exit.webp","frame_width":640,"frame_height":640,"frames":4,"columns":4,"rows":1,"anchor_px":[320,600],"image_size":[1196,146],"qa":{"expected_pose_heights":[217,256,287,303],"expected_pose_height_tolerance":0.03,"pose_height_exception":true,"detached_fx_or_weapon":false},"trim":{"x":9,"y":296,"w":622,"h":305},"storage_trim":{"x":4.326366559485531,"y":141.69180327868852,"w":299,"h":146},"storage_scale":[0.4807073954983923,0.4786885245901639],"stored_columns":4,"frame_map":[0,1,2,3],"stored_frame_size":[308,306],"stored_anchor_px":[153.82636655948554,287.21311475409834],"ssim":0.9425279785780524,"effective_density":1.6,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"jump_start","duration_seconds":0.13,"fps":30.769230769230766,"loop":false,"sheet":"sprites/player/axe_onearm/jump_start.webp","frame_width":640,"frame_height":640,"frames":4,"columns":4,"rows":1,"anchor_px":[320,600],"image_size":[552,158],"qa":{"expected_pose_heights":[257,222,280,328],"expected_pose_height_tolerance":0.03,"pose_height_exception":true,"detached_fx_or_weapon":false},"trim":{"x":176,"y":271,"w":288,"h":330},"storage_trim":{"x":84.33333333333333,"y":129.75151515151515,"w":138,"h":158},"storage_scale":[0.4791666666666667,0.47878787878787876],"stored_columns":4,"frame_map":[0,1,2,3],"stored_frame_size":[307,306],"stored_anchor_px":[153.33333333333334,287.27272727272725],"ssim":0.9359277174219914,"effective_density":1.6,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"jump_rise","duration_seconds":0.42,"fps":14.285714285714286,"loop":false,"sheet":"sprites/player/axe_onearm/jump_rise.webp","frame_width":640,"frame_height":640,"frames":6,"columns":6,"rows":1,"anchor_px":[320,600],"image_size":[870,158],"qa":{"expected_pose_heights":[328,324,268,303,327,324],"expected_pose_height_tolerance":0.03,"pose_height_exception":true,"detached_fx_or_weapon":false},"trim":{"x":169,"y":271,"w":303,"h":330},"storage_trim":{"x":80.87458745874588,"y":129.75151515151515,"w":145,"h":158},"storage_scale":[0.47854785478547857,0.47878787878787876],"stored_columns":6,"frame_map":[0,1,2,3,4,5],"stored_frame_size":[306,306],"stored_anchor_px":[153.13531353135315,287.27272727272725],"ssim":0.9493887514500363,"effective_density":1.6,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"fall","duration_seconds":0.36,"fps":16.666666666666668,"loop":true,"sheet":"sprites/player/axe_onearm/fall.webp","frame_width":640,"frame_height":640,"frames":6,"columns":6,"rows":1,"anchor_px":[320,600],"image_size":[924,172],"qa":{"expected_pose_heights":[347,335,299,266,266,357],"expected_pose_height_tolerance":0.03,"pose_height_exception":true,"detached_fx_or_weapon":false},"trim":{"x":159,"y":242,"w":321,"h":359},"storage_trim":{"x":76.2803738317757,"y":115.94428969359332,"w":154,"h":172},"storage_scale":[0.4797507788161994,0.479108635097493],"stored_columns":6,"frame_map":[0,1,2,3,4,5],"stored_frame_size":[307,307],"stored_anchor_px":[153.5202492211838,287.46518105849583],"ssim":0.9500203920070919,"effective_density":1.6,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"land","duration_seconds":0.24,"fps":20.833333333333336,"loop":false,"sheet":"sprites/player/axe_onearm/land.webp","frame_width":640,"frame_height":640,"frames":5,"columns":5,"rows":1,"anchor_px":[320,600],"image_size":[805,159],"qa":{"expected_pose_heights":[377,252,205,295,363],"expected_pose_height_tolerance":0.03,"pose_height_exception":true,"detached_fx_or_weapon":false},"trim":{"x":129,"y":222,"w":383,"h":379},"storage_trim":{"x":54.22715404699739,"y":93.13456464379948,"w":161,"h":159},"storage_scale":[0.42036553524804177,0.41952506596306066],"stored_columns":5,"frame_map":[0,1,2,3,4],"stored_frame_size":[269,268],"stored_anchor_px":[134.51697127937337,251.71503957783642],"ssim":0.9372079891621374,"effective_density":1.4,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"drop_through","duration_seconds":0.22,"fps":22.727272727272727,"loop":false,"sheet":"sprites/player/axe_onearm/drop_through.webp","frame_width":640,"frame_height":640,"frames":5,"columns":5,"rows":1,"anchor_px":[320,600],"image_size":[655,151],"qa":{"expected_pose_heights":[294,318,358,306,191],"expected_pose_height_tolerance":0.03,"pose_height_exception":true,"detached_fx_or_weapon":false},"trim":{"x":165,"y":241,"w":311,"h":360},"storage_trim":{"x":69.50160771704181,"y":101.08611111111111,"w":131,"h":151},"storage_scale":[0.4212218649517685,0.41944444444444445],"stored_columns":5,"frame_map":[0,1,2,3,4],"stored_frame_size":[270,268],"stored_anchor_px":[134.79099678456592,251.66666666666666],"ssim":0.9311361476770198,"effective_density":1.4,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"hurt","duration_seconds":0.32,"fps":15.625,"loop":false,"sheet":"sprites/player/axe_onearm/hurt.webp","frame_width":640,"frame_height":640,"frames":5,"columns":5,"rows":1,"anchor_px":[320,600],"image_size":[755,180],"qa":{"expected_pose_heights":[373,371,338,343,363],"expected_pose_height_tolerance":0.03,"pose_height_exception":true,"detached_fx_or_weapon":false},"trim":{"x":163,"y":226,"w":314,"h":375},"storage_trim":{"x":78.38535031847134,"y":108.48,"w":151,"h":180},"storage_scale":[0.48089171974522293,0.48],"stored_columns":5,"frame_map":[0,1,2,3,4],"stored_frame_size":[308,307],"stored_anchor_px":[153.88535031847132,288.0],"ssim":0.9415151352878517,"effective_density":1.6,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"death","duration_seconds":0.6,"fps":13.333333333333334,"loop":false,"sheet":"sprites/player/axe_onearm/death.webp","frame_width":640,"frame_height":640,"frames":8,"columns":8,"rows":1,"anchor_px":[320,600],"image_size":[1264,151],"qa":{"expected_pose_heights":[358,298,253,218,162,137,131,137],"expected_pose_height_tolerance":0.03,"pose_height_exception":true,"detached_fx_or_weapon":false,"expected_pose_areas":[45711,41867,37371,32309,30901,27035,21606,30247],"minimum_authored_area_ratio":0.55},"trim":{"x":131,"y":241,"w":377,"h":360},"storage_trim":{"x":54.90185676392573,"y":101.08611111111111,"w":158,"h":151},"storage_scale":[0.41909814323607425,0.41944444444444445],"stored_columns":8,"frame_map":[0,1,2,3,4,5,6,7],"stored_frame_size":[268,268],"stored_anchor_px":[134.11140583554376,251.66666666666666],"ssim":0.9300070720997538,"effective_density":1.4,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"attack_1","duration_seconds":0.33,"fps":24.242424242424242,"loop":false,"sheet":"sprites/player/axe_onearm/attack_1.webp","frame_width":640,"frame_height":640,"frames":8,"columns":8,"rows":1,"anchor_px":[320,600],"image_size":[1304,135],"qa":{"expected_pose_heights":[256,372,298,258,252,251,296,363],"expected_pose_height_tolerance":0.03,"pose_height_exception":true,"detached_fx_or_weapon":false},"trim":{"x":93,"y":227,"w":453,"h":374},"storage_trim":{"x":33.4635761589404,"y":81.93850267379679,"w":163,"h":135},"storage_scale":[0.3598233995584989,0.3609625668449198],"stored_columns":8,"frame_map":[0,1,2,3,4,5,6,7],"stored_frame_size":[230,231],"stored_anchor_px":[115.14348785871965,216.57754010695186],"ssim":0.9381464161792235,"effective_density":1.2,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"attack_2","duration_seconds":0.33,"fps":24.242424242424242,"loop":false,"sheet":"sprites/player/axe_onearm/attack_2.webp","frame_width":640,"frame_height":640,"frames":8,"columns":8,"rows":1,"anchor_px":[320,600],"image_size":[1240,162],"qa":{"expected_pose_heights":[317,290,299,378,384,352,321,363],"expected_pose_height_tolerance":0.03,"pose_height_exception":true,"detached_fx_or_weapon":false},"trim":{"x":135,"y":215,"w":370,"h":386},"storage_trim":{"x":56.554054054054056,"y":90.23316062176166,"w":155,"h":162},"storage_scale":[0.4189189189189189,0.41968911917098445],"stored_columns":8,"frame_map":[0,1,2,3,4,5,6,7],"stored_frame_size":[268,269],"stored_anchor_px":[134.05405405405406,251.8134715025907],"ssim":0.9356209647085182,"effective_density":1.4,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"attack_3","duration_seconds":0.4,"fps":25.0,"loop":false,"sheet":"sprites/player/axe_onearm/attack_3.webp","frame_width":640,"frame_height":640,"frames":10,"columns":10,"rows":1,"anchor_px":[320,600],"image_size":[1490,166],"qa":{"expected_pose_heights":[364,393,394,375,341,329,271,337,355,363],"expected_pose_height_tolerance":0.03,"pose_height_exception":true,"detached_fx_or_weapon":false},"trim":{"x":143,"y":205,"w":354,"h":396},"storage_trim":{"x":60.18926553672316,"y":85.93434343434343,"w":149,"h":166},"storage_scale":[0.4209039548022599,0.41919191919191917],"stored_columns":10,"frame_map":[0,1,2,3,4,5,6,7,8,9],"stored_frame_size":[269,268],"stored_anchor_px":[134.68926553672316,251.5151515151515],"ssim":0.9440797868700672,"effective_density":1.4,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"attack_4","duration_seconds":0.56,"fps":17.857142857142854,"loop":false,"frame_boundaries_seconds":[0,0.056,0.112,0.168,0.224,0.28,0.34,0.396,0.452,0.508,0.56],"sheet":"sprites/player/axe_onearm/attack_4.webp","frame_width":640,"frame_height":640,"frames":10,"columns":10,"rows":1,"anchor_px":[320,600],"image_size":[1900,135],"qa":{"expected_pose_heights":[339,320,367,372,281,272,234,233,341,363],"expected_pose_height_tolerance":0.03,"pose_height_exception":true,"detached_fx_or_weapon":false},"trim":{"x":56,"y":227,"w":528,"h":374},"storage_trim":{"x":20.151515151515152,"y":81.93850267379679,"w":190,"h":135},"storage_scale":[0.35984848484848486,0.3609625668449198],"stored_columns":10,"frame_map":[0,1,2,3,4,5,6,7,8,9],"stored_frame_size":[230,231],"stored_anchor_px":[115.15151515151516,216.57754010695186],"ssim":0.9413557190984647,"effective_density":1.2,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"run","duration_seconds":0.82,"fps":12.195121951219512,"loop":true,"sheet":"sprites/player/axe_onearm/run.webp","frame_width":640,"frame_height":640,"frames":10,"columns":10,"rows":1,"anchor_px":[320,600],"image_size":[1290,135],"qa":{"expected_pose_heights":[320,320,320,320,320,320,320,320,320,320],"expected_pose_height_tolerance":0.03,"pose_height_exception":true,"detached_fx_or_weapon":false},"trim":{"x":167,"y":279,"w":307,"h":322},"storage_trim":{"x":70.17263843648209,"y":116.972049689441,"w":129,"h":135},"storage_scale":[0.4201954397394137,0.4192546583850932],"stored_columns":10,"frame_map":[0,1,2,3,4,5,6,7,8,9],"stored_frame_size":[269,268],"stored_anchor_px":[134.46254071661238,251.5527950310559],"ssim":0.940663752168354,"effective_density":1.4,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"roll","duration_seconds":0.48,"fps":25.0,"loop":false,"sheet":"sprites/player/axe_onearm/roll.webp","frame_width":640,"frame_height":640,"frames":12,"columns":12,"rows":1,"anchor_px":[320,600],"image_size":[2028,153],"qa":{"expected_pose_heights":[363,152,220,220,220,203,188,257,363,363,363,363],"expected_pose_height_tolerance":0.03,"pose_height_exception":true,"detached_fx_or_weapon":false},"trim":{"x":119,"y":236,"w":402,"h":365},"storage_trim":{"x":50.027363184079604,"y":98.92602739726027,"w":169,"h":153},"storage_scale":[0.42039800995024873,0.4191780821917808],"stored_columns":12,"frame_map":[0,1,2,3,4,5,6,7,8,9,10,11],"stored_frame_size":[269,268],"stored_anchor_px":[134.5273631840796,251.5068493150685],"ssim":0.9593176241084819,"effective_density":1.4,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"arm_loss_hit","sheet":"sprites/player/axe_onearm/arm_loss_hit.webp","frame_width":640,"frame_height":640,"frames":5,"columns":5,"rows":1,"duration_seconds":0.5,"fps":10.0,"loop":false,"anchor_px":[320,600],"image_size":[795,219],"qa":{"pose_height_exception":true,"height_tol":0.65,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":193,"y":236,"w":265,"h":365},"storage_trim":{"x":115.8,"y":141.6,"w":159,"h":219},"storage_scale":[0.6,0.6],"stored_columns":5,"frame_map":[0,1,2,3,4],"stored_frame_size":[384,384],"stored_anchor_px":[192.0,360.0],"ssim":0.9446308331227072,"effective_density":2.0,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"melammu_absorb","sheet":"sprites/player/axe_onearm/melammu_absorb.webp","frame_width":640,"frame_height":640,"frames":6,"columns":6,"rows":1,"duration_seconds":1.2,"fps":5.0,"loop":false,"anchor_px":[320,600],"image_size":[678,152],"qa":{"pose_height_exception":true,"height_tol":0.65,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":222,"y":348,"w":188,"h":253},"storage_trim":{"x":133.43617021276594,"y":209.07509881422925,"w":113,"h":152},"storage_scale":[0.601063829787234,0.6007905138339921],"stored_columns":6,"frame_map":[0,1,2,3,4,5],"stored_frame_size":[385,385],"stored_anchor_px":[192.3404255319149,360.47430830039525],"ssim":0.9306858580217552,"effective_density":2.0,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}}]}
+{
+  "step": 18,
+  "frame_size": [
+    640,
+    640
+  ],
+  "clips": [
+    {
+      "name": "idle",
+      "duration_seconds": 2.2,
+      "fps": 4.545454545454545,
+      "loop": true,
+      "sheet": "sprites/player/axe_onearm/idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 10,
+      "columns": 10,
+      "rows": 1,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1340,
+        202
+      ],
+      "qa": {
+        "expected_pose_heights": [
+          363,
+          362,
+          362,
+          362,
+          362,
+          363,
+          364,
+          363,
+          363,
+          363
+        ],
+        "expected_pose_height_tolerance": 0.03,
+        "pose_height_exception": false,
+        "detached_fx_or_weapon": false
+      },
+      "trim": {
+        "x": 200,
+        "y": 235,
+        "w": 240,
+        "h": 366
+      },
+      "storage_trim": {
+        "x": 106.33333333333333,
+        "y": 125.13114754098362,
+        "w": 134,
+        "h": 202
+      },
+      "storage_scale": [
+        0.5416666666666666,
+        0.5409836065573771
+      ],
+      "stored_columns": 10,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "stored_frame_size": [
+        347,
+        346
+      ],
+      "stored_anchor_px": [
+        173.33333333333334,
+        324.59016393442624
+      ],
+      "ssim": 0.9431563596936923,
+      "effective_density": 1.8,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        130,
+        198
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        134,
+        202
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "walk",
+      "duration_seconds": 1.05,
+      "fps": 9.523809523809524,
+      "loop": true,
+      "sheet": "sprites/player/axe_onearm/walk.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 10,
+      "columns": 10,
+      "rows": 1,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1220,
+        145
+      ],
+      "qa": {
+        "expected_pose_heights": [
+          334,
+          329,
+          328,
+          325,
+          325,
+          329,
+          332,
+          329,
+          328,
+          328
+        ],
+        "expected_pose_height_tolerance": 0.03,
+        "pose_height_exception": true,
+        "detached_fx_or_weapon": false
+      },
+      "trim": {
+        "x": 179,
+        "y": 265,
+        "w": 282,
+        "h": 336
+      },
+      "storage_trim": {
+        "x": 72.90070921985816,
+        "y": 109.20535714285714,
+        "w": 122,
+        "h": 145
+      },
+      "storage_scale": [
+        0.41843971631205673,
+        0.41964285714285715
+      ],
+      "stored_columns": 10,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "stored_frame_size": [
+        268,
+        269
+      ],
+      "stored_anchor_px": [
+        133.90070921985816,
+        251.78571428571428
+      ],
+      "ssim": 0.9383432181062401,
+      "effective_density": 1.4,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        118,
+        141
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        122,
+        145
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "crouch_enter",
+      "duration_seconds": 0.14,
+      "fps": 28.57142857142857,
+      "loop": false,
+      "sheet": "sprites/player/axe_onearm/crouch_enter.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        508,
+        162
+      ],
+      "qa": {
+        "expected_pose_heights": [
+          291,
+          257,
+          222,
+          173
+        ],
+        "expected_pose_height_tolerance": 0.03,
+        "pose_height_exception": true,
+        "detached_fx_or_weapon": false
+      },
+      "trim": {
+        "x": 207,
+        "y": 308,
+        "w": 227,
+        "h": 293
+      },
+      "storage_trim": {
+        "x": 110.16299559471365,
+        "y": 164.0887372013652,
+        "w": 127,
+        "h": 162
+      },
+      "storage_scale": [
+        0.5418502202643172,
+        0.5392491467576792
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        347,
+        345
+      ],
+      "stored_anchor_px": [
+        173.3920704845815,
+        323.54948805460754
+      ],
+      "ssim": 0.9365881411517952,
+      "effective_density": 1.8,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        123,
+        158
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        127,
+        162
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "crouch_idle",
+      "duration_seconds": 0.8,
+      "fps": 7.5,
+      "loop": true,
+      "sheet": "sprites/player/axe_onearm/crouch_idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 6,
+      "columns": 6,
+      "rows": 1,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        738,
+        116
+      ],
+      "qa": {
+        "expected_pose_heights": [
+          191,
+          183,
+          198,
+          205,
+          190,
+          204
+        ],
+        "expected_pose_height_tolerance": 0.03,
+        "pose_height_exception": true,
+        "detached_fx_or_weapon": false
+      },
+      "trim": {
+        "x": 210,
+        "y": 394,
+        "w": 220,
+        "h": 207
+      },
+      "storage_trim": {
+        "x": 111.5909090909091,
+        "y": 211.17874396135264,
+        "w": 123,
+        "h": 116
+      },
+      "storage_scale": [
+        0.5409090909090909,
+        0.5410628019323671
+      ],
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stored_frame_size": [
+        346,
+        346
+      ],
+      "stored_anchor_px": [
+        173.0909090909091,
+        324.6376811594203
+      ],
+      "ssim": 0.9312976906601991,
+      "effective_density": 1.8,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        119,
+        112
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        123,
+        116
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "crouch_exit",
+      "duration_seconds": 0.13,
+      "fps": 30.769230769230766,
+      "loop": false,
+      "sheet": "sprites/player/axe_onearm/crouch_exit.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1212,
+        150
+      ],
+      "qa": {
+        "expected_pose_heights": [
+          217,
+          256,
+          287,
+          303
+        ],
+        "expected_pose_height_tolerance": 0.03,
+        "pose_height_exception": true,
+        "detached_fx_or_weapon": false
+      },
+      "trim": {
+        "x": 9,
+        "y": 296,
+        "w": 622,
+        "h": 305
+      },
+      "storage_trim": {
+        "x": 2.326366559485531,
+        "y": 139.69180327868852,
+        "w": 303,
+        "h": 150
+      },
+      "storage_scale": [
+        0.4807073954983923,
+        0.4786885245901639
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        308,
+        306
+      ],
+      "stored_anchor_px": [
+        153.82636655948554,
+        287.21311475409834
+      ],
+      "ssim": 0.9425279785780524,
+      "effective_density": 1.6,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        299,
+        146
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        303,
+        150
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "jump_start",
+      "duration_seconds": 0.13,
+      "fps": 30.769230769230766,
+      "loop": false,
+      "sheet": "sprites/player/axe_onearm/jump_start.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        568,
+        162
+      ],
+      "qa": {
+        "expected_pose_heights": [
+          257,
+          222,
+          280,
+          328
+        ],
+        "expected_pose_height_tolerance": 0.03,
+        "pose_height_exception": true,
+        "detached_fx_or_weapon": false
+      },
+      "trim": {
+        "x": 176,
+        "y": 271,
+        "w": 288,
+        "h": 330
+      },
+      "storage_trim": {
+        "x": 82.33333333333334,
+        "y": 127.75151515151515,
+        "w": 142,
+        "h": 162
+      },
+      "storage_scale": [
+        0.4791666666666667,
+        0.47878787878787876
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        307,
+        306
+      ],
+      "stored_anchor_px": [
+        153.33333333333334,
+        287.27272727272725
+      ],
+      "ssim": 0.9359277174219914,
+      "effective_density": 1.6,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        138,
+        158
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        142,
+        162
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "jump_rise",
+      "duration_seconds": 0.42,
+      "fps": 14.285714285714286,
+      "loop": false,
+      "sheet": "sprites/player/axe_onearm/jump_rise.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 6,
+      "columns": 6,
+      "rows": 1,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        894,
+        162
+      ],
+      "qa": {
+        "expected_pose_heights": [
+          328,
+          324,
+          268,
+          303,
+          327,
+          324
+        ],
+        "expected_pose_height_tolerance": 0.03,
+        "pose_height_exception": true,
+        "detached_fx_or_weapon": false
+      },
+      "trim": {
+        "x": 169,
+        "y": 271,
+        "w": 303,
+        "h": 330
+      },
+      "storage_trim": {
+        "x": 78.87458745874588,
+        "y": 127.75151515151515,
+        "w": 149,
+        "h": 162
+      },
+      "storage_scale": [
+        0.47854785478547857,
+        0.47878787878787876
+      ],
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stored_frame_size": [
+        306,
+        306
+      ],
+      "stored_anchor_px": [
+        153.13531353135315,
+        287.27272727272725
+      ],
+      "ssim": 0.9493887514500363,
+      "effective_density": 1.6,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        145,
+        158
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        149,
+        162
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "fall",
+      "duration_seconds": 0.36,
+      "fps": 16.666666666666668,
+      "loop": true,
+      "sheet": "sprites/player/axe_onearm/fall.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 6,
+      "columns": 6,
+      "rows": 1,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        948,
+        176
+      ],
+      "qa": {
+        "expected_pose_heights": [
+          347,
+          335,
+          299,
+          266,
+          266,
+          357
+        ],
+        "expected_pose_height_tolerance": 0.03,
+        "pose_height_exception": true,
+        "detached_fx_or_weapon": false
+      },
+      "trim": {
+        "x": 159,
+        "y": 242,
+        "w": 321,
+        "h": 359
+      },
+      "storage_trim": {
+        "x": 74.2803738317757,
+        "y": 113.9442896935933,
+        "w": 158,
+        "h": 176
+      },
+      "storage_scale": [
+        0.4797507788161994,
+        0.479108635097493
+      ],
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stored_frame_size": [
+        307,
+        307
+      ],
+      "stored_anchor_px": [
+        153.5202492211838,
+        287.46518105849583
+      ],
+      "ssim": 0.9500203920070919,
+      "effective_density": 1.6,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        154,
+        172
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        158,
+        176
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "land",
+      "duration_seconds": 0.24,
+      "fps": 20.833333333333336,
+      "loop": false,
+      "sheet": "sprites/player/axe_onearm/land.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 5,
+      "columns": 5,
+      "rows": 1,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        825,
+        163
+      ],
+      "qa": {
+        "expected_pose_heights": [
+          377,
+          252,
+          205,
+          295,
+          363
+        ],
+        "expected_pose_height_tolerance": 0.03,
+        "pose_height_exception": true,
+        "detached_fx_or_weapon": false
+      },
+      "trim": {
+        "x": 129,
+        "y": 222,
+        "w": 383,
+        "h": 379
+      },
+      "storage_trim": {
+        "x": 52.227154046997384,
+        "y": 91.13456464379946,
+        "w": 165,
+        "h": 163
+      },
+      "storage_scale": [
+        0.42036553524804177,
+        0.41952506596306066
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        269,
+        268
+      ],
+      "stored_anchor_px": [
+        134.51697127937337,
+        251.71503957783642
+      ],
+      "ssim": 0.9372079891621374,
+      "effective_density": 1.4,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        161,
+        159
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        165,
+        163
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "drop_through",
+      "duration_seconds": 0.22,
+      "fps": 22.727272727272727,
+      "loop": false,
+      "sheet": "sprites/player/axe_onearm/drop_through.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 5,
+      "columns": 5,
+      "rows": 1,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        675,
+        155
+      ],
+      "qa": {
+        "expected_pose_heights": [
+          294,
+          318,
+          358,
+          306,
+          191
+        ],
+        "expected_pose_height_tolerance": 0.03,
+        "pose_height_exception": true,
+        "detached_fx_or_weapon": false
+      },
+      "trim": {
+        "x": 165,
+        "y": 241,
+        "w": 311,
+        "h": 360
+      },
+      "storage_trim": {
+        "x": 67.50160771704181,
+        "y": 99.08611111111111,
+        "w": 135,
+        "h": 155
+      },
+      "storage_scale": [
+        0.4212218649517685,
+        0.41944444444444445
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        270,
+        268
+      ],
+      "stored_anchor_px": [
+        134.79099678456592,
+        251.66666666666666
+      ],
+      "ssim": 0.9311361476770198,
+      "effective_density": 1.4,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        131,
+        151
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        135,
+        155
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "hurt",
+      "duration_seconds": 0.32,
+      "fps": 15.625,
+      "loop": false,
+      "sheet": "sprites/player/axe_onearm/hurt.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 5,
+      "columns": 5,
+      "rows": 1,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        775,
+        184
+      ],
+      "qa": {
+        "expected_pose_heights": [
+          373,
+          371,
+          338,
+          343,
+          363
+        ],
+        "expected_pose_height_tolerance": 0.03,
+        "pose_height_exception": true,
+        "detached_fx_or_weapon": false
+      },
+      "trim": {
+        "x": 163,
+        "y": 226,
+        "w": 314,
+        "h": 375
+      },
+      "storage_trim": {
+        "x": 76.38535031847134,
+        "y": 106.47999999999999,
+        "w": 155,
+        "h": 184
+      },
+      "storage_scale": [
+        0.48089171974522293,
+        0.48
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        308,
+        307
+      ],
+      "stored_anchor_px": [
+        153.88535031847132,
+        288.0
+      ],
+      "ssim": 0.9415151352878517,
+      "effective_density": 1.6,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        151,
+        180
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        155,
+        184
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "death",
+      "duration_seconds": 0.6,
+      "fps": 13.333333333333334,
+      "loop": false,
+      "sheet": "sprites/player/axe_onearm/death.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 8,
+      "columns": 8,
+      "rows": 1,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1296,
+        155
+      ],
+      "qa": {
+        "expected_pose_heights": [
+          358,
+          298,
+          253,
+          218,
+          162,
+          137,
+          131,
+          137
+        ],
+        "expected_pose_height_tolerance": 0.03,
+        "pose_height_exception": true,
+        "detached_fx_or_weapon": false,
+        "expected_pose_areas": [
+          45711,
+          41867,
+          37371,
+          32309,
+          30901,
+          27035,
+          21606,
+          30247
+        ],
+        "minimum_authored_area_ratio": 0.55
+      },
+      "trim": {
+        "x": 131,
+        "y": 241,
+        "w": 377,
+        "h": 360
+      },
+      "storage_trim": {
+        "x": 52.90185676392573,
+        "y": 99.08611111111111,
+        "w": 162,
+        "h": 155
+      },
+      "storage_scale": [
+        0.41909814323607425,
+        0.41944444444444445
+      ],
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "stored_frame_size": [
+        268,
+        268
+      ],
+      "stored_anchor_px": [
+        134.11140583554376,
+        251.66666666666666
+      ],
+      "ssim": 0.9300070720997538,
+      "effective_density": 1.4,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        158,
+        151
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        162,
+        155
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "attack_1",
+      "duration_seconds": 0.33,
+      "fps": 24.242424242424242,
+      "loop": false,
+      "sheet": "sprites/player/axe_onearm/attack_1.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 8,
+      "columns": 8,
+      "rows": 1,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1336,
+        139
+      ],
+      "qa": {
+        "expected_pose_heights": [
+          256,
+          372,
+          298,
+          258,
+          252,
+          251,
+          296,
+          363
+        ],
+        "expected_pose_height_tolerance": 0.03,
+        "pose_height_exception": true,
+        "detached_fx_or_weapon": false
+      },
+      "trim": {
+        "x": 93,
+        "y": 227,
+        "w": 453,
+        "h": 374
+      },
+      "storage_trim": {
+        "x": 31.4635761589404,
+        "y": 79.93850267379679,
+        "w": 167,
+        "h": 139
+      },
+      "storage_scale": [
+        0.3598233995584989,
+        0.3609625668449198
+      ],
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "stored_frame_size": [
+        230,
+        231
+      ],
+      "stored_anchor_px": [
+        115.14348785871965,
+        216.57754010695186
+      ],
+      "ssim": 0.9381464161792235,
+      "effective_density": 1.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        163,
+        135
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        167,
+        139
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "attack_2",
+      "duration_seconds": 0.33,
+      "fps": 24.242424242424242,
+      "loop": false,
+      "sheet": "sprites/player/axe_onearm/attack_2.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 8,
+      "columns": 8,
+      "rows": 1,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1272,
+        166
+      ],
+      "qa": {
+        "expected_pose_heights": [
+          317,
+          290,
+          299,
+          378,
+          384,
+          352,
+          321,
+          363
+        ],
+        "expected_pose_height_tolerance": 0.03,
+        "pose_height_exception": true,
+        "detached_fx_or_weapon": false
+      },
+      "trim": {
+        "x": 135,
+        "y": 215,
+        "w": 370,
+        "h": 386
+      },
+      "storage_trim": {
+        "x": 54.554054054054056,
+        "y": 88.23316062176166,
+        "w": 159,
+        "h": 166
+      },
+      "storage_scale": [
+        0.4189189189189189,
+        0.41968911917098445
+      ],
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "stored_frame_size": [
+        268,
+        269
+      ],
+      "stored_anchor_px": [
+        134.05405405405406,
+        251.8134715025907
+      ],
+      "ssim": 0.9356209647085182,
+      "effective_density": 1.4,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        155,
+        162
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        159,
+        166
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "attack_3",
+      "duration_seconds": 0.4,
+      "fps": 25.0,
+      "loop": false,
+      "sheet": "sprites/player/axe_onearm/attack_3.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 10,
+      "columns": 10,
+      "rows": 1,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1530,
+        170
+      ],
+      "qa": {
+        "expected_pose_heights": [
+          364,
+          393,
+          394,
+          375,
+          341,
+          329,
+          271,
+          337,
+          355,
+          363
+        ],
+        "expected_pose_height_tolerance": 0.03,
+        "pose_height_exception": true,
+        "detached_fx_or_weapon": false
+      },
+      "trim": {
+        "x": 143,
+        "y": 205,
+        "w": 354,
+        "h": 396
+      },
+      "storage_trim": {
+        "x": 58.18926553672316,
+        "y": 83.93434343434343,
+        "w": 153,
+        "h": 170
+      },
+      "storage_scale": [
+        0.4209039548022599,
+        0.41919191919191917
+      ],
+      "stored_columns": 10,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "stored_frame_size": [
+        269,
+        268
+      ],
+      "stored_anchor_px": [
+        134.68926553672316,
+        251.5151515151515
+      ],
+      "ssim": 0.9440797868700672,
+      "effective_density": 1.4,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        149,
+        166
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        153,
+        170
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "attack_4",
+      "duration_seconds": 0.56,
+      "fps": 17.857142857142854,
+      "loop": false,
+      "frame_boundaries_seconds": [
+        0,
+        0.056,
+        0.112,
+        0.168,
+        0.224,
+        0.28,
+        0.34,
+        0.396,
+        0.452,
+        0.508,
+        0.56
+      ],
+      "sheet": "sprites/player/axe_onearm/attack_4.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 10,
+      "columns": 10,
+      "rows": 1,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1940,
+        139
+      ],
+      "qa": {
+        "expected_pose_heights": [
+          339,
+          320,
+          367,
+          372,
+          281,
+          272,
+          234,
+          233,
+          341,
+          363
+        ],
+        "expected_pose_height_tolerance": 0.03,
+        "pose_height_exception": true,
+        "detached_fx_or_weapon": false
+      },
+      "trim": {
+        "x": 56,
+        "y": 227,
+        "w": 528,
+        "h": 374
+      },
+      "storage_trim": {
+        "x": 18.151515151515152,
+        "y": 79.93850267379679,
+        "w": 194,
+        "h": 139
+      },
+      "storage_scale": [
+        0.35984848484848486,
+        0.3609625668449198
+      ],
+      "stored_columns": 10,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "stored_frame_size": [
+        230,
+        231
+      ],
+      "stored_anchor_px": [
+        115.15151515151516,
+        216.57754010695186
+      ],
+      "ssim": 0.9413557190984647,
+      "effective_density": 1.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        190,
+        135
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        194,
+        139
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "run",
+      "duration_seconds": 0.82,
+      "fps": 12.195121951219512,
+      "loop": true,
+      "sheet": "sprites/player/axe_onearm/run.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 10,
+      "columns": 10,
+      "rows": 1,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1330,
+        139
+      ],
+      "qa": {
+        "expected_pose_heights": [
+          320,
+          320,
+          320,
+          320,
+          320,
+          320,
+          320,
+          320,
+          320,
+          320
+        ],
+        "expected_pose_height_tolerance": 0.03,
+        "pose_height_exception": true,
+        "detached_fx_or_weapon": false
+      },
+      "trim": {
+        "x": 167,
+        "y": 279,
+        "w": 307,
+        "h": 322
+      },
+      "storage_trim": {
+        "x": 68.17263843648209,
+        "y": 114.972049689441,
+        "w": 133,
+        "h": 139
+      },
+      "storage_scale": [
+        0.4201954397394137,
+        0.4192546583850932
+      ],
+      "stored_columns": 10,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "stored_frame_size": [
+        269,
+        268
+      ],
+      "stored_anchor_px": [
+        134.46254071661238,
+        251.5527950310559
+      ],
+      "ssim": 0.940663752168354,
+      "effective_density": 1.4,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        129,
+        135
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        133,
+        139
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "roll",
+      "duration_seconds": 0.48,
+      "fps": 25.0,
+      "loop": false,
+      "sheet": "sprites/player/axe_onearm/roll.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 12,
+      "columns": 12,
+      "rows": 1,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2076,
+        157
+      ],
+      "qa": {
+        "expected_pose_heights": [
+          363,
+          152,
+          220,
+          220,
+          220,
+          203,
+          188,
+          257,
+          363,
+          363,
+          363,
+          363
+        ],
+        "expected_pose_height_tolerance": 0.03,
+        "pose_height_exception": true,
+        "detached_fx_or_weapon": false
+      },
+      "trim": {
+        "x": 119,
+        "y": 236,
+        "w": 402,
+        "h": 365
+      },
+      "storage_trim": {
+        "x": 48.0273631840796,
+        "y": 96.92602739726027,
+        "w": 173,
+        "h": 157
+      },
+      "storage_scale": [
+        0.42039800995024873,
+        0.4191780821917808
+      ],
+      "stored_columns": 12,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "stored_frame_size": [
+        269,
+        268
+      ],
+      "stored_anchor_px": [
+        134.5273631840796,
+        251.5068493150685
+      ],
+      "ssim": 0.9593176241084819,
+      "effective_density": 1.4,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        169,
+        153
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        173,
+        157
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "arm_loss_hit",
+      "sheet": "sprites/player/axe_onearm/arm_loss_hit.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 5,
+      "columns": 5,
+      "rows": 1,
+      "duration_seconds": 0.5,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        815,
+        223
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.65,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 193,
+        "y": 236,
+        "w": 265,
+        "h": 365
+      },
+      "storage_trim": {
+        "x": 113.8,
+        "y": 139.6,
+        "w": 163,
+        "h": 223
+      },
+      "storage_scale": [
+        0.6,
+        0.6
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        384,
+        384
+      ],
+      "stored_anchor_px": [
+        192.0,
+        360.0
+      ],
+      "ssim": 0.9446308331227072,
+      "effective_density": 2.0,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        159,
+        219
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        163,
+        223
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "melammu_absorb",
+      "sheet": "sprites/player/axe_onearm/melammu_absorb.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 6,
+      "columns": 6,
+      "rows": 1,
+      "duration_seconds": 1.2,
+      "fps": 5.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        702,
+        156
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.65,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 222,
+        "y": 348,
+        "w": 188,
+        "h": 253
+      },
+      "storage_trim": {
+        "x": 131.43617021276597,
+        "y": 207.07509881422925,
+        "w": 117,
+        "h": 156
+      },
+      "storage_scale": [
+        0.601063829787234,
+        0.6007905138339921
+      ],
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stored_frame_size": [
+        385,
+        385
+      ],
+      "stored_anchor_px": [
+        192.3404255319149,
+        360.47430830039525
+      ],
+      "ssim": 0.9306858580217552,
+      "effective_density": 2.0,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        113,
+        152
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        117,
+        156
+      ],
+      "stored_gutter": 2
+    }
+  ]
+}

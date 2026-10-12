@@ -1,0 +1,265 @@
+{
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/npcs/shimati/idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 6,
+      "duration_seconds": 2.4,
+      "fps": 2.5,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        730,
+        225
+      ],
+      "qa": {
+        "pose_height_exception": false,
+        "height_tol": 0.03,
+        "movement": false,
+        "detached_fx_or_weapon": false
+      },
+      "body_reference_height_px": 363,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "columns": 6,
+      "rows": 1,
+      "trim": {
+        "x": 202,
+        "y": 233,
+        "w": 236,
+        "h": 369
+      },
+      "storage_trim": {
+        "x": 119.54237288135592,
+        "y": 137.54742547425474,
+        "w": 146,
+        "h": 225
+      },
+      "storage_scale": [
+        0.6016949152542372,
+        0.5989159891598916
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        385,
+        383
+      ],
+      "stored_anchor_px": [
+        192.54237288135593,
+        359.349593495935
+      ],
+      "ssim": 0.9405304166122006,
+      "effective_density": 2,
+      "stored_content_size": [
+        142,
+        221
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        146,
+        225
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.936459615844281,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      },
+      "temporal_ssim_min": 0.998230719270986,
+      "logical_duration_unchanged": true
+    },
+    {
+      "name": "idle_front",
+      "sheet": "sprites/npcs/shimati/idle_front.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 6,
+      "duration_seconds": 2.4,
+      "fps": 2.5,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        500,
+        248
+      ],
+      "qa": {
+        "pose_height_exception": false,
+        "height_tol": 0.03,
+        "movement": false,
+        "detached_fx_or_weapon": false
+      },
+      "body_reference_height_px": 363,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "columns": 6,
+      "rows": 1,
+      "trim": {
+        "x": 247,
+        "y": 233,
+        "w": 146,
+        "h": 369
+      },
+      "storage_trim": {
+        "x": 160.41095890410958,
+        "y": 152.07046070460706,
+        "w": 100,
+        "h": 248
+      },
+      "storage_scale": [
+        0.6575342465753424,
+        0.6612466124661247
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        421,
+        423
+      ],
+      "stored_anchor_px": [
+        210.41095890410958,
+        396.7479674796748
+      ],
+      "ssim": 0.9337654544083529,
+      "effective_density": 2.2,
+      "stored_content_size": [
+        96,
+        244
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        100,
+        248
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.9516234252818845,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      },
+      "temporal_ssim_min": 0.996634999713002,
+      "logical_duration_unchanged": true
+    },
+    {
+      "name": "give_paper",
+      "sheet": "sprites/npcs/shimati/give_paper.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 4,
+      "duration_seconds": 0.6,
+      "fps": 6.666666666666667,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        732,
+        224
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "movement": true,
+        "detached_fx_or_weapon": false,
+        "expected_pose_heights": [
+          363,
+          360,
+          362,
+          362
+        ]
+      },
+      "body_reference_height_px": 363,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "columns": 4,
+      "rows": 1,
+      "trim": {
+        "x": 171,
+        "y": 235,
+        "w": 299,
+        "h": 367
+      },
+      "storage_trim": {
+        "x": 100.37123745819399,
+        "y": 138.87193460490462,
+        "w": 183,
+        "h": 224
+      },
+      "storage_scale": [
+        0.5986622073578596,
+        0.5994550408719346
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        383,
+        384
+      ],
+      "stored_anchor_px": [
+        191.57190635451505,
+        359.6730245231608
+      ],
+      "ssim": 0.945114877925372,
+      "effective_density": 2,
+      "stored_content_size": [
+        179,
+        220
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        183,
+        224
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.9281913375127036,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    }
+  ],
+  "character": "shimati",
+  "height_ratio": 1.0,
+  "frame_size": [
+    640,
+    640
+  ],
+  "step": 19
+}

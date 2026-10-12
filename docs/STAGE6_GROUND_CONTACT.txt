@@ -8,7 +8,7 @@ PASS CastleF1/castle_pillar: row=295, placed_bottom=614.7, ground=620, delta=-5.
 PASS CastleF1/brazier: row=216, placed_bottom=616.9, ground=620, delta=-3.1px
 PASS CastleF1/castle_interior_door: row=384, placed_bottom=620.0, ground=620, delta=+0.0px (door frame anchor retained)
 PASS CastleF1/castle_front_door_interior: row=420, placed_bottom=620.0, ground=620, delta=+0.0px (door frame anchor retained)
-PASS CastleF1/castle_rear_door_interior: row=419, placed_bottom=619.0, ground=620, delta=-1.0px (door frame anchor retained)
+PASS CastleF1/castle_rear_door_interior: row=420, placed_bottom=620.0, ground=620, delta=+0.0px (door frame anchor retained)
 PASS CastleF2/castle_pillar: row=295, placed_bottom=614.7, ground=620, delta=-5.3px
 PASS CastleF2/brazier: row=216, placed_bottom=616.9, ground=620, delta=-3.1px
 PASS CastleF2/castle_interior_door: row=384, placed_bottom=620.0, ground=620, delta=+0.0px (door frame anchor retained)
@@ -124,4 +124,6 @@ PASS HomeFront/nimrod_home_gate: row=414, placed_bottom=874.0, ground=880, delta
 PASS VillaF4/space_pod: row=193, placed_bottom=617.3, ground=620, delta=-2.7px
 PASS VillaF4/villa_inner_door: row=383, placed_bottom=619.0, ground=620, delta=-1.0px (door frame anchor retained)
 PASS Dilmun/space_pod: row=193, placed_bottom=877.3, ground=880, delta=-2.7px
-125 grounded items; 0 failures. Wall lamps/shelves, hanging vines and elevated bridge artwork are excluded.
+PASS Dilmun/shimati_stall: row=294, placed_bottom=874.0, ground=880, delta=-6.0px
+PASS DeathSea/small_rock: row=175, placed_bottom=875.0, ground=880, delta=-5.0px
+127 grounded items; 0 failures. Wall lamps/shelves, hanging vines and elevated bridge artwork are excluded.

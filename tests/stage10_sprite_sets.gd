@@ -2,7 +2,7 @@ extends "res://tests/helpers/stage9_support.gd"
 func _run() -> void:
     await _start9()
     var required: Array = ["idle","walk","run","crouch_enter","crouch_idle","crouch_exit","jump_start","jump_rise","fall","land","drop_through","roll","hurt","death","attack_1","attack_2","attack_3","attack_4"]
-    for set_id in ["axe","axe_onearm","axe_prosthetic"]:
+    for set_id in ["axe","axe_onearm","axe_prosthetic_helm"]:
         var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/sprites/player/"+set_id+"/manifest.json"))
         var clips: Dictionary = {}
         for clip: Dictionary in data["clips"]:
@@ -16,7 +16,7 @@ func _run() -> void:
         var crop: Dictionary = clip["storage_trim"]
         var bound: Rect2i = image.get_region(Rect2i(0,0,int(crop["w"]),int(crop["h"]))).get_used_rect()
         var height: float = bound.size.y/float(clip["storage_scale"][1])
-        _check(absf(height-363)<=363*.03,"Same display height "+set_id)
+        _check(absf(height-363)<=363*.03 if set_id!="axe_prosthetic_helm" else height>=363*.97 and height<=363*1.03+45,"Same display height "+set_id)
         var old: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/sprites/player/axe/manifest.json"))
         for original: Dictionary in old["clips"]:
             _check(clips[original["name"]]["duration_seconds"]==original["duration_seconds"] and clips[original["name"]]["frames"]==original["frames"],"Unchanged action timing and logical frames "+set_id+"/"+str(original["name"]))

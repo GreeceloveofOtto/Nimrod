@@ -1797,8 +1797,8 @@
         }
       ],
       "perch_sensor": [
-        140,
-        600
+        260,
+        900
       ],
       "fall_speed": 900,
       "claw_damage": [
@@ -1850,7 +1850,10 @@
       "drop_id": "healing_vomit",
       "hurt_sfx": "cedar_demon_hurt",
       "death_sfx": "cedar_demon_death",
-      "art_height_px": 408
+      "art_height_px": 408,
+      "drop_tell": 0.15,
+      "drop_homing": 160,
+      "drop_homing_speed": 600
     },
     {
       "display_name": "칼라-우쉬움갈",

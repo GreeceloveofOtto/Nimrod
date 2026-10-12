@@ -40,6 +40,7 @@ var readability: Dictionary = {}
 var _last_display_name: String = ""
 var interaction_prompt: Node2D
 var interaction_running: bool = false
+var sound_frame: int = -1
 var cinematic_control := false
 var story_pose_locked := false
 
@@ -303,6 +304,10 @@ func _change_pose(next_pose: int) -> void:
 
 func _resize_pose_shadow() -> void:
     var shadow: Node2D = get_node_or_null("ContactShadow")
+    var frame_sounds: Dictionary = stats.get("frame_sfx",{}).get(current_clip,{})
+    if current_frame != sound_frame and current_frame == int(frame_sounds.get("frame",-2)):
+        get_node("/root/Audio").play_sfx(str(frame_sounds["sfx"]),global_position,.2)
+    sound_frame = current_frame
     var texture: Texture2D = textures.get(current_clip) as Texture2D
     if shadow == null or texture == null:
         return
@@ -357,6 +362,10 @@ func _refresh_visual() -> void:
     if next_frame != current_frame:
         current_frame = next_frame
         clip_frame_changed.emit(current_clip, current_frame)
+    var frame_sounds: Dictionary = stats.get("frame_sfx",{}).get(current_clip,{})
+    if current_frame != sound_frame and current_frame == int(frame_sounds.get("frame",-2)):
+        get_node("/root/Audio").play_sfx(str(frame_sounds["sfx"]),global_position,.2)
+    sound_frame = current_frame
     var texture: Texture2D = textures.get(current_clip) as Texture2D
     visual.visible = texture != null
     missing_visual.visible = texture == null
@@ -374,7 +383,13 @@ func interact(_player: Node2D) -> void:
         return
     interaction_running = true
     interacted.emit()
-    await get_node("/root/Dialogue").play_interaction(interaction_id)
+    if npc_id == "shimati":
+        get_node("/root/Dialogue").play_interaction.call_deferred(interaction_id)
+        return
+    if npc_id == "shamhat" and get_node("/root/Choice").menu_available():
+        await get_node("/root/Choice").open(self)
+    else:
+        await get_node("/root/Dialogue").play_interaction(interaction_id)
     interaction_running = false
     if _interaction_complete() and interaction_prompt != null:
         interaction_prompt.hide()

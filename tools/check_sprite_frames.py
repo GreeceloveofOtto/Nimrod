@@ -12,6 +12,8 @@ def frame_images(path,c):
  out=[]
  for i in range(n):
   index=c.get('frame_map',list(range(n)))[i];frame=im.crop((index*w,0,(index+1)*w,h))
+  pad=c.get('stored_padding',0)
+  if pad:frame=frame.crop((pad,pad,w-pad,h-pad))
   if t:
    # Reconstruct with the game's GL linear sampler. Lanczos ringing at alpha<25
    # creates false saturated-magenta pixels when enlarging low-density sheets.
@@ -24,6 +26,11 @@ def check(path,c):
  errors=[];warnings=[]
  try:frames=frame_images(path,c)
  except (OSError,ValueError) as e:return [str(e)],[],{}
+ if c.get('stored_padding',0)>=2:
+  physical=Image.open(path).getchannel('A');cw,ch=c['stored_cell']
+  for i in range(c.get('stored_columns',c['frames'])):
+   cell=np.array(physical.crop((i*cw,0,(i+1)*cw,ch)))
+   if cell[:2].any() or cell[-2:].any() or cell[:,:2].any() or cell[:,-2:].any():errors.append(f'stored frame {i+1}: opaque pixel within 2px gutter')
  boxes=[];areas=[];centers=[];bottoms=[];diff=[];prev=None;equal=0
  for i,im in enumerate(frames):
   p=np.array(im);a=p[:,:,3];occupied=a>0;box=im.getchannel('A').point(lambda v:255 if v>12 else 0).getbbox()
@@ -33,7 +40,7 @@ def check(path,c):
   if sum(parts > occupied.sum()*.015)>1 and not c.get('qa',{}).get('detached_fx_or_weapon'):
    warnings.append(f'frame {i+1}: multiple substantial disconnected components')
   boxes.append(box);areas.append(int(occupied.sum()));ys,xs=np.where(occupied);mass=a[ys,xs].astype(float);centers.append((float(np.average(xs,weights=mass)),float(np.average(ys,weights=mass))));bottoms.append(box[3])
-  if min(box[0],box[1],im.width-box[2],im.height-box[3])<(2 if c.get("storage_scale") else 3):errors.append(f'frame {i+1}: edge clipping')
+  if not c.get("qa",{}).get("full_frame_architecture") and min(box[0],box[1],im.width-box[2],im.height-box[3])<(2 if c.get("storage_scale") else 3):errors.append(f'frame {i+1}: edge clipping')
   magenta=(a>12)&(p[:,:,0]>180)&(p[:,:,2]>180)&(p[:,:,1]<110)
   if magenta.sum()>20:errors.append(f'frame {i+1}: magenta fringe {magenta.sum()}')
   if prev is not None:
@@ -43,6 +50,11 @@ def check(path,c):
  if not boxes:return errors or ['no frames'],warnings,{}
  heights=np.array([b[3]-b[1] for b in boxes]);tol=min(.65 if c.get('qa',{}).get('pose_height_exception') else .35,float(c.get('qa',{}).get('height_tol',.10)));median=float(np.median(heights))
  expected=c.get('qa',{}).get('expected_pose_heights',[])
+ neutral=c['name'] in ['idle','idle_front','perch'] and not c.get('qa',{}).get('pose_height_exception')
+ if neutral:
+  for i,h in enumerate(heights):
+   if abs(h-median)>median*.03:errors.append(f'frame {i+1}: neutral height differs from median by more than 3%')
+  if heights.max()/heights.min()>=1.15:errors.append('neutral actor size ratio >=1.15')
  for i,h in enumerate(heights):
   if expected:
    if len(expected)!=len(frames):errors.append('authored pose height reference count mismatch');break
@@ -86,7 +98,7 @@ def main():
   if base:
    for n,h in medians:
     c=next(c for c in data['clips'] if c['name']==n)
-    if abs(h-base)>base*.08 and not c.get('qa',{}).get('pose_height_exception'):next(v for v in results if v['clip']==n and v['manifest']==(str(m.relative_to(ROOT)) if m.is_absolute() else str(m)))['errors'].append(f'cross-clip height {h} differs from idle {base}')
+    if abs(h-base)>base*.03 and not c.get('qa',{}).get('pose_height_exception'):next(v for v in results if v['clip']==n and v['manifest']==(str(m.relative_to(ROOT)) if m.is_absolute() else str(m)))['errors'].append(f'cross-clip height {h} differs from idle {base}')
  if a.json_path:Path(a.json_path).write_text(json.dumps(results,ensure_ascii=False,indent=2))
  errors=sum(len(v['errors']) for v in results);warnings=sum(len(v['warnings']) for v in results);print(f'SPRITE_QA: {len(results)} clips, {errors} errors, {warnings} warnings')
  for row in results:

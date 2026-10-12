@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "file": "user://save.json",
+  "death_respawn": "last_save",
+  "toast_seconds": 1.5
+}

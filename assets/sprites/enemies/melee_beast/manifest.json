@@ -1,1 +1,605 @@
-{"character":"melee_beast","frame_size":[640,640],"orientation":"faces screen right; engine flips at turn frame 3","render":"Image-generated art, chromakey and atlas packing with tools/pack_sprites.py","clips":[{"name":"idle","sheet":"sprites/enemies/melee_beast/idle.webp","frame_width":640,"frame_height":640,"columns":6,"rows":1,"frames":6,"duration_seconds":1.0,"fps":6.0,"loop":true,"anchor_px":[320,600],"image_size":[1008,127],"trim":{"x":108,"y":281,"w":423,"h":321},"storage_scale":[0.3971631205673759,0.3956386292834891],"stored_frame_size":[254,253],"stored_anchor_px":[127.09219858156028,237.38317757009347],"storage_trim":{"x":42.8936170212766,"y":111.17445482866043,"w":168,"h":127},"stored_columns":6,"frame_map":[0,1,2,3,4,5],"effective_density":1.2,"ssim":0.9950946728274447},{"name":"walk","sheet":"sprites/enemies/melee_beast/walk.webp","frame_width":640,"frame_height":640,"columns":8,"rows":1,"frames":8,"duration_seconds":0.9,"fps":8.88888888888889,"loop":true,"anchor_px":[320,600],"image_size":[1432,126],"trim":{"x":94,"y":283,"w":453,"h":319},"storage_scale":[0.39514348785871967,0.3949843260188088],"stored_frame_size":[253,253],"stored_anchor_px":[126.4459161147903,236.99059561128527],"storage_trim":{"x":37.143487858719645,"y":111.78056426332289,"w":179,"h":126},"stored_columns":8,"frame_map":[0,1,2,3,4,5,6,7],"effective_density":1.2,"ssim":0.9944419212454999},{"name":"windup","sheet":"sprites/enemies/melee_beast/windup.webp","frame_width":640,"frame_height":640,"columns":4,"rows":1,"frames":4,"duration_seconds":0.45,"fps":8.88888888888889,"loop":false,"anchor_px":[320,600],"image_size":[808,114],"trim":{"x":64,"y":315,"w":511,"h":287},"storage_scale":[0.3953033268101761,0.397212543554007],"stored_frame_size":[253,254],"stored_anchor_px":[126.49706457925636,238.3275261324042],"storage_trim":{"x":25.29941291585127,"y":125.1219512195122,"w":202,"h":114},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":1.2,"ssim":0.9952035798458456,"qa":{"pose_height_exception":true,"height_tol":0.3,"reason":"Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked."}},{"name":"attack","sheet":"sprites/enemies/melee_beast/attack.webp","frame_width":640,"frame_height":640,"columns":3,"rows":1,"frames":3,"duration_seconds":0.12,"fps":25.0,"loop":false,"anchor_px":[320,600],"image_size":[600,118],"trim":{"x":68,"y":304,"w":505,"h":298},"storage_scale":[0.39603960396039606,0.3959731543624161],"stored_frame_size":[253,253],"stored_anchor_px":[126.73267326732673,237.58389261744966],"storage_trim":{"x":26.93069306930693,"y":120.3758389261745,"w":200,"h":118},"stored_columns":3,"frame_map":[0,1,2],"effective_density":1.2,"ssim":0.9951806099951921},{"name":"recovery","sheet":"sprites/enemies/melee_beast/recovery.webp","frame_width":640,"frame_height":640,"columns":4,"rows":1,"frames":4,"duration_seconds":0.55,"fps":7.2727272727272725,"loop":false,"anchor_px":[320,600],"image_size":[808,114],"trim":{"x":64,"y":315,"w":511,"h":287},"storage_scale":[0.3953033268101761,0.397212543554007],"stored_frame_size":[253,254],"stored_anchor_px":[126.49706457925636,238.3275261324042],"storage_trim":{"x":25.29941291585127,"y":125.1219512195122,"w":202,"h":114},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":1.2,"ssim":0.9952035798458456,"qa":{"pose_height_exception":true,"height_tol":0.3,"reason":"Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked."}},{"name":"turn","sheet":"sprites/enemies/melee_beast/turn.webp","frame_width":640,"frame_height":640,"columns":4,"rows":1,"frames":4,"duration_seconds":0.45,"fps":8.88888888888889,"loop":false,"anchor_px":[320,600],"image_size":[736,135],"trim":{"x":88,"y":260,"w":464,"h":342},"storage_scale":[0.39655172413793105,0.39473684210526316],"stored_frame_size":[254,253],"stored_anchor_px":[126.89655172413794,236.8421052631579],"storage_trim":{"x":34.89655172413793,"y":102.63157894736842,"w":184,"h":135},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":1.2,"ssim":0.9959722381639133},{"name":"hurt","sheet":"sprites/enemies/melee_beast/hurt.webp","frame_width":640,"frame_height":640,"columns":2,"rows":1,"frames":2,"duration_seconds":0.2,"fps":10.0,"loop":false,"anchor_px":[320,600],"image_size":[362,168],"trim":{"x":91,"y":179,"w":458,"h":423},"storage_scale":[0.3951965065502183,0.3971631205673759],"stored_frame_size":[253,254],"stored_anchor_px":[126.46288209606988,238.29787234042553],"storage_trim":{"x":35.96288209606987,"y":71.09219858156028,"w":181,"h":168},"stored_columns":2,"frame_map":[0,1],"effective_density":1.2,"ssim":0.9966447054752334,"qa":{"pose_height_exception":true,"height_tol":0.3,"reason":"Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked."}},{"name":"death","sheet":"sprites/enemies/melee_beast/death.webp","frame_width":640,"frame_height":640,"columns":6,"rows":1,"frames":6,"duration_seconds":0.7,"fps":8.571428571428571,"loop":false,"anchor_px":[320,600],"image_size":[1398,110],"trim":{"x":26,"y":324,"w":589,"h":278},"storage_scale":[0.39558573853989815,0.39568345323741005],"stored_frame_size":[253,253],"stored_anchor_px":[126.5874363327674,237.41007194244605],"storage_trim":{"x":10.285229202037351,"y":128.20143884892087,"w":233,"h":110},"stored_columns":6,"frame_map":[0,1,2,3,4,5],"effective_density":1.2,"ssim":0.9951883579748791,"qa":{"pose_height_exception":true,"height_tol":0.65,"reason":"Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked."}}]}
+{
+  "character": "melee_beast",
+  "frame_size": [
+    640,
+    640
+  ],
+  "orientation": "faces screen right; engine flips at turn frame 3",
+  "render": "Image-generated art, chromakey and atlas packing with tools/pack_sprites.py",
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/enemies/melee_beast/idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 1.0,
+      "fps": 6.0,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        720,
+        85
+      ],
+      "trim": {
+        "x": 102,
+        "y": 298,
+        "w": 436,
+        "h": 304
+      },
+      "storage_scale": [
+        0.26605504587155965,
+        0.26644736842105265
+      ],
+      "stored_frame_size": [
+        170,
+        171
+      ],
+      "stored_anchor_px": [
+        85.13761467889908,
+        159.8684210526316
+      ],
+      "storage_trim": {
+        "x": 25.137614678899084,
+        "y": 77.40131578947368,
+        "w": 120,
+        "h": 85
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 0.8,
+      "ssim": 0.9535657706264925,
+      "stored_content_size": [
+        116,
+        81
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        120,
+        85
+      ],
+      "stored_gutter": 2,
+      "qa": {
+        "expected_pose_heights": [
+          300,
+          300,
+          300,
+          300,
+          300,
+          300
+        ],
+        "neutral_normalization": "isotropic source scaling, foot/centre anchor preserved"
+      },
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.9755426367500917,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "walk",
+      "sheet": "sprites/enemies/melee_beast/walk.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 0.9,
+      "fps": 8.88888888888889,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        992,
+        85
+      ],
+      "trim": {
+        "x": 94,
+        "y": 297,
+        "w": 453,
+        "h": 305
+      },
+      "storage_scale": [
+        0.26490066225165565,
+        0.26557377049180325
+      ],
+      "stored_frame_size": [
+        170,
+        170
+      ],
+      "stored_anchor_px": [
+        84.76821192052981,
+        159.34426229508196
+      ],
+      "storage_trim": {
+        "x": 22.900662251655632,
+        "y": 76.87540983606557,
+        "w": 124,
+        "h": 85
+      },
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "effective_density": 0.8,
+      "ssim": 0.9529911636378291,
+      "stored_content_size": [
+        120,
+        81
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        124,
+        85
+      ],
+      "stored_gutter": 2,
+      "qa": {
+        "expected_pose_heights": [
+          300,
+          300,
+          300,
+          300,
+          300,
+          300,
+          300,
+          300
+        ],
+        "neutral_normalization": "isotropic source scaling, foot/centre anchor preserved"
+      },
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.9729680926609823,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "windup",
+      "sheet": "sprites/enemies/melee_beast/windup.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.45,
+      "fps": 8.88888888888889,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        556,
+        80
+      ],
+      "trim": {
+        "x": 64,
+        "y": 315,
+        "w": 511,
+        "h": 287
+      },
+      "storage_scale": [
+        0.26418786692759294,
+        0.26480836236933797
+      ],
+      "stored_frame_size": [
+        169,
+        169
+      ],
+      "stored_anchor_px": [
+        84.54011741682974,
+        158.88501742160278
+      ],
+      "storage_trim": {
+        "x": 14.908023483365948,
+        "y": 81.41463414634146,
+        "w": 139,
+        "h": 80
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 0.8,
+      "ssim": 0.9592259250482551,
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.3,
+        "reason": "Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked.",
+        "posture_reason": "Forward bend / raised arms changes silhouette while anatomy remains fixed"
+      },
+      "stored_content_size": [
+        135,
+        76
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        139,
+        80
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "attack",
+      "sheet": "sprites/enemies/melee_beast/attack.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 3,
+      "rows": 1,
+      "frames": 3,
+      "duration_seconds": 0.12,
+      "fps": 25.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        414,
+        83
+      ],
+      "trim": {
+        "x": 68,
+        "y": 304,
+        "w": 505,
+        "h": 298
+      },
+      "storage_scale": [
+        0.26534653465346536,
+        0.2651006711409396
+      ],
+      "stored_frame_size": [
+        170,
+        170
+      ],
+      "stored_anchor_px": [
+        84.91089108910892,
+        159.06040268456377
+      ],
+      "storage_trim": {
+        "x": 16.043564356435645,
+        "y": 78.59060402684564,
+        "w": 138,
+        "h": 83
+      },
+      "stored_columns": 3,
+      "frame_map": [
+        0,
+        1,
+        2
+      ],
+      "effective_density": 0.8,
+      "ssim": 0.9607288067217701,
+      "stored_content_size": [
+        134,
+        79
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        138,
+        83
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "recovery",
+      "sheet": "sprites/enemies/melee_beast/recovery.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.55,
+      "fps": 7.2727272727272725,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        556,
+        80
+      ],
+      "trim": {
+        "x": 64,
+        "y": 315,
+        "w": 511,
+        "h": 287
+      },
+      "storage_scale": [
+        0.26418786692759294,
+        0.26480836236933797
+      ],
+      "stored_frame_size": [
+        169,
+        169
+      ],
+      "stored_anchor_px": [
+        84.54011741682974,
+        158.88501742160278
+      ],
+      "storage_trim": {
+        "x": 14.908023483365948,
+        "y": 81.41463414634146,
+        "w": 139,
+        "h": 80
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 0.8,
+      "ssim": 0.9592259250482551,
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.3,
+        "reason": "Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked.",
+        "posture_reason": "Forward bend / raised arms changes silhouette while anatomy remains fixed"
+      },
+      "stored_content_size": [
+        135,
+        76
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        139,
+        80
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "turn",
+      "sheet": "sprites/enemies/melee_beast/turn.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.45,
+      "fps": 8.88888888888889,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        508,
+        85
+      ],
+      "trim": {
+        "x": 88,
+        "y": 297,
+        "w": 463,
+        "h": 305
+      },
+      "storage_scale": [
+        0.265658747300216,
+        0.26557377049180325
+      ],
+      "stored_frame_size": [
+        170,
+        170
+      ],
+      "stored_anchor_px": [
+        85.01079913606911,
+        159.34426229508196
+      ],
+      "storage_trim": {
+        "x": 21.377969762419006,
+        "y": 76.87540983606557,
+        "w": 127,
+        "h": 85
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 0.8,
+      "ssim": 0.9523890272775575,
+      "stored_content_size": [
+        123,
+        81
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        127,
+        85
+      ],
+      "stored_gutter": 2,
+      "qa": {
+        "expected_pose_heights": [
+          300,
+          300,
+          300,
+          300
+        ],
+        "neutral_normalization": "isotropic source scaling, foot/centre anchor preserved",
+        "movement": true
+      },
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.9685076075410564,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "hurt",
+      "sheet": "sprites/enemies/melee_beast/hurt.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 2,
+      "rows": 1,
+      "frames": 2,
+      "duration_seconds": 0.2,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        250,
+        116
+      ],
+      "trim": {
+        "x": 91,
+        "y": 179,
+        "w": 458,
+        "h": 423
+      },
+      "storage_scale": [
+        0.26419213973799127,
+        0.2647754137115839
+      ],
+      "stored_frame_size": [
+        169,
+        169
+      ],
+      "stored_anchor_px": [
+        84.5414847161572,
+        158.86524822695034
+      ],
+      "storage_trim": {
+        "x": 22.041484716157207,
+        "y": 45.39479905437352,
+        "w": 125,
+        "h": 116
+      },
+      "stored_columns": 2,
+      "frame_map": [
+        0,
+        1
+      ],
+      "effective_density": 0.8,
+      "ssim": 0.9710381403828647,
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.3,
+        "reason": "Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked.",
+        "posture_reason": "Forward bend / raised arms changes silhouette while anatomy remains fixed"
+      },
+      "stored_content_size": [
+        121,
+        112
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        125,
+        116
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "death",
+      "sheet": "sprites/enemies/melee_beast/death.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.7,
+      "fps": 8.571428571428571,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        960,
+        78
+      ],
+      "trim": {
+        "x": 26,
+        "y": 324,
+        "w": 589,
+        "h": 278
+      },
+      "storage_scale": [
+        0.26485568760611206,
+        0.26618705035971224
+      ],
+      "stored_frame_size": [
+        170,
+        170
+      ],
+      "stored_anchor_px": [
+        84.75382003395586,
+        159.71223021582733
+      ],
+      "storage_trim": {
+        "x": 4.886247877758914,
+        "y": 84.24460431654677,
+        "w": 160,
+        "h": 78
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 0.8,
+      "ssim": 0.9594367054158546,
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.65,
+        "reason": "Existing Stage1 pose changes: lowered windup/neck, recoil or collapse; frame bounds and ground anchor remain checked.",
+        "posture_reason": "Forward bend / raised arms changes silhouette while anatomy remains fixed"
+      },
+      "stored_content_size": [
+        156,
+        74
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        160,
+        78
+      ],
+      "stored_gutter": 2
+    }
+  ]
+}

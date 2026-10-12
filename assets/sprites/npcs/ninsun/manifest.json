@@ -1,1 +1,150 @@
-{"character":"ninsun","frame_size":[640,640],"orientation":"right-facing; flip_h for left","height_ratio":0.98,"height_reference_px":359,"height_reference_method":"idle frame 0 alpha > 12","height_validation":"every frame alpha>12 bbox height within 3 percent of player height times height_ratio","clips":[{"name":"idle","sheet":"sprites/npcs/ninsun/idle.webp","frame_width":640,"frame_height":640,"columns":6,"rows":1,"frames":6,"duration_seconds":2.4,"fps":2.5,"loop":true,"anchor_px":[320,600],"image_size":[425,236],"trim":{"x":256,"y":244,"w":129,"h":358},"storage_scale":[0.6589147286821705,0.659217877094972],"stored_frame_size":[422,422],"stored_anchor_px":[210.85271317829458,395.53072625698326],"storage_trim":{"x":168.68217054263565,"y":160.84916201117318,"w":85,"h":236},"stored_columns":5,"frame_map":[0,1,2,2,3,4],"effective_density":2.2,"ssim":0.9342827242648066,"temporal_ssim_min":0.9983115690434892,"logical_duration_unchanged":true},{"name":"idle_front","sheet":"sprites/npcs/ninsun/idle_front.webp","frame_width":640,"frame_height":640,"columns":6,"rows":1,"frames":6,"duration_seconds":2.4,"fps":2.5,"loop":true,"anchor_px":[320,600],"image_size":[392,217],"trim":{"x":238,"y":240,"w":164,"h":362},"storage_scale":[0.5975609756097561,0.5994475138121547],"stored_frame_size":[382,384],"stored_anchor_px":[191.21951219512195,359.6685082872928],"storage_trim":{"x":142.21951219512195,"y":143.86740331491714,"w":98,"h":217},"stored_columns":4,"frame_map":[0,0,1,1,2,3],"effective_density":2,"ssim":0.9489145891132205,"temporal_ssim_min":0.9869061498876078,"logical_duration_unchanged":true}],"design_reference":"reference/ninsun_design.png","style":"Stage3 near-future tailored clothing; generated still + permitted breathing/rim postprocess"}
+{
+  "character": "ninsun",
+  "frame_size": [
+    640,
+    640
+  ],
+  "orientation": "right-facing; flip_h for left",
+  "height_ratio": 0.98,
+  "height_reference_px": 359,
+  "height_reference_method": "idle frame 0 alpha > 12",
+  "height_validation": "every frame alpha>12 bbox height within 3 percent of player height times height_ratio",
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/npcs/ninsun/idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 2.4,
+      "fps": 2.5,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        445,
+        240
+      ],
+      "trim": {
+        "x": 256,
+        "y": 244,
+        "w": 129,
+        "h": 358
+      },
+      "storage_scale": [
+        0.6589147286821705,
+        0.659217877094972
+      ],
+      "stored_frame_size": [
+        422,
+        422
+      ],
+      "stored_anchor_px": [
+        210.85271317829458,
+        395.53072625698326
+      ],
+      "storage_trim": {
+        "x": 166.68217054263565,
+        "y": 158.84916201117318,
+        "w": 89,
+        "h": 240
+      },
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        2,
+        3,
+        4
+      ],
+      "effective_density": 2.2,
+      "ssim": 0.9342827242648066,
+      "temporal_ssim_min": 0.9983115690434892,
+      "logical_duration_unchanged": true,
+      "stored_content_size": [
+        85,
+        236
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        89,
+        240
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "idle_front",
+      "sheet": "sprites/npcs/ninsun/idle_front.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 2.4,
+      "fps": 2.5,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        408,
+        221
+      ],
+      "trim": {
+        "x": 238,
+        "y": 240,
+        "w": 164,
+        "h": 362
+      },
+      "storage_scale": [
+        0.5975609756097561,
+        0.5994475138121547
+      ],
+      "stored_frame_size": [
+        382,
+        384
+      ],
+      "stored_anchor_px": [
+        191.21951219512195,
+        359.6685082872928
+      ],
+      "storage_trim": {
+        "x": 140.21951219512195,
+        "y": 141.8674033149171,
+        "w": 102,
+        "h": 221
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 2.0,
+      "ssim": 0.9489145891132205,
+      "temporal_ssim_min": 0.9869061498876078,
+      "logical_duration_unchanged": true,
+      "stored_content_size": [
+        98,
+        217
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        102,
+        221
+      ],
+      "stored_gutter": 2
+    }
+  ],
+  "design_reference": "reference/ninsun_design.png",
+  "style": "Stage3 near-future tailored clothing; generated still + permitted breathing/rim postprocess"
+}

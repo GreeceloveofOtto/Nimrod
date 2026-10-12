@@ -1,1 +1,79 @@
-{"character":"cook_b","frame_size":[640,640],"orientation":"right-facing; flip_h for left","height_ratio":0.72,"height_reference_px":359,"height_reference_method":"idle frame 0 alpha > 12","height_validation":"every frame alpha>12 bbox height within 3 percent of player height times height_ratio","clips":[{"name":"stir","sheet":"sprites/npcs/cook_b/stir.webp","frame_width":640,"frame_height":640,"columns":6,"rows":1,"frames":6,"duration_seconds":1.6,"fps":3.75,"loop":true,"anchor_px":[320,600],"image_size":[630,184],"trim":{"x":246,"y":340,"w":149,"h":262},"storage_scale":[0.7046979865771812,0.7022900763358778],"stored_frame_size":[451,449],"stored_anchor_px":[225.50335570469798,421.37404580152673],"storage_trim":{"x":173.35570469798657,"y":238.77862595419847,"w":105,"h":184},"stored_columns":6,"frame_map":[0,1,2,3,4,5],"effective_density":1.8,"ssim":0.9491993241112807}]}
+{
+  "character": "cook_b",
+  "frame_size": [
+    640,
+    640
+  ],
+  "orientation": "right-facing; flip_h for left",
+  "height_ratio": 0.72,
+  "height_reference_px": 359,
+  "height_reference_method": "idle frame 0 alpha > 12",
+  "height_validation": "every frame alpha>12 bbox height within 3 percent of player height times height_ratio",
+  "clips": [
+    {
+      "name": "stir",
+      "sheet": "sprites/npcs/cook_b/stir.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 1.6,
+      "fps": 3.75,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        654,
+        188
+      ],
+      "trim": {
+        "x": 246,
+        "y": 340,
+        "w": 149,
+        "h": 262
+      },
+      "storage_scale": [
+        0.7046979865771812,
+        0.7022900763358778
+      ],
+      "stored_frame_size": [
+        451,
+        449
+      ],
+      "stored_anchor_px": [
+        225.50335570469798,
+        421.37404580152673
+      ],
+      "storage_trim": {
+        "x": 171.35570469798657,
+        "y": 236.77862595419845,
+        "w": 109,
+        "h": 188
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 1.8,
+      "ssim": 0.9491993241112807,
+      "stored_content_size": [
+        105,
+        184
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        109,
+        188
+      ],
+      "stored_gutter": 2
+    }
+  ]
+}

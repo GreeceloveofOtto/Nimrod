@@ -521,6 +521,64 @@
       ],
       "interaction": "enkidua_intro",
       "interact_range": 120
+    },
+    {
+      "id": "shimati",
+      "display_name": "시마티",
+      "height_ratio": 1.0,
+      "sheet_dir": "assets/sprites/npcs/shimati",
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
+        },
+        {
+          "name": "idle_front",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
+        },
+        {
+          "name": "give_paper",
+          "frames": 4,
+          "duration": 0.6,
+          "loop": false
+        }
+      ],
+      "face_player": true,
+      "three_way": true,
+      "initial_pose": "front",
+      "random_start": false,
+      "interactable": true,
+      "interaction": "shimati_intro"
+    },
+    {
+      "id": "urshanabi",
+      "display_name": "우르샤나비",
+      "height_ratio": 0.7,
+      "sheet_dir": "assets/sprites/npcs/urshanabi",
+      "clips": [
+        {
+          "name": "dice_loop",
+          "frames": 8,
+          "duration": 1.6,
+          "loop": true
+        }
+      ],
+      "face_player": false,
+      "three_way": false,
+      "initial_pose": "front",
+      "random_start": false,
+      "interactable": false,
+      "interaction": "",
+      "frame_sfx": {
+        "dice_loop": {
+          "frame": 4,
+          "sfx": "dice_roll"
+        }
+      }
     }
   ]
 }

@@ -1,1 +1,1456 @@
-{"clips":[{"name":"idle","sheet":"sprites/enemies/gugalanna/idle.webp","frame_width":2560,"frame_height":1536,"frames":8,"columns":8,"rows":1,"duration_seconds":1.8,"fps":4.444444444444445,"loop":true,"anchor_px":[1280,1480],"image_size":[1080,168],"qa":{"pose_height_exception":false,"height_tol":0.55,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":689,"y":79,"w":1126,"h":1402},"storage_trim":{"x":82.60657193605684,"y":9.466476462196862,"w":135,"h":168},"storage_scale":[0.11989342806394317,0.11982881597717546],"stored_columns":8,"frame_map":[0,1,2,3,4,5,6,7],"stored_frame_size":[307,184],"stored_anchor_px":[153.46358792184725,177.34664764621968],"ssim":0.9591712745286372,"effective_density":0.4,"encoding":{"mode":"lossy","quality":100,"encoder":"edge blue-despill / lossless WebP container","rgb_mae":2.951135659338656,"alpha_mae":0.0,"bbox_same":true}},{"name":"walk","sheet":"sprites/enemies/gugalanna/walk.webp","frame_width":2560,"frame_height":1536,"frames":8,"columns":8,"rows":1,"duration_seconds":1.4,"fps":5.714285714285714,"loop":true,"anchor_px":[1280,1480],"image_size":[1200,166],"qa":{"pose_height_exception":false,"height_tol":0.55,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":628,"y":99,"w":1251,"h":1382},"storage_trim":{"x":75.29976019184652,"y":11.891461649782924,"w":150,"h":166},"storage_scale":[0.11990407673860912,0.12011577424023155],"stored_columns":8,"frame_map":[0,1,2,3,4,5,6,7],"stored_frame_size":[307,184],"stored_anchor_px":[153.47721822541968,177.7713458755427],"ssim":0.962374899387906,"effective_density":0.4,"encoding":{"mode":"lossy","quality":100,"encoder":"edge blue-despill / lossless WebP container","rgb_mae":2.949974952739293,"alpha_mae":0.0,"bbox_same":true}},{"name":"stomp_windup","sheet":"sprites/enemies/gugalanna/stomp_windup.webp","frame_width":2560,"frame_height":1536,"frames":6,"columns":6,"rows":1,"duration_seconds":1.0,"fps":6.0,"loop":false,"anchor_px":[1280,1480],"image_size":[978,167],"qa":{"pose_height_exception":true,"height_tol":0.55,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":666,"y":86,"w":1358,"h":1395},"storage_trim":{"x":79.93961708394698,"y":10.295340501792115,"w":163,"h":167},"storage_scale":[0.12002945508100148,0.11971326164874552],"stored_columns":6,"frame_map":[0,1,2,3,4,5],"stored_frame_size":[307,184],"stored_anchor_px":[153.63770250368188,177.17562724014337],"ssim":0.9629639881332801,"effective_density":0.4,"encoding":{"mode":"lossy","quality":100,"encoder":"edge blue-despill / lossless WebP container","rgb_mae":2.9522318413458586,"alpha_mae":0.0,"bbox_same":true}},{"name":"stomp","sheet":"sprites/enemies/gugalanna/stomp.webp","frame_width":2560,"frame_height":1536,"frames":3,"columns":3,"rows":1,"duration_seconds":0.2,"fps":15.0,"loop":false,"anchor_px":[1280,1480],"image_size":[507,165],"qa":{"pose_height_exception":true,"height_tol":0.55,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":571,"y":105,"w":1409,"h":1376},"storage_trim":{"x":68.4875798438609,"y":12.590843023255815,"w":169,"h":165},"storage_scale":[0.11994322214336409,0.11991279069767442],"stored_columns":3,"frame_map":[0,1,2],"stored_frame_size":[307,184],"stored_anchor_px":[153.52732434350602,177.47093023255815],"ssim":0.9666705355709623,"effective_density":0.4,"encoding":{"mode":"lossy","quality":100,"encoder":"edge blue-despill / lossless WebP container","rgb_mae":2.9497419640919684,"alpha_mae":0.0,"bbox_same":true}},{"name":"stomp_recovery","sheet":"sprites/enemies/gugalanna/stomp_recovery.webp","frame_width":2560,"frame_height":1536,"frames":5,"columns":5,"rows":1,"duration_seconds":1.1,"fps":4.545454545454545,"loop":false,"anchor_px":[1280,1480],"image_size":[830,168],"qa":{"pose_height_exception":true,"height_tol":0.55,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":545,"y":79,"w":1381,"h":1402},"storage_trim":{"x":65.51049963794352,"y":9.466476462196862,"w":166,"h":168},"storage_scale":[0.12020275162925416,0.11982881597717546],"stored_columns":5,"frame_map":[0,1,2,3,4],"stored_frame_size":[308,184],"stored_anchor_px":[153.85952208544532,177.34664764621968],"ssim":0.9747714328693354,"effective_density":0.4,"encoding":{"mode":"lossy","quality":100,"encoder":"edge blue-despill / lossless WebP container","rgb_mae":2.9458177495578557,"alpha_mae":0.0,"bbox_same":true}},{"name":"charge_windup","sheet":"sprites/enemies/gugalanna/charge_windup.webp","frame_width":2560,"frame_height":1536,"frames":5,"columns":5,"rows":1,"duration_seconds":0.8,"fps":6.25,"loop":false,"anchor_px":[1280,1480],"image_size":[845,142],"qa":{"pose_height_exception":true,"height_tol":0.55,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":578,"y":299,"w":1410,"h":1182},"storage_trim":{"x":69.27801418439716,"y":35.92047377326565,"w":169,"h":142},"storage_scale":[0.1198581560283688,0.12013536379018612],"stored_columns":5,"frame_map":[0,1,2,3,4],"stored_frame_size":[307,185],"stored_anchor_px":[153.41843971631207,177.80033840947547],"ssim":0.9709955771010902,"effective_density":0.4,"encoding":{"mode":"lossy","quality":100,"encoder":"edge blue-despill / lossless WebP container","rgb_mae":2.939541079694941,"alpha_mae":0.0,"bbox_same":true}},{"name":"charge_loop","sheet":"sprites/enemies/gugalanna/charge_loop.webp","frame_width":2560,"frame_height":1536,"frames":4,"columns":4,"rows":1,"duration_seconds":0.3,"fps":13.333333333333334,"loop":true,"anchor_px":[1280,1480],"image_size":[740,139],"qa":{"pose_height_exception":true,"height_tol":0.55,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":359,"y":319,"w":1540,"h":1162},"storage_trim":{"x":43.12662337662338,"y":38.1592082616179,"w":185,"h":139},"storage_scale":[0.12012987012987013,0.11962134251290878],"stored_columns":4,"frame_map":[0,1,2,3],"stored_frame_size":[308,184],"stored_anchor_px":[153.76623376623377,177.039586919105],"ssim":0.9748461777212608,"effective_density":0.4,"encoding":{"mode":"lossy","quality":100,"encoder":"edge blue-despill / lossless WebP container","rgb_mae":2.935096471833248,"alpha_mae":0.0,"bbox_same":true}},{"name":"charge_crash","sheet":"sprites/enemies/gugalanna/charge_crash.webp","frame_width":2560,"frame_height":1536,"frames":5,"columns":5,"rows":1,"duration_seconds":1.2,"fps":4.166666666666667,"loop":false,"anchor_px":[1280,1480],"image_size":[925,163],"qa":{"pose_height_exception":true,"height_tol":0.55,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":473,"y":119,"w":1542,"h":1362},"storage_trim":{"x":56.74773022049287,"y":14.241556534508076,"w":185,"h":163},"storage_scale":[0.11997405966277562,0.1196769456681351],"stored_columns":5,"frame_map":[0,1,2,3,4],"stored_frame_size":[307,184],"stored_anchor_px":[153.56679636835278,177.12187958883993],"ssim":0.9765755931281488,"effective_density":0.4,"encoding":{"mode":"lossy","quality":100,"encoder":"edge blue-despill / lossless WebP container","rgb_mae":2.93089894106814,"alpha_mae":0.0,"bbox_same":true}},{"name":"charge_recovery","sheet":"sprites/enemies/gugalanna/charge_recovery.webp","frame_width":2560,"frame_height":1536,"frames":4,"columns":4,"rows":1,"duration_seconds":0.8,"fps":5.0,"loop":false,"anchor_px":[1280,1480],"image_size":[808,168],"qa":{"pose_height_exception":true,"height_tol":0.55,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":190,"y":79,"w":1681,"h":1402},"storage_trim":{"x":22.831647828673407,"y":9.466476462196862,"w":202,"h":168},"storage_scale":[0.12016656751933373,0.11982881597717546],"stored_columns":4,"frame_map":[0,1,2,3],"stored_frame_size":[308,184],"stored_anchor_px":[153.81320642474716,177.34664764621968],"ssim":0.9788166742860918,"effective_density":0.4,"encoding":{"mode":"lossy","quality":100,"encoder":"edge blue-despill / lossless WebP container","rgb_mae":2.9420552955731267,"alpha_mae":0.0,"bbox_same":true}},{"name":"uppercut_windup","sheet":"sprites/enemies/gugalanna/uppercut_windup.webp","frame_width":2560,"frame_height":1536,"frames":5,"columns":5,"rows":1,"duration_seconds":0.9,"fps":5.555555555555555,"loop":false,"anchor_px":[1280,1480],"image_size":[1110,177],"qa":{"pose_height_exception":true,"height_tol":0.55,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":187,"y":9,"w":1851,"h":1472},"storage_trim":{"x":22.427876823338735,"y":1.0822010869565217,"w":222,"h":177},"storage_scale":[0.11993517017828201,0.12024456521739131],"stored_columns":5,"frame_map":[0,1,2,3,4],"stored_frame_size":[307,185],"stored_anchor_px":[153.51701782820098,177.96195652173913],"ssim":0.985069330624503,"effective_density":0.4,"encoding":{"mode":"lossy","quality":100,"encoder":"edge blue-despill / lossless WebP container","rgb_mae":2.9562815709833834,"alpha_mae":0.0,"bbox_same":true}},{"name":"uppercut","sheet":"sprites/enemies/gugalanna/uppercut.webp","frame_width":2560,"frame_height":1536,"frames":3,"columns":3,"rows":1,"duration_seconds":0.25,"fps":12.0,"loop":false,"anchor_px":[1280,1480],"image_size":[453,177],"qa":{"pose_height_exception":true,"height_tol":0.55,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":623,"y":9,"w":1259,"h":1472},"storage_trim":{"x":74.72041302621128,"y":1.0822010869565217,"w":151,"h":177},"storage_scale":[0.1199364575059571,0.12024456521739131],"stored_columns":3,"frame_map":[0,1,2],"stored_frame_size":[307,185],"stored_anchor_px":[153.5186656076251,177.96195652173913],"ssim":0.9734746606062373,"effective_density":0.4,"encoding":{"mode":"lossy","quality":100,"encoder":"edge blue-despill / lossless WebP container","rgb_mae":2.9353572468351254,"alpha_mae":0.0,"bbox_same":true}},{"name":"uppercut_recovery","sheet":"sprites/enemies/gugalanna/uppercut_recovery.webp","frame_width":2560,"frame_height":1536,"frames":5,"columns":5,"rows":1,"duration_seconds":1.2,"fps":4.166666666666667,"loop":false,"anchor_px":[1280,1480],"image_size":[1135,177],"qa":{"pose_height_exception":true,"height_tol":0.55,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":135,"y":9,"w":1890,"h":1472},"storage_trim":{"x":16.214285714285715,"y":1.0822010869565217,"w":227,"h":177},"storage_scale":[0.1201058201058201,0.12024456521739131],"stored_columns":5,"frame_map":[0,1,2,3,4],"stored_frame_size":[307,185],"stored_anchor_px":[153.73544973544975,177.96195652173913],"ssim":0.9835479756199447,"effective_density":0.4,"encoding":{"mode":"lossy","quality":100,"encoder":"edge blue-despill / lossless WebP container","rgb_mae":2.9389521118552167,"alpha_mae":0.0,"bbox_same":true}},{"name":"rake_windup","sheet":"sprites/enemies/gugalanna/rake_windup.webp","frame_width":2560,"frame_height":1536,"frames":6,"columns":6,"rows":1,"duration_seconds":1.4,"fps":4.285714285714286,"loop":false,"anchor_px":[1280,1480],"image_size":[1098,169],"qa":{"pose_height_exception":true,"height_tol":0.55,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":622,"y":72,"w":1522,"h":1409},"storage_trim":{"x":74.78712220762155,"y":8.635911994322214,"w":183,"h":169},"storage_scale":[0.1202365308804205,0.11994322214336409],"stored_columns":6,"frame_map":[0,1,2,3,4,5],"stored_frame_size":[308,184],"stored_anchor_px":[153.90275952693824,177.51596877217884],"ssim":0.9756755974996142,"effective_density":0.4,"encoding":{"mode":"lossy","quality":100,"encoder":"edge blue-despill / lossless WebP container","rgb_mae":2.9283264078258235,"alpha_mae":0.0,"bbox_same":true}},{"name":"rake","sheet":"sprites/enemies/gugalanna/rake.webp","frame_width":2560,"frame_height":1536,"frames":5,"columns":5,"rows":1,"duration_seconds":0.4,"fps":12.5,"loop":false,"anchor_px":[1280,1480],"image_size":[835,173],"qa":{"pose_height_exception":true,"height_tol":0.55,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":582,"y":39,"w":1392,"h":1442},"storage_trim":{"x":69.82327586206897,"y":4.678918169209432,"w":167,"h":173},"storage_scale":[0.11997126436781609,0.11997226074895978],"stored_columns":5,"frame_map":[0,1,2,3,4],"stored_frame_size":[307,184],"stored_anchor_px":[153.5632183908046,177.55894590846046],"ssim":0.9745872831445455,"effective_density":0.4,"encoding":{"mode":"lossy","quality":100,"encoder":"edge blue-despill / lossless WebP container","rgb_mae":2.9253918534032706,"alpha_mae":0.0,"bbox_same":true}},{"name":"rake_recovery","sheet":"sprites/enemies/gugalanna/rake_recovery.webp","frame_width":2560,"frame_height":1536,"frames":5,"columns":5,"rows":1,"duration_seconds":1.5,"fps":3.3333333333333335,"loop":false,"anchor_px":[1280,1480],"image_size":[810,172],"qa":{"pose_height_exception":true,"height_tol":0.55,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":631,"y":46,"w":1354,"h":1435},"storage_trim":{"x":75.49630723781388,"y":5.513588850174216,"w":162,"h":172},"storage_scale":[0.11964549483013294,0.11986062717770035],"stored_columns":5,"frame_map":[0,1,2,3,4],"stored_frame_size":[306,184],"stored_anchor_px":[153.14623338257016,177.39372822299651],"ssim":0.9707993867200733,"effective_density":0.4,"encoding":{"mode":"lossy","quality":100,"encoder":"edge blue-despill / lossless WebP container","rgb_mae":2.927352189801927,"alpha_mae":0.0,"bbox_same":true}},{"name":"turn","sheet":"sprites/enemies/gugalanna/turn.webp","frame_width":2560,"frame_height":1536,"frames":6,"columns":6,"rows":1,"duration_seconds":0.8,"fps":7.5,"loop":false,"anchor_px":[1280,1480],"image_size":[930,168],"qa":{"pose_height_exception":true,"height_tol":0.55,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":634,"y":79,"w":1292,"h":1402},"storage_trim":{"x":76.06037151702786,"y":9.466476462196862,"w":155,"h":168},"storage_scale":[0.11996904024767802,0.11982881597717546],"stored_columns":6,"frame_map":[0,1,2,3,4,5],"stored_frame_size":[307,184],"stored_anchor_px":[153.56037151702787,177.34664764621968],"ssim":0.9663895190283689,"effective_density":0.4,"encoding":{"mode":"lossy","quality":100,"encoder":"edge blue-despill / lossless WebP container","rgb_mae":2.9442428431541963,"alpha_mae":0.0,"bbox_same":true}},{"name":"death","sheet":"sprites/enemies/gugalanna/death.webp","frame_width":2560,"frame_height":1536,"frames":10,"columns":10,"rows":1,"duration_seconds":2.4,"fps":4.166666666666667,"loop":false,"anchor_px":[1280,1480],"image_size":[2320,175],"qa":{"pose_height_exception":true,"height_tol":0.55,"detached_fx_or_weapon":false,"movement":true},"trim":{"x":380,"y":24,"w":1931,"h":1457},"storage_trim":{"x":45.65510098394614,"y":2.8826355525051475,"w":232,"h":175},"storage_scale":[0.12014500258933196,0.12010981468771448],"stored_columns":10,"frame_map":[0,1,2,3,4,5,6,7,8,9],"stored_frame_size":[308,184],"stored_anchor_px":[153.7856033143449,177.76252573781744],"ssim":0.9394790129915078,"effective_density":0.4,"encoding":{"mode":"lossy","quality":100,"encoder":"edge blue-despill / lossless WebP container","rgb_mae":2.9179134632333996,"alpha_mae":0.0,"bbox_same":true}}],"aliases":{"hurt":"idle","windup":"uppercut_windup","attack":"uppercut","recovery":"uppercut_recovery"}}
+{
+  "clips": [
+    {
+      "name": "idle",
+      "duration_seconds": 1.8,
+      "fps": 4.444444444444445,
+      "loop": true,
+      "frames": 8,
+      "frame_width": 2560,
+      "frame_height": 1536,
+      "anchor_px": [
+        1280,
+        1480
+      ],
+      "sheet": "sprites/enemies/gugalanna/idle.webp",
+      "image_size": [
+        2464,
+        384
+      ],
+      "qa": {
+        "movement": true,
+        "pose_height_exception": false,
+        "height_tol": 0.03,
+        "expected_pose_heights": [
+          1400,
+          1400,
+          1400,
+          1400,
+          1400,
+          1400,
+          1400,
+          1400
+        ]
+      },
+      "columns": 8,
+      "rows": 1,
+      "trim": {
+        "x": 718,
+        "y": 78,
+        "w": 1124,
+        "h": 1404
+      },
+      "storage_trim": {
+        "x": 192.19217081850536,
+        "y": 19.111111111111114,
+        "w": 308,
+        "h": 384
+      },
+      "storage_scale": [
+        0.2704626334519573,
+        0.2706552706552707
+      ],
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "stored_frame_size": [
+        692,
+        416
+      ],
+      "stored_anchor_px": [
+        346.19217081850536,
+        400.5698005698006
+      ],
+      "ssim": 0.9749991915620999,
+      "effective_density": 0.9,
+      "stored_content_size": [
+        304,
+        380
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        308,
+        384
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.8372696868653176,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "walk",
+      "duration_seconds": 1.4,
+      "fps": 5.714285714285714,
+      "loop": true,
+      "frames": 8,
+      "frame_width": 2560,
+      "frame_height": 1536,
+      "anchor_px": [
+        1280,
+        1480
+      ],
+      "sheet": "sprites/enemies/gugalanna/walk.webp",
+      "image_size": [
+        3072,
+        390
+      ],
+      "qa": {
+        "movement": true,
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "expected_pose_heights": [
+          1425,
+          1411,
+          1402,
+          1392,
+          1395,
+          1398,
+          1395,
+          1415
+        ]
+      },
+      "columns": 8,
+      "rows": 1,
+      "trim": {
+        "x": 577,
+        "y": 53,
+        "w": 1406,
+        "h": 1429
+      },
+      "storage_trim": {
+        "x": 153.94594594594597,
+        "y": 12.31630510846746,
+        "w": 384,
+        "h": 390
+      },
+      "storage_scale": [
+        0.2702702702702703,
+        0.2701189643107068
+      ],
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "stored_frame_size": [
+        692,
+        415
+      ],
+      "stored_anchor_px": [
+        345.94594594594594,
+        399.77606717984605
+      ],
+      "ssim": 0.989822933295112,
+      "effective_density": 0.9,
+      "stored_content_size": [
+        380,
+        386
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        384,
+        390
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "stomp_windup",
+      "duration_seconds": 1.0,
+      "fps": 6.0,
+      "loop": false,
+      "frames": 6,
+      "frame_width": 2560,
+      "frame_height": 1536,
+      "anchor_px": [
+        1280,
+        1480
+      ],
+      "sheet": "sprites/enemies/gugalanna/stomp_windup.webp",
+      "image_size": [
+        1848,
+        397
+      ],
+      "qa": {
+        "movement": true,
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "expected_pose_heights": [
+          1400,
+          1331,
+          1418,
+          1451,
+          1098,
+          1400
+        ]
+      },
+      "columns": 6,
+      "rows": 1,
+      "trim": {
+        "x": 718,
+        "y": 27,
+        "w": 1125,
+        "h": 1455
+      },
+      "storage_trim": {
+        "x": 192.01955555555554,
+        "y": 5.292783505154639,
+        "w": 308,
+        "h": 397
+      },
+      "storage_scale": [
+        0.2702222222222222,
+        0.27010309278350514
+      ],
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stored_frame_size": [
+        692,
+        415
+      ],
+      "stored_anchor_px": [
+        345.88444444444445,
+        399.7525773195876
+      ],
+      "ssim": 0.9782049398964887,
+      "effective_density": 0.9,
+      "stored_content_size": [
+        304,
+        393
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        308,
+        397
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "stomp",
+      "duration_seconds": 0.2,
+      "fps": 15.0,
+      "loop": false,
+      "frames": 3,
+      "frame_width": 2560,
+      "frame_height": 1536,
+      "anchor_px": [
+        1280,
+        1480
+      ],
+      "sheet": "sprites/enemies/gugalanna/stomp.webp",
+      "image_size": [
+        1314,
+        388
+      ],
+      "qa": {
+        "movement": true,
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "expected_pose_heights": [
+          1418,
+          1171,
+          1400
+        ]
+      },
+      "columns": 3,
+      "rows": 1,
+      "trim": {
+        "x": 477,
+        "y": 60,
+        "w": 1606,
+        "h": 1422
+      },
+      "storage_trim": {
+        "x": 126.90286425902866,
+        "y": 14.202531645569618,
+        "w": 438,
+        "h": 388
+      },
+      "storage_scale": [
+        0.27023661270236615,
+        0.270042194092827
+      ],
+      "stored_columns": 3,
+      "frame_map": [
+        0,
+        1,
+        2
+      ],
+      "stored_frame_size": [
+        692,
+        415
+      ],
+      "stored_anchor_px": [
+        345.90286425902866,
+        399.662447257384
+      ],
+      "ssim": 0.9536620814313609,
+      "effective_density": 0.9,
+      "stored_content_size": [
+        434,
+        384
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        438,
+        388
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "stomp_recovery",
+      "duration_seconds": 1.1,
+      "fps": 4.545454545454545,
+      "loop": false,
+      "frames": 5,
+      "frame_width": 2560,
+      "frame_height": 1536,
+      "anchor_px": [
+        1280,
+        1480
+      ],
+      "sheet": "sprites/enemies/gugalanna/stomp_recovery.webp",
+      "image_size": [
+        1545,
+        403
+      ],
+      "qa": {
+        "movement": true,
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "expected_pose_heights": [
+          945,
+          1145,
+          1266,
+          1420,
+          1472
+        ]
+      },
+      "columns": 5,
+      "rows": 1,
+      "trim": {
+        "x": 716,
+        "y": 6,
+        "w": 1129,
+        "h": 1476
+      },
+      "storage_trim": {
+        "x": 191.42781222320636,
+        "y": -0.37804878048780477,
+        "w": 309,
+        "h": 403
+      },
+      "storage_scale": [
+        0.27015057573073514,
+        0.2703252032520325
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        692,
+        415
+      ],
+      "stored_anchor_px": [
+        345.792736935341,
+        400.0813008130081
+      ],
+      "ssim": 0.9570267336670423,
+      "effective_density": 0.9,
+      "stored_content_size": [
+        305,
+        399
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        309,
+        403
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "charge_windup",
+      "duration_seconds": 0.8,
+      "fps": 6.25,
+      "loop": false,
+      "frames": 5,
+      "frame_width": 2560,
+      "frame_height": 1536,
+      "anchor_px": [
+        1280,
+        1480
+      ],
+      "sheet": "sprites/enemies/gugalanna/charge_windup.webp",
+      "image_size": [
+        2060,
+        403
+      ],
+      "qa": {
+        "movement": true,
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "expected_pose_heights": [
+          1472,
+          1145,
+          1018,
+          1194,
+          1148
+        ]
+      },
+      "columns": 5,
+      "rows": 1,
+      "trim": {
+        "x": 526,
+        "y": 6,
+        "w": 1509,
+        "h": 1476
+      },
+      "storage_trim": {
+        "x": 140.2186878727634,
+        "y": -0.37804878048780477,
+        "w": 412,
+        "h": 403
+      },
+      "storage_scale": [
+        0.27037773359840955,
+        0.2703252032520325
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        692,
+        415
+      ],
+      "stored_anchor_px": [
+        346.0834990059642,
+        400.0813008130081
+      ],
+      "ssim": 0.9799765100011308,
+      "effective_density": 0.9,
+      "stored_content_size": [
+        408,
+        399
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        412,
+        403
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "charge_loop",
+      "duration_seconds": 0.3,
+      "fps": 13.333333333333334,
+      "loop": true,
+      "frames": 4,
+      "frame_width": 2560,
+      "frame_height": 1536,
+      "anchor_px": [
+        1280,
+        1480
+      ],
+      "sheet": "sprites/enemies/gugalanna/charge_loop.webp",
+      "image_size": [
+        1488,
+        358
+      ],
+      "qa": {
+        "movement": true,
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "expected_pose_heights": [
+          1304,
+          1207,
+          1114,
+          1153
+        ]
+      },
+      "columns": 4,
+      "rows": 1,
+      "trim": {
+        "x": 600,
+        "y": 174,
+        "w": 1361,
+        "h": 1308
+      },
+      "storage_trim": {
+        "x": 160.23365172667158,
+        "y": 45.091743119266056,
+        "w": 372,
+        "h": 358
+      },
+      "storage_scale": [
+        0.2703894195444526,
+        0.2706422018348624
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        692,
+        416
+      ],
+      "stored_anchor_px": [
+        346.0984570168993,
+        400.55045871559633
+      ],
+      "ssim": 0.9605682098719527,
+      "effective_density": 0.9,
+      "stored_content_size": [
+        368,
+        354
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        372,
+        358
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "charge_crash",
+      "duration_seconds": 1.2,
+      "fps": 4.166666666666667,
+      "loop": false,
+      "frames": 5,
+      "frame_width": 2560,
+      "frame_height": 1536,
+      "anchor_px": [
+        1280,
+        1480
+      ],
+      "sheet": "sprites/enemies/gugalanna/charge_crash.webp",
+      "image_size": [
+        1540,
+        411
+      ],
+      "qa": {
+        "movement": true,
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "expected_pose_heights": [
+          1209,
+          1228,
+          937,
+          882,
+          1180
+        ]
+      },
+      "columns": 5,
+      "rows": 1,
+      "trim": {
+        "x": 820,
+        "y": 250,
+        "w": 920,
+        "h": 1232
+      },
+      "storage_trim": {
+        "x": 268.95652173913044,
+        "y": 80.58928571428571,
+        "w": 308,
+        "h": 411
+      },
+      "storage_scale": [
+        0.33043478260869563,
+        0.33035714285714285
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        846,
+        507
+      ],
+      "stored_anchor_px": [
+        422.95652173913044,
+        488.92857142857144
+      ],
+      "ssim": 0.9633608322040281,
+      "effective_density": 1.1,
+      "stored_content_size": [
+        304,
+        407
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        308,
+        411
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "charge_recovery",
+      "duration_seconds": 0.8,
+      "fps": 5.0,
+      "loop": false,
+      "frames": 4,
+      "frame_width": 2560,
+      "frame_height": 1536,
+      "anchor_px": [
+        1280,
+        1480
+      ],
+      "sheet": "sprites/enemies/gugalanna/charge_recovery.webp",
+      "image_size": [
+        1604,
+        364
+      ],
+      "qa": {
+        "movement": true,
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "expected_pose_heights": [
+          1329,
+          1006,
+          1100,
+          1260
+        ]
+      },
+      "columns": 4,
+      "rows": 1,
+      "trim": {
+        "x": 546,
+        "y": 149,
+        "w": 1469,
+        "h": 1333
+      },
+      "storage_trim": {
+        "x": 145.5575221238938,
+        "y": 38.24006001500375,
+        "w": 401,
+        "h": 364
+      },
+      "storage_scale": [
+        0.2702518720217835,
+        0.2700675168792198
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        692,
+        415
+      ],
+      "stored_anchor_px": [
+        345.9223961878829,
+        399.6999249812453
+      ],
+      "ssim": 0.9502898107740929,
+      "effective_density": 0.9,
+      "stored_content_size": [
+        397,
+        360
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        401,
+        364
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "uppercut_windup",
+      "duration_seconds": 0.9,
+      "fps": 5.555555555555555,
+      "loop": false,
+      "frames": 5,
+      "frame_width": 2560,
+      "frame_height": 1536,
+      "anchor_px": [
+        1280,
+        1480
+      ],
+      "sheet": "sprites/enemies/gugalanna/uppercut_windup.webp",
+      "image_size": [
+        1520,
+        403
+      ],
+      "qa": {
+        "movement": true,
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "expected_pose_heights": [
+          1289,
+          1059,
+          1300,
+          1472,
+          1293
+        ]
+      },
+      "columns": 5,
+      "rows": 1,
+      "trim": {
+        "x": 725,
+        "y": 6,
+        "w": 1110,
+        "h": 1476
+      },
+      "storage_trim": {
+        "x": 193.94594594594597,
+        "y": -0.37804878048780477,
+        "w": 304,
+        "h": 403
+      },
+      "storage_scale": [
+        0.2702702702702703,
+        0.2703252032520325
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        692,
+        415
+      ],
+      "stored_anchor_px": [
+        345.94594594594594,
+        400.0813008130081
+      ],
+      "ssim": 0.9663328336445446,
+      "effective_density": 0.9,
+      "stored_content_size": [
+        300,
+        399
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        304,
+        403
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "uppercut",
+      "duration_seconds": 0.25,
+      "fps": 12.0,
+      "loop": false,
+      "frames": 3,
+      "frame_width": 2560,
+      "frame_height": 1536,
+      "anchor_px": [
+        1280,
+        1480
+      ],
+      "sheet": "sprites/enemies/gugalanna/uppercut.webp",
+      "image_size": [
+        1116,
+        491
+      ],
+      "qa": {
+        "movement": true,
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "expected_pose_heights": [
+          1059,
+          1472,
+          1330
+        ]
+      },
+      "columns": 3,
+      "rows": 1,
+      "trim": {
+        "x": 723,
+        "y": 6,
+        "w": 1114,
+        "h": 1476
+      },
+      "storage_trim": {
+        "x": 236.8366247755835,
+        "y": -0.020325203252032686,
+        "w": 372,
+        "h": 491
+      },
+      "storage_scale": [
+        0.3303411131059246,
+        0.32994579945799457
+      ],
+      "stored_columns": 3,
+      "frame_map": [
+        0,
+        1,
+        2
+      ],
+      "stored_frame_size": [
+        846,
+        507
+      ],
+      "stored_anchor_px": [
+        422.83662477558346,
+        488.31978319783195
+      ],
+      "ssim": 0.9565564600453107,
+      "effective_density": 1.1,
+      "stored_content_size": [
+        368,
+        487
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        372,
+        491
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "uppercut_recovery",
+      "duration_seconds": 1.2,
+      "fps": 4.166666666666667,
+      "loop": false,
+      "frames": 5,
+      "frame_width": 2560,
+      "frame_height": 1536,
+      "anchor_px": [
+        1280,
+        1480
+      ],
+      "sheet": "sprites/enemies/gugalanna/uppercut_recovery.webp",
+      "image_size": [
+        1625,
+        403
+      ],
+      "qa": {
+        "movement": true,
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "expected_pose_heights": [
+          1463,
+          1293,
+          1098,
+          1335,
+          1472
+        ]
+      },
+      "columns": 5,
+      "rows": 1,
+      "trim": {
+        "x": 686,
+        "y": 6,
+        "w": 1188,
+        "h": 1476
+      },
+      "storage_trim": {
+        "x": 183.35858585858588,
+        "y": -0.37804878048780477,
+        "w": 325,
+        "h": 403
+      },
+      "storage_scale": [
+        0.2702020202020202,
+        0.2703252032520325
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        692,
+        415
+      ],
+      "stored_anchor_px": [
+        345.85858585858585,
+        400.0813008130081
+      ],
+      "ssim": 0.9613606177405032,
+      "effective_density": 0.9,
+      "stored_content_size": [
+        321,
+        399
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        325,
+        403
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "rake_windup",
+      "duration_seconds": 1.4,
+      "fps": 4.285714285714286,
+      "loop": false,
+      "frames": 6,
+      "frame_width": 2560,
+      "frame_height": 1536,
+      "anchor_px": [
+        1280,
+        1480
+      ],
+      "sheet": "sprites/enemies/gugalanna/rake_windup.webp",
+      "image_size": [
+        2328,
+        403
+      ],
+      "qa": {
+        "movement": true,
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "expected_pose_heights": [
+          1472,
+          1368,
+          1279,
+          1335,
+          1341,
+          1392
+        ]
+      },
+      "columns": 6,
+      "rows": 1,
+      "trim": {
+        "x": 569,
+        "y": 6,
+        "w": 1422,
+        "h": 1476
+      },
+      "storage_trim": {
+        "x": 151.65400843881855,
+        "y": -0.37804878048780477,
+        "w": 388,
+        "h": 403
+      },
+      "storage_scale": [
+        0.270042194092827,
+        0.2703252032520325
+      ],
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stored_frame_size": [
+        691,
+        415
+      ],
+      "stored_anchor_px": [
+        345.65400843881855,
+        400.0813008130081
+      ],
+      "ssim": 0.9836555111722974,
+      "effective_density": 0.9,
+      "stored_content_size": [
+        384,
+        399
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        388,
+        403
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "rake",
+      "duration_seconds": 0.4,
+      "fps": 12.5,
+      "loop": false,
+      "frames": 5,
+      "frame_width": 2560,
+      "frame_height": 1536,
+      "anchor_px": [
+        1280,
+        1480
+      ],
+      "sheet": "sprites/enemies/gugalanna/rake.webp",
+      "image_size": [
+        2160,
+        403
+      ],
+      "qa": {
+        "movement": true,
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "expected_pose_heights": [
+          1472,
+          1369,
+          1363,
+          1266,
+          1472
+        ]
+      },
+      "columns": 5,
+      "rows": 1,
+      "trim": {
+        "x": 488,
+        "y": 6,
+        "w": 1585,
+        "h": 1476
+      },
+      "storage_trim": {
+        "x": 129.77539432176656,
+        "y": -0.37804878048780477,
+        "w": 432,
+        "h": 403
+      },
+      "storage_scale": [
+        0.27003154574132493,
+        0.2703252032520325
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        691,
+        415
+      ],
+      "stored_anchor_px": [
+        345.6403785488959,
+        400.0813008130081
+      ],
+      "ssim": 0.9778840188581114,
+      "effective_density": 0.9,
+      "stored_content_size": [
+        428,
+        399
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        432,
+        403
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "rake_recovery",
+      "duration_seconds": 1.5,
+      "fps": 3.3333333333333335,
+      "loop": false,
+      "frames": 5,
+      "frame_width": 2560,
+      "frame_height": 1536,
+      "anchor_px": [
+        1280,
+        1480
+      ],
+      "sheet": "sprites/enemies/gugalanna/rake_recovery.webp",
+      "image_size": [
+        2175,
+        403
+      ],
+      "qa": {
+        "movement": true,
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "expected_pose_heights": [
+          1472,
+          1375,
+          1372,
+          1310,
+          1464
+        ]
+      },
+      "columns": 5,
+      "rows": 1,
+      "trim": {
+        "x": 482,
+        "y": 6,
+        "w": 1596,
+        "h": 1476
+      },
+      "storage_trim": {
+        "x": 128.1641604010025,
+        "y": -0.37804878048780477,
+        "w": 435,
+        "h": 403
+      },
+      "storage_scale": [
+        0.2700501253132832,
+        0.2703252032520325
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        691,
+        415
+      ],
+      "stored_anchor_px": [
+        345.6641604010025,
+        400.0813008130081
+      ],
+      "ssim": 0.9751094256787436,
+      "effective_density": 0.9,
+      "stored_content_size": [
+        431,
+        399
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        435,
+        403
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "turn",
+      "duration_seconds": 0.8,
+      "fps": 7.5,
+      "loop": false,
+      "frames": 6,
+      "frame_width": 2560,
+      "frame_height": 1536,
+      "anchor_px": [
+        1280,
+        1480
+      ],
+      "sheet": "sprites/enemies/gugalanna/turn.webp",
+      "image_size": [
+        2322,
+        403
+      ],
+      "qa": {
+        "movement": true,
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "expected_pose_heights": [
+          1453,
+          1296,
+          1472,
+          1307,
+          1309,
+          1456
+        ]
+      },
+      "columns": 6,
+      "rows": 1,
+      "trim": {
+        "x": 573,
+        "y": 6,
+        "w": 1415,
+        "h": 1476
+      },
+      "storage_trim": {
+        "x": 153.0946996466431,
+        "y": -0.37804878048780477,
+        "w": 387,
+        "h": 403
+      },
+      "storage_scale": [
+        0.2706713780918728,
+        0.2703252032520325
+      ],
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stored_frame_size": [
+        693,
+        415
+      ],
+      "stored_anchor_px": [
+        346.4593639575972,
+        400.0813008130081
+      ],
+      "ssim": 0.9746050573566886,
+      "effective_density": 0.9,
+      "stored_content_size": [
+        383,
+        399
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        387,
+        403
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "death",
+      "duration_seconds": 2.4,
+      "fps": 4.166666666666667,
+      "loop": false,
+      "frames": 10,
+      "frame_width": 2560,
+      "frame_height": 1536,
+      "anchor_px": [
+        1280,
+        1480
+      ],
+      "sheet": "sprites/enemies/gugalanna/death.webp",
+      "image_size": [
+        4620,
+        384
+      ],
+      "qa": {
+        "movement": true,
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "expected_pose_heights": [
+          1400,
+          1389,
+          1336,
+          1035,
+          864,
+          762,
+          611,
+          611,
+          558,
+          558
+        ],
+        "posture_reason": "Forward bend / raised arms changes silhouette while anatomy remains fixed"
+      },
+      "columns": 10,
+      "rows": 1,
+      "trim": {
+        "x": 433,
+        "y": 78,
+        "w": 1694,
+        "h": 1404
+      },
+      "storage_trim": {
+        "x": 115.0684769775679,
+        "y": 19.111111111111114,
+        "w": 462,
+        "h": 384
+      },
+      "storage_scale": [
+        0.27036599763872493,
+        0.2706552706552707
+      ],
+      "stored_columns": 10,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "stored_frame_size": [
+        692,
+        416
+      ],
+      "stored_anchor_px": [
+        346.0684769775679,
+        400.5698005698006
+      ],
+      "ssim": 0.9980619287426131,
+      "effective_density": 0.9,
+      "stored_content_size": [
+        458,
+        380
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        462,
+        384
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    }
+  ],
+  "aliases": {
+    "hurt": "idle",
+    "windup": "uppercut_windup",
+    "attack": "uppercut",
+    "recovery": "uppercut_recovery"
+  }
+}

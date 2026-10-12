@@ -242,13 +242,26 @@ def apply_storage_policy(args, image, is_sheet):
     spec={}
     if is_sheet:
         limits=json.loads((ROOT/'data/density_limits.json').read_text());limit=limits.get(args.density_class,2);w,h=args.frame_width,args.frame_height
-        frames=[image.crop((i*w,0,(i+1)*w,h)) for i in range(args.frames)];boxes=[f.getchannel('A').getbbox() for f in frames];x=max(0,min(b[0] for b in boxes)-1);y=max(0,min(b[1] for b in boxes)-1);right=min(w,max(b[2] for b in boxes)+1);bottom=min(h,max(b[3] for b in boxes)+1);cw,ch=right-x,bottom-y
+        frames=[image.crop((i*w,0,(i+1)*w,h)) for i in range(args.frames)];boxes=[f.getchannel('A').getbbox() for f in frames];x=max(0,min(b[0] for b in boxes)-2);y=max(0,min(b[1] for b in boxes)-2);right=min(w,max(b[2] for b in boxes)+2);bottom=min(h,max(b[3] for b in boxes)+2);cw,ch=right-x,bottom-y
         packed=Image.new('RGBA',(cw*args.frames,ch))
         for i,f in enumerate(frames):packed.paste(f.crop((x,y,right,bottom)),(i*cw,0))
         scale,sw,sh,quality,density=choose_scale(packed,cw,ch,args.frames,args.visual_scale,limit);image=Image.new('RGBA',(sw*args.frames,sh))
         for i in range(args.frames):image.paste(packed.crop((i*cw,0,(i+1)*cw,ch)).resize((sw,sh),Image.Resampling.LANCZOS),(i*sw,0))
         spec={'frame_width':w,'frame_height':h,'anchor_px':list(args.anchor),'frames':args.frames,'columns':args.frames,'rows':1,'trim':{'x':x,'y':y,'w':cw,'h':ch},'storage_trim':{'x':x*sw/cw,'y':y*sh/ch,'w':sw,'h':sh},'storage_scale':[sw/cw,sh/ch],'stored_columns':args.frames,'frame_map':list(range(args.frames)),'stored_frame_size':[round(w*sw/cw),round(h*sh/ch)],'stored_anchor_px':[args.anchor[0]*sw/cw,args.anchor[1]*sh/ch],'image_size':list(image.size),'ssim':quality,'effective_density':density}
-    target=output.with_suffix('.webp');metrics=encode(image,target,policy.get(folder,{}).get('quality',86));spec['encoding']=metrics
+    if is_sheet:
+        from stage11_repack import pad_sheet,pad_spec
+        image=pad_sheet(image,sw,sh,args.frames)
+        pad_spec(spec,sw,sh,args.frames)
+    target=output.with_suffix('.webp')
+    if is_sheet:
+        from stage10_optimize_density import encoded
+        content,metrics=encoded(image);target.write_bytes(content)
+    else:
+        exception=policy.get('exceptions',{}).get(str(target.relative_to(ROOT)),{})
+        if exception.get('mode')=='lossless':
+            image.save(target,'WEBP',lossless=True,method=6,exact=True);metrics={'mode':'lossless','quality':100,'alpha_mae':0.,'rgb_mae':0.,'bbox_same':True}
+        else:metrics=encode(image,target,policy.get(folder,{}).get('quality',86))
+    spec['encoding']=metrics
     if output!=target:output.unlink();rewrite_paths({'assets/'+str(relative):str(target.relative_to(ROOT))})
     target.with_suffix('.storage.json').write_text(json.dumps(spec,indent=2)+'\n')
     if is_sheet:
@@ -303,7 +316,7 @@ def main():
     sheet.add_argument("--scale-xy", type=lambda value: tuple(float(v) for v in value.split(",")),
                        help="Effects only: existing painted pixels scaled to the desired hitbox aspect (x,y)")
     sheet.add_argument("--visual-scale",type=float,default=.30)
-    sheet.add_argument("--density-class",choices=("player","npc","enemy","large_enemy","fx"),default="enemy")
+    sheet.add_argument("--density-class",choices=("player","player_stage11","npc","enemy","large_enemy","fx"),default="enemy")
     sheet.add_argument("--canonical-only",action="store_true",help="Only for archived reference/staging sheets")
     sheet.set_defaults(run=pack_sheet)
     single = commands.add_parser("image", help="Crop/resize generated map and prop art")

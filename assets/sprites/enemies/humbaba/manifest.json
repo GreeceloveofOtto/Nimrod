@@ -1,1 +1,1349 @@
-{"clips":[{"name":"idle","sheet":"sprites/enemies/humbaba/idle.webp","frame_width":1408,"frame_height":1152,"frames":8,"columns":8,"rows":1,"duration_seconds":1.6,"fps":5.0,"loop":true,"anchor_px":[704,1100],"image_size":[1120,249],"qa":{"pose_height_exception":false,"height_tol":0.35,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":413,"y":64,"w":583,"h":1039},"storage_trim":{"x":99.17667238421956,"y":15.337824831568817,"w":140,"h":249},"storage_scale":[0.24013722126929674,0.23965351299326276],"stored_columns":8,"frame_map":[0,1,2,3,4,5,6,7],"stored_frame_size":[338,276],"stored_anchor_px":[169.0566037735849,263.618864292589],"ssim":0.9765341538586857,"effective_density":0.8,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"bite_windup","sheet":"sprites/enemies/humbaba/bite_windup.webp","frame_width":1408,"frame_height":1152,"frames":5,"columns":5,"rows":1,"duration_seconds":0.9,"fps":5.555555555555555,"loop":false,"anchor_px":[704,1100],"image_size":[740,232],"qa":{"pose_height_exception":true,"height_tol":0.35,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":395,"y":135,"w":617,"h":968},"storage_trim":{"x":94.74878444084278,"y":32.35537190082645,"w":148,"h":232},"storage_scale":[0.23987034035656402,0.2396694214876033],"stored_columns":5,"frame_map":[0,1,2,3,4],"stored_frame_size":[338,276],"stored_anchor_px":[168.86871961102108,263.6363636363636],"ssim":0.9777756018745047,"effective_density":0.8,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"bite","sheet":"sprites/enemies/humbaba/bite.webp","frame_width":1408,"frame_height":1152,"frames":3,"columns":3,"rows":1,"duration_seconds":0.2,"fps":15.0,"loop":false,"anchor_px":[704,1100],"image_size":[693,201],"qa":{"pose_height_exception":true,"height_tol":0.35,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":222,"y":264,"w":964,"h":839},"storage_trim":{"x":53.197095435684645,"y":63.24672228843862,"w":231,"h":201},"storage_scale":[0.23962655601659752,0.2395709177592372],"stored_columns":3,"frame_map":[0,1,2],"stored_frame_size":[337,276],"stored_anchor_px":[168.69709543568464,263.5280095351609],"ssim":0.9799255804360109,"effective_density":0.8,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"bite_recovery","sheet":"sprites/enemies/humbaba/bite_recovery.webp","frame_width":1408,"frame_height":1152,"frames":4,"columns":4,"rows":1,"duration_seconds":1.0,"fps":4.0,"loop":false,"anchor_px":[704,1100],"image_size":[668,173],"qa":{"pose_height_exception":true,"height_tol":0.35,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":239,"y":140,"w":930,"h":963},"storage_trim":{"x":42.917204301075266,"y":25.150571131879545,"w":167,"h":173},"storage_scale":[0.17956989247311828,0.17964693665628245],"stored_columns":4,"frame_map":[0,1,2,3],"stored_frame_size":[253,207],"stored_anchor_px":[126.41720430107527,197.6116303219107],"ssim":0.9580363820607033,"effective_density":0.6,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"claw_windup","sheet":"sprites/enemies/humbaba/claw_windup.webp","frame_width":1408,"frame_height":1152,"frames":4,"columns":4,"rows":1,"duration_seconds":0.6,"fps":6.666666666666667,"loop":false,"anchor_px":[704,1100],"image_size":[596,187],"qa":{"pose_height_exception":true,"height_tol":0.35,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":290,"y":64,"w":828,"h":1039},"storage_trim":{"x":52.18599033816425,"y":11.518768046198268,"w":149,"h":187},"storage_scale":[0.17995169082125603,0.17998075072184794],"stored_columns":4,"frame_map":[0,1,2,3],"stored_frame_size":[253,207],"stored_anchor_px":[126.68599033816425,197.97882579403273],"ssim":0.95982691746809,"effective_density":0.6,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"claw_swipe","sheet":"sprites/enemies/humbaba/claw_swipe.webp","frame_width":1408,"frame_height":1152,"frames":6,"columns":6,"rows":1,"duration_seconds":0.75,"fps":8.0,"loop":false,"anchor_px":[704,1100],"image_size":[1674,249],"qa":{"pose_height_exception":true,"height_tol":0.35,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":123,"y":64,"w":1161,"h":1039},"storage_trim":{"x":29.558139534883722,"y":15.337824831568817,"w":279,"h":249},"storage_scale":[0.24031007751937986,0.23965351299326276],"stored_columns":6,"frame_map":[0,1,2,3,4,5],"stored_frame_size":[338,276],"stored_anchor_px":[169.1782945736434,263.618864292589],"ssim":0.9563324917878127,"effective_density":0.8,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"claw_recovery","sheet":"sprites/enemies/humbaba/claw_recovery.webp","frame_width":1408,"frame_height":1152,"frames":4,"columns":4,"rows":1,"duration_seconds":1.1,"fps":3.6363636363636362,"loop":false,"anchor_px":[704,1100],"image_size":[512,186],"qa":{"pose_height_exception":true,"height_tol":0.35,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":349,"y":72,"w":710,"h":1031},"storage_trim":{"x":62.91830985915493,"y":12.98933074684772,"w":128,"h":186},"storage_scale":[0.18028169014084508,0.18040737148399613],"stored_columns":4,"frame_map":[0,1,2,3],"stored_frame_size":[254,208],"stored_anchor_px":[126.91830985915493,198.44810863239573],"ssim":0.9516084489329335,"effective_density":0.6,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"breath_windup","sheet":"sprites/enemies/humbaba/breath_windup.webp","frame_width":1408,"frame_height":1152,"frames":5,"columns":5,"rows":1,"duration_seconds":0.8,"fps":6.25,"loop":false,"anchor_px":[704,1100],"image_size":[580,187],"qa":{"pose_height_exception":false,"height_tol":0.35,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":381,"y":64,"w":645,"h":1039},"storage_trim":{"x":68.52093023255814,"y":11.518768046198268,"w":116,"h":187},"storage_scale":[0.17984496124031008,0.17998075072184794],"stored_columns":5,"frame_map":[0,1,2,3,4],"stored_frame_size":[253,207],"stored_anchor_px":[126.61085271317829,197.97882579403273],"ssim":0.9379762134177285,"effective_density":0.6,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"breath_loop","sheet":"sprites/enemies/humbaba/breath_loop.webp","frame_width":1408,"frame_height":1152,"frames":4,"columns":4,"rows":1,"duration_seconds":0.4,"fps":10.0,"loop":true,"anchor_px":[704,1100],"image_size":[992,314],"qa":{"pose_height_exception":false,"height_tol":0.35,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":291,"y":58,"w":825,"h":1045},"storage_trim":{"x":87.47636363636363,"y":17.42775119617225,"w":248,"h":314},"storage_scale":[0.3006060606060606,0.3004784688995215],"stored_columns":4,"frame_map":[0,1,2,3],"stored_frame_size":[423,346],"stored_anchor_px":[211.62666666666667,330.5263157894737],"ssim":0.9414390936861738,"effective_density":1.0,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"breath_recovery","sheet":"sprites/enemies/humbaba/breath_recovery.webp","frame_width":1408,"frame_height":1152,"frames":4,"columns":4,"rows":1,"duration_seconds":1.3,"fps":3.0769230769230766,"loop":false,"anchor_px":[704,1100],"image_size":[568,175],"qa":{"pose_height_exception":true,"height_tol":0.35,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":309,"y":133,"w":791,"h":970},"storage_trim":{"x":55.471554993678886,"y":23.99484536082474,"w":142,"h":175},"storage_scale":[0.179519595448799,0.18041237113402062],"stored_columns":4,"frame_map":[0,1,2,3],"stored_frame_size":[253,208],"stored_anchor_px":[126.38179519595448,198.4536082474227],"ssim":0.941628617635782,"effective_density":0.6,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"tail_windup","sheet":"sprites/enemies/humbaba/tail_windup.webp","frame_width":1408,"frame_height":1152,"frames":3,"columns":3,"rows":1,"duration_seconds":0.3,"fps":10.0,"loop":false,"anchor_px":[704,1100],"image_size":[450,158],"qa":{"pose_height_exception":true,"height_tol":0.35,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":286,"y":224,"w":836,"h":879},"storage_trim":{"x":51.31578947368421,"y":40.26393629124004,"w":150,"h":158},"storage_scale":[0.17942583732057416,0.17974971558589306],"stored_columns":3,"frame_map":[0,1,2],"stored_frame_size":[253,207],"stored_anchor_px":[126.3157894736842,197.72468714448237],"ssim":0.9381808127673916,"effective_density":0.6,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"tail_strike","sheet":"sprites/enemies/humbaba/tail_strike.webp","frame_width":1408,"frame_height":1152,"frames":3,"columns":3,"rows":1,"duration_seconds":0.15,"fps":20.0,"loop":false,"anchor_px":[704,1100],"image_size":[330,190],"qa":{"pose_height_exception":true,"height_tol":0.35,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":397,"y":49,"w":613,"h":1054},"storage_trim":{"x":71.23980424143556,"y":8.833017077798862,"w":110,"h":190},"storage_scale":[0.17944535073409462,0.18026565464895636],"stored_columns":3,"frame_map":[0,1,2],"stored_frame_size":[253,208],"stored_anchor_px":[126.3295269168026,198.29222011385198],"ssim":0.9351331250571037,"effective_density":0.6,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"tail_recovery","sheet":"sprites/enemies/humbaba/tail_recovery.webp","frame_width":1408,"frame_height":1152,"frames":4,"columns":4,"rows":1,"duration_seconds":0.6,"fps":6.666666666666667,"loop":false,"anchor_px":[704,1100],"image_size":[432,187],"qa":{"pose_height_exception":true,"height_tol":0.35,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":405,"y":64,"w":598,"h":1039},"storage_trim":{"x":73.1438127090301,"y":11.518768046198268,"w":108,"h":187},"storage_scale":[0.1806020066889632,0.17998075072184794],"stored_columns":4,"frame_map":[0,1,2,3],"stored_frame_size":[254,207],"stored_anchor_px":[127.1438127090301,197.97882579403273],"ssim":0.9344759467388332,"effective_density":0.6,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"turn","sheet":"sprites/enemies/humbaba/turn.webp","frame_width":1408,"frame_height":1152,"frames":6,"columns":6,"rows":1,"duration_seconds":0.6,"fps":10.0,"loop":false,"anchor_px":[704,1100],"image_size":[882,241],"qa":{"pose_height_exception":false,"height_tol":0.35,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":397,"y":97,"w":613,"h":1006},"storage_trim":{"x":95.20228384991843,"y":23.237574552683895,"w":147,"h":241},"storage_scale":[0.2398042414355628,0.23956262425447317],"stored_columns":6,"frame_map":[0,1,2,3,4,5],"stored_frame_size":[338,276],"stored_anchor_px":[168.8221859706362,263.51888667992046],"ssim":0.9775865133939018,"effective_density":0.8,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"phase_roar","sheet":"sprites/enemies/humbaba/phase_roar.webp","frame_width":1408,"frame_height":1152,"frames":8,"columns":8,"rows":1,"duration_seconds":1.8,"fps":4.444444444444445,"loop":false,"anchor_px":[704,1100],"image_size":[1096,249],"qa":{"pose_height_exception":true,"height_tol":0.35,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":419,"y":64,"w":571,"h":1039},"storage_trim":{"x":100.53064798598949,"y":15.337824831568817,"w":137,"h":249},"storage_scale":[0.23992994746059546,0.23965351299326276],"stored_columns":8,"frame_map":[0,1,2,3,4,5,6,7],"stored_frame_size":[338,276],"stored_anchor_px":[168.9106830122592,263.618864292589],"ssim":0.9752880003647612,"effective_density":0.8,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"death","sheet":"sprites/enemies/humbaba/death.webp","frame_width":1408,"frame_height":1152,"frames":8,"columns":8,"rows":1,"duration_seconds":1.6,"fps":5.0,"loop":false,"anchor_px":[704,1100],"image_size":[1592,187],"qa":{"pose_height_exception":true,"height_tol":0.65,"detached_fx_or_weapon":false,"movement":true},"trim":{"x":152,"y":64,"w":1104,"h":1039},"storage_trim":{"x":27.39855072463768,"y":11.518768046198268,"w":199,"h":187},"storage_scale":[0.1802536231884058,0.17998075072184794],"stored_columns":8,"frame_map":[0,1,2,3,4,5,6,7],"stored_frame_size":[254,207],"stored_anchor_px":[126.89855072463769,197.97882579403273],"ssim":0.9323265068435389,"effective_density":0.6,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}},{"name":"walk","sheet":"sprites/enemies/humbaba/walk.webp","frame_width":1408,"frame_height":1152,"frames":8,"columns":8,"rows":1,"duration_seconds":1.2,"fps":6.666666666666667,"loop":true,"anchor_px":[704,1100],"image_size":[1088,187],"qa":{"pose_height_exception":false,"height_tol":0.1,"detached_fx_or_weapon":false,"movement":false},"trim":{"x":326,"y":64,"w":756,"h":1039},"storage_trim":{"x":58.645502645502646,"y":11.518768046198268,"w":136,"h":187},"storage_scale":[0.17989417989417988,0.17998075072184794],"stored_columns":8,"frame_map":[0,1,2,3,4,5,6,7],"stored_frame_size":[253,207],"stored_anchor_px":[126.64550264550265,197.97882579403273],"ssim":0.9420927011142471,"effective_density":0.6,"encoding":{"mode":"lossless","quality":86,"alpha_mae":0,"rgb_mae":0,"bbox_same":true,"transparent":true}}],"aliases":{"hurt":"idle","windup":"bite_windup","attack":"bite","recovery":"bite_recovery"}}
+{
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/enemies/humbaba/idle.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 8,
+      "columns": 8,
+      "rows": 1,
+      "duration_seconds": 1.6,
+      "fps": 5.0,
+      "loop": true,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        1296,
+        285
+      ],
+      "qa": {
+        "pose_height_exception": false,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 413,
+        "y": 64,
+        "w": 583,
+        "h": 1039
+      },
+      "storage_trim": {
+        "x": 109.92795883361921,
+        "y": 15.308950914340713,
+        "w": 162,
+        "h": 285
+      },
+      "storage_scale": [
+        0.27101200686106347,
+        0.27045235803657364
+      ],
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "stored_frame_size": [
+        382,
+        312
+      ],
+      "stored_anchor_px": [
+        190.79245283018867,
+        297.497593840231
+      ],
+      "ssim": 0.9874675298799174,
+      "effective_density": 0.9,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        158,
+        281
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        162,
+        285
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "bite_windup",
+      "sheet": "sprites/enemies/humbaba/bite_windup.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 5,
+      "columns": 5,
+      "rows": 1,
+      "duration_seconds": 0.9,
+      "fps": 5.555555555555555,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        855,
+        266
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 395,
+        "y": 135,
+        "w": 617,
+        "h": 968
+      },
+      "storage_trim": {
+        "x": 104.91247974068072,
+        "y": 34.539256198347104,
+        "w": 171,
+        "h": 266
+      },
+      "storage_scale": [
+        0.2706645056726094,
+        0.2706611570247934
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        381,
+        312
+      ],
+      "stored_anchor_px": [
+        190.54781199351703,
+        297.72727272727275
+      ],
+      "ssim": 0.9883642018697893,
+      "effective_density": 0.9,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        167,
+        262
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        171,
+        266
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "bite",
+      "sheet": "sprites/enemies/humbaba/bite.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 3,
+      "columns": 3,
+      "rows": 1,
+      "duration_seconds": 0.2,
+      "fps": 15.0,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        795,
+        231
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 222,
+        "y": 264,
+        "w": 964,
+        "h": 839
+      },
+      "storage_trim": {
+        "x": 58.1058091286307,
+        "y": 69.42789034564959,
+        "w": 265,
+        "h": 231
+      },
+      "storage_scale": [
+        0.27074688796680496,
+        0.27056019070321813
+      ],
+      "stored_columns": 3,
+      "frame_map": [
+        0,
+        1,
+        2
+      ],
+      "stored_frame_size": [
+        381,
+        312
+      ],
+      "stored_anchor_px": [
+        190.6058091286307,
+        297.61620977353994
+      ],
+      "ssim": 0.9898042277507028,
+      "effective_density": 0.9,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        261,
+        227
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        265,
+        231
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "bite_recovery",
+      "sheet": "sprites/enemies/humbaba/bite_recovery.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 1.0,
+      "fps": 4.0,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        1024,
+        265
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 239,
+        "y": 140,
+        "w": 930,
+        "h": 963
+      },
+      "storage_trim": {
+        "x": 62.76129032258065,
+        "y": 35.943925233644855,
+        "w": 256,
+        "h": 265
+      },
+      "storage_scale": [
+        0.2709677419354839,
+        0.27102803738317754
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        382,
+        312
+      ],
+      "stored_anchor_px": [
+        190.76129032258063,
+        298.13084112149534
+      ],
+      "ssim": 0.994620259288347,
+      "effective_density": 0.9,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        252,
+        261
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        256,
+        265
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "claw_windup",
+      "sheet": "sprites/enemies/humbaba/claw_windup.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 0.6,
+      "fps": 6.666666666666667,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        912,
+        285
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 290,
+        "y": 64,
+        "w": 828,
+        "h": 1039
+      },
+      "storage_trim": {
+        "x": 76.45410628019323,
+        "y": 15.308950914340713,
+        "w": 228,
+        "h": 285
+      },
+      "storage_scale": [
+        0.27053140096618356,
+        0.27045235803657364
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        381,
+        312
+      ],
+      "stored_anchor_px": [
+        190.45410628019323,
+        297.497593840231
+      ],
+      "ssim": 0.9947766209205923,
+      "effective_density": 0.9,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        224,
+        281
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        228,
+        285
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "claw_swipe",
+      "sheet": "sprites/enemies/humbaba/claw_swipe.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 6,
+      "columns": 6,
+      "rows": 1,
+      "duration_seconds": 0.75,
+      "fps": 8.0,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        1908,
+        285
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 123,
+        "y": 64,
+        "w": 1161,
+        "h": 1039
+      },
+      "storage_trim": {
+        "x": 31.26614987080103,
+        "y": 15.308950914340713,
+        "w": 318,
+        "h": 285
+      },
+      "storage_scale": [
+        0.2704565030146425,
+        0.27045235803657364
+      ],
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stored_frame_size": [
+        381,
+        312
+      ],
+      "stored_anchor_px": [
+        190.40137812230836,
+        297.497593840231
+      ],
+      "ssim": 0.9726219256968275,
+      "effective_density": 0.9,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        314,
+        281
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        318,
+        285
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "claw_recovery",
+      "sheet": "sprites/enemies/humbaba/claw_recovery.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 1.1,
+      "fps": 3.6363636363636362,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        784,
+        283
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 349,
+        "y": 72,
+        "w": 710,
+        "h": 1031
+      },
+      "storage_trim": {
+        "x": 92.37746478873238,
+        "y": 17.48399612027158,
+        "w": 196,
+        "h": 283
+      },
+      "storage_scale": [
+        0.2704225352112676,
+        0.27061105722599416
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        381,
+        312
+      ],
+      "stored_anchor_px": [
+        190.3774647887324,
+        297.6721629485936
+      ],
+      "ssim": 0.9933530336601637,
+      "effective_density": 0.9,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        192,
+        279
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        196,
+        283
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "breath_windup",
+      "sheet": "sprites/enemies/humbaba/breath_windup.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 5,
+      "columns": 5,
+      "rows": 1,
+      "duration_seconds": 0.8,
+      "fps": 6.25,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        895,
+        285
+      ],
+      "qa": {
+        "pose_height_exception": false,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 381,
+        "y": 64,
+        "w": 645,
+        "h": 1039
+      },
+      "storage_trim": {
+        "x": 101.3720930232558,
+        "y": 15.308950914340713,
+        "w": 179,
+        "h": 285
+      },
+      "storage_scale": [
+        0.2713178294573643,
+        0.27045235803657364
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        382,
+        312
+      ],
+      "stored_anchor_px": [
+        191.0077519379845,
+        297.497593840231
+      ],
+      "ssim": 0.9912318070629413,
+      "effective_density": 0.9,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        175,
+        281
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        179,
+        285
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "breath_loop",
+      "sheet": "sprites/enemies/humbaba/breath_loop.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 0.4,
+      "fps": 10.0,
+      "loop": true,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        1104,
+        349
+      ],
+      "qa": {
+        "pose_height_exception": false,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 291,
+        "y": 58,
+        "w": 825,
+        "h": 1045
+      },
+      "storage_trim": {
+        "x": 93.94181818181819,
+        "y": 17.148325358851675,
+        "w": 276,
+        "h": 349
+      },
+      "storage_scale": [
+        0.3296969696969697,
+        0.33014354066985646
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        464,
+        380
+      ],
+      "stored_anchor_px": [
+        232.10666666666665,
+        363.1578947368421
+      ],
+      "ssim": 0.9596289495918761,
+      "effective_density": 1.1,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        272,
+        345
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        276,
+        349
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "breath_recovery",
+      "sheet": "sprites/enemies/humbaba/breath_recovery.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 1.3,
+      "fps": 3.0769230769230766,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        872,
+        266
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 309,
+        "y": 133,
+        "w": 791,
+        "h": 970
+      },
+      "storage_trim": {
+        "x": 81.59797724399495,
+        "y": 33.92371134020618,
+        "w": 218,
+        "h": 266
+      },
+      "storage_scale": [
+        0.27054361567635904,
+        0.27010309278350514
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        381,
+        311
+      ],
+      "stored_anchor_px": [
+        190.46270543615677,
+        297.11340206185565
+      ],
+      "ssim": 0.9921054081500363,
+      "effective_density": 0.9,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        214,
+        262
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        218,
+        266
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "tail_windup",
+      "sheet": "sprites/enemies/humbaba/tail_windup.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 3,
+      "columns": 3,
+      "rows": 1,
+      "duration_seconds": 0.3,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        690,
+        242
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 286,
+        "y": 224,
+        "w": 836,
+        "h": 879
+      },
+      "storage_trim": {
+        "x": 75.31578947368422,
+        "y": 58.65073947667805,
+        "w": 230,
+        "h": 242
+      },
+      "storage_scale": [
+        0.2703349282296651,
+        0.2707622298065984
+      ],
+      "stored_columns": 3,
+      "frame_map": [
+        0,
+        1,
+        2
+      ],
+      "stored_frame_size": [
+        381,
+        312
+      ],
+      "stored_anchor_px": [
+        190.31578947368422,
+        297.83845278725823
+      ],
+      "ssim": 0.9912105990243069,
+      "effective_density": 0.9,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        226,
+        238
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        230,
+        242
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "tail_strike",
+      "sheet": "sprites/enemies/humbaba/tail_strike.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 3,
+      "columns": 3,
+      "rows": 1,
+      "duration_seconds": 0.15,
+      "fps": 20.0,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        510,
+        289
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 397,
+        "y": 49,
+        "w": 613,
+        "h": 1054
+      },
+      "storage_trim": {
+        "x": 105.50734094616641,
+        "y": 11.24952561669829,
+        "w": 170,
+        "h": 289
+      },
+      "storage_scale": [
+        0.2707993474714519,
+        0.2703984819734345
+      ],
+      "stored_columns": 3,
+      "frame_map": [
+        0,
+        1,
+        2
+      ],
+      "stored_frame_size": [
+        381,
+        311
+      ],
+      "stored_anchor_px": [
+        190.64274061990213,
+        297.438330170778
+      ],
+      "ssim": 0.9911324154602167,
+      "effective_density": 0.9,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        166,
+        285
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        170,
+        289
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "tail_recovery",
+      "sheet": "sprites/enemies/humbaba/tail_recovery.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 0.6,
+      "fps": 6.666666666666667,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        664,
+        285
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 405,
+        "y": 64,
+        "w": 598,
+        "h": 1039
+      },
+      "storage_trim": {
+        "x": 107.71571906354515,
+        "y": 15.308950914340713,
+        "w": 166,
+        "h": 285
+      },
+      "storage_scale": [
+        0.2709030100334448,
+        0.27045235803657364
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        381,
+        312
+      ],
+      "stored_anchor_px": [
+        190.71571906354515,
+        297.497593840231
+      ],
+      "ssim": 0.991261607551823,
+      "effective_density": 0.9,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        162,
+        281
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        166,
+        285
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "turn",
+      "sheet": "sprites/enemies/humbaba/turn.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 6,
+      "columns": 6,
+      "rows": 1,
+      "duration_seconds": 0.6,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        1050,
+        284
+      ],
+      "qa": {
+        "pose_height_exception": false,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": true,
+        "expected_pose_heights": [
+          1033,
+          1033,
+          1033,
+          1033,
+          1033,
+          1033
+        ],
+        "neutral_normalization": "isotropic source scaling, foot/centre anchor preserved"
+      },
+      "trim": {
+        "x": 388,
+        "y": 65,
+        "w": 631,
+        "h": 1037
+      },
+      "storage_trim": {
+        "x": 103.1473851030111,
+        "y": 15.55062680810029,
+        "w": 175,
+        "h": 284
+      },
+      "storage_scale": [
+        0.27099841521394613,
+        0.2700096432015429
+      ],
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stored_frame_size": [
+        382,
+        311
+      ],
+      "stored_anchor_px": [
+        190.78288431061807,
+        297.0106075216972
+      ],
+      "ssim": 0.9896756213767347,
+      "effective_density": 0.9,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.912747229909877,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      },
+      "stored_content_size": [
+        171,
+        280
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        175,
+        284
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "phase_roar",
+      "sheet": "sprites/enemies/humbaba/phase_roar.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 8,
+      "columns": 8,
+      "rows": 1,
+      "duration_seconds": 1.8,
+      "fps": 4.444444444444445,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        1272,
+        285
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 419,
+        "y": 64,
+        "w": 571,
+        "h": 1039
+      },
+      "storage_trim": {
+        "x": 111.73905429071803,
+        "y": 15.308950914340713,
+        "w": 159,
+        "h": 285
+      },
+      "storage_scale": [
+        0.2714535901926445,
+        0.27045235803657364
+      ],
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "stored_frame_size": [
+        382,
+        312
+      ],
+      "stored_anchor_px": [
+        191.10332749562173,
+        297.497593840231
+      ],
+      "ssim": 0.9866042160017396,
+      "effective_density": 0.9,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        155,
+        281
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        159,
+        285
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "death",
+      "sheet": "sprites/enemies/humbaba/death.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 8,
+      "columns": 8,
+      "rows": 1,
+      "duration_seconds": 1.6,
+      "fps": 5.0,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        2424,
+        285
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.65,
+        "detached_fx_or_weapon": false,
+        "movement": true,
+        "posture_reason": "Forward bend / raised arms changes silhouette while anatomy remains fixed"
+      },
+      "trim": {
+        "x": 152,
+        "y": 64,
+        "w": 1104,
+        "h": 1039
+      },
+      "storage_trim": {
+        "x": 39.166666666666664,
+        "y": 15.308950914340713,
+        "w": 303,
+        "h": 285
+      },
+      "storage_scale": [
+        0.2708333333333333,
+        0.27045235803657364
+      ],
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "stored_frame_size": [
+        381,
+        312
+      ],
+      "stored_anchor_px": [
+        190.66666666666666,
+        297.497593840231
+      ],
+      "ssim": 0.9850861352362341,
+      "effective_density": 0.9,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        299,
+        281
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        303,
+        285
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "walk",
+      "sheet": "sprites/enemies/humbaba/walk.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 8,
+      "columns": 8,
+      "rows": 1,
+      "duration_seconds": 1.2,
+      "fps": 6.666666666666667,
+      "loop": true,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        1672,
+        285
+      ],
+      "qa": {
+        "pose_height_exception": false,
+        "height_tol": 0.1,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 326,
+        "y": 64,
+        "w": 756,
+        "h": 1039
+      },
+      "storage_trim": {
+        "x": 86.3994708994709,
+        "y": 15.308950914340713,
+        "w": 209,
+        "h": 285
+      },
+      "storage_scale": [
+        0.27116402116402116,
+        0.27045235803657364
+      ],
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "stored_frame_size": [
+        382,
+        312
+      ],
+      "stored_anchor_px": [
+        190.8994708994709,
+        297.497593840231
+      ],
+      "ssim": 0.9924421937806125,
+      "effective_density": 0.9,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      },
+      "stored_content_size": [
+        205,
+        281
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        209,
+        285
+      ],
+      "stored_gutter": 2
+    }
+  ],
+  "aliases": {
+    "hurt": "idle",
+    "windup": "bite_windup",
+    "attack": "bite",
+    "recovery": "bite_recovery"
+  }
+}

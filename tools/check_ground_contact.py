@@ -18,7 +18,7 @@ def support(level,x,foot):
 
 def check(fix=False):
  path=R/'data/levels.json';data=json.loads(path.read_text());registry=json.loads((R/'data/sprite_trims.json').read_text());art=json.loads((R/'data/interactions.json').read_text())['door_art'];lines=['접지 기준: alpha>200 픽셀이 폭의 30% 이상인 마지막 행. 허용 ±6px.'];errors=0;count=0
- ground_words=['pillar','statue','lamp_post','fence','house_ruin','market_stall','stump','bone_pile','home_bed','home_table','skeleton_remains','vase','brazier','castle_facade','passage_facade','villa_exterior','nimrod_home_exterior']
+ ground_words=['pillar','statue','lamp_post','fence','house_ruin','market_stall','stump','bone_pile','home_bed','small_rock','shimati_stall','home_table','skeleton_remains','vase','brazier','castle_facade','passage_facade','villa_exterior','nimrod_home_exterior']
  for l in data['levels']:
   for kind in ['backgrounds','decorations','doors']:
    for e in l.get(kind,[]):

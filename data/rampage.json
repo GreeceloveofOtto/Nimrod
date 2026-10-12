@@ -1,0 +1,71 @@
+{
+  "max": 100,
+  "kill_threshold": 50,
+  "devour": {
+    "gain": 12,
+    "damage": 150,
+    "range": 180,
+    "cooldown": 15,
+    "seconds": 0.7,
+    "dash_seconds": 0.15,
+    "dash_distance": 80,
+    "damage_time": 0.35,
+    "fx_offset": [
+      45,
+      -65
+    ],
+    "fx_seconds": 0.35,
+    "hand_height_ratio": 0.6
+  },
+  "cure": {
+    "amount": 11,
+    "cost": {
+      "type": "hp",
+      "amount": 30
+    }
+  },
+  "death_threshold": 90,
+  "death_at_max": 100,
+  "tiers": [
+    {
+      "over": 30,
+      "damage": 1.05,
+      "reach": 1.0,
+      "set": "axe_prosthetic_helm",
+      "afterimage_seconds": 0.18,
+      "alpha": 0.35
+    },
+    {
+      "over": 40,
+      "damage": 1.1,
+      "reach": 1.1,
+      "set": "axe_prosthetic_helm_r40",
+      "afterimage_seconds": 0.18,
+      "alpha": 0.35
+    },
+    {
+      "over": 50,
+      "damage": 1.15,
+      "reach": 1.15,
+      "set": "axe_prosthetic_helm_r50",
+      "afterimage_seconds": 0.18,
+      "alpha": 0.35
+    },
+    {
+      "over": 90,
+      "damage": 1.25,
+      "reach": 1.25,
+      "set": "axe_prosthetic_helm_r90",
+      "afterimage_seconds": 0.3,
+      "alpha": 0.6
+    }
+  ],
+  "per_point": {
+    "attack": 0.03,
+    "attack_speed": 0.03,
+    "max_hp": 0.03
+  },
+  "attack_speed_cap": 2.0,
+  "tier_flash_seconds": 0.2,
+  "afterimage_interval": 0.05
+}

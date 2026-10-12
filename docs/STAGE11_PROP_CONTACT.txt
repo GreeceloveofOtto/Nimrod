@@ -1,0 +1,17 @@
+Bed body contact +0.000px
+Bed body contact +0.000px
+Bed body contact +0.000px
+Bed body contact +0.000px
+Bed body contact +0.000px
+Bed body contact +0.000px
+Bed body contact +0.000px
+Bed body contact +0.000px
+Bed body contact +0.000px
+Bed body contact +0.000px
+Bed body contact +0.000px
+Bed body contact +0.000px
+Urshanabi seat rock contact +0.000px
+Chair player painted seat contact -0.600px
+Chair aya painted seat contact +1.500px
+Chair shamash painted seat contact +1.500px
+PROP_CONTACT: 16 checks, 0 failures

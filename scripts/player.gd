@@ -55,6 +55,12 @@ var roll_direction: int = 1
 var hurt_clock: float = 0.0
 var hurt_duration: float = Config.PLAYER_HURT_SECONDS
 var death_clock: float = 0.0
+var debug_hp_floor: bool = false
+var rampage_flash_left: float = 0
+var devour_cooldown_left: float = 0.0
+var devour_clock: float = 0.0
+var devour_target: EnemyBase
+var devour_hit: bool = false
 var damage_grace: float = 0.0
 var hitstop_left: float = 0.0
 var coyote_left: float = 0.0
@@ -134,6 +140,10 @@ func _ready() -> void:
     visual.scale = Vector2.ONE * VISUAL_SCALE
     visual.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
     _show_clip("idle", 0.0)
+    var trail: Node2D = load("res://scripts/afterimage_effect.gd").new()
+    trail.name = "AfterimageEffect"
+    trail.hero = self
+    add_child(trail)
 
 func _load_attack_data() -> void:
     var file := FileAccess.open("res://data/player_attacks.json", FileAccess.READ)
@@ -167,7 +177,16 @@ func _load_sprites() -> void:
     if not (parsed is Dictionary):
         push_error("Invalid animation manifest")
         return
-    for clip_variant in parsed.get("clips", []):
+    var all_clips: Array = parsed.get("clips", []).duplicate(true)
+    for alias in parsed.get("aliases", {}):
+        var target: Dictionary = parsed["aliases"][alias]
+        var source: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/sprites/player/"+str(target["set"])+"/manifest.json"))
+        for source_clip: Dictionary in source["clips"]:
+            if str(source_clip["name"]) == str(target["clip"]):
+                var copy: Dictionary = source_clip.duplicate(true)
+                copy["name"] = alias
+                all_clips.append(copy)
+    for clip_variant in all_clips:
         var clip: Dictionary = clip_variant
         var clip_or_sound_name: String = str(clip.get("name", ""))
         var path: String = "res://assets/" + str(clip.get("sheet", ""))
@@ -199,6 +218,13 @@ func _physics_process(delta: float) -> void:
 
     skill_cooldown_left = maxf(0, skill_cooldown_left - delta)
     skill_slow_left = maxf(0, skill_slow_left - delta)
+    rampage_flash_left = maxf(0,rampage_flash_left-delta)
+    devour_cooldown_left = maxf(0, devour_cooldown_left - delta)
+    if Input.is_action_just_pressed("skill_devour"):
+        try_devour()
+    if action == "devour":
+        _update_devour(delta)
+        return
     if Input.is_action_just_pressed("skill_light"):
         cast_anur_light()
     damage_grace = maxf(0.0, damage_grace - delta)
@@ -216,7 +242,7 @@ func _physics_process(delta: float) -> void:
         _move_with_surface_rules(delta)
         _show_clip("death", death_clock)
         if death_clock >= Config.PLAYER_DEATH_RESTART_SECONDS:
-            _request_run_restart()
+            _request_run_restart(true)
         return
 
     if pull_left > 0.0:
@@ -513,7 +539,9 @@ func _update_attack(delta: float) -> void:
 func _configured_hitbox(tuning: Dictionary) -> Rect2:
     var box: Dictionary = tuning["hitbox"]
     var size := Vector2(float(box["width"]), float(box["height"]))
-    var offset_x: float = float(box["offset_x"])
+    var reach: float = get_node("/root/Rampage").reach_multiplier()
+    size.x *= reach
+    var offset_x: float = float(box["offset_x"]) * reach
     var start_x: float = offset_x if facing > 0 else -offset_x - size.x
     return Rect2(Vector2(start_x, float(box["top"])), size)
 
@@ -546,12 +574,14 @@ func _resolve_axe_hit() -> void:
         if attack_already_hit.has(id):
             continue
         attack_already_hit[id] = true
-        var damage: int = roundi(float(tuning["damage"]) * modifiers.multiplier("attack"))
+        var damage: int = roundi(float(tuning["damage"]) * modifiers.multiplier("attack") * get_node("/root/Rampage").damage_multiplier())
         # Knockback uses the attacker's origin; the axe tip can pass the target.
         if obj.has_method("set_hit_contact"):
             var enemy_box: Rect2 = obj.get_hurt_rect()
             obj.set_hit_contact(Rect2(global_position + area.position, area.size).intersection(enemy_box).get_center())
         var result: Variant = obj.call("take_hit", damage, global_position, strike)
+        if obj is EnemyBase and obj.hp <= 0 and result is Dictionary and int(result.get("damage_dealt", 0)) > 0:
+            get_node("/root/Rampage").basic_kill(obj)
         # A death explosion or a signal callback can cancel/replace this attack.
         if action != "attack" or attack_generation != generation:
             return
@@ -590,12 +620,14 @@ func _resolve_shockwave() -> void:
         if attack_already_hit.has(id):
             continue
         attack_already_hit[id] = true
-        var damage: int = roundi(float(shockwave_data["damage"]) * modifiers.multiplier("attack"))
+        var damage: int = roundi(float(shockwave_data["damage"]) * modifiers.multiplier("attack") * get_node("/root/Rampage").damage_multiplier())
         var result: Variant
         if obj.has_method("take_shockwave_hit"):
             result = obj.call("take_shockwave_hit", damage, global_position, 4)
         else:
             result = obj.call("take_hit", damage, global_position, 4)
+        if obj is EnemyBase and obj.hp <= 0 and result is Dictionary and int(result.get("damage_dealt",0)) > 0:
+            get_node("/root/Rampage").basic_kill(obj)
         if action != "attack" or attack_generation != generation:
             return
         if result is Dictionary and bool(result.get("blocked", false)):
@@ -719,7 +751,7 @@ func receive_damage(amount: int, opts: Dictionary = {}) -> bool:
         if not previous.is_empty() and source != int(previous["source"]) and damage_tick_clock - float(previous["clock"]) < float(opts.get("overlap_interval", 0.2)):
             return false
         tick_sources[group] = {"source": source, "clock": damage_tick_clock}
-    hp = maxi(0, hp - amount)
+    hp = maxi(1 if debug_hp_floor else 0, hp - amount)
     flash_time = Config.PLAYER_DAMAGE_FLASH_SECONDS
     shake_time = Config.PLAYER_DAMAGE_SHAKE_SECONDS
     if stagger:
@@ -778,13 +810,16 @@ func begin_portal_walk(direction: float) -> void:
 func end_portal_walk() -> void:
     _portal_walking = false
 
-func _request_run_restart() -> void:
+func _request_run_restart(from_death: bool = false) -> void:
     if _restart_requested:
         return
     _restart_requested = true
     var manager := get_node_or_null("/root/SceneManager")
     if manager != null and manager.player == self:
-        manager.restart_run.call_deferred()
+        if from_death:
+            manager.handle_death.call_deferred()
+        else:
+            manager.restart_run.call_deferred()
     else:
         get_tree().reload_current_scene()
 
@@ -820,6 +855,11 @@ func reset_run_state() -> void:
     shake_time = 0.0
     step_timer = 0.0
     _restart_requested = false
+    devour_cooldown_left = 0
+    devour_clock = 0
+    devour_target = null
+    devour_hit = false
+    rampage_flash_left = 0
     pull_left = 0.0
     pull_elapsed = 0.0
     pull_escaped = false
@@ -932,7 +972,7 @@ func _show_clip(clip_or_sound_name: String, explicit_time: float = -1.0, delta: 
                 break
     visual.flip_h = facing < 0
     AssetVisual.apply_frame(visual, clip, index)
-    visual.modulate = Color("e2fcff") if flash_time > 0.0 else Color.WHITE
+    visual.modulate = Color(1.25,.35,.25) if rampage_flash_left>0 else Color("e2fcff") if flash_time > 0.0 else Color.WHITE
 
 func _update_camera_shake(delta: float) -> void:
     shake_time = maxf(0.0, shake_time - delta)
@@ -1103,7 +1143,7 @@ func cast_anur_light() -> bool:
     var projectile := AnurLightProjectile.new()
     projectile.hero = self
     projectile.direction = facing
-    projectile.damage = roundi(float(skill_data["damage"]) * modifiers.multiplier("attack"))
+    projectile.damage = roundi(float(skill_data["damage"]) * modifiers.multiplier("attack") * get_node("/root/Rampage").damage_multiplier())
     var level: Node = get_node("/root/SceneManager").current_level
     var parent: Node = level if is_instance_valid(level) else get_parent()
     parent.add_child(projectile)
@@ -1119,7 +1159,9 @@ func selected_sprite_set() -> String:
         return cinematic_set
     var story: Node = get_node("/root/Story")
     if story.is_flag("prosthetic_equipped"):
-        return "axe_prosthetic"
+        return get_node("/root/Rampage").sprite_set()
+    if story.is_flag("helmet_equipped"):
+        return "axe_onearm_helm"
     if story.is_flag("arm_lost"):
         return "axe_onearm"
     return "unarmed" if weapon == "none" or visual_weapon_hidden else weapon
@@ -1134,7 +1176,17 @@ func sync_story_state() -> void:
             modifiers.add_modifier(str(id), definitions[id])
         else:
             modifiers.modifiers.erase(id)
+    var rampage: Node = get_node("/root/Rampage")
+    if rampage.unlocked():
+        var additions: Dictionary = {}
+        for key in rampage.settings["per_point"]:
+            additions[key] = float(rampage.settings["per_point"][key]) * rampage.value()
+        modifiers.add_modifier("rampage", additions)
+    else:
+        modifiers.modifiers.erase("rampage")
     hp = clampi(hp + maxi(0, get_max_hp()-old_max), 0, get_max_hp())
+    if action == "dead":
+        hp = 0
     if get_node("/root/Story").is_flag("arm_lost") and weapon != "axe":
         get_node("/root/GameState").set_weapon("axe")
     if sprite_set != selected_sprite_set():
@@ -1144,3 +1196,63 @@ func sync_story_state() -> void:
         displayed_clip = ""
         _show_clip(previous_clip if clip_data.has(previous_clip) else "idle", previous_clock)
     damage_received.emit(0, hp)
+
+func try_devour() -> bool:
+    var rampage: Node = get_node("/root/Rampage")
+    if not rampage.unlocked() or not get_node("/root/Story").is_flag("prosthetic_equipped") or devour_cooldown_left > 0 or action != "normal" or crouching or pull_left>0 or transition_locked or get_tree().paused or get_node("/root/Dialogue").input_blocked() or get_node("/root/Cutscene").active:
+        return false
+    var candidate: EnemyBase
+    var closest: float = float(rampage.settings["devour"]["range"]) + 1
+    for enemy: EnemyBase in get_tree().get_nodes_in_group("enemies"):
+        var rect: Rect2 = enemy.get_hurt_rect()
+        var hand: Vector2 = global_position - Vector2(0,STAND_BOX.y*float(rampage.settings["devour"]["hand_height_ratio"]))
+        var nearest := Vector2(clampf(hand.x,rect.position.x,rect.end.x),clampf(hand.y,rect.position.y,rect.end.y))
+        var difference: Vector2 = nearest - hand
+        var distance: float = difference.length()
+        if enemy.hp > 0 and (enemy.get_hurt_rect().get_center().x-global_position.x)*facing >= 0 and distance <= float(rampage.settings["devour"]["range"]) and distance < closest:
+            closest = distance
+            candidate = enemy
+    if candidate == null:
+        return false
+    _cancel_attack()
+    action = "devour"
+    devour_target = candidate
+    devour_clock = 0
+    devour_hit = false
+    devour_cooldown_left = float(rampage.settings["devour"]["cooldown"])
+    _show_clip("devour",0)
+    get_node("/root/Audio").play_sfx("devour_chomp")
+    rampage.add(int(rampage.settings["devour"]["gain"]))
+    return true
+
+func _update_devour(delta: float) -> void:
+    var spec: Dictionary = get_node("/root/Rampage").settings["devour"]
+    devour_clock += delta
+    velocity.x = facing*float(spec["dash_distance"])/float(spec["dash_seconds"]) if devour_clock < float(spec["dash_seconds"]) else 0
+    _integrate_vertical(delta)
+    move_and_slide()
+    _show_clip("devour",devour_clock)
+    if not devour_hit and devour_clock >= float(spec["damage_time"]):
+        devour_hit = true
+        if is_instance_valid(devour_target):
+            devour_target.take_fixed_damage(int(spec["damage"]),global_position)
+            var fx: Node2D = load("res://scripts/image_effect.gd").new()
+            fx.configure("res://assets/sprites/fx/devour_bite.webp",Vector2i(256,192),5,float(spec["fx_seconds"]),false,Vector2(128,96))
+            get_tree().current_scene.add_child(fx)
+            fx.global_position = global_position + Vector2(facing*float(spec["fx_offset"][0]),float(spec["fx_offset"][1]))
+            fx.scale.x = float(facing)
+            get_node("/root/Audio").play_sfx("devour_gulp")
+    if devour_clock >= float(spec["seconds"]):
+        action = "normal"
+        devour_target = null
+
+func force_rampage_death() -> void:
+    if action == "dead":
+        return
+    hp = 0
+    _cancel_attack()
+    _restore_safe_collider()
+    action = "dead"
+    death_clock = 0
+    damage_received.emit(0,0)
+    died.emit()

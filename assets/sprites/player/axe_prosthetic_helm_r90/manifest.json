@@ -1,0 +1,1804 @@
+{
+  "height_excludes_helmet": true,
+  "helmet_height_allowance_px": 45,
+  "step": 19,
+  "frame_size": [
+    640,
+    640
+  ],
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/player/axe_prosthetic_helm_r90/idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 10,
+      "duration_seconds": 2.2,
+      "fps": 4.545454545454545,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        930,
+        154
+      ],
+      "qa": {
+        "pose_height_exception": false,
+        "height_tol": 0.03,
+        "movement": false,
+        "detached_fx_or_weapon": false,
+        "expected_pose_heights": [
+          414,
+          414,
+          414,
+          414,
+          414,
+          414,
+          414,
+          414,
+          414,
+          414
+        ],
+        "horn_allowance_px": 45
+      },
+      "body_reference_height_px": 377.52000000000004,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "columns": 10,
+      "rows": 1,
+      "trim": {
+        "x": 196,
+        "y": 184,
+        "w": 248,
+        "h": 418
+      },
+      "storage_trim": {
+        "x": 68.33870967741936,
+        "y": 64.02870813397129,
+        "w": 93,
+        "h": 154
+      },
+      "storage_scale": [
+        0.3588709677419355,
+        0.3588516746411483
+      ],
+      "stored_columns": 10,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "stored_frame_size": [
+        230,
+        230
+      ],
+      "stored_anchor_px": [
+        114.83870967741936,
+        215.311004784689
+      ],
+      "ssim": 0.9603185035395438,
+      "effective_density": 1.2,
+      "stored_content_size": [
+        89,
+        150
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        93,
+        154
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.9610261359929577,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "walk",
+      "sheet": "sprites/player/axe_prosthetic_helm_r90/walk.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 10,
+      "duration_seconds": 1.05,
+      "fps": 9.523809523809524,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1120,
+        154
+      ],
+      "qa": {
+        "pose_height_exception": false,
+        "height_tol": 0.03,
+        "movement": true,
+        "detached_fx_or_weapon": false,
+        "expected_pose_heights": [
+          414,
+          414,
+          414,
+          414,
+          414,
+          414,
+          414,
+          414,
+          414,
+          414
+        ],
+        "horn_allowance_px": 45
+      },
+      "body_reference_height_px": 377.52000000000004,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "columns": 10,
+      "rows": 1,
+      "trim": {
+        "x": 170,
+        "y": 184,
+        "w": 301,
+        "h": 418
+      },
+      "storage_trim": {
+        "x": 58.99667774086379,
+        "y": 64.02870813397129,
+        "w": 112,
+        "h": 154
+      },
+      "storage_scale": [
+        0.3588039867109635,
+        0.3588516746411483
+      ],
+      "stored_columns": 10,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "stored_frame_size": [
+        230,
+        230
+      ],
+      "stored_anchor_px": [
+        114.8172757475083,
+        215.311004784689
+      ],
+      "ssim": 0.9601929623931326,
+      "effective_density": 1.2,
+      "stored_content_size": [
+        108,
+        150
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        112,
+        154
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.931289547691587,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "run",
+      "sheet": "sprites/player/axe_prosthetic_helm_r90/run.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 10,
+      "duration_seconds": 0.82,
+      "fps": 12.195121951219512,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1420,
+        145
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "movement": true,
+        "detached_fx_or_weapon": false,
+        "expected_pose_heights": [
+          388,
+          388,
+          388,
+          388,
+          388,
+          388,
+          388,
+          388,
+          388,
+          388
+        ],
+        "horn_allowance_px": 45
+      },
+      "body_reference_height_px": 353.6,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "columns": 10,
+      "rows": 1,
+      "trim": {
+        "x": 129,
+        "y": 210,
+        "w": 382,
+        "h": 392
+      },
+      "storage_trim": {
+        "x": 44.602094240837694,
+        "y": 73.53571428571428,
+        "w": 142,
+        "h": 145
+      },
+      "storage_scale": [
+        0.3612565445026178,
+        0.3596938775510204
+      ],
+      "stored_columns": 10,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "stored_frame_size": [
+        231,
+        230
+      ],
+      "stored_anchor_px": [
+        115.6020942408377,
+        215.81632653061226
+      ],
+      "ssim": 0.9596935838356759,
+      "effective_density": 1.2,
+      "stored_content_size": [
+        138,
+        141
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        142,
+        145
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.932756083405878,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "crouch_idle",
+      "sheet": "sprites/player/axe_prosthetic_helm_r90/crouch_idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 6,
+      "duration_seconds": 0.8,
+      "fps": 7.5,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        642,
+        112
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "movement": false,
+        "detached_fx_or_weapon": false,
+        "expected_pose_heights": [
+          296,
+          296,
+          296,
+          296,
+          296,
+          296
+        ],
+        "horn_allowance_px": 45
+      },
+      "body_reference_height_px": 270.40000000000003,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "columns": 6,
+      "rows": 1,
+      "trim": {
+        "x": 177,
+        "y": 302,
+        "w": 286,
+        "h": 300
+      },
+      "storage_trim": {
+        "x": 61.74475524475525,
+        "y": 106.72,
+        "w": 107,
+        "h": 112
+      },
+      "storage_scale": [
+        0.36013986013986016,
+        0.36
+      ],
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stored_frame_size": [
+        230,
+        230
+      ],
+      "stored_anchor_px": [
+        115.24475524475524,
+        216.0
+      ],
+      "ssim": 0.933329508891821,
+      "effective_density": 1.2,
+      "stored_content_size": [
+        103,
+        108
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        107,
+        112
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.9404320869775553,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "crouch_enter",
+      "sheet": "sprites/player/axe_prosthetic_helm_r90/crouch_enter.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 4,
+      "duration_seconds": 0.14,
+      "fps": 28.57142857142857,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        560,
+        159
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "movement": true,
+        "detached_fx_or_weapon": false,
+        "expected_pose_heights": [
+          365,
+          334,
+          289,
+          229
+        ],
+        "horn_allowance_px": 45
+      },
+      "body_reference_height_px": 332.8,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "columns": 4,
+      "rows": 1,
+      "trim": {
+        "x": 159,
+        "y": 233,
+        "w": 323,
+        "h": 369
+      },
+      "storage_trim": {
+        "x": 64.94736842105263,
+        "y": 95.87262872628726,
+        "w": 140,
+        "h": 159
+      },
+      "storage_scale": [
+        0.42105263157894735,
+        0.42005420054200543
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        269,
+        269
+      ],
+      "stored_anchor_px": [
+        134.73684210526315,
+        252.03252032520325
+      ],
+      "ssim": 0.9383810247968947,
+      "effective_density": 1.4,
+      "stored_content_size": [
+        136,
+        155
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        140,
+        159
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.952350888851969,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "crouch_exit",
+      "sheet": "sprites/player/axe_prosthetic_helm_r90/crouch_exit.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 4,
+      "duration_seconds": 0.13,
+      "fps": 30.769230769230766,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        612,
+        175
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "movement": true,
+        "detached_fx_or_weapon": false,
+        "expected_pose_heights": [
+          365,
+          476,
+          538,
+          565
+        ],
+        "horn_allowance_px": 45
+      },
+      "body_reference_height_px": 332.8,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "columns": 4,
+      "rows": 1,
+      "trim": {
+        "x": 72,
+        "y": 33,
+        "w": 496,
+        "h": 569
+      },
+      "storage_trim": {
+        "x": 19.629032258064516,
+        "y": 7.917398945518453,
+        "w": 153,
+        "h": 175
+      },
+      "storage_scale": [
+        0.3004032258064516,
+        0.30052724077328646
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        192,
+        192
+      ],
+      "stored_anchor_px": [
+        96.12903225806451,
+        180.3163444639719
+      ],
+      "ssim": 0.9400972399173338,
+      "effective_density": 1.0,
+      "stored_content_size": [
+        149,
+        171
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        153,
+        175
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.949322063743617,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "jump_start",
+      "sheet": "sprites/player/axe_prosthetic_helm_r90/jump_start.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 4,
+      "duration_seconds": 0.13,
+      "fps": 30.769230769230766,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        668,
+        167
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "movement": true,
+        "detached_fx_or_weapon": false,
+        "expected_pose_heights": [
+          365,
+          275,
+          314,
+          450
+        ],
+        "horn_allowance_px": 45
+      },
+      "body_reference_height_px": 332.8,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "columns": 4,
+      "rows": 1,
+      "trim": {
+        "x": 94,
+        "y": 148,
+        "w": 452,
+        "h": 454
+      },
+      "storage_trim": {
+        "x": 31.898230088495573,
+        "y": 51.136563876651984,
+        "w": 167,
+        "h": 167
+      },
+      "storage_scale": [
+        0.3606194690265487,
+        0.3590308370044053
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        231,
+        230
+      ],
+      "stored_anchor_px": [
+        115.39823008849558,
+        215.41850220264317
+      ],
+      "ssim": 0.9396675649511199,
+      "effective_density": 1.2,
+      "stored_content_size": [
+        163,
+        163
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        167,
+        167
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.9469255248713186,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "land",
+      "sheet": "sprites/player/axe_prosthetic_helm_r90/land.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 5,
+      "duration_seconds": 0.24,
+      "fps": 20.833333333333336,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        950,
+        175
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "movement": true,
+        "detached_fx_or_weapon": false,
+        "expected_pose_heights": [
+          365,
+          403,
+          390,
+          470,
+          472
+        ],
+        "horn_allowance_px": 45
+      },
+      "body_reference_height_px": 332.8,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "columns": 5,
+      "rows": 1,
+      "trim": {
+        "x": 62,
+        "y": 126,
+        "w": 516,
+        "h": 476
+      },
+      "storage_trim": {
+        "x": 20.348837209302324,
+        "y": 43.26470588235294,
+        "w": 190,
+        "h": 175
+      },
+      "storage_scale": [
+        0.36046511627906974,
+        0.3592436974789916
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        231,
+        230
+      ],
+      "stored_anchor_px": [
+        115.34883720930233,
+        215.54621848739495
+      ],
+      "ssim": 0.9646632442733164,
+      "effective_density": 1.2,
+      "stored_content_size": [
+        186,
+        171
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        190,
+        175
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.9542982931677426,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "jump_rise",
+      "sheet": "sprites/player/axe_prosthetic_helm_r90/jump_rise.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 6,
+      "duration_seconds": 0.42,
+      "fps": 14.285714285714286,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        942,
+        157
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "movement": true,
+        "detached_fx_or_weapon": false,
+        "expected_pose_heights": [
+          388,
+          472,
+          506,
+          455,
+          448,
+          439
+        ],
+        "horn_allowance_px": 45
+      },
+      "body_reference_height_px": 353.6,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "columns": 6,
+      "rows": 1,
+      "trim": {
+        "x": 65,
+        "y": 92,
+        "w": 510,
+        "h": 510
+      },
+      "storage_trim": {
+        "x": 17.5,
+        "y": 25.599999999999998,
+        "w": 157,
+        "h": 157
+      },
+      "storage_scale": [
+        0.3,
+        0.3
+      ],
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stored_frame_size": [
+        192,
+        192
+      ],
+      "stored_anchor_px": [
+        96.0,
+        180.0
+      ],
+      "ssim": 0.9315696946550718,
+      "effective_density": 1.0,
+      "stored_content_size": [
+        153,
+        153
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        157,
+        157
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.926733229366459,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "fall",
+      "sheet": "sprites/player/axe_prosthetic_helm_r90/fall.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 6,
+      "duration_seconds": 0.36,
+      "fps": 16.666666666666668,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        810,
+        165
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "movement": true,
+        "detached_fx_or_weapon": false,
+        "expected_pose_heights": [
+          414,
+          444,
+          426,
+          424,
+          337,
+          292
+        ],
+        "horn_allowance_px": 45
+      },
+      "body_reference_height_px": 377.52000000000004,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "columns": 6,
+      "rows": 1,
+      "trim": {
+        "x": 138,
+        "y": 154,
+        "w": 364,
+        "h": 448
+      },
+      "storage_trim": {
+        "x": 47.66483516483517,
+        "y": 53.34375,
+        "w": 135,
+        "h": 165
+      },
+      "storage_scale": [
+        0.3598901098901099,
+        0.359375
+      ],
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stored_frame_size": [
+        230,
+        230
+      ],
+      "stored_anchor_px": [
+        115.16483516483517,
+        215.625
+      ],
+      "ssim": 0.9370157947977339,
+      "effective_density": 1.2,
+      "stored_content_size": [
+        131,
+        161
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        135,
+        165
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.9243102244755503,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "drop_through",
+      "sheet": "sprites/player/axe_prosthetic_helm_r90/drop_through.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 5,
+      "duration_seconds": 0.22,
+      "fps": 22.727272727272727,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        700,
+        169
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "movement": true,
+        "detached_fx_or_weapon": false,
+        "expected_pose_heights": [
+          414,
+          435,
+          453,
+          449,
+          429
+        ],
+        "horn_allowance_px": 45
+      },
+      "body_reference_height_px": 377.52000000000004,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "columns": 5,
+      "rows": 1,
+      "trim": {
+        "x": 131,
+        "y": 145,
+        "w": 379,
+        "h": 457
+      },
+      "storage_trim": {
+        "x": 45.007915567282325,
+        "y": 50.35229759299781,
+        "w": 140,
+        "h": 169
+      },
+      "storage_scale": [
+        0.35883905013192613,
+        0.3610503282275711
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        230,
+        231
+      ],
+      "stored_anchor_px": [
+        114.82849604221636,
+        216.63019693654266
+      ],
+      "ssim": 0.9469561398652611,
+      "effective_density": 1.2,
+      "stored_content_size": [
+        136,
+        165
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        140,
+        169
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.9277638857316055,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "hurt",
+      "sheet": "sprites/player/axe_prosthetic_helm_r90/hurt.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 5,
+      "duration_seconds": 0.32,
+      "fps": 15.625,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        730,
+        169
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "movement": true,
+        "detached_fx_or_weapon": false,
+        "expected_pose_heights": [
+          388,
+          386,
+          375,
+          348,
+          383
+        ],
+        "horn_allowance_px": 45
+      },
+      "body_reference_height_px": 353.6,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "columns": 5,
+      "rows": 1,
+      "trim": {
+        "x": 151,
+        "y": 210,
+        "w": 339,
+        "h": 392
+      },
+      "storage_trim": {
+        "x": 61.250737463126846,
+        "y": 86.39285714285714,
+        "w": 146,
+        "h": 169
+      },
+      "storage_scale": [
+        0.41887905604719766,
+        0.42091836734693877
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        268,
+        269
+      ],
+      "stored_anchor_px": [
+        134.04129793510324,
+        252.55102040816325
+      ],
+      "ssim": 0.9447667399610341,
+      "effective_density": 1.4,
+      "stored_content_size": [
+        142,
+        165
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        146,
+        169
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.9230480715134086,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "attack_1",
+      "sheet": "sprites/player/axe_prosthetic_helm_r90/attack_1.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 8,
+      "duration_seconds": 0.33,
+      "fps": 24.242424242424242,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1152,
+        129
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "movement": true,
+        "detached_fx_or_weapon": false,
+        "expected_pose_heights": [
+          414,
+          398,
+          389,
+          351,
+          349,
+          355,
+          376,
+          414
+        ],
+        "horn_allowance_px": 45
+      },
+      "body_reference_height_px": 377.52000000000004,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "columns": 8,
+      "rows": 1,
+      "trim": {
+        "x": 88,
+        "y": 184,
+        "w": 465,
+        "h": 418
+      },
+      "storage_trim": {
+        "x": 24.49462365591398,
+        "y": 53.02392344497608,
+        "w": 144,
+        "h": 129
+      },
+      "storage_scale": [
+        0.3010752688172043,
+        0.29904306220095694
+      ],
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "stored_frame_size": [
+        193,
+        191
+      ],
+      "stored_anchor_px": [
+        96.34408602150538,
+        179.42583732057417
+      ],
+      "ssim": 0.9400421125655717,
+      "effective_density": 1.0,
+      "stored_content_size": [
+        140,
+        125
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        144,
+        129
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.915746495303606,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "attack_2",
+      "sheet": "sprites/player/axe_prosthetic_helm_r90/attack_2.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 8,
+      "duration_seconds": 0.33,
+      "fps": 24.242424242424242,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1312,
+        152
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "movement": true,
+        "detached_fx_or_weapon": false,
+        "expected_pose_heights": [
+          414,
+          406,
+          491,
+          429,
+          444,
+          456,
+          419,
+          461
+        ],
+        "horn_allowance_px": 45
+      },
+      "body_reference_height_px": 377.52000000000004,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "columns": 8,
+      "rows": 1,
+      "trim": {
+        "x": 54,
+        "y": 107,
+        "w": 532,
+        "h": 495
+      },
+      "storage_trim": {
+        "x": 14.240601503759397,
+        "y": 29.99191919191919,
+        "w": 164,
+        "h": 152
+      },
+      "storage_scale": [
+        0.3007518796992481,
+        0.298989898989899
+      ],
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "stored_frame_size": [
+        192,
+        191
+      ],
+      "stored_anchor_px": [
+        96.2406015037594,
+        179.3939393939394
+      ],
+      "ssim": 0.957295688632368,
+      "effective_density": 1.0,
+      "stored_content_size": [
+        160,
+        148
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        164,
+        152
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.9261729963763,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "attack_3",
+      "sheet": "sprites/player/axe_prosthetic_helm_r90/attack_3.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 10,
+      "duration_seconds": 0.4,
+      "fps": 25.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2550,
+        185
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "movement": true,
+        "detached_fx_or_weapon": false,
+        "expected_pose_heights": [
+          414,
+          392,
+          427,
+          395,
+          395,
+          401,
+          393,
+          410,
+          417,
+          420
+        ],
+        "horn_allowance_px": 45
+      },
+      "body_reference_height_px": 377.52000000000004,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "columns": 10,
+      "rows": 1,
+      "trim": {
+        "x": 21,
+        "y": 171,
+        "w": 598,
+        "h": 431
+      },
+      "storage_trim": {
+        "x": 6.814381270903009,
+        "y": 69.81206496519721,
+        "w": 255,
+        "h": 185
+      },
+      "storage_scale": [
+        0.4197324414715719,
+        0.419953596287703
+      ],
+      "stored_columns": 10,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "stored_frame_size": [
+        269,
+        269
+      ],
+      "stored_anchor_px": [
+        134.314381270903,
+        251.9721577726218
+      ],
+      "ssim": 0.9559697729290848,
+      "effective_density": 1.4,
+      "stored_content_size": [
+        251,
+        181
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        255,
+        185
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.89451994191023,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "attack_4",
+      "sheet": "sprites/player/axe_prosthetic_helm_r90/attack_4.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 10,
+      "duration_seconds": 0.56,
+      "fps": 17.857142857142854,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1440,
+        129
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "movement": true,
+        "detached_fx_or_weapon": false,
+        "expected_pose_heights": [
+          414,
+          394,
+          412,
+          405,
+          407,
+          399,
+          363,
+          280,
+          330,
+          365
+        ],
+        "horn_allowance_px": 45
+      },
+      "body_reference_height_px": 377.52000000000004,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "frame_boundaries_seconds": [
+        0,
+        0.056,
+        0.112,
+        0.168,
+        0.224,
+        0.28,
+        0.34,
+        0.396,
+        0.452,
+        0.508,
+        0.56
+      ],
+      "columns": 10,
+      "rows": 1,
+      "trim": {
+        "x": 87,
+        "y": 184,
+        "w": 466,
+        "h": 418
+      },
+      "storage_trim": {
+        "x": 24.137339055793994,
+        "y": 53.02392344497608,
+        "w": 144,
+        "h": 129
+      },
+      "storage_scale": [
+        0.30042918454935624,
+        0.29904306220095694
+      ],
+      "stored_columns": 10,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "stored_frame_size": [
+        192,
+        191
+      ],
+      "stored_anchor_px": [
+        96.13733905579399,
+        179.42583732057417
+      ],
+      "ssim": 0.9370437659133206,
+      "effective_density": 1.0,
+      "stored_content_size": [
+        140,
+        125
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        144,
+        129
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.923177012412474,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "roll",
+      "sheet": "sprites/player/axe_prosthetic_helm_r90/roll.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 12,
+      "duration_seconds": 0.48,
+      "fps": 25.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        2568,
+        205
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "movement": true,
+        "detached_fx_or_weapon": false,
+        "expected_pose_heights": [
+          414,
+          329,
+          250,
+          326,
+          318,
+          260,
+          240,
+          291,
+          334,
+          377,
+          388,
+          411
+        ],
+        "horn_allowance_px": 45
+      },
+      "body_reference_height_px": 377.52000000000004,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "columns": 12,
+      "rows": 1,
+      "trim": {
+        "x": 102,
+        "y": 184,
+        "w": 437,
+        "h": 418
+      },
+      "storage_trim": {
+        "x": 47.016018306636155,
+        "y": 86.47846889952153,
+        "w": 214,
+        "h": 205
+      },
+      "storage_scale": [
+        0.4805491990846682,
+        0.48086124401913877
+      ],
+      "stored_columns": 12,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "stored_frame_size": [
+        308,
+        308
+      ],
+      "stored_anchor_px": [
+        153.77574370709382,
+        288.51674641148327
+      ],
+      "ssim": 0.9538820124721811,
+      "effective_density": 1.6,
+      "stored_content_size": [
+        210,
+        201
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        214,
+        205
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.911103788627678,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "death",
+      "sheet": "sprites/player/axe_prosthetic_helm_r90/death.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 8,
+      "duration_seconds": 0.6,
+      "fps": 13.333333333333334,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1456,
+        129
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "movement": true,
+        "detached_fx_or_weapon": false,
+        "expected_pose_heights": [
+          414,
+          387,
+          344,
+          248,
+          182,
+          156,
+          148,
+          131
+        ],
+        "horn_allowance_px": 45
+      },
+      "body_reference_height_px": 377.52000000000004,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "columns": 8,
+      "rows": 1,
+      "trim": {
+        "x": 24,
+        "y": 184,
+        "w": 592,
+        "h": 418
+      },
+      "storage_trim": {
+        "x": 5.216216216216216,
+        "y": 53.02392344497608,
+        "w": 182,
+        "h": 129
+      },
+      "storage_scale": [
+        0.30067567567567566,
+        0.29904306220095694
+      ],
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "stored_frame_size": [
+        192,
+        191
+      ],
+      "stored_anchor_px": [
+        96.21621621621621,
+        179.42583732057417
+      ],
+      "ssim": 0.9526659008088423,
+      "effective_density": 1.0,
+      "stored_content_size": [
+        178,
+        125
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        182,
+        129
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.9504644234139503,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    },
+    {
+      "name": "devour",
+      "sheet": "sprites/player/axe_prosthetic_helm_r90/devour.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 8,
+      "duration_seconds": 0.7,
+      "fps": 11.428571428571429,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1344,
+        150
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.55,
+        "movement": true,
+        "detached_fx_or_weapon": true,
+        "expected_pose_heights": [
+          414,
+          427,
+          434,
+          461,
+          473,
+          473,
+          475,
+          482
+        ],
+        "horn_allowance_px": 45
+      },
+      "body_reference_height_px": 377.52000000000004,
+      "normalization": "one isotropic scale per clip; constant anatomy, no width/height warping",
+      "columns": 8,
+      "rows": 1,
+      "trim": {
+        "x": 47,
+        "y": 116,
+        "w": 547,
+        "h": 486
+      },
+      "storage_trim": {
+        "x": 12.091407678244972,
+        "y": 32.84773662551441,
+        "w": 168,
+        "h": 150
+      },
+      "storage_scale": [
+        0.29981718464351004,
+        0.3004115226337449
+      ],
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "stored_frame_size": [
+        192,
+        192
+      ],
+      "stored_anchor_px": [
+        95.94149908592321,
+        180.2469135802469
+      ],
+      "ssim": 0.9554872410863736,
+      "effective_density": 1.0,
+      "stored_content_size": [
+        164,
+        146
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        168,
+        150
+      ],
+      "stored_gutter": 2,
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "encoder": "bounded RGB quantization",
+        "rgb_step": 12,
+        "rgb_mae": 2.9431115927060936,
+        "alpha_mae": 0.0,
+        "bbox_same": true
+      }
+    }
+  ],
+  "aliases": {}
+}

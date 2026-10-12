@@ -7,14 +7,12 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 IGNORED={'.git','.godot','archive','__pycache__','.codex','.agents','source_art','reference','sprite_qa','motion_review','generated_images','artifacts'}
 def files():
- screenshots=sorted((p for p in (ROOT/'docs/screenshots').glob('*.*') if p.suffix.lower() in ['.png','.jpg','.jpeg']),key=lambda p:p.stat().st_mtime,reverse=True)[:8]
- comparisons=sorted((ROOT/'docs/size_compare').glob('*.jpg'),key=lambda p:p.stat().st_mtime,reverse=True)[:6]
+ doc_images=sorted((p for p in (ROOT/'docs').rglob('*') if p.suffix.lower() in ['.png','.jpg','.jpeg']),key=lambda p:p.stat().st_mtime,reverse=True)[:8]
  for folder,dirs,names in os.walk(ROOT):
   dirs[:]=[d for d in dirs if d not in IGNORED and not d.startswith('_legacy') and not (Path(folder)/d/'.gdignore').exists()]
   for name in names:
    p=Path(folder)/name
-   if 'docs/screenshots' in p.as_posix() and p not in screenshots:continue
-   if 'docs/size_compare' in p.as_posix() and p not in comparisons:continue
+   if 'docs' in p.relative_to(ROOT).parts and p.suffix.lower() in ['.png','.jpg','.jpeg'] and p not in doc_images:continue
    if p.suffix in ['.import','.uid','.pyc','.zip','.tmp'] or name in ['.DS_Store']:continue
    yield p
 
@@ -34,7 +32,7 @@ def write_archive(out, entries):
  return len(written_dirs)
 
 def main():
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',default=str(ROOT/'downloads/Nimrod_stage10_2026-10-12.zip'));p.add_argument('--verify',action='store_true');a=p.parse_args();out=Path(a.output);out.parent.mkdir(parents=True,exist_ok=True);entries=list(files());asset_bytes=sum(f.stat().st_size for f in entries if 'assets' in f.relative_to(ROOT).parts)
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',default=str(ROOT/'downloads/Nimrod_stage11_2026-10-12.zip'));p.add_argument('--verify',action='store_true');a=p.parse_args();out=Path(a.output);out.parent.mkdir(parents=True,exist_ok=True);entries=list(files());asset_bytes=sum(f.stat().st_size for f in entries if 'assets' in f.relative_to(ROOT).parts)
  directory_count=write_archive(out,entries)
  from check_zip_import import check_import
  import_check=check_import(out)
@@ -43,10 +41,10 @@ def main():
  size_ok=asset_bytes<=50*1048576 and out.stat().st_size<=52*1048576
  ok=size_ok;checks=[];target=None
  if a.verify:
-  target=Path(tempfile.mkdtemp(prefix='nimrod-stage10-',dir='/tmp'))
+  target=Path(tempfile.mkdtemp(prefix='nimrod-stage11-',dir='/tmp'))
   with zipfile.ZipFile(out) as z:z.extractall(target)
   project=target/'Nimrod'
-  for command in [['python','tools/run_headless_checks.py','--jobs','4','--output','archive/package_verification'],['python','tools/validate_assets.py'],['python','tools/check_alpha_cleanliness.py'],['python','tools/check_level_reachability.py'],['python','tools/check_sprite_frames.py'],['python','tools/check_sprite_frames.py','assets/sprites/player/axe_onearm/manifest.json','assets/sprites/player/axe_prosthetic/manifest.json','assets/sprites/player/cutscene/manifest.json','assets/sprites/npcs/enkidua/manifest.json','assets/sprites/fx/manifest.json'],['python','tools/check_enemy_grounding.py'],['python','tools/check_enemy_visual_bounds.py']]:
+  for command in [['python','tools/run_headless_checks.py','--jobs','4','--output','archive/package_verification'],['python','tools/validate_assets.py'],['python','tools/check_alpha_cleanliness.py'],['python','tools/check_level_reachability.py'],['python','tools/check_sprite_frames.py'],['python','tools/check_all_sprite_frames.py'],['python','tools/check_enemy_grounding.py'],['python','tools/check_enemy_visual_bounds.py'],['python','tools/check_prop_contact.py']]:
    result=subprocess.run(command,cwd=project);checks.append({'command':command,'returncode':result.returncode});ok=ok and result.returncode==0
   print('EXTRACTED:',project)
  report={'zip':str(out),'asset_bytes':asset_bytes,'zip_bytes':out.stat().st_size,'sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'directory_entries':directory_count,'godot_zip_import':import_check,'size_goals_passed':size_ok,'extracted_project':str(target/'Nimrod') if target else None,'checks':checks,'functional_verification_passed':bool(checks) and all(c['returncode']==0 for c in checks)}

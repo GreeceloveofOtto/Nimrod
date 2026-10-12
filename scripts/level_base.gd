@@ -118,6 +118,19 @@ func _make_backgrounds() -> void:
             Art.add_image(layer, str(entry["path"]), at, size_px)
 
 func _make_world() -> void:
+    for entry: Dictionary in config.get("travel_zones",[]):
+        var zone: Node2D = load("res://scripts/travel_zone.gd").new()
+        zone.name = "TravelZone"
+        zone.position = _vector(entry["position"])
+        zone.width = float(entry["width"])
+        zone.target_level = str(entry["target_level"])
+        zone.target_spawn = str(entry["target_spawn"])
+        zone.required_flag = str(entry["required_flag"])
+        add_child(zone)
+    if config.has("walk_bounds"):
+        var bounds: Array = config["walk_bounds"]
+        _make_surface(float(bounds[0])-20,-100,20,floor_y+300,false,0.0)
+        _make_surface(float(bounds[1]),-100,20,floor_y+300,false,0.0)
     var width: float = float(config.get("width", 0.0))
     var margin: float = float(world_settings.get("outside_margin", 0.0))
     var wall: float = float(world_settings.get("wall_thickness", 0.0))

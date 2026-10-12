@@ -16,6 +16,8 @@ func set_flag(flag: String, value: bool = true) -> void:
     if flag.is_empty():
         return
     get_node("/root/GameState").run_flags[flag] = value
+    if flag == "dilmun_arrived" and value:
+        get_node("/root/Rampage").unlock()
     changed.emit()
 
 func matches(condition: Dictionary) -> bool:
@@ -53,4 +55,5 @@ func debug_stage(target: int) -> void:
     for key in get_node("/root/GameState").run_flags.keys():
         if str(key).begins_with("story_dialogue_"):
             get_node("/root/GameState").run_flags.erase(key)
+    get_node("/root/Rampage").reset_value()
     changed.emit()

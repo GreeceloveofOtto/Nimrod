@@ -379,6 +379,30 @@
         "type": "time_skip",
         "id": "to_dilmun"
       }
+    ],
+    "shimati_paper": [
+      {
+        "type": "play_clip",
+        "actor": "shimati",
+        "clip": "give_paper"
+      },
+      {
+        "type": "story_event",
+        "event": "paper_transfer"
+      },
+      {
+        "type": "fade_actor",
+        "actor": "shimati",
+        "seconds": 2
+      },
+      {
+        "type": "despawn_npc",
+        "actor": "shimati"
+      },
+      {
+        "type": "set_flag",
+        "flag": "shimati_done"
+      }
     ]
   }
 }

@@ -14,6 +14,8 @@ static func sheet_spec(path: String, defaults: Dictionary = {}) -> Dictionary:
     return _sheet_specs.get(path, defaults)
 
 static func apply_frame(sprite: Sprite2D, spec: Dictionary, frame: int) -> void:
+    configure_sprite(sprite)
+    sprite.region_enabled = true
     var original := Vector2(float(spec["frame_width"]), float(spec["frame_height"]))
     var anchor: Array = spec.get("anchor_px", [original.x * 0.5, original.y * 0.5])
     var crop: Dictionary = spec.get("storage_trim", spec.get("trim", {"x": 0, "y": 0, "w": original.x, "h": original.y}))
@@ -31,6 +33,10 @@ static func apply_frame(sprite: Sprite2D, spec: Dictionary, frame: int) -> void:
         offset.x = -offset.x
     sprite.offset = offset
 
+static func configure_sprite(sprite: Sprite2D) -> void:
+    sprite.region_filter_clip_enabled = true
+    sprite.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
+
 static func frame_display_size(texture: Texture2D, spec: Dictionary, scale_px: Vector2) -> Vector2:
     var crop: Dictionary = spec.get("storage_trim", spec.get("trim", {"w":spec["frame_width"],"h":spec["frame_height"]}))
     return Vector2(texture.get_image().get_region(Rect2i(0,0,int(crop["w"]),int(crop["h"]))).get_used_rect().size) * scale_px
@@ -45,6 +51,7 @@ static func add_image(parent: Node, path: String, at: Vector2, size: Vector2, z:
         var texture := ResourceLoader.load(path) as Texture2D
         if texture != null:
             var sprite := Sprite2D.new()
+            AssetVisual.configure_sprite(sprite)
             sprite.name = "Image"
             sprite.texture = texture
             sprite.centered = false

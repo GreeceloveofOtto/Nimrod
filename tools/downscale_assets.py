@@ -90,7 +90,7 @@ def rewrite_paths(mapping):
  if not mapping:return
  replacements={**mapping,**{k.removeprefix('assets/'):v.removeprefix('assets/') for k,v in mapping.items()}}
  pattern=re.compile('|'.join(re.escape(k) for k in sorted(replacements,key=len,reverse=True)))
- for folder in ['scripts','scenes','data','assets','tools','tests']:
+ for folder in ['scripts','scenes','data','assets','tests']:
   for p in (ROOT/folder).rglob('*'):
    if p.suffix not in ['.gd','.py','.json','.tscn','.tres','.txt','.md']:continue
    if p==ROOT/'data/image_mapping.json':continue

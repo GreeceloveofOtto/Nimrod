@@ -1,1 +1,606 @@
-{"character":"cedar_archer","aliases":{"attack":"shoot"},"clips":[{"name":"idle","sheet":"sprites/enemies/cedar_archer/idle.webp","frame_width":640,"frame_height":640,"columns":6,"rows":1,"frames":6,"duration_seconds":1.0,"fps":6.0,"loop":true,"anchor_px":[320,600],"image_size":[762,199],"trim":{"x":243,"y":234,"w":235,"h":368},"storage_scale":[0.5404255319148936,0.5407608695652174],"stored_frame_size":[346,346],"stored_anchor_px":[172.93617021276594,324.45652173913044],"storage_trim":{"x":131.32340425531916,"y":126.53804347826087,"w":127,"h":199},"stored_columns":6,"frame_map":[0,1,2,3,4,5],"effective_density":1.8,"ssim":0.9372988369999207},{"name":"walk","sheet":"sprites/enemies/cedar_archer/walk.webp","frame_width":640,"frame_height":640,"columns":8,"rows":1,"frames":8,"duration_seconds":0.9,"fps":8.88888888888889,"loop":true,"anchor_px":[320,600],"image_size":[1072,202],"qa":{"movement":true},"trim":{"x":215,"y":227,"w":249,"h":375},"storage_scale":[0.5381526104417671,0.5386666666666666],"stored_frame_size":[344,345],"stored_anchor_px":[172.20883534136547,323.2],"storage_trim":{"x":115.70281124497993,"y":122.27733333333333,"w":134,"h":202},"stored_columns":8,"frame_map":[0,1,2,3,4,5,6,7],"effective_density":1.8,"ssim":0.9388567844753274},{"name":"windup","sheet":"sprites/enemies/cedar_archer/windup.webp","frame_width":640,"frame_height":640,"columns":4,"rows":1,"frames":4,"duration_seconds":0.5,"fps":8.0,"loop":false,"anchor_px":[320,600],"image_size":[644,211],"trim":{"x":214,"y":212,"w":298,"h":390},"storage_scale":[0.540268456375839,0.541025641025641],"stored_frame_size":[346,346],"stored_anchor_px":[172.88590604026845,324.61538461538464],"storage_trim":{"x":115.61744966442953,"y":114.6974358974359,"w":161,"h":211},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":1.8,"ssim":0.9436020973274044},{"name":"shoot","sheet":"sprites/enemies/cedar_archer/shoot.webp","frame_width":640,"frame_height":640,"columns":3,"rows":1,"frames":3,"duration_seconds":0.2,"fps":15.0,"loop":false,"anchor_px":[320,600],"image_size":[558,203],"trim":{"x":190,"y":226,"w":345,"h":376},"storage_scale":[0.5391304347826087,0.5398936170212766],"stored_frame_size":[345,346],"stored_anchor_px":[172.52173913043478,323.93617021276594],"storage_trim":{"x":102.43478260869566,"y":122.01595744680851,"w":186,"h":203},"stored_columns":3,"frame_map":[0,1,2],"effective_density":1.8,"ssim":0.9392910433993454},{"name":"recovery","sheet":"sprites/enemies/cedar_archer/recovery.webp","frame_width":640,"frame_height":640,"columns":4,"rows":1,"frames":4,"duration_seconds":0.4,"fps":10.0,"loop":false,"anchor_px":[320,600],"image_size":[680,199],"trim":{"x":213,"y":234,"w":314,"h":368},"storage_scale":[0.5414012738853503,0.5407608695652174],"stored_frame_size":[346,346],"stored_anchor_px":[173.2484076433121,324.45652173913044],"storage_trim":{"x":115.31847133757962,"y":126.53804347826087,"w":170,"h":199},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":1.8,"ssim":0.942039642000058},{"name":"hop_back","sheet":"sprites/enemies/cedar_archer/hop_back.webp","frame_width":640,"frame_height":640,"columns":5,"rows":1,"frames":5,"duration_seconds":0.4,"fps":12.5,"loop":false,"anchor_px":[320,600],"image_size":[845,215],"qa":{"movement":true},"trim":{"x":192,"y":203,"w":313,"h":399},"storage_scale":[0.5399361022364217,0.5388471177944862],"stored_frame_size":[346,345],"stored_anchor_px":[172.77955271565494,323.30827067669173],"storage_trim":{"x":103.66773162939297,"y":109.3859649122807,"w":169,"h":215},"stored_columns":5,"frame_map":[0,1,2,3,4],"effective_density":1.8,"ssim":0.9402561012590439},{"name":"turn","sheet":"sprites/enemies/cedar_archer/turn.webp","frame_width":640,"frame_height":640,"columns":4,"rows":1,"frames":4,"duration_seconds":0.2,"fps":20.0,"loop":false,"anchor_px":[320,600],"image_size":[544,199],"trim":{"x":222,"y":234,"w":252,"h":368},"storage_scale":[0.5396825396825397,0.5407608695652174],"stored_frame_size":[345,346],"stored_anchor_px":[172.6984126984127,324.45652173913044],"storage_trim":{"x":119.80952380952381,"y":126.53804347826087,"w":136,"h":199},"stored_columns":4,"frame_map":[0,1,2,3],"effective_density":1.8,"ssim":0.9363849040524738},{"name":"hurt","sheet":"sprites/enemies/cedar_archer/hurt.webp","frame_width":640,"frame_height":640,"columns":2,"rows":1,"frames":2,"duration_seconds":0.2,"fps":10.0,"loop":false,"anchor_px":[320,600],"image_size":[416,211],"trim":{"x":163,"y":211,"w":386,"h":391},"storage_scale":[0.538860103626943,0.5396419437340153],"stored_frame_size":[345,345],"stored_anchor_px":[172.43523316062175,323.7851662404092],"storage_trim":{"x":87.83419689119171,"y":113.86445012787723,"w":208,"h":211},"stored_columns":2,"frame_map":[0,1],"effective_density":1.8,"ssim":0.9436122183039158},{"name":"death","sheet":"sprites/enemies/cedar_archer/death.webp","frame_width":640,"frame_height":640,"columns":6,"rows":1,"frames":6,"duration_seconds":0.7,"fps":8.571428571428571,"loop":false,"anchor_px":[320,600],"image_size":[984,242],"qa":{"height_tol":0.35,"height_reason":"Visible pose extent changes while one uniform scale is retained"},"trim":{"x":201,"y":153,"w":303,"h":449},"storage_scale":[0.5412541254125413,0.5389755011135857],"stored_frame_size":[346,345],"stored_anchor_px":[173.2013201320132,323.38530066815144],"storage_trim":{"x":108.79207920792079,"y":82.46325167037863,"w":164,"h":242},"stored_columns":6,"frame_map":[0,1,2,3,4,5],"effective_density":1.8,"ssim":0.9432749736695548}]}
+{
+  "character": "cedar_archer",
+  "aliases": {
+    "attack": "shoot"
+  },
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/enemies/cedar_archer/idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 1.0,
+      "fps": 6.0,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        786,
+        203
+      ],
+      "trim": {
+        "x": 243,
+        "y": 234,
+        "w": 235,
+        "h": 368
+      },
+      "storage_scale": [
+        0.5404255319148936,
+        0.5407608695652174
+      ],
+      "stored_frame_size": [
+        346,
+        346
+      ],
+      "stored_anchor_px": [
+        172.93617021276594,
+        324.45652173913044
+      ],
+      "storage_trim": {
+        "x": 129.32340425531916,
+        "y": 124.53804347826087,
+        "w": 131,
+        "h": 203
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 1.8,
+      "ssim": 0.9372988369999207,
+      "stored_content_size": [
+        127,
+        199
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        131,
+        203
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "walk",
+      "sheet": "sprites/enemies/cedar_archer/walk.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 8,
+      "rows": 1,
+      "frames": 8,
+      "duration_seconds": 0.9,
+      "fps": 8.88888888888889,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1104,
+        206
+      ],
+      "qa": {
+        "movement": true
+      },
+      "trim": {
+        "x": 215,
+        "y": 227,
+        "w": 249,
+        "h": 375
+      },
+      "storage_scale": [
+        0.5381526104417671,
+        0.5386666666666666
+      ],
+      "stored_frame_size": [
+        344,
+        345
+      ],
+      "stored_anchor_px": [
+        172.20883534136547,
+        323.2
+      ],
+      "storage_trim": {
+        "x": 113.70281124497993,
+        "y": 120.27733333333333,
+        "w": 138,
+        "h": 206
+      },
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "effective_density": 1.8,
+      "ssim": 0.9388567844753274,
+      "stored_content_size": [
+        134,
+        202
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        138,
+        206
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "windup",
+      "sheet": "sprites/enemies/cedar_archer/windup.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.5,
+      "fps": 8.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        660,
+        215
+      ],
+      "trim": {
+        "x": 214,
+        "y": 212,
+        "w": 298,
+        "h": 390
+      },
+      "storage_scale": [
+        0.540268456375839,
+        0.541025641025641
+      ],
+      "stored_frame_size": [
+        346,
+        346
+      ],
+      "stored_anchor_px": [
+        172.88590604026845,
+        324.61538461538464
+      ],
+      "storage_trim": {
+        "x": 113.61744966442954,
+        "y": 112.6974358974359,
+        "w": 165,
+        "h": 215
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 1.8,
+      "ssim": 0.9436020973274044,
+      "stored_content_size": [
+        161,
+        211
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        165,
+        215
+      ],
+      "stored_gutter": 2,
+      "qa": {
+        "pose_height_exception": true,
+        "posture_reason": "Forward bend / raised arms changes silhouette while anatomy remains fixed"
+      }
+    },
+    {
+      "name": "shoot",
+      "sheet": "sprites/enemies/cedar_archer/shoot.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 3,
+      "rows": 1,
+      "frames": 3,
+      "duration_seconds": 0.2,
+      "fps": 15.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        570,
+        207
+      ],
+      "trim": {
+        "x": 190,
+        "y": 226,
+        "w": 345,
+        "h": 376
+      },
+      "storage_scale": [
+        0.5391304347826087,
+        0.5398936170212766
+      ],
+      "stored_frame_size": [
+        345,
+        346
+      ],
+      "stored_anchor_px": [
+        172.52173913043478,
+        323.93617021276594
+      ],
+      "storage_trim": {
+        "x": 100.43478260869566,
+        "y": 120.01595744680851,
+        "w": 190,
+        "h": 207
+      },
+      "stored_columns": 3,
+      "frame_map": [
+        0,
+        1,
+        2
+      ],
+      "effective_density": 1.8,
+      "ssim": 0.9392910433993454,
+      "stored_content_size": [
+        186,
+        203
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        190,
+        207
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "recovery",
+      "sheet": "sprites/enemies/cedar_archer/recovery.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.4,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        696,
+        203
+      ],
+      "trim": {
+        "x": 213,
+        "y": 234,
+        "w": 314,
+        "h": 368
+      },
+      "storage_scale": [
+        0.5414012738853503,
+        0.5407608695652174
+      ],
+      "stored_frame_size": [
+        346,
+        346
+      ],
+      "stored_anchor_px": [
+        173.2484076433121,
+        324.45652173913044
+      ],
+      "storage_trim": {
+        "x": 113.31847133757961,
+        "y": 124.53804347826087,
+        "w": 174,
+        "h": 203
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 1.8,
+      "ssim": 0.942039642000058,
+      "stored_content_size": [
+        170,
+        199
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        174,
+        203
+      ],
+      "stored_gutter": 2,
+      "qa": {
+        "pose_height_exception": true,
+        "posture_reason": "Forward bend / raised arms changes silhouette while anatomy remains fixed"
+      }
+    },
+    {
+      "name": "hop_back",
+      "sheet": "sprites/enemies/cedar_archer/hop_back.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 5,
+      "rows": 1,
+      "frames": 5,
+      "duration_seconds": 0.4,
+      "fps": 12.5,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        865,
+        219
+      ],
+      "qa": {
+        "movement": true
+      },
+      "trim": {
+        "x": 192,
+        "y": 203,
+        "w": 313,
+        "h": 399
+      },
+      "storage_scale": [
+        0.5399361022364217,
+        0.5388471177944862
+      ],
+      "stored_frame_size": [
+        346,
+        345
+      ],
+      "stored_anchor_px": [
+        172.77955271565494,
+        323.30827067669173
+      ],
+      "storage_trim": {
+        "x": 101.66773162939297,
+        "y": 107.38596491228071,
+        "w": 173,
+        "h": 219
+      },
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "effective_density": 1.8,
+      "ssim": 0.9402561012590439,
+      "stored_content_size": [
+        169,
+        215
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        173,
+        219
+      ],
+      "stored_gutter": 2
+    },
+    {
+      "name": "turn",
+      "sheet": "sprites/enemies/cedar_archer/turn.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 4,
+      "rows": 1,
+      "frames": 4,
+      "duration_seconds": 0.2,
+      "fps": 20.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        560,
+        203
+      ],
+      "trim": {
+        "x": 222,
+        "y": 234,
+        "w": 252,
+        "h": 368
+      },
+      "storage_scale": [
+        0.5396825396825397,
+        0.5407608695652174
+      ],
+      "stored_frame_size": [
+        345,
+        346
+      ],
+      "stored_anchor_px": [
+        172.6984126984127,
+        324.45652173913044
+      ],
+      "storage_trim": {
+        "x": 117.8095238095238,
+        "y": 124.53804347826087,
+        "w": 140,
+        "h": 203
+      },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 1.8,
+      "ssim": 0.9363849040524738,
+      "stored_content_size": [
+        136,
+        199
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        140,
+        203
+      ],
+      "stored_gutter": 2,
+      "qa": {
+        "movement": true
+      }
+    },
+    {
+      "name": "hurt",
+      "sheet": "sprites/enemies/cedar_archer/hurt.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 2,
+      "rows": 1,
+      "frames": 2,
+      "duration_seconds": 0.2,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        424,
+        215
+      ],
+      "trim": {
+        "x": 163,
+        "y": 211,
+        "w": 386,
+        "h": 391
+      },
+      "storage_scale": [
+        0.538860103626943,
+        0.5396419437340153
+      ],
+      "stored_frame_size": [
+        345,
+        345
+      ],
+      "stored_anchor_px": [
+        172.43523316062175,
+        323.7851662404092
+      ],
+      "storage_trim": {
+        "x": 85.83419689119171,
+        "y": 111.86445012787723,
+        "w": 212,
+        "h": 215
+      },
+      "stored_columns": 2,
+      "frame_map": [
+        0,
+        1
+      ],
+      "effective_density": 1.8,
+      "ssim": 0.9436122183039158,
+      "stored_content_size": [
+        208,
+        211
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        212,
+        215
+      ],
+      "stored_gutter": 2,
+      "qa": {
+        "pose_height_exception": true,
+        "posture_reason": "Forward bend / raised arms changes silhouette while anatomy remains fixed"
+      }
+    },
+    {
+      "name": "death",
+      "sheet": "sprites/enemies/cedar_archer/death.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "columns": 6,
+      "rows": 1,
+      "frames": 6,
+      "duration_seconds": 0.7,
+      "fps": 8.571428571428571,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        1008,
+        246
+      ],
+      "qa": {
+        "height_tol": 0.35,
+        "height_reason": "Visible pose extent changes while one uniform scale is retained"
+      },
+      "trim": {
+        "x": 201,
+        "y": 153,
+        "w": 303,
+        "h": 449
+      },
+      "storage_scale": [
+        0.5412541254125413,
+        0.5389755011135857
+      ],
+      "stored_frame_size": [
+        346,
+        345
+      ],
+      "stored_anchor_px": [
+        173.2013201320132,
+        323.38530066815144
+      ],
+      "storage_trim": {
+        "x": 106.79207920792079,
+        "y": 80.46325167037861,
+        "w": 168,
+        "h": 246
+      },
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "effective_density": 1.8,
+      "ssim": 0.9432749736695548,
+      "stored_content_size": [
+        164,
+        242
+      ],
+      "stored_padding": 2,
+      "stored_cell": [
+        168,
+        246
+      ],
+      "stored_gutter": 2
+    }
+  ]
+}

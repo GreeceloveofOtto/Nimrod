@@ -22,6 +22,7 @@ def run(godot,args,label,out,timeout):
  env=os.environ.copy()
  if Path('/workspace/cache').exists():
   for key,part in [('XDG_DATA_HOME','data'),('XDG_CONFIG_HOME','config'),('XDG_CACHE_HOME','cache')]:env.setdefault(key,'/workspace/cache/'+part)
+ user_data=out/"userdata"/label;user_data.mkdir(parents=True,exist_ok=True);env["XDG_DATA_HOME"]=str(user_data.resolve())
  start=time.monotonic()
  try:
   result=subprocess.run([godot,'--headless','--verbose','--path',str(ROOT)]+args,capture_output=True,text=True,timeout=timeout,env=env);log=result.stdout+result.stderr
@@ -38,7 +39,7 @@ def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--test',action='append',default=[]);p.add_argument('--timeout',type=int,default=300);p.add_argument('--skip-import',action='store_true');p.add_argument('--output',default='archive/headless_checks');p.add_argument('--jobs',type=int,default=1,help='Independent Godot processes after the serial import; default 1');a=p.parse_args();godot=find_godot();out=ROOT/a.output;results=[]
  if a.jobs<1:p.error('--jobs must be positive')
  if not a.skip_import:
-  results.append(run(godot,['--editor','--quit'],'import',out,a.timeout))
+  results.append(run(godot,['--import'],'import',out,a.timeout))
   if not results[-1]['passed']:return 1
  # Check-only must receive a script; a bare --check-only never checks this project.
  scripts=sorted((ROOT/'scripts').glob('*.gd'))
