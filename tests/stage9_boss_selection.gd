@@ -17,5 +17,5 @@ func _run() -> void:
             var bottom: float=boss.visual.global_position.y+(boss.visual.offset.y-region.size.y*.5+painted.end.y)*boss.visual.scale.y
             _check(absf(bottom-boss.global_position.y)<=4,"Selected boss painted feet match floor within four pixels")
         else:
-            _check(not manager.current_level.doors["boss_arrival"].locked,"Cleared room permits return")
+            _check(manager.current_level.doors["boss_arrival"].locked,"Stage10 Melammu must be absorbed before return")
     await _finish("STAGE9_BOSS_SELECTION")

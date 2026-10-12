@@ -74,3 +74,54 @@
 최종 ZIP: 51.74MiB (목표54MiB). assets49.79MiB/목표50MiB, 신규 콘텐츠5.07MiB/예산8MiB: 모두 충족. sprites/audio 개별 폴더 예산 초과는 위 표와 별도로 남긴다.
 
 새 압축 해제 폴더의 전체108검사와 에셋·알파·도달성·프레임·접지·크기 검증이 모두 통과했다. 문서만 갱신한 최종 재패킹은 실행 파일 해시 동일성, ZIP CRC와 Godot 네이티브 가져오기로 확인한다.
+
+
+# 10단계 최종 용량 및 품질 보고
+
+이하가 최신 수치이며 위의 9단계 결과는 이력으로 보존한다.
+
+| 폴더 | 9단계 | 신규 추가 후 압축 전 | 10단계 최종 | 목표 MiB |
+|---|---:|---:|---:|---:|
+| sprites | 34.873 | 50.507 | 33.858 | 34 |
+| backgrounds | 5.191 | 7.023 | 5.382 | 6 |
+| props | 6.306 | 6.597 | 6.275 | 7 |
+| tiles | 1.513 | 1.726 | 1.648 | 2 |
+| audio | 1.687 | 1.869 | 1.869 | 2 |
+| 전체 assets | 49.793 | 67.946 | 49.244 | 50 |
+
+전체/폴더별 목표 충족. 압축 전 대비 18.711MiB 절감. 신규 합계 5.425MiB/9MiB.
+
+| 신규 묶음 | MiB | 예산 MiB |
+|---|---:|---:|
+| gugalanna | 1.544 | 3.6 |
+| onearm | 1.340 | 1.3 |
+| prosthetic | 1.224 | 1.4 |
+| cutscene | 0.259 | 0.4 |
+| bed | 0.081 | 0.3 |
+| props_fx | 0.122 | 0.6 |
+| scenery | 0.673 | 1.0 |
+| audio | 0.182 | 0.4 |
+
+한 팔 묶음만 개별1.3MiB 한도를 약41KiB 초과했다. 총 목표와 분리하여 measure_assets --stage10-budget은 종료코드1을 유지한다. 128/256색 팔레트와 루프 병합을 시도했으나 RGB/SSIM 또는 크기 기준에 미달해 적용하지 않았다. 프레임 수를 임의로 줄이지 않았다.
+
+괴수/인물 저장 밀도를 개별 조정했다. SSIM≥0.93, RGB 평균차≤3/255, 알파 평균차≤0.5/255, bbox 불변을 지키며 화면 크기/앵커/판정을 유지했다. 저밀도 시트 확대 프레임 QA는 GL 선형 샘플링과 같은 bilinear를 사용한다. 저장 해상도 인코딩 비교는 별도 검사한다. 배경 축소, 허용된 팔레트, 타일 무손실WebP, 미사용 sidecar 이동과 JSON 공백 제거를 적용했다. 이미 낮은 비트레이트인 기존 오디오는 강제 재압축하지 않았다.
+
+변환 전 자료는 archive에 보존했다. 사망 시트의 어두운 의상을 크로마키에서 보존하고 격자 경계의 다른 포즈 조각만 제거했다. 옥상 하늘과 딜문 원경의 구분선/다른 행 조각은 크롭으로 제거했다.
+
+품질 비교: docs/size_compare/stage10_*.jpg 6장(줌1.0/1.35). 실제 장면: docs/screenshots/stage10_*.jpg 9장, ZIP에는 최신8장만 포함한다.
+
+| 상위10 파일 | MiB | 추가 후보 | 예상 절감 MiB |
+|---|---:|---|---:|
+| assets/props/doors/castle_great_gate.webp | 0.845 | 참조/밀도 재검토, 품질 통과 때만 | 0.068 |
+| assets/sprites/enemies/kala_ushumgal/collapse.webp | 0.463 | 참조/밀도 재검토, 품질 통과 때만 | 0.037 |
+| assets/backgrounds/cedar/mid_trunks_tile_2d.webp | 0.458 | 참조/밀도 재검토, 품질 통과 때만 | 0.037 |
+| assets/sprites/enemies/kala_ushumgal/turn.webp | 0.408 | 참조/밀도 재검토, 품질 통과 때만 | 0.033 |
+| assets/sprites/enemies/kala_ushumgal/idle.webp | 0.395 | 참조/밀도 재검토, 품질 통과 때만 | 0.032 |
+| assets/sprites/enemies/kala_ushumgal/phase_transition.webp | 0.379 | 참조/밀도 재검토, 품질 통과 때만 | 0.030 |
+| assets/sprites/enemies/kala_ushumgal/death.webp | 0.368 | 참조/밀도 재검토, 품질 통과 때만 | 0.029 |
+| assets/sprites/enemies/kala_ushumgal/roar_windup.webp | 0.357 | 참조/밀도 재검토, 품질 통과 때만 | 0.029 |
+| assets/backgrounds/homeroad/mid_district_tile.webp | 0.351 | 참조/밀도 재검토, 품질 통과 때만 | 0.028 |
+| assets/backgrounds/castle_front/downtown_passage_facade.webp | 0.334 | 참조/밀도 재검토, 품질 통과 때만 | 0.027 |
+
+
+10단계 공유 ZIP 초판:51.37MiB(목표52), assets49.244MiB(목표50). 새 압축 해제 폴더의 전체124/124 기능 검사 통과. 기능/총용량 성공과 한 팔 개별 예산 초과는 분리해서 기록한다. 아래 최종 문서 재패킹에서는 게임 실행 파일 해시 동일성과 CRC/네이티브 ZIP 가져오기를 다시 확인한다.

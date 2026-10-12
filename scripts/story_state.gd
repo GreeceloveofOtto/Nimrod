@@ -40,11 +40,16 @@ func stage() -> int:
     return current
 
 func debug_stage(target: int) -> void:
-    target = clampi(target, 0, 8)
+    target = clampi(target, 0, int(settings["stages"][-1]["stage"]))
     for entry: Dictionary in settings["stages"]:
         for flag in entry["flags"]:
             get_node("/root/GameState").run_flags[str(flag)] = int(entry["stage"]) <= target
     get_node("/root/GameState").run_flags["skill_anur_light"] = target >= 7
+    get_node("/root/GameState").run_flags["gugalanna_helm"] = target >= 13
+    get_node("/root/GameState").run_flags["melammu"] = target >= 9
+    get_node("/root/GameState").run_flags.erase("bed_blood")
+    if target >= 8:
+        get_node("/root/GameState").set_weapon("axe")
     for key in get_node("/root/GameState").run_flags.keys():
         if str(key).begins_with("story_dialogue_"):
             get_node("/root/GameState").run_flags.erase(key)

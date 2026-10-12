@@ -7,5 +7,26 @@
       "max_hp": 0.5
     },
     "toast_seconds": 1.8
+  },
+  "story_modifiers": {
+    "onearm": {
+      "attack": 0,
+      "attack_speed": 0,
+      "max_hp": 0,
+      "max_hp_flat": 0
+    },
+    "melammu": {
+      "attack": 0.1,
+      "max_hp_flat": 20
+    },
+    "dingir_prosthetic": {
+      "attack": 0.2,
+      "attack_speed": 0.1,
+      "max_hp_flat": 30
+    },
+    "gugalanna_helm": {
+      "attack": 0.05,
+      "max_hp_flat": 15
+    }
   }
 }

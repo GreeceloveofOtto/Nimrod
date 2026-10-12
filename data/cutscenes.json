@@ -175,39 +175,209 @@
     ],
     "time_skip": [
       {
-        "type": "lock_player"
+        "type": "time_skip",
+        "id": "castle_return"
+      }
+    ],
+    "skip_castle_return": [
+      {
+        "type": "time_skip",
+        "id": "castle_return"
+      }
+    ],
+    "skip_home_5days": [
+      {
+        "type": "time_skip",
+        "id": "home_5days"
+      }
+    ],
+    "skip_home_11days": [
+      {
+        "type": "time_skip",
+        "id": "home_11days"
+      }
+    ],
+    "skip_home_after_loss": [
+      {
+        "type": "time_skip",
+        "id": "home_after_loss"
+      }
+    ],
+    "skip_after_gugalanna": [
+      {
+        "type": "time_skip",
+        "id": "after_gugalanna"
+      }
+    ],
+    "skip_to_dilmun": [
+      {
+        "type": "time_skip",
+        "id": "to_dilmun"
+      }
+    ],
+    "opening_strike": [
+      {
+        "type": "play_clip",
+        "actor": "humbaba",
+        "clip": "claw_windup",
+        "loop": true
       },
       {
-        "type": "fade",
-        "alpha": 1.0,
-        "seconds": 1.5
+        "type": "wait",
+        "seconds": 0.6
+      },
+      {
+        "type": "play_clip",
+        "actor": "humbaba",
+        "clip": "claw_swipe",
+        "loop": true
+      },
+      {
+        "type": "story_event",
+        "event": "arm_loss"
+      },
+      {
+        "type": "play_clip",
+        "clip": "arm_loss_hit"
       },
       {
         "type": "wait",
         "seconds": 1.0
-      },
-      {
-        "type": "set_flag",
-        "flag": "time_skipped"
-      },
-      {
-        "type": "teleport_player",
-        "level": "CastleF1",
-        "spawn": "Spawn_Wake"
-      },
+      }
+    ],
+    "melammu_absorb": [
       {
         "type": "play_clip",
-        "actor": "player",
-        "clip": "crouch_exit",
-        "loop": true
+        "clip": "melammu_absorb"
+      },
+      {
+        "type": "story_event",
+        "event": "melammu"
+      },
+      {
+        "type": "wait",
+        "seconds": 2.5
       },
       {
         "type": "fade",
-        "alpha": 0.0,
+        "alpha": 1,
+        "seconds": 1.0
+      },
+      {
+        "type": "teleport_player",
+        "level": "NimrodHome",
+        "spawn": "Spawn_FromMelammu"
+      },
+      {
+        "type": "fade",
+        "alpha": 0,
+        "seconds": 1.0
+      }
+    ],
+    "inanna_home_exit": [
+      {
+        "type": "fade_actor",
+        "actor": "inanna",
+        "seconds": 0.8
+      },
+      {
+        "type": "set_flag",
+        "flag": "inanna_home_done"
+      },
+      {
+        "type": "time_skip",
+        "id": "home_11days"
+      }
+    ],
+    "enkidua_end": [
+      {
+        "type": "fade",
+        "alpha": 1,
+        "seconds": 2.0
+      },
+      {
+        "type": "wait",
         "seconds": 1.5
       },
       {
-        "type": "unlock_player"
+        "type": "story_event",
+        "event": "bed_blood"
+      },
+      {
+        "type": "play_clip",
+        "clip": "cry_collapse"
+      },
+      {
+        "type": "play_clip",
+        "clip": "cry_loop",
+        "loop": true
+      },
+      {
+        "type": "sound",
+        "id": "sob_loop",
+        "loop": true
+      },
+      {
+        "type": "bgm",
+        "id": "home_sorrow"
+      },
+      {
+        "type": "fade",
+        "alpha": 0,
+        "seconds": 2.0
+      },
+      {
+        "type": "zoom",
+        "to": 1.15,
+        "seconds": 6.0
+      },
+      {
+        "type": "fade",
+        "alpha": 1,
+        "seconds": 2.0
+      },
+      {
+        "type": "set_flag",
+        "flag": "enkidua_last_talk_done"
+      },
+      {
+        "type": "set_flag",
+        "flag": "enkidua_gone"
+      },
+      {
+        "type": "time_skip",
+        "id": "home_after_loss"
+      }
+    ],
+    "after_gugalanna": [
+      {
+        "type": "story_event",
+        "event": "helm"
+      },
+      {
+        "type": "time_skip",
+        "id": "after_gugalanna"
+      }
+    ],
+    "rooftop": [
+      {
+        "type": "dialogue",
+        "interaction_id": "rooftop"
+      },
+      {
+        "type": "walk_fade",
+        "actor": "player",
+        "x": 1500,
+        "seconds": 5.0,
+        "fade_seconds": 4.0
+      },
+      {
+        "type": "set_flag",
+        "flag": "rooftop_done"
+      },
+      {
+        "type": "time_skip",
+        "id": "to_dilmun"
       }
     ]
   }

@@ -13,7 +13,9 @@ def frame_images(path,c):
  for i in range(n):
   index=c.get('frame_map',list(range(n)))[i];frame=im.crop((index*w,0,(index+1)*w,h))
   if t:
-   if 'storage_trim' in c:frame=frame.resize((t['w'],t['h']),Image.Resampling.LANCZOS)
+   # Reconstruct with the game's GL linear sampler. Lanczos ringing at alpha<25
+   # creates false saturated-magenta pixels when enlarging low-density sheets.
+   if 'storage_trim' in c:frame=frame.resize((t['w'],t['h']),Image.Resampling.BILINEAR)
    full=Image.new('RGBA',(c['frame_width'],c['frame_height']));full.alpha_composite(frame,(t['x'],t['y']));frame=full
   out.append(frame)
  return out
@@ -47,7 +49,12 @@ def check(path,c):
    if abs(h-expected[i])>max(6,expected[i]*.03):errors.append(f'frame {i+1}: height differs from authored pose {expected[i]} by more than 3%/6px')
   elif abs(h-median)>median*tol and not c.get("qa",{}).get("fade_out_fx"):errors.append(f'frame {i+1}: height {h} outside {median:.1f} ±{tol:.0%}')
  medarea=float(np.median(areas))
+ expected_areas=c.get('qa',{}).get('expected_pose_areas',[])
  for i,a in enumerate(areas):
+  if expected_areas:
+   if len(expected_areas)!=len(areas):errors.append('authored pose area reference count mismatch');break
+   if a<float(expected_areas[i])*float(c.get('qa',{}).get('minimum_authored_area_ratio',.55)):errors.append(f'frame {i+1}: painted area below authored pose reference')
+   continue
   if a<.4*medarea and not c.get('qa',{}).get('fade_out_fx'):errors.append(f'frame {i+1}: insufficient painted area')
  anchor=c.get('anchor_px',[c['frame_width']//2,c['frame_height']-40]);floating=anchor[1]==c['frame_height']//2
  if floating:

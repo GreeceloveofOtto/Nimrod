@@ -1,115 +1,127 @@
 접지 기준: alpha>200 픽셀이 폭의 30% 이상인 마지막 행. 허용 ±6px.
-PASS RearGate/villa_exterior: row=720, placed_bottom=880.0, ground=880, delta=+0.0px
-PASS RearGate/ruin_pillar_a: row=300, placed_bottom=880.0, ground=880, delta=+0.0px
-PASS RearGate/ruin_pillar_b: row=220, placed_bottom=880.0, ground=880, delta=+0.0px
+PASS RearGate/villa_exterior: row=468, placed_bottom=880.0, ground=880, delta=+0.0px
+PASS RearGate/ruin_pillar_a: row=298, placed_bottom=878.1, ground=880, delta=-1.9px
+PASS RearGate/ruin_pillar_b: row=218, placed_bottom=877.8, ground=880, delta=-2.2px
 PASS RearGate/castle_rear_door_exterior: row=418, placed_bottom=878.0, ground=880, delta=-2.0px (door frame anchor retained)
 PASS RearGate/villa_gate: row=420, placed_bottom=880.0, ground=880, delta=+0.0px (door frame anchor retained)
-PASS CastleF1/castle_pillar: row=297, placed_bottom=616.8, ground=620, delta=-3.2px
-PASS CastleF1/brazier: row=218, placed_bottom=618.5, ground=620, delta=-1.5px
+PASS CastleF1/castle_pillar: row=295, placed_bottom=614.7, ground=620, delta=-5.3px
+PASS CastleF1/brazier: row=216, placed_bottom=616.9, ground=620, delta=-3.1px
 PASS CastleF1/castle_interior_door: row=384, placed_bottom=620.0, ground=620, delta=+0.0px (door frame anchor retained)
 PASS CastleF1/castle_front_door_interior: row=420, placed_bottom=620.0, ground=620, delta=+0.0px (door frame anchor retained)
 PASS CastleF1/castle_rear_door_interior: row=419, placed_bottom=619.0, ground=620, delta=-1.0px (door frame anchor retained)
-PASS CastleF2/castle_pillar: row=297, placed_bottom=616.8, ground=620, delta=-3.2px
-PASS CastleF2/brazier: row=218, placed_bottom=618.5, ground=620, delta=-1.5px
+PASS CastleF2/castle_pillar: row=295, placed_bottom=614.7, ground=620, delta=-5.3px
+PASS CastleF2/brazier: row=216, placed_bottom=616.9, ground=620, delta=-3.1px
 PASS CastleF2/castle_interior_door: row=384, placed_bottom=620.0, ground=620, delta=+0.0px (door frame anchor retained)
 PASS CastleF2/castle_interior_door: row=384, placed_bottom=620.0, ground=620, delta=+0.0px (door frame anchor retained)
 PASS CastleF3/castle_interior_door: row=384, placed_bottom=620.0, ground=620, delta=+0.0px (door frame anchor retained)
 PASS CastleF3/castle_interior_door: row=384, placed_bottom=620.0, ground=620, delta=+0.0px (door frame anchor retained)
-PASS CastleF4/brazier: row=218, placed_bottom=618.5, ground=620, delta=-1.5px
+PASS CastleF4/brazier: row=216, placed_bottom=616.9, ground=620, delta=-3.1px
 PASS CastleF4/castle_interior_door: row=384, placed_bottom=620.0, ground=620, delta=+0.0px (door frame anchor retained)
 PASS CastleF4/castle_interior_door: row=384, placed_bottom=620.0, ground=620, delta=+0.0px (door frame anchor retained)
 PASS CastleF5/castle_interior_door: row=384, placed_bottom=620.0, ground=620, delta=+0.0px (door frame anchor retained)
-PASS VillaF1/villa_vase: row=219, placed_bottom=619.1, ground=620, delta=-0.9px
+PASS VillaF1/villa_vase: row=217, placed_bottom=617.3, ground=620, delta=-2.7px
 PASS VillaF1/villa_inner_door: row=383, placed_bottom=619.0, ground=620, delta=-1.0px (door frame anchor retained)
 PASS VillaF1/villa_inner_door: row=383, placed_bottom=619.0, ground=620, delta=-1.0px (door frame anchor retained)
 PASS VillaF1/villa_back_door: row=420, placed_bottom=620.0, ground=620, delta=+0.0px (door frame anchor retained)
-PASS CastleFront/castle_facade: row=717, placed_bottom=877.0, ground=880, delta=-3.0px
-PASS CastleFront/castle_front_brazier: row=200, placed_bottom=880.0, ground=880, delta=+0.0px
-PASS CastleFront/castle_front_statue: row=320, placed_bottom=880.0, ground=880, delta=+0.0px
-PASS CastleFront/castle_front_lamp_post: row=260, placed_bottom=880.0, ground=880, delta=+0.0px
+PASS CastleFront/castle_facade: row=466, placed_bottom=876.9, ground=880, delta=-3.1px
+PASS CastleFront/castle_front_brazier: row=198, placed_bottom=878.0, ground=880, delta=-2.0px
+PASS CastleFront/castle_front_statue: row=238, placed_bottom=877.3, ground=880, delta=-2.7px
+PASS CastleFront/castle_front_lamp_post: row=258, placed_bottom=878.0, ground=880, delta=-2.0px
 PASS CastleFront/castle_front_door_exterior: row=460, placed_bottom=880.0, ground=880, delta=+0.0px (door frame anchor retained)
 PASS CastleFront/castle_great_gate: row=520, placed_bottom=880.0, ground=880, delta=+0.0px (door frame anchor retained)
-PASS CastleOutskirts/downtown_passage_facade: row=720, placed_bottom=680.0, ground=680, delta=+0.0px
+PASS CastleOutskirts/downtown_passage_facade: row=540, placed_bottom=680.0, ground=680, delta=+0.0px
 PASS CastleOutskirts/castle_great_gate: row=520, placed_bottom=760.0, ground=760, delta=+0.0px (door frame anchor retained)
-PASS CastleOutskirts/downtown_passage_door_anim: row=456, placed_bottom=676.0, ground=680, delta=-4.0px (door frame anchor retained)
+PASS CastleOutskirts/downtown_passage_door_anim: row=455, placed_bottom=675.0, ground=680, delta=-5.0px (door frame anchor retained)
 PASS VillaF2/villa_inner_door: row=383, placed_bottom=619.0, ground=620, delta=-1.0px (door frame anchor retained)
 PASS VillaF2/villa_inner_door: row=383, placed_bottom=619.0, ground=620, delta=-1.0px (door frame anchor retained)
 PASS VillaF3/villa_inner_door: row=383, placed_bottom=619.0, ground=620, delta=-1.0px (door frame anchor retained)
 PASS VillaF3/villa_inner_door: row=383, placed_bottom=619.0, ground=620, delta=-1.0px (door frame anchor retained)
-PASS DowntownPassage_F1/passage_pillar_a: row=620, placed_bottom=620.0, ground=620, delta=+0.0px
-PASS DowntownPassage_F1/passage_pillar_a: row=620, placed_bottom=510.0, ground=510, delta=+0.0px
-PASS DowntownPassage_F1/passage_pillar_a: row=620, placed_bottom=620.0, ground=620, delta=+0.0px
-PASS DowntownPassage_F1/passage_door: row=380, placed_bottom=616.0, ground=620, delta=-4.0px (door frame anchor retained)
-PASS DowntownPassage_F1/passage_door: row=380, placed_bottom=616.0, ground=620, delta=-4.0px (door frame anchor retained)
-PASS DowntownPassage_F2/passage_pillar_b: row=620, placed_bottom=620.0, ground=620, delta=+0.0px
-PASS DowntownPassage_F2/passage_pillar_b: row=620, placed_bottom=500.0, ground=500, delta=+0.0px
-PASS DowntownPassage_F2/passage_pillar_b: row=620, placed_bottom=620.0, ground=620, delta=+0.0px
-PASS DowntownPassage_F2/passage_door: row=380, placed_bottom=616.0, ground=620, delta=-4.0px (door frame anchor retained)
-PASS DowntownPassage_F2/passage_door: row=380, placed_bottom=616.0, ground=620, delta=-4.0px (door frame anchor retained)
-PASS DowntownPassage_F3/passage_pillar_a: row=620, placed_bottom=620.0, ground=620, delta=+0.0px
-PASS DowntownPassage_F3/passage_pillar_a: row=620, placed_bottom=620.0, ground=620, delta=+0.0px
-PASS DowntownPassage_F3/passage_pillar_a: row=620, placed_bottom=620.0, ground=620, delta=+0.0px
-PASS DowntownPassage_F3/passage_door: row=380, placed_bottom=616.0, ground=620, delta=-4.0px (door frame anchor retained)
-PASS DowntownPassage_F3/passage_door: row=380, placed_bottom=616.0, ground=620, delta=-4.0px (door frame anchor retained)
-PASS DowntownPassage_F4/passage_pillar_b: row=620, placed_bottom=620.0, ground=620, delta=+0.0px
-PASS DowntownPassage_F4/passage_pillar_b: row=620, placed_bottom=620.0, ground=620, delta=+0.0px
-PASS DowntownPassage_F4/passage_pillar_b: row=620, placed_bottom=690.0, ground=690, delta=+0.0px
-PASS DowntownPassage_F4/passage_door: row=380, placed_bottom=616.0, ground=620, delta=-4.0px (door frame anchor retained)
-PASS DowntownPassage_F4/passage_door: row=380, placed_bottom=616.0, ground=620, delta=-4.0px (door frame anchor retained)
-PASS DowntownPassage_F5/passage_gear_pillar: row=520, placed_bottom=680.0, ground=680, delta=+0.0px
-PASS DowntownPassage_F5/passage_gear_pillar: row=520, placed_bottom=680.0, ground=680, delta=+0.0px
-PASS DowntownPassage_F5/passage_gear_pillar: row=520, placed_bottom=680.0, ground=680, delta=+0.0px
-PASS DowntownPassage_F5/passage_gear_pillar: row=520, placed_bottom=680.0, ground=680, delta=+0.0px
-PASS DowntownPassage_F5/passage_gear_pillar: row=520, placed_bottom=680.0, ground=680, delta=+0.0px
-PASS DowntownPassage_F5/passage_gear_pillar: row=520, placed_bottom=680.0, ground=680, delta=+0.0px
-PASS DowntownPassage_F5/passage_gear_pillar: row=520, placed_bottom=680.0, ground=680, delta=+0.0px
-PASS DowntownPassage_F5/passage_gear_pillar: row=520, placed_bottom=680.0, ground=680, delta=+0.0px
-PASS DowntownPassage_F5/passage_gear_pillar: row=520, placed_bottom=680.0, ground=680, delta=+0.0px
-PASS DowntownPassage_F5/passage_pillar_a: row=620, placed_bottom=590.0, ground=590, delta=+0.0px
-PASS DowntownPassage_F5/passage_pillar_a: row=620, placed_bottom=680.0, ground=680, delta=+0.0px
-PASS DowntownPassage_F5/passage_pillar_a: row=620, placed_bottom=590.0, ground=590, delta=+0.0px
-PASS DowntownPassage_F5/passage_door: row=380, placed_bottom=616.0, ground=620, delta=-4.0px (door frame anchor retained)
-PASS DowntownPassage_F5/passage_door: row=380, placed_bottom=616.0, ground=620, delta=-4.0px (door frame anchor retained)
-PASS DowntownPassage_F6/passage_pillar_b: row=620, placed_bottom=620.0, ground=620, delta=+0.0px
-PASS DowntownPassage_F6/passage_pillar_b: row=620, placed_bottom=620.0, ground=620, delta=+0.0px
-PASS DowntownPassage_F6/passage_pillar_b: row=620, placed_bottom=620.0, ground=620, delta=+0.0px
-PASS DowntownPassage_F6/passage_door: row=380, placed_bottom=616.0, ground=620, delta=-4.0px (door frame anchor retained)
-PASS DowntownPassage_F6/passage_door: row=380, placed_bottom=616.0, ground=620, delta=-4.0px (door frame anchor retained)
-PASS DowntownPassage_F7/passage_pillar_a: row=620, placed_bottom=620.0, ground=620, delta=+0.0px
-PASS DowntownPassage_F7/passage_pillar_a: row=620, placed_bottom=620.0, ground=620, delta=+0.0px
-PASS DowntownPassage_F7/passage_pillar_a: row=620, placed_bottom=620.0, ground=620, delta=+0.0px
-PASS DowntownPassage_F7/passage_door: row=380, placed_bottom=616.0, ground=620, delta=-4.0px (door frame anchor retained)
-PASS DowntownPassage_F7/passage_door: row=380, placed_bottom=616.0, ground=620, delta=-4.0px (door frame anchor retained)
-PASS DowntownPassage_F8/passage_pillar_b: row=620, placed_bottom=620.0, ground=620, delta=+0.0px
-PASS DowntownPassage_F8/passage_pillar_b: row=620, placed_bottom=440.0, ground=440, delta=+0.0px
-PASS DowntownPassage_F8/passage_pillar_b: row=620, placed_bottom=620.0, ground=620, delta=+0.0px
-PASS DowntownPassage_F8/downtown_passage_door_anim: row=456, placed_bottom=616.0, ground=620, delta=-4.0px (door frame anchor retained)
-PASS DowntownPassage_F8/passage_door: row=380, placed_bottom=616.0, ground=620, delta=-4.0px (door frame anchor retained)
-PASS HomeRoad/nimrod_home_exterior: row=648, placed_bottom=881.0, ground=880, delta=+1.0px
-PASS HomeRoad/downtown_passage_facade: row=720, placed_bottom=880.0, ground=880, delta=+0.0px
-PASS HomeRoad/house_ruin_a: row=378, placed_bottom=878.0, ground=880, delta=-2.0px
-PASS HomeRoad/house_ruin_b: row=297, placed_bottom=877.0, ground=880, delta=-3.0px
-PASS HomeRoad/market_stall_a: row=169, placed_bottom=879.0, ground=880, delta=-1.0px
-PASS HomeRoad/market_stall_b: row=169, placed_bottom=879.0, ground=880, delta=-1.0px
-PASS HomeRoad/garden_fence: row=139, placed_bottom=879.0, ground=880, delta=-1.0px
-PASS HomeRoad/lamp_post_ruined: row=259, placed_bottom=879.0, ground=880, delta=-1.0px
-PASS HomeRoad/downtown_passage_door_anim: row=456, placed_bottom=876.0, ground=880, delta=-4.0px (door frame anchor retained)
+PASS DowntownPassage_F1/passage_pillar_a: row=618, placed_bottom=618.0, ground=620, delta=-2.0px
+PASS DowntownPassage_F1/passage_pillar_a: row=618, placed_bottom=508.0, ground=510, delta=-2.0px
+PASS DowntownPassage_F1/passage_pillar_a: row=618, placed_bottom=618.0, ground=620, delta=-2.0px
+PASS DowntownPassage_F1/passage_door: row=379, placed_bottom=615.0, ground=620, delta=-5.0px (door frame anchor retained)
+PASS DowntownPassage_F1/passage_door: row=379, placed_bottom=615.0, ground=620, delta=-5.0px (door frame anchor retained)
+PASS DowntownPassage_F2/passage_pillar_b: row=463, placed_bottom=617.3, ground=620, delta=-2.7px
+PASS DowntownPassage_F2/passage_pillar_b: row=463, placed_bottom=497.3, ground=500, delta=-2.7px
+PASS DowntownPassage_F2/passage_pillar_b: row=463, placed_bottom=617.3, ground=620, delta=-2.7px
+PASS DowntownPassage_F2/passage_door: row=379, placed_bottom=615.0, ground=620, delta=-5.0px (door frame anchor retained)
+PASS DowntownPassage_F2/passage_door: row=379, placed_bottom=615.0, ground=620, delta=-5.0px (door frame anchor retained)
+PASS DowntownPassage_F3/passage_pillar_a: row=618, placed_bottom=618.0, ground=620, delta=-2.0px
+PASS DowntownPassage_F3/passage_pillar_a: row=618, placed_bottom=618.0, ground=620, delta=-2.0px
+PASS DowntownPassage_F3/passage_pillar_a: row=618, placed_bottom=618.0, ground=620, delta=-2.0px
+PASS DowntownPassage_F3/passage_door: row=379, placed_bottom=615.0, ground=620, delta=-5.0px (door frame anchor retained)
+PASS DowntownPassage_F3/passage_door: row=379, placed_bottom=615.0, ground=620, delta=-5.0px (door frame anchor retained)
+PASS DowntownPassage_F4/passage_pillar_b: row=463, placed_bottom=617.3, ground=620, delta=-2.7px
+PASS DowntownPassage_F4/passage_pillar_b: row=463, placed_bottom=617.3, ground=620, delta=-2.7px
+PASS DowntownPassage_F4/passage_pillar_b: row=463, placed_bottom=687.3, ground=690, delta=-2.7px
+PASS DowntownPassage_F4/passage_door: row=379, placed_bottom=615.0, ground=620, delta=-5.0px (door frame anchor retained)
+PASS DowntownPassage_F4/passage_door: row=379, placed_bottom=615.0, ground=620, delta=-5.0px (door frame anchor retained)
+PASS DowntownPassage_F5/passage_gear_pillar: row=518, placed_bottom=678.1, ground=680, delta=-1.9px
+PASS DowntownPassage_F5/passage_gear_pillar: row=518, placed_bottom=678.1, ground=680, delta=-1.9px
+PASS DowntownPassage_F5/passage_gear_pillar: row=518, placed_bottom=678.1, ground=680, delta=-1.9px
+PASS DowntownPassage_F5/passage_gear_pillar: row=518, placed_bottom=678.1, ground=680, delta=-1.9px
+PASS DowntownPassage_F5/passage_gear_pillar: row=518, placed_bottom=678.1, ground=680, delta=-1.9px
+PASS DowntownPassage_F5/passage_gear_pillar: row=518, placed_bottom=678.1, ground=680, delta=-1.9px
+PASS DowntownPassage_F5/passage_gear_pillar: row=518, placed_bottom=678.1, ground=680, delta=-1.9px
+PASS DowntownPassage_F5/passage_gear_pillar: row=518, placed_bottom=678.1, ground=680, delta=-1.9px
+PASS DowntownPassage_F5/passage_gear_pillar: row=518, placed_bottom=678.1, ground=680, delta=-1.9px
+PASS DowntownPassage_F5/passage_pillar_a: row=618, placed_bottom=588.0, ground=590, delta=-2.0px
+PASS DowntownPassage_F5/passage_pillar_a: row=618, placed_bottom=678.0, ground=680, delta=-2.0px
+PASS DowntownPassage_F5/passage_pillar_a: row=618, placed_bottom=588.0, ground=590, delta=-2.0px
+PASS DowntownPassage_F5/passage_door: row=379, placed_bottom=615.0, ground=620, delta=-5.0px (door frame anchor retained)
+PASS DowntownPassage_F5/passage_door: row=379, placed_bottom=615.0, ground=620, delta=-5.0px (door frame anchor retained)
+PASS DowntownPassage_F6/passage_pillar_b: row=463, placed_bottom=617.3, ground=620, delta=-2.7px
+PASS DowntownPassage_F6/passage_pillar_b: row=463, placed_bottom=617.3, ground=620, delta=-2.7px
+PASS DowntownPassage_F6/passage_pillar_b: row=463, placed_bottom=617.3, ground=620, delta=-2.7px
+PASS DowntownPassage_F6/passage_door: row=379, placed_bottom=615.0, ground=620, delta=-5.0px (door frame anchor retained)
+PASS DowntownPassage_F6/passage_door: row=379, placed_bottom=615.0, ground=620, delta=-5.0px (door frame anchor retained)
+PASS DowntownPassage_F7/passage_pillar_a: row=618, placed_bottom=618.0, ground=620, delta=-2.0px
+PASS DowntownPassage_F7/passage_pillar_a: row=618, placed_bottom=618.0, ground=620, delta=-2.0px
+PASS DowntownPassage_F7/passage_pillar_a: row=618, placed_bottom=618.0, ground=620, delta=-2.0px
+PASS DowntownPassage_F7/passage_door: row=379, placed_bottom=615.0, ground=620, delta=-5.0px (door frame anchor retained)
+PASS DowntownPassage_F7/passage_door: row=379, placed_bottom=615.0, ground=620, delta=-5.0px (door frame anchor retained)
+PASS DowntownPassage_F8/passage_pillar_b: row=463, placed_bottom=617.3, ground=620, delta=-2.7px
+PASS DowntownPassage_F8/passage_pillar_b: row=463, placed_bottom=437.3, ground=440, delta=-2.7px
+PASS DowntownPassage_F8/passage_pillar_b: row=463, placed_bottom=617.3, ground=620, delta=-2.7px
+PASS DowntownPassage_F8/downtown_passage_door_anim: row=455, placed_bottom=615.0, ground=620, delta=-5.0px (door frame anchor retained)
+PASS DowntownPassage_F8/passage_door: row=379, placed_bottom=615.0, ground=620, delta=-5.0px (door frame anchor retained)
+PASS HomeRoad/nimrod_home_exterior: row=420, placed_bottom=879.2, ground=880, delta=-0.8px
+PASS HomeRoad/downtown_passage_facade: row=540, placed_bottom=880.0, ground=880, delta=+0.0px
+PASS HomeRoad/house_ruin_a: row=244, placed_bottom=875.4, ground=880, delta=-4.6px
+PASS HomeRoad/house_ruin_b: row=221, placed_bottom=874.7, ground=880, delta=-5.3px
+PASS HomeRoad/market_stall_a: row=167, placed_bottom=877.0, ground=880, delta=-3.0px
+PASS HomeRoad/market_stall_b: row=167, placed_bottom=877.0, ground=880, delta=-3.0px
+PASS HomeRoad/garden_fence: row=103, placed_bottom=877.3, ground=880, delta=-2.7px
+PASS HomeRoad/lamp_post_ruined: row=257, placed_bottom=877.0, ground=880, delta=-3.0px
+PASS HomeRoad/downtown_passage_door_anim: row=455, placed_bottom=875.0, ground=880, delta=-5.0px (door frame anchor retained)
 PASS HomeRoad/nimrod_home_gate: row=414, placed_bottom=874.0, ground=880, delta=-6.0px (door frame anchor retained)
-PASS NimrodHome/home_bed: row=197, placed_bottom=617.0, ground=620, delta=-3.0px
-PASS NimrodHome/home_table: row=124, placed_bottom=620.0, ground=620, delta=+0.0px
-PASS NimrodHome/nimrod_home_inner_door: row=383, placed_bottom=619.0, ground=620, delta=-1.0px (door frame anchor retained)
-PASS VillaBackyard/garden_fence: row=139, placed_bottom=879.0, ground=880, delta=-1.0px
-PASS VillaBackyard/lamp_post_ruined: row=259, placed_bottom=879.0, ground=880, delta=-1.0px
-PASS VillaBackyard/shrub: row=137, placed_bottom=877.0, ground=880, delta=-3.0px
+PASS NimrodHome/home_bed: row=195, placed_bottom=615.0, ground=620, delta=-5.0px
+PASS NimrodHome/home_table: row=123, placed_bottom=619.0, ground=620, delta=-1.0px
+PASS NimrodHome/nimrod_home_inner_door: row=382, placed_bottom=618.0, ground=620, delta=-2.0px (door frame anchor retained)
+PASS VillaBackyard/garden_fence: row=103, placed_bottom=877.3, ground=880, delta=-2.7px
+PASS VillaBackyard/lamp_post_ruined: row=257, placed_bottom=877.0, ground=880, delta=-3.0px
+PASS VillaBackyard/shrub: row=135, placed_bottom=875.0, ground=880, delta=-5.0px
 PASS VillaBackyard/villa_back_door_exterior: row=418, placed_bottom=878.0, ground=880, delta=-2.0px (door frame anchor retained)
 PASS VillaBackyard/cedar_forest_portal: row=458, placed_bottom=878.0, ground=880, delta=-2.0px (door frame anchor retained)
-PASS CedarForest_F1/cedar_stump: row=195, placed_bottom=3323.0, ground=3328, delta=-5.0px
-PASS CedarForest_F1/skeleton_remains: row=106, placed_bottom=2688.0, ground=2688, delta=+0.0px
+PASS CedarForest_F1/cedar_stump: row=193, placed_bottom=3328.0, ground=3328, delta=+0.0px
+PASS CedarForest_F1/skeleton_remains: row=95, placed_bottom=2688.0, ground=2688, delta=+0.0px
 PASS CedarForest_F1/cedar_portal: row=381, placed_bottom=3325.0, ground=3328, delta=-3.0px (door frame anchor retained)
 PASS CedarForest_F1/cedar_portal: row=381, placed_bottom=765.0, ground=768, delta=-3.0px (door frame anchor retained)
-PASS CedarForest_F2/cedar_stump: row=195, placed_bottom=3323.0, ground=3328, delta=-5.0px
-PASS CedarForest_F2/skeleton_remains: row=106, placed_bottom=2688.0, ground=2688, delta=+0.0px
+PASS CedarForest_F2/cedar_stump: row=193, placed_bottom=3328.0, ground=3328, delta=+0.0px
+PASS CedarForest_F2/skeleton_remains: row=95, placed_bottom=2688.0, ground=2688, delta=+0.0px
+PASS CedarForest_F2/cedar_stump: row=193, placed_bottom=1408.0, ground=1408, delta=+0.0px
+PASS CedarForest_F2/cedar_stump: row=193, placed_bottom=1408.0, ground=1408, delta=+0.0px
+PASS CedarForest_F2/cedar_stump: row=193, placed_bottom=768.0, ground=768, delta=+0.0px
+PASS CedarForest_F2/cedar_stump: row=193, placed_bottom=768.0, ground=768, delta=+0.0px
+PASS CedarForest_F2/cedar_stump: row=193, placed_bottom=1408.0, ground=1408, delta=+0.0px
+PASS CedarForest_F2/cedar_stump: row=193, placed_bottom=2048.0, ground=2048, delta=+0.0px
+PASS CedarForest_F2/cedar_stump: row=193, placed_bottom=2048.0, ground=2048, delta=+0.0px
 PASS CedarForest_F2/cedar_portal: row=381, placed_bottom=3325.0, ground=3328, delta=-3.0px (door frame anchor retained)
 PASS CedarForest_F2/cedar_portal: row=381, placed_bottom=765.0, ground=768, delta=-3.0px (door frame anchor retained)
-PASS CedarBossRoom/cedar_portal: row=381, placed_bottom=797.0, ground=800, delta=-3.0px (door frame anchor retained)
-113 grounded items; 0 failures. Wall lamps/shelves, hanging vines and elevated bridge artwork are excluded.
+PASS CedarBossRoom/cedar_portal: row=381, placed_bottom=617.0, ground=620, delta=-3.0px (door frame anchor retained)
+PASS HomeFront/nimrod_home_exterior: row=420, placed_bottom=879.2, ground=880, delta=-0.8px
+PASS HomeFront/nimrod_home_gate: row=414, placed_bottom=874.0, ground=880, delta=-6.0px (door frame anchor retained)
+PASS VillaF4/space_pod: row=193, placed_bottom=617.3, ground=620, delta=-2.7px
+PASS VillaF4/villa_inner_door: row=383, placed_bottom=619.0, ground=620, delta=-1.0px (door frame anchor retained)
+PASS Dilmun/space_pod: row=193, placed_bottom=877.3, ground=880, delta=-2.7px
+125 grounded items; 0 failures. Wall lamps/shelves, hanging vines and elevated bridge artwork are excluded.

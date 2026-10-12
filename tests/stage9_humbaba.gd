@@ -5,6 +5,7 @@ func _run() -> void:
     await _go("CedarBossRoom")
     var boss: Humbaba=get_nodes_in_group("enemies")[0]
     boss.set_physics_process(false)
+    boss.battle_started = true
     _check(boss.hp==1350 and is_equal_approx(boss._turn_seconds(),.6),"HP1350 and phase-one turn delay")
     boss.facing=1
     _check(boss.take_hit(20,boss.global_position+Vector2(100,0),1)["damage_dealt"]==16,"Front basic attack reduced twenty percent")
@@ -85,5 +86,5 @@ func _run() -> void:
     _check(boss.facing==-1 and boss.current_frame==2,"Phase-two facing changes exactly when frame three starts")
     boss.hp=1
     boss.take_light_hit(36,boss.global_position,.2)
-    _check(story_state.is_flag("humbaba_defeated") and not manager.current_level.doors["boss_arrival"].locked,"Defeat sets flag and unlocks arrival")
+    _check(story_state.is_flag("humbaba_defeated") and manager.current_level.doors["boss_arrival"].locked,"Defeat sets flag; Stage10 keeps arrival locked until Melammu")
     await _finish("STAGE9_HUMBABA")

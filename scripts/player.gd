@@ -111,6 +111,8 @@ var compact_escape: bool = false
 var visual_weapon_hidden := false
 var cinematic_clip := ""
 var cinematic_clock := 0.0
+var cinematic_set := ""
+var sprite_set := ""
 var skill_cooldown_left := 0.0
 var skill_slow_left := 0.0
 var skill_data: Dictionary = {}
@@ -123,6 +125,7 @@ func _ready() -> void:
     skill_data = JSON.parse_string(FileAccess.get_file_as_string("res://data/skills.json"))["anur_light"]
     _load_sprites()
     get_node("/root/GameState").weapon_changed.connect(_on_weapon_changed)
+    get_node("/root/Story").changed.connect(sync_story_state)
     _on_weapon_changed(get_node("/root/GameState").get_weapon())
     collider.shape = collider.shape.duplicate()
     hit_rectangle.size = Vector2(1, 1)
@@ -152,7 +155,8 @@ func _load_attack_data() -> void:
 func _load_sprites() -> void:
     textures.clear()
     clip_data.clear()
-    var manifest_path: String = "res://assets/sprites/player/" + ("unarmed" if weapon == "none" or visual_weapon_hidden else weapon) + "/manifest.json"
+    sprite_set = selected_sprite_set()
+    var manifest_path: String = "res://assets/sprites/player/" + sprite_set + "/manifest.json"
     if not FileAccess.file_exists(manifest_path):
         manifest_path = "res://assets/animation_manifest.json"
     var file := FileAccess.open(manifest_path, FileAccess.READ)
@@ -788,6 +792,7 @@ func reset_run_state() -> void:
     skill_cooldown_left = 0
     skill_slow_left = 0
     cinematic_clip = ""
+    cinematic_set = ""
     visual_weapon_hidden = false
     modifiers.clear()
     _cancel_attack()
@@ -835,7 +840,7 @@ func reset_run_state() -> void:
     damage_received.emit(0, hp)
 
 func get_max_hp() -> int:
-    return roundi(MAX_HP * modifiers.multiplier("max_hp"))
+    return roundi((MAX_HP + modifiers.total("max_hp_flat")) * modifiers.multiplier("max_hp"))
 
 func apply_shamhat_blessing() -> bool:
     if get_node("/root/GameState").run_flags.get("shamhat_blessing", false):
@@ -1108,3 +1113,34 @@ func cast_anur_light() -> bool:
     skill_cooldown_left = float(skill_data["cooldown"])
     skill_slow_left = float(skill_data["cast_slow_seconds"])
     return true
+
+func selected_sprite_set() -> String:
+    if not cinematic_set.is_empty():
+        return cinematic_set
+    var story: Node = get_node("/root/Story")
+    if story.is_flag("prosthetic_equipped"):
+        return "axe_prosthetic"
+    if story.is_flag("arm_lost"):
+        return "axe_onearm"
+    return "unarmed" if weapon == "none" or visual_weapon_hidden else weapon
+
+func sync_story_state() -> void:
+    var old_max: int = get_max_hp()
+    var flags: Dictionary = get_node("/root/GameState").run_flags
+    var definitions: Dictionary = modifiers.settings["story_modifiers"]
+    for id in definitions:
+        var flag: String = "arm_lost" if id == "onearm" else "melammu_absorbed" if id == "melammu" else "prosthetic_equipped" if id == "dingir_prosthetic" else "gugalanna_helm"
+        if bool(flags.get(flag, false)):
+            modifiers.add_modifier(str(id), definitions[id])
+        else:
+            modifiers.modifiers.erase(id)
+    hp = clampi(hp + maxi(0, get_max_hp()-old_max), 0, get_max_hp())
+    if get_node("/root/Story").is_flag("arm_lost") and weapon != "axe":
+        get_node("/root/GameState").set_weapon("axe")
+    if sprite_set != selected_sprite_set():
+        var previous_clip: String = displayed_clip
+        var previous_clock: float = display_clock
+        _load_sprites()
+        displayed_clip = ""
+        _show_clip(previous_clip if clip_data.has(previous_clip) else "idle", previous_clock)
+    damage_received.emit(0, hp)

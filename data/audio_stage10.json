@@ -1,0 +1,150 @@
+{
+  "sfx": [
+    {
+      "name": "melammu_heartbeat",
+      "duration": 2.0,
+      "kind": "heartbeat",
+      "pitch": 60,
+      "loop": false,
+      "volume_db": -8
+    },
+    {
+      "name": "sob_loop",
+      "duration": 2.0,
+      "kind": "soft_sob",
+      "pitch": 68,
+      "loop": true,
+      "volume_db": -12
+    },
+    {
+      "name": "arm_cut",
+      "duration": 0.6,
+      "kind": "impact",
+      "pitch": 76,
+      "loop": false,
+      "volume_db": -8
+    },
+    {
+      "name": "gugalanna_stomp",
+      "duration": 0.6,
+      "kind": "impact",
+      "pitch": 84,
+      "loop": false,
+      "volume_db": -8
+    },
+    {
+      "name": "gugalanna_quake",
+      "duration": 0.6,
+      "kind": "impact",
+      "pitch": 92,
+      "loop": false,
+      "volume_db": -8
+    },
+    {
+      "name": "gugalanna_charge_rumble",
+      "duration": 1.2,
+      "kind": "impact",
+      "pitch": 100,
+      "loop": false,
+      "volume_db": -8
+    },
+    {
+      "name": "gugalanna_charge_crash",
+      "duration": 0.6,
+      "kind": "impact",
+      "pitch": 108,
+      "loop": false,
+      "volume_db": -8
+    },
+    {
+      "name": "gugalanna_uppercut",
+      "duration": 0.6,
+      "kind": "impact",
+      "pitch": 116,
+      "loop": false,
+      "volume_db": -8
+    },
+    {
+      "name": "gugalanna_rake",
+      "duration": 0.6,
+      "kind": "impact",
+      "pitch": 124,
+      "loop": false,
+      "volume_db": -8
+    },
+    {
+      "name": "gugalanna_roar",
+      "duration": 0.6,
+      "kind": "growl",
+      "pitch": 132,
+      "loop": false,
+      "volume_db": -8
+    },
+    {
+      "name": "gugalanna_vomit",
+      "duration": 0.6,
+      "kind": "impact",
+      "pitch": 140,
+      "loop": false,
+      "volume_db": -8
+    },
+    {
+      "name": "gugalanna_death",
+      "duration": 0.6,
+      "kind": "impact",
+      "pitch": 148,
+      "loop": false,
+      "volume_db": -8
+    }
+  ],
+  "bgm": [
+    {
+      "name": "home_sorrow",
+      "duration": 40.0,
+      "frequencies": [
+        46,
+        69,
+        92
+      ],
+      "gains": [
+        0.18,
+        0.07,
+        0.025
+      ],
+      "string_harmonics": 4,
+      "pulse_cycles": 2,
+      "seed": 1010,
+      "wind_band": [
+        45,
+        350
+      ],
+      "wind_gain": 0.025,
+      "chime_every": 20,
+      "chime_gain": 0.003
+    },
+    {
+      "name": "dilmun_wind",
+      "duration": 40.0,
+      "frequencies": [
+        35,
+        52.5,
+        70
+      ],
+      "gains": [
+        0.18,
+        0.07,
+        0.025
+      ],
+      "string_harmonics": 4,
+      "pulse_cycles": 2,
+      "seed": 1010,
+      "wind_band": [
+        45,
+        350
+      ],
+      "wind_gain": 0.025,
+      "chime_every": 20,
+      "chime_gain": 0.003
+    }
+  ]
+}

@@ -240,7 +240,7 @@ func _process(delta: float) -> void:
     if interaction_prompt != null:
         var actor: NimrodPlayer = get_tree().get_first_node_in_group("player") as NimrodPlayer
         var available: bool = actor != null and not actor.is_transition_locked() and actor.action != "dead" and not cinematic_control and not interaction_running and not get_node("/root/Dialogue").input_blocked() and not _interaction_complete()
-        interaction_prompt.visible = available and interaction_center().distance_to(actor.global_position) <= float(stats.get("interact_range", 120.0))
+        interaction_prompt.visible = available and interactable and absf(interaction_center().x-actor.global_position.x) <= float(stats.get("interact_range", 120.0)) and absf(interaction_center().y-actor.global_position.y) <= float(stats.get("interact_vertical_range", 120.0))
         if interaction_prompt.visible and Input.is_action_just_pressed("interact"):
             interact(actor)
     face_cooldown_left = maxf(0.0, face_cooldown_left - delta)

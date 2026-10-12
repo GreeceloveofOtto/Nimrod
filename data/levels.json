@@ -36,7 +36,8 @@
       "cedar_wisp": "res://scripts/enemy_cedar_wisp.gd",
       "cedar_demon": "res://scripts/enemy_cedar_demon.gd",
       "kala_ushumgal": "res://scripts/enemy_kala_ushumgal.gd",
-      "humbaba": "res://scripts/enemy_humbaba.gd"
+      "humbaba": "res://scripts/enemy_humbaba.gd",
+      "gugalanna": "res://scripts/enemy_gugalanna.gd"
     },
     "enemy_copy_spacing": 100,
     "gate_controller_script": "res://scripts/gate_controller.gd",
@@ -515,6 +516,10 @@
           "presence": {
             "all": [
               "report_done"
+            ],
+            "none": [
+              "melammu_absorbed",
+              "enkidua_gone"
             ]
           },
           "interactable": true,
@@ -2677,6 +2682,14 @@
         "Spawn_FromBelow": [
           200,
           620
+        ],
+        "Spawn_FromSkip": [
+          700,
+          620
+        ],
+        "Spawn_FromAbove": [
+          1720,
+          620
         ]
       },
       "doors": [
@@ -2700,12 +2713,18 @@
             620
           ],
           "door_art": "res://assets/props/doors/villa_inner_door.webp",
-          "target_level": "",
-          "target_spawn": "",
-          "arrival_spawn": "",
+          "target_level": "VillaF4",
+          "target_spawn": "Spawn_FromBelow",
+          "arrival_spawn": "Spawn_FromAbove",
           "locked": true,
           "locked_message": "아직 갈 수 없다",
-          "ground_contact": true
+          "ground_contact": true,
+          "story_lock": {
+            "none": [
+              "prosthetic_equipped"
+            ]
+          },
+          "story_locked_message": "아직 갈 수 없다"
         }
       ],
       "npcs": [
@@ -7127,6 +7146,10 @@
         "Spawn_Start": [
           330,
           620
+        ],
+        "Spawn_FromMelammu": [
+          470,
+          620
         ]
       },
       "doors": [
@@ -7141,7 +7164,27 @@
           "target_spawn": "Spawn_FromHome",
           "arrival_spawn": "Spawn_FromGate",
           "exit_direction": -1,
-          "ground_contact": true
+          "ground_contact": true,
+          "story_targets": [
+            {
+              "when": {
+                "all": [
+                  "enkidua_gone"
+                ]
+              },
+              "level": "HomeFront",
+              "spawn": "Spawn_FromHome"
+            }
+          ],
+          "story_lock": {
+            "all": [
+              "melammu_absorbed"
+            ],
+            "none": [
+              "enkidua_gone"
+            ]
+          },
+          "story_locked_message": "지금은 이곳을 떠날 수 없다"
         }
       ],
       "npcs": [
@@ -7155,7 +7198,49 @@
           "interaction": "enkidua_intro",
           "presence": {
             "none": [
-              "report_done"
+              "report_done",
+              "melammu_absorbed",
+              "enkidua_gone"
+            ]
+          }
+        },
+        {
+          "id": "enkidua",
+          "instance_id": "enkidua_bed",
+          "position": [
+            320,
+            520
+          ],
+          "idle_clip": "bed_awake",
+          "three_way": false,
+          "face_player": false,
+          "interactable": true,
+          "interaction": "enkidua_home",
+          "interaction_range": 180,
+          "presence": {
+            "all": [
+              "melammu_absorbed"
+            ],
+            "none": [
+              "enkidua_gone",
+              "enkidua_last_talk_done"
+            ]
+          }
+        },
+        {
+          "id": "inanna",
+          "position": [
+            900,
+            620
+          ],
+          "interactable": true,
+          "interaction": "inanna_home",
+          "presence": {
+            "all": [
+              "home_critical_done"
+            ],
+            "none": [
+              "inanna_home_done"
             ]
           }
         }
@@ -7752,7 +7837,7 @@
           "path": "res://assets/props/cedar_stump.webp",
           "position": [
             1000,
-            3128
+            3135.0
           ],
           "size": [
             240,
@@ -7765,7 +7850,7 @@
           "path": "res://assets/props/skeleton_remains.webp",
           "position": [
             1600,
-            2582.0
+            2593.0
           ],
           "size": [
             280,
@@ -8844,7 +8929,7 @@
           "path": "res://assets/props/cedar_stump.webp",
           "position": [
             1000,
-            3128
+            3135.0
           ],
           "size": [
             240,
@@ -8857,7 +8942,7 @@
           "path": "res://assets/props/skeleton_remains.webp",
           "position": [
             1600,
-            2582.0
+            2593.0
           ],
           "size": [
             280,
@@ -8871,98 +8956,105 @@
           "path": "res://assets/props/cedar_stump.webp",
           "position": [
             2960,
-            1018.0
+            1030.685
           ],
           "size": [
             240,
             391.0
           ],
           "z": -4,
-          "perch_attachment": "demon_branch_10"
+          "perch_attachment": "demon_branch_10",
+          "ground_contact": true
         },
         {
           "id": "demon_branch_11_trunk",
           "path": "res://assets/props/cedar_stump.webp",
           "position": [
             1760,
-            1018.0
+            1030.685
           ],
           "size": [
             240,
             391.0
           ],
           "z": -4,
-          "perch_attachment": "demon_branch_11"
+          "perch_attachment": "demon_branch_11",
+          "ground_contact": true
         },
         {
           "id": "demon_branch_12_trunk",
           "path": "res://assets/props/cedar_stump.webp",
           "position": [
             1760,
-            378.0
+            390.685
           ],
           "size": [
             240,
             391.0
           ],
           "z": -4,
-          "perch_attachment": "demon_branch_12"
+          "perch_attachment": "demon_branch_12",
+          "ground_contact": true
         },
         {
           "id": "demon_branch_13_trunk",
           "path": "res://assets/props/cedar_stump.webp",
           "position": [
             2960,
-            378.0
+            390.685
           ],
           "size": [
             240,
             391.0
           ],
           "z": -4,
-          "perch_attachment": "demon_branch_13"
+          "perch_attachment": "demon_branch_13",
+          "ground_contact": true
         },
         {
           "id": "demon_branch_14_trunk",
           "path": "res://assets/props/cedar_stump.webp",
           "position": [
             3960,
-            1018.0
+            1030.685
           ],
           "size": [
             240,
             391.0
           ],
           "z": -4,
-          "perch_attachment": "demon_branch_14"
+          "perch_attachment": "demon_branch_14",
+          "ground_contact": true
         },
         {
           "id": "demon_branch_15_trunk",
           "path": "res://assets/props/cedar_stump.webp",
           "position": [
             360,
-            1658.0
+            1670.685
           ],
           "size": [
             240,
             391.0
           ],
           "z": -4,
-          "perch_attachment": "demon_branch_15"
+          "perch_attachment": "demon_branch_15",
+          "ground_contact": true
         },
         {
           "id": "demon_branch_16_trunk",
           "path": "res://assets/props/cedar_stump.webp",
           "position": [
             1560,
-            1658.0
+            1670.685
           ],
           "size": [
             240,
             391.0
           ],
           "z": -4,
-          "perch_attachment": "demon_branch_16"
+          "perch_attachment": "demon_branch_16",
+          "ground_contact": true
         }
       ],
       "platforms": [
@@ -9845,6 +9937,346 @@
         {
           "when": {},
           "id": "kala_ushumgal"
+        }
+      ]
+    },
+    {
+      "floor_y": 880,
+      "camera_limits": [
+        0,
+        0,
+        2600,
+        1240
+      ],
+      "safe_zones": [],
+      "bg_dim": [
+        0.88,
+        0.88,
+        0.92
+      ],
+      "ceiling": false,
+      "floor_art": "res://assets/tiles/homeroad/ground_tile.webp",
+      "floor_art_size": [
+        512,
+        200
+      ],
+      "steps": [],
+      "obstacles": [],
+      "decorations": [],
+      "npcs": [],
+      "pickups": [],
+      "id": "HomeFront",
+      "scene": "res://scenes/HomeFront.tscn",
+      "width": 2600,
+      "bgm": "cedar_boss",
+      "display_name": "니므롯의 집 앞",
+      "spawns": {
+        "Spawn_FromHome": [
+          500,
+          880
+        ]
+      },
+      "enemies": [
+        {
+          "id": "gugalanna",
+          "position": [
+            1700,
+            880
+          ],
+          "patrol_center": 1300,
+          "patrol_range": 1100,
+          "presence": {
+            "none": [
+              "gugalanna_defeated"
+            ]
+          }
+        }
+      ],
+      "platforms": [
+        {
+          "id": "quake_left",
+          "position": [
+            800,
+            750
+          ],
+          "width": 300,
+          "art": "res://assets/tiles/homeroad/balcony_platform.webp",
+          "art_height": 48,
+          "one_way": true
+        },
+        {
+          "id": "quake_right",
+          "position": [
+            1800,
+            750
+          ],
+          "width": 300,
+          "art": "res://assets/tiles/homeroad/balcony_platform.webp",
+          "art_height": 48,
+          "one_way": true
+        }
+      ],
+      "doors": [
+        {
+          "door_id": "home_gate",
+          "position": [
+            400,
+            880
+          ],
+          "door_art": "res://assets/props/doors/nimrod_home_gate.webp",
+          "target_level": "NimrodHome",
+          "target_spawn": "Spawn_FromGate",
+          "arrival_spawn": "Spawn_FromHome",
+          "exit_direction": 1,
+          "locked": true,
+          "story_lock": {
+            "none": [
+              "gugalanna_defeated"
+            ]
+          },
+          "story_locked_message": "지금은 돌아갈 수 없다",
+          "story_action": "after_gugalanna",
+          "ground_contact": true,
+          "interact_label": "집으로"
+        }
+      ],
+      "backgrounds": [
+        {
+          "name": "Sky",
+          "path": "res://assets/backgrounds/stage10/homefront_sky.webp",
+          "size": [
+            1536,
+            720
+          ],
+          "position": [
+            0,
+            0
+          ],
+          "ratio": 0.05,
+          "z": -40
+        },
+        {
+          "name": "Far",
+          "path": "res://assets/backgrounds/stage10/homefront_far_tile.webp",
+          "size": [
+            2048,
+            720
+          ],
+          "position": [
+            0,
+            0
+          ],
+          "ratio": 0.2,
+          "z": -30,
+          "repeat_size": [
+            2048,
+            0
+          ],
+          "repeat_times": 3
+        },
+        {
+          "name": "House",
+          "path": "res://assets/props/nimrod_home_exterior.webp",
+          "size": [
+            1300,
+            720
+          ],
+          "position": [
+            0,
+            233
+          ],
+          "ratio": 1,
+          "z": -10,
+          "ground_contact": true
+        }
+      ]
+    },
+    {
+      "floor_y": 620,
+      "camera_limits": [
+        0,
+        0,
+        2200,
+        720
+      ],
+      "safe_zones": [],
+      "bg_dim": [
+        0.88,
+        0.88,
+        0.92
+      ],
+      "ceiling": false,
+      "floor_art": "res://assets/tiles/castle/villa_floor_tile.webp",
+      "floor_art_size": [
+        512,
+        200
+      ],
+      "steps": [],
+      "obstacles": [],
+      "decorations": [
+        {
+          "path": "res://assets/props/space_pod.webp",
+          "position": [
+            1260,
+            360
+          ],
+          "size": [
+            480,
+            260
+          ],
+          "z": -2,
+          "ground_contact": true,
+          "contact_mode": "landing_feet"
+        }
+      ],
+      "npcs": [],
+      "pickups": [],
+      "id": "VillaF4",
+      "scene": "res://scenes/VillaF4.tscn",
+      "width": 2200,
+      "bgm": "villa_calm",
+      "display_name": "샤마쉬와 아야의 별장 옥상",
+      "spawns": {
+        "Spawn_FromBelow": [
+          200,
+          620
+        ]
+      },
+      "enemies": [],
+      "platforms": [],
+      "doors": [
+        {
+          "door_id": "door_down",
+          "position": [
+            200,
+            620
+          ],
+          "door_art": "res://assets/props/doors/villa_inner_door.webp",
+          "target_level": "VillaF3",
+          "target_spawn": "Spawn_FromAbove",
+          "arrival_spawn": "Spawn_FromBelow",
+          "exit_direction": 1,
+          "ground_contact": true
+        }
+      ],
+      "backgrounds": [
+        {
+          "name": "Sky",
+          "path": "res://assets/backgrounds/stage10/villa_f4_sky.webp",
+          "size": [
+            1536,
+            720
+          ],
+          "position": [
+            0,
+            0
+          ],
+          "ratio": 0.05,
+          "z": -40
+        },
+        {
+          "name": "Terrace",
+          "path": "res://assets/backgrounds/stage10/villa_f4_terrace.webp",
+          "size": [
+            2200,
+            720
+          ],
+          "position": [
+            0,
+            85
+          ],
+          "ratio": 1,
+          "z": -10
+        }
+      ]
+    },
+    {
+      "floor_y": 880,
+      "camera_limits": [
+        0,
+        0,
+        9000,
+        1240
+      ],
+      "safe_zones": [],
+      "bg_dim": [
+        0.88,
+        0.88,
+        0.92
+      ],
+      "ceiling": false,
+      "floor_art": "res://assets/tiles/stage10/dilmun_ground_tile.webp",
+      "floor_art_size": [
+        512,
+        200
+      ],
+      "steps": [],
+      "obstacles": [],
+      "decorations": [
+        {
+          "path": "res://assets/props/space_pod.webp",
+          "position": [
+            180,
+            620
+          ],
+          "size": [
+            480,
+            260
+          ],
+          "z": -2,
+          "ground_contact": true,
+          "contact_mode": "landing_feet"
+        }
+      ],
+      "npcs": [],
+      "pickups": [],
+      "id": "Dilmun",
+      "scene": "res://scenes/Dilmun.tscn",
+      "width": 9000,
+      "bgm": "dilmun_wind",
+      "display_name": "딜문 행성",
+      "spawns": {
+        "Spawn_Landing": [
+          600,
+          880
+        ]
+      },
+      "enemies": [],
+      "platforms": [],
+      "doors": [],
+      "backgrounds": [
+        {
+          "name": "Sky",
+          "path": "res://assets/backgrounds/stage10/dilmun_sky.webp",
+          "size": [
+            1792,
+            720
+          ],
+          "position": [
+            0,
+            0
+          ],
+          "ratio": 0.05,
+          "z": -40
+        },
+        {
+          "name": "Far",
+          "path": "res://assets/backgrounds/stage10/dilmun_far_tile.webp",
+          "size": [
+            2048,
+            720
+          ],
+          "position": [
+            0,
+            0
+          ],
+          "ratio": 0.2,
+          "z": -30,
+          "repeat_size": [
+            2048,
+            0
+          ],
+          "repeat_times": 6
         }
       ]
     }

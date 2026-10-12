@@ -2,6 +2,19 @@ extends Node
 
 # Replace a source file at the same path to upgrade the temporary synthesized audio.
 const SFX_TABLE: Dictionary = {
+    "melammu_heartbeat": "res://assets/audio/sfx/melammu_heartbeat.ogg",
+    "sob_loop": "res://assets/audio/sfx/sob_loop.ogg",
+    "arm_cut": "res://assets/audio/sfx/arm_cut.ogg",
+    "gugalanna_stomp": "res://assets/audio/sfx/gugalanna_stomp.ogg",
+    "gugalanna_quake": "res://assets/audio/sfx/gugalanna_quake.ogg",
+    "gugalanna_charge_rumble": "res://assets/audio/sfx/gugalanna_charge_rumble.ogg",
+    "gugalanna_charge_crash": "res://assets/audio/sfx/gugalanna_charge_crash.ogg",
+    "gugalanna_uppercut": "res://assets/audio/sfx/gugalanna_uppercut.ogg",
+    "gugalanna_rake": "res://assets/audio/sfx/gugalanna_rake.ogg",
+    "gugalanna_roar": "res://assets/audio/sfx/gugalanna_roar.ogg",
+    "gugalanna_vomit": "res://assets/audio/sfx/gugalanna_vomit.ogg",
+    "gugalanna_death": "res://assets/audio/sfx/gugalanna_death.ogg",
+
     "anur_cast": "res://assets/audio/sfx/anur_cast.ogg",
     "anur_hit": "res://assets/audio/sfx/anur_hit.ogg",
     "humbaba_bite": "res://assets/audio/sfx/humbaba_bite.ogg",
@@ -138,6 +151,8 @@ const SFX_TABLE: Dictionary = {
     "great_gate_close": "res://assets/audio/sfx/great_gate_close.ogg"
 }
 const BGM_TABLE: Dictionary = {
+    "home_sorrow": "res://assets/audio/bgm/home_sorrow.ogg",
+    "dilmun_wind": "res://assets/audio/bgm/dilmun_wind.ogg",
     "nimrod_home": "res://assets/audio/bgm/nimrod_home.ogg",
     "cedar_forest": "res://assets/audio/bgm/cedar_forest.ogg",
     "cedar_boss": "res://assets/audio/bgm/cedar_boss.ogg",
@@ -152,7 +167,7 @@ const BGM_TABLE: Dictionary = {
     "castle_front": "res://assets/audio/bgm/castle_front.ogg",
     "uruk_wasteland": "res://assets/audio/bgm/uruk_wasteland.ogg"
 }
-const LOOP_SFX: Array[String] = ["beast_ranged_flame_loop", "sky_beast_wingflap_loop", "gas_loop", "wraith_wail_loop", "wisp_wail_loop", "boss_roar_loop", "boss_core_throb", "humbaba_breath_loop"]
+const LOOP_SFX: Array[String] = ["beast_ranged_flame_loop", "sky_beast_wingflap_loop", "gas_loop", "wraith_wail_loop", "wisp_wail_loop", "boss_roar_loop", "boss_core_throb", "humbaba_breath_loop", "sob_loop"]
 const SILENT_DB: float = -60.0
 
 var _streams: Dictionary = {}
@@ -164,7 +179,7 @@ var _bgm_tween: Tween
 func _ready() -> void:
     # Music and dialogue sounds continue while the game world is paused.
     process_mode = Node.PROCESS_MODE_ALWAYS
-    for file in ["res://data/audio_stage5.json", "res://data/audio_stage6.json", "res://data/audio_stage9.json"]:
+    for file in ["res://data/audio_stage5.json", "res://data/audio_stage6.json", "res://data/audio_stage9.json", "res://data/audio_stage10.json"]:
         var spec: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(file))
         for item in spec.get("sfx", []):
             sfx_volumes[str(item["name"])] = float(item.get("volume_db", 0.0))
@@ -330,3 +345,16 @@ func _finish_bgm_stop() -> void:
     _bgm.bus = &"BGM"
     add_child(_bgm)
     _bgm_name = ""
+
+func pause_world_sfx() -> Dictionary:
+    var states: Dictionary = {}
+    for child in get_children():
+        if (child is AudioStreamPlayer or child is AudioStreamPlayer2D) and child != _bgm:
+            states[child] = child.stream_paused
+            child.stream_paused = true
+    return states
+
+func restore_world_sfx(states: Dictionary) -> void:
+    for child in states:
+        if is_instance_valid(child):
+            child.stream_paused = bool(states[child])

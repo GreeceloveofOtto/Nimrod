@@ -7,6 +7,12 @@ var settings: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res:
 func add_modifier(id: String, values: Dictionary) -> void:
     modifiers[id] = values.duplicate(true)
 
+func total(key: String) -> float:
+    var result := 0.0
+    for modifier in modifiers.values():
+        result += float(modifier.get(key, 0.0))
+    return result
+
 func clear() -> void:
     modifiers.clear()
 

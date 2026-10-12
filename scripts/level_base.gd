@@ -290,11 +290,13 @@ func _make_doors() -> void:
             continue
         door.name = str(entry["door_id"])
         door.position = _vector(entry["position"])
-        for property in ["door_id", "target_level", "target_spawn", "door_art", "locked", "locked_message", "auto_trigger", "interact_range", "arrival_spawn", "exit_direction", "arrival_walk_pixels", "gate_settings_key", "gate_open_seconds", "gate_close_seconds", "auto_transition_level", "auto_transition_spawn", "opens_without_keeper", "requires_dialogue", "gate_flag"]:
+        for property in ["door_id", "target_level", "target_spawn", "door_art", "locked", "locked_message", "auto_trigger", "interact_range", "arrival_spawn", "exit_direction", "arrival_walk_pixels", "gate_settings_key", "gate_open_seconds", "gate_close_seconds", "auto_transition_level", "auto_transition_spawn", "opens_without_keeper", "requires_dialogue", "gate_flag", "interact_label"]:
             if entry.has(property):
                 _set_if_present(door, property, entry[property])
         if entry.has("door_art"):
             _set_if_present(door, "gate_art", entry["door_art"])
+        if entry.has("story_action"):
+            door.set_meta("story_action", entry["story_action"])
         doors[str(entry["door_id"])] = door
         var arrival: String = str(entry.get("arrival_spawn", ""))
         if not arrival.is_empty():
@@ -338,6 +340,15 @@ func refresh_story() -> void:
             remove_child(npc)
             npc.queue_free()
     for entry: Dictionary in config.get("doors", []):
+        var target_door: DoorPortal = doors.get(str(entry["door_id"])) as DoorPortal
+        if target_door != null and entry.has("story_targets"):
+            target_door.target_level = str(entry["target_level"])
+            target_door.target_spawn = str(entry["target_spawn"])
+            for rule: Dictionary in entry["story_targets"]:
+                if get_node("/root/Story").matches(rule.get("when", {})):
+                    target_door.target_level = str(rule["level"])
+                    target_door.target_spawn = str(rule["spawn"])
+                    break
         if entry.has("story_lock"):
             var door: Node = doors.get(str(entry["door_id"]))
             if is_instance_valid(door):
@@ -363,6 +374,7 @@ func refresh_story() -> void:
                     host.pose = NPC.Pose.RIGHT if key == "shamash" else NPC.Pose.LEFT
                     host.facing = host.pose
                     host.play_clip("idle")
+    get_node("/root/Chapter").refresh_level(self)
     apply_time_of_day()
 
 func apply_time_of_day() -> void:
@@ -392,6 +404,8 @@ func _connect_gatekeeper() -> void:
 func _spawn_enemies() -> void:
     var enemy_scripts: Dictionary = world_settings.get("enemy_scripts", {})
     for entry in config.get("enemies", []):
+        if not get_node("/root/Story").matches(entry.get("presence", {})):
+            continue
         var enemy_id: String = str(entry["id"])
         if config.has("boss_by_flags") and enemy_id == "kala_ushumgal":
             for rule: Dictionary in config["boss_by_flags"]:

@@ -2422,6 +2422,181 @@
           1.15
         ]
       }
+    },
+    {
+      "id": "gugalanna",
+      "display_name": "구갈안나",
+      "hp": 2000,
+      "body_size": [
+        380,
+        420
+      ],
+      "body_offset_y": -210,
+      "visual_scale": 0.3,
+      "size_multiplier": 1.0,
+      "turn_delay": 0.8,
+      "knockback_multiplier": 0.1,
+      "front_armor": 1.0,
+      "tail_chance": 0,
+      "move_speed": 160,
+      "start_x": 0,
+      "claw_range": 260.0,
+      "bite_range": 520.0,
+      "breath_cooldown": 6.0,
+      "drop_chance": 0.0,
+      "hurt_sfx": "armor_hit",
+      "death_sfx": "gugalanna_death",
+      "patterns": {
+        "stomp": {
+          "windup": 1.0,
+          "active": 0.2,
+          "recovery": 1.1,
+          "damage": 18,
+          "speed": 1500,
+          "height": 60,
+          "stun": 0.5,
+          "cooldown": 7,
+          "box": [
+            2600,
+            60
+          ],
+          "windup_clip": "stomp_windup",
+          "active_clip": "stomp",
+          "recovery_clip": "stomp_recovery"
+        },
+        "charge": {
+          "windup": 0.8,
+          "active": 1.6363636363636365,
+          "recovery": 0.8,
+          "damage": 25,
+          "speed": 1100,
+          "distance": 1800,
+          "crash_stun": 1.2,
+          "cooldown": 6,
+          "box": [
+            380,
+            420
+          ],
+          "windup_clip": "charge_windup",
+          "active_clip": "charge_loop",
+          "recovery_clip": "charge_recovery"
+        },
+        "uppercut": {
+          "windup": 0.9,
+          "active": 0.25,
+          "recovery": 1.2,
+          "damage": 20,
+          "range": 450,
+          "box": [
+            320,
+            300
+          ],
+          "windup_clip": "uppercut_windup",
+          "active_clip": "uppercut",
+          "recovery_clip": "uppercut_recovery"
+        },
+        "rake": {
+          "windup": 1.4,
+          "active": 0.4,
+          "recovery": 1.5,
+          "damage": 35,
+          "radius": 560,
+          "height": 300,
+          "cooldown": 18,
+          "low_hp_cooldown": 12,
+          "box": [
+            560,
+            300
+          ],
+          "windup_clip": "rake_windup",
+          "active_clip": "rake",
+          "recovery_clip": "rake_recovery"
+        }
+      },
+      "attacks": [
+        {
+          "windup": 1.0,
+          "active": 0.2,
+          "recovery": 1.1,
+          "damage": 18,
+          "speed": 1500,
+          "height": 60,
+          "stun": 0.5,
+          "cooldown": 7,
+          "box": [
+            2600,
+            60
+          ],
+          "windup_clip": "stomp_windup",
+          "active_clip": "stomp",
+          "recovery_clip": "stomp_recovery"
+        },
+        {
+          "windup": 0.8,
+          "active": 1.6363636363636365,
+          "recovery": 0.8,
+          "damage": 25,
+          "speed": 1100,
+          "distance": 1800,
+          "crash_stun": 1.2,
+          "cooldown": 6,
+          "box": [
+            380,
+            420
+          ],
+          "windup_clip": "charge_windup",
+          "active_clip": "charge_loop",
+          "recovery_clip": "charge_recovery"
+        },
+        {
+          "windup": 0.9,
+          "active": 0.25,
+          "recovery": 1.2,
+          "damage": 20,
+          "range": 450,
+          "box": [
+            320,
+            300
+          ],
+          "windup_clip": "uppercut_windup",
+          "active_clip": "uppercut",
+          "recovery_clip": "uppercut_recovery"
+        },
+        {
+          "windup": 1.4,
+          "active": 0.4,
+          "recovery": 1.5,
+          "damage": 35,
+          "radius": 560,
+          "height": 300,
+          "cooldown": 18,
+          "low_hp_cooldown": 12,
+          "box": [
+            560,
+            300
+          ],
+          "windup_clip": "rake_windup",
+          "active_clip": "rake",
+          "recovery_clip": "rake_recovery"
+        }
+      ],
+      "frame_size": [
+        2560,
+        1536
+      ],
+      "anchor": [
+        1280,
+        1480
+      ],
+      "art_height_px": 1400,
+      "hurt_flash": {
+        "seconds": 0.12,
+        "color": [
+          1.45,
+          1.3,
+          1.15
+        ]
+      }
     }
   ]
 }

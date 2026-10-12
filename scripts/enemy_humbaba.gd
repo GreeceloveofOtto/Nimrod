@@ -14,6 +14,8 @@ var ember: Node2D
 var flame_sound: Node
 var life_clock := 0.0
 var hurt_flash_left := 0.0
+var opening_pending := false
+var melammu_dropped := false
 
 func _init() -> void:
     enemy_id = "humbaba"
@@ -23,6 +25,9 @@ func _ready() -> void:
     no_drop = true
 
 func _physics_process(delta: float) -> void:
+    if not cinematic_clip.is_empty():
+        super._physics_process(delta)
+        return
     life_clock += delta
     hurt_flash_left = maxf(0,hurt_flash_left-delta)
     _apply_tint()
@@ -33,10 +38,16 @@ func _physics_process(delta: float) -> void:
             battle_started = true
             _lock_arrival(true)
             _set_state(State.CHASE)
+            if not get_node("/root/Story").is_flag("arm_lost"):
+                opening_pending = true
+                _opening_strike.call_deferred()
+                return
         else:
             _integrate_motion(delta)
             _show_clip("idle",life_clock)
             return
+    if opening_pending:
+        return
     super._physics_process(delta)
 
 func _lock_arrival(value: bool) -> void:
@@ -182,7 +193,7 @@ func _on_hit(_seconds: float) -> void:
     pass # Superarmor keeps attack and recovery timing; hitstop still applies.
 
 func _receive_hit(damage: int, from_pos: Vector2, step: int, shockwave: bool) -> Dictionary:
-    if phase_roaring:
+    if not battle_started or phase_roaring or opening_pending:
         return {"blocked":false,"damage_dealt":0}
     var front: bool = (from_pos.x-global_position.x)*facing >= 0
     var amount: int = roundi(damage*float(stats["front_armor"])) if front else damage
@@ -193,7 +204,7 @@ func _receive_hit(damage: int, from_pos: Vector2, step: int, shockwave: bool) ->
     return result
 
 func take_light_hit(damage: int, from_pos: Vector2, _stagger: float) -> Dictionary:
-    if phase_roaring:
+    if not battle_started or phase_roaring or opening_pending:
         return {"blocked":false,"damage_dealt":0}
     var result: Dictionary = super._receive_hit(damage,from_pos,1,false)
     _flash_hit(result)
@@ -213,7 +224,7 @@ func _die() -> void:
     if is_instance_valid(ember):
         ember.queue_free()
     battle_finished = true
-    _lock_arrival(false)
+    _lock_arrival(true)
     get_node("/root/Story").set_flag("humbaba_defeated")
     super._die()
 
@@ -256,3 +267,15 @@ func _update_visual(_delta: float) -> void:
     # EnemyBase._show_clip already scales turn playback to this phase's delay.
     _show_clip(clip,clock)
     _apply_tint()
+
+func _opening_strike() -> void:
+    await get_node("/root/Cutscene").play("opening_strike")
+    opening_pending = false
+    if state!=State.DEAD:
+        _set_state(State.CHASE)
+
+func _update_dead(delta: float) -> void:
+    if not melammu_dropped and state_clock+delta>=float(clip_data["death"]["duration_seconds"]):
+        melammu_dropped = true
+        get_node("/root/Chapter").drop(_level(),"melammu",global_position)
+    super._update_dead(delta)

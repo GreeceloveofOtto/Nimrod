@@ -147,6 +147,7 @@ func go_to(level_id: String, spawn_name: String, options: Dictionary = {}) -> bo
         if hud != null:
             hud.show_story()
     transition_finished.emit(level_id)
+    get_node("/root/Chapter").on_arrival.call_deferred(level_id)
     if level_id == "DowntownPassage_F8":
         _passage_soliloquy.call_deferred()
     return true

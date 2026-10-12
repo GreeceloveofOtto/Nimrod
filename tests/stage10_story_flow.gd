@@ -1,0 +1,20 @@
+extends "res://tests/helpers/stage9_support.gd"
+func _run() -> void:
+    await _start9()
+    for stage in range(8,16):
+        story_state.debug_stage(stage)
+        _check(story_state.stage()==stage,"Cumulative stage %d" % stage)
+        _check(hero.selected_sprite_set()==("axe_prosthetic" if stage>=14 else "axe_onearm"),"Chapter sprite set %d" % stage)
+        await _go("NimrodHome")
+        _check(manager.current_level.npcs.has("enkidua_bed")== (stage>=9 and stage<12),"Home bed presence %d" % stage)
+        _check(manager.current_level.npcs.has("inanna")== (stage==10),"Inanna home presence %d" % stage)
+        _check(manager.current_level.doors["home_exit"].target_level==("HomeFront" if stage>=12 else "HomeRoad"),"Home exit routing %d" % stage)
+        await _go("CastleF1")
+        _check(manager.current_level.npcs.has("enkidua")== (stage==8),"Enkidua not duplicated in castle %d" % stage)
+        await _go("VillaF3")
+        _check(manager.current_level.doors["villa_up_locked"].locked==(stage<14),"Rooftop story gate %d" % stage)
+    story_state.debug_stage(7)
+    _check(not hero.modifiers.modifiers.has("melammu") and not hero.modifiers.modifiers.has("dingir_prosthetic"),"Debug rewind removes later modifiers")
+    root.get_node("GameState").reset_run(false)
+    _check(story_state.stage()==0 and hero.weapon=="none" and hero.selected_sprite_set()=="unarmed","Reset returns both arms and bare hands")
+    await _finish("STAGE10_STORY_FLOW")

@@ -116,6 +116,9 @@ func find_speakers() -> Dictionary:
     var found: Dictionary = {"player": get_tree().get_first_node_in_group("player")}
     for npc: NPC in get_tree().get_nodes_in_group("npcs"):
         found[npc.npc_id] = npc
+    for enemy: EnemyBase in get_tree().get_nodes_in_group("enemies"):
+        if enemy.enemy_id == "gugalanna":
+            found["gugalanna"] = enemy
     return found
 
 func play_interaction(id: String, speaker_nodes: Dictionary = {}) -> void:
@@ -176,7 +179,9 @@ func _event(event: Dictionary, nodes: Dictionary) -> void:
         "start_cutscene":
             get_node("/root/Cutscene").play.call_deferred(str(event["cutscene"]))
         "time_skip":
-            get_node("/root/Cutscene").play.call_deferred("time_skip")
+            get_node("/root/Cutscene").play.call_deferred("skip_" + str(event.get("id", "castle_return")))
+        "equip_prosthetic":
+            await get_node("/root/Chapter").equip_prosthetic()
 
 func _restore_highlight() -> void:
     if is_instance_valid(highlighted):
@@ -188,7 +193,7 @@ func _restore_highlight() -> void:
 func _set_speaker(actor: Node2D, id: String) -> void:
     _restore_highlight()
     _speaker = actor
-    name_label.text = "니므롯" if id == "player" or actor is NimrodPlayer else actor.display_name if actor is NPC else "칼라-우쉬움갈"
+    name_label.text = "니므롯" if id == "player" or actor is NimrodPlayer else actor.display_name if actor is NPC else str(actor.stats.get("display_name", "칼라-우쉬움갈")) if actor is EnemyBase else id
     var style := StyleBoxFlat.new()
     style.bg_color = Color(0.42, 0.30, 0.16, 1) if actor is NimrodPlayer else Color(0.55, 0.42, 0.18, 1)
     style.set_corner_radius_all(8)
@@ -222,7 +227,7 @@ func play(lines: Array, speaker: Node2D, options: Dictionary = {}) -> void:
     participants = options.get("participants", {})
     var hero: NimrodPlayer = get_tree().get_first_node_in_group("player") as NimrodPlayer
     var camera: Camera2D = hero.camera if hero != null else null
-    snapshot = {"camera": camera, "paused": get_tree().paused}
+    snapshot = {"camera": camera, "paused": get_tree().paused, "audio": get_node("/root/Audio").pause_world_sfx()}
     if camera != null:
         snapshot.merge({"zoom": camera.zoom, "position": camera.position, "offset": camera.offset, "mode": camera.process_mode, "smoothing": camera.position_smoothing_enabled})
     for prompt_name in ["InteractionPrompt", "Prompt", "PromptE"]:
@@ -342,6 +347,7 @@ func _restore() -> void:
     paused_actors.clear()
     get_tree().paused = bool(snapshot.get("paused", false))
     hidden_items.clear()
+    get_node("/root/Audio").restore_world_sfx(snapshot.get("audio", {}))
     snapshot.clear()
     _canvas.hide()
     _speaker = null

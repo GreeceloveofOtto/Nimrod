@@ -5,8 +5,9 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 R=Path(__file__).resolve().parents[1]
-def solid_row(im):
- a=np.asarray(im.convert('RGBA'))[:,:,3];rows=np.flatnonzero((a>200).sum(axis=1)>=a.shape[1]*.3)
+from check_sprite_frames import frame_images
+def solid_row(im, minimum_fraction=.3):
+ a=np.asarray(im.convert('RGBA'))[:,:,3];rows=np.flatnonzero((a>200).sum(axis=1)>=a.shape[1]*minimum_fraction)
  return int(rows[-1])+1 if len(rows) else None
 
 def support(level,x,foot):
@@ -16,7 +17,7 @@ def support(level,x,foot):
  return min(floors,key=lambda y:abs(y-foot))
 
 def check(fix=False):
- path=R/'data/levels.json';data=json.loads(path.read_text());art=json.loads((R/'data/interactions.json').read_text())['door_art'];lines=['접지 기준: alpha>200 픽셀이 폭의 30% 이상인 마지막 행. 허용 ±6px.'];errors=0;count=0
+ path=R/'data/levels.json';data=json.loads(path.read_text());registry=json.loads((R/'data/sprite_trims.json').read_text());art=json.loads((R/'data/interactions.json').read_text())['door_art'];lines=['접지 기준: alpha>200 픽셀이 폭의 30% 이상인 마지막 행. 허용 ±6px.'];errors=0;count=0
  ground_words=['pillar','statue','lamp_post','fence','house_ruin','market_stall','stump','bone_pile','home_bed','home_table','skeleton_remains','vase','brazier','castle_facade','passage_facade','villa_exterior','nimrod_home_exterior']
  for l in data['levels']:
   for kind in ['backgrounds','decorations','doors']:
@@ -30,9 +31,9 @@ def check(fix=False):
     if not p.is_file():errors+=1;lines.append('FAIL missing '+pth);continue
     im=Image.open(p).convert('RGBA');x,y=e['position']
     if door:
-     cfg=art.get(name,{});w,h=cfg.get('frame_size',[256,384]);im=im.crop((0,0,w,h));left=x-w/2;top=y-h;size=[w,h]
+     cfg=art.get(name,{});w,h=cfg.get('frame_size',[256,384]);im=frame_images(p,registry[pth])[0] if pth in registry else im.crop((0,0,w,h));left=x-w/2;top=y-h;size=[w,h]
     else:size=e['size'];left=x;top=y
-    row=solid_row(im)
+    row=solid_row(im,.02 if e.get("contact_mode")=="landing_feet" else .3)
     if row is None:lines.append(f'WARNING {l["id"]}/{name}: no >=30% solid bottom row (slender/sparse silhouette)');continue
     bottom=top+row*size[1]/im.height;target=support(l,left+size[0]/2,bottom)
     # Keep the approved building reference at y233: edge stones sit within6px.

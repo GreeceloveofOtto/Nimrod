@@ -106,7 +106,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9126505944395493,
+      "rgb_mae": 2.9145624254333637,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -115,7 +115,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.913059165454759,
+      "rgb_mae": 2.904753520437908,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -124,7 +124,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9291039472375022,
+      "rgb_mae": 2.9256545617363967,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -133,7 +133,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9119009062757466,
+      "rgb_mae": 2.902611737048823,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -142,7 +142,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9111395865368186,
+      "rgb_mae": 2.919295067738405,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -151,7 +151,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9321044340418543,
+      "rgb_mae": 2.935686679373147,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -160,7 +160,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.884360543877568,
+      "rgb_mae": 2.8761256745693617,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -169,7 +169,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9776323797930613,
+      "rgb_mae": 2.9705612100650267,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -178,7 +178,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9747100767904717,
+      "rgb_mae": 2.9655330414418084,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -330,7 +330,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.948616163432413,
+      "rgb_mae": 2.9460487863064353,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -384,7 +384,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9424208706848893,
+      "rgb_mae": 2.9439754552221196,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -393,7 +393,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9450595302327254,
+      "rgb_mae": 2.944771012047063,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -402,7 +402,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9516068790590073,
+      "rgb_mae": 2.95077206862512,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -411,7 +411,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9441009788768677,
+      "rgb_mae": 2.9415117611426154,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -537,7 +537,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.973503614603527,
+      "rgb_mae": 2.9712409181491006,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -596,7 +596,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9667417708761707,
+      "rgb_mae": 2.971931259546126,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -920,7 +920,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9112314404143196,
+      "rgb_mae": 2.921017075500268,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -938,7 +938,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.908187590750493,
+      "rgb_mae": 2.9260734096212153,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -947,7 +947,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9040864572779466,
+      "rgb_mae": 2.9105309513480826,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -956,7 +956,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.915494875897995,
+      "rgb_mae": 2.9145366595057505,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -983,7 +983,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9309828722002633,
+      "rgb_mae": 2.917529107373868,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1073,7 +1073,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.94259572729794,
+      "rgb_mae": 2.9446767033844563,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1118,7 +1118,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9262647929150085,
+      "rgb_mae": 2.9310749110863332,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1179,7 +1179,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.947578747917647,
+      "rgb_mae": 2.9467727650404947,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1197,7 +1197,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9454595423637153,
+      "rgb_mae": 2.94993444206749,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1206,7 +1206,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9321305034289087,
+      "rgb_mae": 2.9388350213227956,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1215,7 +1215,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.95332524573846,
+      "rgb_mae": 2.9600511228774877,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1242,7 +1242,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9391977204477207,
+      "rgb_mae": 2.9428117641832157,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1251,7 +1251,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.959785925393402,
+      "rgb_mae": 2.9597241918089723,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1260,7 +1260,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.962175179966591,
+      "rgb_mae": 2.9625524702392774,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1269,7 +1269,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.8983347884141333,
+      "rgb_mae": 2.8923197657747393,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1278,7 +1278,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.8482318034641727,
+      "rgb_mae": 2.852171941633344,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1287,7 +1287,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.8993787663123727,
+      "rgb_mae": 2.9043902477191996,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1296,7 +1296,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9061432588107547,
+      "rgb_mae": 2.9095772341015174,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1305,7 +1305,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.8786245610022254,
+      "rgb_mae": 2.8858278227934555,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1314,7 +1314,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9701967917480707,
+      "rgb_mae": 2.969636126316911,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1323,7 +1323,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.978275926971579,
+      "rgb_mae": 2.978027407611934,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1332,7 +1332,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9871787106022976,
+      "rgb_mae": 2.988169969022152,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1341,7 +1341,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.990950375925637,
+      "rgb_mae": 2.9946154033574546,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1350,7 +1350,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9946680885097305,
+      "rgb_mae": 2.9994837910386125,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1359,7 +1359,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.95276260410137,
+      "rgb_mae": 2.9542495913854436,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1368,7 +1368,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9815859006837186,
+      "rgb_mae": 2.990339100508592,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1386,7 +1386,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.886615990766904,
+      "rgb_mae": 2.886483597938322,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1431,7 +1431,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.873033422508397,
+      "rgb_mae": 2.8737548787449234,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1643,7 +1643,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.8918342554762346,
+      "rgb_mae": 2.8765003615328997,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1652,7 +1652,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.5958618955712818,
+      "rgb_mae": 2.6055445646973636,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1661,7 +1661,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9435755979646943,
+      "rgb_mae": 2.9466924824956746,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1670,7 +1670,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9113087878371573,
+      "rgb_mae": 2.905225138934618,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1679,7 +1679,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.864255909485946,
+      "rgb_mae": 2.8641496617892623,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1688,7 +1688,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9145279707026353,
+      "rgb_mae": 2.9153640675624892,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1697,7 +1697,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.850511474855467,
+      "rgb_mae": 2.850786696215537,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1706,7 +1706,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9324618736383443,
+      "rgb_mae": 2.937515715363339,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1715,7 +1715,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.92783477717008,
+      "rgb_mae": 2.9295023389894874,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1724,7 +1724,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.94122751656674,
+      "rgb_mae": 2.944528664190606,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1733,7 +1733,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.8935681064530825,
+      "rgb_mae": 2.8990846817931915,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1742,7 +1742,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.872729489211264,
+      "rgb_mae": 2.862336789214819,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1751,7 +1751,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.854148886679987,
+      "rgb_mae": 2.8690873579545455,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1760,7 +1760,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.84405182872859,
+      "rgb_mae": 2.858214810082602,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1769,7 +1769,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.8859759479458353,
+      "rgb_mae": 2.8819888801016127,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1778,7 +1778,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.859765366176872,
+      "rgb_mae": 2.865767273587936,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1787,7 +1787,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9225355310357353,
+      "rgb_mae": 2.9250361979729136,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1796,7 +1796,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.8493800443700406,
+      "rgb_mae": 2.867523816345534,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1805,7 +1805,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9281202732799776,
+      "rgb_mae": 2.9305775167532566,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1823,7 +1823,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9360789475244413,
+      "rgb_mae": 2.943431197246736,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1832,7 +1832,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.956520583623462,
+      "rgb_mae": 2.96924088774683,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1841,7 +1841,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9735907510956627,
+      "rgb_mae": 2.942476339324477,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1850,7 +1850,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.946292134831461,
+      "rgb_mae": 2.9568729078933162,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1859,7 +1859,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.982888841476424,
+      "rgb_mae": 2.9706075174825175,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1868,7 +1868,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9690347363736445,
+      "rgb_mae": 2.9865568260994304,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1877,7 +1877,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.963071281015714,
+      "rgb_mae": 2.9461539606687213,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1886,7 +1886,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9524228248508084,
+      "rgb_mae": 2.9481407521708873,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1895,7 +1895,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.93099121706399,
+      "rgb_mae": 2.9205255465073323,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1904,7 +1904,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9418421116534326,
+      "rgb_mae": 2.933135844265764,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1913,7 +1913,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9283535636476814,
+      "rgb_mae": 2.9281111072819384,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1922,7 +1922,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9174131215629653,
+      "rgb_mae": 2.928873166878456,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1931,7 +1931,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.938782871007935,
+      "rgb_mae": 2.9362766740250184,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1940,7 +1940,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9121983386480847,
+      "rgb_mae": 2.915402105048028,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1949,7 +1949,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.919016864011482,
+      "rgb_mae": 2.9305986388258716,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1967,7 +1967,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.919252129917711,
+      "rgb_mae": 2.931347378489265,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1976,7 +1976,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9287574450605875,
+      "rgb_mae": 2.9332820775670596,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1985,7 +1985,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9989483227561196,
+      "rgb_mae": 2.98322315080454,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -1993,8 +1993,8 @@
       "mode": "lossy",
       "quality": 100,
       "encoder": "bounded RGB quantization",
-      "rgb_step": 12,
-      "rgb_mae": 2.9909865718315043,
+      "rgb_step": 10,
+      "rgb_mae": 2.49858857670492,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2002,8 +2002,8 @@
       "mode": "lossy",
       "quality": 100,
       "encoder": "bounded RGB quantization",
-      "rgb_step": 12,
-      "rgb_mae": 2.997199105868412,
+      "rgb_step": 10,
+      "rgb_mae": 2.5111936448983805,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2012,7 +2012,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9993326542797933,
+      "rgb_mae": 2.9990925040837317,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2353,7 +2353,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.96952579110437,
+      "rgb_mae": 2.970164001691516,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2371,7 +2371,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.954902439686287,
+      "rgb_mae": 2.9599475595563596,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2380,7 +2380,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.964586080369004,
+      "rgb_mae": 2.9664149082509277,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2506,7 +2506,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9612486881882116,
+      "rgb_mae": 2.9725214063151695,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2844,7 +2844,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9646740212672746,
+      "rgb_mae": 2.9678873915577957,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2853,7 +2853,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9477288015989793,
+      "rgb_mae": 2.9381220956236307,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2862,7 +2862,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.946624097567376,
+      "rgb_mae": 2.9374050440595565,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2871,7 +2871,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9109422085314405,
+      "rgb_mae": 2.892670893417669,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2880,7 +2880,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.938861406872684,
+      "rgb_mae": 2.929490604344441,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2889,7 +2889,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9423916837878097,
+      "rgb_mae": 2.9264419058233493,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2898,7 +2898,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9191859828879694,
+      "rgb_mae": 2.904114179111236,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2907,7 +2907,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.847101874969403,
+      "rgb_mae": 2.850628797050707,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2916,7 +2916,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.8983210884740425,
+      "rgb_mae": 2.8806786981335804,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2925,7 +2925,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.943775508385464,
+      "rgb_mae": 2.93107509994289,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2934,7 +2934,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9087022601362946,
+      "rgb_mae": 2.887090469874346,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2943,7 +2943,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.8980566635982408,
+      "rgb_mae": 2.8767235522161383,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2952,7 +2952,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.90525611876421,
+      "rgb_mae": 2.8758447074376448,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2961,7 +2961,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.8925181310102293,
+      "rgb_mae": 2.8752142245072836,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2970,7 +2970,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9149051557319465,
+      "rgb_mae": 2.899166586684583,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2979,7 +2979,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.905048381835973,
+      "rgb_mae": 2.8854151850482177,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2988,7 +2988,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.950228105316872,
+      "rgb_mae": 2.9336328109490832,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -2997,7 +2997,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9137427684763035,
+      "rgb_mae": 2.906858322808284,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -3006,7 +3006,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.944965105614295,
+      "rgb_mae": 2.944257361462524,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -3015,7 +3015,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9895853802318726,
+      "rgb_mae": 2.996445951641951,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -3040,7 +3040,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.979402917531811,
+      "rgb_mae": 2.9819187332634765,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -3058,7 +3058,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.953064864357458,
+      "rgb_mae": 2.946189481132597,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -3067,7 +3067,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9294887436849857,
+      "rgb_mae": 2.9319610602861834,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -3085,7 +3085,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.979465560617393,
+      "rgb_mae": 2.9808329667106612,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -3094,7 +3094,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.972791634409326,
+      "rgb_mae": 2.9804429783223374,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -3103,7 +3103,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 12,
-      "rgb_mae": 2.9817114655043184,
+      "rgb_mae": 2.9860066959363283,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -3246,6 +3246,596 @@
       "rgb_mae": 1.4529627995882959,
       "alpha_mae": 0,
       "bbox_same": true
+    },
+    "assets/sprites/player/axe_onearm/idle.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9635579290395286,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_onearm/walk.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9421846435100547,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_onearm/crouch_enter.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9786393413372076,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_onearm/crouch_idle.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.965317575793568,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_onearm/crouch_exit.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9705342800384007,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_onearm/jump_start.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9492598020836884,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_onearm/jump_rise.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9645039907898907,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_onearm/fall.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9560097646762222,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_onearm/land.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9467728151846355,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_onearm/drop_through.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.95904597668655,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_onearm/hurt.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9604937841696555,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_onearm/death.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.938363593492101,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_onearm/attack_1.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.970843959632688,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_onearm/attack_2.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9748312763339424,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_onearm/attack_3.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.974719307797578,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_onearm/attack_4.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9667290219134155,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_onearm/run.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9681209549449963,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_onearm/roll.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.978988300303578,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_prosthetic/idle.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.898110841019835,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_prosthetic/walk.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9158863883478436,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_prosthetic/crouch_enter.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.940557756544706,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_prosthetic/crouch_idle.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.97297713101476,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_prosthetic/crouch_exit.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9496784152302546,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_prosthetic/jump_start.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9454898495707478,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_prosthetic/jump_rise.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.951274545676302,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_prosthetic/fall.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9479263496603503,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_prosthetic/land.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.940934884445789,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_prosthetic/drop_through.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.91784464040413,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_prosthetic/hurt.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.941885915933354,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_prosthetic/death.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.954239181349764,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_prosthetic/attack_1.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.975152263374486,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_prosthetic/attack_2.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9615012965409266,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_prosthetic/attack_3.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9627805663415097,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_prosthetic/attack_4.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9579126956112485,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_prosthetic/run.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9555655508735383,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_prosthetic/roll.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9666219965810203,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_onearm/arm_loss_hit.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.949629875318488,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/axe_onearm/melammu_absorb.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9461609054756805,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/cutscene/cry_collapse.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.937382168286567,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/cutscene/cry_loop.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.961533664724642,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/npcs/enkidua/bed_awake.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 10,
+      "rgb_mae": 2.4958041781817264,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/npcs/enkidua/bed_asleep.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 10,
+      "rgb_mae": 2.4927084474174173,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/melee_beast/idle.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.971702090214424,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/melee_beast/walk.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.965849319076021,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/melee_beast/windup.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.968014807847677,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/melee_beast/attack.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9831533342683936,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/melee_beast/recovery.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.968014807847677,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/melee_beast/turn.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9691128229700343,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/melee_beast/hurt.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.973963404738721,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/melee_beast/death.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9693265733013674,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/gugalanna/idle.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "edge blue-despill / lossless WebP container",
+      "rgb_mae": 2.951135659338656,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/gugalanna/walk.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "edge blue-despill / lossless WebP container",
+      "rgb_mae": 2.949974952739293,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/gugalanna/stomp_windup.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "edge blue-despill / lossless WebP container",
+      "rgb_mae": 2.9522318413458586,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/gugalanna/stomp.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "edge blue-despill / lossless WebP container",
+      "rgb_mae": 2.9497419640919684,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/gugalanna/stomp_recovery.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "edge blue-despill / lossless WebP container",
+      "rgb_mae": 2.9458177495578557,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/gugalanna/charge_windup.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "edge blue-despill / lossless WebP container",
+      "rgb_mae": 2.939541079694941,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/gugalanna/charge_loop.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "edge blue-despill / lossless WebP container",
+      "rgb_mae": 2.935096471833248,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/gugalanna/charge_crash.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "edge blue-despill / lossless WebP container",
+      "rgb_mae": 2.93089894106814,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/gugalanna/charge_recovery.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "edge blue-despill / lossless WebP container",
+      "rgb_mae": 2.9420552955731267,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/gugalanna/uppercut_windup.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "edge blue-despill / lossless WebP container",
+      "rgb_mae": 2.9562815709833834,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/gugalanna/uppercut.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "edge blue-despill / lossless WebP container",
+      "rgb_mae": 2.9353572468351254,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/gugalanna/uppercut_recovery.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "edge blue-despill / lossless WebP container",
+      "rgb_mae": 2.9389521118552167,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/gugalanna/rake_windup.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "edge blue-despill / lossless WebP container",
+      "rgb_mae": 2.9283264078258235,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/gugalanna/rake.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "edge blue-despill / lossless WebP container",
+      "rgb_mae": 2.9253918534032706,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/gugalanna/rake_recovery.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "edge blue-despill / lossless WebP container",
+      "rgb_mae": 2.927352189801927,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/gugalanna/turn.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "edge blue-despill / lossless WebP container",
+      "rgb_mae": 2.9442428431541963,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/enemies/gugalanna/death.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "edge blue-despill / lossless WebP container",
+      "rgb_mae": 2.9179134632333996,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/tiles/stage10/dilmun_ground_tile.webp": {
+      "mode": "lossless",
+      "quality": 100
     }
   }
 }

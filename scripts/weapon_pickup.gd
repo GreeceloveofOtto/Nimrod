@@ -25,12 +25,12 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
     var hero := get_tree().get_first_node_in_group("player") as NimrodPlayer
     var available: bool = hero != null and not hero.transition_locked and hero.action != "dead" and not get_node("/root/Dialogue").active
-    prompt.visible = available and global_position.distance_to(hero.global_position) <= float(spec["range"])
+    prompt.visible = available and not get_node("/root/Story").is_flag("arm_lost") and global_position.distance_to(hero.global_position) <= float(spec["range"])
     if prompt.visible and Input.is_action_just_pressed("interact"):
         interact(hero)
 
 func interact(_hero: NimrodPlayer) -> void:
-    if get_node("/root/GameState").run_flags.get(str(spec["flag"]), false):
+    if get_node("/root/Story").is_flag("arm_lost") or get_node("/root/GameState").run_flags.get(str(spec["flag"]), false):
         return
     get_node("/root/GameState").run_flags[str(spec["flag"])] = true
     get_node("/root/GameState").set_weapon(str(spec["weapon"]))

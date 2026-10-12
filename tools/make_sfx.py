@@ -38,6 +38,12 @@ def synthesize(duration, kind, pitch, seed):
     if kind == "growl":
         growl = tone + 0.24 * np.sin(2.0 * np.pi * (pitch * 2.05) * t) + 0.13 * low_noise
         return growl * envelope(t, attack=0.045, decay=0.200)
+    if kind == "soft_sob":
+        breath = (.5+.5*np.sin(2*np.pi*2*t/duration))**3
+        return (.07*low_noise+.2*np.sin(2*np.pi*110*t)*(1+.15*np.sin(2*np.pi*6*t)))*breath
+    if kind == "heartbeat":
+        phase = t % .5
+        return (.65*np.sin(2*np.pi*58*t)*np.exp(-phase/.045)+.35*np.sin(2*np.pi*72*t)*np.exp(-((phase-.16)%.5)/.035))
     if kind == "whoosh":
         return (0.50 * low_noise + 0.12 * mid_noise + 0.18 * tone) * np.sin(np.pi * t / duration) ** 2
     if kind == "inhale":
@@ -102,6 +108,15 @@ def stage9_audio():
         write_wav(source,synthesize(item["duration"],item["kind"],item["pitch"],900+i),fade_seconds=0 if item["loop"] else .004, encode_ogg=False)
         subprocess.run(["ffmpeg","-hide_banner","-loglevel","error","-y","-i",str(source),"-c:a","libvorbis","-q:a","3",str(PROJECT_ROOT/"assets/audio/sfx"/(item["name"]+".ogg"))],check=True)
 
+def stage10_audio():
+    spec = json.loads((PROJECT_ROOT / "data/audio_stage10.json").read_text())
+    import subprocess
+    for i,item in enumerate(spec["sfx"]):
+        source=PROJECT_ROOT / "archive/stage10/audio" / (item["name"]+".wav")
+        source.parent.mkdir(parents=True,exist_ok=True)
+        write_wav(source,synthesize(item["duration"],item["kind"],item["pitch"],10100+i),fade_seconds=0 if item["loop"] else .004, encode_ogg=False)
+        subprocess.run(["ffmpeg","-hide_banner","-loglevel","error","-y","-i",str(source),"-c:a","libvorbis","-q:a","3",str(PROJECT_ROOT/"assets/audio/sfx"/(item["name"]+".ogg"))],check=True)
+
 def main():
     out_dir = PROJECT_ROOT / "assets/audio/sfx"
     for index, (name, (duration, kind, pitch)) in enumerate(SOUNDS.items()):
@@ -121,7 +136,9 @@ def main():
 
 if __name__ == "__main__":
     import sys
-    if "--stage9-only" in sys.argv:
+    if "--stage10-only" in sys.argv:
+        stage10_audio()
+    elif "--stage9-only" in sys.argv:
         stage9_audio()
     elif "--stage6-only" in sys.argv:
         stage6_audio()

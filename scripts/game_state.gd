@@ -26,6 +26,8 @@ func get_weapon() -> String:
 func set_weapon(value: String) -> void:
     if value not in ["none", "staff", "axe"]:
         return
+    if bool(run_flags.get("arm_lost", false)):
+        value = "axe"
     run_flags["weapon"] = value
     weapon_changed.emit(value)
 

@@ -1,4 +1,4 @@
-STATIC: 116 spawns, 0 failures
+STATIC: 117 spawns, 0 failures
 RearGate / melee_beast 400,880: PASS
 RearGate / ranged_beast 1300,880: PASS
 RearGate / melee_beast 1900,880: PASS
@@ -115,3 +115,4 @@ CedarForest_F2 / cedar_demon 4200,1088: PASS
 CedarForest_F2 / cedar_demon 600,1728: PASS
 CedarForest_F2 / cedar_demon 1800,1728: PASS
 CedarBossRoom / kala_ushumgal 800,620: PASS
+HomeFront / gugalanna 1700,880: PASS

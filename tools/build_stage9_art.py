@@ -12,7 +12,7 @@ def read(p):return json.loads(p.read_text())
 def manifest(folder):
  p=folder/'manifest.json'
  return p,read(p) if p.exists() else {'clips':[],'aliases':{'hurt':'idle'}}
-def pack(folder,name,poses,frames,duration,loop,scale,frame=(640,640),anchor=(320,600),kind='npc',exception=False,height_tol=.1,center=False):
+def pack(folder,name,poses,frames,duration,loop,scale,frame=(640,640),anchor=(320,600),kind='npc',exception=False,height_tol=.1,center=False,center_x=False):
  folder.mkdir(parents=True,exist_ok=True)
  sheet=Image.new('RGBA',(frame[0]*frames,frame[1]))
  for i,pose in enumerate(poses):
@@ -21,6 +21,8 @@ def pack(folder,name,poses,frames,duration,loop,scale,frame=(640,640),anchor=(32
   if center:
    pixels=np.array(pose);ys,xs=np.indices(pixels.shape[:2]);mass=pixels[:,:,3].astype(float);cx=(xs*mass).sum()/mass.sum();cy=(ys*mass).sum()/mass.sum()
    x=round(anchor[0]-cx);y=round(anchor[1]-cy)
+  elif center_x:
+   pixels=np.array(pose);ys,xs=np.indices(pixels.shape[:2]);mass=pixels[:,:,3].astype(float);cx=(xs*mass).sum()/mass.sum();x=round(anchor[0]-cx);y=anchor[1]-pose.height
   else:x=round(anchor[0]-pose.width/2);y=anchor[1]-pose.height
   if x<8 or y<8 or x+pose.width>frame[0]-8 or y+pose.height>frame[1]-8:raise ValueError((name,i,'clips',pose.size,frame))
   sheet.alpha_composite(pose,(i*frame[0]+x,y))
@@ -30,10 +32,10 @@ def pack(folder,name,poses,frames,duration,loop,scale,frame=(640,640),anchor=(32
  args=SimpleNamespace(output=str(path),frames=frames,frame_width=frame[0],frame_height=frame[1],anchor=anchor,visual_scale=.3,density_class=kind,canonical_only=False)
  apply_storage_policy(args,sheet,True)
  if name in ['anur_light_cast','anur_light_impact','humbaba_bite_spark']:
-  manifest=json.loads((folder/'manifest.json').read_text())
-  for clip in manifest['clips']:
+  effect_manifest=json.loads((folder/'manifest.json').read_text())
+  for clip in effect_manifest['clips']:
    if clip['name']==name:clip.setdefault('qa',{})['fade_out_fx']=True
-  (folder/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
+  (folder/'manifest.json').write_text(json.dumps(effect_manifest,ensure_ascii=False,indent=2)+'\n')
  print('PACKED',name,flush=True)
 def poses(id,row,count):return [Image.open(POSE/f'{id}_{row}_{i}.png').convert('RGBA') for i in range(count)]
 def characters():

@@ -11,6 +11,7 @@ extends Node2D
 @export var interact_range: float = 90.0
 @export var arrival_spawn: String = ""
 @export var exit_direction: int = 1
+@export var interact_label: String = ""
 
 var config: Dictionary = {}
 var interaction_data: Dictionary = {}
@@ -62,6 +63,12 @@ func _make_prompt() -> void:
     prompt = helper.add_image(self, str(config.get("prompt_path", "res://assets/ui/prompt_e.png")), at, dimensions)
     prompt.name = "InteractionPrompt"
     prompt.visible = false
+    if not interact_label.is_empty():
+        var label := Label.new()
+        label.text = interact_label
+        label.position = Vector2(-10,dimensions.y)
+        label.add_theme_font_override("font",load("res://assets/fonts/NimrodUIKorean-Regular.otf") as Font)
+        prompt.add_child(label)
 
 func _process(_delta: float) -> void:
     var player := _player()
@@ -120,6 +127,9 @@ func interact(player: Node2D) -> void:
         return
     if locked:
         _shake_locked()
+        return
+    if has_meta("story_action") and not str(get_meta("story_action")).is_empty():
+        get_node("/root/Cutscene").play(str(get_meta("story_action")))
         return
     busy = true
     var manager := _manager()
@@ -184,7 +194,7 @@ func animate_open(opening: bool, seconds: float) -> Signal:
     door_tween.tween_method(_set_open_progress, open_progress, 1.0 if opening else 0.0, seconds)
     # A killed bound tween never emits finished in Godot 4.3. The tree-owned
     # timer completes even when a departing level frees its animated door.
-    var timer: SceneTreeTimer = get_tree().create_timer(seconds)
+    var timer: SceneTreeTimer = get_tree().create_timer(seconds, process_mode == PROCESS_MODE_ALWAYS)
     timer.timeout.connect(_complete_door_animation.bind(door_tween.get_instance_id(), 1.0 if opening else 0.0), CONNECT_ONE_SHOT)
     return timer.timeout
 

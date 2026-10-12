@@ -12,6 +12,7 @@ var timer: SceneTreeTimer
 var motion: Tween
 var timing_scale := 1.0
 var current_id := ""
+var audio_states: Dictionary = {}
 var spawned_actors: Array[Node] = []
 
 func _ready() -> void:
@@ -21,6 +22,9 @@ func _ready() -> void:
 func actor(actor_id: String) -> Node2D:
     if actor_id == "player":
         return get_node("/root/SceneManager").player
+    for enemy: EnemyBase in get_tree().get_nodes_in_group("enemies"):
+        if enemy.enemy_id == actor_id:
+            return enemy
     if is_instance_valid(get_node("/root/SceneManager").current_level):
         return get_node("/root/SceneManager").current_level.npcs.get(actor_id) as Node2D
     return null
@@ -50,7 +54,9 @@ func play(cutscene_id: String) -> bool:
     generation += 1
     var token: int = generation
     previous_pause = get_tree().paused
+    audio_states = get_node("/root/Audio").pause_world_sfx()
     saved_weapon_hidden = get_node("/root/SceneManager").player.visual_weapon_hidden
+    get_node("/root/Chapter").saved_camera_zoom = get_node("/root/SceneManager").player.camera.zoom
     get_tree().paused = true
     _control(get_node("/root/SceneManager"))
     _control(get_node("/root/SceneManager").player)
@@ -71,6 +77,36 @@ func _step(step: Dictionary) -> void:
     var node: Node2D = actor(str(step.get("actor", "player")))
     var level: LevelBase = get_node("/root/SceneManager").current_level as LevelBase
     match str(step["type"]):
+        "time_skip":
+            await get_node("/root/Chapter").time_skip(str(step["id"]))
+        "story_event":
+            await get_node("/root/Chapter").event(str(step["event"]))
+        "fade_actor":
+            if is_instance_valid(node):
+                _control(node)
+                motion = create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+                motion.tween_property(node, "modulate:a", 0., float(step["seconds"])*timing_scale)
+                await motion.finished
+        "sound":
+            get_node("/root/Chapter").cutscene_sound(str(step["id"]))
+        "bgm":
+            get_node("/root/Audio").play_bgm(str(step["id"]))
+        "zoom":
+            var camera: Camera2D = get_node("/root/SceneManager").player.camera
+            _control(camera)
+            motion = create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+            motion.tween_property(camera, "zoom", Vector2.ONE*float(step["to"]), float(step["seconds"])*timing_scale)
+            await motion.finished
+        "walk_fade":
+            if is_instance_valid(node):
+                _control(node)
+                node.cinematic_clip = "walk"
+                node.cinematic_clock = 0
+                node.facing = 1 if float(step["x"]) >= node.global_position.x else -1
+                motion = create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS).set_parallel(true)
+                motion.tween_property(node, "global_position:x", float(step["x"]), float(step["seconds"])*timing_scale)
+                motion.tween_property(get_node("/root/SceneManager")._fade_rect, "modulate:a", 1., float(step["fade_seconds"])*timing_scale)
+                await motion.finished
         "lock_player":
             get_node("/root/SceneManager").set_player_locked(true)
         "unlock_player":
@@ -102,6 +138,10 @@ func _step(step: Dictionary) -> void:
                     node.z_index = int(actor_states[node]["z"])
                 if node is NPC:
                     node.play_clip(clip)
+                elif node is EnemyBase:
+                    node.cinematic_clip = clip
+                    node.cinematic_clock = 0
+                    node._show_clip(clip, 0)
                 elif node is NimrodPlayer:
                     node.cinematic_clip = clip
                     node.cinematic_clock = 0
@@ -116,6 +156,8 @@ func _step(step: Dictionary) -> void:
                 if node is NPC:
                     node.pose = node.facing
                     node.play_clip("walk")
+                elif node is EnemyBase:
+                    node._show_clip("walk", 0)
                 else:
                     node.cinematic_clip = "walk"
                     node.cinematic_clock = 0
@@ -158,17 +200,22 @@ func _restore() -> void:
                 node.z_index = actor_states[node]["z"]
             if node is Node2D and actor_states[node].has("seat_y") and actor_states[node]["seat_level"] == get_node("/root/SceneManager").current_level.level_id:
                 node.global_position.y = float(actor_states[node]["seat_y"])
+            if node is EnemyBase:
+                node.cinematic_clip = ""
             if node is NPC:
                 node.face_player = actor_states[node]["face"]
                 node.cinematic_control = actor_states[node]["cinematic"]
                 node.play_clip("idle_front" if node.three_way and node.pose == NPC.Pose.FRONT else node.idle_clip)
     actor_states.clear()
+    get_node("/root/Chapter").finish_cutscene()
     if is_instance_valid(get_node("/root/SceneManager").player):
         get_node("/root/SceneManager").player.cinematic_clip = ""
         get_node("/root/SceneManager").player.set_weapon_visibility(saved_weapon_hidden)
         get_node("/root/SceneManager").player.modulate.a = 1
         get_node("/root/SceneManager").player.velocity = Vector2.ZERO
     get_node("/root/SceneManager")._fade_rect.modulate.a = 0
+    get_node("/root/Audio").restore_world_sfx(audio_states)
+    audio_states.clear()
     get_tree().paused = previous_pause
     active = false
     spawned_actors.clear()

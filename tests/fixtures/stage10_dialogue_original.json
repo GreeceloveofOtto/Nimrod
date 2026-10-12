@@ -1,0 +1,158 @@
+{
+  "home_critical": [
+    {
+      "speaker": "enkidua",
+      "text": "니므롯, 괜찮아. 곧 정상으로 돌아올 거야. 그보다 너 팔은 어떡해?"
+    },
+    {
+      "speaker": "player",
+      "text": "지금 팔이 문제야? 너 지금 심각해."
+    },
+    {
+      "speaker": "player",
+      "text": "우린 어쩌다가 이런 삶을 살게 된 거지?"
+    },
+    {
+      "speaker": "enkidua",
+      "text": "…."
+    },
+    {
+      "speaker": "enkidua",
+      "text": "바꿀 수 없는 우리의 운명일 뿐이지."
+    }
+  ],
+  "inanna_home": [
+    {
+      "speaker": "inanna",
+      "text": "니므롯, 삼나무 숲에 갔다가 돌아오는 길이야."
+    },
+    {
+      "speaker": "inanna",
+      "text": "훔바바의 시체는 어디에 있지?"
+    },
+    {
+      "speaker": "player",
+      "text": "나도 알지 못해."
+    },
+    {
+      "speaker": "player",
+      "text": "그보다 연락없이 찾아온 이유가 뭐지?"
+    },
+    {
+      "speaker": "inanna",
+      "text": "난 그곳에서 묵직한 열기를 느꼈어. 내가 가진 감각만으로도 그곳에서 무슨 일이 벌어졌는지 생생하게 떠올릴 수 있을 정도로."
+    },
+    {
+      "speaker": "player",
+      "text": "그래서?"
+    },
+    {
+      "speaker": "inanna",
+      "text": "난 세상이 너무 쉬웠기에 죽고 싶을 정도로 지루했어. 그런데 그 밀도를 느낀 순간 살아갈 흥미를 되찾은 거지."
+    },
+    {
+      "speaker": "inanna",
+      "text": "나 자신 또한 더욱 아름다워졌어. 난 다시 그 열기를 느끼고 싶어."
+    },
+    {
+      "speaker": "inanna",
+      "text": "오직 나만이 할 수 있지. 너의 팔을 고쳐줄게, 원래대로."
+    },
+    {
+      "speaker": "inanna",
+      "text": "단, 너는 지금부터 나를 사랑하며, 나와 함께 먹고, 나와 함께 자고, 나와 함께 사는 거야."
+    },
+    {
+      "speaker": "player",
+      "text": "지금 쓰러진 엔키두아는 너의 시각으로 느낄 수 없나보군."
+    },
+    {
+      "speaker": "inanna",
+      "text": "그녀는 곧 숨을 거둘 거야. 그러지 말고 나와 함께하는 미래를 상상해봐."
+    },
+    {
+      "speaker": "player",
+      "text": "썩 꺼져, 인안나. 안그러면 죽여버리겠어."
+    },
+    {
+      "speaker": "inanna",
+      "text": "…후회할 거야, 분명히."
+    }
+  ],
+  "enkidua_last": [
+    {
+      "speaker": "player",
+      "text": "엔키두아, 상태가 점점 심각해져."
+    },
+    {
+      "speaker": "enkidua",
+      "text": "니므롯, 미안해. 아마 나의 투피 시마티에는 곧 마침표가 찍힐 것 같아."
+    },
+    {
+      "speaker": "player",
+      "text": "엔키두아, 그런 법이 어디에 있지? 이렇게 가선 안돼."
+    },
+    {
+      "speaker": "enkidua",
+      "text": "하지만 어쩌겠어, 나는 나의 운명을 바꿀 수 없어."
+    },
+    {
+      "speaker": "player",
+      "text": "너가 못하겠다면, 내가 너의 운명을 기필코 바꿔놓겠어."
+    },
+    {
+      "speaker": "enkidua",
+      "text": "좋아, 하지만 정말 마지막이네. 죽어서도 사랑할게, 니므롯."
+    }
+  ],
+  "gugalanna_intro": [
+    {
+      "speaker": "gugalanna",
+      "text": "니므롯, 나의 사랑스러운 인안나를 잘도 모욕했더군."
+    },
+    {
+      "speaker": "player",
+      "text": "누구야?"
+    },
+    {
+      "speaker": "gugalanna",
+      "text": "그건 알 것 없어. 넌 내 손에 죽기만 하면 돼."
+    }
+  ],
+  "villa_prosthetic": [
+    {
+      "speaker": "shamash",
+      "text": "나의 수칼루, 니므롯. 오랜 연구 끝에 완성했어. 아마 딩이르 전체에서 가장 잘 만든 의수일 거야."
+    },
+    {
+      "speaker": "aya",
+      "text": "한 번 착용해봐, 지금까지 많이 불편했지?"
+    },
+    {
+      "speaker": "player",
+      "text": "언제나 고마워."
+    },
+    {
+      "speaker": "shamash",
+      "text": "4층에 요청한대로 1인용 우주정 하나를 구해뒀어, 몸조심해."
+    },
+    {
+      "speaker": "aya",
+      "text": "오래 못볼 것을 알지만, 다음을 기약하자."
+    },
+    {
+      "speaker": "aya",
+      "text": "브란눈과 이디그나의 축복을 빌어."
+    }
+  ],
+  "rooftop": [
+    {
+      "speaker": "player",
+      "text": "엔키두아는 그렇게 죽어서는 안돼. 누구라도 동의할 거야."
+    },
+    {
+      "speaker": "player",
+      "text": "내가 그녀의 운명을 바꿔 놓겠어."
+    }
+  ]
+}

@@ -505,6 +505,18 @@
           "frames": 6,
           "duration": 2.4,
           "loop": true
+        },
+        {
+          "name": "bed_awake",
+          "frames": 6,
+          "duration": 3.0,
+          "loop": true
+        },
+        {
+          "name": "bed_asleep",
+          "frames": 6,
+          "duration": 3.6,
+          "loop": true
         }
       ],
       "interaction": "enkidua_intro",

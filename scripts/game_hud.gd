@@ -104,7 +104,7 @@ func _process(_delta: float) -> void:
         controls.text += "  R 아누르의 빛"
     var boss: EnemyBase
     for enemy in get_tree().get_nodes_in_group("enemies"):
-        if enemy is KalaUshumgal or enemy is Humbaba:
+        if enemy is KalaUshumgal or enemy is Humbaba or enemy is Gugalanna:
             boss = enemy
     boss_panel.visible = boss != null and bool(boss.get("battle_started")) and not bool(boss.get("battle_finished"))
     if boss_panel.visible:

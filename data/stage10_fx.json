@@ -1,0 +1,52 @@
+{
+  "gugalanna_shockwave": {
+    "path": "assets/sprites/fx/gugalanna_shockwave.webp",
+    "frame_size": [
+      512,
+      96
+    ],
+    "frames": 4,
+    "duration": 0.4,
+    "scale": 1.0
+  },
+  "gugalanna_lightning": {
+    "path": "assets/sprites/fx/gugalanna_lightning.webp",
+    "frame_size": [
+      256,
+      512
+    ],
+    "frames": 4,
+    "duration": 0.35,
+    "scale": 1.0
+  },
+  "gugalanna_rake_arc": {
+    "path": "assets/sprites/fx/gugalanna_rake_arc.webp",
+    "frame_size": [
+      768,
+      384
+    ],
+    "frames": 5,
+    "duration": 0.4,
+    "scale": 1.0
+  },
+  "gugalanna_dust": {
+    "path": "assets/sprites/fx/gugalanna_dust.webp",
+    "frame_size": [
+      256,
+      256
+    ],
+    "frames": 5,
+    "duration": 0.5,
+    "scale": 1.0
+  },
+  "severed_arm": {
+    "path": "assets/sprites/fx/severed_arm.webp",
+    "frame_size": [
+      192,
+      192
+    ],
+    "frames": 4,
+    "duration": 1.0,
+    "scale": 0.35
+  }
+}

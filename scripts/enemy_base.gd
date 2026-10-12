@@ -56,6 +56,8 @@ var ignored_player: PhysicsBody2D
 var returning_to_patrol: bool = false
 var clip_aliases: Dictionary = {}
 var no_drop: bool = false
+var cinematic_clip := ""
+var cinematic_clock := 0.0
 var threat_marker: Node2D
 var _clip_warnings: Dictionary = {}
 var _queued_player_effects: Array[Callable] = []
@@ -158,6 +160,10 @@ func _create_missing_visual() -> void:
     missing_visual.add_child(label)
 
 func _physics_process(delta: float) -> void:
+    if not cinematic_clip.is_empty():
+        cinematic_clock += delta
+        _show_clip(cinematic_clip, cinematic_clock)
+        return
     if Input.is_action_just_pressed("debug_hitbox"):
         debug_hitboxes = not debug_hitboxes
         queue_redraw()

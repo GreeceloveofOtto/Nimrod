@@ -1,0 +1,436 @@
+10단계 변경·추가·이동·삭제 파일 목록
+M:기존 수정 / ??:신규 / D:삭제
+
+ M README_KO.txt
+ M assets/animation_manifest.json
+ M assets/art_manifest.json
+ M assets/backgrounds/castle/castle_f2_sanctum.webp
+ M assets/backgrounds/castle/castle_f5_far.webp
+ M assets/backgrounds/castle_front/castle_facade.webp
+ M assets/backgrounds/castle_front/castle_wall.webp
+ M assets/backgrounds/castle_front/far_city.webp
+ M assets/backgrounds/nimrod_home/home_interior_bg.webp
+ M assets/backgrounds/passage/passage_f1_bg.webp
+ M assets/backgrounds/passage/passage_f2_bg.webp
+ M assets/backgrounds/passage/passage_f3_bg.webp
+ M assets/backgrounds/passage/passage_f4_bg.webp
+ M assets/backgrounds/passage/passage_f5_bg.webp
+ M assets/backgrounds/passage/passage_f6_bg.webp
+ M assets/backgrounds/passage/passage_f7_bg.webp
+ M assets/backgrounds/passage/passage_f8_bg.webp
+ M assets/backgrounds/rear_gate/far_city.webp
+ M assets/backgrounds/rear_gate/villa_exterior.webp
+ M assets/fonts/NimrodUIKorean-Regular.otf
+ M assets/props/broken_tower.webp
+ M assets/props/collapsed_bridge.webp
+ M assets/props/doors/manifest.json
+ M assets/props/doors/stage3_manifest.json
+ M assets/props/doors/stage4_manifest.json
+ M assets/props/doors/stage5_manifest.json
+ M assets/props/doors/stage6_manifest.json
+ M assets/props/house_ruin_a.webp
+ M assets/props/nimrod_home_exterior.webp
+ M assets/props/passage_arch.webp
+ M assets/props/passage_window_crimson.webp
+ M assets/props/ruin_wall_a.webp
+ D assets/props/villa_dining_table_full.storage.json
+ M assets/props/villa_dining_table_full.webp
+ D assets/props/villa_dining_table_prep.storage.json
+ M assets/props/villa_dining_table_prep.webp
+ M assets/props/villa_dining_table_wide.webp
+ M assets/sprites/enemies/boar_charger/death.webp
+ M assets/sprites/enemies/boar_charger/manifest.json
+ M assets/sprites/enemies/boar_charger/walk.webp
+ M assets/sprites/enemies/cedar_archer/manifest.json
+ M assets/sprites/enemies/cedar_colossus/manifest.json
+ M assets/sprites/enemies/cedar_demon/manifest.json
+ M assets/sprites/enemies/cedar_sentinel/attack_recovery.webp
+ M assets/sprites/enemies/cedar_sentinel/manifest.json
+ M assets/sprites/enemies/cedar_sentinel/shield_up.webp
+ M assets/sprites/enemies/cedar_sentinel/slash.webp
+ M assets/sprites/enemies/cedar_sentinel/turn.webp
+ M assets/sprites/enemies/cedar_sentinel/windup.webp
+ M assets/sprites/enemies/cedar_wisp/manifest.json
+ M assets/sprites/enemies/chain_beastman/chain_throw.webp
+ M assets/sprites/enemies/chain_beastman/death.webp
+ M assets/sprites/enemies/chain_beastman/manifest.json
+ M assets/sprites/enemies/chain_beastman/walk.webp
+ M assets/sprites/enemies/corpse_bomber/fuse.webp
+ M assets/sprites/enemies/corpse_bomber/hurt.webp
+ M assets/sprites/enemies/corpse_bomber/manifest.json
+ M assets/sprites/enemies/corpse_bomber/run.webp
+ M assets/sprites/enemies/corpse_bomber/scream.webp
+ M assets/sprites/enemies/explosive_spitter/death.webp
+ M assets/sprites/enemies/explosive_spitter/hurt.webp
+ M assets/sprites/enemies/explosive_spitter/idle.webp
+ M assets/sprites/enemies/explosive_spitter/manifest.json
+ M assets/sprites/enemies/explosive_spitter/recovery.webp
+ M assets/sprites/enemies/explosive_spitter/spit.webp
+ M assets/sprites/enemies/explosive_spitter/turn.webp
+ M assets/sprites/enemies/explosive_spitter/walk.webp
+ M assets/sprites/enemies/explosive_spitter/windup.webp
+ M assets/sprites/enemies/gas_sac/bump.webp
+ M assets/sprites/enemies/gas_sac/burst.webp
+ M assets/sprites/enemies/gas_sac/death_swell.webp
+ M assets/sprites/enemies/gas_sac/float.webp
+ M assets/sprites/enemies/gas_sac/hurt.webp
+ M assets/sprites/enemies/gas_sac/manifest.json
+ M assets/sprites/enemies/gas_sac/turn.webp
+ D assets/sprites/enemies/humbaba/bite.storage.json
+ M assets/sprites/enemies/humbaba/bite.webp
+ D assets/sprites/enemies/humbaba/bite_recovery.storage.json
+ M assets/sprites/enemies/humbaba/bite_recovery.webp
+ D assets/sprites/enemies/humbaba/bite_windup.storage.json
+ M assets/sprites/enemies/humbaba/bite_windup.webp
+ D assets/sprites/enemies/humbaba/breath_loop.storage.json
+ M assets/sprites/enemies/humbaba/breath_loop.webp
+ D assets/sprites/enemies/humbaba/breath_recovery.storage.json
+ M assets/sprites/enemies/humbaba/breath_recovery.webp
+ D assets/sprites/enemies/humbaba/breath_windup.storage.json
+ M assets/sprites/enemies/humbaba/breath_windup.webp
+ D assets/sprites/enemies/humbaba/claw_recovery.storage.json
+ M assets/sprites/enemies/humbaba/claw_recovery.webp
+ D assets/sprites/enemies/humbaba/claw_swipe.storage.json
+ M assets/sprites/enemies/humbaba/claw_swipe.webp
+ D assets/sprites/enemies/humbaba/claw_windup.storage.json
+ M assets/sprites/enemies/humbaba/claw_windup.webp
+ D assets/sprites/enemies/humbaba/death.storage.json
+ M assets/sprites/enemies/humbaba/death.webp
+ D assets/sprites/enemies/humbaba/idle.storage.json
+ M assets/sprites/enemies/humbaba/idle.webp
+ M assets/sprites/enemies/humbaba/manifest.json
+ D assets/sprites/enemies/humbaba/phase_roar.storage.json
+ M assets/sprites/enemies/humbaba/phase_roar.webp
+ D assets/sprites/enemies/humbaba/tail_recovery.storage.json
+ M assets/sprites/enemies/humbaba/tail_recovery.webp
+ D assets/sprites/enemies/humbaba/tail_strike.storage.json
+ M assets/sprites/enemies/humbaba/tail_strike.webp
+ D assets/sprites/enemies/humbaba/tail_windup.storage.json
+ M assets/sprites/enemies/humbaba/tail_windup.webp
+ D assets/sprites/enemies/humbaba/turn.storage.json
+ M assets/sprites/enemies/humbaba/turn.webp
+ D assets/sprites/enemies/humbaba/walk.storage.json
+ M assets/sprites/enemies/humbaba/walk.webp
+ M assets/sprites/enemies/kala_ushumgal/manifest.json
+ M assets/sprites/enemies/kala_ushumgal/slam_windup.webp
+ M assets/sprites/enemies/kala_ushumgal/walk.webp
+ M assets/sprites/enemies/melee_beast/attack.webp
+ M assets/sprites/enemies/melee_beast/death.webp
+ M assets/sprites/enemies/melee_beast/hurt.webp
+ M assets/sprites/enemies/melee_beast/idle.webp
+ M assets/sprites/enemies/melee_beast/manifest.json
+ M assets/sprites/enemies/melee_beast/recovery.webp
+ M assets/sprites/enemies/melee_beast/turn.webp
+ M assets/sprites/enemies/melee_beast/walk.webp
+ M assets/sprites/enemies/melee_beast/windup.webp
+ M assets/sprites/enemies/ranged_beast/death.webp
+ M assets/sprites/enemies/ranged_beast/flame.webp
+ M assets/sprites/enemies/ranged_beast/flame_loop.webp
+ M assets/sprites/enemies/ranged_beast/hurt.webp
+ M assets/sprites/enemies/ranged_beast/idle.webp
+ M assets/sprites/enemies/ranged_beast/manifest.json
+ M assets/sprites/enemies/ranged_beast/recovery.webp
+ M assets/sprites/enemies/ranged_beast/turn.webp
+ M assets/sprites/enemies/ranged_beast/walk.webp
+ M assets/sprites/enemies/ranged_beast/windup.webp
+ M assets/sprites/enemies/root_spewer/death.webp
+ M assets/sprites/enemies/root_spewer/hurt.webp
+ M assets/sprites/enemies/root_spewer/idle.webp
+ M assets/sprites/enemies/root_spewer/manifest.json
+ M assets/sprites/enemies/root_spewer/recovery.webp
+ M assets/sprites/enemies/root_spewer/spew.webp
+ M assets/sprites/enemies/root_spewer/turn.webp
+ M assets/sprites/enemies/root_spewer/windup.webp
+ M assets/sprites/enemies/shell_scorpion/claw_attack.webp
+ M assets/sprites/enemies/shell_scorpion/claw_recovery.webp
+ M assets/sprites/enemies/shell_scorpion/claw_windup.webp
+ M assets/sprites/enemies/shell_scorpion/death.webp
+ M assets/sprites/enemies/shell_scorpion/guard_block.webp
+ M assets/sprites/enemies/shell_scorpion/idle.webp
+ M assets/sprites/enemies/shell_scorpion/manifest.json
+ M assets/sprites/enemies/shell_scorpion/tail_recovery.webp
+ M assets/sprites/enemies/shell_scorpion/tail_strike.webp
+ M assets/sprites/enemies/shell_scorpion/tail_windup.webp
+ M assets/sprites/enemies/shell_scorpion/turn.webp
+ M assets/sprites/enemies/shell_scorpion/walk.webp
+ M assets/sprites/enemies/sky_beast/death.webp
+ M assets/sprites/enemies/sky_beast/dive.webp
+ M assets/sprites/enemies/sky_beast/fly_idle.webp
+ M assets/sprites/enemies/sky_beast/hurt.webp
+ M assets/sprites/enemies/sky_beast/manifest.json
+ M assets/sprites/enemies/sky_beast/recovery.webp
+ M assets/sprites/enemies/sky_beast/turn.webp
+ M assets/sprites/enemies/sky_beast/windup.webp
+ M assets/sprites/enemies/wall_diver/claw.webp
+ M assets/sprites/enemies/wall_diver/crawl.webp
+ M assets/sprites/enemies/wall_diver/dive.webp
+ M assets/sprites/enemies/wall_diver/hurt.webp
+ M assets/sprites/enemies/wall_diver/idle.webp
+ M assets/sprites/enemies/wall_diver/manifest.json
+ M assets/sprites/enemies/wall_diver/perch_ceiling.webp
+ M assets/sprites/enemies/wall_diver/perch_wall.webp
+ M assets/sprites/enemies/wall_diver/recovery.webp
+ M assets/sprites/enemies/wall_diver/tell.webp
+ M assets/sprites/enemies/wall_diver/turn.webp
+ M assets/sprites/enemies/wall_diver/windup.webp
+ M assets/sprites/enemies/wraith_ray/death.webp
+ M assets/sprites/enemies/wraith_ray/glide.webp
+ M assets/sprites/enemies/wraith_ray/hurt.webp
+ M assets/sprites/enemies/wraith_ray/manifest.json
+ M assets/sprites/enemies/wraith_ray/turn.webp
+ D assets/sprites/fx/anur_light_cast.storage.json
+ D assets/sprites/fx/anur_light_impact.storage.json
+ D assets/sprites/fx/anur_light_projectile.storage.json
+ D assets/sprites/fx/humbaba_bite_spark.storage.json
+ D assets/sprites/fx/humbaba_ember_aura.storage.json
+ D assets/sprites/fx/humbaba_flame_cone.storage.json
+ M assets/sprites/fx/manifest.json
+ M assets/sprites/fx/stage5_manifest.json
+ M assets/sprites/fx/stage6_manifest.json
+ M assets/sprites/npcs/aya/manifest.json
+ D assets/sprites/npcs/aya/sit_down.storage.json
+ M assets/sprites/npcs/aya/sit_down.webp
+ D assets/sprites/npcs/aya/sit_idle.storage.json
+ D assets/sprites/npcs/aya/stand_up.storage.json
+ M assets/sprites/npcs/aya/stand_up.webp
+ D assets/sprites/npcs/aya/walk.storage.json
+ M assets/sprites/npcs/aya/walk.webp
+ M assets/sprites/npcs/cook_a/manifest.json
+ M assets/sprites/npcs/cook_b/manifest.json
+ M assets/sprites/npcs/cook_c/manifest.json
+ M assets/sprites/npcs/enkidua/manifest.json
+ M assets/sprites/npcs/gatekeeper/manifest.json
+ M assets/sprites/npcs/inanna/manifest.json
+ M assets/sprites/npcs/lugalbanda/manifest.json
+ M assets/sprites/npcs/ninsun/manifest.json
+ M assets/sprites/npcs/papsukkal/manifest.json
+ M assets/sprites/npcs/servant_a/manifest.json
+ M assets/sprites/npcs/servant_b/manifest.json
+ M assets/sprites/npcs/shamash/manifest.json
+ D assets/sprites/npcs/shamash/sit_down.storage.json
+ M assets/sprites/npcs/shamash/sit_down.webp
+ D assets/sprites/npcs/shamash/sit_idle.storage.json
+ M assets/sprites/npcs/shamash/sit_idle.webp
+ D assets/sprites/npcs/shamash/stand_up.storage.json
+ M assets/sprites/npcs/shamash/stand_up.webp
+ D assets/sprites/npcs/shamash/walk.storage.json
+ M assets/sprites/npcs/shamash/walk.webp
+ M assets/sprites/npcs/shamhat/manifest.json
+ M assets/sprites/player/axe/crouch_exit.webp
+ M assets/sprites/player/axe/death.webp
+ M assets/sprites/player/axe/drop_through.webp
+ M assets/sprites/player/axe/hurt.webp
+ M assets/sprites/player/axe/land.webp
+ M assets/sprites/player/axe/manifest.json
+ M assets/sprites/player/axe/walk.webp
+ M assets/sprites/player/staff/attack_2.webp
+ M assets/sprites/player/staff/attack_3.webp
+ M assets/sprites/player/staff/manifest.json
+ M assets/sprites/player/staff/roll.webp
+ M assets/sprites/player/unarmed/manifest.json
+ M assets/sprites/player/unarmed/roll.webp
+ D assets/sprites/player/unarmed/sit_down.storage.json
+ M assets/sprites/player/unarmed/sit_down.webp
+ D assets/sprites/player/unarmed/sit_idle.storage.json
+ D assets/sprites/player/unarmed/stand_up.storage.json
+ M assets/stage2_character_manifest.json
+ M assets/stage2_environment_manifest.json
+ M data/alpha_expectations.json
+ M data/audio_stage2.json
+ M data/cutscenes.json
+ M data/dialogue.json
+ M data/enemies.json
+ M data/image_encoding_quality.json
+ M data/image_mapping.json
+ M data/image_parity_samples.json
+ M data/image_policy.json
+ M data/levels.json
+ M data/npcs.json
+ M data/player_modifiers.json
+ M data/sprite_trims.json
+ M data/storage_quality.json
+ M data/story.json
+ M docs/SIZE_REPORT_KO.md
+ M docs/STAGE6_GROUND_CONTACT.txt
+ M docs/STAGE7_VISUAL_BOUNDS.json
+ M docs/STAGE8_GROUNDING_REPORT.txt
+ M docs/STAGE8_GROUNDING_RUNTIME.txt
+ M project.godot
+ M scripts/audio_manager.gd
+ M scripts/cutscene_runner.gd
+ M scripts/dialogue_system.gd
+ M scripts/door_portal.gd
+ M scripts/enemy_base.gd
+ M scripts/enemy_humbaba.gd
+ M scripts/game_hud.gd
+ M scripts/game_state.gd
+ M scripts/level_base.gd
+ M scripts/npc_base.gd
+ M scripts/player.gd
+ M scripts/player_modifiers.gd
+ M scripts/scene_manager.gd
+ M scripts/story_state.gd
+ M scripts/weapon_pickup.gd
+ M tests/stage9_boss_selection.gd
+ M tests/stage9_humbaba.gd
+ M tools/build_stage9_art.py
+ M tools/check_ground_contact.py
+ M tools/check_sprite_frames.py
+ M tools/make_bgm.py
+ M tools/make_sfx.py
+ M tools/make_slim_zip.py
+ M tools/measure_assets.py
+ M tools/pack_sprites.py
+?? assets/audio/bgm/dilmun_wind.ogg
+?? assets/audio/bgm/home_sorrow.ogg
+?? assets/audio/sfx/arm_cut.ogg
+?? assets/audio/sfx/gugalanna_charge_crash.ogg
+?? assets/audio/sfx/gugalanna_charge_rumble.ogg
+?? assets/audio/sfx/gugalanna_death.ogg
+?? assets/audio/sfx/gugalanna_quake.ogg
+?? assets/audio/sfx/gugalanna_rake.ogg
+?? assets/audio/sfx/gugalanna_roar.ogg
+?? assets/audio/sfx/gugalanna_stomp.ogg
+?? assets/audio/sfx/gugalanna_uppercut.ogg
+?? assets/audio/sfx/gugalanna_vomit.ogg
+?? assets/audio/sfx/melammu_heartbeat.ogg
+?? assets/audio/sfx/sob_loop.ogg
+?? assets/backgrounds/stage10/dilmun_far_tile.webp
+?? assets/backgrounds/stage10/dilmun_sky.webp
+?? assets/backgrounds/stage10/homefront_far_tile.webp
+?? assets/backgrounds/stage10/homefront_sky.webp
+?? assets/backgrounds/stage10/villa_f4_sky.webp
+?? assets/backgrounds/stage10/villa_f4_terrace.webp
+?? assets/props/gugalanna_helm.webp
+?? assets/props/home_bed_blood.webp
+?? assets/props/melammu_pickup.webp
+?? assets/props/space_pod.webp
+?? assets/sprites/enemies/gugalanna/charge_crash.webp
+?? assets/sprites/enemies/gugalanna/charge_loop.webp
+?? assets/sprites/enemies/gugalanna/charge_recovery.webp
+?? assets/sprites/enemies/gugalanna/charge_windup.webp
+?? assets/sprites/enemies/gugalanna/death.webp
+?? assets/sprites/enemies/gugalanna/idle.webp
+?? assets/sprites/enemies/gugalanna/manifest.json
+?? assets/sprites/enemies/gugalanna/rake.webp
+?? assets/sprites/enemies/gugalanna/rake_recovery.webp
+?? assets/sprites/enemies/gugalanna/rake_windup.webp
+?? assets/sprites/enemies/gugalanna/stomp.webp
+?? assets/sprites/enemies/gugalanna/stomp_recovery.webp
+?? assets/sprites/enemies/gugalanna/stomp_windup.webp
+?? assets/sprites/enemies/gugalanna/turn.webp
+?? assets/sprites/enemies/gugalanna/uppercut.webp
+?? assets/sprites/enemies/gugalanna/uppercut_recovery.webp
+?? assets/sprites/enemies/gugalanna/uppercut_windup.webp
+?? assets/sprites/enemies/gugalanna/walk.webp
+?? assets/sprites/fx/gugalanna_dust.webp
+?? assets/sprites/fx/gugalanna_lightning.webp
+?? assets/sprites/fx/gugalanna_rake_arc.webp
+?? assets/sprites/fx/gugalanna_shockwave.webp
+?? assets/sprites/fx/severed_arm.webp
+?? assets/sprites/npcs/enkidua/bed_asleep.webp
+?? assets/sprites/npcs/enkidua/bed_awake.webp
+?? assets/sprites/player/axe_onearm/arm_loss_hit.webp
+?? assets/sprites/player/axe_onearm/attack_1.webp
+?? assets/sprites/player/axe_onearm/attack_2.webp
+?? assets/sprites/player/axe_onearm/attack_3.webp
+?? assets/sprites/player/axe_onearm/attack_4.webp
+?? assets/sprites/player/axe_onearm/crouch_enter.webp
+?? assets/sprites/player/axe_onearm/crouch_exit.webp
+?? assets/sprites/player/axe_onearm/crouch_idle.webp
+?? assets/sprites/player/axe_onearm/death.webp
+?? assets/sprites/player/axe_onearm/drop_through.webp
+?? assets/sprites/player/axe_onearm/fall.webp
+?? assets/sprites/player/axe_onearm/hurt.webp
+?? assets/sprites/player/axe_onearm/idle.webp
+?? assets/sprites/player/axe_onearm/jump_rise.webp
+?? assets/sprites/player/axe_onearm/jump_start.webp
+?? assets/sprites/player/axe_onearm/land.webp
+?? assets/sprites/player/axe_onearm/manifest.json
+?? assets/sprites/player/axe_onearm/melammu_absorb.webp
+?? assets/sprites/player/axe_onearm/roll.webp
+?? assets/sprites/player/axe_onearm/run.webp
+?? assets/sprites/player/axe_onearm/walk.webp
+?? assets/sprites/player/axe_prosthetic/attack_1.webp
+?? assets/sprites/player/axe_prosthetic/attack_2.webp
+?? assets/sprites/player/axe_prosthetic/attack_3.webp
+?? assets/sprites/player/axe_prosthetic/attack_4.webp
+?? assets/sprites/player/axe_prosthetic/crouch_enter.webp
+?? assets/sprites/player/axe_prosthetic/crouch_exit.webp
+?? assets/sprites/player/axe_prosthetic/crouch_idle.webp
+?? assets/sprites/player/axe_prosthetic/death.webp
+?? assets/sprites/player/axe_prosthetic/drop_through.webp
+?? assets/sprites/player/axe_prosthetic/fall.webp
+?? assets/sprites/player/axe_prosthetic/hurt.webp
+?? assets/sprites/player/axe_prosthetic/idle.webp
+?? assets/sprites/player/axe_prosthetic/jump_rise.webp
+?? assets/sprites/player/axe_prosthetic/jump_start.webp
+?? assets/sprites/player/axe_prosthetic/land.webp
+?? assets/sprites/player/axe_prosthetic/manifest.json
+?? assets/sprites/player/axe_prosthetic/roll.webp
+?? assets/sprites/player/axe_prosthetic/run.webp
+?? assets/sprites/player/axe_prosthetic/walk.webp
+?? assets/sprites/player/cutscene/cry_collapse.webp
+?? assets/sprites/player/cutscene/cry_loop.webp
+?? assets/sprites/player/cutscene/manifest.json
+?? assets/tiles/stage10/dilmun_ground_tile.webp
+?? data/audio_stage10.json
+?? data/stage10_asset_inventory.json
+?? data/stage10_fx.json
+?? data/time_skips.json
+?? docs/STAGE10_ALPHA_REPORT.txt
+?? docs/STAGE10_FILES_KO.txt
+?? docs/STAGE10_REPORT_KO.md
+?? docs/STAGE10_STORY_FLOW_KO.md
+?? docs/screenshots/stage10_bed_awake.jpg
+?? docs/screenshots/stage10_dilmun.jpg
+?? docs/screenshots/stage10_grieving.jpg
+?? docs/screenshots/stage10_gugalanna.jpg
+?? docs/screenshots/stage10_inanna_bed_asleep.jpg
+?? docs/screenshots/stage10_onearm_melammu.jpg
+?? docs/screenshots/stage10_prosthetic.jpg
+?? docs/screenshots/stage10_rake_warning.jpg
+?? docs/screenshots/stage10_rooftop.jpg
+?? docs/size_compare/stage10_background.jpg
+?? docs/size_compare/stage10_humbaba.jpg
+?? docs/size_compare/stage10_melee.jpg
+?? docs/size_compare/stage10_npc.jpg
+?? docs/size_compare/stage10_player.jpg
+?? docs/size_compare/stage10_ranged.jpg
+?? downloads/Nimrod_stage10_2026-10-12.zip
+?? scenes/Dilmun.tscn
+?? scenes/HomeFront.tscn
+?? scenes/VillaF4.tscn
+?? scripts/boss_warning.gd
+?? scripts/chapter_events.gd
+?? scripts/enemy_gugalanna.gd
+?? scripts/gugalanna_quake.gd
+?? scripts/story_pickup.gd
+?? tests/fixtures/stage10_dialogue_original.json
+?? tests/stage10_arm_loss.gd
+?? tests/stage10_dilmun.gd
+?? tests/stage10_gugalanna.gd
+?? tests/stage10_heal.gd
+?? tests/stage10_home_scenes.gd
+?? tests/stage10_melammu.gd
+?? tests/stage10_prosthetic.gd
+?? tests/stage10_sprite_sets.gd
+?? tests/stage10_story_dialogue.gd
+?? tests/stage10_story_flow.gd
+?? tests/stage10_time_skips.gd
+?? tools/build_stage10_art.py
+?? tools/capture/stage10_screens.gd
+?? tools/measure_stage10.py
+?? tools/stage10_character_palette.py
+?? tools/stage10_fix_fringe.py
+?? tools/stage10_merge_loops.py
+?? tools/stage10_optimize_density.py
+?? tools/stage10_optimize_scenery.py
+?? tools/stage10_palette.py
+?? tools/stage10_quality_compare.py
+?? tools/stage10_repair_backgrounds.py
+?? tools/stage10_repair_death.py
+?? tools/stage10_tile_scale.py
+
+원본 보존(슬림ZIP 제외): archive/stage10/, archive/pack_source/, archive/stage10_before_compression/, archive/stage10_before_font/, archive/stage10_before_background_fix/.
+미사용 storage sidecar는 archive/stage10_unused_metadata/로 이동. 기존 삼나무 wall_trunk_tile 삭제 상태 유지.

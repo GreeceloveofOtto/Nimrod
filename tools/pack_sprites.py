@@ -263,6 +263,13 @@ def apply_storage_policy(args, image, is_sheet):
         record={'path':key,'source':str(target.relative_to(ROOT)),'source_archive':str(backup.relative_to(ROOT/'archive')),'source_canonical':True,'source_bytes':backup.stat().st_size,'output_bytes':target.stat().st_size,'storage_scale':spec['storage_scale'],'stored_frames':args.frames,'frames':args.frames,'density':density,'ssim':quality,**metrics}
         rows=[row for row in rows if row['path']!=key]+[record]
         quality_path.write_text(json.dumps(rows,indent=2)+'\n')
+    else:
+        quality_path=ROOT/'data/image_encoding_quality.json'
+        rows=json.loads(quality_path.read_text()) if quality_path.exists() else []
+        key=str(target.relative_to(ROOT))
+        record={'path':key,'source':str(backup.relative_to(ROOT/'archive/pack_source')),'source_archive':str(backup.relative_to(ROOT/'archive')),'before':backup.stat().st_size,'after':target.stat().st_size,'ssim':1.0,**metrics}
+        rows=[row for row in rows if row['path']!=key]+[record]
+        quality_path.write_text(json.dumps(rows,indent=2)+'\n')
     print(json.dumps({'policy_output':str(target),'metadata':str(target.with_suffix('.storage.json'))}))
 
 

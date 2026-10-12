@@ -199,6 +199,36 @@
     "edge_black_fraction": 0.03,
     "source": "art_manifest"
   },
+  "assets/backgrounds/stage10/dilmun_far_tile.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/backgrounds/stage10/dilmun_sky.webp": {
+    "mode": "opaque",
+    "edge_black_fraction": 0.02,
+    "source": "art_manifest"
+  },
+  "assets/backgrounds/stage10/homefront_far_tile.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/backgrounds/stage10/homefront_sky.webp": {
+    "mode": "opaque",
+    "edge_black_fraction": 0.02,
+    "source": "art_manifest"
+  },
+  "assets/backgrounds/stage10/villa_f4_sky.webp": {
+    "mode": "opaque",
+    "edge_black_fraction": 0.02,
+    "source": "art_manifest"
+  },
+  "assets/backgrounds/stage10/villa_f4_terrace.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
   "assets/backgrounds/villa/villa_f1_hall.webp": {
     "mode": "opaque",
     "edge_black_fraction": 0.02,
@@ -439,6 +469,11 @@
     "edge_black_fraction": 0.03,
     "source": "art_manifest"
   },
+  "assets/props/gugalanna_helm.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
   "assets/props/hanging_vines.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
@@ -450,6 +485,11 @@
     "source": "art_manifest"
   },
   "assets/props/home_bed.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/props/home_bed_blood.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
     "source": "art_manifest"
@@ -520,6 +560,11 @@
     "source": "art_manifest"
   },
   "assets/props/market_stall_b.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/props/melammu_pickup.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
     "source": "art_manifest"
@@ -615,6 +660,11 @@
     "source": "art_manifest"
   },
   "assets/props/skeleton_remains.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/props/space_pod.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
     "source": "art_manifest"
@@ -1135,6 +1185,91 @@
     "source": "runtime image"
   },
   "assets/sprites/enemies/gas_sac/turn.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/enemies/gugalanna/charge_crash.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/enemies/gugalanna/charge_loop.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/enemies/gugalanna/charge_recovery.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/enemies/gugalanna/charge_windup.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/enemies/gugalanna/death.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/enemies/gugalanna/idle.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/enemies/gugalanna/rake.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/enemies/gugalanna/rake_recovery.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/enemies/gugalanna/rake_windup.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/enemies/gugalanna/stomp.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/enemies/gugalanna/stomp_recovery.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/enemies/gugalanna/stomp_windup.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/enemies/gugalanna/turn.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/enemies/gugalanna/uppercut.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/enemies/gugalanna/uppercut_recovery.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/enemies/gugalanna/uppercut_windup.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/enemies/gugalanna/walk.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
     "source": "runtime image"
@@ -1684,6 +1819,26 @@
     "edge_black_fraction": 0.03,
     "source": "runtime image"
   },
+  "assets/sprites/fx/gugalanna_dust.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/fx/gugalanna_lightning.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/fx/gugalanna_rake_arc.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/fx/gugalanna_shockwave.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
   "assets/sprites/fx/hit_spark.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
@@ -1705,6 +1860,11 @@
     "source": "art_manifest"
   },
   "assets/sprites/fx/root_flame.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/fx/severed_arm.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
     "source": "runtime image"
@@ -1760,6 +1920,16 @@
     "source": "runtime image"
   },
   "assets/sprites/npcs/cook_c/arrange.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/npcs/enkidua/bed_asleep.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/npcs/enkidua/bed_awake.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
     "source": "runtime image"
@@ -1960,6 +2130,206 @@
     "source": "runtime image"
   },
   "assets/sprites/player/axe/walk.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_onearm/arm_loss_hit.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_onearm/attack_1.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_onearm/attack_2.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_onearm/attack_3.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_onearm/attack_4.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_onearm/crouch_enter.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_onearm/crouch_exit.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_onearm/crouch_idle.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_onearm/death.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_onearm/drop_through.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_onearm/fall.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_onearm/hurt.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_onearm/idle.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_onearm/jump_rise.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_onearm/jump_start.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_onearm/land.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_onearm/melammu_absorb.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_onearm/roll.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_onearm/run.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_onearm/walk.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_prosthetic/attack_1.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_prosthetic/attack_2.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_prosthetic/attack_3.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_prosthetic/attack_4.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_prosthetic/crouch_enter.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_prosthetic/crouch_exit.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_prosthetic/crouch_idle.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_prosthetic/death.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_prosthetic/drop_through.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_prosthetic/fall.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_prosthetic/hurt.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_prosthetic/idle.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_prosthetic/jump_rise.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_prosthetic/jump_start.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_prosthetic/land.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_prosthetic/roll.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_prosthetic/run.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/axe_prosthetic/walk.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/cutscene/cry_collapse.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "runtime image"
+  },
+  "assets/sprites/player/cutscene/cry_loop.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
     "source": "runtime image"
@@ -2262,6 +2632,11 @@
   "assets/tiles/rear_gate/step_block.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/tiles/stage10/dilmun_ground_tile.webp": {
+    "mode": "opaque",
+    "edge_black_fraction": 0.02,
     "source": "art_manifest"
   },
   "assets/tiles/underground_fill.webp": {

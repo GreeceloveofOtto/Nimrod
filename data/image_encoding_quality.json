@@ -26,22 +26,22 @@
     "path": "assets/backgrounds/castle/castle_f2_sanctum.webp",
     "source": "assets/backgrounds/castle/castle_f2_sanctum.webp",
     "before": 1176652,
-    "after": 75900,
+    "after": 64050,
     "mode": "lossy",
     "quality": 80,
     "alpha_mae": 0.0,
-    "rgb_mae": 2.728896204846822,
+    "rgb_mae": 2.9143990308520222,
     "bbox_same": true,
     "transparent": false,
     "image_resize": [
-      1350,
-      540
+      1170,
+      468
     ],
     "original_size": [
       1800,
       720
     ],
-    "ssim": 0.9951823727481288,
+    "ssim": 0.9906114650466823,
     "encoder": "YUV WebP",
     "rgb_step": null
   },
@@ -95,22 +95,22 @@
     "path": "assets/backgrounds/castle/castle_f5_far.webp",
     "source": "assets/backgrounds/castle/castle_f5_far.webp",
     "before": 392904,
-    "after": 50532,
+    "after": 41384,
     "mode": "lossy",
     "quality": 80,
-    "alpha_mae": 0.009922542735042734,
-    "rgb_mae": 2.708686065216206,
+    "alpha_mae": 0.010393462565366447,
+    "rgb_mae": 2.9311278869261788,
     "bbox_same": true,
     "transparent": true,
     "image_resize": [
-      1248,
-      540
+      1082,
+      468
     ],
     "original_size": [
       1664,
       720
     ],
-    "ssim": 0.9984986211687548,
+    "ssim": 0.9971389448597303,
     "encoder": "YUV WebP",
     "rgb_step": null
   },
@@ -142,46 +142,46 @@
     "path": "assets/backgrounds/castle_front/castle_facade.webp",
     "source": "assets/backgrounds/castle_front/castle_facade.webp",
     "before": 1424884,
-    "after": 354776,
+    "after": 278186,
     "mode": "lossy",
     "quality": 100,
     "alpha_mae": 0.0,
-    "rgb_mae": 2.9200240056681555,
+    "rgb_mae": 2.922090045948418,
     "bbox_same": true,
     "transparent": true,
     "encoder": "bounded RGB quantization",
     "near_lossless": 40,
     "image_resize": [
-      1125,
-      540
+      975,
+      468
     ],
     "original_size": [
       1500,
       720
     ],
-    "ssim": 0.9801806262789384,
+    "ssim": 0.9574128016341583,
     "rgb_step": 12
   },
   {
     "path": "assets/backgrounds/castle_front/castle_wall.webp",
     "source": "assets/backgrounds/castle_front/castle_wall.webp",
     "before": 1312682,
-    "after": 153234,
+    "after": 124368,
     "mode": "lossy",
     "quality": 80,
-    "alpha_mae": 0.02107270622895623,
-    "rgb_mae": 2.7444328506097184,
+    "alpha_mae": 0.022592359067768904,
+    "rgb_mae": 2.9548648137943974,
     "bbox_same": true,
     "transparent": true,
     "image_resize": [
-      2112,
-      540
+      1830,
+      468
     ],
     "original_size": [
       2816,
       720
     ],
-    "ssim": 0.9988577533327235,
+    "ssim": 0.9984110893024551,
     "encoder": "YUV WebP",
     "rgb_step": null
   },
@@ -212,22 +212,22 @@
     "path": "assets/backgrounds/castle_front/far_city.webp",
     "source": "assets/backgrounds/castle_front/far_city.webp",
     "before": 698876,
-    "after": 76674,
+    "after": 62184,
     "mode": "lossy",
     "quality": 80,
-    "alpha_mae": 0.013956404320987654,
-    "rgb_mae": 2.2373155036627708,
+    "alpha_mae": 0.014258927482067979,
+    "rgb_mae": 2.3874838062473267,
     "bbox_same": true,
     "transparent": true,
     "image_resize": [
-      1536,
-      540
+      1331,
+      468
     ],
     "original_size": [
       2048,
       720
     ],
-    "ssim": 0.9985625118581074,
+    "ssim": 0.9974463009442698,
     "encoder": "YUV WebP",
     "rgb_step": null
   },
@@ -331,22 +331,22 @@
     "path": "assets/backgrounds/nimrod_home/home_interior_bg.webp",
     "source": "assets/backgrounds/nimrod_home/home_interior_bg.webp",
     "before": 921638,
-    "after": 63154,
+    "after": 52640,
     "mode": "lossy",
     "quality": 80,
     "alpha_mae": 0.0,
-    "rgb_mae": 2.574305441243713,
+    "rgb_mae": 2.783472739669321,
     "bbox_same": true,
     "transparent": false,
     "image_resize": [
-      1350,
-      540
+      1170,
+      468
     ],
     "original_size": [
       1800,
       720
     ],
-    "ssim": 0.9952924826794558,
+    "ssim": 0.9897181454541119,
     "encoder": "YUV WebP",
     "rgb_step": null
   },
@@ -425,22 +425,22 @@
     "path": "assets/backgrounds/passage/passage_f1_bg.webp",
     "source": "assets/backgrounds/passage/passage_f1_bg.webp",
     "before": 1290336,
-    "after": 96146,
+    "after": 80002,
     "mode": "lossy",
     "quality": 80,
     "alpha_mae": 0.0,
-    "rgb_mae": 1.841538477366255,
+    "rgb_mae": 1.9443608919570459,
     "bbox_same": true,
     "transparent": false,
     "image_resize": [
-      2700,
-      600
+      2340,
+      520
     ],
     "original_size": [
       3600,
       800
     ],
-    "ssim": 0.9936419368272379,
+    "ssim": 0.989854520354682,
     "encoder": "YUV WebP",
     "rgb_step": null
   },
@@ -448,22 +448,22 @@
     "path": "assets/backgrounds/passage/passage_f2_bg.webp",
     "source": "assets/backgrounds/passage/passage_f2_bg.webp",
     "before": 1184550,
-    "after": 96640,
+    "after": 81600,
     "mode": "lossy",
     "quality": 80,
     "alpha_mae": 0.0,
-    "rgb_mae": 1.8731798353909466,
+    "rgb_mae": 1.9827402476440938,
     "bbox_same": true,
     "transparent": false,
     "image_resize": [
-      2700,
-      600
+      2340,
+      520
     ],
     "original_size": [
       3600,
       800
     ],
-    "ssim": 0.9974937185569065,
+    "ssim": 0.9955734500771809,
     "encoder": "YUV WebP",
     "rgb_step": null
   },
@@ -471,22 +471,22 @@
     "path": "assets/backgrounds/passage/passage_f3_bg.webp",
     "source": "assets/backgrounds/passage/passage_f3_bg.webp",
     "before": 1216020,
-    "after": 84346,
+    "after": 70964,
     "mode": "lossy",
     "quality": 80,
     "alpha_mae": 0.0,
-    "rgb_mae": 1.690432098765432,
+    "rgb_mae": 1.7938368397983782,
     "bbox_same": true,
     "transparent": false,
     "image_resize": [
-      2700,
-      600
+      2340,
+      520
     ],
     "original_size": [
       3600,
       800
     ],
-    "ssim": 0.9978292623816606,
+    "ssim": 0.9964600265726198,
     "encoder": "YUV WebP",
     "rgb_step": null
   },
@@ -494,22 +494,22 @@
     "path": "assets/backgrounds/passage/passage_f4_bg.webp",
     "source": "assets/backgrounds/passage/passage_f4_bg.webp",
     "before": 1302020,
-    "after": 91406,
+    "after": 76542,
     "mode": "lossy",
     "quality": 80,
     "alpha_mae": 0.0,
-    "rgb_mae": 1.6214453017832648,
+    "rgb_mae": 1.7306162794944846,
     "bbox_same": true,
     "transparent": false,
     "image_resize": [
-      2700,
-      720
+      2340,
+      624
     ],
     "original_size": [
       3600,
       960
     ],
-    "ssim": 0.9975282223937667,
+    "ssim": 0.9960404208980499,
     "encoder": "YUV WebP",
     "rgb_step": null
   },
@@ -517,22 +517,22 @@
     "path": "assets/backgrounds/passage/passage_f5_bg.webp",
     "source": "assets/backgrounds/passage/passage_f5_bg.webp",
     "before": 1252530,
-    "after": 92436,
+    "after": 76602,
     "mode": "lossy",
     "quality": 80,
     "alpha_mae": 0.0,
-    "rgb_mae": 1.7523347736625514,
+    "rgb_mae": 1.8695586785009861,
     "bbox_same": true,
     "transparent": false,
     "image_resize": [
-      2700,
-      600
+      2340,
+      520
     ],
     "original_size": [
       3600,
       800
     ],
-    "ssim": 0.9961635913316184,
+    "ssim": 0.9936511718615831,
     "encoder": "YUV WebP",
     "rgb_step": null
   },
@@ -540,22 +540,22 @@
     "path": "assets/backgrounds/passage/passage_f6_bg.webp",
     "source": "assets/backgrounds/passage/passage_f6_bg.webp",
     "before": 1165114,
-    "after": 77226,
+    "after": 65454,
     "mode": "lossy",
     "quality": 80,
     "alpha_mae": 0.0,
-    "rgb_mae": 1.6411897119341563,
+    "rgb_mae": 1.7089655928117466,
     "bbox_same": true,
     "transparent": false,
     "image_resize": [
-      2700,
-      600
+      2340,
+      520
     ],
     "original_size": [
       3600,
       800
     ],
-    "ssim": 0.9974672522813887,
+    "ssim": 0.9959411989118486,
     "encoder": "YUV WebP",
     "rgb_step": null
   },
@@ -563,22 +563,22 @@
     "path": "assets/backgrounds/passage/passage_f7_bg.webp",
     "source": "assets/backgrounds/passage/passage_f7_bg.webp",
     "before": 1258216,
-    "after": 84972,
+    "after": 71052,
     "mode": "lossy",
     "quality": 80,
     "alpha_mae": 0.0,
-    "rgb_mae": 1.7586713991769547,
+    "rgb_mae": 1.8548452224413763,
     "bbox_same": true,
     "transparent": false,
     "image_resize": [
-      2700,
-      600
+      2340,
+      520
     ],
     "original_size": [
       3600,
       800
     ],
-    "ssim": 0.9976018640433967,
+    "ssim": 0.9961980415299193,
     "encoder": "YUV WebP",
     "rgb_step": null
   },
@@ -586,22 +586,22 @@
     "path": "assets/backgrounds/passage/passage_f8_bg.webp",
     "source": "assets/backgrounds/passage/passage_f8_bg.webp",
     "before": 1450650,
-    "after": 98094,
+    "after": 81088,
     "mode": "lossy",
     "quality": 80,
     "alpha_mae": 0.0,
-    "rgb_mae": 1.7145989368998629,
+    "rgb_mae": 1.8183212798597415,
     "bbox_same": true,
     "transparent": false,
     "image_resize": [
-      2700,
-      720
+      2340,
+      624
     ],
     "original_size": [
       3600,
       960
     ],
-    "ssim": 0.9945378741926295,
+    "ssim": 0.9916378327540054,
     "encoder": "YUV WebP",
     "rgb_step": null
   },
@@ -682,22 +682,22 @@
     "path": "assets/backgrounds/rear_gate/far_city.webp",
     "source": "assets/backgrounds/rear_gate/far_city.webp",
     "before": 474996,
-    "after": 56024,
+    "after": 44790,
     "mode": "lossy",
     "quality": 80,
-    "alpha_mae": 0.00904882154882155,
-    "rgb_mae": 2.3913732120646767,
+    "alpha_mae": 0.01089696901787215,
+    "rgb_mae": 2.591251680409219,
     "bbox_same": true,
     "transparent": true,
     "image_resize": [
-      1584,
-      540
+      1373,
+      468
     ],
     "original_size": [
       2112,
       720
     ],
-    "ssim": 0.9991920475229079,
+    "ssim": 0.998676053224663,
     "encoder": "YUV WebP",
     "rgb_step": null
   },
@@ -717,24 +717,24 @@
     "path": "assets/backgrounds/rear_gate/villa_exterior.webp",
     "source": "assets/backgrounds/rear_gate/villa_exterior.webp",
     "before": 1446478,
-    "after": 387958,
+    "after": 305358,
     "mode": "lossy",
     "quality": 100,
     "alpha_mae": 0.0,
-    "rgb_mae": 2.463391002609661,
+    "rgb_mae": 2.4670198968807378,
     "bbox_same": true,
     "transparent": true,
     "encoder": "bounded RGB quantization",
     "near_lossless": 40,
     "image_resize": [
-      1125,
-      540
+      975,
+      468
     ],
     "original_size": [
       1500,
       720
     ],
-    "ssim": 0.9675565404100864,
+    "ssim": 0.9393948848366661,
     "rgb_step": 10
   },
   {
@@ -897,22 +897,22 @@
     "path": "assets/props/broken_tower.webp",
     "source": "assets/props/broken_tower.webp",
     "before": 213436,
-    "after": 56540,
+    "after": 45146,
     "mode": "lossy",
     "quality": 100,
     "alpha_mae": 0.0,
-    "rgb_mae": 2.9920330848282823,
+    "rgb_mae": 2.989363268310637,
     "bbox_same": true,
     "transparent": true,
     "image_resize": [
-      270,
-      420
+      234,
+      364
     ],
     "original_size": [
       360,
       560
     ],
-    "ssim": 0.9907272905640044,
+    "ssim": 0.9762353529857796,
     "encoder": "bounded RGB quantization",
     "rgb_step": 12
   },
@@ -1133,22 +1133,22 @@
     "path": "assets/props/collapsed_bridge.webp",
     "source": "assets/props/collapsed_bridge.webp",
     "before": 206264,
-    "after": 60590,
+    "after": 47994,
     "mode": "lossy",
     "quality": 100,
     "alpha_mae": 0.0,
-    "rgb_mae": 2.9588474568589462,
+    "rgb_mae": 2.971256990579139,
     "bbox_same": true,
     "transparent": true,
     "image_resize": [
-      720,
-      135
+      624,
+      117
     ],
     "original_size": [
       960,
       180
     ],
-    "ssim": 0.9764238513298675,
+    "ssim": 0.9494626374337316,
     "encoder": "bounded RGB quantization",
     "rgb_step": 12
   },
@@ -1319,22 +1319,22 @@
     "path": "assets/props/house_ruin_a.webp",
     "source": "assets/props/house_ruin_a.webp",
     "before": 212936,
-    "after": 60564,
+    "after": 48032,
     "mode": "lossy",
     "quality": 100,
     "alpha_mae": 0.0,
-    "rgb_mae": 2.9742135045591813,
+    "rgb_mae": 2.9754962939926397,
     "bbox_same": true,
     "transparent": true,
     "image_resize": [
-      375,
-      285
+      325,
+      247
     ],
     "original_size": [
       500,
       380
     ],
-    "ssim": 0.9906621076379455,
+    "ssim": 0.976783080689873,
     "encoder": "bounded RGB quantization",
     "rgb_step": 12
   },
@@ -1474,22 +1474,22 @@
     "path": "assets/props/nimrod_home_exterior.webp",
     "source": "assets/props/nimrod_home_exterior.webp",
     "before": 624024,
-    "after": 72778,
+    "after": 59012,
     "mode": "lossy",
     "quality": 80,
-    "alpha_mae": 0.02058119658119658,
-    "rgb_mae": 2.5695442108254807,
+    "alpha_mae": 0.020942699640924493,
+    "rgb_mae": 2.861894080626673,
     "bbox_same": true,
     "transparent": true,
     "image_resize": [
-      975,
-      540
+      845,
+      468
     ],
     "original_size": [
       1300,
       720
     ],
-    "ssim": 0.9984575238925458,
+    "ssim": 0.9981266361938406,
     "encoder": "YUV WebP",
     "rgb_step": null
   },
@@ -1509,25 +1509,25 @@
     "path": "assets/props/passage_arch.webp",
     "source": "assets/props/passage_arch.webp",
     "before": 295806,
-    "after": 78154,
+    "after": 61060,
     "mode": "lossy",
     "quality": 100,
     "alpha_mae": 0.0,
-    "rgb_mae": 2.9851723660082694,
+    "rgb_mae": 2.9939824266314,
     "bbox_same": true,
     "transparent": true,
     "encoder": "bounded RGB quantization",
     "near_lossless": 40,
     "rgb_step": 12,
     "image_resize": [
-      450,
-      390
+      390,
+      338
     ],
     "original_size": [
       600,
       520
     ],
-    "ssim": 0.976391185655181
+    "ssim": 0.9537322030789771
   },
   {
     "path": "assets/props/passage_chandelier.webp",
@@ -1649,25 +1649,25 @@
     "path": "assets/props/passage_window_crimson.webp",
     "source": "assets/props/passage_window_crimson.webp",
     "before": 165710,
-    "after": 51906,
+    "after": 41978,
     "mode": "lossy",
     "quality": 100,
     "alpha_mae": 0.0,
-    "rgb_mae": 2.966808914177335,
+    "rgb_mae": 2.9642427368059137,
     "bbox_same": true,
     "transparent": true,
     "encoder": "bounded RGB quantization",
     "near_lossless": 40,
     "rgb_step": 12,
     "image_resize": [
-      240,
-      315
+      208,
+      273
     ],
     "original_size": [
       320,
       420
     ],
-    "ssim": 0.9952128291349618
+    "ssim": 0.9871017302148059
   },
   {
     "path": "assets/props/rear_gate_door.webp",
@@ -1738,22 +1738,22 @@
     "path": "assets/props/ruin_wall_a.webp",
     "source": "assets/props/ruin_wall_a.webp",
     "before": 279872,
-    "after": 70646,
+    "after": 55772,
     "mode": "lossy",
     "quality": 100,
     "alpha_mae": 0.0,
-    "rgb_mae": 2.9963328038099375,
+    "rgb_mae": 2.9941800333070385,
     "bbox_same": true,
     "transparent": true,
     "image_resize": [
-      450,
-      315
+      390,
+      273
     ],
     "original_size": [
       600,
       420
     ],
-    "ssim": 0.9913108265611441,
+    "ssim": 0.9773331808322739,
     "encoder": "bounded RGB quantization",
     "rgb_step": 12
   },
@@ -1858,25 +1858,25 @@
     "path": "assets/props/villa_dining_table_wide.webp",
     "source": "assets/props/villa_dining_table_wide.webp",
     "before": 207244,
-    "after": 66896,
+    "after": 52876,
     "mode": "lossy",
     "quality": 100,
     "alpha_mae": 0.0,
-    "rgb_mae": 2.952316910701545,
+    "rgb_mae": 2.9509422924240525,
     "bbox_same": true,
     "transparent": true,
     "encoder": "bounded RGB quantization",
     "near_lossless": 40,
     "rgb_step": 12,
     "image_resize": [
-      675,
-      165
+      585,
+      143
     ],
     "original_size": [
       900,
       220
     ],
-    "ssim": 0.9807394064195986
+    "ssim": 0.9619974755238885
   },
   {
     "path": "assets/props/villa_rug.webp",
@@ -2369,47 +2369,270 @@
     "source": "assets/props/villa_dining_table_prep.webp",
     "source_archive": "pack_source/props/villa_dining_table_prep.png",
     "before": 237685,
-    "after": 57792,
+    "after": 45846,
     "mode": "lossy",
     "quality": 100,
     "alpha_mae": 0.0,
-    "rgb_mae": 2.9467875734676743,
+    "rgb_mae": 2.9459164089988272,
     "bbox_same": true,
     "transparent": true,
     "encoder": "bounded RGB quantization",
     "rgb_step": 12,
     "image_resize": [
-      675,
-      165
+      585,
+      143
     ],
     "original_size": [
       900,
       220
     ],
-    "ssim": 0.9725901783510104
+    "ssim": 0.9491086418893901
   },
   {
     "path": "assets/props/villa_dining_table_full.webp",
     "source": "assets/props/villa_dining_table_full.webp",
     "source_archive": "pack_source/props/villa_dining_table_full.png",
     "before": 295674,
-    "after": 72724,
+    "after": 58000,
     "mode": "lossy",
     "quality": 100,
     "alpha_mae": 0.0,
-    "rgb_mae": 2.941015043625962,
+    "rgb_mae": 2.94545587804163,
     "bbox_same": true,
     "transparent": true,
     "encoder": "bounded RGB quantization",
     "rgb_step": 12,
     "image_resize": [
-      675,
-      165
+      585,
+      143
     ],
     "original_size": [
       900,
       220
     ],
-    "ssim": 0.965958562082109
+    "ssim": 0.9373926686970508
+  },
+  {
+    "path": "assets/backgrounds/stage10/villa_f4_sky.webp",
+    "source": "archive/pack_source/backgrounds/stage10/villa_f4_sky.png",
+    "source_archive": "stage10/corrected_backgrounds/villa_f4_sky.png",
+    "before": 1362066,
+    "after": 38568,
+    "ssim": 0.9905239261903886,
+    "mode": "lossy",
+    "quality": 80,
+    "alpha_mae": 0.0,
+    "rgb_mae": 2.8194851240943426,
+    "bbox_same": true,
+    "transparent": false,
+    "image_resize": [
+      998,
+      468
+    ],
+    "original_size": [
+      1536,
+      720
+    ],
+    "encoder": "YUV WebP",
+    "rgb_step": null
+  },
+  {
+    "path": "assets/backgrounds/stage10/homefront_far_tile.webp",
+    "source": "archive/pack_source/backgrounds/stage10/homefront_far_tile.png",
+    "source_archive": "pack_source/backgrounds/stage10/homefront_far_tile.png",
+    "before": 504986,
+    "after": 141964,
+    "ssim": 0.998773653715403,
+    "mode": "lossy",
+    "quality": 100,
+    "alpha_mae": 0.0,
+    "rgb_mae": 2.930521589532722,
+    "bbox_same": true,
+    "transparent": true,
+    "encoder": "bounded RGB quantization",
+    "image_resize": [
+      1536,
+      540
+    ],
+    "original_size": [
+      2048,
+      720
+    ],
+    "rgb_step": 12
+  },
+  {
+    "path": "assets/backgrounds/stage10/homefront_sky.webp",
+    "source": "archive/pack_source/backgrounds/stage10/homefront_sky.png",
+    "source_archive": "pack_source/backgrounds/stage10/homefront_sky.png",
+    "before": 1632525,
+    "after": 39638,
+    "ssim": 0.9865727315892562,
+    "mode": "lossy",
+    "quality": 80,
+    "alpha_mae": 0.0,
+    "rgb_mae": 2.572525392665673,
+    "bbox_same": true,
+    "transparent": false,
+    "image_resize": [
+      998,
+      468
+    ],
+    "original_size": [
+      1536,
+      720
+    ],
+    "encoder": "YUV WebP",
+    "rgb_step": null
+  },
+  {
+    "path": "assets/backgrounds/stage10/dilmun_sky.webp",
+    "source": "archive/pack_source/backgrounds/stage10/dilmun_sky.png",
+    "source_archive": "pack_source/backgrounds/stage10/dilmun_sky.png",
+    "before": 1466189,
+    "after": 40716,
+    "ssim": 1.0,
+    "mode": "lossy",
+    "quality": 82,
+    "alpha_mae": 0.0,
+    "rgb_mae": 1.4602027529761905,
+    "bbox_same": true,
+    "transparent": false
+  },
+  {
+    "path": "assets/backgrounds/stage10/villa_f4_terrace.webp",
+    "source": "archive/pack_source/backgrounds/stage10/villa_f4_terrace.png",
+    "source_archive": "pack_source/backgrounds/stage10/villa_f4_terrace.png",
+    "before": 1605937,
+    "after": 230596,
+    "ssim": 0.9655582065963975,
+    "mode": "lossy",
+    "quality": 100,
+    "alpha_mae": 0.0,
+    "rgb_mae": 2.987473283832764,
+    "bbox_same": true,
+    "transparent": true,
+    "image_resize": [
+      1430,
+      468
+    ],
+    "original_size": [
+      2200,
+      720
+    ],
+    "encoder": "bounded RGB quantization",
+    "rgb_step": 12
+  },
+  {
+    "path": "assets/backgrounds/stage10/dilmun_far_tile.webp",
+    "source": "archive/pack_source/backgrounds/stage10/dilmun_far_tile.png",
+    "source_archive": "stage10/corrected_backgrounds/dilmun_far_tile.png",
+    "before": 609585,
+    "after": 72214,
+    "ssim": 1.0,
+    "mode": "lossy",
+    "quality": 80,
+    "alpha_mae": 0.012608506944444445,
+    "rgb_mae": 2.075318978983663,
+    "bbox_same": true,
+    "transparent": true,
+    "image_resize": [
+      2048,
+      720
+    ],
+    "original_size": [
+      2048,
+      720
+    ],
+    "encoder": "YUV WebP",
+    "rgb_step": null
+  },
+  {
+    "path": "assets/tiles/stage10/dilmun_ground_tile.webp",
+    "source": "archive/pack_source/tiles/stage10/dilmun_ground_tile.png",
+    "source_archive": "pack_source/tiles/stage10/dilmun_ground_tile.png",
+    "before": 223605,
+    "after": 141792,
+    "ssim": 1.0,
+    "mode": "lossless",
+    "rgb_mae": 0.0,
+    "alpha_mae": 0.0,
+    "bbox_same": true
+  },
+  {
+    "path": "assets/props/melammu_pickup.webp",
+    "source": "archive/pack_source/props/melammu_pickup.png",
+    "source_archive": "pack_source/props/melammu_pickup.png",
+    "before": 33570,
+    "after": 30644,
+    "ssim": 1.0,
+    "mode": "lossless",
+    "quality": 86,
+    "alpha_mae": 0,
+    "rgb_mae": 0,
+    "bbox_same": true,
+    "transparent": true
+  },
+  {
+    "path": "assets/props/gugalanna_helm.webp",
+    "source": "archive/pack_source/props/gugalanna_helm.png",
+    "source_archive": "pack_source/props/gugalanna_helm.png",
+    "before": 39624,
+    "after": 17538,
+    "ssim": 1.0,
+    "mode": "lossy",
+    "quality": 86,
+    "alpha_mae": 0,
+    "rgb_mae": 2.9455602391382207,
+    "bbox_same": true,
+    "transparent": true,
+    "encoder": "adaptive RGB128 palette / lossless WebP container"
+  },
+  {
+    "path": "assets/props/home_bed_blood.webp",
+    "source": "archive/pack_source/props/home_bed_blood.png",
+    "source_archive": "pack_source/props/home_bed_blood.png",
+    "before": 146593,
+    "after": 21536,
+    "ssim": 0.9536718807173515,
+    "mode": "lossy",
+    "quality": 100,
+    "alpha_mae": 0.0,
+    "rgb_mae": 2.98264693897624,
+    "bbox_same": true,
+    "transparent": true,
+    "image_resize": [
+      273,
+      130
+    ],
+    "original_size": [
+      420,
+      200
+    ],
+    "encoder": "bounded RGB quantization",
+    "rgb_step": 12
+  },
+  {
+    "path": "assets/props/space_pod.webp",
+    "source": "archive/pack_source/props/space_pod.png",
+    "source_archive": "pack_source/props/space_pod.png",
+    "before": 204486,
+    "after": 39996,
+    "ssim": 0.9403724995306054,
+    "mode": "lossy",
+    "quality": 100,
+    "alpha_mae": 0.0,
+    "rgb_mae": 2.96885140562249,
+    "bbox_same": true,
+    "transparent": true,
+    "image_resize": [
+      360,
+      195
+    ],
+    "original_size": [
+      480,
+      260
+    ],
+    "encoder": "bounded RGB quantization",
+    "rgb_step": 12
   }
 ]

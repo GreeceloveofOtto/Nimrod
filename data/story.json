@@ -51,7 +51,53 @@
     {
       "stage": 8,
       "flags": [
+        "arm_lost",
         "humbaba_defeated"
+      ]
+    },
+    {
+      "stage": 9,
+      "flags": [
+        "melammu_absorbed"
+      ]
+    },
+    {
+      "stage": 10,
+      "flags": [
+        "home_critical_done"
+      ]
+    },
+    {
+      "stage": 11,
+      "flags": [
+        "inanna_home_done"
+      ]
+    },
+    {
+      "stage": 12,
+      "flags": [
+        "enkidua_last_talk_done",
+        "enkidua_gone"
+      ]
+    },
+    {
+      "stage": 13,
+      "flags": [
+        "gugalanna_intro_done",
+        "gugalanna_defeated"
+      ]
+    },
+    {
+      "stage": 14,
+      "flags": [
+        "prosthetic_equipped"
+      ]
+    },
+    {
+      "stage": 15,
+      "flags": [
+        "rooftop_done",
+        "dilmun_arrived"
       ]
     }
   ],
@@ -75,5 +121,28 @@
     "hold": 1.0,
     "fade_in": 1.5,
     "caption": ""
-  }
+  },
+  "melammu_toast": "…뭔가 이상한 힘이 느껴진다",
+  "melammu_toast_seconds": 2.5,
+  "helm_toast": "구갈안나의 투구를 장착했다",
+  "prosthetic_toast": "딩이르 의수를 착용했다",
+  "home_lock_message": "지금은 이곳을 떠날 수 없다",
+  "arm_loss": {
+    "damage": 14,
+    "windup": 0.6,
+    "hitstop": 0.3,
+    "flash": 0.15,
+    "stagger": 1.5,
+    "range": 900
+  },
+  "home_bed": {
+    "position": [
+      320,
+      520
+    ],
+    "range": 180
+  },
+  "helm_delay": 3.0,
+  "inanna_exit_seconds": 0.8,
+  "edge_vignette_distance": 260
 }

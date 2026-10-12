@@ -1,0 +1,91 @@
+{
+  "caption_font": "res://assets/fonts/NimrodUIKorean-Regular.otf",
+  "caption_size": 24,
+  "caption_fade": 0.6,
+  "skips": {
+    "castle_return": {
+      "caption": "",
+      "fade_out": 1.5,
+      "hold": 1.0,
+      "fade_in": 1.5,
+      "heal": "full",
+      "spawn": {
+        "level": "CastleF1",
+        "spawn": "Spawn_Wake"
+      },
+      "bgm": "",
+      "set_flags": [
+        "time_skipped"
+      ]
+    },
+    "home_5days": {
+      "caption": "5일 후",
+      "fade_out": 1.5,
+      "hold": 1.0,
+      "fade_in": 1.5,
+      "heal": null,
+      "spawn": {
+        "level": "NimrodHome",
+        "spawn": "Spawn_FromMelammu"
+      },
+      "bgm": "",
+      "set_flags": []
+    },
+    "home_11days": {
+      "caption": "11일 후",
+      "fade_out": 1.5,
+      "hold": 1.0,
+      "fade_in": 1.5,
+      "heal": null,
+      "spawn": {
+        "level": "NimrodHome",
+        "spawn": "Spawn_FromMelammu"
+      },
+      "bgm": "",
+      "set_flags": []
+    },
+    "home_after_loss": {
+      "caption": "오랜 시간이 흐른 뒤",
+      "fade_out": 1.5,
+      "hold": 1.0,
+      "fade_in": 1.5,
+      "heal": null,
+      "spawn": {
+        "level": "NimrodHome",
+        "spawn": "Spawn_FromMelammu"
+      },
+      "bgm": "home_sorrow",
+      "set_flags": [
+        "enkidua_gone"
+      ]
+    },
+    "after_gugalanna": {
+      "caption": "오랜 시간이 흐른 뒤",
+      "fade_out": 1.5,
+      "hold": 1.0,
+      "fade_in": 1.5,
+      "heal": null,
+      "spawn": {
+        "level": "VillaF3",
+        "spawn": "Spawn_FromSkip"
+      },
+      "bgm": "",
+      "set_flags": []
+    },
+    "to_dilmun": {
+      "caption": "오랜 시간이 흐른 뒤",
+      "fade_out": 1.5,
+      "hold": 1.0,
+      "fade_in": 1.5,
+      "heal": null,
+      "spawn": {
+        "level": "Dilmun",
+        "spawn": "Spawn_Landing"
+      },
+      "bgm": "",
+      "set_flags": [
+        "dilmun_arrived"
+      ]
+    }
+  }
+}
