@@ -383,8 +383,9 @@ func interact(_player: Node2D) -> void:
         return
     interaction_running = true
     interacted.emit()
-    if npc_id == "shimati":
+    if npc_id in ["shimati", "urshanabi"]:
         get_node("/root/Dialogue").play_interaction.call_deferred(interaction_id)
+        interaction_running = false
         return
     if npc_id == "shamhat" and get_node("/root/Choice").menu_available():
         await get_node("/root/Choice").open(self)

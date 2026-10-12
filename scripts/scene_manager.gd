@@ -106,6 +106,10 @@ func go_to(level_id: String, spawn_name: String, options: Dictionary = {}) -> bo
     if not is_instance_valid(level_root) or not is_instance_valid(player):
         return false
     if is_instance_valid(current_level):
+        var sight: Node = player.get_node_or_null("TiamatSight")
+        if sight != null:
+            player.remove_child(sight)
+            sight.queue_free()
         level_root.remove_child(current_level)
         current_level.queue_free()
     current_level = packed.instantiate() as Node2D
@@ -126,6 +130,7 @@ func go_to(level_id: String, spawn_name: String, options: Dictionary = {}) -> bo
     if hud != null:
         hud.set_level_name(str(current_level.display_name))
     level_changed.emit(level_id)
+    get_node("/root/Ferry").decorate(current_level)
     var arrival: Node = current_level.find_arrival_door(spawn_name)
     # An arrival door prepares itself before fade-in, then plays its walking
     # and closing sequence while input and incoming damage remain locked.
@@ -163,6 +168,19 @@ func restart_run(reset_flags: bool = true) -> void:
         get_node("/root/GameState").reset_run(false)
     _reset_on_arrival = true
     await go_to(str(config["start_level"]), str(config["start_spawn"]))
+
+func full_reset_run() -> void:
+    if get_tree().paused or is_transitioning or player_locked or get_node("/root/Cutscene").active or get_node("/root/Dialogue").active:
+        if is_instance_valid(player):
+            player._restart_requested = false
+        return
+    if not get_node("/root/Save").erase_save():
+        player._restart_requested = false
+        show_toast("저장 파일을 지우지 못했다")
+        return
+    get_node("/root/Ferry").boarding_requested = false
+    player.debug_hp_floor = false
+    await restart_run()
 
 func _cancel_entry() -> void:
     if is_instance_valid(player):

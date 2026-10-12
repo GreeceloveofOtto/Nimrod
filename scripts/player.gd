@@ -819,7 +819,7 @@ func _request_run_restart(from_death: bool = false) -> void:
         if from_death:
             manager.handle_death.call_deferred()
         else:
-            manager.restart_run.call_deferred()
+            manager.full_reset_run.call_deferred()
     else:
         get_tree().reload_current_scene()
 

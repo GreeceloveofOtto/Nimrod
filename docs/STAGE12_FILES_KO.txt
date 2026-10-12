@@ -1,0 +1,218 @@
+12단계 변경·추가·삭제 파일
+
+M	README_KO.txt
+M	assets/animation_manifest.json
+M	assets/art_manifest.json
+M	assets/audio/bgm/castle_hall.ogg
+M	assets/audio/bgm/nimrod_home.ogg
+M	assets/audio/bgm/passage_descent.ogg
+M	assets/audio/bgm/uruk_sky.ogg
+M	assets/audio/bgm/uruk_wasteland.ogg
+M	assets/audio/sfx/explosion_boom.ogg
+M	assets/fonts/NimrodUIKorean-Regular.otf
+M	assets/props/doors/manifest.json
+M	assets/props/doors/stage3_manifest.json
+M	assets/props/doors/stage4_manifest.json
+M	assets/props/doors/stage5_manifest.json
+M	assets/props/doors/stage6_manifest.json
+M	assets/sprites/enemies/boar_charger/manifest.json
+M	assets/sprites/enemies/cedar_archer/manifest.json
+M	assets/sprites/enemies/cedar_colossus/manifest.json
+M	assets/sprites/enemies/cedar_demon/manifest.json
+M	assets/sprites/enemies/cedar_sentinel/manifest.json
+M	assets/sprites/enemies/cedar_wisp/manifest.json
+M	assets/sprites/enemies/chain_beastman/manifest.json
+M	assets/sprites/enemies/corpse_bomber/manifest.json
+M	assets/sprites/enemies/explosive_spitter/manifest.json
+M	assets/sprites/enemies/gas_sac/manifest.json
+M	assets/sprites/enemies/gugalanna/manifest.json
+M	assets/sprites/enemies/humbaba/manifest.json
+M	assets/sprites/enemies/kala_ushumgal/manifest.json
+M	assets/sprites/enemies/melee_beast/manifest.json
+M	assets/sprites/enemies/ranged_beast/manifest.json
+M	assets/sprites/enemies/root_spewer/manifest.json
+M	assets/sprites/enemies/shell_scorpion/manifest.json
+M	assets/sprites/enemies/sky_beast/manifest.json
+M	assets/sprites/enemies/wall_diver/manifest.json
+M	assets/sprites/enemies/wraith_ray/manifest.json
+M	assets/sprites/fx/manifest.json
+M	assets/sprites/fx/stage11_manifest.json
+M	assets/sprites/fx/stage5_manifest.json
+M	assets/sprites/fx/stage6_manifest.json
+M	assets/sprites/npcs/aya/manifest.json
+M	assets/sprites/npcs/cook_a/manifest.json
+M	assets/sprites/npcs/cook_b/manifest.json
+M	assets/sprites/npcs/cook_c/manifest.json
+M	assets/sprites/npcs/enkidua/manifest.json
+M	assets/sprites/npcs/gatekeeper/manifest.json
+M	assets/sprites/npcs/inanna/manifest.json
+M	assets/sprites/npcs/lugalbanda/manifest.json
+M	assets/sprites/npcs/ninsun/manifest.json
+M	assets/sprites/npcs/papsukkal/manifest.json
+M	assets/sprites/npcs/servant_a/manifest.json
+M	assets/sprites/npcs/servant_b/manifest.json
+M	assets/sprites/npcs/shamash/manifest.json
+M	assets/sprites/npcs/shamhat/manifest.json
+M	assets/sprites/npcs/shimati/manifest.json
+M	assets/sprites/npcs/urshanabi/manifest.json
+M	assets/sprites/player/axe/manifest.json
+M	assets/sprites/player/axe_onearm/manifest.json
+M	assets/sprites/player/axe_onearm_helm/helm_equip.webp
+M	assets/sprites/player/axe_onearm_helm/idle.webp
+M	assets/sprites/player/axe_onearm_helm/manifest.json
+M	assets/sprites/player/axe_prosthetic_helm/attack_1.webp
+M	assets/sprites/player/axe_prosthetic_helm/attack_2.webp
+M	assets/sprites/player/axe_prosthetic_helm/attack_3.webp
+M	assets/sprites/player/axe_prosthetic_helm/attack_4.webp
+M	assets/sprites/player/axe_prosthetic_helm/crouch_enter.webp
+M	assets/sprites/player/axe_prosthetic_helm/crouch_exit.webp
+M	assets/sprites/player/axe_prosthetic_helm/crouch_idle.webp
+M	assets/sprites/player/axe_prosthetic_helm/death.webp
+M	assets/sprites/player/axe_prosthetic_helm/devour.webp
+M	assets/sprites/player/axe_prosthetic_helm/drop_through.webp
+M	assets/sprites/player/axe_prosthetic_helm/fall.webp
+M	assets/sprites/player/axe_prosthetic_helm/hurt.webp
+M	assets/sprites/player/axe_prosthetic_helm/idle.webp
+M	assets/sprites/player/axe_prosthetic_helm/jump_rise.webp
+M	assets/sprites/player/axe_prosthetic_helm/jump_start.webp
+M	assets/sprites/player/axe_prosthetic_helm/land.webp
+M	assets/sprites/player/axe_prosthetic_helm/manifest.json
+M	assets/sprites/player/axe_prosthetic_helm/roll.webp
+M	assets/sprites/player/axe_prosthetic_helm/run.webp
+M	assets/sprites/player/axe_prosthetic_helm/walk.webp
+M	assets/sprites/player/axe_prosthetic_helm_r40/attack_1.webp
+M	assets/sprites/player/axe_prosthetic_helm_r40/attack_2.webp
+M	assets/sprites/player/axe_prosthetic_helm_r40/attack_3.webp
+M	assets/sprites/player/axe_prosthetic_helm_r40/attack_4.webp
+M	assets/sprites/player/axe_prosthetic_helm_r40/crouch_idle.webp
+M	assets/sprites/player/axe_prosthetic_helm_r40/death.webp
+M	assets/sprites/player/axe_prosthetic_helm_r40/devour.webp
+M	assets/sprites/player/axe_prosthetic_helm_r40/fall.webp
+M	assets/sprites/player/axe_prosthetic_helm_r40/hurt.webp
+M	assets/sprites/player/axe_prosthetic_helm_r40/idle.webp
+M	assets/sprites/player/axe_prosthetic_helm_r40/jump_rise.webp
+M	assets/sprites/player/axe_prosthetic_helm_r40/jump_start.webp
+M	assets/sprites/player/axe_prosthetic_helm_r40/manifest.json
+M	assets/sprites/player/axe_prosthetic_helm_r40/roll.webp
+M	assets/sprites/player/axe_prosthetic_helm_r40/run.webp
+M	assets/sprites/player/axe_prosthetic_helm_r40/walk.webp
+M	assets/sprites/player/axe_prosthetic_helm_r50/attack_1.webp
+M	assets/sprites/player/axe_prosthetic_helm_r50/attack_2.webp
+M	assets/sprites/player/axe_prosthetic_helm_r50/attack_3.webp
+M	assets/sprites/player/axe_prosthetic_helm_r50/attack_4.webp
+M	assets/sprites/player/axe_prosthetic_helm_r50/crouch_enter.webp
+M	assets/sprites/player/axe_prosthetic_helm_r50/crouch_exit.webp
+M	assets/sprites/player/axe_prosthetic_helm_r50/crouch_idle.webp
+M	assets/sprites/player/axe_prosthetic_helm_r50/death.webp
+M	assets/sprites/player/axe_prosthetic_helm_r50/devour.webp
+M	assets/sprites/player/axe_prosthetic_helm_r50/drop_through.webp
+M	assets/sprites/player/axe_prosthetic_helm_r50/fall.webp
+M	assets/sprites/player/axe_prosthetic_helm_r50/hurt.webp
+M	assets/sprites/player/axe_prosthetic_helm_r50/idle.webp
+M	assets/sprites/player/axe_prosthetic_helm_r50/jump_rise.webp
+M	assets/sprites/player/axe_prosthetic_helm_r50/jump_start.webp
+M	assets/sprites/player/axe_prosthetic_helm_r50/land.webp
+M	assets/sprites/player/axe_prosthetic_helm_r50/manifest.json
+M	assets/sprites/player/axe_prosthetic_helm_r50/roll.webp
+M	assets/sprites/player/axe_prosthetic_helm_r50/run.webp
+M	assets/sprites/player/axe_prosthetic_helm_r50/walk.webp
+M	assets/sprites/player/axe_prosthetic_helm_r90/attack_1.webp
+M	assets/sprites/player/axe_prosthetic_helm_r90/attack_2.webp
+M	assets/sprites/player/axe_prosthetic_helm_r90/attack_3.webp
+M	assets/sprites/player/axe_prosthetic_helm_r90/attack_4.webp
+M	assets/sprites/player/axe_prosthetic_helm_r90/crouch_enter.webp
+M	assets/sprites/player/axe_prosthetic_helm_r90/crouch_exit.webp
+M	assets/sprites/player/axe_prosthetic_helm_r90/crouch_idle.webp
+M	assets/sprites/player/axe_prosthetic_helm_r90/death.webp
+M	assets/sprites/player/axe_prosthetic_helm_r90/devour.webp
+M	assets/sprites/player/axe_prosthetic_helm_r90/drop_through.webp
+M	assets/sprites/player/axe_prosthetic_helm_r90/fall.webp
+M	assets/sprites/player/axe_prosthetic_helm_r90/hurt.webp
+M	assets/sprites/player/axe_prosthetic_helm_r90/idle.webp
+M	assets/sprites/player/axe_prosthetic_helm_r90/jump_rise.webp
+M	assets/sprites/player/axe_prosthetic_helm_r90/jump_start.webp
+M	assets/sprites/player/axe_prosthetic_helm_r90/land.webp
+M	assets/sprites/player/axe_prosthetic_helm_r90/manifest.json
+M	assets/sprites/player/axe_prosthetic_helm_r90/roll.webp
+M	assets/sprites/player/axe_prosthetic_helm_r90/run.webp
+M	assets/sprites/player/axe_prosthetic_helm_r90/walk.webp
+M	assets/sprites/player/cutscene/manifest.json
+M	assets/sprites/player/staff/manifest.json
+M	assets/sprites/player/unarmed/manifest.json
+D	assets/stage2_character_manifest.json
+D	assets/stage2_environment_manifest.json
+M	data/alpha_expectations.json
+M	data/cutscenes.json
+M	data/dialogue.json
+M	data/image_encoding_quality.json
+M	data/image_mapping.json
+M	data/image_parity_samples.json
+M	data/image_policy.json
+M	data/levels.json
+M	data/npcs.json
+M	data/sprite_trims.json
+M	data/storage_quality.json
+M	data/story.json
+M	data/time_skips.json
+M	data/transitions.json
+M	docs/SIZE_REPORT_KO.md
+M	docs/SPRITE_QA_REPORT_KO.md
+M	docs/STAGE8_GROUNDING_RUNTIME.txt
+M	project.godot
+M	scripts/asset_visual.gd
+M	scripts/audio_manager.gd
+M	scripts/chapter_events.gd
+M	scripts/cutscene_runner.gd
+M	scripts/debug_teleport.gd
+M	scripts/dialogue_system.gd
+M	scripts/level_base.gd
+M	scripts/npc_base.gd
+M	scripts/player.gd
+M	scripts/save_manager.gd
+M	scripts/scene_manager.gd
+M	scripts/story_state.gd
+M	tests/stage11_deathsea.gd
+M	tests/stage11_save.gd
+M	tools/build_stage11_art.py
+M	tools/check_sprite_frames.py
+M	tools/make_slim_zip.py
+M	tools/measure_assets.py
+M	tools/stage11_palette.py
+M	tools/validate_assets.py
+
+추가
+assets/props/huluppu_trunk.webp
+assets/props/utnapishtim_hut.webp
+assets/sprites/npcs/utnapishtim/idle.webp
+assets/sprites/npcs/utnapishtim/manifest.json
+data/ferry.json
+data/head_ghost.json
+data/stage12_asset_inventory.json
+data/stage12_budget.json
+docs/HEAD_GHOST_DIAGNOSIS_KO.md
+docs/STAGE12_ALPHA_REPORT.txt
+docs/STAGE12_FILES_KO.txt
+docs/STAGE12_REPORT_KO.md
+docs/screenshots/stage12_tiamat.png
+docs/size_compare/stage12_head.jpg
+docs/size_compare/stage12_r90.jpg
+downloads/Nimrod_stage12_2026-10-13.zip
+downloads/Nimrod_stage12_QA_2026-10-13.zip
+scenes/TiamatZone.tscn
+scripts/ferry_sequence.gd
+tests/fixtures/stage12_urshanabi_lines.json
+tests/stage12_dilmun_heal.gd
+tests/stage12_ferry.gd
+tests/stage12_frame_bleed.gd
+tests/stage12_full_reset.gd
+tests/stage12_head_ghost.gd
+tests/stage12_tiamat.gd
+tools/build_stage12_art.py
+tools/capture_head_ghost.gd
+tools/capture_stage12.gd
+tools/check_head_ghost.py
+tools/finalize_stage12_assets.py
+tools/optimize_stage12_audio.py
+
+이동(보존): assets/stage2_environment_manifest.json, stage2_character_manifest.json → archive/stage12/developer_metadata/
+변환 전 원본: archive/stage12/before_runtime, audio_before, json_before, source_art, archive/pack_source_history (배포 제외)

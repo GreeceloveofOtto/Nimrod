@@ -46,6 +46,7 @@ static func add_image(parent: Node, path: String, at: Vector2, size: Vector2, z:
     var holder := Node2D.new()
     holder.position = at
     holder.z_index = z
+    holder.set_meta("art_path",path)
     parent.add_child(holder)
     if ResourceLoader.exists(path):
         var texture := ResourceLoader.load(path) as Texture2D

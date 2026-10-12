@@ -9,12 +9,13 @@ from build_image_parity_fixtures import reference
 from downscale_assets import ROOT,ssim
 
 def main():
- parser=argparse.ArgumentParser();parser.add_argument('--prefix',default='');args=parser.parse_args();registry=json.loads((ROOT/'data/sprite_trims.json').read_text());results=[]
+ parser=argparse.ArgumentParser();parser.add_argument('--prefix',default='');parser.add_argument('--paths');args=parser.parse_args();selected=set(json.loads(Path(args.paths).read_text())) if args.paths else None;registry=json.loads((ROOT/'data/sprite_trims.json').read_text());results=[]
  for table in ['storage_quality','image_encoding_quality']:
   p=ROOT/'data'/f'{table}.json';rows=json.loads(p.read_text())
   for row in rows:
    path=ROOT/row['path'].removeprefix('res://')
    if args.prefix and args.prefix not in row['path']:continue
+   if selected is not None and row['path'] not in selected:continue
    if not path.exists() or path.suffix!='.webp':continue
    spec=registry.get(row['path']) if table=='storage_quality' else None
    source=reference(row,spec);a=np.array(source);mask=a[:,:,3]>12;visible=a[:,:,:3][mask]

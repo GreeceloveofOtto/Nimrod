@@ -26,6 +26,9 @@ def check(path,c):
  errors=[];warnings=[]
  try:frames=frame_images(path,c)
  except (OSError,ValueError) as e:return [str(e)],[],{}
+ if '/sprites/player/' in str(path).replace('\\','/'):
+  from check_head_ghost import audit
+  errors.extend(audit(path,c)['errors'])
  if c.get('stored_padding',0)>=2:
   physical=Image.open(path).getchannel('A');cw,ch=c['stored_cell']
   for i in range(c.get('stored_columns',c['frames'])):

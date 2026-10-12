@@ -10387,11 +10387,27 @@
       "doors": [],
       "pickups": [],
       "obstacles": [],
-      "platforms": [],
+      "platforms": [
+        {
+          "id": "ferry_deck",
+          "position": [
+            1440,
+            814
+          ],
+          "width": 240,
+          "collision_only": true,
+          "art_height": 0,
+          "one_way": true
+        }
+      ],
       "steps": [],
       "spawns": {
         "Spawn_FromDilmun": [
           600,
+          880
+        ],
+        "Spawn_DebugUrshanabi": [
+          820,
           880
         ]
       },
@@ -10403,8 +10419,13 @@
             743.0
           ],
           "idle_clip": "dice_loop",
-          "interactable": false,
-          "face_player": false
+          "interactable": true,
+          "face_player": false,
+          "presence": {
+            "none": [
+              "ferry_boarded"
+            ]
+          }
         }
       ],
       "decorations": [
@@ -10432,7 +10453,8 @@
             180
           ],
           "z": -2,
-          "ground_contact": false
+          "ground_contact": false,
+          "name": "FerryBoat"
         }
       ],
       "backgrounds": [
@@ -10455,6 +10477,169 @@
             1024
           ],
           "repeat_times": 3
+        }
+      ]
+    },
+    {
+      "id": "TiamatZone",
+      "scene": "res://scenes/TiamatZone.tscn",
+      "width": 2400,
+      "floor_y": 880,
+      "camera_limits": [
+        0,
+        0,
+        2400,
+        1120
+      ],
+      "walk_bounds": [
+        0,
+        2400
+      ],
+      "safe_zones": [
+        [
+          0,
+          -1000,
+          2400,
+          3000
+        ]
+      ],
+      "bgm": "deathsea_drone",
+      "display_name": "티아마트 구역",
+      "bg_dim": [
+        0.1,
+        0.12,
+        0.18
+      ],
+      "ceiling": false,
+      "floor_art": "res://assets/tiles/deathsea/ground_tile.png",
+      "floor_art_size": [
+        512,
+        200
+      ],
+      "terrain": [
+        {
+          "id": "tiamat_ground",
+          "from": 0,
+          "to": 2400,
+          "y": 880
+        }
+      ],
+      "enemies": [],
+      "doors": [],
+      "pickups": [],
+      "obstacles": [],
+      "platforms": [
+        {
+          "id": "ferry_deck",
+          "position": [
+            150,
+            814
+          ],
+          "width": 240,
+          "collision_only": true,
+          "art_height": 0,
+          "one_way": true
+        }
+      ],
+      "steps": [],
+      "spawns": {
+        "Spawn_FromFerry": [
+          260,
+          814
+        ]
+      },
+      "npcs": [
+        {
+          "id": "utnapishtim",
+          "position": [
+            1650,
+            880
+          ],
+          "face_player": false,
+          "interactable": false
+        }
+      ],
+      "decorations": [
+        {
+          "name": "FerryBoat",
+          "path": "res://assets/props/ferry_boat.webp",
+          "position": [
+            40,
+            700
+          ],
+          "size": [
+            420,
+            180
+          ],
+          "z": -2
+        },
+        {
+          "name": "Huluppu",
+          "path": "res://assets/props/huluppu_trunk.webp",
+          "position": [
+            180,
+            -1320
+          ],
+          "size": [
+            1800,
+            2200
+          ],
+          "z": -8,
+          "ground_contact": true,
+          "modulate": [
+            0.16,
+            0.2,
+            0.34,
+            1
+          ]
+        },
+        {
+          "name": "HermitHouse",
+          "path": "res://assets/props/utnapishtim_hut.webp",
+          "position": [
+            1500,
+            660
+          ],
+          "size": [
+            440,
+            220
+          ],
+          "z": -6,
+          "ground_contact": true,
+          "modulate": [
+            0.6,
+            0.6,
+            0.65,
+            1
+          ]
+        }
+      ],
+      "backgrounds": [
+        {
+          "name": "Space",
+          "path": "res://assets/backgrounds/deathsea/stars_tile.webp",
+          "position": [
+            0,
+            0
+          ],
+          "size": [
+            1024,
+            1024
+          ],
+          "ratio": 0.05,
+          "ratio_y": 0.05,
+          "z": -40,
+          "repeat_size": [
+            1024,
+            1024
+          ],
+          "repeat_times": 3,
+          "modulate": [
+            0.42,
+            0.42,
+            0.55,
+            1
+          ]
         }
       ]
     }

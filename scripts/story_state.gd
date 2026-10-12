@@ -49,6 +49,8 @@ func debug_stage(target: int) -> void:
     get_node("/root/GameState").run_flags["skill_anur_light"] = target >= 7
     get_node("/root/GameState").run_flags["gugalanna_helm"] = target >= 13
     get_node("/root/GameState").run_flags["melammu"] = target >= 9
+    if target >= 18:
+        get_node("/root/GameState").run_flags["death_sea_paper"] = false
     get_node("/root/GameState").run_flags.erase("bed_blood")
     if target >= 8:
         get_node("/root/GameState").set_weapon("axe")

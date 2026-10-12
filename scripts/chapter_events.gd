@@ -126,13 +126,13 @@ func time_skip(id: String) -> void:
     manager.player.cinematic_clock = 0
     if not str(spec.get("bgm","")).is_empty():
         get_node("/root/Audio").play_bgm(str(spec["bgm"]))
-    await manager._fade_to(0.,float(spec["fade_in"])*runner.timing_scale)
-    if not runner.active:
-        return
     var healing: Variant = spec.get("heal")
     if healing != null:
         manager.player.hp = manager.player.get_max_hp() if str(healing) == "full" else mini(manager.player.get_max_hp(),manager.player.hp+int(healing))
         manager.player.damage_received.emit(0,manager.player.hp)
+    await manager._fade_to(0.,float(spec["fade_in"])*runner.timing_scale)
+    if not runner.active:
+        return
     current_skip = ""
 
 func pulse(color: Color, seconds: float) -> void:

@@ -161,6 +161,8 @@ func play_interaction(id: String, speaker_nodes: Dictionary = {}) -> void:
     for event: Dictionary in spec.get("on_finish", []):
         if event.get("when", "first") in ["always", "repeat" if repeat_visit else "first"]:
             await _event(event, nodes)
+    if id == "urshanabi_ferry":
+        get_node("/root/Ferry").start_boarding.call_deferred()
     if is_instance_valid(intercept):
         var tween := create_tween()
         tween.tween_property(intercept, "position", intercept_position, float(settings["intercept_seconds"]))
@@ -196,6 +198,10 @@ func _event(event: Dictionary, nodes: Dictionary) -> void:
             get_node("/root/Cutscene").play.call_deferred("skip_" + str(event.get("id", "castle_return")))
         "give_paper":
             await get_node("/root/Chapter").give_paper()
+        "ferry_paper":
+            await get_node("/root/Cutscene").play("urshanabi_paper")
+        "ferry_boarding":
+            get_node("/root/Ferry").boarding_requested = true
         "equip_prosthetic":
             await get_node("/root/Chapter").equip_prosthetic()
 
@@ -338,6 +344,12 @@ func play(lines: Array, speaker: Node2D, options: Dictionary = {}) -> void:
             await _timer(float(options.get("hold_seconds", maxf(float(settings["hold_seconds"]), float(settings.get("hold_per_character", 0.05)) * line.length()))))
         if token != generation:
             return
+        if spec.has("event_after"):
+            _canvas.hide()
+            await _event(spec["event_after"], participants)
+            if token != generation:
+                return
+            _canvas.show()
     _canvas.hide()
     _restore_highlight()
     if is_instance_valid(camera):

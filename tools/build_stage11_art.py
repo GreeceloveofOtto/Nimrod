@@ -17,7 +17,7 @@ def key(im):
  fringe=(~blank)&(dominance>8);a[:,:,0][fringe]=np.minimum(a[:,:,0][fringe],a[:,:,1][fringe]+8);a[:,:,2][fringe]=np.minimum(a[:,:,2][fringe],a[:,:,1][fringe]+8)
  return Image.fromarray(a.astype('uint8'))
 
-def row_poses(im,n,min_fraction=.18):
+def row_poses(im,n,min_fraction=.18,discard_row_edge_artifacts=False):
  keyed=key(im);a=np.array(keyed);labels,total=ndimage.label(a[:,:,3]>12,structure=np.ones((3,3)));sizes=np.bincount(labels.ravel());sizes[0]=0
  main=[i for i in range(1,total+1) if sizes[i]>sizes.max()*min_fraction]
  if len(main)<n:raise ValueError(f'Only {len(main)} figures, expected {n}')
@@ -28,7 +28,14 @@ def row_poses(im,n,min_fraction=.18):
   for j in range(1,total+1):
    if j in main or sizes[j]<max(8,sizes[i]*.0015):continue
    center=all_centres[j-1][1];nearest=min(main,key=lambda k:abs(center-centers[k]))
-   if nearest==i and abs(center-centers[i])<im.width/n*.48:mask|=labels==j
+   if nearest==i and abs(center-centers[i])<im.width/n*.48:
+    if discard_row_edge_artifacts:
+     part_y=np.where(labels==j)[0];body_y=np.where(labels==i)[0]
+     # Cropped boots from the preceding row are not part of this actor.
+     # Protect all primary actor pixels, including helmet/axe tips.
+     if part_y.min()<=1 and part_y.max()<body_y.min()-2:continue
+     if part_y.max()>=im.height-2 and part_y.min()>body_y.max()+2:continue
+    mask|=labels==j
   pixels=a.copy();pixels[~mask]=0;pose=Image.fromarray(pixels);box=pose.getchannel('A').point(lambda v:255 if v>12 else 0).getbbox();out.append(pose.crop(box))
  return out
 
@@ -45,9 +52,9 @@ def staged_sheet(folder,name,poses,duration,loop,target,uniform=True,frame=(640,
  path=STAGED/folder/(name+'.png');path.parent.mkdir(exist_ok=True,parents=True);out.save(path)
  return {'name':name,'sheet':'sprites/'+folder+'/'+name+'.png','frame_width':frame[0],'frame_height':frame[1],'frames':len(poses),'duration_seconds':duration,'fps':len(poses)/duration,'loop':loop,'anchor_px':list(anchor),'image_size':list(out.size),'qa':{'pose_height_exception':name not in ['idle','walk','idle_front'],'height_tol':.03 if name in ['idle','walk','idle_front'] else .55,'movement':name not in ['idle','idle_front','crouch_idle'],'detached_fx_or_weapon':name in ['devour','dice_loop'],'expected_pose_heights':heights},'body_reference_height_px':target,'normalization':'one isotropic scale per clip; constant anatomy, no width/height warping'}
 
-def players():
+def players(variants=None):
  original=json.loads((R/'assets/sprites/player/axe/manifest.json').read_text());specs={c['name']:c for c in original['clips']};all_sets={}
- for variant in ['helm','r40','r50','r90']:
+ for variant in (variants or ['helm','r40','r50','r90']):
   set_name='axe_prosthetic_helm'+('' if variant=='helm' else '_'+variant);folder='player/'+set_name;clips=[];aliases={}
   for group,rows in enumerate(GROUPS):
    im=Image.open(RAW/'source_art'/f'{variant}_{group}.png').convert('RGBA')
@@ -57,8 +64,8 @@ def players():
     override=RAW/'source_art'/f'{variant}_{name}_retry.png'
     if override.exists():
      retry=Image.open(override).convert('RGBA');cols=n//2 if n%2==0 else n;rowcount=2 if n%2==0 else 1;poses=[]
-     for j in range(rowcount):poses+=row_poses(retry.crop((0,round(j*retry.height/rowcount),retry.width,round((j+1)*retry.height/rowcount))),cols)
-    else:poses=row_poses(im.crop((0,round(row*im.height/len(rows)),im.width,round((row+1)*im.height/len(rows)))),n)
+     for j in range(rowcount):poses+=row_poses(retry.crop((0,round(j*retry.height/rowcount),retry.width,round((j+1)*retry.height/rowcount))),cols,discard_row_edge_artifacts=True)
+    else:poses=row_poses(im.crop((0,round(row*im.height/len(rows)),im.width,round((row+1)*im.height/len(rows)))),n,discard_row_edge_artifacts=True)
     cfg=specs.get(name,{'duration_seconds':.7,'loop':False});target=260 if name=='crouch_idle' else 320 if name in ['crouch_enter','crouch_exit','jump_start','land'] else 340 if name in ['run','jump_rise','hurt'] else 363
     if variant=='r90':target*=1.04
     c=staged_sheet(folder,name,poses,cfg['duration_seconds'],cfg['loop'],target,uniform=name not in ['idle','crouch_idle']);c['qa']['horn_allowance_px']=45

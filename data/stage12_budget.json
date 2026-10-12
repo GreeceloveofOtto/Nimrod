@@ -1,0 +1,27 @@
+{
+  "baseline_assets_bytes": 64123644,
+  "baseline_zip_bytes": 72792544,
+  "zip_target_mib": 65,
+  "stretch_zip_mib": 60,
+  "new_assets_limit_bytes": 512000,
+  "new_assets": [
+    "assets/props/huluppu_trunk.webp",
+    "assets/props/utnapishtim_hut.webp",
+    "assets/sprites/npcs/utnapishtim/idle.webp"
+  ],
+  "baseline_folders_bytes": {
+    "animation_manifest.json": 28847,
+    "stage2_environment_manifest.json": 4742,
+    "art_manifest.json": 107549,
+    "stage2_character_manifest.json": 563,
+    "tiles": 1626750,
+    "ui": 9422,
+    "image_prompts": 314,
+    "fx": 44514,
+    "audio": 2057594,
+    "fonts": 127244,
+    "props": 7032191,
+    "backgrounds": 6185204,
+    "sprites": 46898710
+  }
+}

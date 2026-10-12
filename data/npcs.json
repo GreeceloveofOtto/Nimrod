@@ -571,14 +571,36 @@
       "three_way": false,
       "initial_pose": "front",
       "random_start": false,
-      "interactable": false,
-      "interaction": "",
+      "interactable": true,
+      "interaction": "urshanabi_ferry",
       "frame_sfx": {
         "dice_loop": {
           "frame": 4,
           "sfx": "dice_roll"
         }
-      }
+      },
+      "interact_range": 120
+    },
+    {
+      "id": "utnapishtim",
+      "display_name": "우트나피쉬팀",
+      "height_ratio": 0.98,
+      "visual_scale_multiplier": 1.3,
+      "sheet_dir": "assets/sprites/npcs/utnapishtim",
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
+        }
+      ],
+      "face_player": false,
+      "three_way": false,
+      "initial_pose": "front",
+      "random_start": true,
+      "interactable": false,
+      "interaction": ""
     }
   ]
 }

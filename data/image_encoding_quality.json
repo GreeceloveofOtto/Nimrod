@@ -2710,5 +2710,35 @@
     "bbox_same": true,
     "encoder": "adaptive RGB64 palette / lossless WebP container",
     "palette_ssim": 0.9702591269959878
+  },
+  {
+    "path": "assets/props/huluppu_trunk.webp",
+    "source": "props/huluppu_trunk.png",
+    "source_archive": "pack_source/props/huluppu_trunk.png",
+    "before": 2471076,
+    "after": 259094,
+    "ssim": 1.0,
+    "mode": "lossy",
+    "quality": 86,
+    "alpha_mae": 0.0018087121212121211,
+    "rgb_mae": 2.737700785682232,
+    "bbox_same": true,
+    "transparent": true
+  },
+  {
+    "path": "assets/props/utnapishtim_hut.webp",
+    "source": "props/utnapishtim_hut.png",
+    "source_archive": "pack_source/props/utnapishtim_hut.png",
+    "before": 121965,
+    "after": 45252,
+    "ssim": 1.0,
+    "mode": "lossy",
+    "quality": 100,
+    "alpha_mae": 0.0,
+    "rgb_mae": 2.979611665224454,
+    "bbox_same": true,
+    "transparent": true,
+    "encoder": "adaptive RGB64 palette / lossless WebP container",
+    "palette_ssim": 0.994101259547064
   }
 ]

@@ -534,6 +534,11 @@
     "edge_black_fraction": 0.03,
     "source": "art_manifest"
   },
+  "assets/props/huluppu_trunk.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
   "assets/props/kitchen_dining_table.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
@@ -695,6 +700,11 @@
     "source": "art_manifest"
   },
   "assets/props/upper_walkway.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/props/utnapishtim_hut.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
     "source": "art_manifest"
@@ -2100,6 +2110,11 @@
     "source": "art_manifest"
   },
   "assets/sprites/npcs/urshanabi/dice_loop.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/npcs/utnapishtim/idle.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
     "source": "art_manifest"

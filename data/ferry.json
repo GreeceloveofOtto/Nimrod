@@ -1,0 +1,21 @@
+{
+  "paper_seconds": 0.6,
+  "boarding_position": [
+    1540,
+    814
+  ],
+  "boarding_seconds": 1.5,
+  "fade_out_seconds": 3.0,
+  "fade_in_seconds": 2.5,
+  "disembark_seconds": 1.0,
+  "ashore_position": [
+    530,
+    880
+  ],
+  "arrival_bgm_db": -12,
+  "rear_locked_message": "아직 이곳을 떠날 수 없다",
+  "new_assets_budget_bytes": 512000,
+  "left_notice_distance": 80,
+  "notice_seconds": 2.0,
+  "cancel_audio_seconds": 0.2
+}

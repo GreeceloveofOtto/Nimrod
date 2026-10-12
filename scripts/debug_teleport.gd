@@ -12,6 +12,12 @@ func _unhandled_input(event: InputEvent) -> void:
     if key.physical_keycode == KEY_Y:
         get_node("/root/SceneManager").player.debug_hp_floor = not get_node("/root/SceneManager").player.debug_hp_floor
         get_viewport().set_input_as_handled()
+    elif key.physical_keycode == KEY_F8:
+        await ferry_debug(false)
+        get_viewport().set_input_as_handled()
+    elif key.physical_keycode == KEY_F9:
+        await ferry_debug(true)
+        get_viewport().set_input_as_handled()
     elif key.physical_keycode in [KEY_F6, KEY_F7]:
         var next: int = get_node("/root/Story").stage() + (1 if key.physical_keycode == KEY_F6 else -1)
         get_node("/root/Story").debug_stage(next)
@@ -32,3 +38,13 @@ func teleport(level_id: String, spawn_name: String) -> bool:
     if get_tree().paused or get_node("/root/Dialogue").active or get_node("/root/SceneManager").is_transitioning or get_node("/root/SceneManager").player_locked:
         return false
     return await get_node("/root/SceneManager").go_to(level_id, spawn_name, {"instant": true})
+
+func ferry_debug(arrived: bool) -> bool:
+    if get_tree().paused or get_node("/root/SceneManager").player_locked or get_node("/root/SceneManager").is_transitioning:
+        return false
+    var story: Node = get_node("/root/Story")
+    story.debug_stage(18 if arrived else 17)
+    var manager: Node = get_node("/root/SceneManager")
+    var succeeded: bool = await manager.go_to("TiamatZone" if arrived else "DeathSea","Spawn_FromFerry" if arrived else "Spawn_DebugUrshanabi",{"instant":true,"debug_reload":true})
+    manager.set_player_locked(false)
+    return succeeded

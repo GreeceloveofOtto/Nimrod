@@ -33,9 +33,9 @@ func _run() -> void:
     hero.action = "dead"
     await manager.handle_death()
     _check(hero.hp==hero.get_max_hp() and hero.action=="normal","Death returns to checkpoint at full current maximum")
-    await manager.restart_run()
+    await manager.full_reset_run()
     _check(manager.current_level.level_id=="NimrodHome" and root.get_node("GameState").get_weapon()=="none" and not root.get_node("Rampage").unlocked(),"F5 starts a fresh run")
-    _check(FileAccess.file_exists(save.save_path),"F5 retains disk checkpoint")
+    _check(not FileAccess.file_exists(save.save_path),"F5 deletes disk checkpoint in stage12")
     var migrated: Dictionary = save.migrate_save({"version":0,"level":"CastleF2","position":[800,620],"run_flags":{"prosthetic_equipped":true,"weapon":"axe"}})
     _check(migrated["version"]==1 and migrated["run_flags"]["helmet_equipped"],"Older versions repair missing helmet and defaults")
     for suffix in ["",".bak"]:

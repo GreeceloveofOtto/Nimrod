@@ -27,7 +27,7 @@ def stage9_budgets():
  limits={'humbaba':4.5,'npcs':1.4,'player':.4,'anur_fx':.3,'tables':.8,'audio':.3,'other':.3}
  return {'bytes':totals,'limits_mib':limits,'total_bytes':sum(totals.values()),'passed':sum(totals.values())<=8*1048576 and all(totals[k]<=v*1048576 for k,v in limits.items())}
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--output',default='archive/stage9/size_final.json');p.add_argument('--stage9-budget',action='store_true');p.add_argument('--stage10-budget',action='store_true');p.add_argument('--stage11-budget',action='store_true');a=p.parse_args();d=measure()
+ p=argparse.ArgumentParser();p.add_argument('--output',default='archive/stage9/size_final.json');p.add_argument('--stage9-budget',action='store_true');p.add_argument('--stage10-budget',action='store_true');p.add_argument('--stage11-budget',action='store_true');p.add_argument('--stage12-budget',action='store_true');a=p.parse_args();d=measure()
  if a.stage9_budget:d['new_content']=stage9_budgets()
  if a.stage10_budget:
   from measure_stage10 import budgets
@@ -36,4 +36,7 @@ if __name__=='__main__':
   from measure_stage11 import budgets
   d['new_content']=budgets()
   d['new_content']['passed']=d['new_content']['passed'] and d['total_bytes']<=50*1048576
- out=ROOT/a.output;out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(d,indent=2));print(json.dumps({k:v for k,v in d.items() if k!='top40'},indent=2));sys.exit(1 if (a.stage9_budget or a.stage10_budget or a.stage11_budget) and not d['new_content']['passed'] else 0)
+ if a.stage12_budget:
+  budget=json.loads((ROOT/'data/stage12_budget.json').read_text());new={n:(ROOT/n).stat().st_size for n in budget['new_assets']}
+  d['new_content']={'bytes':new,'total_bytes':sum(new.values()),'limit_bytes':budget['new_assets_limit_bytes'],'passed':sum(new.values())<=budget['new_assets_limit_bytes'] and d['total_bytes']<budget['baseline_assets_bytes']}
+ out=ROOT/a.output;out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(d,indent=2));print(json.dumps({k:v for k,v in d.items() if k!='top40'},indent=2));sys.exit(1 if (a.stage9_budget or a.stage10_budget or a.stage11_budget or a.stage12_budget) and not d['new_content']['passed'] else 0)

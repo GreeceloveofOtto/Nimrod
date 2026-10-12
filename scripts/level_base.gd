@@ -104,18 +104,22 @@ func _make_backgrounds() -> void:
         if is_equal_approx(ratio, 1.0):
             var image := Art.add_image(self, str(entry["path"]), at, size_px, int(entry.get("z", 0)))
             image.name = str(entry.get("name", "Background"))
-            image.modulate = bg_dim
+            image.modulate = bg_dim * _entry_color(entry)
         else:
             var layer := Parallax2D.new()
             layer.name = str(entry.get("name", "Parallax"))
             layer.scroll_scale = Vector2(ratio, float(entry.get("ratio_y", 0.0)))
             layer.z_index = int(entry.get("z", 0))
-            layer.modulate = bg_dim
+            layer.modulate = bg_dim * _entry_color(entry)
             if entry.has("repeat_size"):
                 layer.repeat_size = _vector(entry["repeat_size"])
                 layer.repeat_times = int(entry.get("repeat_times", 4))
             add_child(layer)
             Art.add_image(layer, str(entry["path"]), at, size_px)
+
+func _entry_color(entry: Dictionary) -> Color:
+    var value: Array = entry.get("modulate",[1,1,1,1])
+    return Color(float(value[0]),float(value[1]),float(value[2]),float(value[3]) if value.size()>3 else 1.)
 
 func _make_world() -> void:
     for entry: Dictionary in config.get("travel_zones",[]):
@@ -168,6 +172,9 @@ func _make_world() -> void:
     for platform in config.get("platforms", []):
         var at: Vector2 = _vector(platform["position"])
         var platform_width: float = float(platform["width"])
+        if bool(platform.get("collision_only",false)):
+            _make_surface(at.x,at.y,platform_width,float(world_settings["platform_collision_height"]),true,0.0)
+            continue
         var art_height: float = float(platform.get("art_height", world_settings["platform_art_height"]))
         _make_surface(at.x, at.y, platform_width, float(world_settings["platform_collision_height"]), true, art_height, str(platform.get("art", world_settings["platform_art"])))
         Art.add_image(self, str(platform.get("art", world_settings["platform_art"])), at, Vector2(platform_width, art_height), -3)
@@ -272,6 +279,7 @@ func _make_props() -> void:
         if not get_node("/root/Story").matches(decoration.get("presence", {})):
             continue
         var prop := Art.add_image(self, str(decoration["path"]), _vector(decoration["position"]), _vector(decoration["size"]), int(decoration.get("z", 0)))
+        prop.modulate = _entry_color(decoration)
         if decoration.has("name"):
             prop.name = str(decoration["name"])
         if decoration.has("story_art"):

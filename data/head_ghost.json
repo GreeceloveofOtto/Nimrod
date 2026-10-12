@@ -1,0 +1,17 @@
+{
+  "head_above_px": 60,
+  "head_half_width_px": 80,
+  "stored_gutter_px": 2,
+  "helmet_height_allowance_px": 45,
+  "roll_separation": {
+    "source": "archive/stage12/r40_roll_only.png",
+    "pair_frames_one_based": [
+      5,
+      6
+    ],
+    "upper_boundary_x": 915,
+    "lower_boundary_x": 950,
+    "boundary_y": 155,
+    "operation": "crop/alpha-mask existing generated pixels; no painted pixel"
+  }
+}

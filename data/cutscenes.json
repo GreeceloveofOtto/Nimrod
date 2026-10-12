@@ -403,6 +403,18 @@
         "type": "set_flag",
         "flag": "shimati_done"
       }
+    ],
+    "urshanabi_paper": [
+      {
+        "type": "ferry_event",
+        "event": "paper"
+      }
+    ],
+    "ferry_boarding": [
+      {
+        "type": "ferry_event",
+        "event": "board"
+      }
     ]
   }
 }

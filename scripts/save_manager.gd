@@ -74,12 +74,18 @@ func _boss_active() -> bool:
     var manager: Node = get_node("/root/SceneManager")
     return is_instance_valid(manager.main) and manager.main.get_node("HUD").boss_panel.visible
 
-func save_game() -> bool:
-    if not can_save():
+func snapshot_data() -> Dictionary:
+    var manager: Node = get_node("/root/SceneManager")
+    var hero: NimrodPlayer = manager.player
+    return {"version":1,"level":manager.current_level.level_id,"position":[hero.global_position.x,hero.global_position.y],"facing":hero.facing,"hp":hero.hp,"run_flags":get_node("/root/GameState").run_flags.duplicate(true),"rampage":get_node("/root/Rampage").value(),"cooldowns":{"anur_light":0,"devour":0},"timestamp":Time.get_unix_time_from_system()}
+
+func save_game(arrival_checkpoint: bool = false) -> bool:
+    var destination_ok: bool = arrival_checkpoint and get_node("/root/Story").is_flag("tiamat_arrived") and get_node("/root/SceneManager").current_level.level_id == "TiamatZone" and not get_node("/root/Cutscene").active and not get_node("/root/Dialogue").active and not get_node("/root/SceneManager").is_transitioning and not get_node("/root/SceneManager").player_locked
+    if not can_save() and not destination_ok:
         return false
     var manager: Node = get_node("/root/SceneManager")
     var hero: NimrodPlayer = manager.player
-    var data: Dictionary = {"version":1,"level":manager.current_level.level_id,"position":[hero.global_position.x,hero.global_position.y],"facing":hero.facing,"hp":hero.hp,"run_flags":get_node("/root/GameState").run_flags.duplicate(true),"rampage":get_node("/root/Rampage").value(),"cooldowns":{"anur_light":0,"devour":0},"timestamp":Time.get_unix_time_from_system()}
+    var data: Dictionary = snapshot_data()
     var file := FileAccess.open(save_path + ".tmp", FileAccess.WRITE)
     if file == null:
         return _failed()
@@ -95,8 +101,17 @@ func save_game() -> bool:
         return _failed()
     hero.skill_cooldown_left = 0
     hero.devour_cooldown_left = 0
-    get_node("/root/SceneManager").show_toast("저장되었다",float(settings["toast_seconds"]))
-    get_node("/root/Audio").play_sfx("save_chime")
+    if not arrival_checkpoint:
+        get_node("/root/SceneManager").show_toast("저장되었다",float(settings["toast_seconds"]))
+        get_node("/root/Audio").play_sfx("save_chime")
+    return true
+
+func erase_save() -> bool:
+    for suffix in ["", ".bak", ".tmp", ".recovery.tmp"]:
+        var path: String = save_path + str(suffix)
+        if FileAccess.file_exists(path) and DirAccess.remove_absolute(path) != OK:
+            return false
+    last_diagnostic = ""
     return true
 
 func _failed() -> bool:

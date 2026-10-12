@@ -3854,6 +3854,15 @@
       "rgb_mae": 2.9516234252818845,
       "alpha_mae": 0.0,
       "bbox_same": true
+    },
+    "assets/sprites/npcs/utnapishtim/idle.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9908136854387006,
+      "alpha_mae": 0.0,
+      "bbox_same": true
     }
   },
   "trim_margin": 2,

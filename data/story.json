@@ -114,6 +114,14 @@
       "flags": [
         "deathsea_arrived"
       ]
+    },
+    {
+      "stage": 18,
+      "flags": [
+        "paper_handed",
+        "ferry_boarded",
+        "tiamat_arrived"
+      ]
     }
   ],
   "night_color": [

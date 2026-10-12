@@ -342,6 +342,13 @@ func stop_bgm(fade: float = 1.0) -> void:
     _bgm_tween.tween_property(_bgm, "volume_db", SILENT_DB, fade)
     _bgm_tween.tween_callback(_finish_bgm_stop)
 
+func fade_bgm_volume(volume: float, seconds: float, wait_for_end: bool = true) -> void:
+    _cancel_bgm_tween()
+    _bgm_tween = create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+    _bgm_tween.tween_property(_bgm,"volume_db",volume,maxf(.001,seconds))
+    if wait_for_end:
+        await _bgm_tween.finished
+
 func _cancel_bgm_tween() -> void:
     if _bgm_tween != null and _bgm_tween.is_valid():
         _bgm_tween.kill()

@@ -447,3 +447,13 @@ GL Compatibility 실제 렌더링: X11/Mesa llvmpipe, 1배·2배 비교4942회, 
 | assets/sprites/player/axe_prosthetic_helm_r40/manifest.json | roll | 12 | 0 |  |
 | assets/sprites/player/axe_prosthetic_helm_r40/manifest.json | death | 8 | 0 |  |
 | assets/sprites/player/axe_prosthetic_helm_r40/manifest.json | devour | 8 | 0 |  |
+
+
+## 12단계
+
+- 투구·의수4형태와 한 팔 투구 점검.402px idle 전체 높이(투구 포함), r90 기존418px 유지. 발 앵커[320,600], 저장 여백2px.
+- 머리 위60px/±80px 연결 성분과 셀 침범 검사를 플레이어 필수 QA에 추가.148클립0오류.
+-438전체 클립0오류, 검토 경고36개(기존 FX/무기 분리·루프 등). 임의로 경고를 실패에서 제거하지 않았다.
+- 새로운 생성판의 이전 줄 신발 잔여는 QA가 검출해 패킹 단계에서 제외. 보호 대상 본체/뿔/도끼 픽셀 유지.
+-602이미지 알파0오류. 우트나피쉬팀 높이 검사에 일반 NPC의 명시적1.3배 표시배율을 반영하고 기존 토인 기준도 동일하게 유지.
+- 실제 GL 아틀라스/독립 텍스처 비교 수정 전후 각1106회, 차이0. before/after 캡처9종과 알파는 별도 QA ZIP.

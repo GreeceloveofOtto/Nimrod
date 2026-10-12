@@ -594,5 +594,8 @@
   "assets/sprites/player/axe_prosthetic_helm_r40/run.png": "assets/sprites/player/axe_prosthetic_helm_r40/run.webp",
   "assets/sprites/player/axe_prosthetic_helm_r40/death.png": "assets/sprites/player/axe_prosthetic_helm_r40/death.webp",
   "assets/sprites/player/axe_onearm_helm/idle.png": "assets/sprites/player/axe_onearm_helm/idle.webp",
-  "assets/sprites/player/axe_onearm_helm/helm_equip.png": "assets/sprites/player/axe_onearm_helm/helm_equip.webp"
+  "assets/sprites/player/axe_onearm_helm/helm_equip.png": "assets/sprites/player/axe_onearm_helm/helm_equip.webp",
+  "assets/props/huluppu_trunk.png": "assets/props/huluppu_trunk.webp",
+  "assets/props/utnapishtim_hut.png": "assets/props/utnapishtim_hut.webp",
+  "assets/sprites/npcs/utnapishtim/idle.png": "assets/sprites/npcs/utnapishtim/idle.webp"
 }

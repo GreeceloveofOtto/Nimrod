@@ -19,7 +19,7 @@ func _run() -> void:
     _check(manager.current_level.level_id=="DeathSea" and story_state.stage()==17,"Arrival advances story")
     _check(manager.current_level.config["width"]==1800 and get_nodes_in_group("enemies").is_empty(),"Quiet island and no enemies")
     var npc: NPC = manager.current_level.npcs["urshanabi"]
-    _check(npc.npc_id=="urshanabi" and npc._interaction_complete(),"Ferryman does not interact")
+    _check(npc.npc_id=="urshanabi" and npc.interactable and not npc._interaction_complete(),"Ferryman now offers stage12 passage dialogue")
     _check(npc.clip_data["dice_loop"]["frames"]==8,"Dice loop has eight poses")
     _check(int(manager.current_level.config["walk_bounds"][0])==0 and int(manager.current_level.config["walk_bounds"][1])==1400,"Invisible walls enclose painted island")
     hero.global_position = Vector2(1380,880)

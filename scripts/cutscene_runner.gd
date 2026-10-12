@@ -77,6 +77,8 @@ func _step(step: Dictionary) -> void:
     var node: Node2D = actor(str(step.get("actor", "player")))
     var level: LevelBase = get_node("/root/SceneManager").current_level as LevelBase
     match str(step["type"]):
+        "ferry_event":
+            await get_node("/root/Ferry").event(str(step["event"]))
         "time_skip":
             await get_node("/root/Chapter").time_skip(str(step["id"]))
         "story_event":
