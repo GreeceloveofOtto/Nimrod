@@ -21,8 +21,8 @@
         600
       ],
       "image_size": [
-        1450,
-        221
+        1160,
+        177
       ],
       "trim": {
         "x": 199,
@@ -31,22 +31,22 @@
         "h": 368
       },
       "storage_scale": [
-        0.5991735537190083,
-        0.6005434782608695
+        0.4793388429752066,
+        0.48097826086956524
       ],
       "stored_frame_size": [
-        383,
-        384
+        307,
+        308
       ],
       "stored_anchor_px": [
-        191.73553719008265,
-        360.32608695652175
+        153.38842975206612,
+        288.5869565217391
       ],
       "storage_trim": {
-        "x": 119.23553719008264,
-        "y": 140.52717391304347,
-        "w": 145,
-        "h": 221
+        "x": 95.38842975206612,
+        "y": 112.54891304347827,
+        "w": 116,
+        "h": 177
       },
       "stored_columns": 10,
       "frame_map": [
@@ -61,8 +61,25 @@
         8,
         9
       ],
-      "effective_density": 2,
-      "ssim": 0.9818052829046069
+      "effective_density": 1.6,
+      "ssim": 0.9506886578726294,
+      "qa": {
+        "expected_pose_heights": [
+          363,
+          362,
+          362,
+          362,
+          362,
+          363,
+          364,
+          363,
+          363,
+          363
+        ],
+        "pose_height_exception": false,
+        "movement": false,
+        "reference": "immutable Stage8 authored pose, checked at canonical resolution after resampling"
+      }
     },
     {
       "name": "walk",
@@ -80,8 +97,8 @@
         600
       ],
       "image_size": [
-        1700,
-        203
+        1360,
+        162
       ],
       "trim": {
         "x": 178,
@@ -90,22 +107,22 @@
         "h": 338
       },
       "storage_scale": [
-        0.5985915492957746,
-        0.6005917159763313
+        0.4788732394366197,
+        0.47928994082840237
       ],
       "stored_frame_size": [
-        383,
-        384
+        306,
+        307
       ],
       "stored_anchor_px": [
-        191.54929577464787,
-        360.35502958579883
+        153.2394366197183,
+        287.5739644970414
       ],
       "storage_trim": {
-        "x": 106.54929577464789,
-        "y": 158.55621301775147,
-        "w": 170,
-        "h": 203
+        "x": 85.2394366197183,
+        "y": 126.53254437869822,
+        "w": 136,
+        "h": 162
       },
       "stored_columns": 10,
       "frame_map": [
@@ -120,8 +137,25 @@
         8,
         9
       ],
-      "effective_density": 2,
-      "ssim": 0.9856566933421079
+      "effective_density": 1.6,
+      "ssim": 0.9590561607813776,
+      "qa": {
+        "expected_pose_heights": [
+          334,
+          329,
+          328,
+          325,
+          325,
+          329,
+          332,
+          329,
+          328,
+          328
+        ],
+        "pose_height_exception": true,
+        "movement": false,
+        "reference": "immutable Stage8 authored pose, checked at canonical resolution after resampling"
+      }
     },
     {
       "name": "crouch_enter",
@@ -174,7 +208,18 @@
         3
       ],
       "effective_density": 2.2,
-      "ssim": 0.9449557970459328
+      "ssim": 0.9449557970459328,
+      "qa": {
+        "expected_pose_heights": [
+          291,
+          257,
+          222,
+          173
+        ],
+        "pose_height_exception": true,
+        "movement": true,
+        "reference": "immutable Stage8 authored pose, checked at canonical resolution after resampling"
+      }
     },
     {
       "name": "crouch_idle",
@@ -229,7 +274,20 @@
         5
       ],
       "effective_density": 2.2,
-      "ssim": 0.9348672958692088
+      "ssim": 0.9348672958692088,
+      "qa": {
+        "expected_pose_heights": [
+          191,
+          183,
+          198,
+          205,
+          190,
+          204
+        ],
+        "pose_height_exception": true,
+        "movement": true,
+        "reference": "immutable Stage8 authored pose, checked at canonical resolution after resampling"
+      }
     },
     {
       "name": "crouch_exit",
@@ -247,8 +305,8 @@
         600
       ],
       "image_size": [
-        1496,
-        184
+        1200,
+        147
       ],
       "trim": {
         "x": 8,
@@ -257,22 +315,22 @@
         "h": 307
       },
       "storage_scale": [
-        0.5993589743589743,
-        0.5993485342019544
+        0.4807692307692308,
+        0.4788273615635179
       ],
       "stored_frame_size": [
-        384,
-        384
+        308,
+        306
       ],
       "stored_anchor_px": [
-        191.7948717948718,
-        359.60912052117266
+        153.84615384615384,
+        287.2964169381107
       ],
       "storage_trim": {
-        "x": 4.794871794871795,
-        "y": 176.80781758957656,
-        "w": 374,
-        "h": 184
+        "x": 3.8461538461538463,
+        "y": 141.2540716612378,
+        "w": 300,
+        "h": 147
       },
       "stored_columns": 4,
       "frame_map": [
@@ -281,8 +339,19 @@
         2,
         3
       ],
-      "effective_density": 2,
-      "ssim": 0.970465483904997
+      "effective_density": 1.6,
+      "ssim": 0.9504456471436159,
+      "qa": {
+        "expected_pose_heights": [
+          217,
+          256,
+          287,
+          303
+        ],
+        "pose_height_exception": true,
+        "movement": true,
+        "reference": "immutable Stage8 authored pose, checked at canonical resolution after resampling"
+      }
     },
     {
       "name": "jump_start",
@@ -300,8 +369,8 @@
         600
       ],
       "image_size": [
-        696,
-        199
+        628,
+        179
       ],
       "trim": {
         "x": 175,
@@ -310,22 +379,22 @@
         "h": 332
       },
       "storage_scale": [
-        0.6,
-        0.5993975903614458
+        0.5413793103448276,
+        0.5391566265060241
       ],
       "stored_frame_size": [
-        384,
-        384
+        346,
+        345
       ],
       "stored_anchor_px": [
-        192.0,
-        359.6385542168675
+        173.24137931034483,
+        323.49397590361446
       ],
       "storage_trim": {
-        "x": 105.0,
-        "y": 161.83734939759037,
-        "w": 174,
-        "h": 199
+        "x": 94.74137931034483,
+        "y": 145.5722891566265,
+        "w": 157,
+        "h": 179
       },
       "stored_columns": 4,
       "frame_map": [
@@ -334,8 +403,19 @@
         2,
         3
       ],
-      "effective_density": 2,
-      "ssim": 0.9590762077520087
+      "effective_density": 1.8,
+      "ssim": 0.9403397815631102,
+      "qa": {
+        "expected_pose_heights": [
+          257,
+          222,
+          280,
+          328
+        ],
+        "pose_height_exception": true,
+        "movement": true,
+        "reference": "immutable Stage8 authored pose, checked at canonical resolution after resampling"
+      }
     },
     {
       "name": "jump_rise",
@@ -353,8 +433,8 @@
         600
       ],
       "image_size": [
-        1098,
-        199
+        990,
+        179
       ],
       "trim": {
         "x": 168,
@@ -363,22 +443,22 @@
         "h": 332
       },
       "storage_scale": [
-        0.6,
-        0.5993975903614458
+        0.5409836065573771,
+        0.5391566265060241
       ],
       "stored_frame_size": [
-        384,
-        384
+        346,
+        345
       ],
       "stored_anchor_px": [
-        192.0,
-        359.6385542168675
+        173.11475409836066,
+        323.49397590361446
       ],
       "storage_trim": {
-        "x": 100.8,
-        "y": 161.83734939759037,
-        "w": 183,
-        "h": 199
+        "x": 90.88524590163935,
+        "y": 145.5722891566265,
+        "w": 165,
+        "h": 179
       },
       "stored_columns": 6,
       "frame_map": [
@@ -389,8 +469,21 @@
         4,
         5
       ],
-      "effective_density": 2,
-      "ssim": 0.9577740348809309
+      "effective_density": 1.8,
+      "ssim": 0.9384185818642998,
+      "qa": {
+        "expected_pose_heights": [
+          328,
+          324,
+          268,
+          303,
+          327,
+          324
+        ],
+        "pose_height_exception": true,
+        "movement": true,
+        "reference": "immutable Stage8 authored pose, checked at canonical resolution after resampling"
+      }
     },
     {
       "name": "fall",
@@ -408,8 +501,8 @@
         600
       ],
       "image_size": [
-        1164,
-        217
+        1044,
+        195
       ],
       "trim": {
         "x": 158,
@@ -418,22 +511,22 @@
         "h": 361
       },
       "storage_scale": [
-        0.6006191950464397,
-        0.6011080332409973
+        0.5386996904024768,
+        0.5401662049861495
       ],
       "stored_frame_size": [
-        384,
-        385
+        345,
+        346
       ],
       "stored_anchor_px": [
-        192.19814241486068,
-        360.6648199445983
+        172.38390092879257,
+        324.09972299168976
       ],
       "storage_trim": {
-        "x": 94.89783281733746,
-        "y": 144.86703601108033,
-        "w": 194,
-        "h": 217
+        "x": 85.11455108359134,
+        "y": 130.18005540166206,
+        "w": 174,
+        "h": 195
       },
       "stored_columns": 6,
       "frame_map": [
@@ -444,8 +537,21 @@
         4,
         5
       ],
-      "effective_density": 2,
-      "ssim": 0.9621095111043599
+      "effective_density": 1.8,
+      "ssim": 0.9439426384977911,
+      "qa": {
+        "expected_pose_heights": [
+          347,
+          335,
+          299,
+          266,
+          266,
+          357
+        ],
+        "pose_height_exception": true,
+        "movement": true,
+        "reference": "immutable Stage8 authored pose, checked at canonical resolution after resampling"
+      }
     },
     {
       "name": "land",
@@ -463,8 +569,8 @@
         600
       ],
       "image_size": [
-        1155,
-        229
+        925,
+        183
       ],
       "trim": {
         "x": 128,
@@ -473,22 +579,22 @@
         "h": 381
       },
       "storage_scale": [
-        0.6,
-        0.6010498687664042
+        0.4805194805194805,
+        0.48031496062992124
       ],
       "stored_frame_size": [
-        384,
-        385
+        308,
+        307
       ],
       "stored_anchor_px": [
-        192.0,
-        360.62992125984255
+        153.76623376623377,
+        288.18897637795277
       ],
       "storage_trim": {
-        "x": 76.8,
-        "y": 132.83202099737534,
-        "w": 231,
-        "h": 229
+        "x": 61.506493506493506,
+        "y": 106.14960629921259,
+        "w": 185,
+        "h": 183
       },
       "stored_columns": 5,
       "frame_map": [
@@ -498,8 +604,20 @@
         3,
         4
       ],
-      "effective_density": 2,
-      "ssim": 0.9899525353566769
+      "effective_density": 1.6,
+      "ssim": 0.969942991735209,
+      "qa": {
+        "expected_pose_heights": [
+          377,
+          252,
+          205,
+          295,
+          363
+        ],
+        "pose_height_exception": true,
+        "movement": true,
+        "reference": "immutable Stage8 authored pose, checked at canonical resolution after resampling"
+      }
     },
     {
       "name": "drop_through",
@@ -517,8 +635,8 @@
         600
       ],
       "image_size": [
-        940,
-        217
+        750,
+        174
       ],
       "trim": {
         "x": 164,
@@ -527,22 +645,22 @@
         "h": 362
       },
       "storage_scale": [
-        0.6006389776357828,
-        0.5994475138121547
+        0.4792332268370607,
+        0.48066298342541436
       ],
       "stored_frame_size": [
-        384,
-        384
+        307,
+        308
       ],
       "stored_anchor_px": [
-        192.20447284345047,
-        359.6685082872928
+        153.3546325878594,
+        288.3977900552486
       ],
       "storage_trim": {
-        "x": 98.50479233226837,
-        "y": 143.86740331491714,
-        "w": 188,
-        "h": 217
+        "x": 78.59424920127796,
+        "y": 115.35911602209944,
+        "w": 150,
+        "h": 174
       },
       "stored_columns": 5,
       "frame_map": [
@@ -552,8 +670,20 @@
         3,
         4
       ],
-      "effective_density": 2,
-      "ssim": 0.9883495347739503
+      "effective_density": 1.6,
+      "ssim": 0.9652459881093821,
+      "qa": {
+        "expected_pose_heights": [
+          294,
+          318,
+          358,
+          306,
+          191
+        ],
+        "pose_height_exception": true,
+        "movement": true,
+        "reference": "immutable Stage8 authored pose, checked at canonical resolution after resampling"
+      }
     },
     {
       "name": "hurt",
@@ -571,8 +701,8 @@
         600
       ],
       "image_size": [
-        950,
-        227
+        760,
+        181
       ],
       "trim": {
         "x": 162,
@@ -581,22 +711,22 @@
         "h": 378
       },
       "storage_scale": [
-        0.6012658227848101,
-        0.6005291005291006
+        0.4810126582278481,
+        0.47883597883597884
       ],
       "stored_frame_size": [
-        385,
-        384
+        308,
+        306
       ],
       "stored_anchor_px": [
-        192.40506329113924,
-        360.3174603174603
+        153.9240506329114,
+        287.3015873015873
       ],
       "storage_trim": {
-        "x": 97.40506329113924,
-        "y": 134.5185185185185,
-        "w": 190,
-        "h": 227
+        "x": 77.92405063291139,
+        "y": 107.25925925925925,
+        "w": 152,
+        "h": 181
       },
       "stored_columns": 5,
       "frame_map": [
@@ -606,8 +736,20 @@
         3,
         4
       ],
-      "effective_density": 2,
-      "ssim": 0.986299070981681
+      "effective_density": 1.6,
+      "ssim": 0.9595393101833207,
+      "qa": {
+        "expected_pose_heights": [
+          373,
+          371,
+          338,
+          343,
+          363
+        ],
+        "pose_height_exception": true,
+        "movement": true,
+        "reference": "immutable Stage8 authored pose, checked at canonical resolution after resampling"
+      }
     },
     {
       "name": "death",
@@ -625,8 +767,8 @@
         600
       ],
       "image_size": [
-        1816,
-        217
+        1456,
+        174
       ],
       "trim": {
         "x": 130,
@@ -635,22 +777,22 @@
         "h": 362
       },
       "storage_scale": [
-        0.5989445910290238,
-        0.5994475138121547
+        0.48021108179419525,
+        0.48066298342541436
       ],
       "stored_frame_size": [
-        383,
-        384
+        307,
+        308
       ],
       "stored_anchor_px": [
-        191.6622691292876,
-        359.6685082872928
+        153.66754617414247,
+        288.3977900552486
       ],
       "storage_trim": {
-        "x": 77.86279683377309,
-        "y": 143.86740331491714,
-        "w": 227,
-        "h": 217
+        "x": 62.42744063324538,
+        "y": 115.35911602209944,
+        "w": 182,
+        "h": 174
       },
       "stored_columns": 8,
       "frame_map": [
@@ -663,8 +805,23 @@
         6,
         7
       ],
-      "effective_density": 2,
-      "ssim": 0.9901287882075777
+      "effective_density": 1.6,
+      "ssim": 0.9710885563250576,
+      "qa": {
+        "expected_pose_heights": [
+          358,
+          298,
+          253,
+          218,
+          162,
+          137,
+          131,
+          137
+        ],
+        "pose_height_exception": true,
+        "movement": true,
+        "reference": "immutable Stage8 authored pose, checked at canonical resolution after resampling"
+      }
     },
     {
       "name": "attack_1",
@@ -682,8 +839,8 @@
         600
       ],
       "image_size": [
-        2184,
-        226
+        1968,
+        203
       ],
       "trim": {
         "x": 92,
@@ -692,22 +849,22 @@
         "h": 376
       },
       "storage_scale": [
-        0.6,
-        0.601063829787234
+        0.5406593406593406,
+        0.5398936170212766
       ],
       "stored_frame_size": [
-        384,
-        385
+        346,
+        346
       ],
       "stored_anchor_px": [
-        192.0,
-        360.63829787234044
+        173.01098901098902,
+        323.93617021276594
       ],
       "storage_trim": {
-        "x": 55.2,
-        "y": 135.8404255319149,
-        "w": 273,
-        "h": 226
+        "x": 49.74065934065934,
+        "y": 122.01595744680851,
+        "w": 246,
+        "h": 203
       },
       "stored_columns": 8,
       "frame_map": [
@@ -720,8 +877,23 @@
         6,
         7
       ],
-      "effective_density": 2,
-      "ssim": 0.9575429516954251
+      "effective_density": 1.8,
+      "ssim": 0.9427785789524755,
+      "qa": {
+        "expected_pose_heights": [
+          256,
+          372,
+          298,
+          258,
+          252,
+          251,
+          296,
+          363
+        ],
+        "pose_height_exception": true,
+        "movement": true,
+        "reference": "immutable Stage8 authored pose, checked at canonical resolution after resampling"
+      }
     },
     {
       "name": "attack_2",
@@ -777,8 +949,23 @@
         6,
         7
       ],
-      "effective_density": 2,
-      "ssim": 0.9397296434124242
+      "effective_density": 2.0,
+      "ssim": 0.9397296434124242,
+      "qa": {
+        "expected_pose_heights": [
+          317,
+          290,
+          299,
+          378,
+          384,
+          352,
+          321,
+          363
+        ],
+        "pose_height_exception": true,
+        "movement": true,
+        "reference": "immutable Stage8 authored pose, checked at canonical resolution after resampling"
+      }
     },
     {
       "name": "attack_3",
@@ -836,8 +1023,25 @@
         8,
         9
       ],
-      "effective_density": 2,
-      "ssim": 0.9431197769813361
+      "effective_density": 2.0,
+      "ssim": 0.9431197769813361,
+      "qa": {
+        "expected_pose_heights": [
+          364,
+          393,
+          394,
+          375,
+          341,
+          329,
+          271,
+          337,
+          355,
+          363
+        ],
+        "pose_height_exception": true,
+        "movement": true,
+        "reference": "immutable Stage8 authored pose, checked at canonical resolution after resampling"
+      }
     },
     {
       "name": "attack_4",
@@ -855,8 +1059,8 @@
         600
       ],
       "image_size": [
-        3180,
-        226
+        2540,
+        180
       ],
       "frame_boundaries_seconds": [
         0,
@@ -878,22 +1082,22 @@
         "h": 376
       },
       "storage_scale": [
-        0.6,
-        0.601063829787234
+        0.47924528301886793,
+        0.4787234042553192
       ],
       "stored_frame_size": [
-        384,
-        385
+        307,
+        306
       ],
       "stored_anchor_px": [
-        192.0,
-        360.63829787234044
+        153.35849056603774,
+        287.2340425531915
       ],
       "storage_trim": {
-        "x": 33.0,
-        "y": 135.8404255319149,
-        "w": 318,
-        "h": 226
+        "x": 26.358490566037737,
+        "y": 108.19148936170212,
+        "w": 254,
+        "h": 180
       },
       "stored_columns": 10,
       "frame_map": [
@@ -908,8 +1112,25 @@
         8,
         9
       ],
-      "effective_density": 2,
-      "ssim": 0.9724524779221149
+      "effective_density": 1.6,
+      "ssim": 0.9343299448075518,
+      "qa": {
+        "expected_pose_heights": [
+          339,
+          320,
+          367,
+          372,
+          281,
+          272,
+          234,
+          233,
+          341,
+          363
+        ],
+        "pose_height_exception": true,
+        "movement": true,
+        "reference": "immutable Stage8 authored pose, checked at canonical resolution after resampling"
+      }
     },
     {
       "name": "run",
@@ -967,8 +1188,25 @@
         8,
         9
       ],
-      "effective_density": 2,
-      "ssim": 0.9372140706201175
+      "effective_density": 2.0,
+      "ssim": 0.9372140706201175,
+      "qa": {
+        "expected_pose_heights": [
+          320,
+          320,
+          320,
+          320,
+          320,
+          320,
+          320,
+          320,
+          320,
+          320
+        ],
+        "pose_height_exception": true,
+        "movement": false,
+        "reference": "immutable Stage8 authored pose, checked at canonical resolution after resampling"
+      }
     },
     {
       "name": "roll",
@@ -986,8 +1224,8 @@
         600
       ],
       "image_size": [
-        2904,
-        220
+        2616,
+        198
       ],
       "trim": {
         "x": 118,
@@ -996,22 +1234,22 @@
         "h": 367
       },
       "storage_scale": [
-        0.599009900990099,
-        0.5994550408719346
+        0.5396039603960396,
+        0.5395095367847411
       ],
       "stored_frame_size": [
-        383,
-        384
+        345,
+        345
       ],
       "stored_anchor_px": [
-        191.68316831683168,
-        359.6730245231608
+        172.67326732673268,
+        323.7057220708447
       ],
       "storage_trim": {
-        "x": 70.68316831683168,
-        "y": 140.87193460490462,
-        "w": 242,
-        "h": 220
+        "x": 63.67326732673267,
+        "y": 126.78474114441417,
+        "w": 218,
+        "h": 198
       },
       "stored_columns": 12,
       "frame_map": [
@@ -1028,8 +1266,27 @@
         10,
         11
       ],
-      "effective_density": 2,
-      "ssim": 0.9619759080668687
+      "effective_density": 1.8,
+      "ssim": 0.9462638620474338,
+      "qa": {
+        "expected_pose_heights": [
+          363,
+          152,
+          220,
+          220,
+          220,
+          203,
+          188,
+          257,
+          363,
+          363,
+          363,
+          363
+        ],
+        "pose_height_exception": true,
+        "movement": true,
+        "reference": "immutable Stage8 authored pose, checked at canonical resolution after resampling"
+      }
     }
   ]
 }

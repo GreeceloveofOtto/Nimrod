@@ -35,7 +35,8 @@
       "cedar_archer": "res://scripts/enemy_cedar_archer.gd",
       "cedar_wisp": "res://scripts/enemy_cedar_wisp.gd",
       "cedar_demon": "res://scripts/enemy_cedar_demon.gd",
-      "kala_ushumgal": "res://scripts/enemy_kala_ushumgal.gd"
+      "kala_ushumgal": "res://scripts/enemy_kala_ushumgal.gd",
+      "humbaba": "res://scripts/enemy_humbaba.gd"
     },
     "enemy_copy_spacing": 100,
     "gate_controller_script": "res://scripts/gate_controller.gd",
@@ -413,6 +414,10 @@
         "Spawn_Debug": [
           760,
           620
+        ],
+        "Spawn_Wake": [
+          760,
+          620
         ]
       },
       "backgrounds": [
@@ -470,7 +475,16 @@
           "target_spawn": "Spawn_FromCastle",
           "arrival_spawn": "Spawn_FromRearGate",
           "exit_direction": -1,
-          "ground_contact": true
+          "ground_contact": true,
+          "story_lock": {
+            "all": [
+              "time_skipped"
+            ],
+            "none": [
+              "castle_talks_done"
+            ]
+          },
+          "story_locked_message": "아직 이곳을 떠날 수 없다"
         }
       ],
       "npcs": [
@@ -491,6 +505,22 @@
           ],
           "interactable": true,
           "interaction": "parents_gift"
+        },
+        {
+          "id": "enkidua",
+          "position": [
+            1120,
+            620
+          ],
+          "presence": {
+            "all": [
+              "report_done"
+            ]
+          },
+          "interactable": true,
+          "interaction": "enkidua_intro",
+          "three_way": true,
+          "initial_pose": "front"
         }
       ],
       "enemies": [],
@@ -1161,7 +1191,12 @@
           "idle_clip": "sweep",
           "initial_facing": 1,
           "face_player": false,
-          "random_start": true
+          "random_start": true,
+          "presence": {
+            "none": [
+              "night"
+            ]
+          }
         },
         {
           "id": "servant_b",
@@ -1172,7 +1207,12 @@
           "idle_clip": "sweep",
           "initial_facing": -1,
           "face_player": false,
-          "random_start": true
+          "random_start": true,
+          "presence": {
+            "none": [
+              "night"
+            ]
+          }
         }
       ],
       "enemies": [],
@@ -2496,7 +2536,8 @@
             500,
             620
           ],
-          "idle_clip": "chop"
+          "idle_clip": "chop",
+          "interactable": false
         },
         {
           "id": "cook_b",
@@ -2504,7 +2545,8 @@
             720,
             620
           ],
-          "idle_clip": "stir"
+          "idle_clip": "stir",
+          "interactable": false
         },
         {
           "id": "cook_c",
@@ -2514,7 +2556,8 @@
           ],
           "idle_clip": "arrange",
           "instance_id": "cook_c_left",
-          "initial_facing": 1
+          "initial_facing": 1,
+          "interactable": false
         },
         {
           "id": "cook_c",
@@ -2524,7 +2567,8 @@
           ],
           "idle_clip": "arrange",
           "instance_id": "cook_c_right",
-          "initial_facing": -1
+          "initial_facing": -1,
+          "interactable": false
         }
       ],
       "enemies": [],
@@ -2575,7 +2619,13 @@
             900,
             90
           ],
-          "z": -2
+          "z": -2,
+          "name": "DinnerTable",
+          "story_art": {
+            "almost": "res://assets/props/villa_dining_table_wide.webp",
+            "full": "assets/props/villa_dining_table_full.webp",
+            "prep": "assets/props/villa_dining_table_prep.webp"
+          }
         }
       ],
       "steps": [],
@@ -2590,7 +2640,8 @@
         0.8,
         0.8,
         0.84
-      ]
+      ],
+      "dinner_seat": true
     },
     {
       "id": "VillaF3",
@@ -2663,14 +2714,48 @@
           "position": [
             900,
             620
-          ]
+          ],
+          "interactable": true,
+          "interaction": "villa_hosts",
+          "presence": {
+            "any": [
+              {
+                "all": [
+                  "kala_first_defeat"
+                ]
+              },
+              {
+                "none": [
+                  "kala_first_defeat",
+                  "villa_dinner_done"
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "aya",
           "position": [
             1070,
             620
-          ]
+          ],
+          "interactable": true,
+          "interaction": "villa_hosts",
+          "presence": {
+            "any": [
+              {
+                "all": [
+                  "kala_first_defeat"
+                ]
+              },
+              {
+                "none": [
+                  "kala_first_defeat",
+                  "villa_dinner_done"
+                ]
+              }
+            ]
+          }
         }
       ],
       "enemies": [],
@@ -7067,7 +7152,12 @@
             620
           ],
           "interactable": true,
-          "interaction": "enkidua_intro"
+          "interaction": "enkidua_intro",
+          "presence": {
+            "none": [
+              "report_done"
+            ]
+          }
         }
       ],
       "enemies": [],
@@ -8264,173 +8354,7 @@
         }
       ],
       "steps": [],
-      "obstacles": [
-        {
-          "rect": [
-            1160,
-            128,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            2360,
-            128,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            3560,
-            128,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            1160,
-            768,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            2360,
-            768,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            3560,
-            768,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            1160,
-            1408,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            2360,
-            1408,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            3560,
-            1408,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            1160,
-            2048,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            2360,
-            2048,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            3560,
-            2048,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            1160,
-            2688,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            2360,
-            2688,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            3560,
-            2688,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        }
-      ],
+      "obstacles": [],
       "terrain": [
         {
           "id": "base",
@@ -9704,173 +9628,7 @@
         }
       ],
       "steps": [],
-      "obstacles": [
-        {
-          "rect": [
-            1160,
-            128,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            2360,
-            128,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            3560,
-            128,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            1160,
-            768,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            2360,
-            768,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            3560,
-            768,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            1160,
-            1408,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            2360,
-            1408,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            3560,
-            1408,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            1160,
-            2048,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            2360,
-            2048,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            3560,
-            2048,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            1160,
-            2688,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            2360,
-            2688,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        },
-        {
-          "rect": [
-            3560,
-            2688,
-            80,
-            140
-          ],
-          "art": "res://assets/tiles/cedar/wall_trunk_tile.png",
-          "role": "wall",
-          "kind": "wall"
-        }
-      ],
+      "obstacles": [],
       "terrain": [
         {
           "id": "base",
@@ -10066,7 +9824,29 @@
       "drop_rule": {
         "mode": "all",
         "chance": 0
-      }
+      },
+      "boss_by_flags": [
+        {
+          "when": {
+            "all": [
+              "humbaba_defeated"
+            ]
+          },
+          "id": ""
+        },
+        {
+          "when": {
+            "all": [
+              "anur_blessing_done"
+            ]
+          },
+          "id": "humbaba"
+        },
+        {
+          "when": {},
+          "id": "kala_ushumgal"
+        }
+      ]
     }
   ]
 }

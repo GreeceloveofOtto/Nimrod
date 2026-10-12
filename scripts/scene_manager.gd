@@ -77,11 +77,11 @@ func set_player_locked(locked: bool) -> void:
     if is_instance_valid(player):
         player.set_transition_locked(locked)
 
-func show_toast(text: String) -> void:
+func show_toast(text: String, seconds: float = -1.0) -> void:
     if is_instance_valid(main):
         var hud := main.get_node_or_null("HUD")
         if hud != null:
-            hud.show_toast(text)
+            hud.show_toast(text, seconds)
 
 func go_to(level_id: String, spawn_name: String, options: Dictionary = {}) -> bool:
     if is_transitioning or not is_instance_valid(player) or not is_instance_valid(level_root):
@@ -132,7 +132,7 @@ func go_to(level_id: String, spawn_name: String, options: Dictionary = {}) -> bo
         arrival.prepare_arrival(player)
     if not instant:
         await _fade_to(0.0, float(config["fade_in_seconds"]))
-    else:
+    elif not bool(options.get("preserve_fade", false)):
         _fade_rect.modulate.a = 0.0
     if not is_instance_valid(player) or not is_instance_valid(current_level):
         return false
@@ -140,7 +140,7 @@ func go_to(level_id: String, spawn_name: String, options: Dictionary = {}) -> bo
         await arrival.play_arrival(player)
     player.end_portal_walk()
     player.modulate.a = 1.0
-    set_player_locked(false)
+    set_player_locked(get_node("/root/Cutscene").active)
     is_transitioning = false
     show_toast(str(current_level.display_name))
     if level_id == str(config["start_level"]) and spawn_name == str(config["start_spawn"]) and get_node("/root/GameState").first_time("home_intro"):
@@ -152,6 +152,8 @@ func go_to(level_id: String, spawn_name: String, options: Dictionary = {}) -> bo
     return true
 
 func restart_run(reset_flags: bool = true) -> void:
+    if get_node("/root/Cutscene").active or get_node("/root/Dialogue").active:
+        return
     if is_transitioning or not is_instance_valid(player):
         return
     if reset_flags:

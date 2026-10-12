@@ -21,6 +21,7 @@ var dialogue_finished: bool = false
 var death_attack_done: bool = false
 var hit_contact: Vector2 = Vector2.ZERO
 var has_hit_contact: bool = false
+var phase_aura: Node2D
 
 func set_hit_contact(point: Vector2) -> void:
     hit_contact = point
@@ -136,6 +137,13 @@ func _update_windup(delta: float) -> void:
     if phase == "phase_transition":
         if state_clock >= float(stats["phase_two"]["transition_seconds"]):
             phase_two = true
+            var aura: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/stage9_fx.json"))[str(stats["phase_two"]["aura"])]
+            phase_aura = IMAGE_EFFECT.new()
+            var aura_size := Vector2i(int(aura["frame_size"][0]),int(aura["frame_size"][1]))
+            phase_aura.configure("res://"+str(aura["path"]), aura_size, int(aura["frames"]), float(aura["duration"]), true, Vector2(aura_size)*.5)
+            phase_aura.scale = Vector2.ONE * float(aura["scale"])
+            add_child(phase_aura)
+            phase_aura.position = Vector2(0,-body_size.y*.5)
             phase = ""
             _set_state(State.CHASE)
         return
@@ -316,7 +324,7 @@ func _update_dead(delta: float) -> void:
     match phase:
         "collapse":
             if pending_facing != facing and not turn_flip_applied:
-                _show_clip("turn_p2" if phase_two else "turn", state_clock)
+                _show_clip("turn", state_clock)
                 if state_clock >= _turn_seconds() * 2.0 / 6.0:
                     facing = pending_facing
                     turn_flip_applied = true
@@ -356,6 +364,8 @@ func _update_dead(delta: float) -> void:
 func _death_dialogue() -> void:
     if get_node("/root/GameState").first_time("kala_death_lines"):
         await get_node("/root/Dialogue").play(stats["death_lines"], self, {"hold_seconds":1.6})
+    if not get_node("/root/Story").is_flag("kala_first_defeat"):
+        get_node("/root/Story").set_flag("kala_first_defeat")
     dialogue_finished = true
 
 func marker_is_dangerous() -> bool:
@@ -384,9 +394,9 @@ func _update_visual(_delta: float) -> void:
                 clip = "summon"
             "spines":
                 clip = "spines_back"
-    if phase_two and textures.has(clip + "_p2"):
-        clip += "_p2"
     _show_clip(clip, state_clock / _time_factor() if state in [State.WINDUP, State.ACTIVE, State.RECOVERY] and phase != "phase_transition" else state_clock)
+    var tint: Array = stats["phase_two"]["visual_color"]
+    visual.modulate = Color(float(tint[0]),float(tint[1]),float(tint[2])) if phase_two else Color.WHITE
 
 func _stop_roar() -> void:
     if is_instance_valid(roar_effect):

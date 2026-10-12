@@ -4,15 +4,21 @@ func _run() -> void:
     var font: Font = load("res://assets/fonts/NimrodUIKorean-Regular.otf")
     var d: Node = root.get_node("Dialogue")
     for story: Dictionary in d.settings.interactions.values():
-        for line: Dictionary in story.first+story.repeat:
-            for character: String in str(line.get("text","")):
-                _check(font.has_char(character.unicode_at(0)),"Every original dialogue character has a glyph")
+        var specs: Array = [story]
+        specs.append_array(story.get("variants",[]))
+        for spec: Dictionary in specs:
+            for line: Dictionary in spec.get("first",[])+spec.get("repeat",[]):
+                for character: String in str(line.get("text","")):
+                    _check(font.has_char(character.unicode_at(0)),"Every original dialogue character has a glyph")
     var original: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/stage8_story_original.json"))
-    _check(d.settings.interactions == original,"All eight stories match the verbatim original fixture")
+    for id: String in original:
+        for field: String in original[id]:
+            _check(d.settings.interactions[id].get(field)==original[id][field],"Original story field unchanged: "+id+"/"+field)
     _check(original.enkidua_intro.first.size()==7 and original.parents_gift.first.size()==6 and original.shamhat.first.size()==5,"Original first-line counts include gift event")
     d.settings.character_seconds = .001
     d.settings.hold_seconds = .001
     d.settings.hold_per_character = .00001
+    d.test_timing_scale = .001
     var state: Node = root.get_node("GameState")
     state.reset_run(false)
     await manager.go_to("CastleF1", "Spawn_Debug", {"instant": true})

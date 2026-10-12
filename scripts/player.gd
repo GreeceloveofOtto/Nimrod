@@ -108,12 +108,19 @@ var stuck_left: float = 0.0
 var stuck_origin := Vector2.ZERO
 var stuck_recoveries: Array[Dictionary] = []
 var compact_escape: bool = false
+var visual_weapon_hidden := false
+var cinematic_clip := ""
+var cinematic_clock := 0.0
+var skill_cooldown_left := 0.0
+var skill_slow_left := 0.0
+var skill_data: Dictionary = {}
 
 func _ready() -> void:
     add_to_group("player")
     visual.scale = Vector2.ONE * VISUAL_SCALE
     visual.set_meta("canonical_scale", visual.scale)
     _load_attack_data()
+    skill_data = JSON.parse_string(FileAccess.get_file_as_string("res://data/skills.json"))["anur_light"]
     _load_sprites()
     get_node("/root/GameState").weapon_changed.connect(_on_weapon_changed)
     _on_weapon_changed(get_node("/root/GameState").get_weapon())
@@ -145,7 +152,7 @@ func _load_attack_data() -> void:
 func _load_sprites() -> void:
     textures.clear()
     clip_data.clear()
-    var manifest_path: String = "res://assets/sprites/player/" + ("unarmed" if weapon == "none" else weapon) + "/manifest.json"
+    var manifest_path: String = "res://assets/sprites/player/" + ("unarmed" if weapon == "none" or visual_weapon_hidden else weapon) + "/manifest.json"
     if not FileAccess.file_exists(manifest_path):
         manifest_path = "res://assets/animation_manifest.json"
     var file := FileAccess.open(manifest_path, FileAccess.READ)
@@ -169,20 +176,27 @@ func _load_sprites() -> void:
 
 func _physics_process(delta: float) -> void:
     if transition_locked:
-        if _portal_walking:
+        if not cinematic_clip.is_empty():
+            cinematic_clock += delta
+            _show_clip(cinematic_clip, cinematic_clock)
+        elif _portal_walking:
             _portal_walk_clock += delta
             _show_clip("run", _portal_walk_clock)
             visual.flip_h = _portal_walk_direction < 0
         return
     _recover_solid_overlap()
     _track_stuck(delta)
-    if Input.is_action_just_pressed("restart"):
+    if Input.is_action_just_pressed("restart") and not get_node("/root/Dialogue").input_blocked() and not get_node("/root/Cutscene").active:
         _request_run_restart()
         return
     if Input.is_action_just_pressed("debug_hitbox"):
         debug_hitboxes = not debug_hitboxes
         queue_redraw()
 
+    skill_cooldown_left = maxf(0, skill_cooldown_left - delta)
+    skill_slow_left = maxf(0, skill_slow_left - delta)
+    if Input.is_action_just_pressed("skill_light"):
+        cast_anur_light()
     damage_grace = maxf(0.0, damage_grace - delta)
     damage_tick_clock += delta
     if is_on_floor():
@@ -309,6 +323,8 @@ func _physics_process(delta: float) -> void:
         sfx_jump.play()
 
     var desired_speed: float = move_axis * RUN_SPEED
+    if skill_slow_left > 0:
+        desired_speed *= float(skill_data["cast_speed_multiplier"])
     if crouching:
         desired_speed = move_axis * float(movement_data.get("crouch_speed", 0.0))
     elif action == "attack":
@@ -769,6 +785,10 @@ func _request_run_restart() -> void:
         get_tree().reload_current_scene()
 
 func reset_run_state() -> void:
+    skill_cooldown_left = 0
+    skill_slow_left = 0
+    cinematic_clip = ""
+    visual_weapon_hidden = false
     modifiers.clear()
     _cancel_attack()
     hp = MAX_HP
@@ -1064,3 +1084,27 @@ func _track_stuck(delta: float) -> void:
         velocity = Vector2.ZERO
         stuck_left = 0.0
         print("ANTI_STUCK recovered at " + str(global_position))
+
+func set_weapon_visibility(hidden: bool) -> void:
+    if visual_weapon_hidden == hidden:
+        return
+    visual_weapon_hidden = hidden
+    _load_sprites()
+    _show_clip("idle", 0)
+
+func cast_anur_light() -> bool:
+    if not get_node("/root/Story").is_flag("skill_anur_light") or skill_cooldown_left > 0 or action != "normal" or crouching or Input.is_action_pressed("crouch") or transition_locked or pull_left > 0 or get_node("/root/Dialogue").input_blocked() or get_node("/root/Cutscene").active or get_tree().paused:
+        return false
+    var projectile := AnurLightProjectile.new()
+    projectile.hero = self
+    projectile.direction = facing
+    projectile.damage = roundi(float(skill_data["damage"]) * modifiers.multiplier("attack"))
+    var level: Node = get_node("/root/SceneManager").current_level
+    var parent: Node = level if is_instance_valid(level) else get_parent()
+    parent.add_child(projectile)
+    projectile.global_position = global_position + Vector2(facing*float(skill_data["offset_x"]),-STAND_BOX.y*float(skill_data["hand_height_ratio"]))
+    AnurLightProjectile.spawn_fx(parent,projectile.global_position,"anur_light_cast")
+    get_node("/root/Audio").play_sfx("anur_cast")
+    skill_cooldown_left = float(skill_data["cooldown"])
+    skill_slow_left = float(skill_data["cast_slow_seconds"])
+    return true

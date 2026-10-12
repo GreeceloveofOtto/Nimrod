@@ -14,6 +14,8 @@ var _story_tween: Tween
 var boss_panel: Control
 var boss_fill: ColorRect
 var boss_label: Label
+var skill_slot: Panel
+var skill_cover: ColorRect
 var controls: Label
 
 func _ready() -> void:
@@ -63,6 +65,25 @@ func _ready() -> void:
     boss_label.add_theme_font_size_override("font_size", 18)
     boss_panel.add_child(boss_label)
 
+    skill_slot = Panel.new()
+    skill_slot.position = Vector2(28,90)
+    skill_slot.size = Vector2(42,42)
+    var slot_style := StyleBoxFlat.new()
+    slot_style.bg_color = Color("18202a")
+    slot_style.border_color = Color("d0b17d")
+    slot_style.set_border_width_all(2)
+    skill_slot.add_theme_stylebox_override("panel",slot_style)
+    add_child(skill_slot)
+    var key_label := Label.new()
+    key_label.text = "R"
+    key_label.position = Vector2(14,7)
+    key_label.add_theme_font_override("font",ui_font)
+    skill_slot.add_child(key_label)
+    skill_cover = ColorRect.new()
+    skill_cover.color = Color(0,0,0,.65)
+    skill_cover.position = Vector2(2,2)
+    skill_slot.add_child(skill_cover)
+
 func bind_player(value: NimrodPlayer) -> void:
     player = value
 
@@ -75,14 +96,20 @@ func _process(_delta: float) -> void:
     hp_fill.size.x = _ui_rect("hp_fill").size.x * clampf(float(player.hp) / float(player.get_max_hp()), 0.0, 1.0)
     controls.text = str(ui.get("controls_text", "")).replace("{weapon}", "J " + {"none":"공격 없음", "staff":"지팡이", "axe":"도끼"}.get(player.weapon, "공격 없음"))
     hp_text.text = "HP %d / %d" % [player.hp, player.get_max_hp()]
-    var boss: KalaUshumgal
+    skill_slot.visible = get_node("/root/Story").is_flag("skill_anur_light")
+    var fraction: float = clampf(player.skill_cooldown_left/float(player.skill_data["cooldown"]),0,1)
+    skill_cover.size = Vector2(38,38*fraction)
+    skill_cover.position.y = 40-skill_cover.size.y
+    if skill_slot.visible:
+        controls.text += "  R 아누르의 빛"
+    var boss: EnemyBase
     for enemy in get_tree().get_nodes_in_group("enemies"):
-        if enemy is KalaUshumgal:
+        if enemy is KalaUshumgal or enemy is Humbaba:
             boss = enemy
-    boss_panel.visible = boss != null and boss.battle_started and not boss.battle_finished
+    boss_panel.visible = boss != null and bool(boss.get("battle_started")) and not bool(boss.get("battle_finished"))
     if boss_panel.visible:
         boss_fill.size.x = 520.0 * clampf(float(boss.hp) / float(boss.stats["hp"]), 0, 1)
-        boss_label.text = "칼라-우쉬움갈  %d / 1200" % boss.hp
+        boss_label.text = "%s  %d / %d" % [str(boss.stats.get("display_name","칼라-우쉬움갈")),boss.hp,int(boss.stats["hp"])]
 
 func show_toast(text: String, seconds: float = -1.0) -> void:
     if _toast_tween != null and _toast_tween.is_valid():

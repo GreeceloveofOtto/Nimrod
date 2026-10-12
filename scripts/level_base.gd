@@ -18,6 +18,8 @@ var arrival_doors: Dictionary = {}
 var doors: Dictionary = {}
 var npcs: Dictionary = {}
 var surface_offsets: Dictionary = {}
+var time_modulate: CanvasModulate
+var story_props: Array[Node2D] = []
 
 func _ready() -> void:
     add_to_group("current_level")
@@ -32,6 +34,10 @@ func _ready() -> void:
     _connect_gatekeeper()
     _spawn_enemies()
     _make_pickups()
+    if config.get("dinner_seat", false):
+        add_child(load("res://scripts/dinner_seat.gd").new())
+    get_node("/root/Story").changed.connect(refresh_story)
+    refresh_story()
 
 func _load_config() -> void:
     var file := FileAccess.open(LEVELS_PATH, FileAccess.READ)
@@ -250,7 +256,14 @@ func _make_surface(x: float, y: float, width: float, height: float, one_way: boo
 
 func _make_props() -> void:
     for decoration in config.get("decorations", []):
-        Art.add_image(self, str(decoration["path"]), _vector(decoration["position"]), _vector(decoration["size"]), int(decoration.get("z", 0)))
+        if not get_node("/root/Story").matches(decoration.get("presence", {})):
+            continue
+        var prop := Art.add_image(self, str(decoration["path"]), _vector(decoration["position"]), _vector(decoration["size"]), int(decoration.get("z", 0)))
+        if decoration.has("name"):
+            prop.name = str(decoration["name"])
+        if decoration.has("story_art"):
+            prop.set_meta("story_art", decoration)
+            story_props.append(prop)
 
 func _new_script_node(path: String) -> Node2D:
     if not ResourceLoader.exists(path):
@@ -290,20 +303,80 @@ func _make_doors() -> void:
 
 func _make_npcs() -> void:
     for entry in config.get("npcs", []):
-        var script_key: String = "gatekeeper_script" if str(entry.get("kind", "")) == "gatekeeper" else "npc_script"
-        var npc: Node2D = _new_script_node(str(world_settings.get(script_key, "")))
-        if npc == null:
+        if get_node("/root/Story").matches(entry.get("presence", {})):
+            spawn_npc(entry)
+
+func spawn_npc(entry: Dictionary) -> NPC:
+    var instance_id: String = str(entry.get("instance_id", entry["id"]))
+    if is_instance_valid(npcs.get(instance_id)):
+        return npcs[instance_id]
+    var script_key: String = "gatekeeper_script" if str(entry.get("kind", "")) == "gatekeeper" else "npc_script"
+    var npc: NPC = _new_script_node(str(world_settings.get(script_key, ""))) as NPC
+    if npc == null:
+        return null
+    npc.name = instance_id
+    npc.position = _vector(entry["position"])
+    npc.set_meta("interaction_overrides", entry)
+    npc.npc_id = str(entry["id"])
+    for property in ["idle_clip", "face_player", "initial_facing", "random_start", "interactable", "gesture_face_player"]:
+        if entry.has(property):
+            _set_if_present(npc, property, entry[property])
+    npcs[instance_id] = npc
+    add_child(npc)
+    return npc
+
+func refresh_story() -> void:
+    if not is_inside_tree():
+        return
+    for entry: Dictionary in config.get("npcs", []):
+        var key: String = str(entry.get("instance_id", entry["id"]))
+        if get_node("/root/Story").matches(entry.get("presence", {})):
+            spawn_npc(entry)
+        elif is_instance_valid(npcs.get(key)):
+            var npc: NPC = npcs[key]
+            npcs.erase(key)
+            remove_child(npc)
+            npc.queue_free()
+    for entry: Dictionary in config.get("doors", []):
+        if entry.has("story_lock"):
+            var door: Node = doors.get(str(entry["door_id"]))
+            if is_instance_valid(door):
+                door.locked = get_node("/root/Story").matches(entry["story_lock"])
+                door.locked_message = str(entry["story_locked_message"])
+    for prop in story_props:
+        if not is_instance_valid(prop):
             continue
-        var instance_id: String = str(entry.get("instance_id", entry["id"]))
-        npc.name = instance_id
-        npc.position = _vector(entry["position"])
-        npc.set_meta("interaction_overrides", entry)
-        _set_if_present(npc, "npc_id", str(entry["id"]))
-        for property in ["idle_clip", "face_player", "initial_facing", "random_start", "interactable", "gesture_face_player"]:
-            if entry.has(property):
-                _set_if_present(npc, property, entry[property])
-        npcs[instance_id] = npc
-        add_child(npc)
+        var entry: Dictionary = prop.get_meta("story_art")
+        var state: String = "prep" if get_node("/root/Story").is_flag("night") else "full" if get_node("/root/Story").is_flag("villa_intro_done") and not get_node("/root/Story").is_flag("villa_dinner_done") else "almost"
+        var image: Sprite2D = prop.get_node_or_null("Image") as Sprite2D
+        if image != null:
+            var path: String = str(entry["story_art"][state])
+            var texture: Texture2D = load(path if path.begins_with("res://") else "res://"+path) as Texture2D
+            image.texture = texture
+            image.scale = _vector(entry["size"]) / texture.get_size()
+    if level_id == "VillaF3":
+        for key in ["shamash", "aya"]:
+            var host: NPC = npcs.get(key)
+            if is_instance_valid(host):
+                host.story_pose_locked = get_node("/root/Story").is_flag("night")
+                if host.story_pose_locked:
+                    host.pose = NPC.Pose.RIGHT if key == "shamash" else NPC.Pose.LEFT
+                    host.facing = host.pose
+                    host.play_clip("idle")
+    apply_time_of_day()
+
+func apply_time_of_day() -> void:
+    if time_modulate == null:
+        time_modulate = CanvasModulate.new()
+        time_modulate.name = "TimeOfDay"
+        add_child(time_modulate)
+    var colors: Array = get_node("/root/Story").settings["night_color"]
+    time_modulate.color = Color(float(colors[0]),float(colors[1]),float(colors[2])) if get_node("/root/Story").is_flag("night") else Color.WHITE
+    for npc: NPC in npcs.values():
+        var pool: CanvasItem = npc.get_node_or_null("LightPool")
+        if pool != null:
+            var rgba: Array = npc.readability["pool_modulate"]
+            pool.modulate = Color(float(rgba[0])/time_modulate.color.r, float(rgba[1])/time_modulate.color.g, float(rgba[2])/time_modulate.color.b, float(rgba[3]))
 
 func _connect_gatekeeper() -> void:
     for entry in config.get("doors", []):
@@ -320,6 +393,13 @@ func _spawn_enemies() -> void:
     var enemy_scripts: Dictionary = world_settings.get("enemy_scripts", {})
     for entry in config.get("enemies", []):
         var enemy_id: String = str(entry["id"])
+        if config.has("boss_by_flags") and enemy_id == "kala_ushumgal":
+            for rule: Dictionary in config["boss_by_flags"]:
+                if get_node("/root/Story").matches(rule["when"]):
+                    enemy_id = str(rule["id"])
+                    break
+            if enemy_id.is_empty():
+                continue
         var path: String = str(enemy_scripts.get(enemy_id, ""))
         for index in range(maxi(0, int(entry.get("count", 1)))):
             var enemy: Node2D = _new_script_node(path)

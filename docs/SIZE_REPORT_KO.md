@@ -1,135 +1,76 @@
-# NIMROD 8단계 용량 보고
+# 용량 보고 — 9단계
 
-런타임 assets: **263.54 → 60.32MiB** (77.1% 절감). 전체75MiB와 모든 폴더 예산을 충족합니다. `.godot`의 임포트 캐시는 측정에서 제외합니다.
+단위는 MiB(1,048,576바이트). 압축 전은 실제 체크아웃의 8단계 런타임 assets를 측정했다. 새 이미지·오디오 추가 후 최종값과 비교한다. 원본·중간 파일은 archive/에 보존하며 공유 ZIP에서 제외한다.
 
-| 폴더 | 변환 전 MiB | 변환 후 MiB | 예산 MiB | 결과 |
+| 폴더 | 8단계 전 | 9단계 후 | 예산 | 결과 |
 |---|---:|---:|---:|---|
-| sprites | 200.42 | 40.87 | 45 | 통과 |
-| backgrounds | 35.09 | 6.98 | 14 | 통과 |
-| props | 20.94 | 7.83 | 8 | 통과 |
-| tiles | 4.31 | 1.93 | 3 | 통과 |
-| audio | 1.88 | 1.88 | 2 | 통과 |
-| 기타(UI/폰트/프롬프트/매니페스트/FX) | 0.89 | 0.84 | 3 | 통과 |
-| 합계 | 263.54 | 60.32 | 75 | 통과 |
+| sprites | 40.871 | 34.873 | 34 | 초과 |
+| backgrounds | 6.978 | 5.191 | 6.5 | 충족 |
+| props | 7.830 | 6.306 | 7 | 충족 |
+| tiles | 1.926 | 1.513 | 1.8 | 충족 |
+| audio | 1.881 | 1.687 | 1.6 | 초과 |
+| 기타 | 0.836 | 0.224 | 1 | 충족 |
+| assets 합계 | 60.322 | 49.793 | 50 | 충족 |
 
-## 적용 순서와 화질
+전체 assets 목표는 충족한다. sprites와 audio 폴더 예산은 각각 약 0.90MiB, 0.09MiB 초과하며 전체 목표와 분리해서 기록한다. ZIP 최종 측정값과 독립 압축 해제 검증 결과는 패키지 검증 완료 후 아래에 추가한다.
 
-- 변경 전 파일별 상위40개와 저장/게임 픽셀 밀도를 측정했습니다. 모든 변환 전 파일은 archive/stage8_before, stage8_density_before, stage8_encoding_before, stage8_unused에 보존했습니다.
-- 288개 시트의 해상도를 표시 배율과 밀도 한도로 조정했습니다. 시트 부분집합은214.66→90.74MiB(그 단계 직후 실측). 각 프레임을 축소 후 확대해 비교하고 SSIM이0.93 미만이면 한도를0.2씩 높여 다시 검사했습니다.
-- 나머지 이미지의 WebP 변환 부분집합은52.72→17.51MiB. 기본 품질은 투명RGB86/배경82, alpha95/method6입니다. 평균 색차를 넘은 파일은 무손실로 되돌렸습니다. 품질94 개별 예외44개를 추가해10.44MiB를 더 줄였습니다.
-- YUV 색차가 큰 파일은 RGB near-lossless 후 원래 알파 복원, 또는 RGB를10/12단위로 제한하는 변환을 사용하고 무손실 WebP 컨테이너로 저장했습니다. 사용자 허용한 손실 색 저장이며 이미지 생성/도형 그림이 아닙니다. 모든 파일은 같은 RGB/알파/bbox 기준을 통과해야 합니다. 마지막 bounded RGB 단계는272파일에서7.61MiB 추가 절감했습니다.
-- UI는 PNG, 정밀 타일은 PNG 또는 완전히 같은 화소의 WebP를 유지합니다. 일부 불투명 반복 타일은 별도 검증된 bounded near-lossless로 저장하며 가장자리 차이는2/255 이하입니다.
-- 미사용 타일5개(0.39MiB)를 archive로 이동했습니다. 활성 매니페스트와 코드가 요청하는2페이즈/별칭 클립은 보존했습니다. 연속 동일 프레임 제거 기준을 만족한 것은0개여서 논리/저장 프레임은 모두1,512개입니다. 재생 시간은 바꾸지 않았습니다.
-- 저장 규격과 게임 규격을 분리했습니다. 논리 프레임/앵커/충돌 좌표는 보존하고 stored_frame_size, stored_anchor_px, storage_scale, storage_trim을 사용해 표시 배율을 보정합니다. NPC와 플레이어 초기화 순서도 검사했습니다.
+## 신규 콘텐츠
 
-프레임별 리샘플 최소SSIM **0.930792**. 압축 전 픽셀과 실제 파일을 전수 재비교한428이미지: 최대RGB 평균오차 **2.999505/255**, 최대알파 평균오차 **0.115440/255**, 알파bbox 차이0, 실패0. 품질 지표는 기록값만 읽지 않고 보존 원본과 실제 인코딩 파일로 재계산했습니다.
-
-네이티브 Godot WebP 디코더는 원본에서 뽑은39개 이미지의 화소 표본으로 별도 검사합니다. 전체 이미지 평균3/255 기준과 작은 패치의 국소 오차는 구분하며 패치는 실제 인코더의 측정 오차와 일치해야 합니다. 원본 없는 슬림ZIP도 이 검사를 실행합니다.
-
-화질 비교: docs/size_compare/stage8_1.jpg(보스),2(플레이어),3(인안나),4(근접),5(마귀),6(숲배경). 각각 변환 전/후의 게임 줌1.0·1.35입니다. 표시 크기는 유지되고, 확대 시 얇은 선과 머리카락은 약간 부드러워집니다. 원본과 최종 결과를 직접 열어 실루엣·발 앵커·검은 배경·축소 가독성을 확인했습니다. 무손실 화소 동일성으로 표현하지 않습니다.
-
-## 파일별 상위40개와 밀도
-
-### 변환 전
-
-| 파일 | MiB | 저장/게임 픽셀 밀도 |
+| 분류 | 실제 MiB | 예산 MiB |
 |---|---:|---:|
-| `assets/sprites/enemies/kala_ushumgal/walk.webp` | 4.219 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/walk_p2.webp` | 3.891 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/phase_transition.webp` | 3.878 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/idle_p2.webp` | 3.752 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/death.webp` | 3.705 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/collapse.webp` | 3.617 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/turn.webp` | 3.265 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/idle.webp` | 3.224 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/slam_recovery_p2.webp` | 3.215 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/summon.webp` | 3.116 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/turn_p2.webp` | 2.961 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/roar_recovery.webp` | 2.960 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/roar_windup.webp` | 2.868 | 3.333 |
-| `assets/props/doors/castle_great_gate.webp` | 2.812 | — |
-| `assets/sprites/enemies/kala_ushumgal/slam_windup_p2.webp` | 2.775 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/slam_recovery.webp` | 2.757 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/slam_windup.webp` | 2.724 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/whip_recovery.webp` | 2.695 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/whip_recovery_p2.webp` | 2.656 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/whip_windup.webp` | 2.651 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/whip_windup_p2.webp` | 2.625 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/slam_p2.webp` | 2.607 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/whip_swing_p2.webp` | 2.516 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/whip_swing.webp` | 2.511 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/final_swing.webp` | 2.494 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/whip_swing_back_p2.webp` | 2.450 | 3.333 |
-| `assets/backgrounds/cedar/boss_bg.png` | 2.379 | — |
-| `assets/sprites/enemies/kala_ushumgal/whip_swing_back.webp` | 2.355 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/roar_loop.webp` | 2.348 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/final_swing_windup.webp` | 2.344 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/spines_back.webp` | 2.286 | 3.333 |
-| `assets/sprites/enemies/kala_ushumgal/slam.webp` | 2.275 | 3.333 |
-| `assets/backgrounds/villa/villa_f2_dining.png` | 2.219 | — |
-| `assets/backgrounds/villa/villa_f1_hall.png` | 2.095 | — |
-| `assets/sprites/enemies/cedar_colossus/walk.webp` | 1.991 | 3.333 |
-| `assets/backgrounds/villa/villa_f3_chamber.png` | 1.961 | — |
-| `assets/sprites/enemies/chain_beastman/death.webp` | 1.848 | 2.222 |
-| `assets/backgrounds/castle/castle_f4_boudoir.png` | 1.812 | — |
-| `assets/sprites/enemies/cedar_colossus/death.webp` | 1.811 | 3.333 |
-| `assets/backgrounds/castle/castle_f1_hall.png` | 1.792 | — |
-### 변환 후
+| humbaba | 4.316 | 4.5 |
+| npcs | 0.420 | 1.4 |
+| player | 0.131 | 0.4 |
+| anur_fx | 0.041 | 0.3 |
+| tables | 0.124 | 0.8 |
+| audio | 0.043 | 0.3 |
+| other | 0.000 | 0.3 |
 
-| 파일 | MiB | 저장/게임 픽셀 밀도 |
+신규 콘텐츠 합계 5.075MiB / 8MiB: 충족. PNG 생성본 13장, 런타임 신규 이미지 36개와 효과음 9개를 만들었다. 미생성 에셋은 없다.
+
+## 변환 단계
+
+| 처리 | 적용/시도 | 해당 단계 절감 MiB |
 |---|---:|---:|
-| `assets/props/doors/castle_great_gate.webp` | 1.277 | — |
-| `assets/backgrounds/rear_gate/villa_exterior.webp` | 0.784 | — |
-| `assets/backgrounds/castle_front/castle_facade.webp` | 0.745 | — |
-| `assets/sprites/enemies/kala_ushumgal/walk.webp` | 0.588 | 1.401 |
-| `assets/sprites/enemies/kala_ushumgal/walk_p2.webp` | 0.541 | 1.401 |
-| `assets/sprites/enemies/kala_ushumgal/phase_transition.webp` | 0.506 | 1.4 |
-| `assets/sprites/enemies/kala_ushumgal/death.webp` | 0.492 | 1.399 |
-| `assets/sprites/enemies/kala_ushumgal/idle_p2.webp` | 0.490 | 1.399 |
-| `assets/sprites/enemies/kala_ushumgal/collapse.webp` | 0.464 | 1.4 |
-| `assets/backgrounds/cedar/mid_trunks_tile_2d.webp` | 0.458 | — |
-| `assets/sprites/enemies/kala_ushumgal/slam_recovery_p2.webp` | 0.427 | 1.401 |
-| `assets/backgrounds/castle_front/downtown_passage_facade.webp` | 0.425 | — |
-| `assets/sprites/enemies/chain_beastman/death.webp` | 0.416 | 1.399 |
-| `assets/sprites/enemies/kala_ushumgal/turn.webp` | 0.409 | 1.401 |
-| `assets/sprites/enemies/kala_ushumgal/summon.webp` | 0.398 | 1.399 |
-| `assets/sprites/enemies/kala_ushumgal/idle.webp` | 0.397 | 1.399 |
-| `assets/sprites/enemies/explosive_spitter/walk.webp` | 0.377 | 2.003 |
-| `assets/sprites/enemies/kala_ushumgal/roar_recovery.webp` | 0.370 | 1.4 |
-| `assets/sprites/enemies/kala_ushumgal/turn_p2.webp` | 0.368 | 1.399 |
-| `assets/sprites/enemies/kala_ushumgal/slam_windup_p2.webp` | 0.362 | 1.401 |
-| `assets/sprites/enemies/kala_ushumgal/slam_windup.webp` | 0.360 | 1.401 |
-| `assets/sprites/enemies/kala_ushumgal/roar_windup.webp` | 0.359 | 1.399 |
-| `assets/sprites/enemies/kala_ushumgal/slam_recovery.webp` | 0.354 | 1.399 |
-| `assets/backgrounds/homeroad/mid_district_tile.webp` | 0.351 | — |
-| `assets/props/doors/castle_front_door_exterior.webp` | 0.346 | — |
-| `assets/sprites/enemies/chain_beastman/walk.webp` | 0.342 | 1.401 |
-| `assets/sprites/enemies/kala_ushumgal/whip_windup_p2.webp` | 0.337 | 1.401 |
-| `assets/sprites/enemies/kala_ushumgal/slam_p2.webp` | 0.337 | 1.4 |
-| `assets/sprites/enemies/kala_ushumgal/whip_recovery_p2.webp` | 0.332 | 1.4 |
-| `assets/sprites/enemies/kala_ushumgal/whip_recovery.webp` | 0.324 | 1.4 |
-| `assets/sprites/enemies/kala_ushumgal/whip_windup.webp` | 0.324 | 1.4 |
-| `assets/sprites/enemies/kala_ushumgal/whip_swing_p2.webp` | 0.310 | 1.4 |
-| `assets/sprites/enemies/kala_ushumgal/whip_swing.webp` | 0.306 | 1.399 |
-| `assets/sprites/enemies/kala_ushumgal/final_swing.webp` | 0.303 | 1.401 |
-| `assets/sprites/enemies/explosive_spitter/idle.webp` | 0.302 | 2.003 |
-| `assets/sprites/enemies/kala_ushumgal/whip_swing_back_p2.webp` | 0.299 | 1.399 |
-| `assets/sprites/enemies/kala_ushumgal/slam.webp` | 0.294 | 1.401 |
-| `assets/sprites/enemies/kala_ushumgal/roar_loop.webp` | 0.291 | 1.399 |
-| `assets/props/doors/villa_back_door.webp` | 0.290 | — |
-| `assets/sprites/enemies/cedar_colossus/death.webp` | 0.288 | 1.6 |
+| 괴수 밀도/품질 | 188/201 | 7.745 |
+| 플레이어·NPC 밀도/품질 | 66/66 | 1.427 |
+| 문 밀도/품질 | 15/18 | 1.090 |
+| 배경·소품 밀도/품질 | 49/51 | 2.364 |
+| 오디오 모노48kbps/q3 | 141/146 | 0.238 |
+| 유사 프레임 frame_map 병합 | 18/41 | 0.222 |
+| RGB128 팔레트 | 29/98 | 0.290 |
 
-## 패키지와 기능 검증
+개별 단계의 절감은 중간 산출물 기준이므로 단순 합계가 최종 순절감과 같지는 않다. 칼라-우쉬움갈 2페이즈 변형 10시트는 archive/stage9_phase2로 옮기고 기본 시트+붉은 주황 모듈레이트+생성한 불씨 FX로 대체했다. 색·실루엣을 비교했으며 2페이즈 동작·판정은 유지했다. 완성된 프롬프트 약 0.635MiB는 archive/stage9_development로 옮겼다. 해시 중복 0개, 참조 감사에서 미사용 런타임 파일 0개였다. 신규 트림 여백은 1px이며 기존 파일의 논리 앵커와 게임 표시 크기는 유지했다.
 
-ZIP은 deflate level9. archive/.godot/*.import/*.uid/테스트 캡처/예전 화면과 접촉시트/GIF를 제외합니다. 최신 화면8장과 용량 비교6JPEG를 포함합니다. `tools/make_slim_zip.py --verify`는 만든 파일을 새 임시 폴더에 풀어 전체 headless·에셋·알파·도달성을 재검사합니다. 기능 결과와75/90MiB 용량 결과를 분리하고 하나라도 실패하면 종료코드1입니다.
+## 품질 게이트와 화면 비교
 
-최종 ZIP 크기는 아래 완료 기록에 기입하며 SHA256과 독립 검증 결과는 저장소의 STAGE8_PACKAGE_TEST_RESULTS.json을 참조합니다. 용량 목표90MiB 미달 시 상위10개 후보와 예상 절감을 기록하도록 패키징 도구를 보강했습니다. 현재 전체/폴더 예산은 모두 통과하여 추가 화질 손실은 필요 없습니다.
+모든 시트의 SSIM≥0.93(최저 0.930288), RGB 평균 오차≤3/255, 알파 평균 오차≤0.5/255, 인코딩 전후 알파 bbox 동일을 검사했다. 최종 전체 재검사 기록: docs/STAGE9_QUALITY_METRICS.json. 알파 오차 최고 0.11544/255, RGB 최고 2.99933/255(후처리 최종 재검사 값이 있으면 JSON을 우선한다). 1.0/1.35 줌 비교 6장은 docs/size_compare/stage9_1~6.jpg: 칼라-우쉬움갈, 니므롯, 인안나, 근접 우루크, 통곡의 마귀, 별장3층 배경. 얼굴·실루엣·뼈/옷 디테일과 배경 대비를 눈으로 확인했다.
 
-## 최종 용량 완료 기록
+순수 YUV WebP 품질80이 색 오차를 넘는 파일은 RGB를 10/12단계로 양자화하고 무손실 WebP 컨테이너에 저장했다. 컨테이너가 무손실이어도 원본 RGB와 비교하면 손실 변환이다. 투명도는 보존한다. 팔레트 변환 후 지하 채움 타일의 검은 가장자리 비율이 2%를 넘어서 해당 변환은 되돌렸다. 아야 sit_idle의 낮은 알파 가장자리 색은 despill 후 다시 색 차이·QA를 통과했다.
 
-| 항목 | 이전 MiB | 8단계 MiB | 목표 |
-|---|---:|---:|---|
-| assets | 263.54 | 60.32 | ≤75, 통과 |
-| 공유용 슬림 ZIP | 264.73 | 61.92 | ≤90, 통과 |
+## 적용하지 못한 추가 절감
 
-전체와 폴더 예산은 모두 충족했습니다. 원본과 이전 ZIP은 클라우드 작업 공간에 보존합니다. 최종 독립 검증 결과와 정확한 바이트 수/SHA256은 저장소의 STAGE8_PACKAGE_TEST_RESULTS.json에 기록합니다.
+일반 괴수1.6, 대형·보스1.2 밀도로 시도하되 SSIM 미달이면 0.2씩 높였다. 이전보다 큰 파일이 되는 후보는 유지했다. 비교적 세밀한 얼굴·머리카락·뼈가 있는 시트는 더 낮은 밀도/색 수에서 게이트를 통과하지 않아 유지한다. BGM은 모노48kbps, SFX는 모노q3이며 더 낮은 음질은 허용한 품질 하한을 벗어나 적용하지 않았다. frame_map은 인접 프레임 SSIM≥0.985인 구간에만 적용하고 논리 프레임 수·총 길이를 유지했다.
+
+## 가장 큰 파일 10개와 추가 후보
+
+전체 목표는 충족했으나 폴더 예산 추가 절감을 검토할 수 있다. 아래 값은 보장된 절감이 아니며 동일 품질 게이트 재검증이 필요하다.
+
+| 파일 | MiB | 후보 | 예상 절감 MiB |
+|---|---:|---|---:|
+| assets/props/doors/castle_great_gate.webp | 0.845 | 밀도 0.2 낮춤 재시도/유사 프레임 추가 병합; SSIM·동작 QA 통과 때만 | 0.068 |
+| assets/sprites/enemies/kala_ushumgal/collapse.webp | 0.463 | 밀도 0.2 낮춤 재시도/유사 프레임 추가 병합; SSIM·동작 QA 통과 때만 | 0.037 |
+| assets/backgrounds/cedar/mid_trunks_tile_2d.webp | 0.458 | 밀도 0.2 낮춤 재시도/유사 프레임 추가 병합; SSIM·동작 QA 통과 때만 | 0.037 |
+| assets/sprites/enemies/kala_ushumgal/walk.webp | 0.442 | 밀도 0.2 낮춤 재시도/유사 프레임 추가 병합; SSIM·동작 QA 통과 때만 | 0.035 |
+| assets/sprites/enemies/humbaba/walk.webp | 0.408 | 밀도 0.2 낮춤 재시도/유사 프레임 추가 병합; SSIM·동작 QA 통과 때만 | 0.033 |
+| assets/sprites/enemies/kala_ushumgal/turn.webp | 0.408 | 밀도 0.2 낮춤 재시도/유사 프레임 추가 병합; SSIM·동작 QA 통과 때만 | 0.033 |
+| assets/sprites/enemies/kala_ushumgal/idle.webp | 0.395 | 밀도 0.2 낮춤 재시도/유사 프레임 추가 병합; SSIM·동작 QA 통과 때만 | 0.032 |
+| assets/sprites/enemies/kala_ushumgal/phase_transition.webp | 0.379 | 밀도 0.2 낮춤 재시도/유사 프레임 추가 병합; SSIM·동작 QA 통과 때만 | 0.030 |
+| assets/sprites/enemies/humbaba/idle.webp | 0.372 | 밀도 0.2 낮춤 재시도/유사 프레임 추가 병합; SSIM·동작 QA 통과 때만 | 0.030 |
+| assets/backgrounds/rear_gate/villa_exterior.webp | 0.370 | 밀도 0.2 낮춤 재시도/유사 프레임 추가 병합; SSIM·동작 QA 통과 때만 | 0.030 |
+
+## 최종 공유 ZIP
+
+최종 ZIP: 51.74MiB (목표54MiB). assets49.79MiB/목표50MiB, 신규 콘텐츠5.07MiB/예산8MiB: 모두 충족. sprites/audio 개별 폴더 예산 초과는 위 표와 별도로 남긴다.
+
+새 압축 해제 폴더의 전체108검사와 에셋·알파·도달성·프레임·접지·크기 검증이 모두 통과했다. 문서만 갱신한 최종 재패킹은 실행 파일 해시 동일성, ZIP CRC와 Godot 네이티브 가져오기로 확인한다.

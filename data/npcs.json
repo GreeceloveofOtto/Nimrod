@@ -400,12 +400,38 @@
           "frames": 6,
           "duration": 2.4,
           "loop": true
+        },
+        {
+          "name": "walk",
+          "frames": 8,
+          "duration": 0.9,
+          "loop": true
+        },
+        {
+          "name": "sit_down",
+          "frames": 4,
+          "duration": 0.4,
+          "loop": false
+        },
+        {
+          "name": "sit_idle",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
+        },
+        {
+          "name": "stand_up",
+          "frames": 4,
+          "duration": 0.4,
+          "loop": false
         }
       ],
       "face_player": true,
       "three_way": true,
       "initial_pose": "front",
-      "random_start": false
+      "random_start": false,
+      "interactable": true,
+      "interaction": "villa_hosts"
     },
     {
       "id": "aya",
@@ -424,12 +450,38 @@
           "frames": 6,
           "duration": 2.4,
           "loop": true
+        },
+        {
+          "name": "walk",
+          "frames": 8,
+          "duration": 0.9,
+          "loop": true
+        },
+        {
+          "name": "sit_down",
+          "frames": 4,
+          "duration": 0.4,
+          "loop": false
+        },
+        {
+          "name": "sit_idle",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
+        },
+        {
+          "name": "stand_up",
+          "frames": 4,
+          "duration": 0.4,
+          "loop": false
         }
       ],
       "face_player": true,
       "three_way": true,
       "initial_pose": "front",
-      "random_start": false
+      "random_start": false,
+      "interactable": true,
+      "interaction": "villa_hosts"
     },
     {
       "id": "enkidua",

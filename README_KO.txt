@@ -12,7 +12,7 @@ Windows: PLAY_WITH_GODOT.bat. 엔진을 못 찾으면 GODOT_BIN을 설정합니�
 현재 25개 레벨입니다. 전체 스토리 엔딩·세이브포인트·멜람무 보상은 후속 작업입니다.
 
 시작과 무기 획득
-새 게임·사망·R·GameState.reset_run()은 모두 니므롯의 집 Spawn_Start(x330),
+새 게임·사망·F5·GameState.reset_run()은 모두 니므롯의 집 Spawn_Start(x330),
 오른쪽을 보는 맨손으로 시작합니다. 맨손에서 J는 공격하지 않습니다.
 집 선반 옆 x620의 삼나무 지팡이: 100px 이내 E → 지팡이 3타(18/18/24).
 루갈성 1층 부모님 둘 중심에서 140px 이내 E: 첫 대화 후 도끼를 받습니다.
@@ -30,7 +30,7 @@ K: 구르기·공격 캔슬. 누른 좌우 방향, 입력이 없으면 바라보
 사슬에 끌릴 때 0.15초 후 K: 탈출.
 E: 가장 가까운 문/회복 픽업(+30HP)/지팡이/부모님/샴하트.
 완전히 열린 대문 트리거에 들어가면 E 없이 이동합니다.
-R: 태초부터 다시 시작 / F1: 피격·공격·감지 판정
+F5: 태초부터 다시 시작 / F1: 피격·공격·감지 판정
 F2: 괴수 인식 표식·접지 그림자 / F3: 구조물 표시 / F4: 충돌·이미지 윗면 비교
 디버그 1: CastleF1/Spawn_Debug(x760), 2: VillaF1/Spawn_FromGate(x200).
 디버그 이동은 페이드/문/효과음 없이 HP·무기·런 플래그를 보존합니다.
@@ -82,7 +82,7 @@ archive/.gdignore로 엔진에서 제외하며 archive/, 접촉 시트/GIF는 Gi
 개발 도구
 Python 의존성: requirements-tools.txt(Pillow/numpy/scipy/fontTools), 오디오: ffmpeg/ffprobe.
 GODOT_BIN은 Godot4.3 실행 파일 경로. Linux cloud는 /workspace/tools/godot43.
-python tools/run_headless_checks.py : 전체 임포트·54스크립트·39테스트(로그 오류/경고 하나도 실패).
+python tools/run_headless_checks.py : 전체 임포트·59스크립트·48테스트(로그 오류/경고 하나도 실패).
 python tools/validate_assets.py
 python tools/check_sprite_parity.py
 python tools/check_alpha_cleanliness.py
@@ -109,3 +109,13 @@ SIZE_REPORT_KO.md, STAGE8_FILES_KO.txt. 최종 검사 결과는 보고서에 기
 - 대화 종료 후 E는0.2초 동안 무시. 1/2 순간이동은 진행된 대화 플래그 유지.
 - tools/measure_assets.py, downscale_assets.py, check_enemy_grounding.py로 크기·저장밀도·접지를 점검합니다.
 - 원본 재인코딩 검사는 archive/ 원본이 필요. ZIP은 원본을 제외하며 내장 픽셀 표본·런타임 검사로 독립 검증합니다.
+
+[9단계: 스토리 진행과 두 번째 조사]
+별장3층 샤마쉬·아야에게 E → 별장2층 식탁 x1220에서 E(앉기) → 삼나무 숲 칼라-우쉬움갈 첫 처치 → 밤의 별장3층 보고 → 성1층 귀환 대화/암전/기상 → 엔키두아/부모님 대화 → 별장3층 아누르 축복 → 숲 보스방 훔바바.
+R: 아누르의 빛(획득 후, 쿨다운5초, 관통2명). F5: 집에서 처음부터(무기·버프·스킬·스토리 초기화). F6/F7: 다음/이전 스토리 단계 디버그; 1/2 순간이동 유지. 대화·컷신 중 단축키를 무시한다.
+스토리 단계 0시작 /1별장 첫 대화 /2저녁식사 /3칼라 첫 처치(밤) /4보고 /5성 귀환·기상 /6엔키두아·부모님 /7아누르의 빛 /8훔바바 처치.
+모든 대화는 게임을 멈추고 우측 중앙 대화창에서 화자 이름과 함께 자동 진행한다. 식사 컷신은 무기 보유 상태를 바꾸지 않고 표시만 숨겼다가 복구한다. 밤에 별장1층은 비고, 식탁은 준비 상태이며, 기상 뒤 밤이 해제된다.
+9단계 대사·조건·전체 흐름: docs/STAGE9_STORY_FLOW_KO.md. 구현·검증·파일: docs/STAGE9_REPORT_KO.md. 용량·화질: docs/SIZE_REPORT_KO.md.
+ZIP은 Godot 프로젝트 가져오기를 위해 모든 폴더 항목을 먼저 기록한다. Godot에서 ZIP 직접 가져오기를 하거나, 폴더에 전체 압축 해제 후 project.godot을 열 수 있다.
+
+추가 요청: 삼나무 숲1·2층의 교체 줄기 벽30개는 이미지와 충돌을 삭제했습니다. 배경 숲과 마귀 가지 발판은 유지합니다. 상세 변경은 docs/STAGE9_REPORT_KO.md 참조.

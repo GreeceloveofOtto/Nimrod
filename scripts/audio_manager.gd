@@ -2,6 +2,16 @@ extends Node
 
 # Replace a source file at the same path to upgrade the temporary synthesized audio.
 const SFX_TABLE: Dictionary = {
+    "anur_cast": "res://assets/audio/sfx/anur_cast.ogg",
+    "anur_hit": "res://assets/audio/sfx/anur_hit.ogg",
+    "humbaba_bite": "res://assets/audio/sfx/humbaba_bite.ogg",
+    "humbaba_claw": "res://assets/audio/sfx/humbaba_claw.ogg",
+    "humbaba_breath_loop": "res://assets/audio/sfx/humbaba_breath_loop.ogg",
+    "humbaba_tail": "res://assets/audio/sfx/humbaba_tail.ogg",
+    "humbaba_roar": "res://assets/audio/sfx/humbaba_roar.ogg",
+    "humbaba_hurt": "res://assets/audio/sfx/humbaba_hurt.ogg",
+    "humbaba_death": "res://assets/audio/sfx/humbaba_death.ogg",
+
     "cedar_sentinel_windup": "res://assets/audio/sfx/cedar_sentinel_windup.ogg",
     "cedar_sentinel_attack": "res://assets/audio/sfx/cedar_sentinel_attack.ogg",
     "cedar_sentinel_hurt": "res://assets/audio/sfx/cedar_sentinel_hurt.ogg",
@@ -142,7 +152,7 @@ const BGM_TABLE: Dictionary = {
     "castle_front": "res://assets/audio/bgm/castle_front.ogg",
     "uruk_wasteland": "res://assets/audio/bgm/uruk_wasteland.ogg"
 }
-const LOOP_SFX: Array[String] = ["beast_ranged_flame_loop", "sky_beast_wingflap_loop", "gas_loop", "wraith_wail_loop", "wisp_wail_loop", "boss_roar_loop", "boss_core_throb"]
+const LOOP_SFX: Array[String] = ["beast_ranged_flame_loop", "sky_beast_wingflap_loop", "gas_loop", "wraith_wail_loop", "wisp_wail_loop", "boss_roar_loop", "boss_core_throb", "humbaba_breath_loop"]
 const SILENT_DB: float = -60.0
 
 var _streams: Dictionary = {}
@@ -154,7 +164,7 @@ var _bgm_tween: Tween
 func _ready() -> void:
     # Music and dialogue sounds continue while the game world is paused.
     process_mode = Node.PROCESS_MODE_ALWAYS
-    for file in ["res://data/audio_stage5.json", "res://data/audio_stage6.json"]:
+    for file in ["res://data/audio_stage5.json", "res://data/audio_stage6.json", "res://data/audio_stage9.json"]:
         var spec: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(file))
         for item in spec.get("sfx", []):
             sfx_volumes[str(item["name"])] = float(item.get("volume_db", 0.0))

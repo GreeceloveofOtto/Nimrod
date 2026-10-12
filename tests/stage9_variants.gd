@@ -1,0 +1,17 @@
+extends "res://tests/helpers/stage9_support.gd"
+func _run() -> void:
+    await _start9()
+    _check(dialogue_node.resolve_interaction("villa_hosts")["id"] == "villa_intro","Intro is first eligible variant")
+    story_state.set_flag("villa_intro_done")
+    _check(not dialogue_node.interaction_available("villa_hosts"),"Empty repeat hides prompt")
+    story_state.set_flag("kala_first_defeat")
+    _check(dialogue_node.resolve_interaction("villa_hosts")["id"] == "villa_report","Night report takes priority")
+    story_state.debug_stage(6)
+    _check(dialogue_node.resolve_interaction("villa_hosts")["id"] == "villa_anur","Anur takes priority over report")
+    _check(dialogue_node.interaction_available("castle_cook"),"Old single-format interactions still work")
+    await _go("VillaF3")
+    _check(manager.current_level.npcs["aya"].stats["interaction"] == manager.current_level.npcs["shamash"].stats["interaction"],"Either host starts shared group dialogue")
+    await dialogue_node.play_interaction("villa_hosts")
+    _check(story_state.is_flag("skill_anur_light"),"Group dialogue unlocks skill once")
+    _check(not dialogue_node.interaction_available("villa_hosts"),"Finished highest priority variant cannot leak obsolete lines")
+    await _finish("STAGE9_VARIANTS")

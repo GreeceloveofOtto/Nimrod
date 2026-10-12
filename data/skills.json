@@ -1,0 +1,21 @@
+{
+  "anur_light": {
+    "speed": 900.0,
+    "range": 700.0,
+    "box": [
+      56,
+      28
+    ],
+    "pierce": 2,
+    "damage": 36,
+    "cooldown": 5.0,
+    "stun": 0.2,
+    "hand_height_ratio": 0.6,
+    "offset_x": 24.0,
+    "cast_slow_seconds": 0.12,
+    "cast_speed_multiplier": 0.5,
+    "projectile": "assets/sprites/fx/anur_light_projectile.webp",
+    "cast": "assets/sprites/fx/anur_light_cast.webp",
+    "impact": "assets/sprites/fx/anur_light_impact.webp"
+  }
+}

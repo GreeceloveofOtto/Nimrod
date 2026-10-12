@@ -93,6 +93,15 @@ def stage5_audio():
         signal = synthesize(item["duration"], item["kind"], item["pitch"], item["seed"])
         write_wav(PROJECT_ROOT / "assets/audio/sfx" / (item["name"] + ".wav"), signal, fade_seconds=0.0 if item.get("loop", False) else 0.004)
 
+def stage9_audio():
+    spec = json.loads((PROJECT_ROOT / "data/audio_stage9.json").read_text())
+    import subprocess
+    for i,item in enumerate(spec["sfx"]):
+        source=PROJECT_ROOT / "archive/stage9/audio" / (item["name"]+".wav")
+        source.parent.mkdir(parents=True,exist_ok=True)
+        write_wav(source,synthesize(item["duration"],item["kind"],item["pitch"],900+i),fade_seconds=0 if item["loop"] else .004, encode_ogg=False)
+        subprocess.run(["ffmpeg","-hide_banner","-loglevel","error","-y","-i",str(source),"-c:a","libvorbis","-q:a","3",str(PROJECT_ROOT/"assets/audio/sfx"/(item["name"]+".ogg"))],check=True)
+
 def main():
     out_dir = PROJECT_ROOT / "assets/audio/sfx"
     for index, (name, (duration, kind, pitch)) in enumerate(SOUNDS.items()):
@@ -112,7 +121,9 @@ def main():
 
 if __name__ == "__main__":
     import sys
-    if "--stage6-only" in sys.argv:
+    if "--stage9-only" in sys.argv:
+        stage9_audio()
+    elif "--stage6-only" in sys.argv:
         stage6_audio()
     elif "--stage5-only" in sys.argv:
         stage5_audio()

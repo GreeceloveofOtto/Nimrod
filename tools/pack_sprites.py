@@ -232,11 +232,17 @@ def apply_storage_policy(args, image, is_sheet):
     if not policy_path.exists() or getattr(args,'canonical_only',False):return
     policy=json.loads(policy_path.read_text());folder='assets/'+relative.parts[0];mode=policy.get(folder,{}).get('mode','keep')
     if mode=='keep':return
-    backup=ROOT/'archive/pack_source'/relative;backup.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(output,backup)
+    backup=ROOT/'archive/pack_source'/relative;backup.parent.mkdir(parents=True,exist_ok=True)
+    if backup.exists() and backup.read_bytes()!=output.read_bytes():
+        import hashlib
+        previous=ROOT/'archive/pack_source_history'/relative.parent/(relative.stem+'_'+hashlib.sha256(backup.read_bytes()).hexdigest()[:16]+relative.suffix)
+        previous.parent.mkdir(parents=True,exist_ok=True)
+        if not previous.exists():shutil.copy2(backup,previous)
+    shutil.copy2(output,backup)
     spec={}
     if is_sheet:
         limits=json.loads((ROOT/'data/density_limits.json').read_text());limit=limits.get(args.density_class,2);w,h=args.frame_width,args.frame_height
-        frames=[image.crop((i*w,0,(i+1)*w,h)) for i in range(args.frames)];boxes=[f.getchannel('A').getbbox() for f in frames];x=max(0,min(b[0] for b in boxes)-3);y=max(0,min(b[1] for b in boxes)-3);right=min(w,max(b[2] for b in boxes)+3);bottom=min(h,max(b[3] for b in boxes)+3);cw,ch=right-x,bottom-y
+        frames=[image.crop((i*w,0,(i+1)*w,h)) for i in range(args.frames)];boxes=[f.getchannel('A').getbbox() for f in frames];x=max(0,min(b[0] for b in boxes)-1);y=max(0,min(b[1] for b in boxes)-1);right=min(w,max(b[2] for b in boxes)+1);bottom=min(h,max(b[3] for b in boxes)+1);cw,ch=right-x,bottom-y
         packed=Image.new('RGBA',(cw*args.frames,ch))
         for i,f in enumerate(frames):packed.paste(f.crop((x,y,right,bottom)),(i*cw,0))
         scale,sw,sh,quality,density=choose_scale(packed,cw,ch,args.frames,args.visual_scale,limit);image=Image.new('RGBA',(sw*args.frames,sh))
@@ -252,6 +258,11 @@ def apply_storage_policy(args, image, is_sheet):
             for clip in data.get('clips',[]):
                 if Path(clip['sheet']).stem==output.stem:clip.update(spec);clip['sheet']=str(Path(clip['sheet']).with_suffix('.webp'))
             manifest.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+        quality_path=ROOT/'data/storage_quality.json'
+        rows=json.loads(quality_path.read_text()) if quality_path.exists() else []
+        record={'path':key,'source':str(target.relative_to(ROOT)),'source_archive':str(backup.relative_to(ROOT/'archive')),'source_canonical':True,'source_bytes':backup.stat().st_size,'output_bytes':target.stat().st_size,'storage_scale':spec['storage_scale'],'stored_frames':args.frames,'frames':args.frames,'density':density,'ssim':quality,**metrics}
+        rows=[row for row in rows if row['path']!=key]+[record]
+        quality_path.write_text(json.dumps(rows,indent=2)+'\n')
     print(json.dumps({'policy_output':str(target),'metadata':str(target.with_suffix('.storage.json'))}))
 
 

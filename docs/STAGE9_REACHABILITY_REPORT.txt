@@ -1,0 +1,14 @@
+REACHABILITY CastleOutskirts: 106 checks, 0 failures; jump height 138.01px
+REACHABILITY DowntownPassage_F1: 18 checks, 0 failures; jump height 138.01px
+REACHABILITY DowntownPassage_F2: 19 checks, 0 failures; jump height 138.01px
+REACHABILITY DowntownPassage_F3: 53 checks, 0 failures; jump height 138.01px
+REACHABILITY DowntownPassage_F4: 24 checks, 0 failures; jump height 138.01px
+REACHABILITY DowntownPassage_F5: 50 checks, 0 failures; jump height 138.01px
+REACHABILITY DowntownPassage_F6: 16 checks, 0 failures; jump height 138.01px
+REACHABILITY DowntownPassage_F7: 34 checks, 0 failures; jump height 138.01px
+REACHABILITY DowntownPassage_F8: 49 checks, 0 failures; jump height 138.01px
+REACHABILITY HomeRoad: 109 checks, 0 failures; jump height 138.01px
+SOLID_GAPS: 1 checks, 0 failures
+
+MAZE CedarForest_F1: 94 checks, 0 failures; 20 rooms, shortest path 16
+MAZE CedarForest_F2: 94 checks, 0 failures; 20 rooms, shortest path 16

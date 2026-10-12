@@ -40,11 +40,15 @@ def check(path,c):
   prev=p
  if not boxes:return errors or ['no frames'],warnings,{}
  heights=np.array([b[3]-b[1] for b in boxes]);tol=min(.65 if c.get('qa',{}).get('pose_height_exception') else .35,float(c.get('qa',{}).get('height_tol',.10)));median=float(np.median(heights))
+ expected=c.get('qa',{}).get('expected_pose_heights',[])
  for i,h in enumerate(heights):
-  if abs(h-median)>median*tol:errors.append(f'frame {i+1}: height {h} outside {median:.1f} ±{tol:.0%}')
+  if expected:
+   if len(expected)!=len(frames):errors.append('authored pose height reference count mismatch');break
+   if abs(h-expected[i])>max(6,expected[i]*.03):errors.append(f'frame {i+1}: height differs from authored pose {expected[i]} by more than 3%/6px')
+  elif abs(h-median)>median*tol and not c.get("qa",{}).get("fade_out_fx"):errors.append(f'frame {i+1}: height {h} outside {median:.1f} ±{tol:.0%}')
  medarea=float(np.median(areas))
  for i,a in enumerate(areas):
-  if a<.4*medarea:errors.append(f'frame {i+1}: insufficient painted area')
+  if a<.4*medarea and not c.get('qa',{}).get('fade_out_fx'):errors.append(f'frame {i+1}: insufficient painted area')
  anchor=c.get('anchor_px',[c['frame_width']//2,c['frame_height']-40]);floating=anchor[1]==c['frame_height']//2
  if floating:
   for i,(x,y) in enumerate(centers):

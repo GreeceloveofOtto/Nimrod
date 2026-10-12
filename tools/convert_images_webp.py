@@ -16,13 +16,25 @@ def convert(path,out):
     spec=POLICY.get('overrides',{}).get(str(Path(relative).with_suffix('.webp')),POLICY.get(folder,{'mode':'lossless','quality':86}))
     image=Image.open(path).convert('RGBA');original=np.array(image);transparent=bool(original[:,:,3].min()<255)
     if spec.get('mode')=='lossless':image.save(out,'WEBP',lossless=True,method=6,exact=True)
-    elif spec.get('encoder')=='bounded RGB quantization':
-        step=int(spec['rgb_step']);pixels=original.copy();pixels[:,:,:3]=np.minimum(255,np.floor(pixels[:,:,:3].astype(float)/step+.5)*step).astype(np.uint8);Image.fromarray(pixels).save(out,'WEBP',lossless=True,method=6,exact=True)
+    elif str(spec.get('encoder','')).startswith('bounded RGB'):
+        step=int(spec['rgb_step']);pixels=original.copy();pixels[:,:,:3]=np.minimum(255,np.floor(pixels[:,:,:3].astype(float)/step+.5)*step).astype(np.uint8)
+        if spec.get('edge_despill'):
+            edge=(pixels[:,:,3]>0)&(pixels[:,:,3]<180)&(pixels[:,:,0]>160)&(pixels[:,:,2]>160)&(pixels[:,:,1]<130)
+            pixels[:,:,1][edge]=180
+        Image.fromarray(pixels).save(out,'WEBP',lossless=True,method=6,exact=True)
+    elif str(spec.get('encoder','')).startswith('adaptive RGB128'):
+        from scipy.spatial import cKDTree
+        mask=original[:,:,3]>12;visible=original[:,:,:3][mask];pixels=original.copy()
+        if len(visible):
+            palette=Image.fromarray(visible.reshape(1,-1,3)).quantize(colors=128,method=Image.Quantize.MEDIANCUT).getpalette()
+            colors=np.array(palette,dtype=np.uint8).reshape(-1,3);indices=cKDTree(colors.astype(float)).query(visible,k=1)[1]
+            pixels[:,:,:3][mask]=colors[indices]
+        Image.fromarray(pixels).save(out,'WEBP',lossless=True,method=6,exact=True)
     else:encode(image,out,int(spec.get('quality',86)))
     restored=np.array(Image.open(out).convert('RGBA'));mask=original[:,:,3]>12
     alpha=float(np.abs(original[:,:,3].astype(float)-restored[:,:,3]).mean());rgb=float(np.abs(original[:,:,:3][mask].astype(float)-restored[:,:,:3][mask]).mean()) if mask.any() else 0
     same_bbox=image.getchannel('A').getbbox()==Image.fromarray(restored[:,:,3]).getbbox()
-    return same_bbox and alpha<=1.5 and rgb<=3,rgb,transparent
+    return same_bbox and alpha<=.5 and rgb<=3,rgb,transparent
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--apply',action='store_true');p.add_argument('--dry-run',action='store_true');p.add_argument('--folders',nargs='+',default=['assets']);a=p.parse_args();

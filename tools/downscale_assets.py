@@ -31,7 +31,7 @@ def encode(image,path,quality=86):
  a=np.asarray(image.convert('RGBA'));transparent=a[:,:,3].min()<255;buffer=io.BytesIO();image.save(buffer,'WEBP',quality=quality,alpha_quality=95,method=6,exact=True)
  b=np.asarray(Image.open(io.BytesIO(buffer.getvalue())).convert('RGBA'));mask=a[:,:,3]>12
  alpha=float(np.abs(a[:,:,3].astype(float)-b[:,:,3]).mean());rgb=float(np.abs(a[:,:,:3][mask].astype(float)-b[:,:,:3][mask]).mean()) if mask.any() else 0
- bbox=Image.fromarray(a[:,:,3]).getbbox()==Image.fromarray(b[:,:,3]).getbbox();lossless=not(bbox and alpha<=1.5 and rgb<=3)
+ bbox=Image.fromarray(a[:,:,3]).getbbox()==Image.fromarray(b[:,:,3]).getbbox();lossless=not(bbox and alpha<=.5 and rgb<=3)
  if lossless:
   buffer=io.BytesIO();image.save(buffer,'WEBP',lossless=True,method=6,exact=True);alpha=0;rgb=0
  path.write_bytes(buffer.getvalue());return {'mode':'lossless' if lossless else 'lossy','quality':quality,'alpha_mae':alpha,'rgb_mae':rgb,'bbox_same':True,'transparent':bool(transparent)}
@@ -86,13 +86,21 @@ def main():
 
 def rewrite_paths(mapping):
  import re
+ mapping={k:v for k,v in mapping.items() if k!=v}
  if not mapping:return
  replacements={**mapping,**{k.removeprefix('assets/'):v.removeprefix('assets/') for k,v in mapping.items()}}
  pattern=re.compile('|'.join(re.escape(k) for k in sorted(replacements,key=len,reverse=True)))
  for folder in ['scripts','scenes','data','assets','tools','tests']:
   for p in (ROOT/folder).rglob('*'):
    if p.suffix not in ['.gd','.py','.json','.tscn','.tres','.txt','.md']:continue
-   old=p.read_text();new=pattern.sub(lambda m:replacements[m.group()],old)
+   if p==ROOT/'data/image_mapping.json':continue
+   old=p.read_text()
+   def rewrite(value,key=''):
+    if isinstance(value,str):return value if key in ['source','source_archive','original_path','raw_sources'] else pattern.sub(lambda m:replacements[m.group()],value)
+    if isinstance(value,list):return [rewrite(v,key) for v in value]
+    if isinstance(value,dict):return {pattern.sub(lambda m:replacements[m.group()],k):rewrite(v,k) for k,v in value.items()}
+    return value
+   new=json.dumps(rewrite(json.loads(old)),ensure_ascii=False,indent=2)+'\n' if p.suffix=='.json' else pattern.sub(lambda m:replacements[m.group()],old)
    if new!=old:p.write_text(new)
- p=ROOT/'data/image_mapping.json';d=json.loads(p.read_text());d.update(mapping);p.write_text(json.dumps(d,indent=2)+'\n')
+ p=ROOT/'data/image_mapping.json';d={k:v for k,v in json.loads(p.read_text()).items() if k!=v};d.update(mapping);p.write_text(json.dumps(d,indent=2)+'\n')
 if __name__=='__main__':main()

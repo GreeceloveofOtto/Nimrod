@@ -26,6 +26,7 @@ func _run() -> void:
             reachable = [EnemyBase.State.IDLE, EnemyBase.State.CHASE, EnemyBase.State.TURN, EnemyBase.State.STUN, EnemyBase.State.DEAD]
         if id == "shell_scorpion": enemy.phase = "claw"
         if id == "chain_beastman": enemy.phase = "tail"
+        if enemy is Humbaba: enemy._start_pattern("bite")
         for state in reachable:
             enemy.state = state
             enemy.state_clock = .05

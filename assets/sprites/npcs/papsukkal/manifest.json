@@ -26,7 +26,7 @@
         600
       ],
       "image_size": [
-        450,
+        375,
         241
       ],
       "trim": {
@@ -53,17 +53,19 @@
         "w": 75,
         "h": 241
       },
-      "stored_columns": 6,
+      "stored_columns": 5,
       "frame_map": [
         0,
         1,
         2,
+        2,
         3,
-        4,
-        5
+        4
       ],
       "effective_density": 2.2,
-      "ssim": 0.934128550055815
+      "ssim": 0.934128550055815,
+      "temporal_ssim_min": 0.9978887366833203,
+      "logical_duration_unchanged": true
     },
     {
       "name": "idle_front",
@@ -81,7 +83,7 @@
         600
       ],
       "image_size": [
-        552,
+        368,
         221
       ],
       "trim": {
@@ -108,17 +110,19 @@
         "w": 92,
         "h": 221
       },
-      "stored_columns": 6,
+      "stored_columns": 4,
       "frame_map": [
         0,
+        0,
+        1,
         1,
         2,
-        3,
-        4,
-        5
+        3
       ],
       "effective_density": 2,
-      "ssim": 0.960428887094619
+      "ssim": 0.960428887094619,
+      "temporal_ssim_min": 0.9857064518417685,
+      "logical_duration_unchanged": true
     }
   ],
   "design_reference": "reference/papsukkal_design.png",

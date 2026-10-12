@@ -5,14 +5,14 @@ from pathlib import Path
 from PIL import Image
 R=Path(__file__).resolve().parents[1]
 def reference(row,spec=None):
- archive='stage8_density_before' if spec else 'stage8_encoding_before';im=Image.open(R/'archive'/archive/row['source']).convert('RGBA')
+ archive='stage8_density_before' if spec else 'stage8_encoding_before';source=R/'archive'/row['source_archive'] if row.get('source_archive') else R/'archive'/archive/row['source'];im=Image.open(source).convert('RGBA')
  if spec:
   t=spec['trim'];st=spec['storage_trim'];out=Image.new('RGBA',tuple(spec['image_size']));seen=set()
   for i,k in enumerate(spec['frame_map']):
    if k in seen:continue
-   seen.add(k);frame=im.crop((i*t['w'],0,(i+1)*t['w'],t['h'])).resize((st['w'],st['h']),Image.Resampling.LANCZOS);out.paste(frame,(k*st['w'],0))
+   seen.add(k);frame=im.crop((i*spec['frame_width']+t['x'],t['y'],i*spec['frame_width']+t['x']+t['w'],t['y']+t['h'])) if row.get('source_canonical') else im.crop((i*t['w'],0,(i+1)*t['w'],t['h']));frame=frame.resize((st['w'],st['h']),Image.Resampling.LANCZOS);out.paste(frame,(k*st['w'],0))
   return out
- return im
+ return im.resize(tuple(row['image_resize']),Image.Resampling.LANCZOS) if row.get('image_resize') else im
 
 def main():
  density=json.loads((R/'data/storage_quality.json').read_text());encoding=json.loads((R/'data/image_encoding_quality.json').read_text());registry=json.loads((R/'data/sprite_trims.json').read_text());selected=[]

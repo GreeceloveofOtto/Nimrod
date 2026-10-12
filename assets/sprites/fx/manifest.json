@@ -58,6 +58,416 @@
       ],
       "effective_density": 2.0,
       "ssim": 0.9340961146779055
+    },
+    {
+      "name": "anur_light_projectile",
+      "sheet": "sprites/fx/anur_light_projectile.webp",
+      "frame_width": 128,
+      "frame_height": 64,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 0.3,
+      "fps": 13.333333333333334,
+      "loop": true,
+      "anchor_px": [
+        64,
+        32
+      ],
+      "image_size": [
+        232,
+        23
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.65,
+        "detached_fx_or_weapon": true,
+        "movement": false
+      },
+      "trim": {
+        "x": 10,
+        "y": 18,
+        "w": 74,
+        "h": 29
+      },
+      "storage_trim": {
+        "x": 7.837837837837838,
+        "y": 14.275862068965518,
+        "w": 58,
+        "h": 23
+      },
+      "storage_scale": [
+        0.7837837837837838,
+        0.7931034482758621
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        100,
+        51
+      ],
+      "stored_anchor_px": [
+        50.16216216216216,
+        25.379310344827587
+      ],
+      "ssim": 0.9371593491740103,
+      "effective_density": 2.6,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "anur_light_cast",
+      "sheet": "sprites/fx/anur_light_cast.webp",
+      "frame_width": 192,
+      "frame_height": 192,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 0.2,
+      "fps": 20.0,
+      "loop": false,
+      "anchor_px": [
+        96,
+        96
+      ],
+      "image_size": [
+        416,
+        84
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.65,
+        "detached_fx_or_weapon": true,
+        "movement": false,
+        "fade_out_fx": true
+      },
+      "trim": {
+        "x": 9,
+        "y": 32,
+        "w": 157,
+        "h": 127
+      },
+      "storage_trim": {
+        "x": 5.961783439490445,
+        "y": 21.165354330708663,
+        "w": 104,
+        "h": 84
+      },
+      "storage_scale": [
+        0.6624203821656051,
+        0.6614173228346457
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        127,
+        127
+      ],
+      "stored_anchor_px": [
+        63.59235668789809,
+        63.496062992125985
+      ],
+      "ssim": 0.9437378353476931,
+      "effective_density": 2.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "anur_light_impact",
+      "sheet": "sprites/fx/anur_light_impact.webp",
+      "frame_width": 192,
+      "frame_height": 192,
+      "frames": 5,
+      "columns": 5,
+      "rows": 1,
+      "duration_seconds": 0.25,
+      "fps": 20.0,
+      "loop": false,
+      "anchor_px": [
+        96,
+        96
+      ],
+      "image_size": [
+        410,
+        46
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.65,
+        "detached_fx_or_weapon": true,
+        "movement": false,
+        "fade_out_fx": true
+      },
+      "trim": {
+        "x": 59,
+        "y": 60,
+        "w": 124,
+        "h": 70
+      },
+      "storage_trim": {
+        "x": 39.016129032258064,
+        "y": 39.42857142857143,
+        "w": 82,
+        "h": 46
+      },
+      "storage_scale": [
+        0.6612903225806451,
+        0.6571428571428571
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        127,
+        126
+      ],
+      "stored_anchor_px": [
+        63.483870967741936,
+        63.08571428571429
+      ],
+      "ssim": 0.9364116492534564,
+      "effective_density": 2.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "humbaba_flame_cone",
+      "sheet": "sprites/fx/humbaba_flame_cone.webp",
+      "frame_width": 768,
+      "frame_height": 384,
+      "frames": 6,
+      "columns": 6,
+      "rows": 1,
+      "duration_seconds": 0.4,
+      "fps": 15.0,
+      "loop": true,
+      "anchor_px": [
+        384,
+        192
+      ],
+      "image_size": [
+        1794,
+        136
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.65,
+        "detached_fx_or_weapon": true,
+        "movement": false
+      },
+      "trim": {
+        "x": 46,
+        "y": 29,
+        "w": 712,
+        "h": 325
+      },
+      "storage_trim": {
+        "x": 19.31741573033708,
+        "y": 12.135384615384615,
+        "w": 299,
+        "h": 136
+      },
+      "storage_scale": [
+        0.4199438202247191,
+        0.41846153846153844
+      ],
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stored_frame_size": [
+        323,
+        161
+      ],
+      "stored_anchor_px": [
+        161.25842696629215,
+        80.34461538461538
+      ],
+      "ssim": 0.9920738636314137,
+      "effective_density": 1.4,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "humbaba_ember_aura",
+      "sheet": "sprites/fx/humbaba_ember_aura.webp",
+      "frame_width": 512,
+      "frame_height": 512,
+      "frames": 6,
+      "columns": 6,
+      "rows": 1,
+      "duration_seconds": 0.8,
+      "fps": 7.5,
+      "loop": true,
+      "anchor_px": [
+        256,
+        256
+      ],
+      "image_size": [
+        1236,
+        143
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.65,
+        "detached_fx_or_weapon": true,
+        "movement": false
+      },
+      "trim": {
+        "x": 8,
+        "y": 88,
+        "w": 491,
+        "h": 340
+      },
+      "storage_trim": {
+        "x": 3.3564154786150713,
+        "y": 37.01176470588236,
+        "w": 206,
+        "h": 143
+      },
+      "storage_scale": [
+        0.4195519348268839,
+        0.42058823529411765
+      ],
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stored_frame_size": [
+        215,
+        215
+      ],
+      "stored_anchor_px": [
+        107.40529531568228,
+        107.67058823529412
+      ],
+      "ssim": 0.9901744767688098,
+      "effective_density": 1.4,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "humbaba_bite_spark",
+      "sheet": "sprites/fx/humbaba_bite_spark.webp",
+      "frame_width": 192,
+      "frame_height": 192,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 0.2,
+      "fps": 20.0,
+      "loop": false,
+      "anchor_px": [
+        96,
+        96
+      ],
+      "image_size": [
+        412,
+        59
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.65,
+        "detached_fx_or_weapon": true,
+        "movement": false,
+        "fade_out_fx": true
+      },
+      "trim": {
+        "x": 9,
+        "y": 47,
+        "w": 171,
+        "h": 98
+      },
+      "storage_trim": {
+        "x": 5.421052631578948,
+        "y": 28.29591836734694,
+        "w": 103,
+        "h": 59
+      },
+      "storage_scale": [
+        0.6023391812865497,
+        0.6020408163265306
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        116,
+        116
+      ],
+      "stored_anchor_px": [
+        57.824561403508774,
+        57.795918367346935
+      ],
+      "ssim": 0.937331563094715,
+      "effective_density": 2.0,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
     }
   ]
 }

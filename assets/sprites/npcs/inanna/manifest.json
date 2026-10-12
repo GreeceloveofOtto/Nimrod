@@ -26,7 +26,7 @@
         600
       ],
       "image_size": [
-        906,
+        755,
         241
       ],
       "trim": {
@@ -53,17 +53,19 @@
         "w": 151,
         "h": 241
       },
-      "stored_columns": 6,
+      "stored_columns": 5,
       "frame_map": [
         0,
         1,
         2,
+        2,
         3,
-        4,
-        5
+        4
       ],
       "effective_density": 2.2,
-      "ssim": 0.9423058412799855
+      "ssim": 0.9423058412799855,
+      "temporal_ssim_min": 0.9974489749800495,
+      "logical_duration_unchanged": true
     },
     {
       "name": "idle_front",
@@ -81,7 +83,7 @@
         600
       ],
       "image_size": [
-        1386,
+        924,
         221
       ],
       "trim": {
@@ -108,17 +110,19 @@
         "w": 231,
         "h": 221
       },
-      "stored_columns": 6,
+      "stored_columns": 4,
       "frame_map": [
         0,
+        0,
+        1,
         1,
         2,
-        3,
-        4,
-        5
+        3
       ],
       "effective_density": 2,
-      "ssim": 0.9574747191153349
+      "ssim": 0.9574747191153349,
+      "temporal_ssim_min": 0.9864955158428436,
+      "logical_duration_unchanged": true
     }
   ],
   "design_reference": "reference/inanna_design.png",

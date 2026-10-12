@@ -30,7 +30,7 @@ def envelope(t, attack=0.002, decay=0.055, duration=None):
     return env
 
 
-def write_wav(path, samples, normalize=True, fade_seconds=0.004):
+def write_wav(path, samples, normalize=True, fade_seconds=0.004, encode_ogg=True):
     """Write mono 16-bit PCM, optionally keeping an already-periodic loop intact."""
     samples = np.asarray(samples, dtype=np.float64).copy()
     if fade_seconds:
@@ -50,6 +50,8 @@ def write_wav(path, samples, normalize=True, fade_seconds=0.004):
         output.setsampwidth(2)
         output.setframerate(SAMPLE_RATE)
         output.writeframes(pcm.tobytes())
+    if not encode_ogg:
+        return path
     from convert_audio_ogg import convert
     output = convert(path, archive=True)
     return output

@@ -1,0 +1,180 @@
+{
+  "villa_intro": [
+    {
+      "speaker": "aya",
+      "text": "니므롯, 어서와, 기다리고 있었어."
+    },
+    {
+      "speaker": "shamash",
+      "text": "니므롯, 너에게 거는 기대가 커. 너는 많은 것을 할 수 있을 거야."
+    },
+    {
+      "speaker": "player",
+      "text": "샤마쉬, 아야, 언제나 고마워."
+    },
+    {
+      "speaker": "aya",
+      "text": "니므롯, 식사를 준비했어. 함께 하면서 너의 업무를 전달할게."
+    }
+  ],
+  "villa_dinner": [
+    {
+      "speaker": "shamash",
+      "text": "니므롯, 요즘 엔키두아와 관계는 어떤가?"
+    },
+    {
+      "speaker": "player",
+      "text": "언제나 그렇듯 좋습니다."
+    },
+    {
+      "speaker": "aya",
+      "text": "엔키두아도 우리의 수칼루로 두고 싶은 마음이 있어요."
+    },
+    {
+      "speaker": "aya",
+      "text": "엔키두아도 우리를 매료시켰죠."
+    },
+    {
+      "speaker": "aya",
+      "text": "하지만, 아직 수칼루 2명을 임명할 권한이 없네요."
+    },
+    {
+      "speaker": "shamash",
+      "text": "우린 곧 수칼루 2명을 임명할 수 있을 거야."
+    },
+    {
+      "speaker": "shamash",
+      "text": "그건 그렇고, 오늘 니므롯이 할 업무는 다음과 같아."
+    },
+    {
+      "speaker": "shamash",
+      "text": "삼나무 숲의 조사가 필요해. 삼나무 숲에서의 피해가 늘어나고 있는데, 어떤 변화가 있는지 철저하게 조사해서 우리에게 보고해주면 돼."
+    },
+    {
+      "speaker": "aya",
+      "text": "샤마쉬, 우리 이제 떠나야 할 시간이에요."
+    },
+    {
+      "speaker": "shamash",
+      "text": "니므롯, 우리는 시파르 행성에 일이 있어서 말이지."
+    },
+    {
+      "speaker": "shamash",
+      "text": "그럼 돌아와서 보자고."
+    },
+    {
+      "speaker": "shamash",
+      "text": "브란눈과 이디그나의 축복을 비네."
+    }
+  ],
+  "villa_report": [
+    {
+      "speaker": "shamash",
+      "text": "니므롯, 왔는가, 고생 꽤나 한 모양이군."
+    },
+    {
+      "speaker": "shamash",
+      "text": "자네의 얼굴만 보아도 삼나무 숲에 큰 문제가 있는 것을 알 수 있어."
+    },
+    {
+      "speaker": "shamash",
+      "text": "그래, 어떤가 삼나무 숲에 대해서 구체적으로 보고해주게."
+    },
+    {
+      "speaker": "player",
+      "text": "확실히 이상하긴 하더군요."
+    },
+    {
+      "speaker": "player",
+      "text": "우리가 모르는 곳으로 떠났어야 할 영혼들이 여전히 육체에 남아 있었습니다."
+    },
+    {
+      "speaker": "player",
+      "text": "단 한 번의 조사로는 그 원인을 파악할 수 없었습니다."
+    },
+    {
+      "speaker": "aya",
+      "text": "긴 시간 동안 고생했어, 니므롯. 집으로 돌아가도 좋아요."
+    }
+  ],
+  "castle_return": [
+    {
+      "speaker": "lugalbanda",
+      "text": "아들아, 수고했다. 다행히 별 탈 없이 돌아왔구나."
+    },
+    {
+      "speaker": "ninsun",
+      "text": "오늘은 여기서 자고 가, 니므롯."
+    },
+    {
+      "speaker": "enkidua",
+      "text": "수고했어, 니므롯."
+    }
+  ],
+  "castle_enkidua": [
+    {
+      "speaker": "player",
+      "text": "엔키두아, 축하해. 샤마쉬와 아야의 수칼루라니."
+    },
+    {
+      "speaker": "enkidua",
+      "text": "너가 나를 추천한 거 아니야? 내가 고맙지."
+    },
+    {
+      "speaker": "player",
+      "text": "아니야, 샤마쉬와 아야는 예전부터 너를 수칼루로 두고 싶어했어."
+    }
+  ],
+  "castle_parents": [
+    {
+      "speaker": "lugalbanda",
+      "text": "니므롯과 엔키두아, 너희가 정말 자랑스럽다."
+    },
+    {
+      "speaker": "ninsun",
+      "text": "다치지 마, 니므롯, 엔키두아."
+    }
+  ],
+  "shamhat_s5": [
+    {
+      "speaker": "player",
+      "text": "샴하트, 축하해, 인안나의 두 번째 수칼루가 되었다고?"
+    },
+    {
+      "speaker": "shamhat",
+      "text": "고마워, 영광이지."
+    },
+    {
+      "speaker": "shamhat",
+      "text": "그래서, 엔키두아와는 여전해?"
+    },
+    {
+      "speaker": "player",
+      "text": "당연한 걸."
+    }
+  ],
+  "inanna_s5": [
+    {
+      "speaker": "papsukkal",
+      "text": "감히, 인안나와 대화하려하느냐!"
+    },
+    {
+      "speaker": "inanna",
+      "text": "팝수칼, 이제 그만 좀 해. 니므롯이잖아."
+    },
+    {
+      "speaker": "papsukkal",
+      "text": "그렇군, 오늘도 미안해, 니므롯."
+    }
+  ],
+  "villa_anur": [
+    {
+      "speaker": "shamash",
+      "text": "오늘은 삼나무 숲 재조사를 해주어야 해."
+    },
+    {
+      "speaker": "aya",
+      "text": "너희를 아누르의 빛으로 축복할게."
+    }
+  ]
+}

@@ -61,7 +61,7 @@
         4,
         5
       ],
-      "effective_density": 2,
+      "effective_density": 2.0,
       "ssim": 0.936848771149216
     },
     {
@@ -113,7 +113,7 @@
         1,
         2
       ],
-      "effective_density": 2,
+      "effective_density": 2.0,
       "ssim": 0.9379050524367787
     },
     {
@@ -167,7 +167,7 @@
         3,
         4
       ],
-      "effective_density": 2,
+      "effective_density": 2.0,
       "ssim": 0.9476009099989662
     },
     {
@@ -222,7 +222,7 @@
         4,
         5
       ],
-      "effective_density": 2,
+      "effective_density": 2.0,
       "ssim": 0.9363145440214112
     },
     {
@@ -326,7 +326,7 @@
         0,
         1
       ],
-      "effective_density": 2,
+      "effective_density": 2.0,
       "ssim": 0.9441004715949127
     }
   ]

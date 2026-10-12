@@ -16,8 +16,8 @@
         380
       ],
       "image_size": [
-        1512,
-        358
+        1134,
+        268
       ],
       "trim": {
         "x": 2,
@@ -26,22 +26,22 @@
         "h": 358
       },
       "storage_scale": [
-        1.0,
-        1.0
+        0.75,
+        0.7486033519553073
       ],
       "stored_frame_size": [
-        256,
-        384
+        192,
+        287
       ],
       "stored_anchor_px": [
-        128.0,
-        380.0
+        96.0,
+        284.46927374301674
       ],
       "storage_trim": {
-        "x": 2.0,
-        "y": 24.0,
-        "w": 252,
-        "h": 358
+        "x": 1.5,
+        "y": 17.966480446927374,
+        "w": 189,
+        "h": 268
       },
       "stored_columns": 6,
       "frame_map": [
@@ -52,8 +52,8 @@
         4,
         5
       ],
-      "effective_density": 2,
-      "ssim": 1.0
+      "effective_density": 0.75,
+      "ssim": 0.997306904702236
     },
     {
       "name": "downtown_passage_door_anim",
@@ -71,8 +71,8 @@
         456
       ],
       "image_size": [
-        1896,
-        295
+        1422,
+        221
       ],
       "trim": {
         "x": 2,
@@ -81,22 +81,22 @@
         "h": 295
       },
       "storage_scale": [
-        1.0,
-        1.0
+        0.75,
+        0.7491525423728813
       ],
       "stored_frame_size": [
-        320,
-        460
+        240,
+        345
       ],
       "stored_anchor_px": [
-        160.0,
-        456.0
+        120.0,
+        341.6135593220339
       ],
       "storage_trim": {
-        "x": 2.0,
-        "y": 163.0,
-        "w": 316,
-        "h": 295
+        "x": 1.5,
+        "y": 122.11186440677966,
+        "w": 237,
+        "h": 221
       },
       "stored_columns": 6,
       "frame_map": [
@@ -107,8 +107,8 @@
         4,
         5
       ],
-      "effective_density": 2,
-      "ssim": 1.0
+      "effective_density": 0.75,
+      "ssim": 0.9724524333078655
     },
     {
       "name": "nimrod_home_gate",
@@ -126,8 +126,8 @@
         416
       ],
       "image_size": [
-        1896,
-        244
+        1422,
+        183
       ],
       "trim": {
         "x": 2,
@@ -136,22 +136,22 @@
         "h": 244
       },
       "storage_scale": [
-        1.0,
-        1.0
+        0.75,
+        0.75
       ],
       "stored_frame_size": [
-        320,
-        420
+        240,
+        315
       ],
       "stored_anchor_px": [
-        160.0,
-        416.0
+        120.0,
+        312.0
       ],
       "storage_trim": {
-        "x": 2.0,
-        "y": 174.0,
-        "w": 316,
-        "h": 244
+        "x": 1.5,
+        "y": 130.5,
+        "w": 237,
+        "h": 183
       },
       "stored_columns": 6,
       "frame_map": [
@@ -162,8 +162,8 @@
         4,
         5
       ],
-      "effective_density": 2,
-      "ssim": 1.0
+      "effective_density": 0.75,
+      "ssim": 0.9721370269141867
     }
   ]
 }

@@ -18,7 +18,7 @@
         600
       ],
       "image_size": [
-        672,
+        448,
         230
       ],
       "trim": {
@@ -45,17 +45,19 @@
         "w": 112,
         "h": 230
       },
-      "stored_columns": 6,
+      "stored_columns": 4,
       "frame_map": [
         0,
+        0,
+        1,
         1,
         2,
-        3,
-        4,
-        5
+        3
       ],
       "effective_density": 2,
-      "ssim": 0.939869855945345
+      "ssim": 0.939869855945345,
+      "temporal_ssim_min": 0.989265793912435,
+      "logical_duration_unchanged": true
     },
     {
       "name": "idle",
@@ -73,7 +75,7 @@
         600
       ],
       "image_size": [
-        420,
+        280,
         230
       ],
       "trim": {
@@ -100,6 +102,199 @@
         "w": 70,
         "h": 230
       },
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        3
+      ],
+      "effective_density": 2,
+      "ssim": 0.9329745656232667,
+      "temporal_ssim_min": 0.9854822208641243,
+      "logical_duration_unchanged": true
+    },
+    {
+      "name": "walk",
+      "sheet": "sprites/npcs/shamash/walk.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 8,
+      "columns": 8,
+      "rows": 1,
+      "duration_seconds": 0.9,
+      "fps": 8.88888888888889,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        960,
+        184
+      ],
+      "qa": {
+        "pose_height_exception": false,
+        "height_tol": 0.12,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 195,
+        "y": 219,
+        "w": 251,
+        "h": 384
+      },
+      "storage_trim": {
+        "x": 93.22709163346613,
+        "y": 104.9375,
+        "w": 120,
+        "h": 184
+      },
+      "storage_scale": [
+        0.47808764940239046,
+        0.4791666666666667
+      ],
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "stored_frame_size": [
+        306,
+        307
+      ],
+      "stored_anchor_px": [
+        152.98804780876495,
+        287.5
+      ],
+      "ssim": 0.9814598814073547,
+      "effective_density": 1.6,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "sit_down",
+      "sheet": "sprites/npcs/shamash/sit_down.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 0.4,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        396,
+        187
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.4,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 217,
+        "y": 214,
+        "w": 207,
+        "h": 389
+      },
+      "storage_trim": {
+        "x": 103.78260869565217,
+        "y": 102.87403598971723,
+        "w": 99,
+        "h": 187
+      },
+      "storage_scale": [
+        0.4782608695652174,
+        0.480719794344473
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        306,
+        308
+      ],
+      "stored_anchor_px": [
+        153.04347826086956,
+        288.43187660668383
+      ],
+      "ssim": 0.9806521287154265,
+      "effective_density": 1.6,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "sit_idle",
+      "sheet": "sprites/npcs/shamash/sit_idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 6,
+      "columns": 6,
+      "rows": 1,
+      "duration_seconds": 2.4,
+      "fps": 2.5,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        702,
+        172
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.4,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 198,
+        "y": 245,
+        "w": 244,
+        "h": 358
+      },
+      "storage_trim": {
+        "x": 94.94262295081967,
+        "y": 117.70949720670392,
+        "w": 117,
+        "h": 172
+      },
+      "storage_scale": [
+        0.47950819672131145,
+        0.48044692737430167
+      ],
       "stored_columns": 6,
       "frame_map": [
         0,
@@ -109,8 +304,91 @@
         4,
         5
       ],
-      "effective_density": 2,
-      "ssim": 0.9329745656232667
+      "stored_frame_size": [
+        307,
+        307
+      ],
+      "stored_anchor_px": [
+        153.44262295081967,
+        288.268156424581
+      ],
+      "ssim": 0.9814389371599699,
+      "effective_density": 1.6,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "stand_up",
+      "sheet": "sprites/npcs/shamash/stand_up.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 0.4,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        416,
+        190
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.4,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 212,
+        "y": 207,
+        "w": 216,
+        "h": 396
+      },
+      "storage_trim": {
+        "x": 102.07407407407408,
+        "y": 99.31818181818181,
+        "w": 104,
+        "h": 190
+      },
+      "storage_scale": [
+        0.48148148148148145,
+        0.4797979797979798
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        308,
+        307
+      ],
+      "stored_anchor_px": [
+        154.07407407407408,
+        287.8787878787879
+      ],
+      "ssim": 0.9841588061231408,
+      "effective_density": 1.6,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
     }
   ]
 }

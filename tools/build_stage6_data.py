@@ -51,16 +51,12 @@ def maze(n):
  l['backgrounds']=[bg('CedarFar','backgrounds/cedar/far_tile_2d',1024,1024,ratio_y=.1,repeat_size=[1024,1024],repeat_times=8),bg('CedarMid','backgrounds/cedar/mid_trunks_tile_2d',1024,1024,ratio_y=.35,repeat_size=[1024,1024],repeat_times=8)];l['backgrounds'][0]['ratio']=.1;l['backgrounds'][1]['ratio']=.35
  edges=[(a,b) for a,b in zip(PATH,PATH[1:])]+[((1,r),(0,r)) for r in range(4)]
  cells=[dict(id=f'{c}_{r}',column=c,row=r,rect=[c*cw,offset+r*ch,cw,ch]) for r in range(rows) for c in range(cols)]
- # One-way room floors provide intentional S+Space routes. Trunk walls have
- # openings only at graph connections; 500px clear openings fit the colossus.
+ # One-way room floors provide intentional S+Space routes.
+ # Trunk wall obstacles were removed at the user's request in Stage 9.
  for r in range(rows):
   floor=offset+(r+1)*ch
   if r<rows-1:
    for c in range(cols):l['platforms'].append(plat(f'room_{c}_{r}',c*cw+40,floor,cw-80,'branch_platform'))
-  for c in range(1,cols):
-   connected=((c-1,r),(c,r)) in edges or ((c,r),(c-1,r)) in edges
-   h=140 if connected else ch
-   l['obstacles'].append(dict(rect=[c*cw-40,offset+r*ch,80,h],art='res://assets/tiles/cedar/wall_trunk_tile.png',role='wall'))
  chains=[]
  for a,b in edges:
   if a[0]==b[0]:

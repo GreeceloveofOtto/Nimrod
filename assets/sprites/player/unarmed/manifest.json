@@ -85,8 +85,8 @@
         600
       ],
       "image_size": [
-        1460,
-        206
+        1170,
+        165
       ],
       "qa": {
         "height_tol": 0.1,
@@ -99,22 +99,22 @@
         "h": 344
       },
       "storage_scale": [
-        0.6008230452674898,
-        0.5988372093023255
+        0.48148148148148145,
+        0.4796511627906977
       ],
       "stored_frame_size": [
-        385,
-        383
+        308,
+        307
       ],
       "stored_anchor_px": [
-        192.2633744855967,
-        359.30232558139534
+        154.07407407407408,
+        287.7906976744186
       ],
       "storage_trim": {
-        "x": 118.96296296296296,
-        "y": 154.5,
-        "w": 146,
-        "h": 206
+        "x": 95.33333333333333,
+        "y": 123.75,
+        "w": 117,
+        "h": 165
       },
       "stored_columns": 10,
       "frame_map": [
@@ -129,8 +129,8 @@
         8,
         9
       ],
-      "effective_density": 2,
-      "ssim": 0.9760117085460177
+      "effective_density": 1.6,
+      "ssim": 0.9424306453013013
     },
     {
       "name": "crouch_enter",
@@ -418,7 +418,7 @@
         4,
         5
       ],
-      "effective_density": 2,
+      "effective_density": 2.0,
       "ssim": 0.9442219247011636
     },
     {
@@ -477,7 +477,7 @@
         4,
         5
       ],
-      "effective_density": 2,
+      "effective_density": 2.0,
       "ssim": 0.9441819395773278
     },
     {
@@ -496,8 +496,8 @@
         600
       ],
       "image_size": [
-        1060,
-        250
+        955,
+        225
       ],
       "qa": {
         "height_tol": 0.35,
@@ -510,22 +510,22 @@
         "h": 416
       },
       "storage_scale": [
-        0.5988700564971752,
-        0.6009615384615384
+        0.53954802259887,
+        0.5408653846153846
       ],
       "stored_frame_size": [
-        383,
-        385
+        345,
+        346
       ],
       "stored_anchor_px": [
-        191.63841807909606,
-        360.5769230769231
+        172.65536723163842,
+        324.5192307692308
       ],
       "storage_trim": {
-        "x": 85.63841807909604,
-        "y": 111.77884615384616,
-        "w": 212,
-        "h": 250
+        "x": 77.15536723163842,
+        "y": 100.60096153846153,
+        "w": 191,
+        "h": 225
       },
       "stored_columns": 5,
       "frame_map": [
@@ -535,8 +535,8 @@
         3,
         4
       ],
-      "effective_density": 2,
-      "ssim": 0.9553943768376667
+      "effective_density": 1.8,
+      "ssim": 0.9401401276036022
     },
     {
       "name": "drop_through",
@@ -554,8 +554,8 @@
         600
       ],
       "image_size": [
-        1005,
-        220
+        905,
+        198
       ],
       "qa": {
         "height_tol": 0.35,
@@ -568,22 +568,22 @@
         "h": 367
       },
       "storage_scale": [
-        0.6,
-        0.5994550408719346
+        0.5402985074626866,
+        0.5395095367847411
       ],
       "stored_frame_size": [
-        384,
-        384
+        346,
+        345
       ],
       "stored_anchor_px": [
-        192.0,
-        359.6730245231608
+        172.8955223880597,
+        323.7057220708447
       ],
       "storage_trim": {
-        "x": 91.2,
-        "y": 140.87193460490462,
-        "w": 201,
-        "h": 220
+        "x": 82.12537313432836,
+        "y": 126.78474114441417,
+        "w": 181,
+        "h": 198
       },
       "stored_columns": 5,
       "frame_map": [
@@ -593,8 +593,8 @@
         3,
         4
       ],
-      "effective_density": 2,
-      "ssim": 0.9522294497541772
+      "effective_density": 1.8,
+      "ssim": 0.9333596262944005
     },
     {
       "name": "hurt",
@@ -712,7 +712,7 @@
         6,
         7
       ],
-      "effective_density": 2,
+      "effective_density": 2.0,
       "ssim": 0.9326050348130953
     },
     {
@@ -731,8 +731,8 @@
         600
       ],
       "image_size": [
-        1730,
-        197
+        1390,
+        157
       ],
       "qa": {
         "height_tol": 0.1,
@@ -746,22 +746,22 @@
         "h": 328
       },
       "storage_scale": [
-        0.5986159169550173,
-        0.600609756097561
+        0.4809688581314879,
+        0.47865853658536583
       ],
       "stored_frame_size": [
-        383,
-        384
+        308,
+        306
       ],
       "stored_anchor_px": [
-        191.55709342560553,
-        360.3658536585366
+        153.91003460207614,
+        287.1951219512195
       ],
       "storage_trim": {
-        "x": 105.35640138408304,
-        "y": 164.5670731707317,
-        "w": 173,
-        "h": 197
+        "x": 84.65051903114187,
+        "y": 131.15243902439025,
+        "w": 139,
+        "h": 157
       },
       "stored_columns": 10,
       "frame_map": [
@@ -776,8 +776,8 @@
         8,
         9
       ],
-      "effective_density": 2,
-      "ssim": 0.9818238299662887
+      "effective_density": 1.6,
+      "ssim": 0.9536880289829626
     },
     {
       "name": "roll",
@@ -795,8 +795,8 @@
         600
       ],
       "image_size": [
-        2184,
-        222
+        1740,
+        178
       ],
       "qa": {
         "height_tol": 0.35,
@@ -809,22 +809,22 @@
         "h": 370
       },
       "storage_scale": [
-        0.6006600660066007,
-        0.6
+        0.47854785478547857,
+        0.4810810810810811
       ],
       "stored_frame_size": [
-        384,
-        384
+        306,
+        308
       ],
       "stored_anchor_px": [
-        192.21122112211222,
-        360.0
+        153.13531353135315,
+        288.64864864864865
       ],
       "storage_trim": {
-        "x": 100.91089108910892,
-        "y": 139.2,
-        "w": 182,
-        "h": 222
+        "x": 80.39603960396039,
+        "y": 111.6108108108108,
+        "w": 145,
+        "h": 178
       },
       "stored_columns": 12,
       "frame_map": [
@@ -841,8 +841,211 @@
         10,
         11
       ],
-      "effective_density": 2,
-      "ssim": 0.9933168177912247
+      "effective_density": 1.6,
+      "ssim": 0.9799960473821648
+    },
+    {
+      "name": "sit_down",
+      "sheet": "sprites/player/unarmed/sit_down.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 0.35,
+      "fps": 11.428571428571429,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        428,
+        177
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.4,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 209,
+        "y": 234,
+        "w": 223,
+        "h": 369
+      },
+      "storage_trim": {
+        "x": 100.28251121076234,
+        "y": 112.2439024390244,
+        "w": 107,
+        "h": 177
+      },
+      "storage_scale": [
+        0.4798206278026906,
+        0.4796747967479675
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        307,
+        307
+      ],
+      "stored_anchor_px": [
+        153.542600896861,
+        287.8048780487805
+      ],
+      "ssim": 0.9589132919004895,
+      "effective_density": 1.6,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "sit_idle",
+      "sheet": "sprites/player/unarmed/sit_idle.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 6,
+      "columns": 6,
+      "rows": 1,
+      "duration_seconds": 2.0,
+      "fps": 3.0,
+      "loop": true,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        642,
+        142
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.4,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 209,
+        "y": 307,
+        "w": 222,
+        "h": 296
+      },
+      "storage_trim": {
+        "x": 100.73423423423424,
+        "y": 147.27702702702703,
+        "w": 107,
+        "h": 142
+      },
+      "storage_scale": [
+        0.481981981981982,
+        0.4797297297297297
+      ],
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stored_frame_size": [
+        308,
+        307
+      ],
+      "stored_anchor_px": [
+        154.23423423423424,
+        287.8378378378378
+      ],
+      "ssim": 0.950074997422994,
+      "effective_density": 1.6,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "stand_up",
+      "sheet": "sprites/player/unarmed/stand_up.webp",
+      "frame_width": 640,
+      "frame_height": 640,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 0.35,
+      "fps": 11.428571428571429,
+      "loop": false,
+      "anchor_px": [
+        320,
+        600
+      ],
+      "image_size": [
+        384,
+        175
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.4,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 219,
+        "y": 238,
+        "w": 201,
+        "h": 365
+      },
+      "storage_trim": {
+        "x": 104.59701492537313,
+        "y": 114.10958904109589,
+        "w": 96,
+        "h": 175
+      },
+      "storage_scale": [
+        0.47761194029850745,
+        0.4794520547945205
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        306,
+        307
+      ],
+      "stored_anchor_px": [
+        152.83582089552237,
+        287.67123287671234
+      ],
+      "ssim": 0.9541976286909948,
+      "effective_density": 1.6,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
     }
   ]
 }

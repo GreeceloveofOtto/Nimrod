@@ -413,6 +413,8 @@ func _strike_data(step: int, shockwave: bool) -> Dictionary:
             return attack
     return {}
 
+var light_stagger_override := -1.0
+
 func _receive_hit(damage: int, from_pos: Vector2, step: int, shockwave: bool) -> Dictionary:
     if state == State.DEAD:
         return {"blocked": false, "damage_dealt": 0}
@@ -428,7 +430,7 @@ func _receive_hit(damage: int, from_pos: Vector2, step: int, shockwave: bool) ->
     if hp <= 0:
         _die()
         return {"blocked": false, "damage_dealt": dealt}
-    _on_hit(float(strike.get("stagger", 0.0)))
+    _on_hit(light_stagger_override if light_stagger_override >= 0 else float(strike.get("stagger", 0.0)))
     return {"blocked": false, "damage_dealt": dealt}
 
 func _on_hit(seconds: float) -> void:
@@ -650,3 +652,9 @@ func snap_to_ground() -> void:
     global_position.y = float(hit["position"].y) - bottom - float(common["ground_snap_margin"])
     velocity = Vector2(0, float(common.get("gravity", 1750)) / 60.0)
     move_and_slide()
+
+func take_light_hit(damage: int, from_pos: Vector2, stagger: float) -> Dictionary:
+    light_stagger_override = stagger
+    var result: Dictionary = take_hit(damage,from_pos,1)
+    light_stagger_override = -1
+    return result

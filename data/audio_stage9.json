@@ -1,0 +1,77 @@
+{
+  "sfx": [
+    {
+      "name": "anur_cast",
+      "kind": "impact",
+      "duration": 0.22,
+      "pitch": 200,
+      "loop": false,
+      "volume_db": -8
+    },
+    {
+      "name": "anur_hit",
+      "kind": "impact",
+      "duration": 0.22,
+      "pitch": 200,
+      "loop": false,
+      "volume_db": -8
+    },
+    {
+      "name": "humbaba_bite",
+      "kind": "impact",
+      "duration": 0.22,
+      "pitch": 80,
+      "loop": false,
+      "volume_db": -8
+    },
+    {
+      "name": "humbaba_claw",
+      "kind": "impact",
+      "duration": 0.22,
+      "pitch": 90,
+      "loop": false,
+      "volume_db": -8
+    },
+    {
+      "name": "humbaba_breath_loop",
+      "kind": "flame_loop",
+      "duration": 0.6,
+      "pitch": 100,
+      "loop": true,
+      "volume_db": -8
+    },
+    {
+      "name": "humbaba_tail",
+      "kind": "impact",
+      "duration": 0.22,
+      "pitch": 110,
+      "loop": false,
+      "volume_db": -8
+    },
+    {
+      "name": "humbaba_roar",
+      "kind": "impact",
+      "duration": 1.8,
+      "pitch": 120,
+      "loop": false,
+      "volume_db": -8
+    },
+    {
+      "name": "humbaba_hurt",
+      "kind": "hurt",
+      "duration": 0.22,
+      "pitch": 130,
+      "loop": false,
+      "volume_db": -8
+    },
+    {
+      "name": "humbaba_death",
+      "kind": "impact",
+      "duration": 0.7,
+      "pitch": 140,
+      "loop": false,
+      "volume_db": -8
+    }
+  ],
+  "bgm": []
+}

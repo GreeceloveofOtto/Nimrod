@@ -1,0 +1,1168 @@
+{
+  "clips": [
+    {
+      "name": "idle",
+      "sheet": "sprites/enemies/humbaba/idle.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 8,
+      "columns": 8,
+      "rows": 1,
+      "duration_seconds": 1.6,
+      "fps": 5.0,
+      "loop": true,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        1680,
+        374
+      ],
+      "qa": {
+        "pose_height_exception": false,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 413,
+        "y": 64,
+        "w": 583,
+        "h": 1039
+      },
+      "storage_trim": {
+        "x": 148.76500857632934,
+        "y": 23.037536092396536,
+        "w": 210,
+        "h": 374
+      },
+      "storage_scale": [
+        0.3602058319039451,
+        0.3599615014436959
+      ],
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "stored_frame_size": [
+        507,
+        415
+      ],
+      "stored_anchor_px": [
+        253.58490566037736,
+        395.95765158806546
+      ],
+      "ssim": 0.9970267651317037,
+      "effective_density": 1.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "bite_windup",
+      "sheet": "sprites/enemies/humbaba/bite_windup.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 5,
+      "columns": 5,
+      "rows": 1,
+      "duration_seconds": 0.9,
+      "fps": 5.555555555555555,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        1110,
+        348
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 395,
+        "y": 135,
+        "w": 617,
+        "h": 968
+      },
+      "storage_trim": {
+        "x": 142.12317666126418,
+        "y": 48.53305785123967,
+        "w": 222,
+        "h": 348
+      },
+      "storage_scale": [
+        0.35980551053484605,
+        0.359504132231405
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        507,
+        414
+      ],
+      "stored_anchor_px": [
+        253.3030794165316,
+        395.45454545454544
+      ],
+      "ssim": 0.9970518007674072,
+      "effective_density": 1.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "bite",
+      "sheet": "sprites/enemies/humbaba/bite.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 3,
+      "columns": 3,
+      "rows": 1,
+      "duration_seconds": 0.2,
+      "fps": 15.0,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        1041,
+        302
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 222,
+        "y": 264,
+        "w": 964,
+        "h": 839
+      },
+      "storage_trim": {
+        "x": 79.91078838174273,
+        "y": 95.02741358760429,
+        "w": 347,
+        "h": 302
+      },
+      "storage_scale": [
+        0.3599585062240664,
+        0.3599523241954708
+      ],
+      "stored_columns": 3,
+      "frame_map": [
+        0,
+        1,
+        2
+      ],
+      "stored_frame_size": [
+        507,
+        415
+      ],
+      "stored_anchor_px": [
+        253.41078838174275,
+        395.9475566150179
+      ],
+      "ssim": 0.9975736072686916,
+      "effective_density": 1.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "bite_recovery",
+      "sheet": "sprites/enemies/humbaba/bite_recovery.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 1.0,
+      "fps": 4.0,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        1340,
+        347
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 239,
+        "y": 140,
+        "w": 930,
+        "h": 963
+      },
+      "storage_trim": {
+        "x": 86.09139784946237,
+        "y": 50.44652128764278,
+        "w": 335,
+        "h": 347
+      },
+      "storage_scale": [
+        0.3602150537634409,
+        0.3603322949117342
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        507,
+        415
+      ],
+      "stored_anchor_px": [
+        253.59139784946237,
+        396.36552440290757
+      ],
+      "ssim": 0.9980777113696471,
+      "effective_density": 1.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "claw_windup",
+      "sheet": "sprites/enemies/humbaba/claw_windup.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 0.6,
+      "fps": 6.666666666666667,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        1192,
+        374
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 290,
+        "y": 64,
+        "w": 828,
+        "h": 1039
+      },
+      "storage_trim": {
+        "x": 104.3719806763285,
+        "y": 23.037536092396536,
+        "w": 298,
+        "h": 374
+      },
+      "storage_scale": [
+        0.35990338164251207,
+        0.3599615014436959
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        507,
+        415
+      ],
+      "stored_anchor_px": [
+        253.3719806763285,
+        395.95765158806546
+      ],
+      "ssim": 0.9980347054640173,
+      "effective_density": 1.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "claw_swipe",
+      "sheet": "sprites/enemies/humbaba/claw_swipe.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 6,
+      "columns": 6,
+      "rows": 1,
+      "duration_seconds": 0.75,
+      "fps": 8.0,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        2508,
+        374
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 123,
+        "y": 64,
+        "w": 1161,
+        "h": 1039
+      },
+      "storage_trim": {
+        "x": 44.28423772609819,
+        "y": 23.037536092396536,
+        "w": 418,
+        "h": 374
+      },
+      "storage_scale": [
+        0.36003445305770887,
+        0.3599615014436959
+      ],
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stored_frame_size": [
+        507,
+        415
+      ],
+      "stored_anchor_px": [
+        253.46425495262704,
+        395.95765158806546
+      ],
+      "ssim": 0.9936290084901617,
+      "effective_density": 1.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "claw_recovery",
+      "sheet": "sprites/enemies/humbaba/claw_recovery.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 1.1,
+      "fps": 3.6363636363636362,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        1024,
+        371
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 349,
+        "y": 72,
+        "w": 710,
+        "h": 1031
+      },
+      "storage_trim": {
+        "x": 125.83661971830986,
+        "y": 25.90882638215325,
+        "w": 256,
+        "h": 371
+      },
+      "storage_scale": [
+        0.36056338028169016,
+        0.35984481086323955
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        508,
+        415
+      ],
+      "stored_anchor_px": [
+        253.83661971830986,
+        395.8292919495635
+      ],
+      "ssim": 0.9976900143818681,
+      "effective_density": 1.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "breath_windup",
+      "sheet": "sprites/enemies/humbaba/breath_windup.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 5,
+      "columns": 5,
+      "rows": 1,
+      "duration_seconds": 0.8,
+      "fps": 6.25,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        1160,
+        374
+      ],
+      "qa": {
+        "pose_height_exception": false,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 381,
+        "y": 64,
+        "w": 645,
+        "h": 1039
+      },
+      "storage_trim": {
+        "x": 137.0418604651163,
+        "y": 23.037536092396536,
+        "w": 232,
+        "h": 374
+      },
+      "storage_scale": [
+        0.35968992248062015,
+        0.3599615014436959
+      ],
+      "stored_columns": 5,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "stored_frame_size": [
+        506,
+        415
+      ],
+      "stored_anchor_px": [
+        253.22170542635658,
+        395.95765158806546
+      ],
+      "ssim": 0.9973305330704764,
+      "effective_density": 1.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "breath_loop",
+      "sheet": "sprites/enemies/humbaba/breath_loop.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 0.4,
+      "fps": 10.0,
+      "loop": true,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        1188,
+        376
+      ],
+      "qa": {
+        "pose_height_exception": false,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 291,
+        "y": 58,
+        "w": 825,
+        "h": 1045
+      },
+      "storage_trim": {
+        "x": 104.76,
+        "y": 20.8688995215311,
+        "w": 297,
+        "h": 376
+      },
+      "storage_scale": [
+        0.36,
+        0.3598086124401914
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        507,
+        414
+      ],
+      "stored_anchor_px": [
+        253.44,
+        395.7894736842105
+      ],
+      "ssim": 0.973012915009194,
+      "effective_density": 1.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "breath_recovery",
+      "sheet": "sprites/enemies/humbaba/breath_recovery.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 1.3,
+      "fps": 3.0769230769230766,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        1140,
+        349
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 309,
+        "y": 133,
+        "w": 791,
+        "h": 970
+      },
+      "storage_trim": {
+        "x": 111.3337547408344,
+        "y": 47.85257731958763,
+        "w": 285,
+        "h": 349
+      },
+      "storage_scale": [
+        0.36030341340075855,
+        0.3597938144329897
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        507,
+        414
+      ],
+      "stored_anchor_px": [
+        253.653603034134,
+        395.77319587628864
+      ],
+      "ssim": 0.9976383635457131,
+      "effective_density": 1.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "tail_windup",
+      "sheet": "sprites/enemies/humbaba/tail_windup.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 3,
+      "columns": 3,
+      "rows": 1,
+      "duration_seconds": 0.3,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        903,
+        316
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 286,
+        "y": 224,
+        "w": 836,
+        "h": 879
+      },
+      "storage_trim": {
+        "x": 102.97368421052632,
+        "y": 80.52787258248009,
+        "w": 301,
+        "h": 316
+      },
+      "storage_scale": [
+        0.36004784688995217,
+        0.3594994311717861
+      ],
+      "stored_columns": 3,
+      "frame_map": [
+        0,
+        1,
+        2
+      ],
+      "stored_frame_size": [
+        507,
+        414
+      ],
+      "stored_anchor_px": [
+        253.47368421052633,
+        395.44937428896475
+      ],
+      "ssim": 0.9974928780584202,
+      "effective_density": 1.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "tail_strike",
+      "sheet": "sprites/enemies/humbaba/tail_strike.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 3,
+      "columns": 3,
+      "rows": 1,
+      "duration_seconds": 0.15,
+      "fps": 20.0,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        663,
+        379
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 397,
+        "y": 49,
+        "w": 613,
+        "h": 1054
+      },
+      "storage_trim": {
+        "x": 143.12724306688418,
+        "y": 17.619544592030362,
+        "w": 221,
+        "h": 379
+      },
+      "storage_scale": [
+        0.3605220228384992,
+        0.35958254269449713
+      ],
+      "stored_columns": 3,
+      "frame_map": [
+        0,
+        1,
+        2
+      ],
+      "stored_frame_size": [
+        508,
+        414
+      ],
+      "stored_anchor_px": [
+        253.80750407830342,
+        395.5407969639469
+      ],
+      "ssim": 0.9972785725686834,
+      "effective_density": 1.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "tail_recovery",
+      "sheet": "sprites/enemies/humbaba/tail_recovery.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 4,
+      "columns": 4,
+      "rows": 1,
+      "duration_seconds": 0.6,
+      "fps": 6.666666666666667,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        860,
+        374
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 405,
+        "y": 64,
+        "w": 598,
+        "h": 1039
+      },
+      "storage_trim": {
+        "x": 145.6103678929766,
+        "y": 23.037536092396536,
+        "w": 215,
+        "h": 374
+      },
+      "storage_scale": [
+        0.3595317725752508,
+        0.3599615014436959
+      ],
+      "stored_columns": 4,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stored_frame_size": [
+        506,
+        415
+      ],
+      "stored_anchor_px": [
+        253.1103678929766,
+        395.95765158806546
+      ],
+      "ssim": 0.997502017228531,
+      "effective_density": 1.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "turn",
+      "sheet": "sprites/enemies/humbaba/turn.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 6,
+      "columns": 6,
+      "rows": 1,
+      "duration_seconds": 0.6,
+      "fps": 10.0,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        1326,
+        362
+      ],
+      "qa": {
+        "pose_height_exception": false,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 397,
+        "y": 97,
+        "w": 613,
+        "h": 1006
+      },
+      "storage_trim": {
+        "x": 143.12724306688418,
+        "y": 34.90457256461232,
+        "w": 221,
+        "h": 362
+      },
+      "storage_scale": [
+        0.3605220228384992,
+        0.35984095427435386
+      ],
+      "stored_columns": 6,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stored_frame_size": [
+        508,
+        415
+      ],
+      "stored_anchor_px": [
+        253.80750407830342,
+        395.8250497017893
+      ],
+      "ssim": 0.9971555339510427,
+      "effective_density": 1.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "phase_roar",
+      "sheet": "sprites/enemies/humbaba/phase_roar.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 8,
+      "columns": 8,
+      "rows": 1,
+      "duration_seconds": 1.8,
+      "fps": 4.444444444444445,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        1648,
+        374
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.35,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 419,
+        "y": 64,
+        "w": 571,
+        "h": 1039
+      },
+      "storage_trim": {
+        "x": 151.16287215411558,
+        "y": 23.037536092396536,
+        "w": 206,
+        "h": 374
+      },
+      "storage_scale": [
+        0.3607705779334501,
+        0.3599615014436959
+      ],
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "stored_frame_size": [
+        508,
+        415
+      ],
+      "stored_anchor_px": [
+        253.98248686514887,
+        395.95765158806546
+      ],
+      "ssim": 0.9967474114493284,
+      "effective_density": 1.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "death",
+      "sheet": "sprites/enemies/humbaba/death.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 8,
+      "columns": 8,
+      "rows": 1,
+      "duration_seconds": 1.6,
+      "fps": 5.0,
+      "loop": false,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        3176,
+        374
+      ],
+      "qa": {
+        "pose_height_exception": true,
+        "height_tol": 0.65,
+        "detached_fx_or_weapon": false,
+        "movement": true
+      },
+      "trim": {
+        "x": 152,
+        "y": 64,
+        "w": 1104,
+        "h": 1039
+      },
+      "storage_trim": {
+        "x": 54.65942028985507,
+        "y": 23.037536092396536,
+        "w": 397,
+        "h": 374
+      },
+      "storage_scale": [
+        0.3596014492753623,
+        0.3599615014436959
+      ],
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "stored_frame_size": [
+        506,
+        415
+      ],
+      "stored_anchor_px": [
+        253.15942028985506,
+        395.95765158806546
+      ],
+      "ssim": 0.9967582542306652,
+      "effective_density": 1.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    },
+    {
+      "name": "walk",
+      "sheet": "sprites/enemies/humbaba/walk.webp",
+      "frame_width": 1408,
+      "frame_height": 1152,
+      "frames": 8,
+      "columns": 8,
+      "rows": 1,
+      "duration_seconds": 1.2,
+      "fps": 6.666666666666667,
+      "loop": true,
+      "anchor_px": [
+        704,
+        1100
+      ],
+      "image_size": [
+        2176,
+        374
+      ],
+      "qa": {
+        "pose_height_exception": false,
+        "height_tol": 0.1,
+        "detached_fx_or_weapon": false,
+        "movement": false
+      },
+      "trim": {
+        "x": 326,
+        "y": 64,
+        "w": 756,
+        "h": 1039
+      },
+      "storage_trim": {
+        "x": 117.29100529100529,
+        "y": 23.037536092396536,
+        "w": 272,
+        "h": 374
+      },
+      "storage_scale": [
+        0.35978835978835977,
+        0.3599615014436959
+      ],
+      "stored_columns": 8,
+      "frame_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "stored_frame_size": [
+        507,
+        415
+      ],
+      "stored_anchor_px": [
+        253.2910052910053,
+        395.95765158806546
+      ],
+      "ssim": 0.9978560329020396,
+      "effective_density": 1.2,
+      "encoding": {
+        "mode": "lossless",
+        "quality": 86,
+        "alpha_mae": 0,
+        "rgb_mae": 0,
+        "bbox_same": true,
+        "transparent": true
+      }
+    }
+  ],
+  "aliases": {
+    "hurt": "idle",
+    "windup": "bite_windup",
+    "attack": "bite",
+    "recovery": "bite_recovery"
+  }
+}

@@ -629,6 +629,16 @@
     "edge_black_fraction": 0.03,
     "source": "art_manifest"
   },
+  "assets/props/villa_dining_table_full.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/props/villa_dining_table_prep.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
   "assets/props/villa_dining_table_wide.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
@@ -1129,6 +1139,91 @@
     "edge_black_fraction": 0.03,
     "source": "runtime image"
   },
+  "assets/sprites/enemies/humbaba/bite.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/humbaba/bite_recovery.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/humbaba/bite_windup.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/humbaba/breath_loop.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/humbaba/breath_recovery.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/humbaba/breath_windup.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/humbaba/claw_recovery.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/humbaba/claw_swipe.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/humbaba/claw_windup.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/humbaba/death.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/humbaba/idle.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/humbaba/phase_roar.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/humbaba/tail_recovery.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/humbaba/tail_strike.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/humbaba/tail_windup.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/humbaba/turn.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/humbaba/walk.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
   "assets/sprites/enemies/kala_ushumgal/collapse.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
@@ -1150,11 +1245,6 @@
     "source": "runtime image"
   },
   "assets/sprites/enemies/kala_ushumgal/idle.webp": {
-    "mode": "transparent",
-    "edge_black_fraction": 0.03,
-    "source": "runtime image"
-  },
-  "assets/sprites/enemies/kala_ushumgal/idle_p2.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
     "source": "runtime image"
@@ -1184,27 +1274,12 @@
     "edge_black_fraction": 0.03,
     "source": "runtime image"
   },
-  "assets/sprites/enemies/kala_ushumgal/slam_p2.webp": {
-    "mode": "transparent",
-    "edge_black_fraction": 0.03,
-    "source": "runtime image"
-  },
   "assets/sprites/enemies/kala_ushumgal/slam_recovery.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
     "source": "runtime image"
   },
-  "assets/sprites/enemies/kala_ushumgal/slam_recovery_p2.webp": {
-    "mode": "transparent",
-    "edge_black_fraction": 0.03,
-    "source": "runtime image"
-  },
   "assets/sprites/enemies/kala_ushumgal/slam_windup.webp": {
-    "mode": "transparent",
-    "edge_black_fraction": 0.03,
-    "source": "runtime image"
-  },
-  "assets/sprites/enemies/kala_ushumgal/slam_windup_p2.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
     "source": "runtime image"
@@ -1224,27 +1299,12 @@
     "edge_black_fraction": 0.03,
     "source": "runtime image"
   },
-  "assets/sprites/enemies/kala_ushumgal/turn_p2.webp": {
-    "mode": "transparent",
-    "edge_black_fraction": 0.03,
-    "source": "runtime image"
-  },
   "assets/sprites/enemies/kala_ushumgal/walk.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
     "source": "runtime image"
   },
-  "assets/sprites/enemies/kala_ushumgal/walk_p2.webp": {
-    "mode": "transparent",
-    "edge_black_fraction": 0.03,
-    "source": "runtime image"
-  },
   "assets/sprites/enemies/kala_ushumgal/whip_recovery.webp": {
-    "mode": "transparent",
-    "edge_black_fraction": 0.03,
-    "source": "runtime image"
-  },
-  "assets/sprites/enemies/kala_ushumgal/whip_recovery_p2.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
     "source": "runtime image"
@@ -1259,22 +1319,7 @@
     "edge_black_fraction": 0.03,
     "source": "runtime image"
   },
-  "assets/sprites/enemies/kala_ushumgal/whip_swing_back_p2.webp": {
-    "mode": "transparent",
-    "edge_black_fraction": 0.03,
-    "source": "runtime image"
-  },
-  "assets/sprites/enemies/kala_ushumgal/whip_swing_p2.webp": {
-    "mode": "transparent",
-    "edge_black_fraction": 0.03,
-    "source": "runtime image"
-  },
   "assets/sprites/enemies/kala_ushumgal/whip_windup.webp": {
-    "mode": "transparent",
-    "edge_black_fraction": 0.03,
-    "source": "runtime image"
-  },
-  "assets/sprites/enemies/kala_ushumgal/whip_windup_p2.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
     "source": "runtime image"
@@ -1574,6 +1619,21 @@
     "edge_black_fraction": 0.03,
     "source": "runtime image"
   },
+  "assets/sprites/fx/anur_light_cast.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/fx/anur_light_impact.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/fx/anur_light_projectile.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
   "assets/sprites/fx/armor_hit_spark.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
@@ -1629,6 +1689,21 @@
     "edge_black_fraction": 0.03,
     "source": "runtime image"
   },
+  "assets/sprites/fx/humbaba_bite_spark.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/fx/humbaba_ember_aura.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/fx/humbaba_flame_cone.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
   "assets/sprites/fx/root_flame.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
@@ -1653,6 +1728,26 @@
     "mode": "transparent",
     "edge_black_fraction": 0.03,
     "source": "runtime image"
+  },
+  "assets/sprites/npcs/aya/sit_down.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/npcs/aya/sit_idle.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/npcs/aya/stand_up.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/npcs/aya/walk.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
   },
   "assets/sprites/npcs/cook_a/chop.webp": {
     "mode": "transparent",
@@ -1748,6 +1843,26 @@
     "mode": "transparent",
     "edge_black_fraction": 0.03,
     "source": "runtime image"
+  },
+  "assets/sprites/npcs/shamash/sit_down.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/npcs/shamash/sit_idle.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/npcs/shamash/stand_up.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/npcs/shamash/walk.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
   },
   "assets/sprites/npcs/shamhat/idle.webp": {
     "mode": "transparent",
@@ -1999,6 +2114,21 @@
     "edge_black_fraction": 0.03,
     "source": "runtime image"
   },
+  "assets/sprites/player/unarmed/sit_down.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/player/unarmed/sit_idle.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/player/unarmed/stand_up.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
   "assets/sprites/player/unarmed/walk.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
@@ -2040,11 +2170,6 @@
     "source": "art_manifest"
   },
   "assets/tiles/cedar/root_floor_tile.webp": {
-    "mode": "opaque",
-    "edge_black_fraction": 0.02,
-    "source": "art_manifest"
-  },
-  "assets/tiles/cedar/wall_trunk_tile.png": {
     "mode": "opaque",
     "edge_black_fraction": 0.02,
     "source": "art_manifest"

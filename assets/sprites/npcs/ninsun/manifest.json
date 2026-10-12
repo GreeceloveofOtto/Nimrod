@@ -26,7 +26,7 @@
         600
       ],
       "image_size": [
-        510,
+        425,
         236
       ],
       "trim": {
@@ -53,17 +53,19 @@
         "w": 85,
         "h": 236
       },
-      "stored_columns": 6,
+      "stored_columns": 5,
       "frame_map": [
         0,
         1,
         2,
+        2,
         3,
-        4,
-        5
+        4
       ],
       "effective_density": 2.2,
-      "ssim": 0.9342827242648066
+      "ssim": 0.9342827242648066,
+      "temporal_ssim_min": 0.9983115690434892,
+      "logical_duration_unchanged": true
     },
     {
       "name": "idle_front",
@@ -81,7 +83,7 @@
         600
       ],
       "image_size": [
-        588,
+        392,
         217
       ],
       "trim": {
@@ -108,17 +110,19 @@
         "w": 98,
         "h": 217
       },
-      "stored_columns": 6,
+      "stored_columns": 4,
       "frame_map": [
         0,
+        0,
+        1,
         1,
         2,
-        3,
-        4,
-        5
+        3
       ],
       "effective_density": 2,
-      "ssim": 0.9489145891132205
+      "ssim": 0.9489145891132205,
+      "temporal_ssim_min": 0.9869061498876078,
+      "logical_duration_unchanged": true
     }
   ],
   "design_reference": "reference/ninsun_design.png",

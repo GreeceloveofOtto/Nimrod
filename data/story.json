@@ -1,0 +1,79 @@
+{
+  "stages": [
+    {
+      "stage": 0,
+      "flags": []
+    },
+    {
+      "stage": 1,
+      "flags": [
+        "villa_intro_done"
+      ]
+    },
+    {
+      "stage": 2,
+      "flags": [
+        "villa_dinner_done"
+      ]
+    },
+    {
+      "stage": 3,
+      "flags": [
+        "kala_first_defeat"
+      ]
+    },
+    {
+      "stage": 4,
+      "flags": [
+        "report_done"
+      ]
+    },
+    {
+      "stage": 5,
+      "flags": [
+        "castle_return_talk_done",
+        "time_skipped"
+      ]
+    },
+    {
+      "stage": 6,
+      "flags": [
+        "castle_enkidua_done",
+        "castle_talks_done"
+      ]
+    },
+    {
+      "stage": 7,
+      "flags": [
+        "anur_blessing_done"
+      ]
+    },
+    {
+      "stage": 8,
+      "flags": [
+        "humbaba_defeated"
+      ]
+    }
+  ],
+  "night_color": [
+    0.58,
+    0.64,
+    0.88
+  ],
+  "dinner_seat": {
+    "x": 1220,
+    "y": 620,
+    "range": 120,
+    "y_offset": -18
+  },
+  "objective_toast": true,
+  "objective_text": "삼나무 숲을 조사한다",
+  "objective_seconds": 1.8,
+  "rear_locked_message": "아직 이곳을 떠날 수 없다",
+  "time_skip": {
+    "fade_out": 1.5,
+    "hold": 1.0,
+    "fade_in": 1.5,
+    "caption": ""
+  }
+}

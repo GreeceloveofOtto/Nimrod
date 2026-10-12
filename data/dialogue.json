@@ -92,7 +92,155 @@
         "player": "player"
       },
       "on_finish": [],
-      "id": "enkidua_intro"
+      "id": "enkidua_intro",
+      "variants": [
+        {
+          "id": "castle_return",
+          "when": {
+            "all": [
+              "report_done"
+            ],
+            "none": [
+              "castle_return_talk_done"
+            ]
+          },
+          "first": [
+            {
+              "speaker": "lugalbanda",
+              "text": "아들아, 수고했다. 다행히 별 탈 없이 돌아왔구나."
+            },
+            {
+              "speaker": "ninsun",
+              "text": "오늘은 여기서 자고 가, 니므롯."
+            },
+            {
+              "speaker": "enkidua",
+              "text": "수고했어, 니므롯."
+            }
+          ],
+          "repeat": [],
+          "flag": "story_dialogue_castle_return",
+          "speakers": [
+            "player",
+            "lugalbanda",
+            "ninsun",
+            "enkidua"
+          ],
+          "on_finish": [
+            {
+              "event": "set_flag",
+              "flag": "castle_return_talk_done"
+            },
+            {
+              "event": "time_skip"
+            }
+          ]
+        },
+        {
+          "id": "castle_enkidua",
+          "when": {
+            "all": [
+              "time_skipped"
+            ],
+            "none": [
+              "castle_enkidua_done"
+            ]
+          },
+          "first": [
+            {
+              "speaker": "player",
+              "text": "엔키두아, 축하해. 샤마쉬와 아야의 수칼루라니."
+            },
+            {
+              "speaker": "enkidua",
+              "text": "너가 나를 추천한 거 아니야? 내가 고맙지."
+            },
+            {
+              "speaker": "player",
+              "text": "아니야, 샤마쉬와 아야는 예전부터 너를 수칼루로 두고 싶어했어."
+            }
+          ],
+          "repeat": [],
+          "flag": "story_dialogue_castle_enkidua",
+          "speakers": [
+            "player",
+            "enkidua"
+          ],
+          "on_finish": [
+            {
+              "event": "set_flag",
+              "flag": "castle_enkidua_done"
+            }
+          ]
+        },
+        {
+          "id": "enkidua_castle_repeat",
+          "when": {
+            "all": [
+              "castle_enkidua_done"
+            ]
+          },
+          "flag": "castle_enkidua_done",
+          "first": [],
+          "repeat": [
+            {
+              "speaker": "enkidua",
+              "text": "사랑해, 니므롯."
+            }
+          ],
+          "speakers": [
+            "player",
+            "enkidua"
+          ],
+          "on_finish": []
+        },
+        {
+          "first": [
+            {
+              "speaker": "enkidua",
+              "text": "니므롯, 오늘은 샤마쉬와 아야에게 배정받은 첫 번째 업무가 있는 날이야."
+            },
+            {
+              "speaker": "player",
+              "text": "엔키두아, 너무 걱정하지마. 난 내가 딩이르 전체에서 최고의 이기기라고 확신해. 샤마쉬와 아야도 나를 수칼루로 삼았잖아."
+            },
+            {
+              "speaker": "enkidua",
+              "text": "니므롯, 너무 자만하지마. 너에게 어떤 일이 일어날 지는 아무도 몰라. 투피 시마티를 운용하는 안샤르라면 너의 운명을 바꿀 수 있겠지만 말이야."
+            },
+            {
+              "speaker": "enkidua",
+              "text": "우선, 루갈반다와 닌순을 찾아가. 그들은 우루크 루갈성 안에 있을 거야."
+            },
+            {
+              "speaker": "enkidua",
+              "text": "그들은 너에게 브란눈과 이디그나의 운명을 축복한 후에 샤마쉬와 아야의 수칼루로서 필수적인 도구를 내어줄 거야."
+            },
+            {
+              "speaker": "player",
+              "text": "언제나 고마워, 엔키두아."
+            },
+            {
+              "speaker": "enkidua",
+              "text": "사랑해, 니므롯."
+            }
+          ],
+          "repeat": [
+            {
+              "speaker": "enkidua",
+              "text": "사랑해, 니므롯."
+            }
+          ],
+          "flag": "dialogue_enkidua_intro",
+          "speakers": {
+            "enkidua": "enkidua",
+            "player": "player"
+          },
+          "on_finish": [],
+          "id": "enkidua_intro_original",
+          "when": {}
+        }
+      ]
     },
     "passage_soliloquy": {
       "first": [
@@ -190,7 +338,144 @@
         "player": "player"
       },
       "on_finish": [],
-      "id": "parents_gift"
+      "id": "parents_gift",
+      "variants": [
+        {
+          "id": "castle_return",
+          "when": {
+            "all": [
+              "report_done"
+            ],
+            "none": [
+              "castle_return_talk_done"
+            ]
+          },
+          "first": [
+            {
+              "speaker": "lugalbanda",
+              "text": "아들아, 수고했다. 다행히 별 탈 없이 돌아왔구나."
+            },
+            {
+              "speaker": "ninsun",
+              "text": "오늘은 여기서 자고 가, 니므롯."
+            },
+            {
+              "speaker": "enkidua",
+              "text": "수고했어, 니므롯."
+            }
+          ],
+          "repeat": [],
+          "flag": "story_dialogue_castle_return",
+          "speakers": [
+            "player",
+            "lugalbanda",
+            "ninsun",
+            "enkidua"
+          ],
+          "on_finish": [
+            {
+              "event": "set_flag",
+              "flag": "castle_return_talk_done"
+            },
+            {
+              "event": "time_skip"
+            }
+          ]
+        },
+        {
+          "id": "castle_parents",
+          "when": {
+            "all": [
+              "castle_enkidua_done"
+            ],
+            "none": [
+              "castle_talks_done"
+            ]
+          },
+          "first": [
+            {
+              "speaker": "lugalbanda",
+              "text": "니므롯과 엔키두아, 너희가 정말 자랑스럽다."
+            },
+            {
+              "speaker": "ninsun",
+              "text": "다치지 마, 니므롯, 엔키두아."
+            }
+          ],
+          "repeat": [],
+          "flag": "story_dialogue_castle_parents",
+          "speakers": [
+            "player",
+            "lugalbanda",
+            "ninsun"
+          ],
+          "on_finish": [
+            {
+              "event": "set_flag",
+              "flag": "castle_talks_done"
+            }
+          ]
+        },
+        {
+          "id": "parents_wait",
+          "when": {
+            "all": [
+              "time_skipped"
+            ],
+            "none": [
+              "castle_enkidua_done"
+            ]
+          },
+          "flag": "story_dialogue_parents_wait",
+          "first": [],
+          "repeat": [],
+          "speakers": [],
+          "on_finish": []
+        },
+        {
+          "first": [
+            {
+              "speaker": "lugalbanda",
+              "text": "니므롯, 사랑하는 내 아들, 누군가의 수칼루가 되는 것을 내가 얼마나 기다렸는지 모른다."
+            },
+            {
+              "speaker": "ninsun",
+              "text": "니므롯, 너의 축복을 빌어. 언제나 행운이 따르길 바라."
+            },
+            {
+              "speaker": "player",
+              "text": "언제나 고마워, 아버지, 어머니."
+            },
+            {
+              "speaker": "lugalbanda",
+              "text": "사랑하는 니므롯, 너를 위해서 선물을 준비했다."
+            },
+            {
+              "speaker": "lugalbanda",
+              "event": "give_axe"
+            },
+            {
+              "speaker": "ninsun",
+              "text": "언제나 곧게 뻗어있는 브란눈과 이디그나처럼 니므롯의 운명을 축복할게."
+            }
+          ],
+          "repeat": [
+            {
+              "speaker": "ninsun",
+              "text": "오늘도 잘생겼구나, 내 아들."
+            }
+          ],
+          "flag": "lugalbanda_gift",
+          "speakers": {
+            "lugalbanda": "lugalbanda",
+            "ninsun": "ninsun",
+            "player": "player"
+          },
+          "on_finish": [],
+          "id": "parents_gift_original",
+          "when": {}
+        }
+      ]
     },
     "shamhat": {
       "first": [
@@ -232,7 +517,99 @@
           "when": "repeat"
         }
       ],
-      "id": "shamhat"
+      "id": "shamhat",
+      "variants": [
+        {
+          "id": "shamhat_s5",
+          "when": {
+            "all": [
+              "castle_talks_done"
+            ],
+            "none": [
+              "shamhat_s5_done"
+            ]
+          },
+          "first": [
+            {
+              "speaker": "player",
+              "text": "샴하트, 축하해, 인안나의 두 번째 수칼루가 되었다고?"
+            },
+            {
+              "speaker": "shamhat",
+              "text": "고마워, 영광이지."
+            },
+            {
+              "speaker": "shamhat",
+              "text": "그래서, 엔키두아와는 여전해?"
+            },
+            {
+              "speaker": "player",
+              "text": "당연한 걸."
+            }
+          ],
+          "repeat": [],
+          "flag": "story_dialogue_shamhat_s5",
+          "speakers": [
+            "player",
+            "shamhat"
+          ],
+          "on_finish": [
+            {
+              "event": "set_flag",
+              "flag": "shamhat_s5_done"
+            },
+            {
+              "event": "set_flag",
+              "flag": "dialogue_shamhat"
+            }
+          ],
+          "blessing_gate": false
+        },
+        {
+          "first": [
+            {
+              "speaker": "shamhat",
+              "text": "니므롯, 축하해. 샤마쉬와 아야의 수칼루라니, 대단한걸?"
+            },
+            {
+              "speaker": "player",
+              "text": "언제나 고마워, 샴하트."
+            },
+            {
+              "speaker": "shamhat",
+              "text": "엔키두아와는 여전히 서로 사랑해?"
+            },
+            {
+              "speaker": "player",
+              "text": "당연한걸."
+            },
+            {
+              "speaker": "shamhat",
+              "text": "…."
+            }
+          ],
+          "repeat": [
+            {
+              "speaker": "shamhat",
+              "text": "네가 자꾸 신경쓰여."
+            }
+          ],
+          "flag": "dialogue_shamhat",
+          "speakers": {
+            "shamhat": "shamhat",
+            "player": "player"
+          },
+          "on_finish": [
+            {
+              "event": "give_blessing",
+              "when": "repeat"
+            }
+          ],
+          "id": "shamhat_original",
+          "when": {},
+          "blessing_gate": true
+        }
+      ]
     },
     "castle_cook": {
       "first": [
@@ -276,7 +653,73 @@
         "papsukkal": "papsukkal"
       },
       "on_finish": [],
-      "id": "inanna"
+      "id": "inanna",
+      "variants": [
+        {
+          "id": "inanna_s5",
+          "when": {
+            "all": [
+              "castle_talks_done"
+            ],
+            "none": [
+              "inanna_s5_done"
+            ]
+          },
+          "first": [
+            {
+              "speaker": "papsukkal",
+              "text": "감히, 인안나와 대화하려하느냐!"
+            },
+            {
+              "speaker": "inanna",
+              "text": "팝수칼, 이제 그만 좀 해. 니므롯이잖아."
+            },
+            {
+              "speaker": "papsukkal",
+              "text": "그렇군, 오늘도 미안해, 니므롯."
+            }
+          ],
+          "repeat": [],
+          "flag": "story_dialogue_inanna_s5",
+          "speakers": [
+            "player",
+            "papsukkal",
+            "inanna"
+          ],
+          "on_finish": [
+            {
+              "event": "set_flag",
+              "flag": "inanna_s5_done"
+            },
+            {
+              "event": "set_flag",
+              "flag": "dialogue_inanna"
+            }
+          ],
+          "intercept": true
+        },
+        {
+          "first": [
+            {
+              "speaker": "papsukkal",
+              "text": "감히, 인안나와 대화를 시도하려 하는 간 큰 놈이 아직 존재한다니, 누구냐?"
+            }
+          ],
+          "repeat": [
+            {
+              "speaker": "papsukkal",
+              "text": "썩 꺼져!"
+            }
+          ],
+          "flag": "dialogue_inanna",
+          "speakers": {
+            "papsukkal": "papsukkal"
+          },
+          "on_finish": [],
+          "id": "inanna_original",
+          "when": {}
+        }
+      ]
     },
     "villa_gatekeeper": {
       "first": [
@@ -302,6 +745,543 @@
         }
       ],
       "id": "villa_gatekeeper"
+    },
+    "villa_intro": {
+      "id": "villa_intro",
+      "when": {
+        "none": [
+          "villa_intro_done"
+        ]
+      },
+      "first": [
+        {
+          "speaker": "aya",
+          "text": "니므롯, 어서와, 기다리고 있었어."
+        },
+        {
+          "speaker": "shamash",
+          "text": "니므롯, 너에게 거는 기대가 커. 너는 많은 것을 할 수 있을 거야."
+        },
+        {
+          "speaker": "player",
+          "text": "샤마쉬, 아야, 언제나 고마워."
+        },
+        {
+          "speaker": "aya",
+          "text": "니므롯, 식사를 준비했어. 함께 하면서 너의 업무를 전달할게."
+        }
+      ],
+      "repeat": [],
+      "flag": "story_dialogue_villa_intro",
+      "speakers": [
+        "player",
+        "aya",
+        "shamash"
+      ],
+      "on_finish": [
+        {
+          "event": "set_flag",
+          "flag": "villa_intro_done"
+        }
+      ]
+    },
+    "villa_dinner": {
+      "id": "villa_dinner",
+      "when": {
+        "all": [
+          "villa_intro_done"
+        ],
+        "none": [
+          "villa_dinner_done"
+        ]
+      },
+      "first": [
+        {
+          "speaker": "shamash",
+          "text": "니므롯, 요즘 엔키두아와 관계는 어떤가?"
+        },
+        {
+          "speaker": "player",
+          "text": "언제나 그렇듯 좋습니다."
+        },
+        {
+          "speaker": "aya",
+          "text": "엔키두아도 우리의 수칼루로 두고 싶은 마음이 있어요."
+        },
+        {
+          "speaker": "aya",
+          "text": "엔키두아도 우리를 매료시켰죠."
+        },
+        {
+          "speaker": "aya",
+          "text": "하지만, 아직 수칼루 2명을 임명할 권한이 없네요."
+        },
+        {
+          "speaker": "shamash",
+          "text": "우린 곧 수칼루 2명을 임명할 수 있을 거야."
+        },
+        {
+          "speaker": "shamash",
+          "text": "그건 그렇고, 오늘 니므롯이 할 업무는 다음과 같아."
+        },
+        {
+          "speaker": "shamash",
+          "text": "삼나무 숲의 조사가 필요해. 삼나무 숲에서의 피해가 늘어나고 있는데, 어떤 변화가 있는지 철저하게 조사해서 우리에게 보고해주면 돼."
+        },
+        {
+          "speaker": "aya",
+          "text": "샤마쉬, 우리 이제 떠나야 할 시간이에요."
+        },
+        {
+          "speaker": "shamash",
+          "text": "니므롯, 우리는 시파르 행성에 일이 있어서 말이지."
+        },
+        {
+          "speaker": "shamash",
+          "text": "그럼 돌아와서 보자고."
+        },
+        {
+          "speaker": "shamash",
+          "text": "브란눈과 이디그나의 축복을 비네."
+        }
+      ],
+      "repeat": [],
+      "flag": "story_dialogue_villa_dinner",
+      "speakers": [
+        "player",
+        "shamash",
+        "aya"
+      ],
+      "on_finish": []
+    },
+    "villa_report": {
+      "id": "villa_report",
+      "when": {
+        "all": [
+          "kala_first_defeat"
+        ],
+        "none": [
+          "report_done"
+        ]
+      },
+      "first": [
+        {
+          "speaker": "shamash",
+          "text": "니므롯, 왔는가, 고생 꽤나 한 모양이군."
+        },
+        {
+          "speaker": "shamash",
+          "text": "자네의 얼굴만 보아도 삼나무 숲에 큰 문제가 있는 것을 알 수 있어."
+        },
+        {
+          "speaker": "shamash",
+          "text": "그래, 어떤가 삼나무 숲에 대해서 구체적으로 보고해주게."
+        },
+        {
+          "speaker": "player",
+          "text": "확실히 이상하긴 하더군요."
+        },
+        {
+          "speaker": "player",
+          "text": "우리가 모르는 곳으로 떠났어야 할 영혼들이 여전히 육체에 남아 있었습니다."
+        },
+        {
+          "speaker": "player",
+          "text": "단 한 번의 조사로는 그 원인을 파악할 수 없었습니다."
+        },
+        {
+          "speaker": "aya",
+          "text": "긴 시간 동안 고생했어, 니므롯. 집으로 돌아가도 좋아요."
+        }
+      ],
+      "repeat": [],
+      "flag": "story_dialogue_villa_report",
+      "speakers": [
+        "player",
+        "shamash",
+        "aya"
+      ],
+      "on_finish": [
+        {
+          "event": "set_flag",
+          "flag": "report_done"
+        }
+      ]
+    },
+    "castle_return": {
+      "id": "castle_return",
+      "when": {
+        "all": [
+          "report_done"
+        ],
+        "none": [
+          "castle_return_talk_done"
+        ]
+      },
+      "first": [
+        {
+          "speaker": "lugalbanda",
+          "text": "아들아, 수고했다. 다행히 별 탈 없이 돌아왔구나."
+        },
+        {
+          "speaker": "ninsun",
+          "text": "오늘은 여기서 자고 가, 니므롯."
+        },
+        {
+          "speaker": "enkidua",
+          "text": "수고했어, 니므롯."
+        }
+      ],
+      "repeat": [],
+      "flag": "story_dialogue_castle_return",
+      "speakers": [
+        "player",
+        "lugalbanda",
+        "ninsun",
+        "enkidua"
+      ],
+      "on_finish": [
+        {
+          "event": "set_flag",
+          "flag": "castle_return_talk_done"
+        },
+        {
+          "event": "time_skip"
+        }
+      ]
+    },
+    "castle_enkidua": {
+      "id": "castle_enkidua",
+      "when": {
+        "all": [
+          "time_skipped"
+        ],
+        "none": [
+          "castle_enkidua_done"
+        ]
+      },
+      "first": [
+        {
+          "speaker": "player",
+          "text": "엔키두아, 축하해. 샤마쉬와 아야의 수칼루라니."
+        },
+        {
+          "speaker": "enkidua",
+          "text": "너가 나를 추천한 거 아니야? 내가 고맙지."
+        },
+        {
+          "speaker": "player",
+          "text": "아니야, 샤마쉬와 아야는 예전부터 너를 수칼루로 두고 싶어했어."
+        }
+      ],
+      "repeat": [],
+      "flag": "story_dialogue_castle_enkidua",
+      "speakers": [
+        "player",
+        "enkidua"
+      ],
+      "on_finish": [
+        {
+          "event": "set_flag",
+          "flag": "castle_enkidua_done"
+        }
+      ]
+    },
+    "castle_parents": {
+      "id": "castle_parents",
+      "when": {
+        "all": [
+          "castle_enkidua_done"
+        ],
+        "none": [
+          "castle_talks_done"
+        ]
+      },
+      "first": [
+        {
+          "speaker": "lugalbanda",
+          "text": "니므롯과 엔키두아, 너희가 정말 자랑스럽다."
+        },
+        {
+          "speaker": "ninsun",
+          "text": "다치지 마, 니므롯, 엔키두아."
+        }
+      ],
+      "repeat": [],
+      "flag": "story_dialogue_castle_parents",
+      "speakers": [
+        "player",
+        "lugalbanda",
+        "ninsun"
+      ],
+      "on_finish": [
+        {
+          "event": "set_flag",
+          "flag": "castle_talks_done"
+        }
+      ]
+    },
+    "shamhat_s5": {
+      "id": "shamhat_s5",
+      "when": {
+        "all": [
+          "castle_talks_done"
+        ],
+        "none": [
+          "shamhat_s5_done"
+        ]
+      },
+      "first": [
+        {
+          "speaker": "player",
+          "text": "샴하트, 축하해, 인안나의 두 번째 수칼루가 되었다고?"
+        },
+        {
+          "speaker": "shamhat",
+          "text": "고마워, 영광이지."
+        },
+        {
+          "speaker": "shamhat",
+          "text": "그래서, 엔키두아와는 여전해?"
+        },
+        {
+          "speaker": "player",
+          "text": "당연한 걸."
+        }
+      ],
+      "repeat": [],
+      "flag": "story_dialogue_shamhat_s5",
+      "speakers": [
+        "player",
+        "shamhat"
+      ],
+      "on_finish": [
+        {
+          "event": "set_flag",
+          "flag": "shamhat_s5_done"
+        },
+        {
+          "event": "set_flag",
+          "flag": "dialogue_shamhat"
+        }
+      ],
+      "blessing_gate": false
+    },
+    "inanna_s5": {
+      "id": "inanna_s5",
+      "when": {
+        "all": [
+          "castle_talks_done"
+        ],
+        "none": [
+          "inanna_s5_done"
+        ]
+      },
+      "first": [
+        {
+          "speaker": "papsukkal",
+          "text": "감히, 인안나와 대화하려하느냐!"
+        },
+        {
+          "speaker": "inanna",
+          "text": "팝수칼, 이제 그만 좀 해. 니므롯이잖아."
+        },
+        {
+          "speaker": "papsukkal",
+          "text": "그렇군, 오늘도 미안해, 니므롯."
+        }
+      ],
+      "repeat": [],
+      "flag": "story_dialogue_inanna_s5",
+      "speakers": [
+        "player",
+        "papsukkal",
+        "inanna"
+      ],
+      "on_finish": [
+        {
+          "event": "set_flag",
+          "flag": "inanna_s5_done"
+        },
+        {
+          "event": "set_flag",
+          "flag": "dialogue_inanna"
+        }
+      ],
+      "intercept": true
+    },
+    "villa_anur": {
+      "id": "villa_anur",
+      "when": {
+        "all": [
+          "castle_talks_done"
+        ],
+        "none": [
+          "anur_blessing_done"
+        ]
+      },
+      "first": [
+        {
+          "speaker": "shamash",
+          "text": "오늘은 삼나무 숲 재조사를 해주어야 해."
+        },
+        {
+          "speaker": "aya",
+          "text": "너희를 아누르의 빛으로 축복할게."
+        }
+      ],
+      "repeat": [],
+      "flag": "story_dialogue_villa_anur",
+      "speakers": [
+        "player",
+        "shamash",
+        "aya"
+      ],
+      "on_finish": [
+        {
+          "event": "unlock_skill",
+          "skill": "anur_light"
+        },
+        {
+          "event": "set_flag",
+          "flag": "anur_blessing_done"
+        }
+      ]
+    },
+    "villa_hosts": {
+      "variants": [
+        {
+          "id": "villa_anur",
+          "when": {
+            "all": [
+              "castle_talks_done"
+            ],
+            "none": [
+              "anur_blessing_done"
+            ]
+          },
+          "first": [
+            {
+              "speaker": "shamash",
+              "text": "오늘은 삼나무 숲 재조사를 해주어야 해."
+            },
+            {
+              "speaker": "aya",
+              "text": "너희를 아누르의 빛으로 축복할게."
+            }
+          ],
+          "repeat": [],
+          "flag": "story_dialogue_villa_anur",
+          "speakers": [
+            "player",
+            "shamash",
+            "aya"
+          ],
+          "on_finish": [
+            {
+              "event": "unlock_skill",
+              "skill": "anur_light"
+            },
+            {
+              "event": "set_flag",
+              "flag": "anur_blessing_done"
+            }
+          ]
+        },
+        {
+          "id": "villa_report",
+          "when": {
+            "all": [
+              "kala_first_defeat"
+            ],
+            "none": [
+              "report_done"
+            ]
+          },
+          "first": [
+            {
+              "speaker": "shamash",
+              "text": "니므롯, 왔는가, 고생 꽤나 한 모양이군."
+            },
+            {
+              "speaker": "shamash",
+              "text": "자네의 얼굴만 보아도 삼나무 숲에 큰 문제가 있는 것을 알 수 있어."
+            },
+            {
+              "speaker": "shamash",
+              "text": "그래, 어떤가 삼나무 숲에 대해서 구체적으로 보고해주게."
+            },
+            {
+              "speaker": "player",
+              "text": "확실히 이상하긴 하더군요."
+            },
+            {
+              "speaker": "player",
+              "text": "우리가 모르는 곳으로 떠났어야 할 영혼들이 여전히 육체에 남아 있었습니다."
+            },
+            {
+              "speaker": "player",
+              "text": "단 한 번의 조사로는 그 원인을 파악할 수 없었습니다."
+            },
+            {
+              "speaker": "aya",
+              "text": "긴 시간 동안 고생했어, 니므롯. 집으로 돌아가도 좋아요."
+            }
+          ],
+          "repeat": [],
+          "flag": "story_dialogue_villa_report",
+          "speakers": [
+            "player",
+            "shamash",
+            "aya"
+          ],
+          "on_finish": [
+            {
+              "event": "set_flag",
+              "flag": "report_done"
+            }
+          ]
+        },
+        {
+          "id": "villa_intro",
+          "when": {
+            "none": [
+              "villa_intro_done"
+            ]
+          },
+          "first": [
+            {
+              "speaker": "aya",
+              "text": "니므롯, 어서와, 기다리고 있었어."
+            },
+            {
+              "speaker": "shamash",
+              "text": "니므롯, 너에게 거는 기대가 커. 너는 많은 것을 할 수 있을 거야."
+            },
+            {
+              "speaker": "player",
+              "text": "샤마쉬, 아야, 언제나 고마워."
+            },
+            {
+              "speaker": "aya",
+              "text": "니므롯, 식사를 준비했어. 함께 하면서 너의 업무를 전달할게."
+            }
+          ],
+          "repeat": [],
+          "flag": "story_dialogue_villa_intro",
+          "speakers": [
+            "player",
+            "aya",
+            "shamash"
+          ],
+          "on_finish": [
+            {
+              "event": "set_flag",
+              "flag": "villa_intro_done"
+            }
+          ]
+        }
+      ]
     }
   },
   "hold_per_character": 0.05

@@ -1,0 +1,66 @@
+{
+  "humbaba_flame_cone": {
+    "path": "assets/sprites/fx/humbaba_flame_cone.webp",
+    "frame_size": [
+      768,
+      384
+    ],
+    "frames": 6,
+    "duration": 0.4,
+    "scale": 1.0,
+    "emission_anchor": [
+      100,
+      192
+    ]
+  },
+  "humbaba_ember_aura": {
+    "path": "assets/sprites/fx/humbaba_ember_aura.webp",
+    "frame_size": [
+      512,
+      512
+    ],
+    "frames": 6,
+    "duration": 0.8,
+    "scale": 0.65
+  },
+  "humbaba_bite_spark": {
+    "path": "assets/sprites/fx/humbaba_bite_spark.webp",
+    "frame_size": [
+      192,
+      192
+    ],
+    "frames": 4,
+    "duration": 0.2,
+    "scale": 0.4
+  },
+  "anur_light_projectile": {
+    "path": "assets/sprites/fx/anur_light_projectile.webp",
+    "frame_size": [
+      128,
+      64
+    ],
+    "frames": 4,
+    "duration": 0.3,
+    "scale": 0.6
+  },
+  "anur_light_cast": {
+    "path": "assets/sprites/fx/anur_light_cast.webp",
+    "frame_size": [
+      192,
+      192
+    ],
+    "frames": 4,
+    "duration": 0.2,
+    "scale": 0.3
+  },
+  "anur_light_impact": {
+    "path": "assets/sprites/fx/anur_light_impact.webp",
+    "frame_size": [
+      192,
+      192
+    ],
+    "frames": 5,
+    "duration": 0.25,
+    "scale": 0.3
+  }
+}

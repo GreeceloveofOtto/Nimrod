@@ -1,0 +1,56 @@
+{
+  "frame_width": 128,
+  "frame_height": 64,
+  "anchor_px": [
+    64,
+    32
+  ],
+  "frames": 4,
+  "columns": 4,
+  "rows": 1,
+  "trim": {
+    "x": 10,
+    "y": 18,
+    "w": 74,
+    "h": 29
+  },
+  "storage_trim": {
+    "x": 7.837837837837838,
+    "y": 14.275862068965518,
+    "w": 58,
+    "h": 23
+  },
+  "storage_scale": [
+    0.7837837837837838,
+    0.7931034482758621
+  ],
+  "stored_columns": 4,
+  "frame_map": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "stored_frame_size": [
+    100,
+    51
+  ],
+  "stored_anchor_px": [
+    50.16216216216216,
+    25.379310344827587
+  ],
+  "image_size": [
+    232,
+    23
+  ],
+  "ssim": 0.9371593491740103,
+  "effective_density": 2.6,
+  "encoding": {
+    "mode": "lossless",
+    "quality": 86,
+    "alpha_mae": 0,
+    "rgb_mae": 0,
+    "bbox_same": true,
+    "transparent": true
+  }
+}

@@ -95,14 +95,6 @@
     "image_width": 512,
     "image_height": 180
   },
-  "res://assets/tiles/cedar/wall_trunk_tile.png": {
-    "top_offset_px": 0,
-    "bottom_offset_px": 0,
-    "opaque_x0": 0,
-    "opaque_x1": 160,
-    "image_width": 160,
-    "image_height": 512
-  },
   "res://assets/tiles/home/home_floor_tile.webp": {
     "top_offset_px": 0,
     "bottom_offset_px": 0,

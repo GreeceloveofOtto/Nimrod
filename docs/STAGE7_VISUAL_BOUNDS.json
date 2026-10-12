@@ -141,86 +141,86 @@
     {
       "id": "ranged_beast",
       "clip": "idle",
-      "painted_height_px": 556,
+      "painted_height_px": 558,
       "expected_art_height_px": 550.0,
-      "display_height": 200.16,
+      "display_height": 200.88,
       "body_size": [
         126.0,
         198.0
       ],
       "melee_width_ratio": 0.84,
       "melee_height_ratio": 2.2,
-      "difference_percent": 1.090909090909098
+      "difference_percent": 1.454545454545464
     },
     {
       "id": "sky_beast",
       "clip": "fly_idle",
-      "painted_height_px": 199,
+      "painted_height_px": 202,
       "expected_art_height_px": 195.55555555555554,
-      "display_height": 89.55,
+      "display_height": 90.9,
       "body_size": [
         150.0,
         88.0
       ],
       "melee_width_ratio": 1.0,
       "melee_height_ratio": 0.9777777777777777,
-      "difference_percent": 1.7613636363636331
+      "difference_percent": 3.295454545454546
     },
     {
       "id": "explosive_spitter",
       "clip": "idle",
-      "painted_height_px": 292,
+      "painted_height_px": 293,
       "expected_art_height_px": 287,
-      "display_height": 131.39999999999998,
+      "display_height": 131.85,
       "body_size": [
         165.0,
         129.0
       ],
       "melee_width_ratio": 1.1,
       "melee_height_ratio": 1.4333333333333333,
-      "difference_percent": 1.7421602787456525
+      "difference_percent": 2.0905923344947785
     },
     {
       "id": "wall_diver",
       "clip": "idle",
-      "painted_height_px": 206,
+      "painted_height_px": 208,
       "expected_art_height_px": 200,
-      "display_height": 92.69999999999999,
+      "display_height": 93.6,
       "body_size": [
         135.0,
         90.0
       ],
       "melee_width_ratio": 0.9,
       "melee_height_ratio": 1.0,
-      "difference_percent": 3.0000000000000027
+      "difference_percent": 4.0000000000000036
     },
     {
       "id": "root_spewer",
       "clip": "idle",
-      "painted_height_px": 272,
+      "painted_height_px": 273,
       "expected_art_height_px": 267,
-      "display_height": 122.39999999999999,
+      "display_height": 122.85,
       "body_size": [
         111.0,
         120.0
       ],
       "melee_width_ratio": 0.74,
       "melee_height_ratio": 1.3333333333333333,
-      "difference_percent": 1.8726591760299671
+      "difference_percent": 2.2471910112359605
     },
     {
       "id": "boar_charger",
       "clip": "idle",
-      "painted_height_px": 319,
+      "painted_height_px": 321,
       "expected_art_height_px": 313,
-      "display_height": 143.54999999999998,
+      "display_height": 144.45,
       "body_size": [
         232.5,
         141.0
       ],
       "melee_width_ratio": 1.55,
       "melee_height_ratio": 1.5666666666666667,
-      "difference_percent": 1.9169329073482455
+      "difference_percent": 2.5559105431310014
     },
     {
       "id": "gas_sac",
@@ -239,16 +239,16 @@
     {
       "id": "wraith_ray",
       "clip": "glide",
-      "painted_height_px": 166,
+      "painted_height_px": 167,
       "expected_art_height_px": 160,
-      "display_height": 74.69999999999999,
+      "display_height": 75.14999999999999,
       "body_size": [
         147.0,
         72.0
       ],
       "melee_width_ratio": 0.98,
       "melee_height_ratio": 0.8,
-      "difference_percent": 3.750000000000009
+      "difference_percent": 4.374999999999996
     },
     {
       "id": "shell_scorpion",
@@ -281,16 +281,16 @@
     {
       "id": "chain_beastman",
       "clip": "idle",
-      "painted_height_px": 598,
+      "painted_height_px": 599,
       "expected_art_height_px": 593,
-      "display_height": 269.09999999999997,
+      "display_height": 269.54999999999995,
       "body_size": [
         270.0,
         267.0
       ],
       "melee_width_ratio": 1.8,
       "melee_height_ratio": 2.966666666666667,
-      "difference_percent": 0.8431703204047292
+      "difference_percent": 1.0118043844856706
     },
     {
       "id": "cedar_sentinel",
@@ -351,16 +351,16 @@
     {
       "id": "cedar_demon",
       "clip": "idle",
-      "painted_height_px": 414,
+      "painted_height_px": 415,
       "expected_art_height_px": 408,
-      "display_height": 124.19999999999999,
+      "display_height": 124.5,
       "body_size": [
         96,
         124
       ],
       "melee_width_ratio": 0.64,
       "melee_height_ratio": 1.3777777777777778,
-      "difference_percent": 1.4705882352941124
+      "difference_percent": 1.7156862745097978
     },
     {
       "id": "kala_ushumgal",
@@ -375,6 +375,20 @@
       "melee_width_ratio": 1.6,
       "melee_height_ratio": 3.111111111111111,
       "difference_percent": 0.4237288135593209
+    },
+    {
+      "id": "humbaba",
+      "clip": "idle",
+      "painted_height_px": 1038,
+      "expected_art_height_px": 1033.3333333333335,
+      "display_height": 311.4,
+      "body_size": [
+        270.0,
+        310.0
+      ],
+      "melee_width_ratio": 1.8,
+      "melee_height_ratio": 3.4444444444444446,
+      "difference_percent": 0.4516129032257954
     }
   ],
   "warnings": []

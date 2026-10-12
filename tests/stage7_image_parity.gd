@@ -34,7 +34,7 @@ func _run() -> void:
                     for channel in range(3):
                         difference += abs(int(actual[offset+channel])-int(expected[offset+channel]))
                         channels += 1
-            _check(alpha_difference / (expected.size()/4) <= 1.5, "Original alpha mean error <=1.5/255: " + path)
+            _check(alpha_difference / (expected.size()/4) <= .5, "Original alpha mean error <=0.5/255: " + path)
             _check(channels == 0 or difference / channels <= maxf(3.0, float(patch.get("encoded_patch_rgb_mae", 3.0)) + .01), "Native decoder matches measured patch error; whole-sheet limit is checked independently: " + path)
     print("STAGE7_IMAGE_PARITY: %d checks, %d failures" % [checks, failures])
     quit(1 if failures else 0)

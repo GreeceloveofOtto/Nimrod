@@ -22,6 +22,8 @@ var highlight_color: Color = Color.WHITE
 var highlight_name_alpha: float = 1.0
 var participants: Dictionary = {}
 var live_timer: SceneTreeTimer
+var paused_actors: Dictionary = {}
+var test_timing_scale := 1.0
 
 func _ready() -> void:
     process_mode = Node.PROCESS_MODE_ALWAYS
@@ -86,20 +88,29 @@ func speaker_head(speaker: Node2D) -> Vector2:
     return speaker.global_position - Vector2(0, 100)
 
 func _timer(seconds: float) -> void:
-    var timer := get_tree().create_timer(maxf(seconds, 0.001), true, false, true)
+    var timer := get_tree().create_timer(maxf(seconds * test_timing_scale, 0.001), true, false, true)
     live_timer = timer
     await timer.timeout
     if live_timer == timer:
         live_timer = null
 
+func resolve_interaction(id: String) -> Dictionary:
+    var root: Dictionary = settings.get("interactions", {}).get(id, {})
+    if root.has("variants"):
+        for variant: Dictionary in root["variants"]:
+            if get_node("/root/Story").matches(variant.get("when", {})):
+                return variant
+        return {}
+    return root if get_node("/root/Story").matches(root.get("when", {})) else {}
+
 func interaction_available(id: String) -> bool:
-    var spec: Dictionary = settings.get("interactions", {}).get(id, {})
+    var spec: Dictionary = resolve_interaction(id)
     if spec.is_empty():
         return false
     var flags: Dictionary = get_node("/root/GameState").run_flags
-    if id == "shamhat" and flags.get("shamhat_blessing", false):
+    if bool(spec.get("blessing_gate", id == "shamhat")) and flags.get("shamhat_blessing", false):
         return false
-    return not flags.get(str(spec["flag"]), false) or not spec.get("repeat", []).is_empty()
+    return not (spec.get("repeat", []) if flags.get(str(spec["flag"]), false) else spec.get("first", [])).is_empty()
 
 func find_speakers() -> Dictionary:
     var found: Dictionary = {"player": get_tree().get_first_node_in_group("player")}
@@ -111,13 +122,17 @@ func play_interaction(id: String, speaker_nodes: Dictionary = {}) -> void:
     if active or not interaction_available(id):
         return
     var state: Node = get_node("/root/GameState")
-    var spec: Dictionary = settings["interactions"][id]
+    var spec: Dictionary = resolve_interaction(id)
     var repeat_visit: bool = bool(state.run_flags.get(str(spec["flag"]), false))
     var lines: Array = spec["repeat"] if repeat_visit else spec["first"]
     var nodes: Dictionary = find_speakers()
     nodes.merge(speaker_nodes, true)
+    if spec.has("speakers"):
+        for key in nodes.keys():
+            if key not in spec["speakers"]:
+                nodes.erase(key)
     var first: Node2D = nodes.get(str(lines[0].get("speaker", "player")), nodes.get("player"))
-    var intercept: NPC = nodes.get("papsukkal") as NPC if id == "inanna" else null
+    var intercept: NPC = nodes.get("papsukkal") as NPC if id == "inanna" or bool(spec.get("intercept", false)) else null
     var intercept_position := Vector2.ZERO
     if intercept != null:
         intercept_position = intercept.position
@@ -127,7 +142,7 @@ func play_interaction(id: String, speaker_nodes: Dictionary = {}) -> void:
     state.run_flags[str(spec["flag"])] = true
     state.visit_count(id, true)
     for event: Dictionary in spec.get("on_finish", []):
-        if event.get("when", "first") == ("repeat" if repeat_visit else "first"):
+        if event.get("when", "first") in ["always", "repeat" if repeat_visit else "first"]:
             await _event(event, nodes)
     if is_instance_valid(intercept):
         var tween := create_tween()
@@ -144,7 +159,7 @@ func _event(event: Dictionary, nodes: Dictionary) -> void:
                 hero.apply_shamhat_blessing()
         "set_flag", "open_gate":
             var flag: String = str(event.get("flag", ""))
-            get_node("/root/GameState").run_flags[flag] = true
+            get_node("/root/Story").set_flag(flag)
             if str(event.get("event")) == "open_gate":
                 for gate: Node in get_tree().get_nodes_in_group("gates"):
                     if gate.gate_flag == flag:
@@ -154,6 +169,14 @@ func _event(event: Dictionary, nodes: Dictionary) -> void:
                         npc.interactable = false
                         if npc.interaction_prompt != null:
                             npc.interaction_prompt.hide()
+
+        "unlock_skill":
+            get_node("/root/Story").set_flag("skill_" + str(event["skill"]))
+            get_node("/root/SceneManager").show_toast("아누르의 빛을 얻었다 (R)")
+        "start_cutscene":
+            get_node("/root/Cutscene").play.call_deferred(str(event["cutscene"]))
+        "time_skip":
+            get_node("/root/Cutscene").play.call_deferred("time_skip")
 
 func _restore_highlight() -> void:
     if is_instance_valid(highlighted):
@@ -181,7 +204,7 @@ func _set_speaker(actor: Node2D, id: String) -> void:
         highlight_name_alpha = actor.name_tag.modulate.a
         actor.modulate = Color(1.12, 1.12, 1.12)
         actor.name_tag.modulate.a = 1
-        if actor.three_way:
+        if actor.three_way and not actor.cinematic_control:
             if is_instance_valid(actor.pose_tween):
                 actor.pose_tween.kill()
             actor.pose = NPC.Pose.FRONT
@@ -214,6 +237,11 @@ func play(lines: Array, speaker: Node2D, options: Dictionary = {}) -> void:
                 hidden_items.append(item)
                 item.hide()
     get_tree().paused = true
+    if get_node("/root/Cutscene").active:
+        for node in get_node("/root/Cutscene").actor_states:
+            if is_instance_valid(node):
+                paused_actors[node] = node.process_mode
+                node.process_mode = PROCESS_MODE_PAUSABLE
     started.emit()
     var intercept: NPC = options.get("intercept") as NPC
     if intercept != null and hero != null:
@@ -224,9 +252,26 @@ func play(lines: Array, speaker: Node2D, options: Dictionary = {}) -> void:
         camera.process_mode = Node.PROCESS_MODE_ALWAYS
         camera.position_smoothing_enabled = false
         var focus: Vector2 = (speaker_head(speaker) + speaker_head(hero)) * 0.5
+        var actor_min := focus
+        var actor_max := focus
+        if participants.size() > 1:
+            focus = Vector2.ZERO
+            var count := 0
+            for member in participants.values():
+                if is_instance_valid(member):
+                    var at := speaker_head(member)
+                    actor_min = actor_min.min(at)
+                    actor_max = actor_max.max(at)
+                    focus += at
+                    count += 1
+            if count > 0:
+                focus /= count
         var solo: bool = speaker is NimrodPlayer and participants.size() <= 1
         var zoom: float = float(settings["solo_zoom"] if solo else settings["zoom"])
         var viewport_size: Vector2 = get_viewport().get_visible_rect().size
+        zoom = minf(zoom, 1.35)
+        if participants.size() > 1:
+            zoom = minf(zoom, (viewport_size.x - balloon.custom_minimum_size.x - 96) / maxf(240, actor_max.x - actor_min.x + 140))
         focus.x += viewport_size.x / (6 * zoom)
         var half_size: Vector2 = viewport_size / (2 * zoom)
         focus.x = clampf(focus.x, camera.limit_left + half_size.x, maxf(camera.limit_left + half_size.x, camera.limit_right - half_size.x))
@@ -291,6 +336,10 @@ func _restore() -> void:
     for item in hidden_items:
         if is_instance_valid(item):
             item.show()
+    for node in paused_actors:
+        if is_instance_valid(node):
+            node.process_mode = paused_actors[node]
+    paused_actors.clear()
     get_tree().paused = bool(snapshot.get("paused", false))
     hidden_items.clear()
     snapshot.clear()

@@ -1,0 +1,8 @@
+{
+  "images_checked": 454,
+  "frames_checked": 1633,
+  "max_rgb_mae": 2.9993326542797933,
+  "max_alpha_mae": 0.11544036865234375,
+  "errors": [],
+  "policy": "SSIM >=.93; alphaMAE <=0.5; RGBMAE <=3; bbox unchanged during encoding"
+}

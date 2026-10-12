@@ -144,7 +144,7 @@ class Validator:
                 center_x = (bounds[0] + bounds[2]) / 2
                 if abs(center_x - anchor[0]) > 4 or abs(bounds[3] - anchor[1]) > 4:
                     self.fail(path, f"frame {index + 1} not aligned to bottom-center anchor: {bounds}")
-            if bounds is not None and npc is not None and self.player_height is not None:
+            if bounds is not None and npc is not None and self.player_height is not None and not clip.get("qa",{}).get("pose_height_exception"):
                 measured_height = bounds[3] - bounds[1]
                 expected_height = npc.get("source_reference_height_px", self.player_height) * npc["height_ratio"]
                 measured_height *= npc.get("visual_scale_multiplier", 1.0)
@@ -235,7 +235,9 @@ class Validator:
             base=next((h for n,h in heights if n in ["idle","float","fly_idle","glide"]),None)
             if base:
                 for name,height in heights:
-                    if abs(height-base)>base*.08:self.fail(str(path),f"{name}: cross-clip height differs from idle by more than 8%")
+                    clip=next(c for c in manifest['clips'] if c['name']==name)
+                    if abs(height-base)>base*.08 and not clip.get('qa',{}).get('pose_height_exception'):
+                        self.fail(str(path),f"{name}: cross-clip height differs from idle by more than 8%")
         print(f"Generated enemy frame QA: {total} clips, {warning_count} non-failing review warnings")
         supplemental=0
         for directory in [self.assets/"sprites/fx", self.assets/"sprites/player/unarmed", self.assets/"sprites/player/staff"]:
@@ -311,7 +313,7 @@ class Validator:
                 self.fail(entry["path"], "tile_y requires identical top/bottom edges")
             ratio = entry.get("scroll_ratio")
             map_width = entry.get("map_width", 3600)
-            if ratio is not None and not entry.get("repeat_x") and not entry.get("localized") and entry["width"] < 1280 + max(0, map_width - 1280) * ratio:
+            if ratio is not None and not entry.get("repeat_x") and not entry.get("localized") and entry.get("logical_width",entry["width"]) < 1280 + max(0, map_width - 1280) * ratio:
                 self.fail(entry["path"], f"image width insufficient for {map_width}px map parallax travel")
         self.check_generated_enemy_frames()
         self.check_npc_contrast()

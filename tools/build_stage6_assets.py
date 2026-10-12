@@ -96,10 +96,11 @@ def world():
   still(result,path,size,True)
  im=atlas('forest_tiles')
  for i,name in enumerate(['far_tile_2d','mid_trunks_tile_2d']):still(im.crop((round(im.width*i/2),0,round(im.width*(i+1)/2),im.height)),f'backgrounds/cedar/{name}.png',(1024,1024),True,True,True)
- im=atlas('world_props');cuts=[0,350,700,im.height];sizes=[[(420,200),(360,180),(300,420),(120,260),(420,60)],[(240,200),(280,120),(200,360),(220,130),(360,120)],[(512,180),(256,48),(320,48),(160,512),(512,160)]];names=[['home_bed','home_table','home_shelf','home_lamp','home_rug'],['cedar_stump','skeleton_remains','hanging_vines','bone_pile','cedar_branch_perch'],['root_floor_tile','root_platform','branch_platform','wall_trunk_tile','canopy_top_tile']]
+ im=atlas('world_props');cuts=[0,350,700,im.height];sizes=[[(420,200),(360,180),(300,420),(120,260),(420,60)],[(240,200),(280,120),(200,360),(220,130),(360,120)],[(512,180),(256,48),(320,48),(160,512),(512,160)]];names=[['home_bed','home_table','home_shelf','home_lamp','home_rug'],['cedar_stump','skeleton_remains','hanging_vines','bone_pile','cedar_branch_perch'],['root_floor_tile','root_platform','branch_platform',None,'canopy_top_tile']]
  for i in range(3):
   poses=component_poses(chromakey(im.crop((0,cuts[i],im.width,cuts[i+1]))),5)
   for j,(name,size,pose) in enumerate(zip(names[i],sizes[i],poses)):
+   if name is None:continue
    tile=i==2;path=('tiles/cedar/' if tile else 'props/')+name+'.png';still(pose,path,size,opaque=tile and j in [0,3],tile_x=tile and j!=3,tile_y=tile and j==3)
  im=atlas('extra_tiles')
  for i,(path,size) in enumerate([('tiles/home/home_floor_tile.webp',(512,180)),('tiles/cedar/bone_floor_tile.webp',(512,180)),('tiles/cedar/boss_end_platform.webp',(280,56))]):

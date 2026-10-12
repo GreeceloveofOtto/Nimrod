@@ -49,12 +49,6 @@ static func add_image(parent: Node, path: String, at: Vector2, size: Vector2, z:
             sprite.texture = texture
             sprite.centered = false
             sprite.scale = size / texture.get_size()
-            if path.get_file().begins_with("wall_trunk_tile"):
-                var source: Vector2 = texture.get_size()
-                var crop_size := Vector2(source.x, minf(source.y, source.x * size.y / size.x))
-                sprite.region_enabled = true
-                sprite.region_rect = Rect2((source-crop_size)*0.5,crop_size)
-                sprite.scale = size / crop_size
             sprite.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
             holder.add_child(sprite)
             return holder

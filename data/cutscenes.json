@@ -1,0 +1,214 @@
+{
+  "cutscenes": {
+    "villa_dinner": [
+      {
+        "type": "lock_player"
+      },
+      {
+        "type": "walk_to",
+        "actor": "player",
+        "x": 1220,
+        "seconds": 0.4
+      },
+      {
+        "type": "face",
+        "actor": "player",
+        "dir": 1
+      },
+      {
+        "type": "set_weapon_visibility",
+        "hidden": true
+      },
+      {
+        "type": "play_clip",
+        "actor": "player",
+        "clip": "sit_down"
+      },
+      {
+        "type": "play_clip",
+        "actor": "player",
+        "clip": "sit_idle",
+        "loop": true
+      },
+      {
+        "type": "wait",
+        "seconds": 0.8
+      },
+      {
+        "type": "door_open",
+        "door_id": "door_up",
+        "seconds": 0.6
+      },
+      {
+        "type": "spawn_npc",
+        "npc": {
+          "id": "aya",
+          "position": [
+            2040,
+            620
+          ],
+          "interactable": false,
+          "initial_pose": "left"
+        }
+      },
+      {
+        "type": "walk_to",
+        "actor": "aya",
+        "x": 1480,
+        "seconds": 1.3
+      },
+      {
+        "type": "face",
+        "actor": "aya",
+        "dir": -1
+      },
+      {
+        "type": "play_clip",
+        "actor": "aya",
+        "clip": "sit_down"
+      },
+      {
+        "type": "play_clip",
+        "actor": "aya",
+        "clip": "sit_idle",
+        "loop": true
+      },
+      {
+        "type": "spawn_npc",
+        "npc": {
+          "id": "shamash",
+          "position": [
+            2040,
+            620
+          ],
+          "interactable": false,
+          "initial_pose": "left"
+        }
+      },
+      {
+        "type": "walk_to",
+        "actor": "shamash",
+        "x": 1620,
+        "seconds": 1.3
+      },
+      {
+        "type": "face",
+        "actor": "shamash",
+        "dir": -1
+      },
+      {
+        "type": "play_clip",
+        "actor": "shamash",
+        "clip": "sit_down"
+      },
+      {
+        "type": "play_clip",
+        "actor": "shamash",
+        "clip": "sit_idle",
+        "loop": true
+      },
+      {
+        "type": "door_close",
+        "door_id": "door_up",
+        "seconds": 0.5
+      },
+      {
+        "type": "dialogue",
+        "interaction_id": "villa_dinner"
+      },
+      {
+        "type": "play_clip",
+        "actor": "player",
+        "clip": "stand_up"
+      },
+      {
+        "type": "play_clip",
+        "actor": "aya",
+        "clip": "stand_up"
+      },
+      {
+        "type": "play_clip",
+        "actor": "shamash",
+        "clip": "stand_up"
+      },
+      {
+        "type": "door_open",
+        "door_id": "door_up",
+        "seconds": 0.6
+      },
+      {
+        "type": "walk_to",
+        "actor": "aya",
+        "x": 2040,
+        "seconds": 1.3
+      },
+      {
+        "type": "despawn_npc",
+        "actor": "aya"
+      },
+      {
+        "type": "walk_to",
+        "actor": "shamash",
+        "x": 2040,
+        "seconds": 1.3
+      },
+      {
+        "type": "despawn_npc",
+        "actor": "shamash"
+      },
+      {
+        "type": "door_close",
+        "door_id": "door_up",
+        "seconds": 0.5
+      },
+      {
+        "type": "set_weapon_visibility",
+        "hidden": false
+      },
+      {
+        "type": "set_flag",
+        "flag": "villa_dinner_done"
+      },
+      {
+        "type": "unlock_player"
+      }
+    ],
+    "time_skip": [
+      {
+        "type": "lock_player"
+      },
+      {
+        "type": "fade",
+        "alpha": 1.0,
+        "seconds": 1.5
+      },
+      {
+        "type": "wait",
+        "seconds": 1.0
+      },
+      {
+        "type": "set_flag",
+        "flag": "time_skipped"
+      },
+      {
+        "type": "teleport_player",
+        "level": "CastleF1",
+        "spawn": "Spawn_Wake"
+      },
+      {
+        "type": "play_clip",
+        "actor": "player",
+        "clip": "crouch_exit",
+        "loop": true
+      },
+      {
+        "type": "fade",
+        "alpha": 0.0,
+        "seconds": 1.5
+      },
+      {
+        "type": "unlock_player"
+      }
+    ]
+  }
+}

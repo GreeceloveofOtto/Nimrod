@@ -67,6 +67,6 @@
     "toast_font_size": 26,
     "canvas_layer": 20,
     "fade_canvas_layer": 100,
-    "controls_text": "A/D 이동  Space 점프  E 상호작용  {weapon}  K 구르기  S 수그리기  S+Space 내려가기  1·2 순간이동  R 집에서 처음부터"
+    "controls_text": "A/D 이동  Space 점프  E 상호작용  {weapon}  K 구르기  S 수그리기  S+Space 내려가기  1·2 순간이동  F5 집에서 처음부터"
   }
 }

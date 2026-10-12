@@ -17,7 +17,7 @@
         600
       ],
       "image_size": [
-        570,
+        475,
         253
       ],
       "trim": {
@@ -44,17 +44,19 @@
         "w": 95,
         "h": 253
       },
-      "stored_columns": 6,
+      "stored_columns": 5,
       "frame_map": [
         0,
         1,
         2,
+        2,
         3,
-        4,
-        5
+        4
       ],
       "effective_density": 2.2,
-      "ssim": 0.933901594980082
+      "ssim": 0.933901594980082,
+      "temporal_ssim_min": 0.9962023368958735,
+      "logical_duration_unchanged": true
     },
     {
       "name": "idle",
@@ -72,7 +74,7 @@
         600
       ],
       "image_size": [
-        450,
+        375,
         253
       ],
       "trim": {
@@ -99,17 +101,19 @@
         "w": 75,
         "h": 253
       },
-      "stored_columns": 6,
+      "stored_columns": 5,
       "frame_map": [
         0,
         1,
         2,
+        2,
         3,
-        4,
-        5
+        4
       ],
       "effective_density": 2.2,
-      "ssim": 0.9399563446894782
+      "ssim": 0.9399563446894782,
+      "temporal_ssim_min": 0.9971647468146573,
+      "logical_duration_unchanged": true
     }
   ],
   "height_ratio": 1.04

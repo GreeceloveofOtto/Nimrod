@@ -40,6 +40,8 @@ var readability: Dictionary = {}
 var _last_display_name: String = ""
 var interaction_prompt: Node2D
 var interaction_running: bool = false
+var cinematic_control := false
+var story_pose_locked := false
 
 func _ready() -> void:
     add_to_group("npcs")
@@ -237,15 +239,15 @@ func _process(delta: float) -> void:
     _update_readability(delta)
     if interaction_prompt != null:
         var actor: NimrodPlayer = get_tree().get_first_node_in_group("player") as NimrodPlayer
-        var available: bool = actor != null and not actor.is_transition_locked() and actor.action != "dead" and not interaction_running and not get_node("/root/Dialogue").input_blocked() and not _interaction_complete()
+        var available: bool = actor != null and not actor.is_transition_locked() and actor.action != "dead" and not cinematic_control and not interaction_running and not get_node("/root/Dialogue").input_blocked() and not _interaction_complete()
         interaction_prompt.visible = available and interaction_center().distance_to(actor.global_position) <= float(stats.get("interact_range", 120.0))
         if interaction_prompt.visible and Input.is_action_just_pressed("interact"):
             interact(actor)
     face_cooldown_left = maxf(0.0, face_cooldown_left - delta)
     look_left -= delta
-    if three_way:
+    if three_way and not cinematic_control and not story_pose_locked:
         _update_three_way()
-    elif face_player:
+    elif face_player and not cinematic_control and not story_pose_locked:
         var player := get_tree().get_first_node_in_group("player") as Node2D
         if player != null:
             face_toward(player.global_position.x)
