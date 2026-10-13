@@ -57,6 +57,9 @@ func on_arrival(level_id: String) -> void:
 
 func refresh_level(level: LevelBase) -> void:
     var story: Node = get_node("/root/Story")
+    level.reconcile_presence()
+    if story.is_flag("enkidua_gone"):
+        get_node("/root/GameState").run_flags["bed_blood"] = true
     if level.level_id == "NimrodHome":
         var bed: NPC = level.npcs.get("enkidua_bed")
         if is_instance_valid(bed):
@@ -116,7 +119,7 @@ func time_skip(id: String) -> void:
     for flag in spec.get("set_flags",[]):
         get_node("/root/Story").set_flag(str(flag))
     if id == "home_after_loss":
-        get_node("/root/Story").set_flag("bed_blood",false)
+        get_node("/root/Story").set_flag("bed_blood",true)
         manager.player.cinematic_set = ""
         manager.player.sync_story_state()
     var destination: Dictionary = spec["spawn"]

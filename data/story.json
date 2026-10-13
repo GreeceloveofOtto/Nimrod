@@ -122,6 +122,21 @@
         "ferry_boarded",
         "tiamat_arrived"
       ]
+    },
+    {
+      "stage": 19,
+      "flags": [
+        "utnapishtim_done",
+        "huluppu_boss_done",
+        "tiamat_talk_done"
+      ]
+    },
+    {
+      "stage": 20,
+      "flags": [
+        "system_laochachahra_selected",
+        "siyavash_started"
+      ]
     }
   ],
   "night_color": [

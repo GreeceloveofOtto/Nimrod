@@ -9,7 +9,7 @@ func _run() -> void:
         for i in range(10):
             await physics_frame
         for enemy: EnemyBase in get_nodes_in_group("enemies"):
-            if enemy.enemy_id in ["sky_beast","gas_sac","wraith_ray","cedar_wisp","wall_diver"]:
+            if enemy.enemy_id in ["sky_beast","gas_sac","wraith_ray","cedar_wisp","wall_diver","zu"]:
                 continue
             _check(enemy.is_on_floor(),id+"/"+enemy.name+" ground collision")
             var ray := PhysicsRayQueryParameters2D.create(enemy.global_position-Vector2(0,4),enemy.global_position+Vector2(0,8),3,[enemy.get_rid()])

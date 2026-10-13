@@ -15,7 +15,7 @@ func value() -> int:
     return clampi(int(get_node("/root/GameState").run_flags.get("rampage", 0)), 0, int(settings["max"]))
 
 func unlocked() -> bool:
-    return bool(get_node("/root/GameState").run_flags.get("rampage_unlocked", false))
+    return get_node("/root/GameState").active_character == "nimrod" and bool(get_node("/root/GameState").run_flags.get("rampage_unlocked", false))
 
 func unlock() -> void:
     var flags: Dictionary = get_node("/root/GameState").run_flags
@@ -62,7 +62,7 @@ func set_value(amount: int) -> void:
     if hero != null and before != tier() and get_node("/root/Story").is_flag("prosthetic_equipped"):
         hero.rampage_flash_left = float(settings["tier_flash_seconds"])
     _update_heartbeat()
-    if unlocked() and (value() >= int(settings["death_at_max"]) or (value() > int(settings["death_threshold"]) and not death_suspended)):
+    if unlocked() and not death_suspended and (value() >= int(settings["death_at_max"]) or value() > int(settings["death_threshold"])):
         if hero != null and not death_queued:
             death_queued = true
             get_node("/root/SceneManager").show_toast("폭주를 이기지 못했다")

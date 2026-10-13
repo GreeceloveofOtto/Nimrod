@@ -131,6 +131,8 @@ func go_to(level_id: String, spawn_name: String, options: Dictionary = {}) -> bo
         hud.set_level_name(str(current_level.display_name))
     level_changed.emit(level_id)
     get_node("/root/Ferry").decorate(current_level)
+    current_level.reconcile_presence()
+    get_node("/root/Odyssey").decorate(current_level)
     var arrival: Node = current_level.find_arrival_door(spawn_name)
     # An arrival door prepares itself before fade-in, then plays its walking
     # and closing sequence while input and incoming damage remain locked.
@@ -197,9 +199,9 @@ func _update_camera(limits: Rect2) -> void:
     player.camera.force_update_scroll()
 
 func _fade_to(alpha: float, seconds: float) -> void:
-    if _fade_tween != null and _fade_tween.is_valid():
+    if _fade_tween != null and _fade_tween.is_valid() and _fade_tween.is_running():
         _fade_tween.kill()
-    _fade_tween = create_tween()
+    _fade_tween = create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
     _fade_tween.tween_property(_fade_rect, "modulate:a", alpha, seconds)
     await _fade_tween.finished
 
@@ -210,6 +212,11 @@ func _passage_soliloquy() -> void:
         dialogue.play_interaction("passage_soliloquy", {"player": player})
 
 func handle_death() -> void:
+    if is_instance_valid(current_level) and current_level.level_id == "HuluppuCrown":
+        player.reset_run_state()
+        get_node("/root/Rampage").set_death_suspended(true)
+        await go_to("HuluppuCrown","Spawn_Entrance")
+        return
     if str(get_node("/root/Save").settings.get("death_respawn", "last_save")) == "last_save" and await get_node("/root/Save").resume(true):
         return
     await restart_run()

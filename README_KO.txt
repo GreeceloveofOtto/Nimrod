@@ -155,3 +155,13 @@ Y: 개발용 HP 최소1 토글(표시 없음); 폭주 사망은 막지 못한다
 - 공개 UI 저장 NPC는 현재 샴하트(CastleF2)이며, 이번 지시의 시마티와 실제11단계 저장 코드가 달라 기존 방식을 유지했다.
 검증: python tools/run_headless_checks.py --jobs 4 / python tools/check_head_ghost.py / python tools/measure_assets.py --stage12-budget
 배포: 개발 캡처·archive·pack_source·import캐시는 슬림 ZIP 제외. 잔상 비교 캡처는 별도 QA ZIP.
+
+13단계 (2026-10-13)
+- 우트나피쉬팀에게 E로 대화 → 폭주100 → 훌루푸 줄기 E → 보스3체 → 티아마트.
+- 티아마트 대화 후10초 자유 조작, 암흑에서 자동 저장과 항성계 선택(W/S·위/아래, E/Enter).
+- 라오차차흐라만 선택 가능. 시야우와르산은 HP100/맨손, J는 무기 없음 안내, L/R/폭주 비활성.
+- F5: 저장·백업을 포함해 두 캐릭터와 이야기를 완전 초기화.
+- F10 훌루푸 보스, Shift+F10 노인 앞, F11 티아마트, F12 선택, Shift+F11 흐와니라 광장.
+- F6/F7 단계19/20, 기존F8/F9와1/2 이동 유지. 대화·컷신 중 디버그/재시작 입력 무시.
+- 임종 전11일 후 대화는 유지하고 enkidua_gone 이후에는 침대 피가 계속 남음.
+- 상세 가정·파일·테스트·용량 결과: docs/STAGE13_REPORT_KO.md, STAGE13_FILES_KO.txt, SIZE_REPORT_KO.md.

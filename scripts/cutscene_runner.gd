@@ -77,6 +77,8 @@ func _step(step: Dictionary) -> void:
     var node: Node2D = actor(str(step.get("actor", "player")))
     var level: LevelBase = get_node("/root/SceneManager").current_level as LevelBase
     match str(step["type"]):
+        "odyssey_event":
+            await get_node("/root/Odyssey").event(str(step["event"]))
         "ferry_event":
             await get_node("/root/Ferry").event(str(step["event"]))
         "time_skip":
@@ -195,7 +197,7 @@ func _step(step: Dictionary) -> void:
             get_node("/root/SceneManager").set_player_locked(true)
 
 func _restore() -> void:
-    for node in actor_states:
+    for node in actor_states.keys():
         if is_instance_valid(node):
             node.process_mode = actor_states[node]["mode"]
             if node is CanvasItem:
@@ -209,6 +211,7 @@ func _restore() -> void:
                 node.cinematic_control = actor_states[node]["cinematic"]
                 node.play_clip("idle_front" if node.three_way and node.pose == NPC.Pose.FRONT else node.idle_clip)
     actor_states.clear()
+    get_node("/root/Odyssey").cleanup_effects()
     get_node("/root/Chapter").finish_cutscene()
     if is_instance_valid(get_node("/root/SceneManager").player):
         get_node("/root/SceneManager").player.cinematic_clip = ""

@@ -2740,5 +2740,54 @@
     "transparent": true,
     "encoder": "adaptive RGB64 palette / lossless WebP container",
     "palette_ssim": 0.994101259547064
+  },
+  {
+    "path": "assets/props/utnapishtim_blood.webp",
+    "source": "props/utnapishtim_blood.png",
+    "source_archive": "pack_source/props/utnapishtim_blood.png",
+    "before": 28617,
+    "after": 24618,
+    "ssim": 1.0,
+    "mode": "lossless",
+    "quality": 86,
+    "alpha_mae": 0,
+    "rgb_mae": 0,
+    "bbox_same": true,
+    "transparent": true
+  },
+  {
+    "path": "assets/backgrounds/tiamat/entity.webp",
+    "source": "backgrounds/tiamat/entity.png",
+    "source_archive": "pack_source/backgrounds/tiamat/entity.png",
+    "before": 3181994,
+    "after": 236210,
+    "ssim": 1.0,
+    "mode": "lossy",
+    "quality": 82,
+    "alpha_mae": 0.0,
+    "rgb_mae": 2.810312694973416,
+    "bbox_same": true,
+    "transparent": false
+  },
+  {
+    "path": "assets/backgrounds/hwanira/plaza.webp",
+    "source": "backgrounds/hwanira/plaza.png",
+    "source_archive": "pack_source/backgrounds/hwanira/plaza.png",
+    "before": 2582504,
+    "after": 2509378,
+    "ssim": 1.0,
+    "mode": "lossless",
+    "quality": 82,
+    "alpha_mae": 0.0,
+    "rgb_mae": 2.9732398623511904,
+    "bbox_same": true,
+    "transparent": false,
+    "output_bytes": 719610,
+    "encoder": "channel-aware bounded RGB",
+    "quantization_steps": [
+      16,
+      10,
+      10
+    ]
   }
 ]

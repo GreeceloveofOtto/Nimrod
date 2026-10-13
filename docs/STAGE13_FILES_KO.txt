@@ -1,0 +1,178 @@
+변경/이동/삭제
+M	README_KO.txt
+M	assets/art_manifest.json
+M	assets/audio/bgm/cedar_forest.ogg
+M	assets/audio/bgm/nimrod_home.ogg
+M	assets/audio/bgm/passage_descent.ogg
+M	assets/audio/bgm/uruk_rear_gate.ogg
+M	assets/audio/bgm/uruk_sky.ogg
+M	assets/fonts/NimrodUIKorean-Regular.otf
+M	assets/sprites/enemies/gugalanna/death.webp
+M	assets/sprites/enemies/gugalanna/manifest.json
+M	assets/sprites/enemies/humbaba/walk.webp
+M	assets/sprites/npcs/enkidua/bed_asleep.webp
+M	assets/sprites/npcs/enkidua/bed_awake.webp
+M	assets/sprites/npcs/enkidua/manifest.json
+M	data/alpha_expectations.json
+M	data/cutscenes.json
+M	data/dialogue.json
+M	data/enemies.json
+M	data/image_encoding_quality.json
+M	data/image_mapping.json
+M	data/image_parity_samples.json
+M	data/image_policy.json
+M	data/levels.json
+M	data/npcs.json
+M	data/sprite_trims.json
+M	data/stage12_asset_inventory.json
+M	data/storage_quality.json
+M	data/story.json
+M	data/surface_offsets.json
+M	docs/SIZE_REPORT_KO.md
+M	docs/SPRITE_QA_REPORT_KO.md
+M	docs/STAGE7_VISUAL_BOUNDS.json
+M	docs/STAGE8_ALPHA_FIX.txt
+M	docs/STAGE8_GROUNDING_REPORT.txt
+M	docs/STAGE8_GROUNDING_RUNTIME.txt
+M	project.godot
+M	scripts/audio_manager.gd
+M	scripts/chapter_events.gd
+M	scripts/choice_menu.gd
+M	scripts/cutscene_runner.gd
+M	scripts/debug_teleport.gd
+M	scripts/dialogue_system.gd
+M	scripts/game_hud.gd
+M	scripts/game_state.gd
+M	scripts/level_base.gd
+M	scripts/player.gd
+M	scripts/rampage.gd
+M	scripts/rampage_hud.gd
+M	scripts/save_manager.gd
+M	scripts/scene_manager.gd
+M	scripts/story_state.gd
+M	tests/stage10_home_scenes.gd
+M	tests/stage11_rampage.gd
+M	tests/stage12_tiamat.gd
+M	tests/stage8_enemy_grounding.gd
+M	tools/check_enemy_grounding.py
+M	tools/check_enemy_visual_bounds.py
+M	tools/check_head_ghost.py
+M	tools/check_sprite_frames.py
+M	tools/make_slim_zip.py
+
+추가
+assets/backgrounds/hwanira/plaza.webp
+assets/backgrounds/tiamat/entity.webp
+assets/props/utnapishtim_blood.webp
+assets/sprites/enemies/lilith/ambush_attack.webp
+assets/sprites/enemies/lilith/ambush_windup.webp
+assets/sprites/enemies/lilith/charm_attack.webp
+assets/sprites/enemies/lilith/charm_windup.webp
+assets/sprites/enemies/lilith/death.webp
+assets/sprites/enemies/lilith/hurt.webp
+assets/sprites/enemies/lilith/idle.webp
+assets/sprites/enemies/lilith/manifest.json
+assets/sprites/enemies/lilith/move.webp
+assets/sprites/enemies/lilith/turn.webp
+assets/sprites/enemies/ninazu_mother/death.webp
+assets/sprites/enemies/ninazu_mother/hurt.webp
+assets/sprites/enemies/ninazu_mother/idle.webp
+assets/sprites/enemies/ninazu_mother/manifest.json
+assets/sprites/enemies/ninazu_mother/move.webp
+assets/sprites/enemies/ninazu_mother/poison_attack.webp
+assets/sprites/enemies/ninazu_mother/poison_windup.webp
+assets/sprites/enemies/ninazu_mother/tail_attack.webp
+assets/sprites/enemies/ninazu_mother/tail_windup.webp
+assets/sprites/enemies/ninazu_mother/turn.webp
+assets/sprites/enemies/zu/death.webp
+assets/sprites/enemies/zu/feathers_attack.webp
+assets/sprites/enemies/zu/feathers_windup.webp
+assets/sprites/enemies/zu/grab_attack.webp
+assets/sprites/enemies/zu/grab_windup.webp
+assets/sprites/enemies/zu/hurt.webp
+assets/sprites/enemies/zu/idle.webp
+assets/sprites/enemies/zu/manifest.json
+assets/sprites/enemies/zu/move.webp
+assets/sprites/enemies/zu/turn.webp
+assets/sprites/player/siyavash/crouch_enter.webp
+assets/sprites/player/siyavash/crouch_exit.webp
+assets/sprites/player/siyavash/crouch_idle.webp
+assets/sprites/player/siyavash/death.webp
+assets/sprites/player/siyavash/drop_through.webp
+assets/sprites/player/siyavash/fall.webp
+assets/sprites/player/siyavash/hurt.webp
+assets/sprites/player/siyavash/idle.webp
+assets/sprites/player/siyavash/jump_rise.webp
+assets/sprites/player/siyavash/jump_start.webp
+assets/sprites/player/siyavash/land.webp
+assets/sprites/player/siyavash/manifest.json
+assets/sprites/player/siyavash/roll.webp
+assets/sprites/player/siyavash/run.webp
+assets/sprites/player/siyavash/sit_down.webp
+assets/sprites/player/siyavash/sit_idle.webp
+assets/sprites/player/siyavash/stand_up.webp
+assets/sprites/player/siyavash/walk.webp
+assets/tiles/huluppu/branch.png
+assets/tiles/hwanira/plaza.png
+data/choices.json
+data/odyssey.json
+data/siyavash.json
+data/stage13_asset_inventory.json
+data/stage13_budget.json
+docs/STAGE13_FILES_KO.txt
+docs/STAGE13_REPORT_KO.md
+docs/STAGE13_SURFACE_ALIGNMENT.txt
+docs/screenshots/stage13_choice.png
+docs/screenshots/stage13_crown.png
+docs/screenshots/stage13_enkidua_gone.png
+docs/screenshots/stage13_hwanira_center.png
+docs/screenshots/stage13_hwanira_start.png
+docs/screenshots/stage13_lilith.png
+docs/screenshots/stage13_ninazu_mother.png
+docs/screenshots/stage13_tiamat.png
+docs/screenshots/stage13_utnapishtim_rampage.png
+docs/screenshots/stage13_zu.png
+docs/size_compare/stage13_hwanira.jpg
+docs/size_compare/stage13_lilith.jpg
+docs/size_compare/stage13_ninazu_mother.jpg
+docs/size_compare/stage13_siyavash.jpg
+docs/size_compare/stage13_tiamat.jpg
+docs/size_compare/stage13_zu.jpg
+downloads/Nimrod_stage13_2026-10-13.zip
+downloads/Nimrod_stage13_QA_2026-10-13.zip
+downloads/README_STAGE13_KO.md
+scenes/HuluppuCrown.tscn
+scenes/HwaniraPlaza.tscn
+scenes/TiamatCollapsed.tscn
+scripts/crown_projectile.gd
+scripts/enemy_crown_boss.gd
+scripts/enemy_lilith.gd
+scripts/enemy_ninazu_mother.gd
+scripts/enemy_zu.gd
+scripts/huluppu_arena.gd
+scripts/huluppu_interaction.gd
+scripts/odyssey.gd
+scripts/tiamat_body.gd
+scripts/ui_lock.gd
+tests/stage13_art_contract.gd
+tests/stage13_bosses.gd
+tests/stage13_frame_bleed.gd
+tests/stage13_rampage.gd
+tests/stage13_siyavash.gd
+tests/stage13_story_dialogue.gd
+tests/stage13_tiamat_choice.gd
+tests/stage13_traversal.gd
+tests/test_home_enkidua_gone.gd
+tools/build_stage13_art.py
+tools/build_stage13_data.py
+tools/capture_stage13.gd
+tools/finalize_stage13_assets.py
+tools/optimize_stage13_audio.py
+tools/stage13_merge_frames.py
+tools/stage13_near_lossless.py
+tools/stage13_quantize.py
+tools/stage13_quantize_images.py
+tools/stage13_reencode.py
+tools/stage13_reencode_images.py
+tools/stage13_repack.py
+tools/write_stage13_reports.py

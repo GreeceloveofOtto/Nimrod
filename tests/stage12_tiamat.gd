@@ -6,7 +6,7 @@ func _run() -> void:
     _check(hero.position.distance_to(manager.current_level.get_spawn("Spawn_FromFerry").position)<1 and not manager.player_locked,"Debug uses dock spawn and returns control")
     _check(story_state.stage()==18 and manager.current_level.config["enemies"].is_empty(),"Stage18 has no combat")
     var old: NPC = manager.current_level.npcs["utnapishtim"]
-    _check(not old.interactable and not old.three_way and not old.face_player,"Old man has one front-facing set without prompt")
+    _check(old.interactable and not old.three_way and not old.face_player and dialogue_node.interaction_available("utnapishtim_talk"),"Stage13 adds gated dialogue to the existing front-facing set")
     _check(old.current_clip=="idle" and old.clip_data["idle"]["frames"]==6,"Six-frame front breathing loop")
     var cell: Image=old.visual.texture.get_image().get_region(Rect2i(old.visual.region_rect))
     var npc_foot_y: float=old.visual.to_global(old.visual.get_rect().position+Vector2(0,cell.get_used_rect().end.y)).y

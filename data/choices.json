@@ -1,0 +1,28 @@
+{
+  "systems": [
+    {
+      "id": "earth_union",
+      "label": "지구 연합",
+      "unlocked": false,
+      "target": ""
+    },
+    {
+      "id": "lemuaren",
+      "label": "레무아렌",
+      "unlocked": false,
+      "target": ""
+    },
+    {
+      "id": "laochachahra",
+      "label": "라오차차흐라",
+      "unlocked": true,
+      "target": "HwaniraPlaza"
+    },
+    {
+      "id": "dingir",
+      "label": "딩이르",
+      "unlocked": false,
+      "target": ""
+    }
+  ]
+}

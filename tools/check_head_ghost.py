@@ -53,7 +53,7 @@ def self_test():
 def main():
     p=argparse.ArgumentParser();p.add_argument('--phase',default='after');a=p.parse_args();rows=[]
     self_test()
-    for mp in sorted((ROOT/'assets/sprites/player').glob('*/manifest.json')):
+    for mp in sorted(list((ROOT/'assets/sprites/player').glob('*/manifest.json'))+[ROOT/'assets/sprites/enemies'/i/'manifest.json' for i in ['ninazu_mother','lilith','zu'] if (ROOT/'assets/sprites/enemies'/i/'manifest.json').exists()]):
         d=json.loads(mp.read_text())
         for c in d.get('clips',[]):
             path=ROOT/'assets'/c['sheet'];r=audit(path,c);rows.append({'path':str(path.relative_to(ROOT)),**r})
@@ -63,6 +63,6 @@ def main():
     for cell in folder.glob('*_cell.png'):
         Image.open(cell).getchannel('A').save(cell.with_name(cell.stem+'_alpha.png'))
     fail=sum(len(r['errors']) for r in rows)
-    print(f'HEAD_GHOST: {len(rows)} player clips, {fail} border/detached-head failures')
+    print(f'HEAD_GHOST: {len(rows)} player/boss clips, {fail} border/detached-head failures')
     return int(bool(fail))
 if __name__=='__main__':raise SystemExit(main())

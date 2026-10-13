@@ -10,12 +10,17 @@ func _ready() -> void:
 func is_flag(flag: String) -> bool:
     if flag == "night":
         return is_flag("kala_first_defeat") and not is_flag("time_skipped")
+    if flag in ["system_laochachahra_selected","siyavash_started"]:
+        return bool(get_node("/root/GameState").siyavash_progress.get(flag,false))
     return bool(get_node("/root/GameState").run_flags.get(flag, false))
 
 func set_flag(flag: String, value: bool = true) -> void:
     if flag.is_empty():
         return
-    get_node("/root/GameState").run_flags[flag] = value
+    if flag in ["system_laochachahra_selected","siyavash_started"]:
+        get_node("/root/GameState").siyavash_progress[flag]=value
+    else:
+        get_node("/root/GameState").run_flags[flag] = value
     if flag == "dilmun_arrived" and value:
         get_node("/root/Rampage").unlock()
     changed.emit()
@@ -45,7 +50,10 @@ func debug_stage(target: int) -> void:
     target = clampi(target, 0, int(settings["stages"][-1]["stage"]))
     for entry: Dictionary in settings["stages"]:
         for flag in entry["flags"]:
-            get_node("/root/GameState").run_flags[str(flag)] = int(entry["stage"]) <= target
+            if int(entry["stage"])>=20:
+                get_node("/root/GameState").siyavash_progress[str(flag)]=int(entry["stage"])<=target
+            else:
+                get_node("/root/GameState").run_flags[str(flag)] = int(entry["stage"]) <= target
     get_node("/root/GameState").run_flags["skill_anur_light"] = target >= 7
     get_node("/root/GameState").run_flags["gugalanna_helm"] = target >= 13
     get_node("/root/GameState").run_flags["melammu"] = target >= 9
@@ -57,5 +65,6 @@ func debug_stage(target: int) -> void:
     for key in get_node("/root/GameState").run_flags.keys():
         if str(key).begins_with("story_dialogue_"):
             get_node("/root/GameState").run_flags.erase(key)
+    get_node("/root/GameState").run_flags["choice_pending"] = false
     get_node("/root/Rampage").reset_value()
     changed.emit()

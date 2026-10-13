@@ -26,7 +26,7 @@ def check(path,c):
  errors=[];warnings=[]
  try:frames=frame_images(path,c)
  except (OSError,ValueError) as e:return [str(e)],[],{}
- if '/sprites/player/' in str(path).replace('\\','/'):
+ if '/sprites/player/' in str(path).replace('\\','/') or c.get('qa',{}).get('check_head_ghost',False):
   from check_head_ghost import audit
   errors.extend(audit(path,c)['errors'])
  if c.get('stored_padding',0)>=2:

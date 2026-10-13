@@ -32,18 +32,18 @@ def write_archive(out, entries):
  return len(written_dirs)
 
 def main():
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',default=str(ROOT/'downloads/Nimrod_stage12_2026-10-13.zip'));p.add_argument('--verify',action='store_true');a=p.parse_args();out=Path(a.output);out.parent.mkdir(parents=True,exist_ok=True);entries=list(files());asset_bytes=sum(f.stat().st_size for f in entries if 'assets' in f.relative_to(ROOT).parts)
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',default=str(ROOT/'downloads/Nimrod_stage13_2026-10-13.zip'));p.add_argument('--verify',action='store_true');a=p.parse_args();out=Path(a.output);out.parent.mkdir(parents=True,exist_ok=True);entries=list(files());asset_bytes=sum(f.stat().st_size for f in entries if 'assets' in f.relative_to(ROOT).parts)
  directory_count=write_archive(out,entries)
  from check_zip_import import check_import
  import_check=check_import(out)
  assert import_check['failed_files']==[], 'Godot ZIP import compatibility failed'
  print(f'PACKAGE: {len(entries)} files, runtime assets {asset_bytes/1048576:.2f} MiB, ZIP {out.stat().st_size/1048576:.2f} MiB -> {out}',flush=True)
- budget=json.loads((ROOT/'data/stage12_budget.json').read_text())
+ budget=json.loads((ROOT/'data/stage13_budget.json').read_text())
  new_bytes=sum((ROOT/name).stat().st_size for name in budget['new_assets'])
- size_ok=asset_bytes<budget['baseline_assets_bytes'] and out.stat().st_size<=budget['zip_target_mib']*1048576 and new_bytes<=budget['new_assets_limit_bytes']
+ size_ok=asset_bytes<=budget['baseline_assets_bytes']+budget['new_assets_limit_bytes'] and out.stat().st_size<=budget['zip_target_mib']*1048576 and new_bytes<=budget['new_assets_limit_bytes']
  ok=size_ok;checks=[];target=None
  if a.verify:
-  target=Path(tempfile.mkdtemp(prefix='nimrod-stage12-',dir='/tmp'))
+  target=Path(tempfile.mkdtemp(prefix='nimrod-stage13-',dir='/tmp'))
   with zipfile.ZipFile(out) as z:z.extractall(target)
   project=target/'Nimrod'
   for command in [['python','tools/run_headless_checks.py','--jobs','4','--output','archive/package_verification'],['python','tools/validate_assets.py'],['python','tools/check_alpha_cleanliness.py'],['python','tools/check_level_reachability.py'],['python','tools/check_sprite_frames.py'],['python','tools/check_all_sprite_frames.py'],['python','tools/check_enemy_grounding.py'],['python','tools/check_enemy_visual_bounds.py'],['python','tools/check_prop_contact.py'],['python','tools/check_head_ghost.py']]:

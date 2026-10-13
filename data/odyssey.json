@@ -1,0 +1,45 @@
+{
+  "rage_after_cutscene": 100,
+  "death_suspended_until_crown_clear": true,
+  "rampage_attack_seconds": 3.0,
+  "rampage_fade_seconds": 2.5,
+  "rampage_fade_in_seconds": 1.2,
+  "climb_x": 1040,
+  "climb_y": 280,
+  "climb_seconds": 2.4,
+  "climb_range": 120,
+  "tiamat_trigger_x": 2380,
+  "tiamat_body_x": 2760,
+  "tiamat_free_seconds": 10.0,
+  "darkness_seconds": 3.0,
+  "heal_interval": 18.0,
+  "heal_positions": [
+    [
+      450,
+      880
+    ],
+    [
+      1050,
+      880
+    ],
+    [
+      1700,
+      880
+    ],
+    [
+      2650,
+      880
+    ]
+  ],
+  "major_attack_gap": 0.8,
+  "crown_opening_seconds": 1.2,
+  "blood_position": [
+    1450,
+    862
+  ],
+  "blood_size": [
+    400,
+    18
+  ],
+  "plaza_bgm": "villa_calm"
+}

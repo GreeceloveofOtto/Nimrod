@@ -370,6 +370,6 @@ func pause_world_sfx() -> Dictionary:
     return states
 
 func restore_world_sfx(states: Dictionary) -> void:
-    for child in states:
+    for child in states.keys():
         if is_instance_valid(child):
             child.stream_paused = bool(states[child])

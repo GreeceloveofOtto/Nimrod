@@ -1,0 +1,25 @@
+extends "res://tests/helpers/stage9_support.gd"
+func _run() -> void:
+    await _start9()
+    story_state.debug_stage(10)
+    await _go("NimrodHome")
+    await cutscene_node.play("inanna_home_exit")
+    print("AFTER home_11days: gone=",story_state.is_flag("enkidua_gone")," bed=",manager.current_level.npcs.has("enkidua_bed")," blood=",manager.current_level.has_node("BedBlood"))
+    await cutscene_node.play("enkidua_end")
+    print("AFTER home_after_loss: gone=",story_state.is_flag("enkidua_gone")," bed=",manager.current_level.npcs.has("enkidua_bed")," blood_flag=",story_state.is_flag("bed_blood")," blood=",manager.current_level.has_node("BedBlood"))
+    _check(not manager.current_level.npcs.has("enkidua_bed"),"Dying NPC removed immediately")
+    _check(manager.current_level.has_node("BedBlood") and story_state.is_flag("bed_blood"),"Blood remains after loss")
+    var save: Node = root.get_node("Save")
+    save.save_path="user://stage13_home.json"
+    var data: Dictionary = save.snapshot_data()
+    var file:=FileAccess.open(save.save_path,FileAccess.WRITE)
+    file.store_string(JSON.stringify(data))
+    file.close()
+    _check(await save.resume(),"Load gone-state save")
+    _check(not manager.current_level.npcs.has("enkidua_bed") and manager.current_level.has_node("BedBlood"),"Save restores death scene")
+    story_state.debug_stage(12)
+    await manager.go_to("NimrodHome","Spawn_FromMelammu",{"instant":true,"debug_reload":true})
+    _check(not manager.current_level.npcs.has("enkidua_bed") and manager.current_level.has_node("BedBlood"),"Debug stage restores blood without Enkidua")
+    for entry: Dictionary in manager.current_level.config["npcs"]:
+        _check(manager.current_level.npcs.has(str(entry.get("instance_id",entry["id"])))==story_state.matches(entry.get("presence",{})),"All home NPC presence reconciled")
+    await _finish("STAGE13_HOME_ENKIDUA_GONE")

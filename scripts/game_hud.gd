@@ -16,6 +16,7 @@ var boss_fill: ColorRect
 var boss_label: Label
 var skill_slot: Panel
 var skill_cover: ColorRect
+var debuff_label: Label
 var controls: Label
 
 func _ready() -> void:
@@ -88,6 +89,13 @@ func _ready() -> void:
     skill_slot.add_child(skill_cover)
 
 func bind_player(value: NimrodPlayer) -> void:
+    if debuff_label==null:
+        debuff_label=Label.new()
+        debuff_label.position=Vector2(18,190)
+        debuff_label.add_theme_font_override("font",ui_font)
+        debuff_label.add_theme_font_size_override("font_size",18)
+        debuff_label.add_theme_color_override("font_color",Color(.95,.25,.35))
+        add_child(debuff_label)
     player = value
 
 func set_level_name(value: String) -> void:
@@ -101,8 +109,17 @@ func _process(_delta: float) -> void:
     story.text = str(config.get("story_by_stage",{}).get(stage_key,config.get("story","")))
     hp_fill.size.x = _ui_rect("hp_fill").size.x * clampf(float(player.hp) / float(player.get_max_hp()), 0.0, 1.0)
     controls.text = str(ui.get("controls_text", "")).replace("{weapon}", "J " + {"none":"공격 없음", "staff":"지팡이", "axe":"도끼"}.get(player.weapon, "공격 없음"))
+    if get_node("/root/GameState").active_character=="siyavash":
+        controls.text=controls.text.replace("  L 포식", "")
+        story.text="라오차차흐라 항성계. 흐와니라 광장을 둘러본다."
+    var scene: Node=get_node("/root/SceneManager").current_level
+    if is_instance_valid(scene) and scene.level_id=="HuluppuCrown":
+        story.modulate.a=0
     hp_text.text = "HP %d / %d" % [player.hp, player.get_max_hp()]
-    skill_slot.visible = get_node("/root/Story").is_flag("skill_anur_light")
+    if debuff_label!=null:
+        debuff_label.visible=player.controls_reversed_left>0
+        debuff_label.text="조작 반전 %.1f초" % player.controls_reversed_left
+    skill_slot.visible = get_node("/root/GameState").active_character == "nimrod" and get_node("/root/Story").is_flag("skill_anur_light")
     var fraction: float = clampf(player.skill_cooldown_left/float(player.skill_data["cooldown"]),0,1)
     skill_cover.size = Vector2(38,38*fraction)
     skill_cover.position.y = 40-skill_cover.size.y

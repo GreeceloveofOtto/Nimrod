@@ -37,7 +37,10 @@
       "cedar_demon": "res://scripts/enemy_cedar_demon.gd",
       "kala_ushumgal": "res://scripts/enemy_kala_ushumgal.gd",
       "humbaba": "res://scripts/enemy_humbaba.gd",
-      "gugalanna": "res://scripts/enemy_gugalanna.gd"
+      "gugalanna": "res://scripts/enemy_gugalanna.gd",
+      "ninazu_mother": "res://scripts/enemy_ninazu_mother.gd",
+      "lilith": "res://scripts/enemy_lilith.gd",
+      "zu": "res://scripts/enemy_zu.gd"
     },
     "enemy_copy_spacing": 100,
     "gate_controller_script": "res://scripts/gate_controller.gd",
@@ -10556,7 +10559,7 @@
             880
           ],
           "face_player": false,
-          "interactable": false
+          "interactable": true
         }
       ],
       "decorations": [
@@ -10640,6 +10643,401 @@
             0.55,
             1
           ]
+        }
+      ]
+    },
+    {
+      "id": "HuluppuCrown",
+      "scene": "res://scenes/HuluppuCrown.tscn",
+      "width": 3200,
+      "floor_y": 880,
+      "camera_limits": [
+        0,
+        0,
+        3200,
+        1120
+      ],
+      "walk_bounds": [
+        0,
+        3200
+      ],
+      "safe_zones": [],
+      "bgm": "cedar_boss",
+      "display_name": "훌루푸 나무 위",
+      "bg_dim": [
+        0.1,
+        0.12,
+        0.18
+      ],
+      "ceiling": false,
+      "floor_art": "res://assets/tiles/huluppu/branch.png",
+      "floor_art_size": [
+        512,
+        200
+      ],
+      "terrain": [
+        {
+          "id": "ground",
+          "from": 0,
+          "to": 3200,
+          "y": 880
+        }
+      ],
+      "enemies": [
+        {
+          "id": "ninazu_mother",
+          "position": [
+            2050,
+            880
+          ],
+          "patrol_center": 2050,
+          "patrol_range": 1400
+        },
+        {
+          "id": "lilith",
+          "position": [
+            1350,
+            880
+          ],
+          "patrol_center": 1350,
+          "patrol_range": 1400
+        },
+        {
+          "id": "zu",
+          "position": [
+            2450,
+            510
+          ],
+          "patrol_center": 2450,
+          "patrol_range": 1400
+        }
+      ],
+      "doors": [],
+      "pickups": [],
+      "obstacles": [],
+      "platforms": [
+        {
+          "id": "branch_0_0",
+          "position": [
+            650,
+            790
+          ],
+          "width": 220,
+          "art": "res://assets/tiles/huluppu/branch.png",
+          "art_height": 48,
+          "one_way": true
+        },
+        {
+          "id": "branch_0_1",
+          "position": [
+            830,
+            700
+          ],
+          "width": 220,
+          "art": "res://assets/tiles/huluppu/branch.png",
+          "art_height": 48,
+          "one_way": true
+        },
+        {
+          "id": "branch_0_2",
+          "position": [
+            1010,
+            610
+          ],
+          "width": 220,
+          "art": "res://assets/tiles/huluppu/branch.png",
+          "art_height": 48,
+          "one_way": true
+        },
+        {
+          "id": "branch_1_0",
+          "position": [
+            2050,
+            790
+          ],
+          "width": 220,
+          "art": "res://assets/tiles/huluppu/branch.png",
+          "art_height": 48,
+          "one_way": true
+        },
+        {
+          "id": "branch_1_1",
+          "position": [
+            2230,
+            700
+          ],
+          "width": 220,
+          "art": "res://assets/tiles/huluppu/branch.png",
+          "art_height": 48,
+          "one_way": true
+        },
+        {
+          "id": "branch_1_2",
+          "position": [
+            2410,
+            610
+          ],
+          "width": 220,
+          "art": "res://assets/tiles/huluppu/branch.png",
+          "art_height": 48,
+          "one_way": true
+        },
+        {
+          "id": "crown_bridge_0",
+          "position": [
+            1150,
+            610
+          ],
+          "width": 220,
+          "art": "res://assets/tiles/huluppu/branch.png",
+          "art_height": 48,
+          "one_way": true
+        },
+        {
+          "id": "crown_bridge_1",
+          "position": [
+            1370,
+            610
+          ],
+          "width": 220,
+          "art": "res://assets/tiles/huluppu/branch.png",
+          "art_height": 48,
+          "one_way": true
+        },
+        {
+          "id": "crown_bridge_2",
+          "position": [
+            1590,
+            610
+          ],
+          "width": 220,
+          "art": "res://assets/tiles/huluppu/branch.png",
+          "art_height": 48,
+          "one_way": true
+        },
+        {
+          "id": "crown_bridge_3",
+          "position": [
+            1810,
+            610
+          ],
+          "width": 220,
+          "art": "res://assets/tiles/huluppu/branch.png",
+          "art_height": 48,
+          "one_way": true
+        }
+      ],
+      "steps": [],
+      "spawns": {
+        "Spawn_Entrance": [
+          250,
+          880
+        ]
+      },
+      "npcs": [],
+      "decorations": [],
+      "backgrounds": [
+        {
+          "name": "Space",
+          "path": "res://assets/backgrounds/deathsea/stars_tile.webp",
+          "position": [
+            0,
+            0
+          ],
+          "size": [
+            1024,
+            1024
+          ],
+          "ratio": 0.05,
+          "ratio_y": 0.05,
+          "z": -40,
+          "repeat_size": [
+            1024,
+            1024
+          ],
+          "repeat_times": 3,
+          "modulate": [
+            0.42,
+            0.42,
+            0.55,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TiamatCollapsed",
+      "scene": "res://scenes/TiamatCollapsed.tscn",
+      "width": 3000,
+      "floor_y": 880,
+      "camera_limits": [
+        0,
+        0,
+        3000,
+        1120
+      ],
+      "walk_bounds": [
+        0,
+        3000
+      ],
+      "safe_zones": [
+        [
+          0,
+          -1000,
+          3000,
+          3000
+        ]
+      ],
+      "bgm": "deathsea_drone",
+      "display_name": "티아마트 구역",
+      "bg_dim": [
+        0.1,
+        0.12,
+        0.18
+      ],
+      "ceiling": false,
+      "floor_art": "res://assets/tiles/deathsea/ground_tile.png",
+      "floor_art_size": [
+        512,
+        200
+      ],
+      "terrain": [
+        {
+          "id": "ground",
+          "from": 0,
+          "to": 3000,
+          "y": 880
+        }
+      ],
+      "enemies": [],
+      "doors": [],
+      "pickups": [],
+      "obstacles": [],
+      "platforms": [],
+      "steps": [],
+      "spawns": {
+        "Spawn_Start": [
+          250,
+          880
+        ]
+      },
+      "npcs": [],
+      "decorations": [],
+      "backgrounds": [
+        {
+          "name": "Space",
+          "path": "res://assets/backgrounds/deathsea/stars_tile.webp",
+          "position": [
+            0,
+            0
+          ],
+          "size": [
+            1024,
+            1024
+          ],
+          "ratio": 0.05,
+          "ratio_y": 0.05,
+          "z": -40,
+          "repeat_size": [
+            1024,
+            1024
+          ],
+          "repeat_times": 3,
+          "modulate": [
+            0.42,
+            0.42,
+            0.55,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HwaniraPlaza",
+      "scene": "res://scenes/HwaniraPlaza.tscn",
+      "width": 4000,
+      "floor_y": 880,
+      "camera_limits": [
+        0,
+        0,
+        4000,
+        1120
+      ],
+      "walk_bounds": [
+        0,
+        4000
+      ],
+      "safe_zones": [
+        [
+          0,
+          -1000,
+          4000,
+          3000
+        ]
+      ],
+      "bgm": "villa_calm",
+      "display_name": "흐와니라 광장",
+      "bg_dim": [
+        1,
+        1,
+        1
+      ],
+      "ceiling": false,
+      "floor_art": "res://assets/tiles/hwanira/plaza.png",
+      "floor_art_size": [
+        512,
+        200
+      ],
+      "terrain": [
+        {
+          "id": "ground",
+          "from": 0,
+          "to": 4000,
+          "y": 880
+        }
+      ],
+      "enemies": [],
+      "doors": [],
+      "pickups": [],
+      "obstacles": [],
+      "platforms": [],
+      "steps": [],
+      "spawns": {
+        "Spawn_Start": [
+          650,
+          880
+        ]
+      },
+      "npcs": [],
+      "decorations": [
+        {
+          "name": "FestivalFire",
+          "path": "res://assets/props/castle_front_brazier.webp",
+          "position": [
+            1900,
+            620
+          ],
+          "size": [
+            150,
+            260
+          ],
+          "z": -2
+        }
+      ],
+      "backgrounds": [
+        {
+          "name": "Hwanira",
+          "path": "res://assets/backgrounds/hwanira/plaza.webp",
+          "position": [
+            0,
+            0
+          ],
+          "size": [
+            4000,
+            1120
+          ],
+          "ratio": 1.0,
+          "z": -40
         }
       ]
     }

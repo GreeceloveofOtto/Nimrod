@@ -348,9 +348,8 @@ func spawn_npc(entry: Dictionary) -> NPC:
     add_child(npc)
     return npc
 
-func refresh_story() -> void:
-    if not is_inside_tree():
-        return
+func reconcile_presence() -> void:
+    # Remove from both registry and scene immediately, including same-level refresh.
     for entry: Dictionary in config.get("npcs", []):
         var key: String = str(entry.get("instance_id", entry["id"]))
         if get_node("/root/Story").matches(entry.get("presence", {})):
@@ -360,6 +359,11 @@ func refresh_story() -> void:
             npcs.erase(key)
             remove_child(npc)
             npc.queue_free()
+
+func refresh_story() -> void:
+    if not is_inside_tree():
+        return
+    reconcile_presence()
     for entry: Dictionary in config.get("doors", []):
         var target_door: DoorPortal = doors.get(str(entry["door_id"])) as DoorPortal
         if target_door != null and entry.has("story_targets"):

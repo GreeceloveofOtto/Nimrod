@@ -415,6 +415,24 @@
         "type": "ferry_event",
         "event": "board"
       }
+    ],
+    "utnapishtim_rampage": [
+      {
+        "type": "odyssey_event",
+        "event": "utnapishtim_rampage"
+      }
+    ],
+    "huluppu_climb": [
+      {
+        "type": "odyssey_event",
+        "event": "huluppu_climb"
+      }
+    ],
+    "huluppu_victory": [
+      {
+        "type": "odyssey_event",
+        "event": "huluppu_victory"
+      }
     ]
   }
 }

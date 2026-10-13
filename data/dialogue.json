@@ -1907,6 +1907,96 @@
           "on_finish": []
         }
       ]
+    },
+    "utnapishtim_talk": {
+      "variants": [
+        {
+          "id": "utnapishtim_talk",
+          "when": {
+            "all": [
+              "tiamat_arrived"
+            ],
+            "none": [
+              "utnapishtim_done"
+            ]
+          },
+          "first": [
+            {
+              "speaker": "player",
+              "text": "그대가 우트나피쉬팀이요? 단도직입적으로 말하겠어, 난 영생을 찾아 오랫동안 여행했지. 그대는 영생을 아는가?"
+            },
+            {
+              "speaker": "utnapishtim",
+              "text": "자네의 눈을 보아하니 숨쉬는 존재의 영원한 생명이 아니라, 흙으로 돌아간 자의 부활을 꿈꾸는군."
+            },
+            {
+              "speaker": "player",
+              "text": "그래, 난 죽은 자를 되살리고자 해. 당신이 영원한 생명을 갖고 있다고 해서, 죽음의 바다를 건너 찾아왔어."
+            },
+            {
+              "speaker": "utnapishtim",
+              "text": "나의 영원한 생명은 죽는 것에 실패하는 것과 같지."
+            },
+            {
+              "speaker": "utnapishtim",
+              "text": "나는 지금도 끊임없이 죽기를 반복해. 그러나 사망에 실패할 뿐이야."
+            },
+            {
+              "speaker": "utnapishtim",
+              "text": "미안하지만, 영생에 대해서는 해줄 말이 없네, 부활을 꿈꾼다면 더더욱."
+            }
+          ],
+          "repeat": [],
+          "flag": "dialogue_utnapishtim_talk",
+          "speakers": [
+            "player",
+            "utnapishtim"
+          ],
+          "on_finish": [
+            {
+              "event": "start_cutscene",
+              "cutscene": "utnapishtim_rampage"
+            }
+          ]
+        }
+      ]
+    },
+    "tiamat_talk": {
+      "variants": [
+        {
+          "id": "tiamat_talk",
+          "when": {
+            "all": [
+              "huluppu_boss_done"
+            ],
+            "none": [
+              "tiamat_talk_done"
+            ]
+          },
+          "first": [
+            {
+              "speaker": "tiamat",
+              "text": "재밌구나, 재밌어. 나에게 오라. 나를 죽여다오."
+            },
+            {
+              "speaker": "tiamat",
+              "text": "니므롯, 이 짧은 시대에 내가 너를 주인공으로 삼았다. 앞으로 더욱 재밌어질 거야. 고통에 신음하지말고, 내가 너에게 준 운명을 즐겨라!"
+            }
+          ],
+          "repeat": [],
+          "flag": "dialogue_tiamat_talk",
+          "speakers": [
+            "player",
+            "tiamat"
+          ],
+          "on_finish": [
+            {
+              "event": "set_flag",
+              "flag": "tiamat_talk_done"
+            }
+          ]
+        }
+      ]
     }
   },
   "hold_per_character": 0.05,

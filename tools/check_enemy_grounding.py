@@ -10,7 +10,7 @@ def check():
   surfaces += [(p['position'][0],p['position'][0]+p['width'],p['position'][1]+(p.get('art_height',48)*37/120 if p.get('perch_support') else 0)) for p in l.get('platforms',[])]
   surfaces += [(o['rect'][0],o['rect'][0]+o['rect'][2],o['rect'][1]) for o in l.get('obstacles',[])]
   for e in l.get('enemies',[]):
-   if e['id'] in ['sky_beast','gas_sac','wraith_ray','cedar_wisp','wall_diver']:continue
+   if e['id'] in ['sky_beast','gas_sac','wraith_ray','cedar_wisp','wall_diver','zu']:continue
    x,y=e['position'];support=[z for a,b,z in surfaces if a<=x<=b and y-8<=z<=y+600];ok=bool(support)
    if e['id']=='cedar_demon':
     ok=ok and any(p.get('perch_support') and p['position'][0]<=x<=p['position'][0]+p['width'] and abs(p['position'][1]+p['art_height']*37/120-y)<1 for p in l.get('platforms',[]))

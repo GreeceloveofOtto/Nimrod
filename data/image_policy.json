@@ -2849,13 +2849,15 @@
       "bbox_same": true
     },
     "assets/sprites/enemies/humbaba/walk.webp": {
+      "quality": 98,
+      "bytes": 262514,
+      "rgb_mae": 2.980022947649398,
+      "alpha_mae": 0.020309745656006045,
+      "bbox_same": true,
+      "ssim": 0.9991009750847591,
+      "pass": true,
       "mode": "lossy",
-      "quality": 100,
-      "encoder": "bounded RGB quantization",
-      "rgb_step": 12,
-      "rgb_mae": 2.9381220956236307,
-      "alpha_mae": 0.0,
-      "bbox_same": true
+      "encoder": "YUV WebP"
     },
     "assets/sprites/enemies/humbaba/idle.webp": {
       "mode": "lossy",
@@ -3612,7 +3614,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 10,
-      "rgb_mae": 2.4958041781817264,
+      "rgb_mae": 2.4955707958279754,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -3621,7 +3623,7 @@
       "quality": 100,
       "encoder": "bounded RGB quantization",
       "rgb_step": 10,
-      "rgb_mae": 2.4927084474174173,
+      "rgb_mae": 2.4932063957653763,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -3828,8 +3830,9 @@
     "assets/sprites/enemies/gugalanna/death.webp": {
       "mode": "lossy",
       "quality": 100,
-      "encoder": "edge blue-despill / lossless WebP container",
-      "rgb_mae": 2.9179134632333996,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.8999586178357126,
       "alpha_mae": 0.0,
       "bbox_same": true
     },
@@ -3863,6 +3866,17 @@
       "rgb_mae": 2.9908136854387006,
       "alpha_mae": 0.0,
       "bbox_same": true
+    },
+    "assets/backgrounds/hwanira/plaza.webp": {
+      "quality": 100,
+      "bytes": 1710162,
+      "rgb_mae": 2.9700220889136904,
+      "alpha_mae": 0.0,
+      "bbox_same": true,
+      "ssim": 0.9961636083738463,
+      "pass": true,
+      "mode": "lossy",
+      "encoder": "YUV WebP"
     }
   },
   "trim_margin": 2,

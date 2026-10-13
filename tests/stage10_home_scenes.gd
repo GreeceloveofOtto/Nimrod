@@ -12,7 +12,7 @@ func _run() -> void:
     cutscene_node.step_started.connect(func(kind: String) -> void: phases.append(kind))
     await cutscene_node.play("enkidua_end")
     _check(story_state.is_flag("enkidua_gone") and story_state.is_flag("enkidua_last_talk_done"),"Final loss flags")
-    _check(not manager.current_level.npcs.has("enkidua_bed") and not manager.current_level.has_node("BedBlood"),"Post-loss empty bed and no Enkidua")
+    _check(not manager.current_level.npcs.has("enkidua_bed") and manager.current_level.has_node("BedBlood"),"Stage13: empty bed retains blood after loss")
     _check(hero.cinematic_set.is_empty() and hero.sprite_set=="axe_onearm" and not manager.player_locked,"Normal unbloodied set and input restored")
     _check(phases.has("zoom") and phases.has("sound") and phases.has("time_skip"),"Grieving camera, sob and caption stages executed")
     await _finish("STAGE10_HOME_SCENES")

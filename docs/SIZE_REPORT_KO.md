@@ -1,80 +1,137 @@
-# 용량 보고 — 12단계 (2026-10-13)
+# 13단계 용량 측정
 
-기준: 11단계 assets 61.153MiB / ZIP 69.420MiB. 현재 런타임 assets 60.542MiB. 슬림 ZIP 검증본은 60.926140MiB. 최종 문서 재패키지의 정확한 크기·SHA256은 downloads의 .sha256과 기록 JSON에 기재한다. 65MiB 기본 목표와11단계 대비 감소를 달성했고,60MiB 확장 목표는 아직 넘는다.
+| 단계 | assets | 실행용 ZIP |
+|---|---:|---:|
+| 11 | 61.15MiB | 69.42MiB |
+| 12 | 60.54MiB | 60.93MiB |
+| 13 | 65.13MiB | 65.58MiB |
 
-| 분류 | 11단계 MiB | 12단계 MiB | 변화 MiB |
-|---|---:|---:|---:|
-| 배경 | 5.899 | 5.899 | 0.000 |
-| 스프라이트 | 44.726 | 43.993 | -0.733 |
-| 소품·문 | 6.706 | 6.987 | 0.281 |
-| 지형 | 1.551 | 1.551 | 0.000 |
-| 오디오 | 1.962 | 1.850 | -0.112 |
-| 폰트 | 0.121 | 0.122 | 0.001 |
-| assets 전체 | 61.153 | 60.542 | -0.611 |
+신규 이미지 총 4.62MiB. 신규 개별 예산은 모두 통과했으나, 전체 ZIP 62MiB 목표는 미달이다. 기능 검증과 용량 판정은 별도로 기록한다.
 
-## 신규3종 예산
+| 신규 항목 | 사용 | 상한 |
+|---|---:|---:|
+| siyavash | 0.95MiB | 2.0MiB |
+| ninazu_mother | 0.84MiB | 1.2MiB |
+| lilith | 0.68MiB | 1.2MiB |
+| zu | 0.86MiB | 1.2MiB |
+| backgrounds | 0.91MiB | 1.5MiB |
+| props_tiles | 0.38MiB | 0.4MiB |
 
-| 파일 | KiB |
-|---|---:|
-| assets/props/huluppu_trunk.webp | 253.02 |
-| assets/props/utnapishtim_hut.webp | 44.19 |
-| assets/sprites/npcs/utnapishtim/idle.webp | 66.38 |
+| 카테고리 | 12단계 | 13단계 |
+|---|---:|---:|
+| sprites | 43.99MiB | 47.35MiB |
+| backgrounds | 5.90MiB | 6.81MiB |
+| props | 6.99MiB | 7.01MiB |
+| tiles | 1.55MiB | 1.90MiB |
+| audio | 1.85MiB | 1.79MiB |
+| fonts | 0.12MiB | 0.13MiB |
 
-합계 363.59KiB ≤500KiB. 원본과 모든 후보는 archive/에 보존.
+13단계 sprites 세부: fx 0.91MiB, npcs 1.77MiB, enemies 30.55MiB, player 14.13MiB
 
-## 적용·거부한 절감
+적용과 되돌림:
 
-- 이미지 참조 전체 재검토: 미사용 실행 이미지0개. 통합 완료된 개발용 stage2 manifest2개는 archive로 이동. 개발 캡처·tests/artifacts·pack_source·import/uid 캐시·archive는 슬림 ZIP 제외.
-- 신규 노인 idle은 SSIM0.997865로6논리 프레임을5저장 프레임으로 병합(frame_map), 총2.4초 유지. 기존·새 투구 시트의 다른 완만한 루프도 재검토했으나 기준 미달/절감 없는 후보는 유지.
-- 의수·투구74시트를 불변 canonical 원본에서 밀도 하한0.8(보스 기존0.9)을 지켜 재검토. SSIM0.93 아래는 다시 해상도를 올려 최저 허용값에 정착하므로 무조건 축소하지 않았다. WebP YUV80 또는 제한 RGB 양자화 중 RGB 평균≤3, 알파 평균≤0.5, bbox불변인 작은 후보만 사용.
-- 신규3종의64/128/256색 팔레트 재검토: 집만 적용, 약37.9KiB 감소. 나무·노인은 더 작지 않거나 품질 한도를 통과하지 못해 원래 인코딩 유지.
-- BGM14곡을 불변 WAV에서 모노36kbps로 재검토해5곡만 적용, 약114.6KiB 절감. 나머지는 길이·샘플 수·루프 이음/피크·용량 기준을 통과하지 않아 원본 유지. SFX109개 무음 꼬리를 점검해 explosion_boom의-80dB 이하 뒤쪽만20ms 여유를 남겨 다듬음.
-- assets JSON을 공백 없이 저장해 약200KiB 감소. 픽셀·타이밍과 무관.
-- ZIP은 최대 deflate9와 Godot용 명시적 디렉터리 엔트리를 쓴다. Godot 압축 가져오기 실패 파일0. 별도 QA ZIP은 개발 비교용이며 슬림 예산과 분리.
+- 신규 보스 저장 밀도는 0.9를 시작값으로 삼고 SSIM 0.93 이상을 통과한 밀도만 적용했다. 앵커와 게임 표시 크기는 유지했다.
+- 흐와니라 배경은 원본 생성 이미지의 측면 건축 영역을 합성해 3200×896으로 저장했다(4000×1120 표시, 밀도 0.8). 항성이 잘리던 구도는 이미지 생성으로 수정했다.
+- 배경의 낮은 휘도는 색보정으로 정리하고 게임에서는 modulate로 어둡게 했다. 단색 검은 테두리를 덧그리지 않았다.
+- 배경의 채널별 색 양자화는 원본 대비 RGB 평균 ≤3/255, 알파 불변, SSIM ≥0.93인 결과만 채택했다.
+- 기존 상위 30개 시트를 낮은 밀도, WebP RGB 품질 82/86/90/94/98, 채널별 색 양자화와 near-lossless 0/20/40/60으로 검사했다. 현재 파일보다 작고 품질 게이트를 통과하는 경우만 적용했다. 대부분은 색차가 3/255를 넘거나 기존 파일보다 커서 유지했다.
+- 인접 프레임은 SSIM ≥0.985일 때 frame_map으로 병합했다. 논리 프레임 수와 총 재생 길이는 그대로다. 회전 클립은 최소 3개 저장 프레임을 유지한다.
+- BGM mono 32kbps 후보 중 샘플 수, 루프 이음새(기존+0.01 이내), 피크(<0.99), 파일 크기를 모두 통과한 5곡을 채택해 0.0575MiB 줄였다. 44.1kHz/24kbps는 libvorbis가 거부해 적용하지 않았다.
+- 미사용 이미지/오디오 0개, 해시가 동일한 중복 파일 0개. 활성 클립·폴더를 삭제해 예산을 맞추지 않았다.
+- 변환 전 파일과 실패 후보는 archive/stage13 및 기존 archive/pack_source 계열에 보존했다. archive에는 .gdignore를 두고 실행 ZIP에서 제외했다.
 
-## 추가 절감 후보 상위20개
+상위 20개 큰 파일과 다음 후보(예상 절감은 재검증 전 추정):
 
-60MiB 이하를 더 줄이려면 아래 큰 파일의 밀도·색/시간 변화부터 다시 검토해야 한다. 이미 SSIM/밀도 하한/색차 한도에 가까워 단순 품질 하향은 적용하지 않았다. 예상치는 조건부이며 검증 없이 반영하지 않는다.
+| 파일 | 현재 | 유지 이유 | 다음 후보 / 예상 |
+|---|---:|---|---|
+| assets/props/doors/castle_great_gate.webp | 0.85MiB | 기존 압축보다 작은 후보가 품질 기준을 통과하지 못함 또는 신규 예산 통과 | 원본 재생성으로 색·질감을 단순화한 뒤 재검사 / 약 0.13MiB |
+| assets/backgrounds/hwanira/plaza.webp | 0.69MiB | 기존 압축보다 작은 후보가 품질 기준을 통과하지 못함 또는 신규 예산 통과 | 원본 재생성으로 색·질감을 단순화한 뒤 재검사 / 약 0.10MiB |
+| assets/backgrounds/deathsea/stars_tile.webp | 0.52MiB | 기존 압축보다 작은 후보가 품질 기준을 통과하지 못함 또는 신규 예산 통과 | 원본 재생성으로 색·질감을 단순화한 뒤 재검사 / 약 0.08MiB |
+| assets/sprites/enemies/gugalanna/walk.webp | 0.51MiB | 기존 압축보다 작은 후보가 품질 기준을 통과하지 못함 또는 신규 예산 통과 | 원본 재생성으로 색·질감을 단순화한 뒤 재검사 / 약 0.08MiB |
+| assets/sprites/enemies/gugalanna/idle.webp | 0.48MiB | 기존 압축보다 작은 후보가 품질 기준을 통과하지 못함 또는 신규 예산 통과 | 원본 재생성으로 색·질감을 단순화한 뒤 재검사 / 약 0.07MiB |
+| assets/sprites/enemies/gugalanna/death.webp | 0.46MiB | 기존 압축보다 작은 후보가 품질 기준을 통과하지 못함 또는 신규 예산 통과 | 원본 재생성으로 색·질감을 단순화한 뒤 재검사 / 약 0.07MiB |
+| assets/backgrounds/cedar/mid_trunks_tile_2d.webp | 0.46MiB | 기존 압축보다 작은 후보가 품질 기준을 통과하지 못함 또는 신규 예산 통과 | 원본 재생성으로 색·질감을 단순화한 뒤 재검사 / 약 0.07MiB |
+| assets/sprites/enemies/kala_ushumgal/phase_transition.webp | 0.44MiB | 기존 압축보다 작은 후보가 품질 기준을 통과하지 못함 또는 신규 예산 통과 | 원본 재생성으로 색·질감을 단순화한 뒤 재검사 / 약 0.07MiB |
+| assets/sprites/enemies/kala_ushumgal/death.webp | 0.43MiB | 기존 압축보다 작은 후보가 품질 기준을 통과하지 못함 또는 신규 예산 통과 | 원본 재생성으로 색·질감을 단순화한 뒤 재검사 / 약 0.06MiB |
+| assets/props/doors/villa_gate.webp | 0.43MiB | 기존 압축보다 작은 후보가 품질 기준을 통과하지 못함 또는 신규 예산 통과 | 원본 재생성으로 색·질감을 단순화한 뒤 재검사 / 약 0.06MiB |
+| assets/sprites/enemies/kala_ushumgal/collapse.webp | 0.41MiB | 기존 압축보다 작은 후보가 품질 기준을 통과하지 못함 또는 신규 예산 통과 | 원본 재생성으로 색·질감을 단순화한 뒤 재검사 / 약 0.06MiB |
+| assets/sprites/enemies/kala_ushumgal/walk.webp | 0.38MiB | 기존 압축보다 작은 후보가 품질 기준을 통과하지 못함 또는 신규 예산 통과 | 원본 재생성으로 색·질감을 단순화한 뒤 재검사 / 약 0.06MiB |
+| assets/sprites/enemies/kala_ushumgal/whip_recovery.webp | 0.36MiB | 기존 압축보다 작은 후보가 품질 기준을 통과하지 못함 또는 신규 예산 통과 | 원본 재생성으로 색·질감을 단순화한 뒤 재검사 / 약 0.05MiB |
+| assets/sprites/enemies/kala_ushumgal/turn.webp | 0.36MiB | 기존 압축보다 작은 후보가 품질 기준을 통과하지 못함 또는 신규 예산 통과 | 원본 재생성으로 색·질감을 단순화한 뒤 재검사 / 약 0.05MiB |
+| assets/sprites/enemies/gugalanna/turn.webp | 0.35MiB | 기존 압축보다 작은 후보가 품질 기준을 통과하지 못함 또는 신규 예산 통과 | 원본 재생성으로 색·질감을 단순화한 뒤 재검사 / 약 0.05MiB |
+| assets/backgrounds/homeroad/mid_district_tile.webp | 0.35MiB | 기존 압축보다 작은 후보가 품질 기준을 통과하지 못함 또는 신규 예산 통과 | 원본 재생성으로 색·질감을 단순화한 뒤 재검사 / 약 0.05MiB |
+| assets/sprites/enemies/gugalanna/rake_windup.webp | 0.35MiB | 기존 압축보다 작은 후보가 품질 기준을 통과하지 못함 또는 신규 예산 통과 | 원본 재생성으로 색·질감을 단순화한 뒤 재검사 / 약 0.05MiB |
+| assets/sprites/enemies/kala_ushumgal/idle.webp | 0.35MiB | 기존 압축보다 작은 후보가 품질 기준을 통과하지 못함 또는 신규 예산 통과 | 원본 재생성으로 색·질감을 단순화한 뒤 재검사 / 약 0.05MiB |
+| assets/sprites/enemies/kala_ushumgal/summon.webp | 0.34MiB | 기존 압축보다 작은 후보가 품질 기준을 통과하지 못함 또는 신규 예산 통과 | 원본 재생성으로 색·질감을 단순화한 뒤 재검사 / 약 0.05MiB |
+| assets/sprites/enemies/gugalanna/rake.webp | 0.34MiB | 기존 압축보다 작은 후보가 품질 기준을 통과하지 못함 또는 신규 예산 통과 | 원본 재생성으로 색·질감을 단순화한 뒤 재검사 / 약 0.05MiB |
 
-| 파일 | MiB | 제약/후보 | 조건부 예상 절감 MiB |
-|---|---:|---|---:|
-| assets/props/doors/castle_great_gate.webp | 0.849 | RGB/알파·SSIM 품질 게이트 유지; 부드러운 중복 프레임 재검토 | 0.085 |
-| assets/backgrounds/deathsea/stars_tile.webp | 0.517 | RGB/알파·SSIM 품질 게이트 유지; 부드러운 중복 프레임 재검토 | 0.052 |
-| assets/sprites/enemies/gugalanna/walk.webp | 0.506 | 보스/대형 밀도 하한·SSIM; 동작을 유지하는 인접 프레임만 추가 병합 | 0.051 |
-| assets/sprites/enemies/gugalanna/idle.webp | 0.478 | 보스/대형 밀도 하한·SSIM; 동작을 유지하는 인접 프레임만 추가 병합 | 0.048 |
-| assets/sprites/enemies/gugalanna/death.webp | 0.468 | 보스/대형 밀도 하한·SSIM; 동작을 유지하는 인접 프레임만 추가 병합 | 0.047 |
-| assets/backgrounds/cedar/mid_trunks_tile_2d.webp | 0.458 | RGB/알파·SSIM 품질 게이트 유지; 부드러운 중복 프레임 재검토 | 0.046 |
-| assets/sprites/enemies/kala_ushumgal/phase_transition.webp | 0.442 | 보스/대형 밀도 하한·SSIM; 동작을 유지하는 인접 프레임만 추가 병합 | 0.044 |
-| assets/sprites/enemies/kala_ushumgal/death.webp | 0.431 | 보스/대형 밀도 하한·SSIM; 동작을 유지하는 인접 프레임만 추가 병합 | 0.043 |
-| assets/props/doors/villa_gate.webp | 0.427 | RGB/알파·SSIM 품질 게이트 유지; 부드러운 중복 프레임 재검토 | 0.043 |
-| assets/sprites/enemies/kala_ushumgal/collapse.webp | 0.408 | 보스/대형 밀도 하한·SSIM; 동작을 유지하는 인접 프레임만 추가 병합 | 0.041 |
-| assets/sprites/enemies/kala_ushumgal/walk.webp | 0.379 | 보스/대형 밀도 하한·SSIM; 동작을 유지하는 인접 프레임만 추가 병합 | 0.038 |
-| assets/sprites/enemies/kala_ushumgal/whip_recovery.webp | 0.365 | 보스/대형 밀도 하한·SSIM; 동작을 유지하는 인접 프레임만 추가 병합 | 0.036 |
-| assets/sprites/enemies/kala_ushumgal/turn.webp | 0.357 | 보스/대형 밀도 하한·SSIM; 동작을 유지하는 인접 프레임만 추가 병합 | 0.036 |
-| assets/sprites/enemies/gugalanna/turn.webp | 0.353 | 보스/대형 밀도 하한·SSIM; 동작을 유지하는 인접 프레임만 추가 병합 | 0.035 |
-| assets/backgrounds/homeroad/mid_district_tile.webp | 0.351 | RGB/알파·SSIM 품질 게이트 유지; 부드러운 중복 프레임 재검토 | 0.035 |
-| assets/sprites/enemies/gugalanna/rake_windup.webp | 0.348 | 보스/대형 밀도 하한·SSIM; 동작을 유지하는 인접 프레임만 추가 병합 | 0.035 |
-| assets/sprites/enemies/kala_ushumgal/idle.webp | 0.347 | 보스/대형 밀도 하한·SSIM; 동작을 유지하는 인접 프레임만 추가 병합 | 0.035 |
-| assets/sprites/enemies/kala_ushumgal/summon.webp | 0.344 | 보스/대형 밀도 하한·SSIM; 동작을 유지하는 인접 프레임만 추가 병합 | 0.034 |
-| assets/sprites/enemies/gugalanna/rake.webp | 0.338 | 보스/대형 밀도 하한·SSIM; 동작을 유지하는 인접 프레임만 추가 병합 | 0.034 |
-| assets/backgrounds/castle_front/downtown_passage_facade.webp | 0.334 | RGB/알파·SSIM 품질 게이트 유지; 부드러운 중복 프레임 재검토 | 0.033 |
+62MiB를 맞추려면 약 3.56MiB 추가 절감이 필요하다. 현재 품질 기준을 그대로 유지하는 자동 변환에서는 이만큼의 여유가 확인되지 않았다. 큰 보스 원본의 세부 질감을 줄여 재생성하는 작업이 가장 큰 후보이며, 단순한 품질 하향이나 활성 모션 삭제는 적용하지 않았다.
 
-### 원본을 유지한 BGM 후보
+## 패키지 용량 목표 미달 후보
 
-| 파일 | 기존 이음 차 | 후보 이음 차 | 이유 |
-|---|---:|---:|---|
-| assets/audio/bgm/castle_front.ogg | 0.02047 | 0.03749 | 루프 이음이 기존보다0.01 이상 커져 거부·원본 유지 |
-| assets/audio/bgm/cedar_boss.ogg | 0.01979 | 0.03981 | 루프 이음이 기존보다0.01 이상 커져 거부·원본 유지 |
-| assets/audio/bgm/cedar_forest.ogg | 0.02607 | 0.03890 | 루프 이음이 기존보다0.01 이상 커져 거부·원본 유지 |
-| assets/audio/bgm/deathsea_drone.ogg | 0.01325 | 0.04729 | 루프 이음이 기존보다0.01 이상 커져 거부·원본 유지 |
-| assets/audio/bgm/dilmun_wind.ogg | 0.00198 | 0.02383 | 루프 이음이 기존보다0.01 이상 커져 거부·원본 유지 |
-| assets/audio/bgm/home_sorrow.ogg | 0.02112 | 0.05128 | 루프 이음이 기존보다0.01 이상 커져 거부·원본 유지 |
-| assets/audio/bgm/uruk_home_road.ogg | 0.01187 | 0.05947 | 루프 이음이 기존보다0.01 이상 커져 거부·원본 유지 |
-| assets/audio/bgm/uruk_rear_gate.ogg | 0.01906 | 0.03112 | 루프 이음이 기존보다0.01 이상 커져 거부·원본 유지 |
-| assets/audio/bgm/villa_calm.ogg | 0.01882 | 0.05454 | 루프 이음이 기존보다0.01 이상 커져 거부·원본 유지 |
+- assets/props/doors/castle_great_gate.webp: 0.85MiB, 참조/SSIM 재검토 후 예상 0.08MiB 절감.
+- assets/backgrounds/hwanira/plaza.webp: 0.69MiB, 참조/SSIM 재검토 후 예상 0.07MiB 절감.
+- assets/backgrounds/deathsea/stars_tile.webp: 0.52MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
+- assets/sprites/enemies/gugalanna/walk.webp: 0.51MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
+- assets/sprites/enemies/gugalanna/idle.webp: 0.48MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
+- assets/sprites/enemies/gugalanna/death.webp: 0.46MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
+- assets/backgrounds/cedar/mid_trunks_tile_2d.webp: 0.46MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/phase_transition.webp: 0.44MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/death.webp: 0.43MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/props/doors/villa_gate.webp: 0.43MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/collapse.webp: 0.41MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/walk.webp: 0.38MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/whip_recovery.webp: 0.36MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/turn.webp: 0.36MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/gugalanna/turn.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/backgrounds/homeroad/mid_district_tile.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/gugalanna/rake_windup.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/idle.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/summon.webp: 0.34MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
+- assets/sprites/enemies/gugalanna/rake.webp: 0.34MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
 
-신규 이미지 팔레트 후보: 나무·노인은 파일이 더 작지 않거나 품질/색차 한도를 넘어서 유지. 집만 적용. 밀도 후보의 낮은 해상도는 SSIM0.93 미만일 때 자동으로 한 단계씩 되돌려 저장했다.
+## 패키지 용량 목표 미달 후보
 
-### 패키지 기능/용량 검증
+- assets/props/doors/castle_great_gate.webp: 0.85MiB, 참조/SSIM 재검토 후 예상 0.08MiB 절감.
+- assets/backgrounds/hwanira/plaza.webp: 0.69MiB, 참조/SSIM 재검토 후 예상 0.07MiB 절감.
+- assets/backgrounds/deathsea/stars_tile.webp: 0.52MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
+- assets/sprites/enemies/gugalanna/walk.webp: 0.51MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
+- assets/sprites/enemies/gugalanna/idle.webp: 0.48MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
+- assets/sprites/enemies/gugalanna/death.webp: 0.46MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
+- assets/backgrounds/cedar/mid_trunks_tile_2d.webp: 0.46MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/phase_transition.webp: 0.44MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/death.webp: 0.43MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/props/doors/villa_gate.webp: 0.43MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/collapse.webp: 0.41MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/walk.webp: 0.38MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/whip_recovery.webp: 0.36MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/turn.webp: 0.36MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/gugalanna/turn.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/backgrounds/homeroad/mid_district_tile.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/gugalanna/rake_windup.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/idle.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/summon.webp: 0.34MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
+- assets/sprites/enemies/gugalanna/rake.webp: 0.34MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
 
-기능: 새 폴더에서150/150 헤드리스 검사 통과, 추가 정적 QA 전부 통과. 용량: assets11단계 대비 감소, 슬림ZIP65MiB 이하 PASS.60MiB 확장 목표는 약0.93MiB 초과해 미달. 기존 sprites가44MiB 가까이 차지하며 더 낮은 밀도/품질은 보장한 한도를 넘으므로 적용하지 않았다. 별도 QA ZIP21.40MiB는 선택 다운로드용 개발 비교 자료이며 슬림 예산에 포함하지 않는다.
+## 패키지 용량 목표 미달 후보
+
+- assets/props/doors/castle_great_gate.webp: 0.85MiB, 참조/SSIM 재검토 후 예상 0.08MiB 절감.
+- assets/backgrounds/hwanira/plaza.webp: 0.69MiB, 참조/SSIM 재검토 후 예상 0.07MiB 절감.
+- assets/backgrounds/deathsea/stars_tile.webp: 0.52MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
+- assets/sprites/enemies/gugalanna/walk.webp: 0.51MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
+- assets/sprites/enemies/gugalanna/idle.webp: 0.48MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
+- assets/sprites/enemies/gugalanna/death.webp: 0.46MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
+- assets/backgrounds/cedar/mid_trunks_tile_2d.webp: 0.46MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/phase_transition.webp: 0.44MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/death.webp: 0.43MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/props/doors/villa_gate.webp: 0.43MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/collapse.webp: 0.41MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/walk.webp: 0.38MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/whip_recovery.webp: 0.36MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/turn.webp: 0.36MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/gugalanna/turn.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/backgrounds/homeroad/mid_district_tile.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/gugalanna/rake_windup.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/idle.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/summon.webp: 0.34MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
+- assets/sprites/enemies/gugalanna/rake.webp: 0.34MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.

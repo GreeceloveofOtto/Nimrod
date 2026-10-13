@@ -2600,6 +2600,355 @@
           1.15
         ]
       }
+    },
+    {
+      "id": "ninazu_mother",
+      "display_name": "니나즈의 어미",
+      "hp": 1930,
+      "turn_delay": 0.5,
+      "body_size": [
+        300,
+        260
+      ],
+      "body_offset_y": -130.0,
+      "frame_size": [
+        1280,
+        1152
+      ],
+      "anchor": [
+        640,
+        1100
+      ],
+      "visual_scale": 0.3,
+      "size_multiplier": 1.0,
+      "art_height_px": 866.6666666666667,
+      "move_speed": 55,
+      "detect_range": 4000,
+      "knockback_multiplier": 0.2,
+      "drop_chance": 0.0,
+      "hurt_sfx": "humbaba_hurt",
+      "death_sfx": "humbaba_death",
+      "patterns": {
+        "poison": {
+          "windup": 0.9,
+          "active": 0.4,
+          "recovery": 1.1,
+          "damage": 2,
+          "seconds": 5.0,
+          "tick_interval": 0.25,
+          "dps": 8,
+          "radius": 160,
+          "height": 65,
+          "cooldown": 5.8,
+          "box": [
+            420,
+            80
+          ],
+          "id": "poison",
+          "windup_clip": "poison_windup",
+          "active_clip": "poison_attack",
+          "recovery_clip": "idle"
+        },
+        "tail": {
+          "windup": 0.7,
+          "active": 0.2,
+          "recovery": 1.0,
+          "damage": 18,
+          "stagger_seconds": 0.3,
+          "cooldown": 3.2,
+          "box": [
+            320,
+            220
+          ],
+          "id": "tail",
+          "windup_clip": "tail_windup",
+          "active_clip": "tail_attack",
+          "recovery_clip": "idle"
+        }
+      },
+      "attacks": [
+        {
+          "windup": 0.9,
+          "active": 0.4,
+          "recovery": 1.1,
+          "damage": 2,
+          "seconds": 5.0,
+          "tick_interval": 0.25,
+          "dps": 8,
+          "radius": 160,
+          "height": 65,
+          "cooldown": 5.8,
+          "box": [
+            420,
+            80
+          ],
+          "id": "poison",
+          "windup_clip": "poison_windup",
+          "active_clip": "poison_attack",
+          "recovery_clip": "idle"
+        },
+        {
+          "windup": 0.7,
+          "active": 0.2,
+          "recovery": 1.0,
+          "damage": 18,
+          "stagger_seconds": 0.3,
+          "cooldown": 3.2,
+          "box": [
+            320,
+            220
+          ],
+          "id": "tail",
+          "windup_clip": "tail_windup",
+          "active_clip": "tail_attack",
+          "recovery_clip": "idle"
+        }
+      ],
+      "cooldown_offset": 1.0,
+      "shockwave_stun": 1.0
+    },
+    {
+      "id": "lilith",
+      "display_name": "릴리스",
+      "hp": 2050,
+      "turn_delay": 0.2,
+      "body_size": [
+        135,
+        210
+      ],
+      "body_offset_y": -105.0,
+      "frame_size": [
+        1280,
+        1152
+      ],
+      "anchor": [
+        640,
+        1100
+      ],
+      "visual_scale": 0.3,
+      "size_multiplier": 1.0,
+      "art_height_px": 700.0,
+      "move_speed": 280,
+      "detect_range": 4000,
+      "knockback_multiplier": 0.2,
+      "drop_chance": 0.0,
+      "hurt_sfx": "humbaba_hurt",
+      "death_sfx": "humbaba_death",
+      "patterns": {
+        "ambush": {
+          "windup": 0.5,
+          "active": 0.75,
+          "recovery": 1.0,
+          "damage": 10,
+          "count": 3,
+          "interval": 0.25,
+          "teleport_seconds": 0.1,
+          "cooldown": 5.5,
+          "box": [
+            150,
+            160
+          ],
+          "id": "ambush",
+          "windup_clip": "ambush_windup",
+          "active_clip": "ambush_attack",
+          "recovery_clip": "idle"
+        },
+        "charm": {
+          "windup": 0.65,
+          "active": 0.2,
+          "recovery": 0.8,
+          "damage": 0,
+          "reverse_seconds": 2.5,
+          "speed": 480,
+          "range": 700,
+          "cooldown": 6.0,
+          "box": [
+            200,
+            160
+          ],
+          "id": "charm",
+          "windup_clip": "charm_windup",
+          "active_clip": "charm_attack",
+          "recovery_clip": "idle"
+        },
+        "ghost": {
+          "windup": 0.2,
+          "active": 0.4,
+          "recovery": 0.8,
+          "damage": 0,
+          "stagger_seconds": 0.5,
+          "interval": 4.5,
+          "cooldown": 4.5,
+          "box": [
+            350,
+            240
+          ],
+          "id": "ghost",
+          "windup_clip": "ghost_windup",
+          "active_clip": "ghost_attack",
+          "recovery_clip": "idle"
+        }
+      },
+      "attacks": [
+        {
+          "windup": 0.5,
+          "active": 0.75,
+          "recovery": 1.0,
+          "damage": 10,
+          "count": 3,
+          "interval": 0.25,
+          "teleport_seconds": 0.1,
+          "cooldown": 5.5,
+          "box": [
+            150,
+            160
+          ],
+          "id": "ambush",
+          "windup_clip": "ambush_windup",
+          "active_clip": "ambush_attack",
+          "recovery_clip": "idle"
+        },
+        {
+          "windup": 0.65,
+          "active": 0.2,
+          "recovery": 0.8,
+          "damage": 0,
+          "reverse_seconds": 2.5,
+          "speed": 480,
+          "range": 700,
+          "cooldown": 6.0,
+          "box": [
+            200,
+            160
+          ],
+          "id": "charm",
+          "windup_clip": "charm_windup",
+          "active_clip": "charm_attack",
+          "recovery_clip": "idle"
+        },
+        {
+          "windup": 0.2,
+          "active": 0.4,
+          "recovery": 0.8,
+          "damage": 0,
+          "stagger_seconds": 0.5,
+          "interval": 4.5,
+          "cooldown": 4.5,
+          "box": [
+            350,
+            240
+          ],
+          "id": "ghost",
+          "windup_clip": "ghost_windup",
+          "active_clip": "ghost_attack",
+          "recovery_clip": "idle"
+        }
+      ],
+      "cooldown_offset": 2.4
+    },
+    {
+      "id": "zu",
+      "display_name": "괴물새 주",
+      "hp": 1880,
+      "turn_delay": 0.35,
+      "body_size": [
+        270,
+        230
+      ],
+      "body_offset_y": -115.0,
+      "frame_size": [
+        1280,
+        1152
+      ],
+      "anchor": [
+        640,
+        1100
+      ],
+      "visual_scale": 0.3,
+      "size_multiplier": 1.0,
+      "art_height_px": 766.6666666666667,
+      "move_speed": 130,
+      "detect_range": 4000,
+      "knockback_multiplier": 0.2,
+      "drop_chance": 0.0,
+      "hurt_sfx": "humbaba_hurt",
+      "death_sfx": "humbaba_death",
+      "patterns": {
+        "feathers": {
+          "windup": 0.8,
+          "active": 0.3,
+          "recovery": 1.2,
+          "damage": 11,
+          "count": 5,
+          "speed": 450,
+          "spread_degrees": 60,
+          "cooldown": 4.8,
+          "box": [
+            700,
+            500
+          ],
+          "id": "feathers",
+          "windup_clip": "feathers_windup",
+          "active_clip": "feathers_attack",
+          "recovery_clip": "idle"
+        },
+        "grab": {
+          "windup": 1.0,
+          "active": 1.25,
+          "recovery": 1.0,
+          "damage": 33,
+          "dive_speed": 720,
+          "carry_seconds": 0.5,
+          "cooldown": 7.0,
+          "box": [
+            150,
+            150
+          ],
+          "id": "grab",
+          "windup_clip": "grab_windup",
+          "active_clip": "grab_attack",
+          "recovery_clip": "idle"
+        }
+      },
+      "attacks": [
+        {
+          "windup": 0.8,
+          "active": 0.3,
+          "recovery": 1.2,
+          "damage": 11,
+          "count": 5,
+          "speed": 450,
+          "spread_degrees": 60,
+          "cooldown": 4.8,
+          "box": [
+            700,
+            500
+          ],
+          "id": "feathers",
+          "windup_clip": "feathers_windup",
+          "active_clip": "feathers_attack",
+          "recovery_clip": "idle"
+        },
+        {
+          "windup": 1.0,
+          "active": 1.25,
+          "recovery": 1.0,
+          "damage": 33,
+          "dive_speed": 720,
+          "carry_seconds": 0.5,
+          "cooldown": 7.0,
+          "box": [
+            150,
+            150
+          ],
+          "id": "grab",
+          "windup_clip": "grab_windup",
+          "active_clip": "grab_attack",
+          "recovery_clip": "idle"
+        }
+      ],
+      "cooldown_offset": 3.8,
+      "air_fourth_stun": 2.0
     }
   ]
 }

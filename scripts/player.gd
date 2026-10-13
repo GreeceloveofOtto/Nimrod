@@ -122,6 +122,7 @@ var sprite_set := ""
 var skill_cooldown_left := 0.0
 var skill_slow_left := 0.0
 var skill_data: Dictionary = {}
+var controls_reversed_left := 0.0
 
 func _ready() -> void:
     add_to_group("player")
@@ -207,6 +208,7 @@ func _physics_process(delta: float) -> void:
             _show_clip("run", _portal_walk_clock)
             visual.flip_h = _portal_walk_direction < 0
         return
+    controls_reversed_left = maxf(0,controls_reversed_left-delta)
     _recover_solid_overlap()
     _track_stuck(delta)
     if Input.is_action_just_pressed("restart") and not get_node("/root/Dialogue").input_blocked() and not get_node("/root/Cutscene").active:
@@ -297,8 +299,10 @@ func _physics_process(delta: float) -> void:
         if combo_left <= 0.0:
             combo_next = 1
 
+    if max_step == 0 and Input.is_action_just_pressed("attack") and get_node("/root/GameState").active_character == "siyavash":
+        get_node("/root/SceneManager").show_toast(str(get_node("/root/GameState").siyavash_settings["no_weapon_text"]),1.0)
     if max_step > 0 and Input.is_action_just_pressed("attack"):
-        var attack_axis: float = Input.get_axis("move_left", "move_right")
+        var attack_axis: float = movement_axis()
         if action == "attack" and _can_direction_cancel(attack_axis):
             if hitstop_left > 0.0:
                 pending_cancel_direction = 1 if attack_axis > 0.0 else -1
@@ -330,7 +334,7 @@ func _physics_process(delta: float) -> void:
     crouch_exit_left = maxf(0.0, crouch_exit_left - delta)
     jump_start_left = maxf(0.0, jump_start_left - delta)
 
-    var move_axis: float = Input.get_axis("move_left", "move_right")
+    var move_axis: float = movement_axis()
     if action == "normal" and absf(move_axis) > Config.PLAYER_INPUT_DEADZONE and not Input.is_action_pressed("crouch"):
         facing = 1 if move_axis > 0.0 else -1
 
@@ -645,7 +649,7 @@ func _guard_recoil() -> void:
     move_and_collide(Vector2(-facing * float(direction_cancel_data.get("guard_recoil_pixels", 50.0)), 0.0))
 
 func _begin_roll() -> void:
-    var move_axis: float = Input.get_axis("move_left", "move_right")
+    var move_axis: float = movement_axis()
     if absf(move_axis) > Config.PLAYER_INPUT_DEADZONE:
         facing = 1 if move_axis > 0.0 else -1
     roll_direction = facing
@@ -831,7 +835,7 @@ func reset_run_state() -> void:
     visual_weapon_hidden = false
     modifiers.clear()
     _cancel_attack()
-    hp = MAX_HP
+    hp = get_max_hp()
     facing = 1
     action = "normal"
     velocity = Vector2.ZERO
@@ -855,6 +859,7 @@ func reset_run_state() -> void:
     shake_time = 0.0
     step_timer = 0.0
     _restart_requested = false
+    controls_reversed_left = 0
     devour_cooldown_left = 0
     devour_clock = 0
     devour_target = null
@@ -880,6 +885,8 @@ func reset_run_state() -> void:
     damage_received.emit(0, hp)
 
 func get_max_hp() -> int:
+    if get_node("/root/GameState").active_character == "siyavash":
+        return int(get_node("/root/GameState").siyavash_settings["max_hp"])
     return roundi((MAX_HP + modifiers.total("max_hp_flat")) * modifiers.multiplier("max_hp"))
 
 func apply_shamhat_blessing() -> bool:
@@ -1110,7 +1117,7 @@ func _corner_forgiveness() -> void:
                 return
 
 func _track_stuck(delta: float) -> void:
-    var wants_move: bool = absf(Input.get_axis("move_left", "move_right")) > 0.01
+    var wants_move: bool = absf(movement_axis()) > 0.01
     var allowed: bool = action not in ["hurt", "dead"] and hitstop_left <= 0.0 and pull_left <= 0.0
     if not wants_move or not allowed or global_position.distance_to(stuck_origin) > float(movement_data.get("stuck_distance", 3.0)):
         stuck_origin = global_position
@@ -1138,6 +1145,8 @@ func set_weapon_visibility(hidden: bool) -> void:
     _show_clip("idle", 0)
 
 func cast_anur_light() -> bool:
+    if get_node("/root/GameState").active_character != "nimrod":
+        return false
     if not get_node("/root/Story").is_flag("skill_anur_light") or skill_cooldown_left > 0 or action != "normal" or crouching or Input.is_action_pressed("crouch") or transition_locked or pull_left > 0 or get_node("/root/Dialogue").input_blocked() or get_node("/root/Cutscene").active or get_tree().paused:
         return false
     var projectile := AnurLightProjectile.new()
@@ -1155,6 +1164,8 @@ func cast_anur_light() -> bool:
     return true
 
 func selected_sprite_set() -> String:
+    if get_node("/root/GameState").active_character == "siyavash":
+        return str(get_node("/root/GameState").siyavash_settings["sprite_set"])
     if not cinematic_set.is_empty():
         return cinematic_set
     var story: Node = get_node("/root/Story")
@@ -1167,8 +1178,23 @@ func selected_sprite_set() -> String:
     return "unarmed" if weapon == "none" or visual_weapon_hidden else weapon
 
 func sync_story_state() -> void:
+    if get_node("/root/GameState").active_character == "siyavash":
+        modifiers.modifiers.clear()
+        weapon = "none"
+        max_step = 0
+        hp = clampi(hp,0,100)
+        if sprite_set != "siyavash":
+            _load_sprites()
+            displayed_clip = ""
+            _show_clip("idle",0)
+        damage_received.emit(0,hp)
+        return
     var old_max: int = get_max_hp()
     var flags: Dictionary = get_node("/root/GameState").run_flags
+    if bool(flags.get("shamhat_blessing",false)):
+        modifiers.add_modifier("shamhat_blessing",modifiers.settings["shamhat_blessing"]["modifier"])
+    else:
+        modifiers.modifiers.erase("shamhat_blessing")
     var definitions: Dictionary = modifiers.settings["story_modifiers"]
     for id in definitions:
         var flag: String = "arm_lost" if id == "onearm" else "melammu_absorbed" if id == "melammu" else "prosthetic_equipped" if id == "dingir_prosthetic" else "gugalanna_helm"
@@ -1198,6 +1224,8 @@ func sync_story_state() -> void:
     damage_received.emit(0, hp)
 
 func try_devour() -> bool:
+    if get_node("/root/GameState").active_character != "nimrod":
+        return false
     var rampage: Node = get_node("/root/Rampage")
     if not rampage.unlocked() or not get_node("/root/Story").is_flag("prosthetic_equipped") or devour_cooldown_left > 0 or action != "normal" or crouching or pull_left>0 or transition_locked or get_tree().paused or get_node("/root/Dialogue").input_blocked() or get_node("/root/Cutscene").active:
         return false
@@ -1256,3 +1284,19 @@ func force_rampage_death() -> void:
     death_clock = 0
     damage_received.emit(0,0)
     died.emit()
+
+func movement_axis() -> float:
+    return Input.get_axis("move_left","move_right") * (-1.0 if controls_reversed_left>0 else 1.0)
+
+func reverse_controls(seconds: float) -> void:
+    controls_reversed_left = maxf(controls_reversed_left,seconds)
+
+func apply_stun(seconds: float) -> bool:
+    if action=="dead" or transition_locked or is_roll_invulnerable():
+        return false
+    _cancel_attack()
+    action="hurt"
+    hurt_clock=0
+    hurt_duration=seconds
+    velocity.x=0
+    return true

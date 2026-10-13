@@ -94,6 +94,11 @@
     "edge_black_fraction": 0.02,
     "source": "art_manifest"
   },
+  "assets/backgrounds/hwanira/plaza.webp": {
+    "mode": "opaque",
+    "edge_black_fraction": 0.02,
+    "source": "art_manifest"
+  },
   "assets/backgrounds/nimrod_home/home_interior_bg.webp": {
     "mode": "opaque",
     "edge_black_fraction": 0.02,
@@ -232,6 +237,11 @@
   "assets/backgrounds/stage10/villa_f4_terrace.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/backgrounds/tiamat/entity.webp": {
+    "mode": "opaque",
+    "edge_black_fraction": 0.02,
     "source": "art_manifest"
   },
   "assets/backgrounds/villa/villa_f1_hall.webp": {
@@ -700,6 +710,11 @@
     "source": "art_manifest"
   },
   "assets/props/upper_walkway.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/props/utnapishtim_blood.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
     "source": "art_manifest"
@@ -1499,6 +1514,51 @@
     "edge_black_fraction": 0.03,
     "source": "art_manifest"
   },
+  "assets/sprites/enemies/lilith/ambush_attack.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/lilith/ambush_windup.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/lilith/charm_attack.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/lilith/charm_windup.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/lilith/death.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/lilith/hurt.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/lilith/idle.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/lilith/move.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/lilith/turn.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
   "assets/sprites/enemies/melee_beast/attack.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
@@ -1535,6 +1595,51 @@
     "source": "art_manifest"
   },
   "assets/sprites/enemies/melee_beast/windup.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/ninazu_mother/death.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/ninazu_mother/hurt.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/ninazu_mother/idle.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/ninazu_mother/move.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/ninazu_mother/poison_attack.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/ninazu_mother/poison_windup.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/ninazu_mother/tail_attack.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/ninazu_mother/tail_windup.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/ninazu_mother/turn.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
     "source": "art_manifest"
@@ -1790,6 +1895,51 @@
     "source": "art_manifest"
   },
   "assets/sprites/enemies/wraith_ray/turn.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/zu/death.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/zu/feathers_attack.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/zu/feathers_windup.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/zu/grab_attack.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/zu/grab_windup.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/zu/hurt.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/zu/idle.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/zu/move.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/enemies/zu/turn.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
     "source": "art_manifest"
@@ -2689,6 +2839,91 @@
     "edge_black_fraction": 0.03,
     "source": "art_manifest"
   },
+  "assets/sprites/player/siyavash/crouch_enter.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/player/siyavash/crouch_exit.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/player/siyavash/crouch_idle.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/player/siyavash/death.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/player/siyavash/drop_through.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/player/siyavash/fall.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/player/siyavash/hurt.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/player/siyavash/idle.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/player/siyavash/jump_rise.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/player/siyavash/jump_start.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/player/siyavash/land.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/player/siyavash/roll.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/player/siyavash/run.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/player/siyavash/sit_down.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/player/siyavash/sit_idle.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/player/siyavash/stand_up.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/sprites/player/siyavash/walk.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
   "assets/sprites/player/staff/attack_1.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
@@ -2932,6 +3167,16 @@
   "assets/tiles/homeroad/stone_slab_bridge.webp": {
     "mode": "transparent",
     "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/tiles/huluppu/branch.png": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "art_manifest"
+  },
+  "assets/tiles/hwanira/plaza.png": {
+    "mode": "opaque",
+    "edge_black_fraction": 0.02,
     "source": "art_manifest"
   },
   "assets/tiles/outskirts/bridge_platform.webp": {

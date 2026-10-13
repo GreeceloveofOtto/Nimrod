@@ -1,0 +1,11 @@
+{
+  "max_hp": 100,
+  "weapon": "none",
+  "skills": [],
+  "sprite_set": "siyavash",
+  "age": 20,
+  "no_weapon_text": "아직 무기가 없다",
+  "cheeks": "rose red bilateral",
+  "animal_features": false,
+  "display_name": "시야우와르산"
+}

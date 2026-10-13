@@ -133,6 +133,9 @@ func find_speakers() -> Dictionary:
     for enemy: EnemyBase in get_tree().get_nodes_in_group("enemies"):
         if enemy.enemy_id == "gugalanna":
             found["gugalanna"] = enemy
+    var tiamat: Node = get_tree().get_first_node_in_group("tiamat_body")
+    if is_instance_valid(tiamat):
+        found["tiamat"] = tiamat
     return found
 
 func play_interaction(id: String, speaker_nodes: Dictionary = {}) -> void:
@@ -215,7 +218,7 @@ func _restore_highlight() -> void:
 func _set_speaker(actor: Node2D, id: String) -> void:
     _restore_highlight()
     _speaker = actor
-    name_label.text = "니므롯" if id == "player" or actor is NimrodPlayer else actor.display_name if actor is NPC else str(actor.stats.get("display_name", "칼라-우쉬움갈")) if actor is EnemyBase else id
+    name_label.text = "니므롯" if id == "player" or actor is NimrodPlayer else actor.display_name if actor is NPC else str(actor.stats.get("display_name", "칼라-우쉬움갈")) if actor is EnemyBase else str(actor.get_meta("display_name",id)) if is_instance_valid(actor) else id
     var style := StyleBoxFlat.new()
     style.bg_color = Color(0.42, 0.30, 0.16, 1) if actor is NimrodPlayer else Color(0.55, 0.42, 0.18, 1)
     style.set_corner_radius_all(8)
@@ -375,7 +378,7 @@ func _restore() -> void:
     for item in hidden_items:
         if is_instance_valid(item):
             item.show()
-    for node in paused_actors:
+    for node in paused_actors.keys():
         if is_instance_valid(node):
             node.process_mode = paused_actors[node]
     paused_actors.clear()

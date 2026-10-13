@@ -403,6 +403,48 @@
       "melee_width_ratio": 2.533333333333333,
       "melee_height_ratio": 4.666666666666667,
       "difference_percent": 0.28571428571428914
+    },
+    {
+      "id": "ninazu_mother",
+      "clip": "idle",
+      "painted_height_px": 837,
+      "expected_art_height_px": 866.6666666666667,
+      "display_height": 251.1,
+      "body_size": [
+        300.0,
+        260.0
+      ],
+      "melee_width_ratio": 2.0,
+      "melee_height_ratio": 2.888888888888889,
+      "difference_percent": -3.4230769230769287
+    },
+    {
+      "id": "lilith",
+      "clip": "idle",
+      "painted_height_px": 704,
+      "expected_art_height_px": 700.0,
+      "display_height": 211.2,
+      "body_size": [
+        135.0,
+        210.0
+      ],
+      "melee_width_ratio": 0.9,
+      "melee_height_ratio": 2.3333333333333335,
+      "difference_percent": 0.5714285714285783
+    },
+    {
+      "id": "zu",
+      "clip": "idle",
+      "painted_height_px": 707,
+      "expected_art_height_px": 766.6666666666667,
+      "display_height": 212.1,
+      "body_size": [
+        270.0,
+        230.0
+      ],
+      "melee_width_ratio": 1.8,
+      "melee_height_ratio": 2.5555555555555554,
+      "difference_percent": -7.782608695652183
     }
   ],
   "warnings": [],
