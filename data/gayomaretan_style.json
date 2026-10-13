@@ -1,0 +1,14 @@
+{
+  "cheek_organs": {
+    "position": "paired below cheekbones",
+    "normal": "saturated rose red",
+    "exertion": "scarlet rose",
+    "hurt": "scarlet",
+    "death": "scarlet, final glow extinguished",
+    "minimum_hsv_saturation": 0.42,
+    "strength": "strong, readable in side profile",
+    "source_core_saturation_normal": 0.7254901960784313,
+    "source_core_saturation_hurt": 0.8235294117647058
+  },
+  "generation_prompt": "Paired rose-red photonic organs below the cheekbones, saturated rose in normal state, scarlet in exertion and injury, soft edges and luminous center, final death frame matte. Paint these states into source art; no runtime cheek modulation."
+}

@@ -5,7 +5,11 @@
   "sprite_set": "siyavash",
   "age": 20,
   "no_weapon_text": "아직 무기가 없다",
-  "cheeks": "rose red bilateral",
-  "animal_features": false,
-  "display_name": "시야우와르산"
+  "cheeks": "rose red bilateral, strong tint",
+  "animal_features": true,
+  "display_name": "시야우와르샨",
+  "animal_type": "rat",
+  "eye_color": "dark gray-green",
+  "hair": "blue-tinted black, ear-covering, nape-length, forehead exposed, slight wave",
+  "outfit": "short ancient-avestan with slight futuristic, black-gold"
 }

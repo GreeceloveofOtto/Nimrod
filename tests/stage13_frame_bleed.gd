@@ -12,6 +12,7 @@ func _run() -> void:
             continue
         var texture: Texture2D=load(path)
         var source: Image=texture.get_image()
+        _check(source.get_size()==Vector2i(int(c["image_size"][0]),int(c["image_size"][1])),"Imported texture matches current atlas dimensions " + path)
         var cell: Vector2i=Vector2i(int(c["storage_trim"]["w"]),int(c["storage_trim"]["h"]))
         _check(int(c.get("stored_padding",0))>=2,"Stored gutter "+path)
         for index in range(int(c.get("stored_columns",c["frames"]))):

@@ -1,0 +1,18 @@
+{
+  "normal_teeth_visible": false,
+  "teeth_clips": [
+    "hurt",
+    "death"
+  ],
+  "ear_exposure": "small upper helix and partial rim visible through short hair; no enlarged animal ears",
+  "scar_locations": [
+    "neck",
+    "back of hand",
+    "forearm"
+  ],
+  "scar_count": 3,
+  "hem": "mid-thigh, above knees; no cloak or trailing cloth",
+  "violet_eye_markings": "retained, outside iris",
+  "hair_length": "ear-covering to upper nape",
+  "automated_scope": "HSV/region/white-highlight checks; incisor count and anatomy also require visual review"
+}

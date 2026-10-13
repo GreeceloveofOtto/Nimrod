@@ -3877,6 +3877,159 @@
       "pass": true,
       "mode": "lossy",
       "encoder": "YUV WebP"
+    },
+    "assets/sprites/player/siyavash/idle.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.993229493229493,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/siyavash/walk.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.984607645217982,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/siyavash/run.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9871588698359925,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/siyavash/crouch_enter.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9943091844813936,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/siyavash/crouch_idle.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9945989249534835,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/siyavash/crouch_exit.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9823461205559094,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/siyavash/jump_start.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9890386869871044,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/siyavash/jump_rise.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9842692600726033,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/siyavash/fall.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9935537460807713,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/siyavash/land.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9941634817645837,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/siyavash/drop_through.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 10,
+      "rgb_mae": 2.4821563151128254,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/siyavash/hurt.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9754155490316174,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/siyavash/death.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.98380439989682,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/siyavash/roll.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.990286022665947,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/siyavash/sit_down.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 10,
+      "rgb_mae": 2.4785629136350558,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/siyavash/sit_idle.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9875990491283675,
+      "alpha_mae": 0.0,
+      "bbox_same": true
+    },
+    "assets/sprites/player/siyavash/stand_up.webp": {
+      "mode": "lossy",
+      "quality": 100,
+      "encoder": "bounded RGB quantization",
+      "rgb_step": 12,
+      "rgb_mae": 2.9980310151051324,
+      "alpha_mae": 0.0,
+      "bbox_same": true
     }
   },
   "trim_margin": 2,

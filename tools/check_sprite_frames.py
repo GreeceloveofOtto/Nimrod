@@ -45,6 +45,10 @@ def check(path,c):
   boxes.append(box);areas.append(int(occupied.sum()));ys,xs=np.where(occupied);mass=a[ys,xs].astype(float);centers.append((float(np.average(xs,weights=mass)),float(np.average(ys,weights=mass))));bottoms.append(box[3])
   if not c.get("qa",{}).get("full_frame_architecture") and min(box[0],box[1],im.width-box[2],im.height-box[3])<(2 if c.get("storage_scale") else 3):errors.append(f'frame {i+1}: edge clipping')
   magenta=(a>12)&(p[:,:,0]>180)&(p[:,:,2]>180)&(p[:,:,1]<110)
+  if c.get('qa',{}).get('authored_interior_violet'):
+   # Violet eye/garment markings are authored color. Key contamination is
+   # still forbidden at the silhouette boundary; interior violet is valid.
+   magenta &= ndimage.distance_transform_edt(a>12)<=2
   if magenta.sum()>20:errors.append(f'frame {i+1}: magenta fringe {magenta.sum()}')
   if prev is not None:
    diff.append(float(np.abs(p.astype(float)-prev.astype(float)).mean()));equal=equal+1 if np.array_equal(p,prev) else 0

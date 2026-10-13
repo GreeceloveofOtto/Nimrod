@@ -218,7 +218,17 @@ func _restore_highlight() -> void:
 func _set_speaker(actor: Node2D, id: String) -> void:
     _restore_highlight()
     _speaker = actor
-    name_label.text = "니므롯" if id == "player" or actor is NimrodPlayer else actor.display_name if actor is NPC else str(actor.stats.get("display_name", "칼라-우쉬움갈")) if actor is EnemyBase else str(actor.get_meta("display_name",id)) if is_instance_valid(actor) else id
+    if id == "player" or actor is NimrodPlayer:
+        var state := get_node("/root/GameState")
+        name_label.text = str(state.siyavash_settings["display_name"]) if state.active_character == "siyavash" else "니므롯"
+    elif actor is NPC:
+        name_label.text = actor.display_name
+    elif actor is EnemyBase:
+        name_label.text = str(actor.stats.get("display_name", "칼라-우쉬움갈"))
+    elif is_instance_valid(actor):
+        name_label.text = str(actor.get_meta("display_name", id))
+    else:
+        name_label.text = id
     var style := StyleBoxFlat.new()
     style.bg_color = Color(0.42, 0.30, 0.16, 1) if actor is NimrodPlayer else Color(0.55, 0.42, 0.18, 1)
     style.set_corner_radius_all(8)
