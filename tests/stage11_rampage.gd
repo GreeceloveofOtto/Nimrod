@@ -45,6 +45,8 @@ func _run() -> void:
     _check(is_instance_valid(rampage.heartbeat),"Tier four heartbeat exists")
     rampage.set_value(1000)
     _check(rampage.value()==100 and hero.action!="dead" and hero.hp>0,"Stage13 suspension also permits100")
+    root.get_node("HumbabaForm").reset()
+    manager.set_player_locked(false)
     rampage.set_death_suspended(false)
     _check(hero.action=="dead" and hero.hp==0,"Unsuspended100 still kills, including developer HP floor")
     root.get_node("GameState").reset_run(false)

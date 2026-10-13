@@ -50,7 +50,7 @@ func _detonate() -> void:
     var player := _player()
     if player == null:
         return
-    var body: Rect2 = Rect2(player.collider.global_position - (player.collider.shape as RectangleShape2D).size * 0.5, (player.collider.shape as RectangleShape2D).size)
+    var body: Rect2 = player.get_hurt_rect()
     var nearest := Vector2(clampf(global_position.x, body.position.x, body.end.x), clampf(global_position.y, body.position.y, body.end.y))
     if nearest.distance_to(global_position) <= radius:
         var direction: float = 1.0 if player.global_position.x >= global_position.x else -1.0
@@ -61,7 +61,7 @@ func _tick() -> void:
     if player == null:
         return
     var bounds := Rect2(global_position - Vector2(float(spec["radius"]), float(spec["height"]) * 0.5), Vector2(float(spec["radius"]) * 2.0, float(spec["height"])))
-    var body: Rect2 = Rect2(player.collider.global_position - (player.collider.shape as RectangleShape2D).size * 0.5, (player.collider.shape as RectangleShape2D).size)
+    var body: Rect2 = player.get_hurt_rect()
     if bounds.intersects(body):
         player.receive_damage(int(spec["damage"]), {"stagger": false, "grant_grace": false, "tick_group": "gas", "tick_source": get_instance_id(), "overlap_interval": float(spec.get("overlap_interval", 0.2))})
 

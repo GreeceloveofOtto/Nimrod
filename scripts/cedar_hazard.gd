@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
         global_position += step
         travelled += step.length()
     if player != null and not hit:
-        var hero_box: Rect2 = Rect2(player.collider.global_position - (player.collider.shape as RectangleShape2D).size * 0.5, (player.collider.shape as RectangleShape2D).size)
+        var hero_box: Rect2 = player.get_hurt_rect()
         var size_values: Array = spec.get("size", [90, 200])
         var size_px := Vector2(float(size_values[0]), float(size_values[1]))
         var connects: bool = Rect2(global_position - size_px * 0.5, size_px).intersects(hero_box)

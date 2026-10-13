@@ -67,5 +67,7 @@
   },
   "attack_speed_cap": 2.0,
   "tier_flash_seconds": 0.2,
-  "afterimage_interval": 0.05
+  "afterimage_interval": 0.05,
+  "humbaba_form": "data/humbaba_form.json",
+  "death_at_max_note": "Suspended Nimrod at 100 enters HumbabaForm; unsuspended >90 still dies."
 }

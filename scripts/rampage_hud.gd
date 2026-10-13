@@ -24,6 +24,13 @@ func _draw() -> void:
     draw_rect(Rect2(0,24,240,12),Color("d0b17d"),false,2)
     for mark in [30,40,50,90]:
         draw_line(Vector2(2.4*mark,24),Vector2(2.4*mark,36),Color("f2e9d0"),1)
+    var form: Node=get_node("/root/HumbabaForm")
+    if form.superarmored():
+        draw_string(font,Vector2(0,52),"훔바바  %.1f초"%form.remaining,HORIZONTAL_ALIGNMENT_LEFT,-1,18,Color(1,.5,.4))
+        draw_rect(Rect2(0,60,240,8),Color("18202a"))
+        draw_rect(Rect2(0,60,240*form.remaining/float(form.settings["duration"]),8),Color(.9,.16,.12))
+        draw_string(font,Vector2(0,91),"J 할퀴기/물기  K 꼬리  R 숨",HORIZONTAL_ALIGNMENT_LEFT,-1,14,Color("f2e9d0"))
+        return
     var slot := Rect2(58,52,42,42)
     draw_rect(slot,Color("18202a"))
     draw_rect(slot,Color("d0b17d"),false,2)

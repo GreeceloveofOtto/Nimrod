@@ -54,6 +54,9 @@ func reach_multiplier() -> float:
     return float(tier_data()["reach"]) if unlocked() else 1.0
 
 func set_value(amount: int) -> void:
+    if get_node("/root/HumbabaForm").superarmored():
+        set_form_gauge(value())
+        return
     var before: int = tier()
     get_node("/root/GameState").run_flags["rampage"] = clampi(amount, 0, int(settings["max"]))
     changed.emit()
@@ -62,11 +65,23 @@ func set_value(amount: int) -> void:
     if hero != null and before != tier() and get_node("/root/Story").is_flag("prosthetic_equipped"):
         hero.rampage_flash_left = float(settings["tier_flash_seconds"])
     _update_heartbeat()
+    var form: Node = get_node("/root/HumbabaForm")
+    if unlocked() and form.superarmored():
+        return
+    if unlocked() and death_suspended and value() >= int(settings["death_at_max"]):
+        form.enter()
+        return
     if unlocked() and not death_suspended and (value() >= int(settings["death_at_max"]) or value() > int(settings["death_threshold"])):
         if hero != null and not death_queued:
             death_queued = true
             get_node("/root/SceneManager").show_toast("폭주를 이기지 못했다")
             hero.force_rampage_death()
+
+func set_form_gauge(amount: int) -> void:
+    # Form drain is presentation/state, not another attempt to enter or die.
+    get_node("/root/GameState").run_flags["rampage"] = clampi(amount,0,100)
+    changed.emit()
+    _update_heartbeat()
 
 func add(amount: int) -> void:
     set_value(value() + amount)
@@ -85,7 +100,7 @@ func basic_kill(enemy: EnemyBase) -> void:
     add(1)
 
 func cure(hero: NimrodPlayer) -> bool:
-    if not unlocked() or hero == null:
+    if not unlocked() or hero == null or get_node("/root/HumbabaForm").engaged():
         return false
     var cost: Dictionary = settings["cure"]["cost"]
     if str(cost["type"]) != "hp" or hero.hp <= int(cost["amount"]):
@@ -99,11 +114,12 @@ func cure(hero: NimrodPlayer) -> bool:
     return true
 
 func _update_heartbeat() -> void:
-    if value() > 90 and unlocked():
+    var in_form: bool=get_node("/root/HumbabaForm").superarmored()
+    if (value() > 90 or in_form) and unlocked():
         if not is_instance_valid(heartbeat):
             heartbeat = get_node("/root/Audio").play_sfx("rampage_heartbeat_loop") as AudioStreamPlayer
         if is_instance_valid(heartbeat):
-            heartbeat.pitch_scale = lerpf(1.0, 1.4, float(value() - 91) / 9.0)
+            heartbeat.pitch_scale = 1.4 if in_form else lerpf(1.0, 1.4, float(value() - 91) / 9.0)
     elif is_instance_valid(heartbeat):
         get_node("/root/Audio").stop_sfx(heartbeat)
         heartbeat = null

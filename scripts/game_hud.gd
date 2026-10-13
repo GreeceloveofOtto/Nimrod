@@ -119,12 +119,14 @@ func _process(_delta: float) -> void:
     if debuff_label!=null:
         debuff_label.visible=player.controls_reversed_left>0
         debuff_label.text="조작 반전 %.1f초" % player.controls_reversed_left
-    skill_slot.visible = get_node("/root/GameState").active_character == "nimrod" and get_node("/root/Story").is_flag("skill_anur_light")
+    skill_slot.visible = get_node("/root/GameState").active_character == "nimrod" and get_node("/root/Story").is_flag("skill_anur_light") and not get_node("/root/HumbabaForm").engaged()
     var fraction: float = clampf(player.skill_cooldown_left/float(player.skill_data["cooldown"]),0,1)
     skill_cover.size = Vector2(38,38*fraction)
     skill_cover.position.y = 40-skill_cover.size.y
     if skill_slot.visible:
         controls.text += "  R 아누르의 빛"
+    if get_node("/root/HumbabaForm").superarmored():
+        controls.text="A/D 이동  Space 낮은 점프  E 상호작용  J 할퀴기/물기  K 꼬리  R 불길 숨  F5 저장 포함 초기화"
     var boss: EnemyBase
     for enemy in get_tree().get_nodes_in_group("enemies"):
         if enemy is KalaUshumgal or enemy is Humbaba or enemy is Gugalanna:

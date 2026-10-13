@@ -34,6 +34,8 @@ func arena() -> Node:
     return get_meta("arena",null)
 
 func _physics_process(delta: float) -> void:
+    if get_node("/root/HumbabaForm").state == "transforming":
+        return
     for key in cooldowns:cooldowns[key]=maxf(0,float(cooldowns[key])-delta)
     trail_clock=maxf(0,trail_clock-delta)
     if enemy_id=="lilith" and absf(velocity.x)>50 and trail_clock<=0 and state!=State.DEAD:
@@ -127,7 +129,7 @@ func _update_windup(delta: float) -> void:
                 var projectile: Node2D=load("res://scripts/crown_projectile.gd").new()
                 projectile.position=global_position+Vector2(0,-body_size.y*.4)
                 projectile.speed=float(attack_stats["speed"])
-                projectile.damage=int(attack_stats["damage"])
+                projectile.damage=float(attack_stats["damage"])
                 projectile.charm_seconds=float(attack_stats.get("reverse_seconds",0))
                 var direction: Vector2=projectile.position.direction_to(attack_target-Vector2(0,55))
                 var angle: float=lerpf(-.5,.5,float(i)/float(maxi(1,count-1)))*deg_to_rad(float(attack_stats.get("spread_degrees",0)))
@@ -135,7 +137,7 @@ func _update_windup(delta: float) -> void:
                 projectile.remaining=float(attack_stats.get("range",1200))
                 _level().add_child(projectile)
 
-func _update_active(delta: float) -> void:
+func _update_active(_delta: float) -> void:
     var hero: NimrodPlayer=_target() as NimrodPlayer
     if pattern=="ambush":
         if state_clock>=float(attack_stats["teleport_seconds"]) and visual.modulate.a==0:
@@ -145,11 +147,11 @@ func _update_active(delta: float) -> void:
         var strike_time: float=state_clock-float(attack_stats["teleport_seconds"])
         while tick_count<int(attack_stats["count"]) and strike_time>=tick_count*float(attack_stats["interval"]):
             if hero!=null and get_attack_rect().intersects(_player_rect(hero)):
-                hero.receive_damage(int(attack_stats["damage"]),{"grant_grace":false})
+                hero.receive_damage(float(attack_stats["damage"]),{"grant_grace":false})
             tick_count+=1
     elif pattern=="tail":
         if not attack_has_hit and hero!=null and get_attack_rect().intersects(_player_rect(hero)):
-            attack_has_hit=hero.receive_damage(int(attack_stats["damage"]),{"stagger_seconds":float(attack_stats["stagger_seconds"])})
+            attack_has_hit=hero.receive_damage(float(attack_stats["damage"]),{"stagger_seconds":float(attack_stats["stagger_seconds"])})
     elif pattern=="grab":
         warning.hide()
         if is_instance_valid(grab_target):
@@ -163,12 +165,12 @@ func _update_active(delta: float) -> void:
             if state_clock>=carry and global_position.y>=810:
                 grab_target.global_position.y=880
                 grab_target.pull_left=0
-                grab_target.receive_damage(int(attack_stats["damage"]),{"grant_grace":false})
+                grab_target.receive_damage(float(attack_stats["damage"]),{"grant_grace":false})
                 grab_target=null
                 attack_has_hit=true
         elif not attack_has_hit:
             velocity=global_position.direction_to(attack_target)*float(attack_stats["dive_speed"])
-            if hero!=null and get_hurt_rect().grow(20).intersects(_player_rect(hero)) and not hero.is_roll_invulnerable():
+            if hero!=null and get_hurt_rect().grow(20).intersects(_player_rect(hero)) and not hero.is_roll_invulnerable() and not get_node("/root/HumbabaForm").superarmored():
                 grab_target=hero
                 hero.apply_pull(global_position.x,.7)
                 state_clock=0
@@ -205,10 +207,11 @@ func get_attack_rect() -> Rect2:
 
 func _receive_hit(damage: int, source: Vector2, step: int, shockwave: bool) -> Dictionary:
     var hero: NimrodPlayer=_target() as NimrodPlayer
-    var air_four: bool=enemy_id=="zu" and not shockwave and step==4 and hero!=null and hero.weapon=="axe" and not hero.is_on_floor()
+    var human_axe: bool=not get_node("/root/HumbabaForm").superarmored()
+    var air_four: bool=human_axe and enemy_id=="zu" and not shockwave and step==4 and hero!=null and hero.weapon=="axe" and not hero.is_on_floor()
     var result: Dictionary=super._receive_hit(damage,source,step,shockwave)
     if hp>0 and int(result["damage_dealt"])>0:
-        if enemy_id=="ninazu_mother" and shockwave and step==4:
+        if human_axe and enemy_id=="ninazu_mother" and shockwave and step==4:
             weak_stun(float(stats["shockwave_stun"]))
         elif air_four:
             weak_stun(float(stats["air_fourth_stun"]))

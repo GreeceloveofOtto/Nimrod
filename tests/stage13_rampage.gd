@@ -7,11 +7,11 @@ func _run() -> void:
     _check(dialogue_node.interaction_available("utnapishtim_talk"),"E enabled after arrival")
     var hp_before: int=hero.hp
     rage.set_death_suspended(true)
-    rage.set_value(100)
+    rage.set_value(60)
     _check(hero.hp>=hp_before and hero.action!="dead" and not rage.death_queued,"100 suspension prevents only rage death")
-    _check(hero.selected_sprite_set()=="axe_prosthetic_helm_r90","Highest rage sprite selected")
+    _check(hero.selected_sprite_set()=="axe_prosthetic_helm_r50","Normal post-cutscene tier selected")
     await cutscene_node.play("utnapishtim_rampage")
-    _check(story_state.is_flag("utnapishtim_done") and rage.value()==100 and rage.death_suspended,"Rage maintained until combat ends")
+    _check(story_state.is_flag("utnapishtim_done") and rage.value()==60 and rage.death_suspended,"Rage maintained until combat ends")
     var elder: NPC=manager.current_level.npcs["utnapishtim"]
     _check(elder.current_clip=="idle" and elder.position==Vector2(1650,880),"Old man remains standing, shake restored")
     _check(manager.current_level.has_node("UtnapishtimBlood"),"Blood pool persists")

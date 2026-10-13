@@ -7,6 +7,7 @@ var indicator: CanvasLayer
 var indicator_label: Label
 var indicator_tween: Tween
 var last_diagnostic: String = ""
+var restoring := false
 
 func _ready() -> void:
     settings = JSON.parse_string(FileAccess.get_file_as_string("res://data/save_settings.json"))
@@ -70,6 +71,9 @@ func migrate_save(input: Dictionary) -> Dictionary:
     data["facing"] = -1 if int(data.get("facing", 1)) < 0 else 1
     data["hp"] = maxi(1, int(data.get("hp", 180)))
     data["rampage"] = clampi(int(data.get("rampage", data["run_flags"].get("rampage", 0))),0,100)
+    if int(data["rampage"]) >= 100:
+        data["rampage"] = 60
+        data["run_flags"]["rampage"] = 60
     data["cooldowns"] = {"anur_light":0.0,"devour":0.0}
     return data
 
@@ -102,6 +106,7 @@ func read_save() -> Dictionary:
     return result
 
 func can_save() -> bool:
+    if get_node("/root/HumbabaForm").engaged():return false
     var manager: Node = get_node("/root/SceneManager")
     return is_instance_valid(manager.player) and is_instance_valid(manager.current_level) and manager.current_level.level_id == "CastleF2" and manager.player.action != "dead" and not manager.is_transitioning and not manager.player_locked and not get_node("/root/Dialogue").active and not get_node("/root/Cutscene").active and not _boss_active()
 
@@ -121,6 +126,7 @@ func save_game(arrival_checkpoint: bool = false) -> bool:
     return _write_snapshot(arrival_checkpoint)
 
 func _write_snapshot(quiet: bool) -> bool:
+    if get_node("/root/HumbabaForm").engaged():return false
     var manager: Node = get_node("/root/SceneManager")
     var hero: NimrodPlayer = manager.player
     var data: Dictionary = snapshot_data()
@@ -171,6 +177,7 @@ func resume(full_health: bool = false) -> bool:
     if data.is_empty():
         return false
     var manager: Node = get_node("/root/SceneManager")
+    restoring = true
     get_node("/root/GameState").reset_run(false)
     manager.player.reset_run_state()
     get_node("/root/GameState").active_character = data["active_character"]
@@ -185,6 +192,7 @@ func resume(full_health: bool = false) -> bool:
     manager._reset_on_arrival = false
     var spawn_name: String = str(manager.levels[str(data["level"])]["spawns"].keys()[0])
     if not await manager.go_to(str(data["level"]), spawn_name, {"instant":true}):
+        restoring = false
         return false
     manager.player.global_position = Vector2(float(data["position"][0]),float(data["position"][1]))
     manager.player.camera.reset_smoothing()
@@ -201,6 +209,7 @@ func resume(full_health: bool = false) -> bool:
         manager._fade_rect.modulate.a = 1
         get_node("/root/Choice").open_systems.call_deferred()
     manager.show_toast("이어서 시작")
+    restoring = false
     restored.emit()
     return true
 

@@ -213,6 +213,7 @@ func _passage_soliloquy() -> void:
 
 func handle_death() -> void:
     if is_instance_valid(current_level) and current_level.level_id == "HuluppuCrown":
+        get_node("/root/Rampage").reset_value()
         player.reset_run_state()
         get_node("/root/Rampage").set_death_suspended(true)
         await go_to("HuluppuCrown","Spawn_Entrance")

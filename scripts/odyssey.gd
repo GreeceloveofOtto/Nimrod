@@ -118,6 +118,9 @@ func _darkness() -> void:
         busy=false
         return
     await manager._fade_to(1,float(settings["darkness_seconds"])*.35)
+    var form: Node=get_node("/root/HumbabaForm")
+    if form.engaged():await form.ended
+    manager.set_player_locked(true)
     get_node("/root/Story").set_flag("choice_pending")
     get_node("/root/Save").save_checkpoint("choice")
     busy=false
@@ -159,16 +162,14 @@ func event(id: String) -> void:
         "utnapishtim_rampage":
             get_node("/root/Rampage").set_death_suspended(true)
             get_node("/root/Rampage").set_value(100)
-            hero.sync_story_state()
+            var form: Node=get_node("/root/HumbabaForm")
+            if form.state=="transforming":await form.transform_resolved
+            if runner.generation!=token or not runner.active or form.state!="active":return
             var elder: NPC=current.npcs.get("utnapishtim")
-            if not is_instance_valid(elder):
-                return
+            if not is_instance_valid(elder):return
             runner._control(elder)
-            hero.global_position=elder.global_position+Vector2(-90,0)
+            hero.global_position=elder.global_position+Vector2(-130,0)
             hero.facing=1
-            var aura:=reuse_boss_fx("humbaba_ember_aura",hero.global_position-Vector2(0,60),Vector2(170,170))
-            runner._control(aura)
-            temporary_effects.append(aura)
             var original: Vector2=elder.position
             var elapsed:=0.0
             var index:=0
@@ -176,34 +177,35 @@ func event(id: String) -> void:
                 if runner.generation!=token or not runner.active:
                     if is_instance_valid(elder):elder.position=original
                     return
-                var clip: String="attack_%d"%((index%4)+1)
-                hero.cinematic_clip=clip
-                hero.cinematic_clock=0
-                hero._show_clip(clip,0)
-                var clone:=hero.visual.duplicate() as Sprite2D
-                current.add_child(clone)
-                clone.global_position=hero.visual.global_position
-                clone.modulate=Color(1,.12,.08,.6)
-                clone.z_index=hero.z_index-1
-                runner._control(clone)
-                temporary_effects.append(clone)
-                var trail:=clone.create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
-                trail.tween_property(clone,"modulate:a",0.,.3*runner.timing_scale)
-                trail.tween_callback(clone.queue_free)
-                var fx: Node2D=Stage5FX.spawn(current,"guard_spark",elder.global_position+Vector2(0,-70),Vector2(80,80))
-                fx.modulate=Color(1,.12,.12)
-                runner._control(fx)
-                temporary_effects.append(fx)
-                elder.position=original+Vector2(-4 if index%2 else 4,0)
-                get_node("/root/Audio").play_sfx("axe_hit_flesh")
-                var length: float=float(hero.clip_data[clip]["duration_seconds"])
-                await runner._wait(length)
-                elapsed+=length
+                for clip: String in ["claw_windup","claw_swipe"]:
+                    hero.cinematic_clip=clip
+                    hero.cinematic_clock=0
+                    form.render(clip,0)
+                    var clone:=hero.visual.duplicate() as Sprite2D
+                    current.add_child(clone)
+                    clone.global_position=hero.visual.global_position
+                    clone.modulate=Color(1,.12,.08,.5)
+                    clone.z_index=hero.z_index-1
+                    runner._control(clone)
+                    temporary_effects.append(clone)
+                    var trail:=clone.create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+                    trail.tween_property(clone,"modulate:a",0.,.3*runner.timing_scale)
+                    trail.tween_callback(clone.queue_free)
+                    var fx: Node2D=Stage5FX.spawn(current,"guard_spark",elder.global_position+Vector2(0,-70),Vector2(80,80))
+                    fx.modulate=Color(1,.12,.12)
+                    runner._control(fx)
+                    temporary_effects.append(fx)
+                    elder.position=original+Vector2(-4 if index%2 else 4,0)
+                    get_node("/root/Audio").play_sfx("humbaba_claw")
+                    var length: float=float(form.clips[clip]["duration_seconds"])*float(form.settings["combo_time_multiplier"])
+                    await runner._wait(length)
+                    if runner.generation!=token or not runner.active:return
+                    elapsed+=length
                 index+=1
             elder.position=original
-            if is_instance_valid(aura):aura.queue_free()
             await manager._fade_to(1,float(settings["rampage_fade_seconds"])*runner.timing_scale)
             if runner.generation!=token or not runner.active:return
+            form.exit(true)
             blood(current)
             get_node("/root/Story").set_flag("utnapishtim_done")
             hero.cinematic_clip="idle"
@@ -233,7 +235,7 @@ func event(id: String) -> void:
             await manager._fade_to(1,2*runner.timing_scale)
             if runner.generation!=token or not runner.active:return
             get_node("/root/Story").set_flag("huluppu_boss_done")
-            get_node("/root/Rampage").set_value(90)
+            if not get_node("/root/HumbabaForm").engaged():get_node("/root/Rampage").set_value(60)
             get_node("/root/Rampage").set_death_suspended(false)
             await manager.go_to("TiamatCollapsed","Spawn_Start",{"instant":true,"preserve_fade":true})
             await manager._fade_to(0,1.5*runner.timing_scale)

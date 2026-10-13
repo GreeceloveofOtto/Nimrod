@@ -9,7 +9,14 @@ func _unhandled_input(event: InputEvent) -> void:
     var key := event as InputEventKey
     if not key.pressed or key.echo or get_tree().paused or get_node("/root/Dialogue").active or get_node("/root/SceneManager").is_transitioning or get_node("/root/SceneManager").player_locked:
         return
-    if key.physical_keycode == KEY_Y:
+    if key.physical_keycode == KEY_F4:
+        var form: Node=get_node("/root/HumbabaForm")
+        if key.shift_pressed:form.exit(false)
+        else:
+            get_node("/root/Rampage").set_death_suspended(true)
+            get_node("/root/Rampage").set_value(100)
+        get_viewport().set_input_as_handled()
+    elif key.physical_keycode == KEY_Y:
         get_node("/root/SceneManager").player.debug_hp_floor = not get_node("/root/SceneManager").player.debug_hp_floor
         get_viewport().set_input_as_handled()
     elif key.physical_keycode == KEY_F8:
@@ -76,7 +83,7 @@ func odyssey_debug(destination: String) -> bool:
         story.set_flag("huluppu_boss_done",false)
         story.set_flag("tiamat_talk_done",false)
         get_node("/root/Rampage").set_death_suspended(true)
-        get_node("/root/Rampage").set_value(100 if destination=="crown" else 50)
+        get_node("/root/Rampage").set_value(60 if destination=="crown" else 50)
     if destination=="tiamat":story.set_flag("tiamat_talk_done",false)
     var succeeded: bool=await manager.go_to(level_id,spawn,{"instant":true,"debug_reload":true})
     if destination=="utnapishtim":manager.player.global_position=Vector2(1560,880)

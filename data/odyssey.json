@@ -1,5 +1,5 @@
 {
-  "rage_after_cutscene": 100,
+  "rage_after_cutscene": 60,
   "death_suspended_until_crown_clear": true,
   "rampage_attack_seconds": 3.0,
   "rampage_fade_seconds": 2.5,

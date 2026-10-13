@@ -2,10 +2,10 @@
 """Build a clean download, including source/tests/tools but excluding archive and caches.
 Extract-and-test with --verify to check the package independently of the worktree.
 """
-import argparse,hashlib,json,os,shutil,subprocess,sys,tempfile,zipfile
+import argparse,hashlib,json,os,re,shutil,subprocess,sys,tempfile,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
-IGNORED={'.git','.godot','archive','__pycache__','.codex','.agents','source_art','reference','sprite_qa','motion_review','generated_images','artifacts','pack_source'}
+IGNORED={'.git','.godot','archive','__pycache__','.codex','.agents','source_art','reference','sprite_qa','motion_review','generated_images','artifacts','pack_source','downloads'}
 def files():
  doc_images=[] # All development captures are supplied separately, never in the slim runtime ZIP.
  for folder,dirs,names in os.walk(ROOT):
@@ -56,7 +56,9 @@ def main():
   candidates=[{'path':str(f.relative_to(ROOT)),'bytes':f.stat().st_size,'candidate':'Recheck runtime references; if required, try lower density only when SSIM >=.93 and game bounds are preserved','estimated_savings_bytes':int(f.stat().st_size*.1)} for f in largest]
   report['budget_candidates']=candidates;(ROOT/'archive/package_report.json').write_text(json.dumps(report,indent=2)+'\n')
   text='\n## 패키지 용량 목표 미달 후보\n\n'+''.join(f"- {r['path']}: {r['bytes']/1048576:.2f}MiB, 참조/SSIM 재검토 후 예상 {r['estimated_savings_bytes']/1048576:.2f}MiB 절감.\n" for r in candidates)
-  with (ROOT/'docs/SIZE_REPORT_KO.md').open('a') as document:document.write(text)
+  document=ROOT/'docs/SIZE_REPORT_KO.md'
+  previous=re.sub(r'\n## 패키지 용량 목표 미달 후보\n\n(?:- assets/[^\n]+\n)+','',document.read_text())
+  document.write_text(previous+text)
  print('SIZE GOALS:', 'PASS' if size_ok else 'NOT MET',flush=True)
  if checks:print('EXTRACTED FUNCTIONAL CHECKS:', 'PASS' if report['functional_verification_passed'] else 'FAIL',flush=True)
  return 0 if ok else 1

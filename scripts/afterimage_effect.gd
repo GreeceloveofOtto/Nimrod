@@ -6,7 +6,9 @@ func _physics_process(delta: float) -> void:
         return
     interval_left -= delta
     var rampage: Node = get_node("/root/Rampage")
-    if rampage.tier() <= 0 or not get_node("/root/Story").is_flag("prosthetic_equipped") or hero.transition_locked or hero.action not in ["normal","attack","devour"] or (absf(hero.velocity.x)<10 and hero.action == "normal") or interval_left>0:
+    var form: Node = get_node("/root/HumbabaForm")
+    var in_form: bool = form.state == "active"
+    if (not in_form and (rampage.tier() <= 0 or not get_node("/root/Story").is_flag("prosthetic_equipped"))) or hero.transition_locked or hero.action not in ["normal","attack","devour"] or (absf(hero.velocity.x)<10 and hero.action == "normal") or interval_left>0:
         return
     interval_left = float(rampage.settings["afterimage_interval"])
     var clone := hero.visual.duplicate() as Sprite2D
@@ -18,7 +20,7 @@ func _physics_process(delta: float) -> void:
     var trail_material := CanvasItemMaterial.new()
     trail_material.blend_mode = CanvasItemMaterial.BLEND_MODE_ADD
     clone.material = trail_material
-    clone.modulate = Color(1.0,0.12,0.08,float(rampage.tier_data()["alpha"]))
+    clone.modulate = Color(1.0,0.12,0.08,float(form.settings["afterimage_alpha"]) if in_form else float(rampage.tier_data()["alpha"]))
     var tween := clone.create_tween()
-    tween.tween_property(clone,"modulate:a",0.0,float(rampage.tier_data()["afterimage_seconds"]))
+    tween.tween_property(clone,"modulate:a",0.0,float(form.settings["afterimage_seconds"]) if in_form else float(rampage.tier_data()["afterimage_seconds"]))
     tween.tween_callback(clone.queue_free)

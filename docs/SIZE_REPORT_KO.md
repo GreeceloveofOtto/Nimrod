@@ -4,7 +4,8 @@
 |---|---:|---:|
 | 11 | 61.15MiB | 69.42MiB |
 | 12 | 60.54MiB | 60.93MiB |
-| 13 | 65.13MiB | 65.58MiB |
+| 13 초기 | 65.13MiB | 65.58MiB |
+| 13 훔바바 폼 수정 | 65.13MiB | 약65.60MiB |
 
 신규 이미지 총 4.62MiB. 신규 개별 예산은 모두 통과했으나, 전체 ZIP 62MiB 목표는 미달이다. 기능 검증과 용량 판정은 별도로 기록한다.
 
@@ -67,51 +68,21 @@
 
 62MiB를 맞추려면 약 3.56MiB 추가 절감이 필요하다. 현재 품질 기준을 그대로 유지하는 자동 변환에서는 이만큼의 여유가 확인되지 않았다. 큰 보스 원본의 세부 질감을 줄여 재생성하는 작업이 가장 큰 후보이며, 단순한 품질 하향이나 활성 모션 삭제는 적용하지 않았다.
 
-## 패키지 용량 목표 미달 후보
 
-- assets/props/doors/castle_great_gate.webp: 0.85MiB, 참조/SSIM 재검토 후 예상 0.08MiB 절감.
-- assets/backgrounds/hwanira/plaza.webp: 0.69MiB, 참조/SSIM 재검토 후 예상 0.07MiB 절감.
-- assets/backgrounds/deathsea/stars_tile.webp: 0.52MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
-- assets/sprites/enemies/gugalanna/walk.webp: 0.51MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
-- assets/sprites/enemies/gugalanna/idle.webp: 0.48MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
-- assets/sprites/enemies/gugalanna/death.webp: 0.46MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
-- assets/backgrounds/cedar/mid_trunks_tile_2d.webp: 0.46MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
-- assets/sprites/enemies/kala_ushumgal/phase_transition.webp: 0.44MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
-- assets/sprites/enemies/kala_ushumgal/death.webp: 0.43MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
-- assets/props/doors/villa_gate.webp: 0.43MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
-- assets/sprites/enemies/kala_ushumgal/collapse.webp: 0.41MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
-- assets/sprites/enemies/kala_ushumgal/walk.webp: 0.38MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
-- assets/sprites/enemies/kala_ushumgal/whip_recovery.webp: 0.36MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
-- assets/sprites/enemies/kala_ushumgal/turn.webp: 0.36MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
-- assets/sprites/enemies/gugalanna/turn.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
-- assets/backgrounds/homeroad/mid_district_tile.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
-- assets/sprites/enemies/gugalanna/rake_windup.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
-- assets/sprites/enemies/kala_ushumgal/idle.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
-- assets/sprites/enemies/kala_ushumgal/summon.webp: 0.34MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
-- assets/sprites/enemies/gugalanna/rake.webp: 0.34MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
+## 훔바바 폼 추가분: 이미지 증가0
 
-## 패키지 용량 목표 미달 후보
+| 항목 | 수정 전 | 수정 후 | 변화 |
+|---|---:|---:|---:|
+| 공유 훔바바17시트 | 2,824,402bytes | 2,824,402bytes | 0 |
+| 런타임 이미지651개 | 65,743,966bytes | 65,743,966bytes | 0 |
+| 추가 생성 이미지 | 0 | 0 | 0 |
+| sprites/배경/소품/타일/오디오 | 기존13단계 | 동일 | 0 |
 
-- assets/props/doors/castle_great_gate.webp: 0.85MiB, 참조/SSIM 재검토 후 예상 0.08MiB 절감.
-- assets/backgrounds/hwanira/plaza.webp: 0.69MiB, 참조/SSIM 재검토 후 예상 0.07MiB 절감.
-- assets/backgrounds/deathsea/stars_tile.webp: 0.52MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
-- assets/sprites/enemies/gugalanna/walk.webp: 0.51MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
-- assets/sprites/enemies/gugalanna/idle.webp: 0.48MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
-- assets/sprites/enemies/gugalanna/death.webp: 0.46MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
-- assets/backgrounds/cedar/mid_trunks_tile_2d.webp: 0.46MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
-- assets/sprites/enemies/kala_ushumgal/phase_transition.webp: 0.44MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
-- assets/sprites/enemies/kala_ushumgal/death.webp: 0.43MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
-- assets/props/doors/villa_gate.webp: 0.43MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
-- assets/sprites/enemies/kala_ushumgal/collapse.webp: 0.41MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
-- assets/sprites/enemies/kala_ushumgal/walk.webp: 0.38MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
-- assets/sprites/enemies/kala_ushumgal/whip_recovery.webp: 0.36MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
-- assets/sprites/enemies/kala_ushumgal/turn.webp: 0.36MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
-- assets/sprites/enemies/gugalanna/turn.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
-- assets/backgrounds/homeroad/mid_district_tile.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
-- assets/sprites/enemies/gugalanna/rake_windup.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
-- assets/sprites/enemies/kala_ushumgal/idle.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
-- assets/sprites/enemies/kala_ushumgal/summon.webp: 0.34MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
-- assets/sprites/enemies/gugalanna/rake.webp: 0.34MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
+폼은 보스와 같은 경로/텍스처 객체를 사용한다. 코드·데이터·검증·문서 추가는 ZIP 크기에 포함되지만 이미지 콘텐츠 증가는0이다. 최소시트밀도0.900032144, 시각배수1.0에서동일하다. 1.4배 확대의최소0.642880은하한미달이므로 적용하지 않았다. 보스전에서사용하는17클립을전부유지했다.
+
+기존자산참조와해시 중복검사: 미사용0, 중복0. 훔바바idle의 SSIM0.985 병합은절감0.17시트의추가WebP99/100 시험도원본SSIM0.93·RGB평균3·알파평균0.5·bbox기준과파일크기감소를동시에만족한후보가없어전부유지했다. 현재밀도가하한인공유훔바바시트는추가축소하지않았다. 이전13단계에서실행한상위30시트·오디오·팔레트시험과불합격사유는기존표를유지한다.
+
+기능검증과용량판정은분리한다. 신규콘텐츠4.62MiB/7.5MiB예산은통과하지만 전체실행ZIP은약65.6MiB로62/60MiB목표를달성하지못했다. 추가절감은상위20파일의원화구도를단순화하거나품질기준을바꾸지않는새인코더검증이필요하며,보고서의예상값은절감이확인된값이아니다.
 
 ## 패키지 용량 목표 미달 후보
 

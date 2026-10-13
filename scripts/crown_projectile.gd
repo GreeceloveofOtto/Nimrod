@@ -1,7 +1,7 @@
 extends Node2D
 var direction:=Vector2.DOWN
 var speed:=450.0
-var damage:=11
+var damage:=11.0
 var charm_seconds:=0.0
 var remaining:=900.0
 var struck:=false
@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
     var next:=before+direction*speed*delta
     var hero: NimrodPlayer=get_tree().get_first_node_in_group("player")
     if hero!=null:
-        var body:=Rect2(hero.collider.global_position-(hero.collider.shape as RectangleShape2D).size*.5,(hero.collider.shape as RectangleShape2D).size).grow(14)
+        var body:=hero.get_hurt_rect().grow(14)
         var nearest:=Geometry2D.get_closest_point_to_segment(body.get_center(),before,next)
         if body.has_point(nearest) and not hero.is_roll_invulnerable():
             if charm_seconds>0:hero.reverse_controls(charm_seconds)

@@ -230,6 +230,8 @@ func cancel() -> void:
     if not active:
         return
     generation += 1
+    if current_id=="utnapishtim_rampage" and get_node("/root/HumbabaForm").engaged():
+        get_node("/root/HumbabaForm").exit(true)
     get_node("/root/Dialogue").cancel()
     var fade: Tween = get_node("/root/SceneManager")._fade_tween
     if is_instance_valid(fade) and fade.is_valid():

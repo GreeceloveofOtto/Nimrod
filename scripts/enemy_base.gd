@@ -391,6 +391,8 @@ func get_attack_rect() -> Rect2:
     return Rect2(global_position + Vector2(x, float(box.get("top", 0.0))), size_px)
 
 func _player_rect(player: Node2D) -> Rect2:
+    if player.has_method("get_hurt_rect"):
+        return player.get_hurt_rect()
     var hit: CollisionShape2D = player.get_node_or_null("CollisionShape2D") as CollisionShape2D
     if hit != null and hit.shape is RectangleShape2D:
         var size_px: Vector2 = (hit.shape as RectangleShape2D).size * hit.global_scale.abs()

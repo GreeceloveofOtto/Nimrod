@@ -31,8 +31,7 @@ func _physics_process(delta: float) -> void:
     if not obstacle.is_empty():
         next = obstacle["position"]
     if player != null and not struck_player:
-        var shape: Vector2 = (player.collider.shape as RectangleShape2D).size
-        var body := Rect2(player.collider.global_position - shape * 0.5, shape).grow(float(spec["collision_radius"]))
+        var body := player.get_hurt_rect().grow(float(spec["collision_radius"]))
         var nearest: Vector2 = Geometry2D.get_closest_point_to_segment(body.get_center(), previous, next)
         if body.has_point(nearest):
             struck_player = true

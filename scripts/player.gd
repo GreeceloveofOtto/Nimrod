@@ -123,6 +123,7 @@ var skill_cooldown_left := 0.0
 var skill_slow_left := 0.0
 var skill_data: Dictionary = {}
 var controls_reversed_left := 0.0
+var damage_fraction := 0.0
 
 func _ready() -> void:
     add_to_group("player")
@@ -199,7 +200,19 @@ func _load_sprites() -> void:
         clip_data[clip_or_sound_name] = clip
 
 func _physics_process(delta: float) -> void:
+    var form: Node = get_node("/root/HumbabaForm")
+    if form.state == "active" and not transition_locked:
+        if Input.is_action_just_pressed("restart"):
+            _request_run_restart()
+            return
+        form.tick_player(delta)
+        return
     if transition_locked:
+        if form.state in ["exiting","exhausted"]:
+            form.tick_exhausted(delta)
+            return
+        if form.state in ["transforming","active"]:
+            return
         if not cinematic_clip.is_empty():
             cinematic_clock += delta
             _show_clip(cinematic_clip, cinematic_clock)
@@ -475,6 +488,7 @@ func _direction_cancel_attack(axis: float) -> void:
     _begin_attack(next_step)
 
 func apply_pull(target_x: float, seconds: float) -> bool:
+    if get_node("/root/HumbabaForm").superarmored():return false
     if transition_locked or action == "dead" or is_roll_invulnerable():
         return false
     _cancel_attack()
@@ -737,13 +751,21 @@ func _set_short_collider() -> void:
     box.size = ROLL_BOX
     collider.position.y = ROLL_CENTER_Y
 
+func get_hurt_rect() -> Rect2:
+    if get_node("/root/HumbabaForm").superarmored():
+        return get_node("/root/HumbabaForm").hurt_rect()
+    var size_px: Vector2 = (collider.shape as RectangleShape2D).size
+    return Rect2(collider.global_position-size_px*.5,size_px)
+
 func is_roll_invulnerable() -> bool:
     return action == "roll" and roll_clock >= ROLL_STARTUP and roll_clock < ROLL_STARTUP + ROLL_INVULNERABLE
 
-func receive_damage(amount: int, opts: Dictionary = {}) -> bool:
+func receive_damage(amount: float, opts: Dictionary = {}) -> bool:
     var stagger: bool = bool(opts.get("stagger", true))
     var grant_grace: bool = bool(opts.get("grant_grace", true))
-    if transition_locked or amount <= 0 or action == "dead" or is_roll_invulnerable():
+    var form: Node = get_node("/root/HumbabaForm")
+    var exhausted: bool = form.state in ["exiting","exhausted"]
+    if (transition_locked and not exhausted) or amount <= 0 or action == "dead" or is_roll_invulnerable():
         return false
     # Tick damage has its own clock and must not inherit ordinary hit grace.
     if grant_grace and damage_grace > 0.0:
@@ -755,12 +777,17 @@ func receive_damage(amount: int, opts: Dictionary = {}) -> bool:
         if not previous.is_empty() and source != int(previous["source"]) and damage_tick_clock - float(previous["clock"]) < float(opts.get("overlap_interval", 0.2)):
             return false
         tick_sources[group] = {"source": source, "clock": damage_tick_clock}
-    hp = maxi(1 if debug_hp_floor else 0, hp - amount)
+    damage_fraction += amount * form.incoming_multiplier()
+    var applied: int = floori(damage_fraction + .000001)
+    damage_fraction -= applied
+    hp = maxi(1 if debug_hp_floor else 0, hp - applied)
+    if form.superarmored():
+        stagger = false
     flash_time = Config.PLAYER_DAMAGE_FLASH_SECONDS
     shake_time = Config.PLAYER_DAMAGE_SHAKE_SECONDS
     if stagger:
         _play_shared_sfx("player_hurt")
-    damage_received.emit(amount, hp)
+    damage_received.emit(applied, hp)
     if hp == 0:
         pull_left = 0.0
         if action == "roll":
@@ -772,7 +799,7 @@ func receive_damage(amount: int, opts: Dictionary = {}) -> bool:
         return true
     if grant_grace:
         damage_grace = Config.PLAYER_DAMAGE_GRACE_SECONDS
-    if stagger:
+    if stagger and not exhausted:
         pull_left = 0.0
         if action == "roll":
             _restore_safe_collider()
@@ -781,7 +808,7 @@ func receive_damage(amount: int, opts: Dictionary = {}) -> bool:
         hurt_clock = 0.0
         hurt_duration = maxf(0.0, float(opts.get("stagger_seconds", opts.get("hurt_duration", Config.PLAYER_HURT_SECONDS))))
     var knockback: Variant = opts.get("knockback", Vector2.ZERO)
-    if knockback is Vector2 and knockback != Vector2.ZERO:
+    if not form.superarmored() and knockback is Vector2 and knockback != Vector2.ZERO:
         velocity += knockback
     return true
 
@@ -828,6 +855,8 @@ func _request_run_restart(from_death: bool = false) -> void:
         get_tree().reload_current_scene()
 
 func reset_run_state() -> void:
+    get_node("/root/HumbabaForm").reset()
+    damage_fraction = 0
     skill_cooldown_left = 0
     skill_slow_left = 0
     cinematic_clip = ""
@@ -954,6 +983,11 @@ func _refresh_normal_visual(delta: float) -> void:
     _show_clip(clip_name, specific_t, delta)
 
 func _show_clip(clip_or_sound_name: String, explicit_time: float = -1.0, delta: float = 0.0) -> void:
+    var form: Node = get_node("/root/HumbabaForm")
+    if form.state in ["transforming","active"]:
+        if form.clips.has(clip_or_sound_name):form.render(clip_or_sound_name,maxf(0,explicit_time))
+        return
+    visual.set_meta("canonical_scale",Vector2.ONE*VISUAL_SCALE)
     if not clip_data.has(clip_or_sound_name):
         return
     if displayed_clip != clip_or_sound_name:
@@ -1145,6 +1179,7 @@ func set_weapon_visibility(hidden: bool) -> void:
     _show_clip("idle", 0)
 
 func cast_anur_light() -> bool:
+    if get_node("/root/HumbabaForm").engaged():return false
     if get_node("/root/GameState").active_character != "nimrod":
         return false
     if not get_node("/root/Story").is_flag("skill_anur_light") or skill_cooldown_left > 0 or action != "normal" or crouching or Input.is_action_pressed("crouch") or transition_locked or pull_left > 0 or get_node("/root/Dialogue").input_blocked() or get_node("/root/Cutscene").active or get_tree().paused:
@@ -1203,12 +1238,12 @@ func sync_story_state() -> void:
         else:
             modifiers.modifiers.erase(id)
     var rampage: Node = get_node("/root/Rampage")
-    if rampage.unlocked():
+    if rampage.unlocked() and not get_node("/root/HumbabaForm").engaged():
         var additions: Dictionary = {}
         for key in rampage.settings["per_point"]:
             additions[key] = float(rampage.settings["per_point"][key]) * rampage.value()
         modifiers.add_modifier("rampage", additions)
-    else:
+    elif not rampage.unlocked():
         modifiers.modifiers.erase("rampage")
     hp = clampi(hp + maxi(0, get_max_hp()-old_max), 0, get_max_hp())
     if action == "dead":
@@ -1224,6 +1259,7 @@ func sync_story_state() -> void:
     damage_received.emit(0, hp)
 
 func try_devour() -> bool:
+    if get_node("/root/HumbabaForm").engaged():return false
     if get_node("/root/GameState").active_character != "nimrod":
         return false
     var rampage: Node = get_node("/root/Rampage")
@@ -1292,6 +1328,7 @@ func reverse_controls(seconds: float) -> void:
     controls_reversed_left = maxf(controls_reversed_left,seconds)
 
 func apply_stun(seconds: float) -> bool:
+    if get_node("/root/HumbabaForm").superarmored():return false
     if action=="dead" or transition_locked or is_roll_invulnerable():
         return false
     _cancel_attack()

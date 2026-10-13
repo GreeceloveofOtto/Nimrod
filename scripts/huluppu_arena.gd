@@ -1,5 +1,5 @@
 extends Node
-var bosses: Array[EnemyBase] = []
+var bosses: Array[WeakRef] = []
 var major_owner: EnemyBase
 var major_gap := 0.0
 var opening := 0.0
@@ -15,7 +15,7 @@ func _ready() -> void:
     var index:=0
     for enemy: EnemyBase in get_tree().get_nodes_in_group("enemies"):
         if enemy.get_parent()!=get_parent():continue
-        bosses.append(enemy)
+        bosses.append(weakref(enemy))
         enemy.set_meta("arena",self)
         enemy.died.connect(_boss_died)
         var panel:=Panel.new()
@@ -37,7 +37,7 @@ func _ready() -> void:
         label.add_theme_font_override("font",load("res://assets/fonts/NimrodUIKorean-Regular.otf"))
         label.add_theme_font_size_override("font_size",18)
         panel.add_child(label)
-        rows.append({"boss":enemy,"fill":fill,"label":label})
+        rows.append({"boss":weakref(enemy),"max_hp":int(enemy.stats["hp"]),"name":str(enemy.stats["display_name"]),"fill":fill,"label":label})
         index+=1
     spawn_healing()
 func _process(delta: float) -> void:
@@ -48,11 +48,20 @@ func _process(delta: float) -> void:
     if healing_clock>=float(get_node("/root/Odyssey").settings["heal_interval"]):
         healing_clock=0
         spawn_healing()
+    update_bars()
+
+func update_bars() -> void:
     for row: Dictionary in rows:
-        var boss: EnemyBase=row["boss"]
-        var hp: int=boss.hp if is_instance_valid(boss) else 0
-        row["fill"].size.x=516.*float(hp)/float(boss.stats["hp"]) if is_instance_valid(boss) else 0
-        row["label"].text="%s  %d"%[str(boss.stats["display_name"]) if is_instance_valid(boss) else "처치",hp]
+        # Resolve a weak reference BEFORE assigning a typed variable. A freed
+        # object in a Dictionary cannot safely be assigned to EnemyBase.
+        var reference: WeakRef = row["boss"]
+        var boss: EnemyBase = reference.get_ref() as EnemyBase
+        var hp := 0
+        if is_instance_valid(boss):
+            hp = maxi(0, boss.hp)
+        row["fill"].size.x = 516.0 * float(hp) / float(row["max_hp"])
+        row["label"].text = "%s  %d" % [str(row["name"]), hp]
+
 func can_attack(boss: EnemyBase, major: bool=false) -> bool:
     if opening>0 or finished:return false
     if is_instance_valid(major_owner) and major_owner!=boss:return false
@@ -78,7 +87,8 @@ func spawn_healing() -> void:
             get_parent().add_child(item)
 func _boss_died(boss: EnemyBase) -> void:
     release(boss)
-    for other in bosses:
+    for reference: WeakRef in bosses:
+        var other: EnemyBase=reference.get_ref() as EnemyBase
         if is_instance_valid(other) and other.hp>0:return
     if not finished:
         finished=true
