@@ -10,6 +10,8 @@ func _unhandled_input(event: InputEvent) -> void:
     if not key.pressed or key.echo or get_tree().paused or get_node("/root/Dialogue").active or get_node("/root/SceneManager").is_transitioning or get_node("/root/SceneManager").player_locked:
         return
     if key.physical_keycode == KEY_F4:
+        if get_node("/root/GameState").active_character != "nimrod":return
+        if not key.shift_pressed and not get_node("/root/Rampage").unlocked():get_node("/root/Rampage").unlock()
         var form: Node=get_node("/root/HumbabaForm")
         if key.shift_pressed:form.exit(false)
         else:

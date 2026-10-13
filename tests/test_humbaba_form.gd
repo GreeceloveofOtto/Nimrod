@@ -4,6 +4,15 @@ func _run() -> void:
     var rage: Node=root.get_node("Rampage")
     var form: Node=root.get_node("HumbabaForm")
     var save: Node=root.get_node("Save")
+    var debug_key:=InputEventKey.new()
+    debug_key.physical_keycode=KEY_F4
+    debug_key.pressed=true
+    root.get_node("DebugTeleport")._unhandled_input(debug_key)
+    _check(rage.unlocked() and form.state=="transforming","F4 grants the debug prerequisite and enters from a fresh run")
+    await form.transformed
+    _check(not manager.player_locked,"Fresh-run debug transform restores control")
+    root.get_node("GameState").reset_run(false)
+    hero.reset_run_state()
     story_state.debug_stage(18)
     rage.set_value(91)
     _check(hero.hp==0 and hero.action=="dead" and not form.engaged(),"Unsuspended91 retains instant death")
@@ -116,4 +125,7 @@ func _run() -> void:
     rage.death_suspended=true
     rage.set_value(100)
     _check(not form.engaged() and not rage.unlocked() and hero.get_max_hp()==100,"Siyavash cannot enter form")
+    var saved_flags: Dictionary=root.get_node("GameState").run_flags.duplicate(true)
+    root.get_node("DebugTeleport")._unhandled_input(debug_key)
+    _check(root.get_node("GameState").run_flags==saved_flags and not form.engaged(),"Siyavash F4 cannot alter Nimrod flags or enter form")
     await _finish("HUMBABA_FORM")
