@@ -23,6 +23,7 @@ Rampage="*res://scripts/rampage.gd"
 Save="*res://scripts/save_manager.gd"
 Choice="*res://scripts/choice_menu.gd"
 DebugTeleport="*res://scripts/debug_teleport.gd"
+Odyssey="*res://scripts/odyssey.gd"
 
 [audio]
 buses/default_bus_layout="res://default_bus_layout.tres"
