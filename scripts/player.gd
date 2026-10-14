@@ -124,6 +124,7 @@ var skill_slow_left := 0.0
 var skill_data: Dictionary = {}
 var controls_reversed_left := 0.0
 var damage_fraction := 0.0
+var dagger_glow: Node2D
 
 func _ready() -> void:
     add_to_group("player")
@@ -132,6 +133,8 @@ func _ready() -> void:
     _load_attack_data()
     skill_data = JSON.parse_string(FileAccess.get_file_as_string("res://data/skills.json"))["anur_light"]
     _load_sprites()
+    dagger_glow = AssetVisual.add_image(self, "res://assets/fx/npc_light_pool.webp", Vector2(-22, -14), Vector2(44, 28), 10)
+    dagger_glow.visible = false
     get_node("/root/GameState").weapon_changed.connect(_on_weapon_changed)
     get_node("/root/Story").changed.connect(sync_story_state)
     _on_weapon_changed(get_node("/root/GameState").get_weapon())
@@ -532,7 +535,7 @@ func _update_attack(delta: float) -> void:
         _resolve_axe_hit()
         if action != "attack" or attack_generation != generation:
             return
-    if weapon == "axe" and attack_step == 4 and not shockwave_done and attack_clock >= float(shockwave_data["start"]):
+    if not shockwave_data.is_empty() and attack_step == int(weapons_data.get(weapon, {}).get("shockwave_step", 4)) and not shockwave_done and attack_clock >= float(shockwave_data["start"]):
         _resolve_shockwave()
         if action != "attack" or attack_generation != generation:
             return
@@ -614,10 +617,17 @@ func _resolve_axe_hit() -> void:
         attack_connected.emit(damage, strike)
 
 func _resolve_shockwave() -> void:
-    if action != "attack" or weapon != "axe" or attack_step != 4:
+    if action != "attack" or shockwave_data.is_empty() or attack_step != int(weapons_data.get(weapon, {}).get("shockwave_step", 4)):
         return
     var generation: int = attack_generation
     shockwave_rect = _configured_hitbox(shockwave_data)
+    if weapon == "dagger":
+        attack_already_hit.clear()
+        var wave: Node2D = AnurLightProjectile.spawn_fx(get_parent(), global_position + Vector2(facing * 90, -20), str(shockwave_data["fx"]))
+        wave.scale.x *= facing
+        wave.modulate = Color(.75, 1, 1, 1)
+        var wave_tween := wave.create_tween()
+        wave_tween.tween_property(wave, "global_position:x", wave.global_position.x + facing * 60, .2)
     _play_shared_sfx("shockwave")
     debug_rect = shockwave_rect if debug_hitboxes else debug_rect
     hit_rectangle.size = shockwave_rect.size
@@ -640,10 +650,12 @@ func _resolve_shockwave() -> void:
         attack_already_hit[id] = true
         var damage: int = roundi(float(shockwave_data["damage"]) * modifiers.multiplier("attack") * get_node("/root/Rampage").damage_multiplier())
         var result: Variant
-        if obj.has_method("take_shockwave_hit"):
+        if weapon == "axe" and obj.has_method("take_shockwave_hit"):
             result = obj.call("take_shockwave_hit", damage, global_position, 4)
         else:
-            result = obj.call("take_hit", damage, global_position, 4)
+            set_meta("dagger_wave", weapon == "dagger")
+            result = obj.call("take_hit", damage, global_position, attack_step)
+            set_meta("dagger_wave", false)
         if obj is EnemyBase and obj.hp <= 0 and result is Dictionary and int(result.get("damage_dealt",0)) > 0:
             get_node("/root/Rampage").basic_kill(obj)
         if action != "attack" or attack_generation != generation:
@@ -656,7 +668,7 @@ func _resolve_shockwave() -> void:
         _play_shared_sfx("axe_hit_heavy")
         hitstop_left = weapon_hitstop
         shake_time = maxf(shake_time, float(shockwave_data["shake"]))
-        attack_connected.emit(damage, 4)
+        attack_connected.emit(damage, attack_step)
 
 func _guard_recoil() -> void:
     velocity.x = 0.0
@@ -1013,6 +1025,10 @@ func _show_clip(clip_or_sound_name: String, explicit_time: float = -1.0, delta: 
                 break
     visual.flip_h = facing < 0
     AssetVisual.apply_frame(visual, clip, index)
+    if is_instance_valid(dagger_glow):
+        dagger_glow.visible = weapon == "dagger" and clip_or_sound_name.begins_with("attack_")
+        dagger_glow.position = Vector2(facing * 36, -78)
+        dagger_glow.modulate = Color(.75, .9, 1, .25 + .1 * sin(display_clock * 14))
     visual.modulate = Color(1.25,.35,.25) if rampage_flash_left>0 else Color("e2fcff") if flash_time > 0.0 else Color.WHITE
 
 func _update_camera_shake(delta: float) -> void:
@@ -1034,9 +1050,11 @@ func _update_footsteps(delta: float) -> void:
         step_timer = Config.PLAYER_RUN_STEP_SECONDS if absf(velocity.x) > RUN_SPEED * Config.PLAYER_STEP_RUN_THRESHOLD else Config.PLAYER_WALK_STEP_SECONDS
 
 func _play_attack_sfx(step: int) -> void:
-    if step < 1 or step >= Config.PLAYER_ATTACK_SOUND_PATHS.size():
+    if step < 1:
         return
-    sfx_attack.stream = load(Config.PLAYER_ATTACK_SOUND_PATHS[step]) as AudioStream
+    var sound_step: int = mini(step, Config.PLAYER_ATTACK_SOUND_PATHS.size() - 1)
+    sfx_attack.pitch_scale = float(weapons_data.get(weapon, {}).get("sfx_pitch", 1.0))
+    sfx_attack.stream = load(Config.PLAYER_ATTACK_SOUND_PATHS[sound_step]) as AudioStream
     sfx_attack.play()
 
 func _draw() -> void:
@@ -1200,7 +1218,7 @@ func cast_anur_light() -> bool:
 
 func selected_sprite_set() -> String:
     if get_node("/root/GameState").active_character == "siyavash":
-        return str(get_node("/root/GameState").siyavash_settings["sprite_set"])
+        return "siyavash_dagger" if weapon == "dagger" else str(get_node("/root/GameState").siyavash_settings["sprite_set"])
     if not cinematic_set.is_empty():
         return cinematic_set
     var story: Node = get_node("/root/Story")
@@ -1215,10 +1233,11 @@ func selected_sprite_set() -> String:
 func sync_story_state() -> void:
     if get_node("/root/GameState").active_character == "siyavash":
         modifiers.modifiers.clear()
-        weapon = "none"
-        max_step = 0
+        var current_weapon: String = get_node("/root/GameState").get_weapon()
+        if weapon != current_weapon:
+            _on_weapon_changed(current_weapon)
         hp = clampi(hp,0,100)
-        if sprite_set != "siyavash":
+        if sprite_set != selected_sprite_set():
             _load_sprites()
             displayed_clip = ""
             _show_clip("idle",0)

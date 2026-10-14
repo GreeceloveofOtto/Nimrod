@@ -1,4 +1,4 @@
-ALPHA CLEANLINESS: 651 images, 0 failures
+ALPHA CLEANLINESS: 665 images, 0 failures
 assets/backgrounds/castle/castle_f1_hall.webp	PASS
 assets/backgrounds/castle/castle_f2_sanctum.webp	PASS
 assets/backgrounds/castle/castle_f3_kitchen.webp	PASS
@@ -650,3 +650,17 @@ assets/tiles/rear_gate/step_block.webp	PASS
 assets/tiles/stage10/dilmun_ground_tile.webp	PASS
 assets/tiles/underground_fill.webp	PASS
 assets/ui/prompt_e.png	PASS
+assets/ui/dagger_icon.webp	PASS
+assets/sprites/npcs/gaevani/idle.webp	PASS
+assets/sprites/npcs/gudarz/idle.webp	PASS
+assets/sprites/npcs/baraja/idle.webp	PASS
+assets/sprites/npcs/pariburz/idle.webp	PASS
+assets/sprites/npcs/tusa/idle.webp	PASS
+assets/sprites/player/siyavash_dagger/attack_1.webp	PASS
+assets/sprites/player/siyavash_dagger/attack_2.webp	PASS
+assets/sprites/player/siyavash_dagger/attack_3.webp	PASS
+assets/sprites/player/siyavash_dagger/attack_4.webp	PASS
+assets/sprites/player/siyavash_dagger/attack_5.webp	PASS
+assets/sprites/npcs/laodastahma/idle.webp	PASS
+assets/sprites/npcs/laodastahma/idle_front.webp	PASS
+assets/sprites/npcs/laodastahma/give_dagger.webp	PASS

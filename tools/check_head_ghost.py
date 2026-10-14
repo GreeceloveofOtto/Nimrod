@@ -53,7 +53,7 @@ def self_test():
 def main():
     p=argparse.ArgumentParser();p.add_argument('--phase',default='after');a=p.parse_args();rows=[]
     self_test()
-    for mp in sorted(list((ROOT/'assets/sprites/player').glob('*/manifest.json'))+[ROOT/'assets/sprites/enemies'/i/'manifest.json' for i in ['ninazu_mother','lilith','zu'] if (ROOT/'assets/sprites/enemies'/i/'manifest.json').exists()]):
+    for mp in sorted([ROOT/'assets/sprites/npcs'/i/'manifest.json' for i in ['laodastahma','tusa','gudarz','gaevani','baraja','pariburz'] if (ROOT/'assets/sprites/npcs'/i/'manifest.json').exists()]+list((ROOT/'assets/sprites/player').glob('*/manifest.json'))+[ROOT/'assets/sprites/enemies'/i/'manifest.json' for i in ['ninazu_mother','lilith','zu'] if (ROOT/'assets/sprites/enemies'/i/'manifest.json').exists()]):
         d=json.loads(mp.read_text())
         for c in d.get('clips',[]):
             path=ROOT/'assets'/c['sheet'];r=audit(path,c);rows.append({'path':str(path.relative_to(ROOT)),**r})

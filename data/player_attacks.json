@@ -227,7 +227,8 @@
           "width": 112,
           "height": 34
         }
-      }
+      },
+      "shockwave_step": 4
     },
     "staff": {
       "max_step": 3,
@@ -297,6 +298,137 @@
           }
         }
       ]
+    },
+    "dagger": {
+      "max_step": 5,
+      "hitstop": 0.04,
+      "sfx_pitch": 1.25,
+      "attacks": [
+        {
+          "step": 1,
+          "damage": 14,
+          "duration": 0.24,
+          "active_start": 0.06,
+          "active_end": 0.12,
+          "knockback": 80,
+          "stagger": 0.15,
+          "impulse": 60,
+          "shake": 0.06,
+          "impact_offset": [
+            55,
+            -85
+          ],
+          "hitbox": {
+            "offset_x": 6,
+            "top": -115,
+            "width": 65,
+            "height": 95
+          }
+        },
+        {
+          "step": 2,
+          "damage": 14,
+          "duration": 0.24,
+          "active_start": 0.06,
+          "active_end": 0.12,
+          "knockback": 80,
+          "stagger": 0.15,
+          "impulse": 60,
+          "shake": 0.06,
+          "impact_offset": [
+            55,
+            -85
+          ],
+          "hitbox": {
+            "offset_x": 6,
+            "top": -115,
+            "width": 68,
+            "height": 95
+          }
+        },
+        {
+          "step": 3,
+          "damage": 16,
+          "duration": 0.28,
+          "active_start": 0.08,
+          "active_end": 0.16,
+          "knockback": 80,
+          "stagger": 0.15,
+          "impulse": 60,
+          "shake": 0.06,
+          "impact_offset": [
+            55,
+            -85
+          ],
+          "hitbox": {
+            "offset_x": 6,
+            "top": -115,
+            "width": 82,
+            "height": 95
+          }
+        },
+        {
+          "step": 4,
+          "damage": 18,
+          "duration": 0.3,
+          "active_start": 0.09,
+          "active_end": 0.18,
+          "knockback": 80,
+          "stagger": 0.15,
+          "impulse": 60,
+          "shake": 0.06,
+          "impact_offset": [
+            55,
+            -85
+          ],
+          "hitbox": {
+            "offset_x": 6,
+            "top": -115,
+            "width": 75,
+            "height": 95
+          }
+        },
+        {
+          "step": 5,
+          "damage": 22,
+          "duration": 0.42,
+          "active_start": 0.14,
+          "active_end": 0.24,
+          "knockback": 120,
+          "stagger": 0.15,
+          "impulse": 80,
+          "shake": 0.06,
+          "impact_offset": [
+            55,
+            -85
+          ],
+          "hitbox": {
+            "offset_x": 6,
+            "top": -115,
+            "width": 78,
+            "height": 95
+          }
+        }
+      ],
+      "shockwave_step": 5,
+      "shockwave": {
+        "damage": 20,
+        "knockback": 80,
+        "stagger": 0.15,
+        "start": 0.29,
+        "shake": 0.08,
+        "impact_offset": [
+          100,
+          -18
+        ],
+        "hitbox": {
+          "offset_x": 12,
+          "top": -38,
+          "width": 160,
+          "height": 34
+        },
+        "fx": "anur_light_projectile"
+      }
     }
   }
 }

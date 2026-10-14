@@ -189,11 +189,11 @@
     "path": "assets/backgrounds/castle_front/downtown_passage_facade.webp",
     "source": "assets/backgrounds/castle_front/downtown_passage_facade.webp",
     "before": 1404836,
-    "after": 350616,
+    "after": 252542,
     "mode": "lossy",
-    "quality": 100,
-    "alpha_mae": 0.0,
-    "rgb_mae": 2.457683027396842,
+    "quality": 90,
+    "alpha_mae": 0.039519640852974186,
+    "rgb_mae": 2.848402475628278,
     "bbox_same": true,
     "transparent": true,
     "image_resize": [
@@ -205,8 +205,9 @@
       720
     ],
     "ssim": 0.948183066347932,
-    "encoder": "bounded RGB quantization",
-    "rgb_step": 10
+    "encoder": "webp90",
+    "rgb_step": 10,
+    "encoding_ssim": 0.9909829040167076
   },
   {
     "path": "assets/backgrounds/castle_front/far_city.webp",

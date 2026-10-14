@@ -27,6 +27,8 @@ var skip_delay: float = 0.0
 var skip_hint: Label
 var live_timer: SceneTreeTimer
 var paused_actors: Dictionary = {}
+var dagger_gift_running := false
+var dagger_gift_count := 0
 var test_timing_scale := 1.0
 
 func _ready() -> void:
@@ -124,7 +126,7 @@ func interaction_available(id: String) -> bool:
     var flags: Dictionary = get_node("/root/GameState").run_flags
     if id != "shamhat" and bool(spec.get("blessing_gate", false)) and flags.get("shamhat_blessing", false):
         return false
-    return not (spec.get("repeat", []) if flags.get(str(spec["flag"]), false) else spec.get("first", [])).is_empty()
+    return not (spec.get("repeat", []) if get_node("/root/Story").is_flag(str(spec["flag"])) else spec.get("first", [])).is_empty()
 
 func find_speakers() -> Dictionary:
     var found: Dictionary = {"player": get_tree().get_first_node_in_group("player")}
@@ -143,7 +145,7 @@ func play_interaction(id: String, speaker_nodes: Dictionary = {}) -> void:
         return
     var state: Node = get_node("/root/GameState")
     var spec: Dictionary = resolve_interaction(id)
-    var repeat_visit: bool = bool(state.run_flags.get(str(spec["flag"]), false))
+    var repeat_visit: bool = get_node("/root/Story").is_flag(str(spec["flag"]))
     var lines: Array = spec["repeat"] if repeat_visit else spec["first"]
     var nodes: Dictionary = find_speakers()
     nodes.merge(speaker_nodes, true)
@@ -159,7 +161,8 @@ func play_interaction(id: String, speaker_nodes: Dictionary = {}) -> void:
     await play(lines, first, {"participants": nodes, "intercept": intercept})
     if cancelled:
         return
-    state.run_flags[str(spec["flag"])] = true
+    if id != "laodastahma_talk":
+        state.run_flags[str(spec["flag"])] = true
     state.visit_count(id, true)
     for event: Dictionary in spec.get("on_finish", []):
         if event.get("when", "first") in ["always", "repeat" if repeat_visit else "first"]:
@@ -176,6 +179,8 @@ func _event(event: Dictionary, nodes: Dictionary) -> void:
     match str(event.get("event", "")):
         "axe_gift", "give_axe":
             await give_axe(nodes.get("lugalbanda"), hero)
+        "give_dagger":
+            await give_dagger(nodes.get("laodastahma"), hero)
         "give_blessing":
             if hero != null:
                 hero.apply_shamhat_blessing()
@@ -432,6 +437,45 @@ func give_axe(father: Node2D, hero: NimrodPlayer) -> void:
         return
     get_node("/root/GameState").set_weapon("axe")
     get_node("/root/SceneManager").show_toast("니므롯의 도끼를 얻었다")
+
+func give_dagger(teacher: NPC, hero: NimrodPlayer) -> void:
+    var story: Node = get_node("/root/Story")
+    if dagger_gift_running or story.is_flag("dagger_acquired") or not is_instance_valid(hero) or not is_instance_valid(teacher):
+        return
+    if get_node("/root/GameState").active_character != "siyavash":
+        return
+    dagger_gift_running = true
+    var manager: Node = get_node("/root/SceneManager")
+    var spec: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/dagger_gift.json"))
+    manager.set_player_locked(true)
+    teacher.cinematic_control = true
+    teacher.facing = 1 if hero.global_position.x >= teacher.global_position.x else -1
+    teacher.pose = teacher.facing
+    teacher.play_clip("give_dagger")
+    await get_tree().create_timer(float(spec["give_clip_seconds"]) * test_timing_scale).timeout
+    var gift := Node2D.new()
+    gift.z_index = 70
+    get_tree().current_scene.add_child(gift)
+    AssetVisual.add_image(gift, str(spec["icon"]), Vector2(-20, -20), Vector2(40, 40))
+    var glow: Node2D = AssetVisual.add_image(gift, str(spec["glow"]), Vector2(-35, -20), Vector2(70, 40), -1)
+    glow.modulate = Color(.8, .85, 1, .5)
+    gift.global_position = teacher.global_position + Vector2(teacher.facing * 25, -85)
+    var tween := gift.create_tween()
+    tween.tween_property(gift, "global_position", hero.global_position + Vector2(0, -60), float(spec["travel_seconds"]) * test_timing_scale).set_trans(Tween.TRANS_SINE)
+    await tween.finished
+    gift.queue_free()
+    get_node("/root/GameState").set_weapon("dagger")
+    story.set_flag("laodastahma_talk_done")
+    story.set_flag("dagger_acquired")
+    dagger_gift_count += 1
+    teacher.cinematic_control = false
+    teacher.play_clip("idle_front" if teacher.three_way and teacher.pose == NPC.Pose.FRONT else "idle")
+    manager.show_toast(str(spec["acquired_toast"]), 1.8)
+    manager.set_player_locked(false)
+    dagger_gift_running = false
+    get_node("/root/Save").save_checkpoint("character")
+    await get_tree().create_timer(1.8 * test_timing_scale).timeout
+    manager.show_toast(str(spec["help_toast"]), 1.8)
 
 func skip_line() -> bool:
     if not active or skip_delay > 0 or not _canvas.visible:

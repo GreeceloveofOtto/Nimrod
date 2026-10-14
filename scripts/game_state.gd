@@ -35,6 +35,12 @@ func get_weapon() -> String:
     return str(siyavash_progress.get("weapon",siyavash_settings.get("weapon","none"))) if active_character == "siyavash" else str(run_flags.get("weapon", "none"))
 
 func set_weapon(value: String) -> void:
+    if active_character == "siyavash":
+        if value not in ["none", "dagger"]:
+            return
+        siyavash_progress["weapon"] = value
+        weapon_changed.emit(value)
+        return
     if value not in ["none", "staff", "axe"]:
         return
     if bool(run_flags.get("arm_lost", false)):

@@ -57,6 +57,8 @@ func migrate_save(input: Dictionary) -> Dictionary:
         return {}
     for field in ["siyavash_progress","nimrod_status"]:
         data[field] = data.get(field,{}) if data.get(field,{}) is Dictionary else {}
+    if str(data["siyavash_progress"].get("weapon", "none")) not in ["none", "dagger"]:
+        data["siyavash_progress"]["weapon"] = "none"
     data["choice_pending"] = bool(data.get("choice_pending",flags.get("choice_pending",false)))
     data["selected_system"] = str(data.get("selected_system",flags.get("selected_system","")))
     var combined: Dictionary=flags.duplicate(true)
@@ -187,7 +189,7 @@ func resume(full_health: bool = false) -> bool:
     get_node("/root/GameState").run_flags["choice_pending"] = data["choice_pending"]
     get_node("/root/GameState").run_flags["selected_system"] = data["selected_system"]
     get_node("/root/GameState").run_flags["rampage"] = data["rampage"]
-    get_node("/root/GameState").set_weapon(str(data["run_flags"].get("weapon","none")))
+    get_node("/root/GameState").set_weapon(get_node("/root/GameState").get_weapon())
     get_node("/root/Story").changed.emit()
     manager._reset_on_arrival = false
     var spawn_name: String = str(manager.levels[str(data["level"])]["spawns"].keys()[0])

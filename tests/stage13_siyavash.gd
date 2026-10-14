@@ -11,7 +11,7 @@ func _run() -> void:
     _check(not hero.cast_anur_light() and not hero.try_devour() and not root.get_node("Rampage").unlocked(),"Nimrod powers inactive")
     for key in original:_check(state.run_flags.get(key)==original[key],"Nimrod flag retained: "+str(key))
     for node in manager.current_level.find_children("Image","Sprite2D",true,false):_check(node.texture!=null,"Plaza texture loads")
-    _check(get_nodes_in_group("enemies").is_empty() and get_nodes_in_group("npcs").is_empty(),"Exploration only")
+    _check(get_nodes_in_group("enemies").is_empty() and get_nodes_in_group("npcs").size()==6,"Exploration plaza with six noncombat heroes")
     var save: Node=root.get_node("Save")
     save.save_path="user://stage13_siya.json"
     hero.position=Vector2(2100,880)

@@ -602,6 +602,150 @@
       "interactable": true,
       "interaction": "utnapishtim_talk",
       "interact_range": 120
+    },
+    {
+      "id": "tusa",
+      "display_name": "투사",
+      "height_ratio": 1.22,
+      "visual_scale_multiplier": 1.0,
+      "sheet_dir": "assets/sprites/npcs/tusa",
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 4,
+          "duration": 2.4,
+          "loop": true
+        }
+      ],
+      "face_player": true,
+      "three_way": false,
+      "initial_pose": "front",
+      "random_start": true,
+      "interactable": false,
+      "interaction": "",
+      "interact_range": 120
+    },
+    {
+      "id": "gudarz",
+      "display_name": "구다르즈",
+      "height_ratio": 1.02,
+      "visual_scale_multiplier": 1.0,
+      "sheet_dir": "assets/sprites/npcs/gudarz",
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 4,
+          "duration": 2.4,
+          "loop": true
+        }
+      ],
+      "face_player": true,
+      "three_way": false,
+      "initial_pose": "front",
+      "random_start": true,
+      "interactable": false,
+      "interaction": "",
+      "interact_range": 120
+    },
+    {
+      "id": "laodastahma",
+      "display_name": "라오다스타흐마",
+      "height_ratio": 1.28,
+      "visual_scale_multiplier": 1.0,
+      "sheet_dir": "assets/sprites/npcs/laodastahma",
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
+        },
+        {
+          "name": "idle_front",
+          "frames": 6,
+          "duration": 2.4,
+          "loop": true
+        },
+        {
+          "name": "give_dagger",
+          "frames": 4,
+          "duration": 0.6,
+          "loop": false
+        }
+      ],
+      "face_player": true,
+      "three_way": true,
+      "initial_pose": "front",
+      "random_start": true,
+      "interactable": true,
+      "interaction": "laodastahma_talk",
+      "interact_range": 120
+    },
+    {
+      "id": "gaevani",
+      "display_name": "가에바니",
+      "height_ratio": 1.08,
+      "visual_scale_multiplier": 1.0,
+      "sheet_dir": "assets/sprites/npcs/gaevani",
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 4,
+          "duration": 2.4,
+          "loop": true
+        }
+      ],
+      "face_player": true,
+      "three_way": false,
+      "initial_pose": "front",
+      "random_start": true,
+      "interactable": false,
+      "interaction": "",
+      "interact_range": 120
+    },
+    {
+      "id": "pariburz",
+      "display_name": "파리부르즈",
+      "height_ratio": 1.08,
+      "visual_scale_multiplier": 1.0,
+      "sheet_dir": "assets/sprites/npcs/pariburz",
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 4,
+          "duration": 2.4,
+          "loop": true
+        }
+      ],
+      "face_player": true,
+      "three_way": false,
+      "initial_pose": "front",
+      "random_start": true,
+      "interactable": false,
+      "interaction": "",
+      "interact_range": 120
+    },
+    {
+      "id": "baraja",
+      "display_name": "바라자",
+      "height_ratio": 1.18,
+      "visual_scale_multiplier": 1.0,
+      "sheet_dir": "assets/sprites/npcs/baraja",
+      "clips": [
+        {
+          "name": "idle",
+          "frames": 4,
+          "duration": 2.4,
+          "loop": true
+        }
+      ],
+      "face_player": true,
+      "three_way": false,
+      "initial_pose": "front",
+      "random_start": true,
+      "interactable": false,
+      "interaction": "",
+      "interact_range": 120
     }
   ]
 }

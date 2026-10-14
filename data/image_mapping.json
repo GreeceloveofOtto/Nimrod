@@ -644,5 +644,18 @@
   "assets/sprites/enemies/zu/death.png": "assets/sprites/enemies/zu/death.webp",
   "assets/props/utnapishtim_blood.png": "assets/props/utnapishtim_blood.webp",
   "assets/backgrounds/tiamat/entity.png": "assets/backgrounds/tiamat/entity.webp",
-  "assets/backgrounds/hwanira/plaza.png": "assets/backgrounds/hwanira/plaza.webp"
+  "assets/backgrounds/hwanira/plaza.png": "assets/backgrounds/hwanira/plaza.webp",
+  "assets/sprites/npcs/tusa/idle.png": "assets/sprites/npcs/tusa/idle.webp",
+  "assets/sprites/npcs/gudarz/idle.png": "assets/sprites/npcs/gudarz/idle.webp",
+  "assets/sprites/npcs/gaevani/idle.png": "assets/sprites/npcs/gaevani/idle.webp",
+  "assets/sprites/npcs/baraja/idle.png": "assets/sprites/npcs/baraja/idle.webp",
+  "assets/sprites/player/siyavash_dagger/attack_1.png": "assets/sprites/player/siyavash_dagger/attack_1.webp",
+  "assets/sprites/player/siyavash_dagger/attack_2.png": "assets/sprites/player/siyavash_dagger/attack_2.webp",
+  "assets/sprites/player/siyavash_dagger/attack_3.png": "assets/sprites/player/siyavash_dagger/attack_3.webp",
+  "assets/sprites/player/siyavash_dagger/attack_4.png": "assets/sprites/player/siyavash_dagger/attack_4.webp",
+  "assets/sprites/player/siyavash_dagger/attack_5.png": "assets/sprites/player/siyavash_dagger/attack_5.webp",
+  "assets/sprites/npcs/pariburz/idle.png": "assets/sprites/npcs/pariburz/idle.webp",
+  "assets/sprites/npcs/laodastahma/idle.png": "assets/sprites/npcs/laodastahma/idle.webp",
+  "assets/sprites/npcs/laodastahma/idle_front.png": "assets/sprites/npcs/laodastahma/idle_front.webp",
+  "assets/sprites/npcs/laodastahma/give_dagger.png": "assets/sprites/npcs/laodastahma/give_dagger.webp"
 }

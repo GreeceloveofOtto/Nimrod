@@ -18,6 +18,7 @@ var skill_slot: Panel
 var skill_cover: ColorRect
 var debuff_label: Label
 var controls: Label
+var dagger_icon: TextureRect
 
 func _ready() -> void:
     add_to_group("game_hud")
@@ -87,6 +88,13 @@ func _ready() -> void:
     skill_cover.color = Color(0,0,0,.65)
     skill_cover.position = Vector2(2,2)
     skill_slot.add_child(skill_cover)
+    dagger_icon = TextureRect.new()
+    dagger_icon.position = Vector2(280, 26)
+    dagger_icon.size = Vector2(32, 32)
+    dagger_icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+    dagger_icon.texture = load("res://assets/ui/dagger_icon.webp")
+    dagger_icon.visible = false
+    add_child(dagger_icon)
 
 func bind_player(value: NimrodPlayer) -> void:
     if debuff_label==null:
@@ -105,10 +113,11 @@ func _process(_delta: float) -> void:
     skill_slot.position = Vector2(18,142) if get_node("/root/Rampage").unlocked() else Vector2(28,90)
     if not is_instance_valid(player) or hp_fill == null:
         return
+    dagger_icon.visible = player.weapon == "dagger" and get_node("/root/GameState").active_character == "siyavash"
     var stage_key: String = str(get_node("/root/Story").stage())
     story.text = str(config.get("story_by_stage",{}).get(stage_key,config.get("story","")))
     hp_fill.size.x = _ui_rect("hp_fill").size.x * clampf(float(player.hp) / float(player.get_max_hp()), 0.0, 1.0)
-    controls.text = str(ui.get("controls_text", "")).replace("{weapon}", "J " + {"none":"공격 없음", "staff":"지팡이", "axe":"도끼"}.get(player.weapon, "공격 없음"))
+    controls.text = str(ui.get("controls_text", "")).replace("{weapon}", "J " + {"none":"공격 없음", "staff":"지팡이", "axe":"도끼", "dagger":"천륜의 단검 5연타"}.get(player.weapon, "공격 없음"))
     if get_node("/root/GameState").active_character=="siyavash":
         controls.text=controls.text.replace("  L 포식", "")
         story.text="라오차차흐라 항성계. 흐와니라 광장을 둘러본다."

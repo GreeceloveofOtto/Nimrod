@@ -411,11 +411,11 @@ func take_shockwave_hit(damage: int, from_pos: Vector2, step: int = 4) -> Dictio
     return _receive_hit(damage, from_pos, step, true)
 
 func _strike_data(step: int, shockwave: bool) -> Dictionary:
-    if shockwave:
-        return player_attack_stats.get("shockwave", {})
     var hero: NimrodPlayer = get_tree().get_first_node_in_group("player") as NimrodPlayer
     var weapon: String = hero.weapon if hero != null else "axe"
     var specification: Dictionary = player_attack_stats.get("weapons", {}).get(weapon, player_attack_stats)
+    if shockwave:
+        return specification.get("shockwave", player_attack_stats.get("shockwave", {}))
     for attack in specification.get("attacks", []):
         if int(attack.get("step", 0)) == step:
             return attack
@@ -428,6 +428,9 @@ func _receive_hit(damage: int, from_pos: Vector2, step: int, shockwave: bool) ->
         return {"blocked": false, "damage_dealt": 0}
     var dealt: int = mini(hp, maxi(0, damage))
     var strike: Dictionary = _strike_data(step, shockwave)
+    var hero: NimrodPlayer = get_tree().get_first_node_in_group("player") as NimrodPlayer
+    if hero != null and hero.weapon == "dagger" and hero.get_meta("dagger_wave", false):
+        strike = hero.shockwave_data
     hp = maxi(0, hp - damage)
     var direction: float = 1.0 if global_position.x >= from_pos.x else -1.0
     velocity.x = direction * float(strike.get("knockback", 0.0)) * float(stats.get("knockback_multiplier", 1.0))

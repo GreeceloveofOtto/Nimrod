@@ -1,0 +1,8 @@
+{
+  "baseline_assets_bytes": 68241491,
+  "baseline_zip_bytes": 68733788,
+  "new_assets_limit_mib": 1.7,
+  "limits_mib": {"laodastahma": 0.35, "tusa": 0.15, "gudarz": 0.15, "gaevani": 0.15, "baraja": 0.15, "pariburz": 0.15, "siyavash_dagger": 0.6, "dagger_icon": 0.02},
+  "zip_target_mib": 62,
+  "stretch_zip_mib": 60
+}

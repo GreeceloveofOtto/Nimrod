@@ -1997,6 +1997,52 @@
           ]
         }
       ]
+    },
+    "laodastahma_talk": {
+      "when": {
+        "all": [
+          "siyavash_started"
+        ]
+      },
+      "flag": "laodastahma_talk_done",
+      "speakers": [
+        "laodastahma",
+        "player"
+      ],
+      "first": [
+        {
+          "speaker": "laodastahma",
+          "text": "시야우와르샨, 그동안 수고했어. 사실 나에게도 힘든 과정이었지."
+        },
+        {
+          "speaker": "laodastahma",
+          "text": "그래서 오늘은 교육을 쉬고, 나와 함께 자불리스탄으로 가자."
+        },
+        {
+          "speaker": "player",
+          "text": "정말요? 드디어, 자불리스탄이 가볼 수 있는 겁니까?"
+        },
+        {
+          "speaker": "laodastahma",
+          "text": "그래, 어서가자. 꽤 먼 길이다."
+        },
+        {
+          "speaker": "laodastahma",
+          "text": "맞다, 참. 지금까지의 과정을 통과했다는 의미에서 주는 선물이다. 내가 예전에 마잔다란에서 얻었던 물건인데, 내 손에는 맞지 않아서 새 것이나 다름없지."
+        }
+      ],
+      "repeat": [
+        {
+          "speaker": "laodastahma",
+          "text": "그래, 어서가자. 꽤 먼 길이다."
+        }
+      ],
+      "on_finish": [
+        {
+          "event": "give_dagger",
+          "when": "first"
+        }
+      ]
     }
   },
   "hold_per_character": 0.05,

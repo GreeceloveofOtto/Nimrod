@@ -62,4 +62,4 @@ func _run() -> void:
     quit(1 if failures else 0)
 
 func any_new(path: String) -> bool:
-    return "/siyavash/" in path or "/ninazu_mother/" in path or "/lilith/" in path or "/zu/" in path
+    return "/siyavash_dagger/" in path or "/laodastahma/" in path or "/tusa/" in path or "/gudarz/" in path or "/gaevani/" in path or "/baraja/" in path or "/pariburz/" in path or "/siyavash/" in path or "/ninazu_mother/" in path or "/lilith/" in path or "/zu/" in path

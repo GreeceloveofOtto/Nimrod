@@ -137,6 +137,13 @@
         "system_laochachahra_selected",
         "siyavash_started"
       ]
+    },
+    {
+      "stage": 21,
+      "flags": [
+        "laodastahma_talk_done",
+        "dagger_acquired"
+      ]
     }
   ],
   "night_color": [

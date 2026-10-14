@@ -1,0 +1,5 @@
+인물 기준 이미지: tusa
+
+Create stationary IDLE 4-frame side view RIGHT sprite strip matching attached Tusa reference: dark red-brown muscular skin, red upright crest, slight upper tusks, bronze leather circular chestdisc, red sash black waist ornaments axe-bladed pole spear. ALL FOUR full-body figures IDENTICAL standing pose, both feet ALWAYS planted flat equal height, absolutely NO walking stepping foot lifting weapon swinging. Only subtle breathing. Shorten upright pole spear so tip just above head, bottom ends beside boots. Strong rose cheek patches. Simplify fine ornament to readable painterly game details. Equal scale identical clothing. ONE horizontal row, large clear magenta margin all around each separated figure; #FF00FF flat background NO shadows text numbers cells background objects.
+
+첨부 장면 중 지정 인물만 참고한다. 다른 인물·막사·화로·배경은 제외한다. 숨겨진 하체는 같은 색의 바지, 갑주 정강이 보호대와 부츠로 설계한다. 생성 기준 이미지는 archive/plaza_dagger_2026-10-14/tusa_reference.png 에 보관하고 실행 ZIP에 넣지 않는다. data/gayomaretan_style.json의 뺨 광질기관 기준을 적용한다.

@@ -1,0 +1,10 @@
+{
+  "icon": "res://assets/ui/dagger_icon.webp",
+  "give_clip_seconds": 0.6,
+  "travel_seconds": 0.6,
+  "glow": "res://assets/fx/npc_light_pool.webp",
+  "name": "천륜의 단검",
+  "acquired_toast": "천륜의 단검을 얻었다",
+  "help_toast": "J: 5연타 콤보",
+  "icon_size": 40
+}

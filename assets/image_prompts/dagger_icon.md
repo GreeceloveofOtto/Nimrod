@@ -1,0 +1,1 @@
+One standalone64x64 game inventory icon: short translucent crystalline Heavenly Wheel Dagger, internally flowing gold silver rose teal indigo violet light, black gold Persian filigree handle; diagonal full blade safe margins, solid #FF00FF background; no particles, shadow, text, watermark. Generated source preserved in archive/plaza_dagger_2026-10-14/dagger_icon_raw.png.

@@ -10,14 +10,14 @@ func _ready() -> void:
 func is_flag(flag: String) -> bool:
     if flag == "night":
         return is_flag("kala_first_defeat") and not is_flag("time_skipped")
-    if flag in ["system_laochachahra_selected","siyavash_started"]:
+    if flag in ["system_laochachahra_selected","siyavash_started","laodastahma_talk_done","dagger_acquired"]:
         return bool(get_node("/root/GameState").siyavash_progress.get(flag,false))
     return bool(get_node("/root/GameState").run_flags.get(flag, false))
 
 func set_flag(flag: String, value: bool = true) -> void:
     if flag.is_empty():
         return
-    if flag in ["system_laochachahra_selected","siyavash_started"]:
+    if flag in ["system_laochachahra_selected","siyavash_started","laodastahma_talk_done","dagger_acquired"]:
         get_node("/root/GameState").siyavash_progress[flag]=value
     else:
         get_node("/root/GameState").run_flags[flag] = value
@@ -62,6 +62,7 @@ func debug_stage(target: int) -> void:
     get_node("/root/GameState").run_flags.erase("bed_blood")
     if target >= 8:
         get_node("/root/GameState").set_weapon("axe")
+    get_node("/root/GameState").siyavash_progress["weapon"] = "dagger" if target >= 21 else "none"
     for key in get_node("/root/GameState").run_flags.keys():
         if str(key).begins_with("story_dialogue_"):
             get_node("/root/GameState").run_flags.erase(key)

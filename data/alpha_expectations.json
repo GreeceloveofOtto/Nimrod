@@ -3253,5 +3253,75 @@
     "mode": "transparent",
     "edge_black_fraction": 0.03,
     "source": "art_manifest"
+  },
+  "assets/ui/dagger_icon.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "generated dagger icon"
+  },
+  "assets/sprites/npcs/gaevani/idle.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "generated plaza hero/dagger"
+  },
+  "assets/sprites/npcs/gudarz/idle.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "generated plaza hero/dagger"
+  },
+  "assets/sprites/npcs/baraja/idle.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "generated plaza hero/dagger"
+  },
+  "assets/sprites/npcs/pariburz/idle.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "generated plaza hero/dagger"
+  },
+  "assets/sprites/npcs/tusa/idle.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "generated plaza hero/dagger"
+  },
+  "assets/sprites/player/siyavash_dagger/attack_1.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "generated plaza hero/dagger"
+  },
+  "assets/sprites/player/siyavash_dagger/attack_2.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "generated plaza hero/dagger"
+  },
+  "assets/sprites/player/siyavash_dagger/attack_3.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "generated plaza hero/dagger"
+  },
+  "assets/sprites/player/siyavash_dagger/attack_4.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "generated plaza hero/dagger"
+  },
+  "assets/sprites/player/siyavash_dagger/attack_5.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "generated plaza hero/dagger"
+  },
+  "assets/sprites/npcs/laodastahma/idle.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "generated plaza hero/dagger"
+  },
+  "assets/sprites/npcs/laodastahma/idle_front.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "generated plaza hero/dagger"
+  },
+  "assets/sprites/npcs/laodastahma/give_dagger.webp": {
+    "mode": "transparent",
+    "edge_black_fraction": 0.03,
+    "source": "generated plaza hero/dagger"
   }
 }
