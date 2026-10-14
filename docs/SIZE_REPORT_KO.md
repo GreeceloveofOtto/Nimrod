@@ -8,7 +8,7 @@
 |12단계|60.54|60.93|
 |13단계 훔바바|65.13|65.60|
 |13단계 시야우와르샨|65.08|65.55|
-| 이번 영웅·단검 |65.638|66.142|
+| 이번 영웅·단검 |65.638|66.143|
 
 | 신규 에셋 | B | MiB | 상한 MiB |
 |---|---:|---:|---:|
@@ -72,3 +72,26 @@
 |플레이어|15,666,602|15,886,406|+219,804|
 |배경|7,141,024|7,042,950|-98,074|
 |오디오|1,879,737|1,879,737|+0|
+
+## 패키지 용량 목표 미달 후보
+
+- assets/props/doors/castle_great_gate.webp: 0.85MiB, 참조/SSIM 재검토 후 예상 0.08MiB 절감.
+- assets/backgrounds/hwanira/plaza.webp: 0.69MiB, 참조/SSIM 재검토 후 예상 0.07MiB 절감.
+- assets/backgrounds/deathsea/stars_tile.webp: 0.52MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
+- assets/sprites/enemies/gugalanna/walk.webp: 0.51MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
+- assets/sprites/enemies/gugalanna/idle.webp: 0.48MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
+- assets/sprites/enemies/gugalanna/death.webp: 0.46MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
+- assets/backgrounds/cedar/mid_trunks_tile_2d.webp: 0.46MiB, 참조/SSIM 재검토 후 예상 0.05MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/phase_transition.webp: 0.44MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/death.webp: 0.43MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/collapse.webp: 0.41MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/walk.webp: 0.38MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/whip_recovery.webp: 0.36MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/turn.webp: 0.36MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/gugalanna/turn.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/backgrounds/homeroad/mid_district_tile.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.04MiB 절감.
+- assets/sprites/enemies/gugalanna/rake_windup.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/idle.webp: 0.35MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/summon.webp: 0.34MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
+- assets/sprites/enemies/gugalanna/rake.webp: 0.34MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.
+- assets/sprites/enemies/kala_ushumgal/roar_loop.webp: 0.33MiB, 참조/SSIM 재검토 후 예상 0.03MiB 절감.

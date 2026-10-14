@@ -531,6 +531,13 @@ func _update_attack(delta: float) -> void:
     var before: float = attack_clock
     attack_clock += delta * modifiers.multiplier("attack_speed")
     var tuning: Dictionary = attack_data[attack_step]
+    if tuning.has("trail_fx") and before < float(tuning["active_start"]) and attack_clock >= float(tuning["active_start"]):
+        var offset: Array = tuning["trail_offset"]
+        var trail: Node2D = AnurLightProjectile.spawn_fx(get_parent(), global_position + Vector2(facing * float(offset[0]), float(offset[1])), str(tuning["trail_fx"]))
+        trail.set_meta("dagger_trail", true)
+        trail.scale *= Vector2(facing * float(tuning["trail_scale"][0]), float(tuning["trail_scale"][1]))
+        var color: Array = tuning["fx_color"]
+        trail.modulate = Color(float(color[0]), float(color[1]), float(color[2]), float(color[3]))
     if before < float(tuning["active_end"]) and attack_clock >= float(tuning["active_start"]):
         _resolve_axe_hit()
         if action != "attack" or attack_generation != generation:
@@ -623,11 +630,13 @@ func _resolve_shockwave() -> void:
     shockwave_rect = _configured_hitbox(shockwave_data)
     if weapon == "dagger":
         attack_already_hit.clear()
-        var wave: Node2D = AnurLightProjectile.spawn_fx(get_parent(), global_position + Vector2(facing * 90, -20), str(shockwave_data["fx"]))
+        var wave_offset: Array = shockwave_data["fx_offset"]
+        var wave: Node2D = AnurLightProjectile.spawn_fx(get_parent(), global_position + Vector2(facing * float(wave_offset[0]), float(wave_offset[1])), str(shockwave_data["fx"]))
         wave.scale.x *= facing
-        wave.modulate = Color(.75, 1, 1, 1)
+        var wave_color: Array = shockwave_data["fx_color"]
+        wave.modulate = Color(float(wave_color[0]), float(wave_color[1]), float(wave_color[2]), float(wave_color[3]))
         var wave_tween := wave.create_tween()
-        wave_tween.tween_property(wave, "global_position:x", wave.global_position.x + facing * 60, .2)
+        wave_tween.tween_property(wave, "global_position:x", wave.global_position.x + facing * float(shockwave_data["fx_travel"]), float(shockwave_data["fx_seconds"]))
     _play_shared_sfx("shockwave")
     debug_rect = shockwave_rect if debug_hitboxes else debug_rect
     hit_rectangle.size = shockwave_rect.size

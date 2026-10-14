@@ -323,7 +323,22 @@
             "top": -115,
             "width": 65,
             "height": 95
-          }
+          },
+          "fx_color": [
+            0.85,
+            0.94,
+            1,
+            1
+          ],
+          "trail_fx": "anur_light_projectile",
+          "trail_offset": [
+            45,
+            -78
+          ],
+          "trail_scale": [
+            0.6,
+            0.5
+          ]
         },
         {
           "step": 2,
@@ -344,7 +359,22 @@
             "top": -115,
             "width": 68,
             "height": 95
-          }
+          },
+          "fx_color": [
+            1,
+            0.72,
+            0.9,
+            1
+          ],
+          "trail_fx": "anur_light_projectile",
+          "trail_offset": [
+            45,
+            -78
+          ],
+          "trail_scale": [
+            0.6,
+            0.5
+          ]
         },
         {
           "step": 3,
@@ -365,7 +395,22 @@
             "top": -115,
             "width": 82,
             "height": 95
-          }
+          },
+          "fx_color": [
+            0.6,
+            1,
+            0.9,
+            1
+          ],
+          "trail_fx": "anur_light_projectile",
+          "trail_offset": [
+            45,
+            -78
+          ],
+          "trail_scale": [
+            0.6,
+            0.5
+          ]
         },
         {
           "step": 4,
@@ -386,7 +431,22 @@
             "top": -115,
             "width": 75,
             "height": 95
-          }
+          },
+          "fx_color": [
+            0.85,
+            0.7,
+            1,
+            1
+          ],
+          "trail_fx": "anur_light_projectile",
+          "trail_offset": [
+            45,
+            -78
+          ],
+          "trail_scale": [
+            0.6,
+            0.5
+          ]
         },
         {
           "step": 5,
@@ -407,7 +467,22 @@
             "top": -115,
             "width": 78,
             "height": 95
-          }
+          },
+          "fx_color": [
+            1,
+            0.94,
+            0.78,
+            1
+          ],
+          "trail_fx": "anur_light_projectile",
+          "trail_offset": [
+            45,
+            -78
+          ],
+          "trail_scale": [
+            0.6,
+            0.5
+          ]
         }
       ],
       "shockwave_step": 5,
@@ -427,7 +502,19 @@
           "width": 160,
           "height": 34
         },
-        "fx": "anur_light_projectile"
+        "fx": "anur_light_projectile",
+        "fx_color": [
+          0.75,
+          1,
+          1,
+          1
+        ],
+        "fx_offset": [
+          90,
+          -20
+        ],
+        "fx_travel": 60,
+        "fx_seconds": 0.2
       }
     }
   }

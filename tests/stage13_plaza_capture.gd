@@ -24,7 +24,8 @@ func _run() -> void:
     _check(manager.current_level.npcs.size() == 6, "Six hero overview")
     state.set_weapon("dagger")
     for step in range(1,6):
-        hero._show_clip("attack_"+str(step), float(hero.attack_data[step]["active_start"]))
+        hero._begin_attack(step)
+        hero._update_attack(float(hero.attack_data[step]["active_start"]))
         _check(hero.visual.region_filter_clip_enabled and hero.visual.texture != null, "Dagger attack renders " + str(step))
         if native:
             await process_frame

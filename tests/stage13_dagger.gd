@@ -84,6 +84,10 @@ func _run() -> void:
     hero.facing = 1
     hero._begin_attack(5)
     hero._update_attack(.16)
+    var trail_count := 0
+    for effect: Node in hero.get_parent().get_children():
+        if effect.get_meta("dagger_trail", false):trail_count += 1
+    _check(trail_count > 0, "Generated light FX reused for active dagger trail")
     print("DAGGER_DAMAGE_FIXTURE: hp=", target.hp, " hero=", hero.global_position, " target=", target.get_hurt_rect(), " hit=", hero._attack_rect(), " action=", hero.action)
     _check(target.hp == 978, "Final dagger strike deals22")
     hero._update_attack(.14)

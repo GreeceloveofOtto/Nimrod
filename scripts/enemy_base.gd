@@ -467,6 +467,10 @@ func _spawn_hit_spark(from_pos: Vector2) -> void:
     var effect: Node2D = IMAGE_EFFECT.new()
     effect.configure(HIT_SPARK_PATH, HIT_SPARK_FRAME_SIZE, HIT_SPARK_FRAMES, float(common.get("hit_spark_seconds", 0.15)), false, Vector2(HIT_SPARK_FRAME_SIZE) * 0.5)
     effect.scale = Vector2.ONE * float(common.get("hit_spark_scale", 0.24))
+    var hero: NimrodPlayer = get_tree().get_first_node_in_group("player") as NimrodPlayer
+    if hero != null and hero.weapon == "dagger" and hero.attack_data.has(hero.attack_step):
+        var color: Array = hero.attack_data[hero.attack_step]["fx_color"]
+        effect.modulate = Color(float(color[0]), float(color[1]), float(color[2]), float(color[3]))
     effect.z_index = 20
     var scene: Node = get_tree().current_scene
     if scene == null:
