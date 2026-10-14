@@ -1,0 +1,261 @@
+{
+  "regions": [
+    {
+      "id": "landing",
+      "name": "착륙 절벽",
+      "number": 1,
+      "palette": "65788c",
+      "bgm": "cedar_forest",
+      "atlas": "res://assets/world/zabulistan/landing/terrain.webp",
+      "background": "res://assets/backgrounds/deathsea/stars_tile.webp",
+      "grid_block": [
+        0,
+        0
+      ],
+      "enemy_recipe": [
+        "cedar_sentinel",
+        "cedar_archer",
+        "cedar_wisp"
+      ],
+      "props": [
+        "res://assets/props/ruin_pillar_b.webp",
+        "res://assets/props/large_rubble_a.webp",
+        "res://assets/props/small_rock.webp",
+        "res://assets/props/bone_pile.webp",
+        "res://assets/props/brazier.webp"
+      ],
+      "wall": "res://assets/world/zabulistan/landing/wall.webp"
+    },
+    {
+      "id": "forest",
+      "name": "검은 숲",
+      "number": 2,
+      "palette": "25463e",
+      "bgm": "cedar_forest",
+      "atlas": "res://assets/world/zabulistan/forest/terrain.webp",
+      "background": "res://assets/backgrounds/deathsea/stars_tile.webp",
+      "grid_block": [
+        1,
+        0
+      ],
+      "enemy_recipe": [
+        "cedar_sentinel",
+        "cedar_archer",
+        "cedar_demon"
+      ],
+      "props": [
+        "res://assets/props/dead_tree.webp",
+        "res://assets/props/hanging_vines.webp",
+        "res://assets/props/bone_pile.webp",
+        "res://assets/props/small_rock.webp",
+        "res://assets/props/shrub.webp"
+      ],
+      "wall": "res://assets/world/zabulistan/forest/wall.webp"
+    },
+    {
+      "id": "fortress",
+      "name": "폐허 요새",
+      "number": 3,
+      "palette": "65504a",
+      "bgm": "cedar_boss",
+      "atlas": "res://assets/world/zabulistan/fortress/terrain.webp",
+      "background": "res://assets/backgrounds/deathsea/stars_tile.webp",
+      "grid_block": [
+        2,
+        0
+      ],
+      "enemy_recipe": [
+        "cedar_sentinel",
+        "cedar_archer",
+        "cedar_colossus"
+      ],
+      "props": [
+        "res://assets/props/ruin_pillar_b.webp",
+        "res://assets/props/large_rubble_a.webp",
+        "res://assets/props/small_rock.webp",
+        "res://assets/props/bone_pile.webp",
+        "res://assets/props/brazier.webp"
+      ],
+      "wall": "res://assets/world/zabulistan/fortress/wall.webp"
+    },
+    {
+      "id": "ridge",
+      "name": "산 능선",
+      "number": 4,
+      "palette": "7390a2",
+      "bgm": "deathsea_drone",
+      "atlas": "res://assets/world/zabulistan/ridge/terrain.webp",
+      "background": "res://assets/backgrounds/deathsea/stars_tile.webp",
+      "grid_block": [
+        3,
+        0
+      ],
+      "enemy_recipe": [
+        "cedar_wisp",
+        "cedar_demon",
+        "cedar_colossus"
+      ],
+      "props": [
+        "res://assets/props/ruin_pillar_b.webp",
+        "res://assets/props/large_rubble_a.webp",
+        "res://assets/props/small_rock.webp",
+        "res://assets/props/bone_pile.webp",
+        "res://assets/props/brazier.webp"
+      ],
+      "wall": "res://assets/world/zabulistan/ridge/wall.webp"
+    },
+    {
+      "id": "mine",
+      "name": "무광 갱도",
+      "number": 5,
+      "palette": "233c58",
+      "bgm": "deathsea_drone",
+      "atlas": "res://assets/world/zabulistan/mine/terrain.webp",
+      "background": "res://assets/backgrounds/deathsea/stars_tile.webp",
+      "grid_block": [
+        4,
+        0
+      ],
+      "enemy_recipe": [
+        "cedar_wisp",
+        "cedar_demon"
+      ],
+      "props": [
+        "res://assets/props/ruin_pillar_b.webp",
+        "res://assets/props/large_rubble_a.webp",
+        "res://assets/props/small_rock.webp",
+        "res://assets/props/bone_pile.webp",
+        "res://assets/props/brazier.webp"
+      ],
+      "wall": "res://assets/world/zabulistan/mine/wall.webp"
+    },
+    {
+      "id": "village",
+      "name": "은신 마을",
+      "number": 6,
+      "palette": "665b4d",
+      "bgm": "villa_calm",
+      "atlas": "res://assets/world/zabulistan/village/terrain.webp",
+      "background": "res://assets/backgrounds/deathsea/stars_tile.webp",
+      "grid_block": [
+        2,
+        1
+      ],
+      "enemy_recipe": [],
+      "props": [
+        "res://assets/props/ruin_pillar_b.webp",
+        "res://assets/props/large_rubble_a.webp",
+        "res://assets/props/small_rock.webp",
+        "res://assets/props/bone_pile.webp",
+        "res://assets/props/brazier.webp"
+      ],
+      "wall": "res://assets/world/zabulistan/village/wall.webp"
+    },
+    {
+      "id": "marsh",
+      "name": "황록 늪",
+      "number": 7,
+      "palette": "5a6630",
+      "bgm": "cedar_forest",
+      "atlas": "res://assets/world/zabulistan/marsh/terrain.webp",
+      "background": "res://assets/backgrounds/deathsea/stars_tile.webp",
+      "grid_block": [
+        0,
+        1
+      ],
+      "enemy_recipe": [
+        "cedar_sentinel",
+        "cedar_wisp",
+        "cedar_demon"
+      ],
+      "props": [
+        "res://assets/props/dead_tree.webp",
+        "res://assets/props/hanging_vines.webp",
+        "res://assets/props/bone_pile.webp",
+        "res://assets/props/small_rock.webp",
+        "res://assets/props/shrub.webp"
+      ],
+      "wall": "res://assets/world/zabulistan/marsh/wall.webp"
+    },
+    {
+      "id": "crystal",
+      "name": "수정 협곡",
+      "number": 8,
+      "palette": "664677",
+      "bgm": "deathsea_drone",
+      "atlas": "res://assets/world/zabulistan/crystal/terrain.webp",
+      "background": "res://assets/backgrounds/deathsea/stars_tile.webp",
+      "grid_block": [
+        1,
+        1
+      ],
+      "enemy_recipe": [
+        "cedar_archer",
+        "cedar_colossus",
+        "cedar_wisp"
+      ],
+      "props": [
+        "res://assets/props/ruin_pillar_b.webp",
+        "res://assets/props/large_rubble_a.webp",
+        "res://assets/props/small_rock.webp",
+        "res://assets/props/bone_pile.webp",
+        "res://assets/props/brazier.webp"
+      ],
+      "wall": "res://assets/world/zabulistan/crystal/wall.webp"
+    },
+    {
+      "id": "skywalk",
+      "name": "하늘 잔도",
+      "number": 9,
+      "palette": "41435f",
+      "bgm": "cedar_boss",
+      "atlas": "res://assets/world/zabulistan/skywalk/terrain.webp",
+      "background": "res://assets/backgrounds/deathsea/stars_tile.webp",
+      "grid_block": [
+        3,
+        1
+      ],
+      "enemy_recipe": [
+        "cedar_wisp",
+        "cedar_archer",
+        "cedar_demon"
+      ],
+      "props": [
+        "res://assets/props/ruin_pillar_b.webp",
+        "res://assets/props/large_rubble_a.webp",
+        "res://assets/props/small_rock.webp",
+        "res://assets/props/bone_pile.webp",
+        "res://assets/props/brazier.webp"
+      ],
+      "wall": "res://assets/world/zabulistan/skywalk/wall.webp"
+    },
+    {
+      "id": "deep",
+      "name": "라오차흐 심층",
+      "number": 10,
+      "palette": "533e66",
+      "bgm": "cedar_boss",
+      "atlas": "res://assets/world/zabulistan/deep/terrain.webp",
+      "background": "res://assets/backgrounds/deathsea/stars_tile.webp",
+      "grid_block": [
+        4,
+        1
+      ],
+      "enemy_recipe": [
+        "cedar_sentinel",
+        "cedar_archer",
+        "cedar_colossus",
+        "cedar_demon",
+        "cedar_wisp"
+      ],
+      "props": [
+        "res://assets/props/ruin_pillar_b.webp",
+        "res://assets/props/large_rubble_a.webp",
+        "res://assets/props/small_rock.webp",
+        "res://assets/props/bone_pile.webp",
+        "res://assets/props/brazier.webp"
+      ],
+      "wall": "res://assets/world/zabulistan/deep/wall.webp"
+    }
+  ]
+}

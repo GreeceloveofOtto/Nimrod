@@ -1,4 +1,4 @@
-ALPHA CLEANLINESS: 665 images, 0 failures
+ALPHA CLEANLINESS: 701 images, 0 failures
 assets/backgrounds/castle/castle_f1_hall.webp	PASS
 assets/backgrounds/castle/castle_f2_sanctum.webp	PASS
 assets/backgrounds/castle/castle_f3_kitchen.webp	PASS
@@ -664,3 +664,39 @@ assets/sprites/player/siyavash_dagger/attack_5.webp	PASS
 assets/sprites/npcs/laodastahma/idle.webp	PASS
 assets/sprites/npcs/laodastahma/idle_front.webp	PASS
 assets/sprites/npcs/laodastahma/give_dagger.webp	PASS
+assets/world/zabulistan/forest/terrain.webp	PASS
+assets/world/zabulistan/forest/wall.webp	PASS
+assets/world/zabulistan/mine/terrain.webp	PASS
+assets/world/zabulistan/mine/wall.webp	PASS
+assets/world/zabulistan/fortress/terrain.webp	PASS
+assets/world/zabulistan/fortress/wall.webp	PASS
+assets/world/zabulistan/village/terrain.webp	PASS
+assets/world/zabulistan/village/wall.webp	PASS
+assets/world/zabulistan/landing/terrain.webp	PASS
+assets/world/zabulistan/landing/wall.webp	PASS
+assets/world/zabulistan/ridge/terrain.webp	PASS
+assets/world/zabulistan/ridge/wall.webp	PASS
+assets/world/zabulistan/crystal/terrain.webp	PASS
+assets/world/zabulistan/crystal/wall.webp	PASS
+assets/world/zabulistan/skywalk/terrain.webp	PASS
+assets/world/zabulistan/skywalk/wall.webp	PASS
+assets/world/zabulistan/marsh/terrain.webp	PASS
+assets/world/zabulistan/marsh/wall.webp	PASS
+assets/world/zabulistan/deep/terrain.webp	PASS
+assets/world/zabulistan/deep/wall.webp	PASS
+assets/sprites/player/siyavash/dash.webp	PASS
+assets/sprites/player/siyavash/wall_cling.webp	PASS
+assets/sprites/player/siyavash/wall_jump.webp	PASS
+assets/sprites/player/siyavash/crawl.webp	PASS
+assets/world/shared/life.webp	PASS
+assets/world/shared/gate.webp	PASS
+assets/world/shared/crumble.webp	PASS
+assets/world/shared/crystal.webp	PASS
+assets/world/shared/switch.webp	PASS
+assets/world/shared/spikes.webp	PASS
+assets/world/shared/falling_rock.webp	PASS
+assets/world/shared/moving_platform.webp	PASS
+assets/world/shared/altar.webp	PASS
+assets/world/shared/portal.webp	PASS
+assets/world/shared/lore_item.webp	PASS
+assets/world/shared/poison.webp	PASS

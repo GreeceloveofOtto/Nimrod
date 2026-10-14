@@ -121,6 +121,9 @@ func _process(_delta: float) -> void:
     if get_node("/root/GameState").active_character=="siyavash":
         controls.text=controls.text.replace("  L 포식", "")
         story.text="라오차차흐라 항성계. 흐와니라 광장을 둘러본다."
+    if get_node("/root/World").active:
+        story.modulate.a=0
+        controls.text += "  Q 질주  F 시야  R 빛  M 지도"
     var scene: Node=get_node("/root/SceneManager").current_level
     if is_instance_valid(scene) and scene.level_id=="HuluppuCrown":
         story.modulate.a=0
@@ -138,7 +141,7 @@ func _process(_delta: float) -> void:
         controls.text="A/D 이동  Space 낮은 점프  E 상호작용  J 할퀴기/물기  K 꼬리  R 불길 숨  F5 저장 포함 초기화"
     var boss: EnemyBase
     for enemy in get_tree().get_nodes_in_group("enemies"):
-        if enemy is KalaUshumgal or enemy is Humbaba or enemy is Gugalanna:
+        if enemy is KalaUshumgal or enemy is Humbaba or enemy is Gugalanna or enemy.get_meta("world_boss",false):
             boss = enemy
     boss_panel.visible = boss != null and bool(boss.get("battle_started")) and not bool(boss.get("battle_finished"))
     if boss_panel.visible:

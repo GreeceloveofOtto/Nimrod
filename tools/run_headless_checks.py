@@ -42,13 +42,16 @@ def main():
   results.append(run(godot,['--import'],'import',out,a.timeout))
   if not results[-1]['passed']:return 1
  # Check-only must receive a script; a bare --check-only never checks this project.
- scripts=sorted((ROOT/'scripts').glob('*.gd'))
+ scripts=sorted((ROOT/'scripts').rglob('*.gd'))
  with ThreadPoolExecutor(max_workers=a.jobs) as pool:
   results.extend(pool.map(lambda script:run(godot,['--check-only','--script','res://'+str(script.relative_to(ROOT))],'parse_'+script.stem,out,a.timeout),scripts))
  tests=[ROOT/'tests'/t for t in a.test] if a.test else sorted((ROOT/'tests').glob('*.gd'))
  # Test trees and run flags live in separate engine processes. The two disk
  # reports (grounding and stuck fuzz) have distinct paths; imports stay serial.
  with ThreadPoolExecutor(max_workers=a.jobs) as pool:
-  results.extend(pool.map(lambda test:run(godot,['--script','res://'+str(test.relative_to(ROOT))],test.stem,out,a.timeout),tests))
+  results.extend(pool.map(lambda test:run(godot,['--script','res://'+str(test.relative_to(ROOT))],test.stem,out,a.timeout),[t for t in tests if t.stem!='stage14_performance']))
+ # Frame-time assertions require an isolated CPU measurement, not competing tests.
+ for test in tests:
+  if test.stem=='stage14_performance':results.append(run(godot,['--script','res://'+str(test.relative_to(ROOT))],test.stem,out,a.timeout))
  (out/'results.json').write_text(json.dumps(results,indent=2));ok=all(r['passed'] for r in results);print(f'HEADLESS: {sum(r["passed"] for r in results)}/{len(results)} passed');return 0 if ok else 1
 if __name__=='__main__':sys.exit(main())

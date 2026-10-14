@@ -99,6 +99,7 @@ func read_save() -> Dictionary:
     if not result.is_empty():
         last_diagnostic = "SAVE RECOVERY — 백업에서 복구"
         print(last_diagnostic)
+        if not get_node("/root/World").saving_allowed():return result
         var recovered := FileAccess.open(save_path+".recovery.tmp",FileAccess.WRITE)
         if recovered != null:
             recovered.store_string(JSON.stringify(result))
@@ -108,6 +109,7 @@ func read_save() -> Dictionary:
     return result
 
 func can_save() -> bool:
+    if not get_node("/root/World").saving_allowed():return false
     if get_node("/root/HumbabaForm").engaged():return false
     var manager: Node = get_node("/root/SceneManager")
     return is_instance_valid(manager.player) and is_instance_valid(manager.current_level) and manager.current_level.level_id == "CastleF2" and manager.player.action != "dead" and not manager.is_transitioning and not manager.player_locked and not get_node("/root/Dialogue").active and not get_node("/root/Cutscene").active and not _boss_active()
@@ -122,12 +124,14 @@ func snapshot_data() -> Dictionary:
     return {"story_stage":get_node("/root/Story").stage(),"active_character":get_node("/root/GameState").active_character,"siyavash_progress":get_node("/root/GameState").siyavash_progress.duplicate(true),"nimrod_status":get_node("/root/GameState").nimrod_status.duplicate(true),"choice_pending":bool(get_node("/root/GameState").run_flags.get("choice_pending",false)),"selected_system":str(get_node("/root/GameState").run_flags.get("selected_system","")),"version":1,"level":manager.current_level.level_id,"position":[hero.global_position.x,hero.global_position.y],"facing":hero.facing,"hp":hero.hp,"run_flags":get_node("/root/GameState").run_flags.duplicate(true),"rampage":get_node("/root/Rampage").value(),"cooldowns":{"anur_light":0,"devour":0},"timestamp":Time.get_unix_time_from_system()}
 
 func save_game(arrival_checkpoint: bool = false) -> bool:
+    if not get_node("/root/World").saving_allowed():return false
     var destination_ok: bool = arrival_checkpoint and get_node("/root/Story").is_flag("tiamat_arrived") and get_node("/root/SceneManager").current_level.level_id == "TiamatZone" and not get_node("/root/Cutscene").active and not get_node("/root/Dialogue").active and not get_node("/root/SceneManager").is_transitioning and not get_node("/root/SceneManager").player_locked
     if not can_save() and not destination_ok:
         return false
     return _write_snapshot(arrival_checkpoint)
 
 func _write_snapshot(quiet: bool) -> bool:
+    if not get_node("/root/World").saving_allowed():return false
     if get_node("/root/HumbabaForm").engaged():return false
     var manager: Node = get_node("/root/SceneManager")
     var hero: NimrodPlayer = manager.player
@@ -216,6 +220,7 @@ func resume(full_health: bool = false) -> bool:
     return true
 
 func save_checkpoint(reason: String) -> bool:
+    if not get_node("/root/World").saving_allowed():return false
     var manager: Node = get_node("/root/SceneManager")
     if not is_instance_valid(manager.current_level) or manager.is_transitioning or get_node("/root/Dialogue").active or get_node("/root/Cutscene").active:
         return false

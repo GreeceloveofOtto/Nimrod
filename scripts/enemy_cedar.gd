@@ -27,6 +27,9 @@ func _roll() -> float:
     return forced_roll if forced_roll >= 0.0 else randf()
 
 func _physics_process(delta: float) -> void:
+    if get_meta("world_pending_fuse",false) and get_node("/root/World").request_attack(self):
+        remove_meta("world_pending_fuse")
+        _start_fuse()
     guard_broken_left = maxf(0, guard_broken_left - delta)
     hop_cooldown = maxf(0, hop_cooldown - delta)
     guard_left = maxf(0, guard_left - delta)
@@ -67,6 +70,7 @@ func _update_idle(delta: float) -> void:
                     drop_pending = true
                     _request_turn(desired)
                     return
+                if not get_node("/root/World").request_attack(self):return
                 phase = "tell"
                 _set_state(State.WINDUP)
                 _play_sfx("demon_screech")
@@ -126,6 +130,7 @@ func _request_turn(direction: int) -> void:
     super._request_turn(direction)
 
 func _begin_attack() -> void:
+    if not get_node("/root/World").request_attack(self):return
     if enemy_id == "cedar_colossus":
         attack_stats = stats["attacks"][next_pattern % 2]
         next_pattern += 1
@@ -291,6 +296,9 @@ func _die() -> void:
         super._die()
 
 func _start_fuse() -> void:
+    if not get_node("/root/World").request_attack(self):
+        set_meta("world_pending_fuse",true)
+        return
     if phase == "fuse":
         return
     hp = 0

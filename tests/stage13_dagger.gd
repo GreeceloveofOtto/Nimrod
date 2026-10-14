@@ -45,10 +45,16 @@ func _run() -> void:
     var teacher: NPC = manager.current_level.npcs["laodastahma"]
     await dialogue.give_dagger(teacher, hero)
     _check(dialogue.dagger_gift_count == 1, "Gift duplicate rejected")
+    root.get_node("World").timing_scale=.001
     await dialogue.play_interaction("laodastahma_talk")
     _check(dialogue.dagger_gift_count == 1 and dialogue.name_label.text == "라오다스타흐마", "Repeat remains available without duplicate gift")
+    await _wait(.05)
+    while cutscene_node.active:await process_frame
+    _check(root.get_node("World").active,"Repeat travel starts world")
+    await _go("HwaniraPlaza")
+    hero.position=Vector2(1890,880)
     _check(hero.textures["idle"] == load("res://assets/sprites/player/siyavash/idle.webp") and hero.textures["roll"] == load("res://assets/sprites/player/siyavash/roll.webp"), "Shared nonattack textures use ResourceLoader cache")
-    _check(hero.clip_data.size() == 22 and hero.clip_data.has("attack_5"), "Five attacks plus seventeen reused clips")
+    _check(hero.clip_data.size() == 26 and hero.clip_data.has("attack_5"), "Five attacks plus twenty-one reused movement clips")
     var values: Array = [14,14,16,18,22]
     var durations: Array = [.24,.24,.28,.30,.42]
     var total := 0

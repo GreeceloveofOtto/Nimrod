@@ -1,5 +1,8 @@
 config_version=5
 
+[editor]
+import/use_multiple_threads=false
+
 [application]
 config/name="NIMROD | Lugal Castle and Uruk"
 config/use_custom_user_dir=true
@@ -25,6 +28,7 @@ Choice="*res://scripts/choice_menu.gd"
 DebugTeleport="*res://scripts/debug_teleport.gd"
 Odyssey="*res://scripts/odyssey.gd"
 HumbabaForm="*res://scripts/humbaba_form.gd"
+World="*res://scripts/world/world_manager.gd"
 
 [audio]
 buses/default_bus_layout="res://default_bus_layout.tres"
@@ -106,4 +110,19 @@ debug_surface={
 skill_devour={
 "deadzone":0.2,
 "events":[Object(InputEventKey,"physical_keycode":76)]
+}
+
+dash={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":81)]
+}
+
+ability_vision={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":70)]
+}
+
+map_toggle={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":77)]
 }

@@ -9,6 +9,7 @@ func _unhandled_input(event: InputEvent) -> void:
     var key := event as InputEventKey
     if not key.pressed or key.echo or get_tree().paused or get_node("/root/Dialogue").active or get_node("/root/SceneManager").is_transitioning or get_node("/root/SceneManager").player_locked:
         return
+    if key.ctrl_pressed:return # Reserved for isolated room-world debug shortcuts.
     if key.physical_keycode == KEY_F9 and key.shift_pressed:
         await odyssey_debug("plaza")
         get_node("/root/SceneManager").player.global_position = Vector2(1890, 880)

@@ -91,6 +91,9 @@ func go_to(level_id: String, spawn_name: String, options: Dictionary = {}) -> bo
         push_warning("Unknown level: " + level_id)
         _cancel_entry()
         return false
+    if get_node("/root/World").active:
+        get_node("/root/World").leave()
+        current_level = null
     var definition: Dictionary = levels[level_id]
     var packed := load(str(definition["scene"])) as PackedScene
     if packed == null:
@@ -212,6 +215,9 @@ func _passage_soliloquy() -> void:
         dialogue.play_interaction("passage_soliloquy", {"player": player})
 
 func handle_death() -> void:
+    if get_node("/root/World").active:
+        await get_node("/root/World").respawn()
+        return
     if is_instance_valid(current_level) and current_level.level_id == "HuluppuCrown":
         get_node("/root/Rampage").reset_value()
         player.reset_run_state()

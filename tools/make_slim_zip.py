@@ -38,15 +38,15 @@ def main():
  import_check=check_import(out)
  assert import_check['failed_files']==[], 'Godot ZIP import compatibility failed'
  print(f'PACKAGE: {len(entries)} files, runtime assets {asset_bytes/1048576:.2f} MiB, ZIP {out.stat().st_size/1048576:.2f} MiB -> {out}',flush=True)
- budget=json.loads((ROOT/'data/stage13_budget.json').read_text())
+ budget=json.loads((ROOT/'data/stage14_budget.json').read_text())
  new_bytes=sum((ROOT/name).stat().st_size for name in budget['new_assets'])
  size_ok=asset_bytes<=budget['baseline_assets_bytes']+budget['new_assets_limit_bytes'] and out.stat().st_size<=budget['zip_target_mib']*1048576 and new_bytes<=budget['new_assets_limit_bytes']
  ok=size_ok;checks=[];target=None
  if a.verify:
-  target=Path(tempfile.mkdtemp(prefix='nimrod-stage13-',dir='/tmp'))
+  target=Path(tempfile.mkdtemp(prefix='nimrod-stage14-',dir='/tmp'))
   with zipfile.ZipFile(out) as z:z.extractall(target)
   project=target/'Nimrod'
-  for command in [['python','tools/run_headless_checks.py','--jobs','4','--output','archive/package_verification'],['python','tools/validate_assets.py'],['python','tools/check_alpha_cleanliness.py'],['python','tools/check_level_reachability.py'],['python','tools/check_sprite_frames.py'],['python','tools/check_all_sprite_frames.py'],['python','tools/check_enemy_grounding.py'],['python','tools/check_enemy_visual_bounds.py'],['python','tools/check_prop_contact.py'],['python','tools/check_head_ghost.py'],['python','tools/check_siyavash_face.py'],['python','tools/measure_assets.py','--plaza-budget','--output','archive/plaza_budget.json']]:
+  for command in [['python','tools/run_headless_checks.py','--jobs','4','--output','archive/package_verification'],['python','tools/validate_assets.py'],['python','tools/check_alpha_cleanliness.py'],['python','tools/check_level_reachability.py'],['python','tools/check_sprite_frames.py'],['python','tools/check_all_sprite_frames.py'],['python','tools/check_enemy_grounding.py'],['python','tools/check_enemy_visual_bounds.py'],['python','tools/check_prop_contact.py'],['python','tools/check_head_ghost.py'],['python','tools/check_siyavash_face.py'],['python','tools/measure_assets.py','--plaza-budget','--output','archive/plaza_budget.json'],['python','tools/world/validate_world.py'],['python','tools/check_tileset_seams.py']]:
    result=subprocess.run(command,cwd=project);checks.append({'command':command,'returncode':result.returncode});ok=ok and result.returncode==0
   print('EXTRACTED:',project)
  report={'zip':str(out),'asset_bytes':asset_bytes,'zip_bytes':out.stat().st_size,'sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'directory_entries':directory_count,'godot_zip_import':import_check,'size_goals_passed':size_ok,'extracted_project':str(target/'Nimrod') if target else None,'checks':checks,'functional_verification_passed':bool(checks) and all(c['returncode']==0 for c in checks)}

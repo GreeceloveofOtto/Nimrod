@@ -348,6 +348,7 @@ func _turn_seconds() -> float:
     return float(stats.get("turn_delay", 0.0))
 
 func _begin_attack() -> void:
+    if not get_node("/root/World").request_attack(self):return
     attack_has_hit = false
     _set_state(State.WINDUP)
     _play_sfx("beast_" + _audio_kind() + "_windup")

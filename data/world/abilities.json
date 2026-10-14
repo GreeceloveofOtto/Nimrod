@@ -1,0 +1,76 @@
+{
+  "movement": {
+    "speed": 360,
+    "gravity": 1750,
+    "jump_impulse": 695,
+    "body": [
+      36,
+      124
+    ],
+    "crouch_height": 90,
+    "crawl_height": 48
+  },
+  "abilities": {
+    "dash": {
+      "name": "쥐의 질주",
+      "key": "Q",
+      "speed": 900,
+      "seconds": 0.22,
+      "cooldown": 0.65,
+      "requires": []
+    },
+    "double_jump": {
+      "name": "두 번째 도약",
+      "key": "Space",
+      "impulse": 640,
+      "requires": [
+        "dash"
+      ]
+    },
+    "wall_cling": {
+      "name": "벽의 발톱",
+      "key": "A/D",
+      "slide_speed": 65,
+      "requires": [
+        "double_jump"
+      ]
+    },
+    "wall_jump": {
+      "name": "벽 차오르기",
+      "key": "Space",
+      "x_impulse": 460,
+      "y_impulse": 695,
+      "requires": [
+        "wall_cling"
+      ]
+    },
+    "crawl": {
+      "name": "틈새 기기",
+      "key": "S+A/D",
+      "speed": 115,
+      "height": 48,
+      "requires": [
+        "wall_jump"
+      ]
+    },
+    "vision": {
+      "name": "광질 시야",
+      "key": "F",
+      "hold": true,
+      "requires": [
+        "crawl"
+      ]
+    },
+    "light_throw": {
+      "name": "천륜 빛 투척",
+      "key": "R",
+      "damage": 30,
+      "speed": 900,
+      "range": 720,
+      "cooldown": 2,
+      "requires": [
+        "vision"
+      ]
+    }
+  }
+}

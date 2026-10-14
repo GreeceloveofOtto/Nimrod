@@ -1,0 +1,17 @@
+{
+  "crystal": "res://assets/world/shared/crystal.webp",
+  "life": "res://assets/world/shared/life.webp",
+  "altar": "res://assets/world/shared/altar.webp",
+  "switch": "res://assets/world/shared/switch.webp",
+  "gate": "res://assets/world/shared/gate.webp",
+  "portal": "res://assets/world/shared/portal.webp",
+  "spikes": "res://assets/world/shared/spikes.webp",
+  "poison": "res://assets/world/shared/poison.webp",
+  "falling_rock": "res://assets/world/shared/falling_rock.webp",
+  "moving_platform": "res://assets/world/shared/moving_platform.webp",
+  "crumble": "res://assets/world/shared/crumble.webp",
+  "lore_item": "res://assets/world/shared/lore_item.webp",
+  "wind": "res://assets/fx/npc_light_pool.webp",
+  "breakable_wall": "res://assets/world/shared/gate.webp",
+  "crystal_barrier": "res://assets/world/shared/gate.webp"
+}

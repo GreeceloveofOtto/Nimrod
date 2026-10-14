@@ -7,7 +7,7 @@ func _run() -> void:
     state.switch_character("siyavash")
     await _go("HwaniraPlaza")
     _check(hero.get_max_hp()==100 and hero.weapon=="none" and hero.max_step==0,"Character-specific HP and empty weapon")
-    _check(hero.sprite_set=="siyavash" and hero.clip_data.size()==17 and not hero.clip_data.has("attack_1"),"Seventeen movement clips; no attack")
+    _check(hero.sprite_set=="siyavash" and hero.clip_data.size()==21 and not hero.clip_data.has("attack_1"),"Twenty-one movement clips; no attack")
     _check(not hero.cast_anur_light() and not hero.try_devour() and not root.get_node("Rampage").unlocked(),"Nimrod powers inactive")
     for key in original:_check(state.run_flags.get(key)==original[key],"Nimrod flag retained: "+str(key))
     for node in manager.current_level.find_children("Image","Sprite2D",true,false):_check(node.texture!=null,"Plaza texture loads")

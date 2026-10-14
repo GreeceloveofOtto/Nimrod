@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "id",
+    "region",
+    "grid_pos",
+    "size",
+    "layout",
+    "entries",
+    "exits",
+    "entities",
+    "gates",
+    "secret",
+    "save_point",
+    "map"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "grid_pos": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "size": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "layout": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[.#W=^~D0-9A-Za-z]+$"
+      }
+    },
+    "entries": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "integer"
+        },
+        "minItems": 2,
+        "maxItems": 2
+      }
+    },
+    "exits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "side",
+          "from",
+          "to",
+          "target_room",
+          "target_entry",
+          "requires"
+        ],
+        "properties": {
+          "side": {
+            "enum": [
+              "left",
+              "right",
+              "top",
+              "bottom",
+              "portal"
+            ]
+          },
+          "requires": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "position"
+        ]
+      }
+    },
+    "gates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "requires",
+          "position"
+        ]
+      }
+    },
+    "secret": {
+      "type": "boolean"
+    },
+    "save_point": {
+      "type": [
+        "null",
+        "object"
+      ]
+    },
+    "map": {
+      "type": "object",
+      "required": [
+        "mask",
+        "icons"
+      ]
+    }
+  }
+}

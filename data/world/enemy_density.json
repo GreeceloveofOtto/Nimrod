@@ -1,0 +1,37 @@
+{
+  "melee_tokens": 3,
+  "ranged_tokens": 2,
+  "dive_tokens": 1,
+  "explosion_tokens": 1,
+  "active_limit": 24,
+  "sleep_radius": 1920,
+  "entrance_safe_distance": 320,
+  "elite_ratio": 0.12,
+  "elite_hp": 1.5,
+  "elite_speed": 1.1,
+  "heal_drop": 0.07,
+  "region_hp": [
+    1,
+    1.1,
+    1.2,
+    1.3,
+    1.4,
+    1,
+    1.5,
+    1.65,
+    1.8,
+    2
+  ],
+  "region_damage": [
+    1,
+    1.05,
+    1.1,
+    1.15,
+    1.2,
+    1,
+    1.3,
+    1.4,
+    1.5,
+    1.6
+  ]
+}

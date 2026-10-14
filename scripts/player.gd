@@ -203,6 +203,9 @@ func _load_sprites() -> void:
         clip_data[clip_or_sound_name] = clip
 
 func _physics_process(delta: float) -> void:
+    var world: Node = get_node("/root/World")
+    if world.active and world.hero_motion.tick(self,delta):
+        return
     var form: Node = get_node("/root/HumbabaForm")
     if form.state == "active" and not transition_locked:
         if Input.is_action_just_pressed("restart"):
@@ -782,6 +785,9 @@ func is_roll_invulnerable() -> bool:
     return action == "roll" and roll_clock >= ROLL_STARTUP and roll_clock < ROLL_STARTUP + ROLL_INVULNERABLE
 
 func receive_damage(amount: float, opts: Dictionary = {}) -> bool:
+    if get_node("/root/World").active:
+        var room: WorldRoom = get_node("/root/SceneManager").current_level
+        if get_node("/root/World").invulnerable or room.is_point_safe(global_position):return false
     var stagger: bool = bool(opts.get("stagger", true))
     var grant_grace: bool = bool(opts.get("grant_grace", true))
     var form: Node = get_node("/root/HumbabaForm")
@@ -936,7 +942,7 @@ func reset_run_state() -> void:
 
 func get_max_hp() -> int:
     if get_node("/root/GameState").active_character == "siyavash":
-        return int(get_node("/root/GameState").siyavash_settings["max_hp"])
+        return get_node("/root/World").max_hp() if get_node("/root/World").active else int(get_node("/root/GameState").siyavash_settings["max_hp"])
     return roundi((MAX_HP + modifiers.total("max_hp_flat")) * modifiers.multiplier("max_hp"))
 
 func apply_shamhat_blessing() -> bool:
@@ -1245,7 +1251,7 @@ func sync_story_state() -> void:
         var current_weapon: String = get_node("/root/GameState").get_weapon()
         if weapon != current_weapon:
             _on_weapon_changed(current_weapon)
-        hp = clampi(hp,0,100)
+        hp = clampi(hp,0,get_max_hp())
         if sprite_set != selected_sprite_set():
             _load_sprites()
             displayed_clip = ""
