@@ -67,3 +67,58 @@
 |assets/sprites/enemies/kala_ushumgal/summon.webp|351.8|현재 재인코딩은 RGB≤3 또는 SSIM≥.93/더 작은 크기를 함께 만족하지 못함. 원본 참조 확인 후 추가 재설계·선택적 프레임 병합 검토.|
 |assets/sprites/enemies/gugalanna/rake.webp|346.6|현재 재인코딩은 RGB≤3 또는 SSIM≥.93/더 작은 크기를 함께 만족하지 못함. 원본 참조 확인 후 추가 재설계·선택적 프레임 병합 검토.|
 |assets/sprites/enemies/kala_ushumgal/roar_loop.webp|334.8|현재 재인코딩은 RGB≤3 또는 SSIM≥.93/더 작은 크기를 함께 만족하지 못함. 원본 참조 확인 후 추가 재설계·선택적 프레임 병합 검토.|
+
+## Stage14 연속월드재작업
+
+| 항목 | 전MiB | 후MiB |
+| --- | --- | --- |
+| assets | 65.93 | 71.63 |
+| ZIP | 67.11 | 72.33 |
+| 자불리스탄전용아트(공통 오브젝트 제외) | 0.10 | 5.79 |
+| archive이동 | 0 | 4.62 |
+| 중복병합절감 | 0 | 0 |
+
+
+현재 폴더 상위 10:
+
+| 폴더 | MiB |
+| --- | --- |
+| assets/sprites/enemies | 30.42 |
+| assets/sprites/player | 14.38 |
+| assets/world/zabulistan_v2 | 5.79 |
+| assets/props/doors | 3.89 |
+| assets/sprites/npcs | 2.37 |
+| assets/audio/bgm | 1.02 |
+| assets/sprites/fx | 0.91 |
+| assets/backgrounds/passage | 0.84 |
+| assets/audio/sfx | 0.73 |
+| assets/backgrounds/castle_front | 0.72 |
+
+
+상위 20개 파일및후속후보(예상은조건부이며검증된절감이아님):
+
+| 파일 | KiB | 미감량사유 / 다음후보 |
+| --- | --- | --- |
+| assets/props/doors/castle_great_gate.webp | 868.9 | 현행SSIM/색차 기준 또는 밀도 하한; 별도 LOD 재제작/논리 프레임 유사도 재검토 후 약 10% 조건부 |
+| assets/backgrounds/hwanira/plaza.webp | 702.7 | 현행SSIM/색차 기준 또는 밀도 하한; 별도 LOD 재제작/논리 프레임 유사도 재검토 후 약 10% 조건부 |
+| assets/backgrounds/deathsea/stars_tile.webp | 529.4 | 현행SSIM/색차 기준 또는 밀도 하한; 별도 LOD 재제작/논리 프레임 유사도 재검토 후 약 10% 조건부 |
+| assets/sprites/enemies/gugalanna/walk.webp | 518.3 | 현행SSIM/색차 기준 또는 밀도 하한; 별도 LOD 재제작/논리 프레임 유사도 재검토 후 약 10% 조건부 |
+| assets/sprites/enemies/gugalanna/idle.webp | 489.0 | 현행SSIM/색차 기준 또는 밀도 하한; 별도 LOD 재제작/논리 프레임 유사도 재검토 후 약 10% 조건부 |
+| assets/sprites/enemies/gugalanna/death.webp | 469.8 | 현행SSIM/색차 기준 또는 밀도 하한; 별도 LOD 재제작/논리 프레임 유사도 재검토 후 약 10% 조건부 |
+| assets/backgrounds/cedar/mid_trunks_tile_2d.webp | 468.6 | 현행SSIM/색차 기준 또는 밀도 하한; 별도 LOD 재제작/논리 프레임 유사도 재검토 후 약 10% 조건부 |
+| assets/sprites/enemies/kala_ushumgal/phase_transition.webp | 451.6 | 현행SSIM/색차 기준 또는 밀도 하한; 별도 LOD 재제작/논리 프레임 유사도 재검토 후 약 10% 조건부 |
+| assets/sprites/enemies/kala_ushumgal/death.webp | 441.3 | 현행SSIM/색차 기준 또는 밀도 하한; 별도 LOD 재제작/논리 프레임 유사도 재검토 후 약 10% 조건부 |
+| assets/sprites/enemies/kala_ushumgal/collapse.webp | 417.0 | 현행SSIM/색차 기준 또는 밀도 하한; 별도 LOD 재제작/논리 프레임 유사도 재검토 후 약 10% 조건부 |
+| assets/world/zabulistan_v2/forest/landmarks.webp | 405.7 | 현행SSIM/색차 기준 또는 밀도 하한; 별도 LOD 재제작/논리 프레임 유사도 재검토 후 약 10% 조건부 |
+| assets/world/zabulistan_v2/crystal/landmarks.webp | 388.6 | 현행SSIM/색차 기준 또는 밀도 하한; 별도 LOD 재제작/논리 프레임 유사도 재검토 후 약 10% 조건부 |
+| assets/sprites/enemies/kala_ushumgal/walk.webp | 388.3 | 현행SSIM/색차 기준 또는 밀도 하한; 별도 LOD 재제작/논리 프레임 유사도 재검토 후 약 10% 조건부 |
+| assets/sprites/enemies/kala_ushumgal/whip_recovery.webp | 373.2 | 현행SSIM/색차 기준 또는 밀도 하한; 별도 LOD 재제작/논리 프레임 유사도 재검토 후 약 10% 조건부 |
+| assets/world/zabulistan_v2/skywalk/landmarks.webp | 372.6 | 현행SSIM/색차 기준 또는 밀도 하한; 별도 LOD 재제작/논리 프레임 유사도 재검토 후 약 10% 조건부 |
+| assets/sprites/enemies/kala_ushumgal/turn.webp | 365.3 | 현행SSIM/색차 기준 또는 밀도 하한; 별도 LOD 재제작/논리 프레임 유사도 재검토 후 약 10% 조건부 |
+| assets/sprites/enemies/gugalanna/turn.webp | 361.4 | 현행SSIM/색차 기준 또는 밀도 하한; 별도 LOD 재제작/논리 프레임 유사도 재검토 후 약 10% 조건부 |
+| assets/backgrounds/homeroad/mid_district_tile.webp | 359.7 | 현행SSIM/색차 기준 또는 밀도 하한; 별도 LOD 재제작/논리 프레임 유사도 재검토 후 약 10% 조건부 |
+| assets/sprites/enemies/gugalanna/rake_windup.webp | 356.5 | 현행SSIM/색차 기준 또는 밀도 하한; 별도 LOD 재제작/논리 프레임 유사도 재검토 후 약 10% 조건부 |
+| assets/sprites/enemies/kala_ushumgal/idle.webp | 355.7 | 현행SSIM/색차 기준 또는 밀도 하한; 별도 LOD 재제작/논리 프레임 유사도 재검토 후 약 10% 조건부 |
+
+
+안전 재압축 4,984B,프레임병합0B,동일해시/근사중복0B.보수적재인코딩실패목록은optimization.json의trials에있다.신규 아트 는6MiB내,전체ZIP63MiB는미달이다.기존필수에셋자체가상한을넘으며개발캐시·원본·비교캡처·구룸/아트는모두제외했다.오디오는이미모노 OGG여서추가음질손실없이큰감량은어렵다.

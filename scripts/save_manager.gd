@@ -69,7 +69,14 @@ func migrate_save(input: Dictionary) -> Dictionary:
         for key in row["flags"]:complete=complete and bool(combined.get(str(key),false))
         if complete:stage_value=int(row["stage"])
     data["story_stage"]=stage_value
-    data["version"] = 1
+    data["version"] = 2
+    data["zabulistan"] = data.get("zabulistan",{}) if data.get("zabulistan",{}) is Dictionary else {}
+    if not (data.get("deaths_total",0) is int or data.get("deaths_total",0) is float):data["deaths_total"]=0
+    data["deaths_total"] = maxi(0,int(data.get("deaths_total",0)))
+    for key in ["abilities","life_fragments","opened_doors","defeated_bosses"]:
+        if not data["zabulistan"].get(key,{}) is Dictionary:data["zabulistan"][key]={}
+    if not data["zabulistan"].get("map_bitmap","") is String:data["zabulistan"]["map_bitmap"]=""
+    if not (data["zabulistan"].get("deaths_zabulistan",0) is int or data["zabulistan"].get("deaths_zabulistan",0) is float):data["zabulistan"]["deaths_zabulistan"]=0
     data["facing"] = -1 if int(data.get("facing", 1)) < 0 else 1
     data["hp"] = maxi(1, int(data.get("hp", 180)))
     data["rampage"] = clampi(int(data.get("rampage", data["run_flags"].get("rampage", 0))),0,100)
@@ -121,7 +128,7 @@ func _boss_active() -> bool:
 func snapshot_data() -> Dictionary:
     var manager: Node = get_node("/root/SceneManager")
     var hero: NimrodPlayer = manager.player
-    return {"story_stage":get_node("/root/Story").stage(),"active_character":get_node("/root/GameState").active_character,"siyavash_progress":get_node("/root/GameState").siyavash_progress.duplicate(true),"nimrod_status":get_node("/root/GameState").nimrod_status.duplicate(true),"choice_pending":bool(get_node("/root/GameState").run_flags.get("choice_pending",false)),"selected_system":str(get_node("/root/GameState").run_flags.get("selected_system","")),"version":1,"level":manager.current_level.level_id,"position":[hero.global_position.x,hero.global_position.y],"facing":hero.facing,"hp":hero.hp,"run_flags":get_node("/root/GameState").run_flags.duplicate(true),"rampage":get_node("/root/Rampage").value(),"cooldowns":{"anur_light":0,"devour":0},"timestamp":Time.get_unix_time_from_system()}
+    return {"story_stage":get_node("/root/Story").stage(),"active_character":get_node("/root/GameState").active_character,"siyavash_progress":get_node("/root/GameState").siyavash_progress.duplicate(true),"nimrod_status":get_node("/root/GameState").nimrod_status.duplicate(true),"choice_pending":bool(get_node("/root/GameState").run_flags.get("choice_pending",false)),"selected_system":str(get_node("/root/GameState").run_flags.get("selected_system","")),"version":2,"zabulistan":get_node("/root/World").persistent_data(),"deaths_total":get_node("/root/World").deaths_total,"level":manager.current_level.level_id,"position":[hero.global_position.x,hero.global_position.y],"facing":hero.facing,"hp":hero.hp,"run_flags":get_node("/root/GameState").run_flags.duplicate(true),"rampage":get_node("/root/Rampage").value(),"cooldowns":{"anur_light":0,"devour":0},"timestamp":Time.get_unix_time_from_system()}
 
 func save_game(arrival_checkpoint: bool = false) -> bool:
     if not get_node("/root/World").saving_allowed():return false
@@ -186,6 +193,7 @@ func resume(full_health: bool = false) -> bool:
     restoring = true
     get_node("/root/GameState").reset_run(false)
     manager.player.reset_run_state()
+    get_node("/root/World").restore_persistent(data["zabulistan"],int(data["deaths_total"]))
     get_node("/root/GameState").active_character = data["active_character"]
     get_node("/root/GameState").siyavash_progress = data["siyavash_progress"].duplicate(true)
     get_node("/root/GameState").nimrod_status = data["nimrod_status"].duplicate(true)
@@ -230,3 +238,17 @@ func save_checkpoint(reason: String) -> bool:
     valid = valid or (reason=="rampage" and level_id=="TiamatZone" and get_node("/root/Story").is_flag("utnapishtim_done"))
     valid = valid or (reason=="victory" and level_id=="TiamatCollapsed" and get_node("/root/Story").is_flag("huluppu_boss_done"))
     return _write_snapshot(true) if valid else false
+
+func persist_death_counters() -> bool:
+    # Metadata update retains the saved level, position, inventory and story verbatim.
+    if not get_node("/root/World").saving_allowed():return false
+    var data: Dictionary=read_save()
+    if data.is_empty():return false
+    data.deaths_total=get_node("/root/World").deaths_total
+    data.zabulistan["deaths_zabulistan"]=get_node("/root/World").deaths_zabulistan
+    var file:=FileAccess.open(save_path+".tmp",FileAccess.WRITE)
+    if file==null:return false
+    file.store_string(JSON.stringify(data))
+    file.flush()
+    file.close()
+    return DirAccess.rename_absolute(save_path+".tmp",save_path)==OK

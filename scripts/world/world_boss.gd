@@ -2,8 +2,20 @@ extends EnemyBase
 # Reuse existing boss textures and numerical patterns without Nimrod story events.
 func _init() -> void:set_meta("world_boss",true)
 var pattern_index := 0
-var battle_started := true
+var battle_started := false
 var battle_finished := false
+# EnemyBase fixed-damage protocol also queries these original boss fields.
+var phase_roaring := false
+var opening_pending := false
+func _physics_process(delta: float) -> void:
+    if not battle_started:
+        var hero: Node2D=_target()
+        if _player_is_available(hero) and absf(hero.global_position.x-global_position.x)<700 and absf(hero.global_position.y-global_position.y)<360:battle_started=true
+        else:
+            _update_visual(delta)
+            return
+    super._physics_process(delta)
+
 func _on_death() -> void:
     battle_finished=true
     super._on_death()
@@ -12,7 +24,7 @@ func _update_chase(delta: float) -> void:
     if not _player_is_available(hero):
         _brake(delta)
         return
-    var axis: float = hero.position.x-position.x
+    var axis: float = hero.global_position.x-global_position.x
     var direction := 1 if axis>0 else -1
     if direction!=facing:
         _request_turn(direction)

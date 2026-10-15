@@ -786,7 +786,7 @@ func is_roll_invulnerable() -> bool:
 
 func receive_damage(amount: float, opts: Dictionary = {}) -> bool:
     if get_node("/root/World").active:
-        var room: WorldRoom = get_node("/root/SceneManager").current_level
+        var room: LevelBase = get_node("/root/SceneManager").current_level
         if get_node("/root/World").invulnerable or room.is_point_safe(global_position):return false
     var stagger: bool = bool(opts.get("stagger", true))
     var grant_grace: bool = bool(opts.get("grant_grace", true))
@@ -822,6 +822,7 @@ func receive_damage(amount: float, opts: Dictionary = {}) -> bool:
         _cancel_attack()
         action = "dead"
         death_clock = 0.0
+        get_node("/root/World").confirm_death(self)
         died.emit()
         return true
     if grant_grace:
@@ -882,6 +883,7 @@ func _request_run_restart(from_death: bool = false) -> void:
         get_tree().reload_current_scene()
 
 func reset_run_state() -> void:
+    get_node("/root/World").death_latched = false
     get_node("/root/HumbabaForm").reset()
     damage_fraction = 0
     skill_cooldown_left = 0
@@ -942,7 +944,7 @@ func reset_run_state() -> void:
 
 func get_max_hp() -> int:
     if get_node("/root/GameState").active_character == "siyavash":
-        return get_node("/root/World").max_hp() if get_node("/root/World").active else int(get_node("/root/GameState").siyavash_settings["max_hp"])
+        return get_node("/root/World").max_hp()
     return roundi((MAX_HP + modifiers.total("max_hp_flat")) * modifiers.multiplier("max_hp"))
 
 func apply_shamhat_blessing() -> bool:
@@ -1353,6 +1355,7 @@ func force_rampage_death() -> void:
     action = "dead"
     death_clock = 0
     damage_received.emit(0,0)
+    get_node("/root/World").confirm_death(self)
     died.emit()
 
 func movement_axis() -> float:

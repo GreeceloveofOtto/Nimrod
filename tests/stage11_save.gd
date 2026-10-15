@@ -15,7 +15,7 @@ func _run() -> void:
     hero.devour_cooldown_left = 9
     _check(save.save_game(),"Shamhat-level save succeeds")
     var first: Dictionary = save.read_save()
-    _check(first["version"]==1 and first["cooldowns"]["anur_light"]==0 and first["cooldowns"]["devour"]==0,"Versioned snapshot clears skill cooldowns")
+    _check(first["version"]==2 and first["cooldowns"]["anur_light"]==0 and first["cooldowns"]["devour"]==0,"Versioned snapshot clears skill cooldowns")
     _check(not first.has("debug_hp_floor"),"Debug mode is never persisted")
     hero.hp = 80
     _check(save.save_game() and FileAccess.file_exists(save.save_path+".bak"),"Atomic overwrite preserves previous save")
@@ -37,7 +37,7 @@ func _run() -> void:
     _check(manager.current_level.level_id=="NimrodHome" and root.get_node("GameState").get_weapon()=="none" and not root.get_node("Rampage").unlocked(),"F5 starts a fresh run")
     _check(not FileAccess.file_exists(save.save_path),"F5 deletes disk checkpoint in stage12")
     var migrated: Dictionary = save.migrate_save({"version":0,"level":"CastleF2","position":[800,620],"run_flags":{"prosthetic_equipped":true,"weapon":"axe"}})
-    _check(migrated["version"]==1 and migrated["run_flags"]["helmet_equipped"],"Older versions repair missing helmet and defaults")
+    _check(migrated["version"]==2 and migrated["run_flags"]["helmet_equipped"],"Older versions repair missing helmet and defaults")
     for suffix in ["",".bak"]:
         var file := FileAccess.open(save.save_path+suffix,FileAccess.WRITE)
         file.store_string("broken")

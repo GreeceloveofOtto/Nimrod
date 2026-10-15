@@ -49,9 +49,9 @@ def main():
  # Test trees and run flags live in separate engine processes. The two disk
  # reports (grounding and stuck fuzz) have distinct paths; imports stay serial.
  with ThreadPoolExecutor(max_workers=a.jobs) as pool:
-  results.extend(pool.map(lambda test:run(godot,['--script','res://'+str(test.relative_to(ROOT))],test.stem,out,a.timeout),[t for t in tests if t.stem!='stage14_performance']))
+  results.extend(pool.map(lambda test:run(godot,['--script','res://'+str(test.relative_to(ROOT))],test.stem,out,a.timeout),[t for t in tests if t.stem not in ['stage14_performance','stage14_death_timing']]))
  # Frame-time assertions require an isolated CPU measurement, not competing tests.
  for test in tests:
-  if test.stem=='stage14_performance':results.append(run(godot,['--script','res://'+str(test.relative_to(ROOT))],test.stem,out,a.timeout))
+  if test.stem in ['stage14_performance','stage14_death_timing']:results.append(run(godot,['--script','res://'+str(test.relative_to(ROOT))],test.stem,out,a.timeout))
  (out/'results.json').write_text(json.dumps(results,indent=2));ok=all(r['passed'] for r in results);print(f'HEADLESS: {sum(r["passed"] for r in results)}/{len(results)} passed');return 0 if ok else 1
 if __name__=='__main__':sys.exit(main())

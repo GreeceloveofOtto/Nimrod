@@ -22,7 +22,7 @@ func _ready() -> void:
         add_child(pickup)
         return
     texture_node=AssetVisual.add_image(self,str(art.get(kind,art.crystal)),Vector2(-size.x*.5,-size.y),size)
-    texture_node.modulate=Color(str(get_node("/root/World").regions[get_node("/root/World").loaded[get_node("/root/World").current_id].room_data.region].palette)).lightened(.3)
+    texture_node.modulate=Color(str(get_node("/root/World").regions[str(spec.region)].palette)).lightened(.3)
     if kind in ["gate","crumble","moving_platform","breakable_wall"]:
         gate=load("res://scripts/world/world_breakable.gd").new() if kind=="breakable_wall" else StaticBody2D.new()
         if kind=="breakable_wall":gate.prop_owner=self
@@ -53,9 +53,14 @@ func _process(delta: float) -> void:
     timer+=delta
     if str(spec.type)=="falling_rock":position.y=base_position.y-500+minf(500,pow(fmod(timer,4),2)*450)
     var kind: String = str(spec.type)
-    var available: bool = position.distance_to(hero.position)<100 and world.nearest_interactable==self and hero.action=="normal"
+    var available: bool = global_position.distance_to(hero.position)<100 and world.nearest_interactable==self and hero.action=="normal"
     var allowed: bool = world.meets(spec.get("requires",[]))
+    if spec.has("opens_with"):allowed=bool(world.switches.get(str(spec.opens_with),false))
     if kind=="gate":
+        if spec.get("secret",false):
+            if allowed and world.hero_motion.vision:world.switches[str(spec.uid)]=true
+            allowed=world.switches.has(str(spec.uid))
+        available=global_position.distance_to(hero.position)<190
         gate.collision_layer=0 if allowed else 1
         visible=not allowed
         if available and not allowed and fmod(timer,2)<delta:get_node("/root/SceneManager").show_toast("필요한 능력: "+str(spec.art_hint),1)
@@ -65,17 +70,18 @@ func _process(delta: float) -> void:
         gate.constant_linear_velocity=d*cos(timer*TAU/float(spec.seconds))*PI/float(spec.seconds)
         gate.set_meta("surface_rect",Rect2(global_position-Vector2(float(spec.size[0])*.5,float(spec.size[1])),Vector2(float(spec.size[0]),float(spec.size[1]))))
     elif kind=="crumble":
-        if absf(hero.position.x-position.x)<float(spec.size[0])*.5 and absf(hero.position.y-(position.y-float(spec.size[1])))<8:
+        if absf(hero.global_position.x-global_position.x)<float(spec.size[0])*.5 and absf(hero.position.y-(position.y-float(spec.size[1])))<8:
             consumed=true
             await get_tree().create_timer(float(spec.seconds),false).timeout
             queue_free()
     elif kind in ["spikes","poison","wind","falling_rock"]:
-        var in_zone: bool = absf(hero.position.x-position.x)<float(spec.size[0])*.5 and absf(hero.position.y-position.y)<float(spec.size[1])+124
+        var in_zone: bool = absf(hero.global_position.x-global_position.x)<float(spec.size[0])*.5 and absf(hero.global_position.y-global_position.y)<float(spec.size[1])+124
         if in_zone:
             if kind=="wind":hero.velocity.x+=90*delta
             elif fmod(timer,1)<delta:hero.receive_damage(8 if kind=="poison" else 12,{"source":"world_"+kind})
     else:
         prompt.visible=available and allowed
+        if kind=="switch" and spec.get("one_way",false) and hero.global_position.x<global_position.x:prompt.visible=false
         if kind=="portal" and spec.get("one_way",false) and hero.position.x<position.x:prompt.visible=false
         if prompt.visible and Input.is_action_just_pressed("interact"):interact()
     if spec.get("requires",[]).has("vision") and kind not in ["gate","breakable_wall"]:visible=world.hero_motion.vision
@@ -83,6 +89,7 @@ func _process(delta: float) -> void:
 func interact() -> bool:
     var world: Node = get_node("/root/World")
     if consumed or not world.meets(spec.get("requires",[])):return false
+    if spec.type=="switch" and spec.get("one_way",false) and get_node("/root/SceneManager").player.global_position.x<global_position.x:return false
     match str(spec.type):
         "altar":
             if not world.acquire(str(spec.id)):return false
@@ -102,7 +109,7 @@ func interact() -> bool:
             return true
         "portal":
             if not world.can_exit():return false
-            world.enter.call_deferred(str(spec.target_room),str(spec.target_entry))
+            world.switches[str(spec.target)]=true
             return true
         _:return false
     consumed=true

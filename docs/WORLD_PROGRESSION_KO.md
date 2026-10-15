@@ -1,5 +1,7 @@
-# 능력 진행과 복귀 검증
+# 진행과 귀환 검증
 
-점프 높이 138.01px. 플랫폼 그래프는 중력·도약·속도를 읽으며 120px 간격 계단을 검증한다. 128개 능력 조합에서 접근 가능한 모든 방의 착륙 지점 복귀 경로를 검사한다. 전투 승리 가능성은 그래프 솔버 범위 밖이며 런타임 전투 테스트로 분리한다.
+착륙지에서 지역 간 기본 길로 모든 지역에 갈 수 있다. 능력은 쥐의 질주 → 두 번째 도약 → 벽의 발톱 → 벽 차오르기 → 틈새 기기 → 광질 시야 → 천륜 빛 투척 순으로 선행 조건을 갖는다. 능력벽은 지름길이며 기본 순환길을 대체하지 않는다.
 
-landing_01 → landing_02 → landing_03 → landing_03 [acquire dash] → landing_04 → landing_05 → forest_00 → forest_01 → forest_02 → forest_03 → forest_03 [acquire double_jump] → forest_04 → forest_05 → fortress_00 → fortress_01 → fortress_02 → fortress_03 → fortress_03 [acquire wall_cling] → fortress_04 → fortress_05 → ridge_00 → ridge_01 → ridge_02 → ridge_03 → ridge_03 [acquire wall_jump] → ridge_04 → ridge_05 → mine_00 → mine_01 → mine_02 → mine_03 → mine_03 [acquire crawl] → mine_02 → mine_01 → mine_00 → village_00 → village_01 → village_02 → village_03 → village_03 [acquire vision] → village_02 → village_01 → village_00 → marsh_00 → marsh_01 → marsh_02 → marsh_03 → marsh_03 [acquire light_throw]
+검증 도구는 실제 타일과 플레이어 폭 36px·높이 124px, 중력 1750, 속도 360, 점프 695를 읽어 이동 그래프를 만든다. 모든 보상·보스·스위치의 접근과 귀환을 검사한다. 능력·문 131,072조합의 결과는 QA ZIP의 state_solver.json, 전체 도달성·반복·밀도 결과는 world_validation.json에 기록했다. 닫힌 게이트 바깥의 합법적인 서 있는 위치 28,589곳에 대한 기본 이동 귀환 검사도 누락 0건이다.
+
+이것은 32px 격자와 포물선 표본에 따른 검증이며, 모든 연속 좌표와 실제 키 입력의 완주를 증명한 것은 아니다. 전체 256화면의 수동 완주는 미실행이다. 방 최단 경로와 방 입구는 폐기했다. 위치 기준 진행과 전체 좌표는 stage14_rework_placements.json을 참조한다.

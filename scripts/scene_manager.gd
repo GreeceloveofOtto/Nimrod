@@ -216,7 +216,7 @@ func _passage_soliloquy() -> void:
 
 func handle_death() -> void:
     if get_node("/root/World").active:
-        await get_node("/root/World").respawn()
+        await get_node("/root/World").return_to_plaza()
         return
     if is_instance_valid(current_level) and current_level.level_id == "HuluppuCrown":
         get_node("/root/Rampage").reset_value()
@@ -224,6 +224,10 @@ func handle_death() -> void:
         get_node("/root/Rampage").set_death_suspended(true)
         await go_to("HuluppuCrown","Spawn_Entrance")
         return
+    var total_deaths: int = get_node("/root/World").deaths_total
     if str(get_node("/root/Save").settings.get("death_respawn", "last_save")) == "last_save" and await get_node("/root/Save").resume(true):
+        get_node("/root/World").deaths_total = total_deaths
+        get_node("/root/Save").persist_death_counters()
         return
     await restart_run()
+    get_node("/root/World").deaths_total = total_deaths

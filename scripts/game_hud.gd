@@ -123,11 +123,16 @@ func _process(_delta: float) -> void:
         story.text="라오차차흐라 항성계. 흐와니라 광장을 둘러본다."
     if get_node("/root/World").active:
         story.modulate.a=0
-        controls.text += "  Q 질주  F 시야  R 빛  M 지도"
+        controls.text = ""
     var scene: Node=get_node("/root/SceneManager").current_level
     if is_instance_valid(scene) and scene.level_id=="HuluppuCrown":
         story.modulate.a=0
     hp_text.text = "HP %d / %d" % [player.hp, player.get_max_hp()]
+    var in_world: bool = get_node("/root/World").active
+    hp_text.visible = not in_world
+    title.visible = not in_world
+    controls.visible = not in_world
+    boss_panel.position.x = 430 if in_world else 380
     if debuff_label!=null:
         debuff_label.visible=player.controls_reversed_left>0
         debuff_label.text="조작 반전 %.1f초" % player.controls_reversed_left
@@ -142,6 +147,7 @@ func _process(_delta: float) -> void:
     var boss: EnemyBase
     for enemy in get_tree().get_nodes_in_group("enemies"):
         if enemy is KalaUshumgal or enemy is Humbaba or enemy is Gugalanna or enemy.get_meta("world_boss",false):
+            if in_world and enemy.global_position.distance_to(player.global_position)>1100:continue
             boss = enemy
     boss_panel.visible = boss != null and bool(boss.get("battle_started")) and not bool(boss.get("battle_finished"))
     if boss_panel.visible:
