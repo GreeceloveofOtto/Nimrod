@@ -374,33 +374,33 @@
 명시 편집(뒤 행 우선)	352	landing	[118, 118, 10, 5]	.
 명시 편집(뒤 행 우선)	353	landing	[82, 59, 10, 2]	.
 명시 편집(뒤 행 우선)	354	landing	[86, 64, 2, 1]	#
-boss	boss_crystal	crystal	[606.0, 351.0]	
-boss	boss_fortress	fortress	[604.0, 183.0]	
-boss	boss_skywalk	skywalk	[351.0, 359.0]	
+boss	boss_crystal	crystal	[606.0, 351.0]	-
+boss	boss_fortress	fortress	[604.0, 183.0]	-
+boss	boss_skywalk	skywalk	[351.0, 359.0]	-
 cord	cord_crystal_0	crystal	[554.0, 223.0]	dash
 cord	cord_crystal_1	crystal	[607.0, 279.0]	double_jump
 cord	cord_crystal_2	crystal	[559.0, 327.0]	wall_cling
 cord	cord_crystal_3	crystal	[625.0, 354.0]	wall_jump
-cord	cord_crystal_4	crystal	[524.0, 252.0]	
-cord	cord_crystal_5	crystal	[585.0, 322.0]	
+cord	cord_crystal_4	crystal	[524.0, 252.0]	-
+cord	cord_crystal_5	crystal	[585.0, 322.0]	-
 cord	cord_deep_0	deep	[428.0, 223.0]	dash
 cord	cord_deep_1	deep	[482.0, 279.0]	double_jump
 cord	cord_deep_2	deep	[430.0, 327.0]	wall_cling
 cord	cord_deep_3	deep	[497.0, 351.0]	wall_jump
-cord	cord_deep_4	deep	[396.0, 251.0]	
-cord	cord_deep_5	deep	[453.0, 319.0]	
+cord	cord_deep_4	deep	[396.0, 251.0]	-
+cord	cord_deep_5	deep	[453.0, 319.0]	-
 cord	cord_forest_0	forest	[170.0, 43.0]	dash
 cord	cord_forest_1	forest	[223.0, 99.0]	double_jump
 cord	cord_forest_2	forest	[170.0, 147.0]	wall_cling
 cord	cord_forest_3	forest	[241.0, 171.0]	wall_jump
-cord	cord_forest_4	forest	[142.0, 71.0]	
-cord	cord_forest_5	forest	[204.0, 140.0]	
+cord	cord_forest_4	forest	[142.0, 71.0]	-
+cord	cord_forest_5	forest	[204.0, 140.0]	-
 cord	cord_fortress_0	fortress	[555.0, 43.0]	dash
 cord	cord_fortress_1	fortress	[610.0, 99.0]	double_jump
 cord	cord_fortress_2	fortress	[558.0, 151.0]	wall_cling
 cord	cord_fortress_3	fortress	[624.0, 175.0]	wall_jump
-cord	cord_fortress_4	fortress	[524.0, 71.0]	
-cord	cord_fortress_5	fortress	[588.0, 139.0]	
+cord	cord_fortress_4	fortress	[524.0, 71.0]	-
+cord	cord_fortress_5	fortress	[588.0, 139.0]	-
 cord	cord_landing_0	landing	[4.0, 100.0]	dash
 cord	cord_landing_1	landing	[16.0, 128.0]	double_jump
 cord	cord_landing_2	landing	[31.0, 58.0]	wall_cling
@@ -411,231 +411,231 @@ cord	cord_marsh_0	marsh	[299.0, 43.0]	dash
 cord	cord_marsh_1	marsh	[351.0, 99.0]	double_jump
 cord	cord_marsh_2	marsh	[302.0, 148.0]	wall_cling
 cord	cord_marsh_3	marsh	[364.0, 171.0]	wall_jump
-cord	cord_marsh_4	marsh	[266.0, 71.0]	
-cord	cord_marsh_5	marsh	[328.0, 143.0]	
+cord	cord_marsh_4	marsh	[266.0, 71.0]	-
+cord	cord_marsh_5	marsh	[328.0, 143.0]	-
 cord	cord_mine_0	mine	[423.0, 43.0]	dash
 cord	cord_mine_1	mine	[482.0, 99.0]	double_jump
 cord	cord_mine_2	mine	[433.0, 147.0]	wall_cling
 cord	cord_mine_3	mine	[495.0, 174.0]	wall_jump
-cord	cord_mine_4	mine	[397.0, 71.0]	
-cord	cord_mine_5	mine	[459.0, 139.0]	
+cord	cord_mine_4	mine	[397.0, 71.0]	-
+cord	cord_mine_5	mine	[459.0, 139.0]	-
 cord	cord_ridge_0	ridge	[170.0, 223.0]	dash
 cord	cord_ridge_1	ridge	[226.0, 280.0]	double_jump
 cord	cord_ridge_2	ridge	[175.0, 327.0]	wall_cling
 cord	cord_ridge_3	ridge	[241.0, 359.0]	wall_jump
-cord	cord_ridge_4	ridge	[139.0, 251.0]	
-cord	cord_ridge_5	ridge	[204.0, 319.0]	
+cord	cord_ridge_4	ridge	[139.0, 251.0]	-
+cord	cord_ridge_5	ridge	[204.0, 319.0]	-
 cord	cord_skywalk_0	skywalk	[295.0, 223.0]	dash
 cord	cord_skywalk_1	skywalk	[354.0, 279.0]	double_jump
 cord	cord_skywalk_2	skywalk	[303.0, 327.0]	wall_cling
 cord	cord_skywalk_3	skywalk	[368.0, 351.0]	wall_jump
-cord	cord_skywalk_4	skywalk	[267.0, 252.0]	
-cord	cord_skywalk_5	skywalk	[330.0, 319.0]	
+cord	cord_skywalk_4	skywalk	[267.0, 252.0]	-
+cord	cord_skywalk_5	skywalk	[330.0, 319.0]	-
 cord	cord_village_0	village	[41.0, 223.0]	dash
 cord	cord_village_1	village	[98.0, 279.0]	double_jump
 cord	cord_village_2	village	[49.0, 327.0]	wall_cling
 cord	cord_village_3	village	[109.0, 351.0]	wall_jump
-cord	cord_village_4	village	[14.0, 252.0]	
-cord	cord_village_5	village	[72.0, 320.0]	
-switch	door_crystal	crystal	[564.0, 259.0]	
-switch	door_crystal_2	crystal	[602.0, 323.0]	
-switch	door_deep	deep	[435.0, 260.0]	
-switch	door_deep_2	deep	[474.0, 326.0]	
-switch	door_forest	forest	[178.0, 79.0]	
-switch	door_forest_2	forest	[218.0, 143.0]	
-switch	door_fortress	fortress	[569.0, 79.0]	
-switch	door_fortress_2	fortress	[602.0, 143.0]	
-gate	door_gate_crystal	crystal	[563.0, 259.0]	
-gate	door_gate_crystal_2	crystal	[592.0, 327.0]	
-gate	door_gate_deep	deep	[435.0, 260.0]	
-gate	door_gate_deep_2	deep	[466.0, 323.0]	
-gate	door_gate_forest	forest	[178.0, 79.0]	
-gate	door_gate_forest_2	forest	[208.0, 144.0]	
-gate	door_gate_fortress	fortress	[562.0, 79.0]	
-gate	door_gate_fortress_2	fortress	[592.0, 143.0]	
-gate	door_gate_landing	landing	[99.0, 38.0]	
-gate	door_gate_landing_2	landing	[112.0, 152.0]	
-gate	door_gate_marsh	marsh	[307.0, 83.0]	
-gate	door_gate_marsh_2	marsh	[335.0, 146.0]	
-gate	door_gate_mine	mine	[436.0, 79.0]	
-gate	door_gate_mine_2	mine	[464.0, 143.0]	
-gate	door_gate_ridge	ridge	[179.0, 259.0]	
-gate	door_gate_ridge_2	ridge	[208.0, 327.0]	
-gate	door_gate_skywalk	skywalk	[303.0, 259.0]	
-gate	door_gate_skywalk_2	skywalk	[336.0, 327.0]	
-gate	door_gate_village	village	[54.0, 260.0]	
-gate	door_gate_village_2	village	[80.0, 327.0]	
-switch	door_landing	landing	[104.0, 38.0]	
-switch	door_landing_2	landing	[120.0, 154.0]	
-switch	door_marsh	marsh	[313.0, 79.0]	
-switch	door_marsh_2	marsh	[346.0, 143.0]	
-switch	door_mine	mine	[438.0, 79.0]	
-switch	door_mine_2	mine	[474.0, 143.0]	
-switch	door_ridge	ridge	[180.0, 259.0]	
-switch	door_ridge_2	ridge	[218.0, 323.0]	
-switch	door_skywalk	skywalk	[310.0, 260.0]	
-switch	door_skywalk_2	skywalk	[346.0, 327.0]	
-switch	door_village	village	[54.0, 260.0]	
-switch	door_village_2	village	[89.0, 327.0]	
-ember	ember_crystal_0	crystal	[569.0, 215.0]	
-ember	ember_crystal_1	crystal	[530.0, 275.0]	
-ember	ember_crystal_2	crystal	[606.0, 311.0]	
-ember	ember_crystal_3	crystal	[554.0, 347.0]	
-ember	ember_crystal_4	crystal	[629.0, 243.0]	
-ember	ember_crystal_5	crystal	[592.0, 295.0]	
-ember	ember_deep_0	deep	[441.0, 215.0]	
-ember	ember_deep_1	deep	[399.0, 271.0]	
-ember	ember_deep_2	deep	[476.0, 311.0]	
-ember	ember_deep_3	deep	[426.0, 347.0]	
-ember	ember_deep_4	deep	[502.0, 244.0]	
-ember	ember_deep_5	deep	[461.0, 295.0]	
-ember	ember_forest_0	forest	[185.0, 39.0]	
-ember	ember_forest_1	forest	[145.0, 95.0]	
-ember	ember_forest_2	forest	[218.0, 131.0]	
-ember	ember_forest_3	forest	[174.0, 167.0]	
-ember	ember_forest_4	forest	[247.0, 63.0]	
-ember	ember_forest_5	forest	[211.0, 115.0]	
-ember	ember_fortress_0	fortress	[569.0, 35.0]	
-ember	ember_fortress_1	fortress	[529.0, 91.0]	
-ember	ember_fortress_2	fortress	[603.0, 132.0]	
-ember	ember_fortress_3	fortress	[555.0, 167.0]	
-ember	ember_fortress_4	fortress	[630.0, 63.0]	
-ember	ember_fortress_5	fortress	[591.0, 119.0]	
-ember	ember_landing_0	landing	[20.0, 22.0]	
-ember	ember_landing_1	landing	[108.0, 56.0]	
-ember	ember_landing_2	landing	[50.0, 104.0]	
-ember	ember_landing_3	landing	[114.0, 82.0]	
-ember	ember_landing_4	landing	[102.0, 140.0]	
-ember	ember_landing_5	landing	[68.0, 174.0]	
-ember	ember_marsh_0	marsh	[316.0, 35.0]	
-ember	ember_marsh_1	marsh	[267.0, 92.0]	
-ember	ember_marsh_2	marsh	[349.0, 131.0]	
-ember	ember_marsh_3	marsh	[299.0, 167.0]	
-ember	ember_marsh_4	marsh	[373.0, 63.0]	
-ember	ember_marsh_5	marsh	[337.0, 115.0]	
-ember	ember_mine_0	mine	[441.0, 35.0]	
-ember	ember_mine_1	mine	[401.0, 91.0]	
-ember	ember_mine_2	mine	[476.0, 135.0]	
-ember	ember_mine_3	mine	[428.0, 170.0]	
-ember	ember_mine_4	mine	[505.0, 63.0]	
-ember	ember_mine_5	mine	[467.0, 115.0]	
-ember	ember_ridge_0	ridge	[185.0, 215.0]	
-ember	ember_ridge_1	ridge	[145.0, 271.0]	
-ember	ember_ridge_2	ridge	[221.0, 311.0]	
-ember	ember_ridge_3	ridge	[170.0, 347.0]	
-ember	ember_ridge_4	ridge	[246.0, 244.0]	
-ember	ember_ridge_5	ridge	[204.0, 299.0]	
-ember	ember_skywalk_0	skywalk	[310.0, 215.0]	
-ember	ember_skywalk_1	skywalk	[270.0, 274.0]	
-ember	ember_skywalk_2	skywalk	[348.0, 311.0]	
-ember	ember_skywalk_3	skywalk	[298.0, 347.0]	
-ember	ember_skywalk_4	skywalk	[373.0, 247.0]	
-ember	ember_skywalk_5	skywalk	[338.0, 295.0]	
-ember	ember_village_0	village	[57.0, 215.0]	
-ember	ember_village_1	village	[11.0, 271.0]	
-ember	ember_village_2	village	[92.0, 311.0]	
-ember	ember_village_3	village	[43.0, 347.0]	
-ember	ember_village_4	village	[119.0, 244.0]	
-ember	ember_village_5	village	[82.0, 295.0]	
-enemy	enemy_crystal_0	crystal	[532.0, 199.0]	
-enemy	enemy_crystal_1	crystal	[559.0, 203.0]	
-enemy	enemy_crystal_10	crystal	[611.0, 215.0]	
-enemy	enemy_crystal_2	crystal	[544.0, 237.0]	
-enemy	enemy_crystal_3	crystal	[588.0, 271.0]	
-enemy	enemy_crystal_4	crystal	[620.0, 271.0]	
-enemy	enemy_crystal_5	crystal	[527.0, 302.0]	
-enemy	enemy_crystal_6	crystal	[570.0, 303.0]	
-enemy	enemy_crystal_7	crystal	[612.0, 333.0]	
-enemy	enemy_crystal_8	crystal	[538.0, 335.0]	
-enemy	enemy_crystal_9	crystal	[595.0, 356.0]	
-enemy	enemy_deep_0	deep	[404.0, 199.0]	
-enemy	enemy_deep_1	deep	[436.0, 204.0]	
-enemy	enemy_deep_10	deep	[484.0, 215.0]	
-enemy	enemy_deep_2	deep	[415.0, 237.0]	
-enemy	enemy_deep_3	deep	[459.0, 267.0]	
-enemy	enemy_deep_4	deep	[493.0, 271.0]	
-enemy	enemy_deep_5	deep	[402.0, 299.0]	
-enemy	enemy_deep_6	deep	[445.0, 303.0]	
-enemy	enemy_deep_7	deep	[484.0, 329.0]	
-enemy	enemy_deep_8	deep	[414.0, 335.0]	
-enemy	enemy_deep_9	deep	[470.0, 356.0]	
-enemy	enemy_forest_0	forest	[148.0, 23.0]	
-enemy	enemy_forest_1	forest	[176.0, 23.0]	
-enemy	enemy_forest_10	forest	[228.0, 35.0]	
-enemy	enemy_forest_2	forest	[159.0, 57.0]	
-enemy	enemy_forest_3	forest	[203.0, 87.0]	
-enemy	enemy_forest_4	forest	[236.0, 91.0]	
-enemy	enemy_forest_5	forest	[147.0, 119.0]	
-enemy	enemy_forest_6	forest	[194.0, 124.0]	
-enemy	enemy_forest_7	forest	[228.0, 149.0]	
-enemy	enemy_forest_8	forest	[162.0, 155.0]	
-enemy	enemy_forest_9	forest	[210.0, 175.0]	
-enemy	enemy_fortress_0	fortress	[531.0, 19.0]	
-enemy	enemy_fortress_1	fortress	[558.0, 23.0]	
-enemy	enemy_fortress_10	fortress	[611.0, 39.0]	
-enemy	enemy_fortress_2	fortress	[542.0, 57.0]	
-enemy	enemy_fortress_3	fortress	[587.0, 91.0]	
-enemy	enemy_fortress_4	fortress	[620.0, 91.0]	
-enemy	enemy_fortress_5	fortress	[530.0, 119.0]	
-enemy	enemy_fortress_6	fortress	[572.0, 127.0]	
-enemy	enemy_fortress_7	fortress	[612.0, 149.0]	
-enemy	enemy_fortress_8	fortress	[538.0, 155.0]	
-enemy	enemy_fortress_9	fortress	[598.0, 175.0]	
-enemy	enemy_landing_0	landing	[44.0, 50.0]	
-enemy	enemy_landing_1	landing	[91.0, 56.0]	
-enemy	enemy_landing_10	landing	[102.0, 82.0]	
-enemy	enemy_landing_2	landing	[23.0, 138.0]	
-enemy	enemy_landing_3	landing	[100.0, 128.0]	
-enemy	enemy_landing_4	landing	[33.0, 176.0]	
-enemy	enemy_landing_5	landing	[86.0, 174.0]	
-enemy	enemy_landing_6	landing	[20.0, 100.0]	
-enemy	enemy_landing_7	landing	[74.0, 142.0]	
-enemy	enemy_landing_8	landing	[46.0, 116.0]	
-enemy	enemy_landing_9	landing	[113.0, 123.0]	
-enemy	enemy_marsh_0	marsh	[277.0, 20.0]	
-enemy	enemy_marsh_1	marsh	[303.0, 28.0]	
-enemy	enemy_marsh_10	marsh	[356.0, 39.0]	
-enemy	enemy_marsh_2	marsh	[287.0, 57.0]	
-enemy	enemy_marsh_3	marsh	[334.0, 92.0]	
-enemy	enemy_marsh_4	marsh	[364.0, 91.0]	
-enemy	enemy_marsh_5	marsh	[270.0, 119.0]	
-enemy	enemy_marsh_6	marsh	[321.0, 123.0]	
-enemy	enemy_marsh_7	marsh	[356.0, 149.0]	
-enemy	enemy_marsh_8	marsh	[286.0, 155.0]	
-enemy	enemy_marsh_9	marsh	[342.0, 175.0]	
-enemy	enemy_mine_0	mine	[404.0, 19.0]	
-enemy	enemy_mine_1	mine	[432.0, 24.0]	
-enemy	enemy_mine_10	mine	[485.0, 35.0]	
-enemy	enemy_mine_2	mine	[418.0, 57.0]	
-enemy	enemy_mine_3	mine	[461.0, 87.0]	
-enemy	enemy_mine_4	mine	[492.0, 95.0]	
-enemy	enemy_mine_5	mine	[402.0, 119.0]	
-enemy	enemy_mine_6	mine	[443.0, 123.0]	
-enemy	enemy_mine_7	mine	[484.0, 149.0]	
-enemy	enemy_mine_8	mine	[414.0, 156.0]	
-enemy	enemy_mine_9	mine	[468.0, 175.0]	
-enemy	enemy_ridge_0	ridge	[148.0, 199.0]	
-enemy	enemy_ridge_1	ridge	[179.0, 203.0]	
-enemy	enemy_ridge_10	ridge	[226.0, 215.0]	
-enemy	enemy_ridge_2	ridge	[161.0, 237.0]	
-enemy	enemy_ridge_3	ridge	[204.0, 271.0]	
-enemy	enemy_ridge_4	ridge	[236.0, 271.0]	
-enemy	enemy_ridge_5	ridge	[146.0, 299.0]	
-enemy	enemy_ridge_6	ridge	[188.0, 303.0]	
-enemy	enemy_ridge_7	ridge	[226.0, 329.0]	
-enemy	enemy_ridge_8	ridge	[161.0, 339.0]	
-enemy	enemy_ridge_9	ridge	[211.0, 359.0]	
-enemy	enemy_skywalk_0	skywalk	[277.0, 204.0]	
-enemy	enemy_skywalk_1	skywalk	[303.0, 203.0]	
-enemy	enemy_skywalk_10	skywalk	[356.0, 215.0]	
-enemy	enemy_skywalk_2	skywalk	[286.0, 237.0]	
-enemy	enemy_skywalk_3	skywalk	[332.0, 267.0]	
-enemy	enemy_skywalk_4	skywalk	[364.0, 271.0]	
-enemy	enemy_skywalk_5	skywalk	[276.0, 299.0]	
-enemy	enemy_skywalk_6	skywalk	[318.0, 303.0]	
-enemy	enemy_skywalk_7	skywalk	[356.0, 329.0]	
-enemy	enemy_skywalk_8	skywalk	[284.0, 335.0]	
-enemy	enemy_skywalk_9	skywalk	[345.0, 355.0]	
+cord	cord_village_4	village	[14.0, 252.0]	-
+cord	cord_village_5	village	[72.0, 320.0]	-
+switch	door_crystal	crystal	[564.0, 259.0]	-
+switch	door_crystal_2	crystal	[602.0, 323.0]	-
+switch	door_deep	deep	[435.0, 260.0]	-
+switch	door_deep_2	deep	[474.0, 326.0]	-
+switch	door_forest	forest	[178.0, 79.0]	-
+switch	door_forest_2	forest	[218.0, 143.0]	-
+switch	door_fortress	fortress	[569.0, 79.0]	-
+switch	door_fortress_2	fortress	[602.0, 143.0]	-
+gate	door_gate_crystal	crystal	[563.0, 259.0]	-
+gate	door_gate_crystal_2	crystal	[592.0, 327.0]	-
+gate	door_gate_deep	deep	[435.0, 260.0]	-
+gate	door_gate_deep_2	deep	[466.0, 323.0]	-
+gate	door_gate_forest	forest	[178.0, 79.0]	-
+gate	door_gate_forest_2	forest	[208.0, 144.0]	-
+gate	door_gate_fortress	fortress	[562.0, 79.0]	-
+gate	door_gate_fortress_2	fortress	[592.0, 143.0]	-
+gate	door_gate_landing	landing	[99.0, 38.0]	-
+gate	door_gate_landing_2	landing	[112.0, 152.0]	-
+gate	door_gate_marsh	marsh	[307.0, 83.0]	-
+gate	door_gate_marsh_2	marsh	[335.0, 146.0]	-
+gate	door_gate_mine	mine	[436.0, 79.0]	-
+gate	door_gate_mine_2	mine	[464.0, 143.0]	-
+gate	door_gate_ridge	ridge	[179.0, 259.0]	-
+gate	door_gate_ridge_2	ridge	[208.0, 327.0]	-
+gate	door_gate_skywalk	skywalk	[303.0, 259.0]	-
+gate	door_gate_skywalk_2	skywalk	[336.0, 327.0]	-
+gate	door_gate_village	village	[54.0, 260.0]	-
+gate	door_gate_village_2	village	[80.0, 327.0]	-
+switch	door_landing	landing	[104.0, 38.0]	-
+switch	door_landing_2	landing	[120.0, 154.0]	-
+switch	door_marsh	marsh	[313.0, 79.0]	-
+switch	door_marsh_2	marsh	[346.0, 143.0]	-
+switch	door_mine	mine	[438.0, 79.0]	-
+switch	door_mine_2	mine	[474.0, 143.0]	-
+switch	door_ridge	ridge	[180.0, 259.0]	-
+switch	door_ridge_2	ridge	[218.0, 323.0]	-
+switch	door_skywalk	skywalk	[310.0, 260.0]	-
+switch	door_skywalk_2	skywalk	[346.0, 327.0]	-
+switch	door_village	village	[54.0, 260.0]	-
+switch	door_village_2	village	[89.0, 327.0]	-
+ember	ember_crystal_0	crystal	[569.0, 215.0]	-
+ember	ember_crystal_1	crystal	[530.0, 275.0]	-
+ember	ember_crystal_2	crystal	[606.0, 311.0]	-
+ember	ember_crystal_3	crystal	[554.0, 347.0]	-
+ember	ember_crystal_4	crystal	[629.0, 243.0]	-
+ember	ember_crystal_5	crystal	[592.0, 295.0]	-
+ember	ember_deep_0	deep	[441.0, 215.0]	-
+ember	ember_deep_1	deep	[399.0, 271.0]	-
+ember	ember_deep_2	deep	[476.0, 311.0]	-
+ember	ember_deep_3	deep	[426.0, 347.0]	-
+ember	ember_deep_4	deep	[502.0, 244.0]	-
+ember	ember_deep_5	deep	[461.0, 295.0]	-
+ember	ember_forest_0	forest	[185.0, 39.0]	-
+ember	ember_forest_1	forest	[145.0, 95.0]	-
+ember	ember_forest_2	forest	[218.0, 131.0]	-
+ember	ember_forest_3	forest	[174.0, 167.0]	-
+ember	ember_forest_4	forest	[247.0, 63.0]	-
+ember	ember_forest_5	forest	[211.0, 115.0]	-
+ember	ember_fortress_0	fortress	[569.0, 35.0]	-
+ember	ember_fortress_1	fortress	[529.0, 91.0]	-
+ember	ember_fortress_2	fortress	[603.0, 132.0]	-
+ember	ember_fortress_3	fortress	[555.0, 167.0]	-
+ember	ember_fortress_4	fortress	[630.0, 63.0]	-
+ember	ember_fortress_5	fortress	[591.0, 119.0]	-
+ember	ember_landing_0	landing	[20.0, 22.0]	-
+ember	ember_landing_1	landing	[108.0, 56.0]	-
+ember	ember_landing_2	landing	[50.0, 104.0]	-
+ember	ember_landing_3	landing	[114.0, 82.0]	-
+ember	ember_landing_4	landing	[102.0, 140.0]	-
+ember	ember_landing_5	landing	[68.0, 174.0]	-
+ember	ember_marsh_0	marsh	[316.0, 35.0]	-
+ember	ember_marsh_1	marsh	[267.0, 92.0]	-
+ember	ember_marsh_2	marsh	[349.0, 131.0]	-
+ember	ember_marsh_3	marsh	[299.0, 167.0]	-
+ember	ember_marsh_4	marsh	[373.0, 63.0]	-
+ember	ember_marsh_5	marsh	[337.0, 115.0]	-
+ember	ember_mine_0	mine	[441.0, 35.0]	-
+ember	ember_mine_1	mine	[401.0, 91.0]	-
+ember	ember_mine_2	mine	[476.0, 135.0]	-
+ember	ember_mine_3	mine	[428.0, 170.0]	-
+ember	ember_mine_4	mine	[505.0, 63.0]	-
+ember	ember_mine_5	mine	[467.0, 115.0]	-
+ember	ember_ridge_0	ridge	[185.0, 215.0]	-
+ember	ember_ridge_1	ridge	[145.0, 271.0]	-
+ember	ember_ridge_2	ridge	[221.0, 311.0]	-
+ember	ember_ridge_3	ridge	[170.0, 347.0]	-
+ember	ember_ridge_4	ridge	[246.0, 244.0]	-
+ember	ember_ridge_5	ridge	[204.0, 299.0]	-
+ember	ember_skywalk_0	skywalk	[310.0, 215.0]	-
+ember	ember_skywalk_1	skywalk	[270.0, 274.0]	-
+ember	ember_skywalk_2	skywalk	[348.0, 311.0]	-
+ember	ember_skywalk_3	skywalk	[298.0, 347.0]	-
+ember	ember_skywalk_4	skywalk	[373.0, 247.0]	-
+ember	ember_skywalk_5	skywalk	[338.0, 295.0]	-
+ember	ember_village_0	village	[57.0, 215.0]	-
+ember	ember_village_1	village	[11.0, 271.0]	-
+ember	ember_village_2	village	[92.0, 311.0]	-
+ember	ember_village_3	village	[43.0, 347.0]	-
+ember	ember_village_4	village	[119.0, 244.0]	-
+ember	ember_village_5	village	[82.0, 295.0]	-
+enemy	enemy_crystal_0	crystal	[532.0, 199.0]	-
+enemy	enemy_crystal_1	crystal	[559.0, 203.0]	-
+enemy	enemy_crystal_10	crystal	[611.0, 215.0]	-
+enemy	enemy_crystal_2	crystal	[544.0, 237.0]	-
+enemy	enemy_crystal_3	crystal	[588.0, 271.0]	-
+enemy	enemy_crystal_4	crystal	[620.0, 271.0]	-
+enemy	enemy_crystal_5	crystal	[527.0, 302.0]	-
+enemy	enemy_crystal_6	crystal	[570.0, 303.0]	-
+enemy	enemy_crystal_7	crystal	[612.0, 333.0]	-
+enemy	enemy_crystal_8	crystal	[538.0, 335.0]	-
+enemy	enemy_crystal_9	crystal	[595.0, 356.0]	-
+enemy	enemy_deep_0	deep	[404.0, 199.0]	-
+enemy	enemy_deep_1	deep	[436.0, 204.0]	-
+enemy	enemy_deep_10	deep	[484.0, 215.0]	-
+enemy	enemy_deep_2	deep	[415.0, 237.0]	-
+enemy	enemy_deep_3	deep	[459.0, 267.0]	-
+enemy	enemy_deep_4	deep	[493.0, 271.0]	-
+enemy	enemy_deep_5	deep	[402.0, 299.0]	-
+enemy	enemy_deep_6	deep	[445.0, 303.0]	-
+enemy	enemy_deep_7	deep	[484.0, 329.0]	-
+enemy	enemy_deep_8	deep	[414.0, 335.0]	-
+enemy	enemy_deep_9	deep	[470.0, 356.0]	-
+enemy	enemy_forest_0	forest	[148.0, 23.0]	-
+enemy	enemy_forest_1	forest	[176.0, 23.0]	-
+enemy	enemy_forest_10	forest	[228.0, 35.0]	-
+enemy	enemy_forest_2	forest	[159.0, 57.0]	-
+enemy	enemy_forest_3	forest	[203.0, 87.0]	-
+enemy	enemy_forest_4	forest	[236.0, 91.0]	-
+enemy	enemy_forest_5	forest	[147.0, 119.0]	-
+enemy	enemy_forest_6	forest	[194.0, 124.0]	-
+enemy	enemy_forest_7	forest	[228.0, 149.0]	-
+enemy	enemy_forest_8	forest	[162.0, 155.0]	-
+enemy	enemy_forest_9	forest	[210.0, 175.0]	-
+enemy	enemy_fortress_0	fortress	[531.0, 19.0]	-
+enemy	enemy_fortress_1	fortress	[558.0, 23.0]	-
+enemy	enemy_fortress_10	fortress	[611.0, 39.0]	-
+enemy	enemy_fortress_2	fortress	[542.0, 57.0]	-
+enemy	enemy_fortress_3	fortress	[587.0, 91.0]	-
+enemy	enemy_fortress_4	fortress	[620.0, 91.0]	-
+enemy	enemy_fortress_5	fortress	[530.0, 119.0]	-
+enemy	enemy_fortress_6	fortress	[572.0, 127.0]	-
+enemy	enemy_fortress_7	fortress	[612.0, 149.0]	-
+enemy	enemy_fortress_8	fortress	[538.0, 155.0]	-
+enemy	enemy_fortress_9	fortress	[598.0, 175.0]	-
+enemy	enemy_landing_0	landing	[44.0, 50.0]	-
+enemy	enemy_landing_1	landing	[91.0, 56.0]	-
+enemy	enemy_landing_10	landing	[102.0, 82.0]	-
+enemy	enemy_landing_2	landing	[23.0, 138.0]	-
+enemy	enemy_landing_3	landing	[100.0, 128.0]	-
+enemy	enemy_landing_4	landing	[33.0, 176.0]	-
+enemy	enemy_landing_5	landing	[86.0, 174.0]	-
+enemy	enemy_landing_6	landing	[20.0, 100.0]	-
+enemy	enemy_landing_7	landing	[74.0, 142.0]	-
+enemy	enemy_landing_8	landing	[46.0, 116.0]	-
+enemy	enemy_landing_9	landing	[113.0, 123.0]	-
+enemy	enemy_marsh_0	marsh	[277.0, 20.0]	-
+enemy	enemy_marsh_1	marsh	[303.0, 28.0]	-
+enemy	enemy_marsh_10	marsh	[356.0, 39.0]	-
+enemy	enemy_marsh_2	marsh	[287.0, 57.0]	-
+enemy	enemy_marsh_3	marsh	[334.0, 92.0]	-
+enemy	enemy_marsh_4	marsh	[364.0, 91.0]	-
+enemy	enemy_marsh_5	marsh	[270.0, 119.0]	-
+enemy	enemy_marsh_6	marsh	[321.0, 123.0]	-
+enemy	enemy_marsh_7	marsh	[356.0, 149.0]	-
+enemy	enemy_marsh_8	marsh	[286.0, 155.0]	-
+enemy	enemy_marsh_9	marsh	[342.0, 175.0]	-
+enemy	enemy_mine_0	mine	[404.0, 19.0]	-
+enemy	enemy_mine_1	mine	[432.0, 24.0]	-
+enemy	enemy_mine_10	mine	[485.0, 35.0]	-
+enemy	enemy_mine_2	mine	[418.0, 57.0]	-
+enemy	enemy_mine_3	mine	[461.0, 87.0]	-
+enemy	enemy_mine_4	mine	[492.0, 95.0]	-
+enemy	enemy_mine_5	mine	[402.0, 119.0]	-
+enemy	enemy_mine_6	mine	[443.0, 123.0]	-
+enemy	enemy_mine_7	mine	[484.0, 149.0]	-
+enemy	enemy_mine_8	mine	[414.0, 156.0]	-
+enemy	enemy_mine_9	mine	[468.0, 175.0]	-
+enemy	enemy_ridge_0	ridge	[148.0, 199.0]	-
+enemy	enemy_ridge_1	ridge	[179.0, 203.0]	-
+enemy	enemy_ridge_10	ridge	[226.0, 215.0]	-
+enemy	enemy_ridge_2	ridge	[161.0, 237.0]	-
+enemy	enemy_ridge_3	ridge	[204.0, 271.0]	-
+enemy	enemy_ridge_4	ridge	[236.0, 271.0]	-
+enemy	enemy_ridge_5	ridge	[146.0, 299.0]	-
+enemy	enemy_ridge_6	ridge	[188.0, 303.0]	-
+enemy	enemy_ridge_7	ridge	[226.0, 329.0]	-
+enemy	enemy_ridge_8	ridge	[161.0, 339.0]	-
+enemy	enemy_ridge_9	ridge	[211.0, 359.0]	-
+enemy	enemy_skywalk_0	skywalk	[277.0, 204.0]	-
+enemy	enemy_skywalk_1	skywalk	[303.0, 203.0]	-
+enemy	enemy_skywalk_10	skywalk	[356.0, 215.0]	-
+enemy	enemy_skywalk_2	skywalk	[286.0, 237.0]	-
+enemy	enemy_skywalk_3	skywalk	[332.0, 267.0]	-
+enemy	enemy_skywalk_4	skywalk	[364.0, 271.0]	-
+enemy	enemy_skywalk_5	skywalk	[276.0, 299.0]	-
+enemy	enemy_skywalk_6	skywalk	[318.0, 303.0]	-
+enemy	enemy_skywalk_7	skywalk	[356.0, 329.0]	-
+enemy	enemy_skywalk_8	skywalk	[284.0, 335.0]	-
+enemy	enemy_skywalk_9	skywalk	[345.0, 355.0]	-
 gate	gate_crystal_crawl	crystal	[593.0, 287.0]	crawl
 gate	gate_crystal_dash	crystal	[540.0, 291.0]	dash
 gate	gate_crystal_double_jump	crystal	[554.0, 287.0]	double_jump
@@ -716,28 +716,28 @@ lore_item	lore_mine	mine	[499.0, 148.0]	vision
 lore_item	lore_ridge	ridge	[244.0, 331.0]	vision
 lore_item	lore_skywalk	skywalk	[372.0, 332.0]	vision
 lore_item	lore_village	village	[114.0, 327.0]	vision
-return_pier	return_crystal	crystal	[598.0, 351.0]	
-return_pier	return_fortress	fortress	[596.0, 175.0]	
-return_pier	return_landing	landing	[16.0, 54.0]	
-return_pier	return_skywalk	skywalk	[343.0, 356.0]	
-site	site_crystal_0	crystal	[536.0, 215.0]	
-site	site_crystal_1	crystal	[572.0, 227.0]	
-site	site_deep_0	deep	[408.0, 215.0]	
-site	site_deep_1	deep	[442.0, 227.0]	
-site	site_forest_0	forest	[154.0, 35.0]	
-site	site_forest_1	forest	[187.0, 47.0]	
-site	site_fortress_0	fortress	[536.0, 38.0]	
-site	site_fortress_1	fortress	[572.0, 46.0]	
-site	site_landing_0	landing	[44.0, 74.0]	
-site	site_landing_1	landing	[36.0, 158.0]	
-site	site_marsh_0	marsh	[282.0, 35.0]	
-site	site_marsh_1	marsh	[316.0, 48.0]	
-site	site_mine_0	mine	[408.0, 35.0]	
-site	site_mine_1	mine	[444.0, 46.0]	
-site	site_ridge_0	ridge	[155.0, 215.0]	
-site	site_ridge_1	ridge	[188.0, 227.0]	
-site	site_skywalk_0	skywalk	[283.0, 214.0]	
-site	site_skywalk_1	skywalk	[316.0, 227.0]	
+return_pier	return_crystal	crystal	[598.0, 351.0]	-
+return_pier	return_fortress	fortress	[596.0, 175.0]	-
+return_pier	return_landing	landing	[16.0, 54.0]	-
+return_pier	return_skywalk	skywalk	[343.0, 356.0]	-
+site	site_crystal_0	crystal	[536.0, 215.0]	-
+site	site_crystal_1	crystal	[572.0, 227.0]	-
+site	site_deep_0	deep	[408.0, 215.0]	-
+site	site_deep_1	deep	[442.0, 227.0]	-
+site	site_forest_0	forest	[154.0, 35.0]	-
+site	site_forest_1	forest	[187.0, 47.0]	-
+site	site_fortress_0	fortress	[536.0, 38.0]	-
+site	site_fortress_1	fortress	[572.0, 46.0]	-
+site	site_landing_0	landing	[44.0, 74.0]	-
+site	site_landing_1	landing	[36.0, 158.0]	-
+site	site_marsh_0	marsh	[282.0, 35.0]	-
+site	site_marsh_1	marsh	[316.0, 48.0]	-
+site	site_mine_0	mine	[408.0, 35.0]	-
+site	site_mine_1	mine	[444.0, 46.0]	-
+site	site_ridge_0	ridge	[155.0, 215.0]	-
+site	site_ridge_1	ridge	[188.0, 227.0]	-
+site	site_skywalk_0	skywalk	[283.0, 214.0]	-
+site	site_skywalk_1	skywalk	[316.0, 227.0]	-
 재사용 랜드마크	5	landing	[38.0, 74.0]	기존 0.9 밀도·앵커 유지
 재사용 랜드마크	0	landing	[98.0, 82.0]	기존 0.9 밀도·앵커 유지
 재사용 랜드마크	1	landing	[106.0, 82.0]	기존 0.9 밀도·앵커 유지
