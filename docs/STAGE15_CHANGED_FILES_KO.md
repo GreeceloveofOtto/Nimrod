@@ -1,196 +1,234 @@
-# 15단계 착륙지 검토본 파일 목록
+# 15단계 착륙지 재검토 변경 파일
 
-M=변경, D=이동, A=추가.
+기준은 이전 착륙지 검토 커밋 fbb5c7a4입니다. M=변경, D=archive 이동/제거, ??=신규. 이동 원본과 용량은 STAGE15_MAP_REWORK_REPORT_KO.md의 archive 표에 있습니다.
 
 ```text
-M	README_KO.txt
-M	assets/art_manifest.json
-M	assets/world/zabulistan_v2/landing/background_0.webp
-M	assets/world/zabulistan_v2/landing/background_1.webp
-M	assets/world/zabulistan_v2/landing/background_2.webp
-M	assets/world/zabulistan_v2/landing/landmarks.webp
-M	data/stage14_budget.json
-M	data/world/chunk.schema.json
-M	data/world/world_v2.schema.json
-M	data/world/zabulistan/art_quality.json
-M	data/world/zabulistan/art_v2.json
-M	data/world/zabulistan/chunks/c00_00.json
-M	data/world/zabulistan/chunks/c00_01.json
-M	data/world/zabulistan/chunks/c00_02.json
-M	data/world/zabulistan/chunks/c00_03.json
-M	data/world/zabulistan/chunks/c00_04.json
-M	data/world/zabulistan/chunks/c00_05.json
-M	data/world/zabulistan/chunks/c00_06.json
-M	data/world/zabulistan/chunks/c00_07.json
-M	data/world/zabulistan/chunks/c00_08.json
-M	data/world/zabulistan/chunks/c00_09.json
-M	data/world/zabulistan/chunks/c01_00.json
-M	data/world/zabulistan/chunks/c01_01.json
-M	data/world/zabulistan/chunks/c01_02.json
-M	data/world/zabulistan/chunks/c01_03.json
-M	data/world/zabulistan/chunks/c01_04.json
-M	data/world/zabulistan/chunks/c01_05.json
-M	data/world/zabulistan/chunks/c01_06.json
-M	data/world/zabulistan/chunks/c01_07.json
-M	data/world/zabulistan/chunks/c01_08.json
-M	data/world/zabulistan/chunks/c01_09.json
-M	data/world/zabulistan/chunks/c02_00.json
-M	data/world/zabulistan/chunks/c02_01.json
-M	data/world/zabulistan/chunks/c02_02.json
-M	data/world/zabulistan/chunks/c02_03.json
-M	data/world/zabulistan/chunks/c02_04.json
-M	data/world/zabulistan/chunks/c02_05.json
-M	data/world/zabulistan/chunks/c02_06.json
-M	data/world/zabulistan/chunks/c02_07.json
-M	data/world/zabulistan/chunks/c02_08.json
-M	data/world/zabulistan/chunks/c02_09.json
-M	data/world/zabulistan/chunks/c03_00.json
-M	data/world/zabulistan/chunks/c03_01.json
-M	data/world/zabulistan/chunks/c03_02.json
-M	data/world/zabulistan/chunks/c03_03.json
-M	data/world/zabulistan/chunks/c03_04.json
-M	data/world/zabulistan/chunks/c03_05.json
-M	data/world/zabulistan/chunks/c03_06.json
-M	data/world/zabulistan/chunks/c03_07.json
-M	data/world/zabulistan/chunks/c03_08.json
-M	data/world/zabulistan/chunks/c03_09.json
-M	data/world/zabulistan/chunks/c04_00.json
-M	data/world/zabulistan/chunks/c04_01.json
-M	data/world/zabulistan/chunks/c04_02.json
-M	data/world/zabulistan/chunks/c04_03.json
-M	data/world/zabulistan/chunks/c04_04.json
-M	data/world/zabulistan/chunks/c04_05.json
-M	data/world/zabulistan/chunks/c04_06.json
-M	data/world/zabulistan/chunks/c04_07.json
-M	data/world/zabulistan/chunks/c04_08.json
-M	data/world/zabulistan/chunks/c04_09.json
-M	data/world/zabulistan/chunks/c05_00.json
-M	data/world/zabulistan/chunks/c05_01.json
-M	data/world/zabulistan/chunks/c05_02.json
-M	data/world/zabulistan/chunks/c05_03.json
-M	data/world/zabulistan/chunks/c05_04.json
-M	data/world/zabulistan/chunks/c05_05.json
-M	data/world/zabulistan/chunks/c05_06.json
-M	data/world/zabulistan/chunks/c05_07.json
-M	data/world/zabulistan/chunks/c05_08.json
-M	data/world/zabulistan/chunks/c05_09.json
-M	data/world/zabulistan/chunks/c06_00.json
-M	data/world/zabulistan/chunks/c06_01.json
-M	data/world/zabulistan/chunks/c06_02.json
-M	data/world/zabulistan/chunks/c06_03.json
-M	data/world/zabulistan/chunks/c06_04.json
-M	data/world/zabulistan/chunks/c06_05.json
-M	data/world/zabulistan/chunks/c06_06.json
-M	data/world/zabulistan/chunks/c06_07.json
-M	data/world/zabulistan/chunks/c06_08.json
-M	data/world/zabulistan/chunks/c06_09.json
-M	data/world/zabulistan/chunks/c07_00.json
-M	data/world/zabulistan/chunks/c07_01.json
-M	data/world/zabulistan/chunks/c07_02.json
-M	data/world/zabulistan/chunks/c07_03.json
-M	data/world/zabulistan/chunks/c07_04.json
-M	data/world/zabulistan/chunks/c07_05.json
-M	data/world/zabulistan/chunks/c07_06.json
-M	data/world/zabulistan/chunks/c07_07.json
-M	data/world/zabulistan/chunks/c07_08.json
-M	data/world/zabulistan/chunks/c07_09.json
-M	data/world/zabulistan/chunks/c08_00.json
-M	data/world/zabulistan/chunks/c08_01.json
-M	data/world/zabulistan/chunks/c08_02.json
-M	data/world/zabulistan/chunks/c08_03.json
-M	data/world/zabulistan/chunks/c08_04.json
-M	data/world/zabulistan/chunks/c08_05.json
-M	data/world/zabulistan/chunks/c08_06.json
-M	data/world/zabulistan/chunks/c08_07.json
-M	data/world/zabulistan/chunks/c08_08.json
-M	data/world/zabulistan/chunks/c08_09.json
-M	data/world/zabulistan/chunks/c09_00.json
-M	data/world/zabulistan/chunks/c09_01.json
-M	data/world/zabulistan/chunks/c09_02.json
-M	data/world/zabulistan/chunks/c09_03.json
-M	data/world/zabulistan/chunks/c09_04.json
-M	data/world/zabulistan/chunks/c09_05.json
-M	data/world/zabulistan/chunks/c09_06.json
-M	data/world/zabulistan/chunks/c09_07.json
-M	data/world/zabulistan/chunks/c09_08.json
-M	data/world/zabulistan/chunks/c09_09.json
-M	data/world/zabulistan/source/glyphs.json
-D	data/world/zabulistan/source/maze.ascii
-M	data/world/zabulistan/source/world.ascii
-M	data/world/zabulistan/world_v2.json
-M	docs/SIZE_REPORT_KO.md
-M	docs/SPRITE_QA_REPORT_KO.md
-M	scripts/world/continuous_world.gd
-M	scripts/world/world_chunk.gd
-M	scripts/world/world_manager.gd
-M	scripts/world/world_map.gd
-M	tests/stage14_performance.gd
-M	tests/stage14_stream_capture.gd
-M	tools/qa/check_world_art.py
-M	tools/world/build_world.py
-M	tools/world/validate_world.py
-A	assets/image_prompts/zabulistan_carved_shared.md
-A	assets/image_prompts/zabulistan_landing_sea.md
-A	assets/world/zabulistan_v2/shared/backwall.webp
-A	assets/world/zabulistan_v2/shared/crust.webp
-A	assets/world/zabulistan_v2/shared/fill.webp
-A	assets/world/zabulistan_v2/shared/foreground.webp
-A	assets/world/zabulistan_v2/shared/supports.webp
-A	data/world/zabulistan/carved_art.json
-A	data/world/zabulistan/source/entity_catalogue.json
-A	data/world/zabulistan/source/layout_landing.json
-A	data/world/zabulistan/source/legacy_stage14.ascii
-A	data/world/zabulistan/source/rooms/landing_00_watch.txt
-A	data/world/zabulistan/source/rooms/landing_01_crossing.txt
-A	data/world/zabulistan/source/rooms/landing_02_salt.txt
-A	data/world/zabulistan/source/rooms/landing_03_landing.txt
-A	data/world/zabulistan/source/rooms/landing_04_arch.txt
-A	data/world/zabulistan/source/rooms/landing_05_sea_iwan.txt
-A	data/world/zabulistan/source/rooms/landing_06_reed.txt
-A	data/world/zabulistan/source/rooms/landing_07_cistern.txt
-A	data/world/zabulistan/source/rooms/landing_08_guard.txt
-A	data/world/zabulistan/source/rooms/landing_09_well.txt
-A	data/world/zabulistan/source/rooms/landing_10_turn.txt
-A	data/world/zabulistan/source/rooms/landing_11_ruin.txt
-A	data/world/zabulistan/source/rooms/landing_12_qanat.txt
-A	data/world/zabulistan/source/rooms/landing_13_alcove.txt
-A	data/world/zabulistan/source/rooms/landing_14_salt_crypt.txt
-A	data/world/zabulistan/source/rooms/landing_15_stair.txt
-A	data/world/zabulistan/source/rooms/landing_16_crawl.txt
-A	data/world/zabulistan/source/rooms/landing_17_lamp.txt
-A	data/world/zabulistan/source/rooms/landing_18_sea_gate.txt
-A	data/world/zabulistan/source/rooms/landing_19_secret.txt
-A	data/world/zabulistan/source/rooms/landing_20_vault.txt
-A	data/world/zabulistan/source/rooms/landing_21_bell.txt
-A	data/world/zabulistan/source/rooms/landing_22_arrow.txt
-A	data/world/zabulistan/source/rooms/landing_23_pier.txt
-A	data/world/zabulistan/source/rooms/landing_24_lower.txt
-A	data/world/zabulistan/source/rooms/landing_25_return.txt
-A	data/world/zabulistan/source/rooms/landing_26_last_light.txt
-A	data/world/zabulistan/source/rooms/landing_well_38.txt
-A	data/world/zabulistan/source/rooms/landing_well_82.txt
-A	data/world/zabulistan/source/world_base.json
-A	docs/STAGE15_CHANGED_FILES_KO.md
-A	docs/STAGE15_MAP_REWORK_REPORT_KO.md
-A	docs/STAGE15_MAP_REWORK_SPEC_KO.md
-A	docs/stage15_map_review/landing_before_after.png
-A	docs/stage15_map_review/landing_corridor.png
-A	docs/stage15_map_review/landing_hall.png
-A	docs/stage15_map_review/landing_shaft.png
-A	tests/stage15_carved_motion.gd
-A	tests/stage15_carved_terrain.gd
-A	tests/stage15_landing_capture.gd
-A	tools/qa/check_carved_art.py
-A	tools/qa/measure_landing_review.py
-A	tools/qa/render_background_parity.gd
-A	tools/world/compact_landing_art.py
-A	tools/world/optimize_landing_backgrounds.py
-A	tools/world/pack_carved_art.py
-A	tools/world/pack_landing_sea.py
-A	tools/world/package_landing_review.py
-A	tools/world/physics_edges.py
-A	tools/world/sync_carved_manifest.py
-A	tools/world/terrain_rules.py
+ M README_KO.txt
+ M assets/art_manifest.json
+ M assets/image_prompts/zabulistan_carved_shared.md
+ D assets/image_prompts/zabulistan_landing_sea.md
+ D assets/world/shared/altar.webp
+ D assets/world/shared/crystal.webp
+ D assets/world/shared/life.webp
+ M assets/world/zabulistan_v2/landing/background_1.webp
+ D assets/world/zabulistan_v2/landing/terrain.webp
+ M data/alpha_expectations.json
+ M data/save_settings.json
+ M data/stage14_budget.json
+ M data/world/abilities.json
+ M data/world/art.json
+ M data/world/zabulistan/art_quality.json
+ M data/world/zabulistan/art_v2.json
+ M data/world/zabulistan/chunks/c00_00.json
+ M data/world/zabulistan/chunks/c00_01.json
+ M data/world/zabulistan/chunks/c00_02.json
+ M data/world/zabulistan/chunks/c00_03.json
+ M data/world/zabulistan/chunks/c00_04.json
+ M data/world/zabulistan/chunks/c00_05.json
+ M data/world/zabulistan/chunks/c00_06.json
+ M data/world/zabulistan/chunks/c00_07.json
+ M data/world/zabulistan/chunks/c00_09.json
+ M data/world/zabulistan/chunks/c01_00.json
+ M data/world/zabulistan/chunks/c01_01.json
+ M data/world/zabulistan/chunks/c01_02.json
+ M data/world/zabulistan/chunks/c01_03.json
+ M data/world/zabulistan/chunks/c01_04.json
+ M data/world/zabulistan/chunks/c01_06.json
+ M data/world/zabulistan/chunks/c01_07.json
+ M data/world/zabulistan/chunks/c01_08.json
+ M data/world/zabulistan/chunks/c01_09.json
+ M data/world/zabulistan/chunks/c02_00.json
+ M data/world/zabulistan/chunks/c02_01.json
+ M data/world/zabulistan/chunks/c02_02.json
+ M data/world/zabulistan/chunks/c02_04.json
+ M data/world/zabulistan/chunks/c02_05.json
+ M data/world/zabulistan/chunks/c02_06.json
+ M data/world/zabulistan/chunks/c02_07.json
+ M data/world/zabulistan/chunks/c02_09.json
+ M data/world/zabulistan/chunks/c03_01.json
+ M data/world/zabulistan/chunks/c03_02.json
+ M data/world/zabulistan/chunks/c03_03.json
+ M data/world/zabulistan/chunks/c03_04.json
+ M data/world/zabulistan/chunks/c03_06.json
+ M data/world/zabulistan/chunks/c03_07.json
+ M data/world/zabulistan/chunks/c03_08.json
+ M data/world/zabulistan/chunks/c03_09.json
+ M data/world/zabulistan/chunks/c04_00.json
+ M data/world/zabulistan/chunks/c04_01.json
+ M data/world/zabulistan/chunks/c04_02.json
+ M data/world/zabulistan/chunks/c04_04.json
+ M data/world/zabulistan/chunks/c04_05.json
+ M data/world/zabulistan/chunks/c04_06.json
+ M data/world/zabulistan/chunks/c04_07.json
+ M data/world/zabulistan/chunks/c04_09.json
+ M data/world/zabulistan/chunks/c05_01.json
+ M data/world/zabulistan/chunks/c05_02.json
+ M data/world/zabulistan/chunks/c05_03.json
+ M data/world/zabulistan/chunks/c05_04.json
+ M data/world/zabulistan/chunks/c05_06.json
+ M data/world/zabulistan/chunks/c05_07.json
+ M data/world/zabulistan/chunks/c05_08.json
+ M data/world/zabulistan/chunks/c05_09.json
+ M data/world/zabulistan/chunks/c06_00.json
+ M data/world/zabulistan/chunks/c06_01.json
+ M data/world/zabulistan/chunks/c06_02.json
+ M data/world/zabulistan/chunks/c06_04.json
+ M data/world/zabulistan/chunks/c06_05.json
+ M data/world/zabulistan/chunks/c06_06.json
+ M data/world/zabulistan/chunks/c06_07.json
+ M data/world/zabulistan/chunks/c06_09.json
+ M data/world/zabulistan/chunks/c07_01.json
+ M data/world/zabulistan/chunks/c07_02.json
+ M data/world/zabulistan/chunks/c07_03.json
+ M data/world/zabulistan/chunks/c07_04.json
+ M data/world/zabulistan/chunks/c07_06.json
+ M data/world/zabulistan/chunks/c07_07.json
+ M data/world/zabulistan/chunks/c07_08.json
+ M data/world/zabulistan/chunks/c07_09.json
+ M data/world/zabulistan/chunks/c08_00.json
+ M data/world/zabulistan/chunks/c08_01.json
+ M data/world/zabulistan/chunks/c08_02.json
+ M data/world/zabulistan/chunks/c08_04.json
+ M data/world/zabulistan/chunks/c08_05.json
+ M data/world/zabulistan/chunks/c08_06.json
+ M data/world/zabulistan/chunks/c08_07.json
+ M data/world/zabulistan/chunks/c08_09.json
+ M data/world/zabulistan/chunks/c09_01.json
+ M data/world/zabulistan/chunks/c09_02.json
+ M data/world/zabulistan/chunks/c09_03.json
+ M data/world/zabulistan/chunks/c09_04.json
+ M data/world/zabulistan/chunks/c09_05.json
+ M data/world/zabulistan/chunks/c09_06.json
+ M data/world/zabulistan/chunks/c09_07.json
+ M data/world/zabulistan/chunks/c09_08.json
+ M data/world/zabulistan/chunks/c09_09.json
+ M data/world/zabulistan/source/entity_catalogue.json
+ M data/world/zabulistan/source/layout_landing.json
+ M data/world/zabulistan/source/region_design.json
+ D data/world/zabulistan/source/rooms/landing_00_watch.txt
+ D data/world/zabulistan/source/rooms/landing_01_crossing.txt
+ D data/world/zabulistan/source/rooms/landing_02_salt.txt
+ D data/world/zabulistan/source/rooms/landing_03_landing.txt
+ D data/world/zabulistan/source/rooms/landing_04_arch.txt
+ D data/world/zabulistan/source/rooms/landing_05_sea_iwan.txt
+ D data/world/zabulistan/source/rooms/landing_06_reed.txt
+ D data/world/zabulistan/source/rooms/landing_07_cistern.txt
+ D data/world/zabulistan/source/rooms/landing_08_guard.txt
+ D data/world/zabulistan/source/rooms/landing_09_well.txt
+ D data/world/zabulistan/source/rooms/landing_10_turn.txt
+ D data/world/zabulistan/source/rooms/landing_11_ruin.txt
+ D data/world/zabulistan/source/rooms/landing_12_qanat.txt
+ D data/world/zabulistan/source/rooms/landing_13_alcove.txt
+ D data/world/zabulistan/source/rooms/landing_14_salt_crypt.txt
+ D data/world/zabulistan/source/rooms/landing_15_stair.txt
+ D data/world/zabulistan/source/rooms/landing_16_crawl.txt
+ D data/world/zabulistan/source/rooms/landing_17_lamp.txt
+ D data/world/zabulistan/source/rooms/landing_18_sea_gate.txt
+ D data/world/zabulistan/source/rooms/landing_19_secret.txt
+ D data/world/zabulistan/source/rooms/landing_20_vault.txt
+ D data/world/zabulistan/source/rooms/landing_21_bell.txt
+ D data/world/zabulistan/source/rooms/landing_22_arrow.txt
+ D data/world/zabulistan/source/rooms/landing_23_pier.txt
+ D data/world/zabulistan/source/rooms/landing_24_lower.txt
+ D data/world/zabulistan/source/rooms/landing_25_return.txt
+ D data/world/zabulistan/source/rooms/landing_26_last_light.txt
+ D data/world/zabulistan/source/rooms/landing_well_38.txt
+ D data/world/zabulistan/source/rooms/landing_well_82.txt
+ M data/world/zabulistan/source/world.ascii
+ M data/world/zabulistan/source/world_base.json
+ M data/world/zabulistan/world_v2.json
+ M docs/SIZE_REPORT_KO.md
+ M docs/SPRITE_QA_REPORT_KO.md
+ M docs/STAGE15_CHANGED_FILES_KO.md
+ M docs/STAGE15_MAP_REWORK_REPORT_KO.md
+ M docs/STAGE15_MAP_REWORK_SPEC_KO.md
+ M docs/STAGE8_ALPHA_FIX.txt
+ M docs/STAGE8_GROUNDING_RUNTIME.txt
+ M docs/WORLD_PROGRESSION_KO.md
+ M docs/WORLD_SAVE_POLICY_KO.md
+ M docs/WORLD_STATS_KO.md
+ M scripts/save_manager.gd
+ M scripts/world/continuous_world.gd
+ M scripts/world/world_abilities.gd
+ M scripts/world/world_boss.gd
+ M scripts/world/world_chunk.gd
+ M scripts/world/world_manager.gd
+ M scripts/world/world_map.gd
+ M scripts/world/world_object.gd
+ M tests/stage11_save.gd
+ M tests/stage14_continuous_runtime.gd
+ M tests/stage14_performance.gd
+ M tests/stage15_carved_terrain.gd
+ M tests/stage15_landing_capture.gd
+ M tools/qa/check_tileset_seams.py
+ M tools/world/build_world.py
+ D tools/world/make_rework_qa.py
+ D tools/world/optimize_landing_backgrounds.py
+ D tools/world/optimize_rework.py
+ M tools/world/pack_carved_art.py
+ D tools/world/pack_landing_sea.py
+ D tools/world/package_landing_review.py
+ M tools/world/physics_edges.py
+ D tools/world/polish_rework_report.py
+ M tools/world/sync_carved_manifest.py
+ M tools/world/terrain_rules.py
+ M tools/world/validate_world.py
+ D tools/world/write_rework_report.py
+ D tools/write_plaza_reports.py
+ D tools/write_siyavash_reports.py
+ D tools/write_stage13_reports.py
+?? assets/image_prompts/zabulistan_festival_pickups.md
+?? assets/image_prompts/zabulistan_landing_valley.md
+?? assets/world/shared/cord.webp
+?? assets/world/shared/ember.webp
+?? data/world/collectibles.json
+?? data/world/zabulistan/source/rooms/landing_arrival_deck.txt
+?? data/world/zabulistan/source/rooms/landing_claw_chimney.txt
+?? data/world/zabulistan/source/rooms/landing_counter_steps.txt
+?? data/world/zabulistan/source/rooms/landing_deep_pit.txt
+?? data/world/zabulistan/source/rooms/landing_echo_gap.txt
+?? data/world/zabulistan/source/rooms/landing_festival_store.txt
+?? data/world/zabulistan/source/rooms/landing_first_steps.txt
+?? data/world/zabulistan/source/rooms/landing_forest_overlook.txt
+?? data/world/zabulistan/source/rooms/landing_high_iwan.txt
+?? data/world/zabulistan/source/rooms/landing_low_arch.txt
+?? data/world/zabulistan/source/rooms/landing_lower_gallery.txt
+?? data/world/zabulistan/source/rooms/landing_resonance_court.txt
+?? data/world/zabulistan/source/rooms/landing_return_descent.txt
+?? data/world/zabulistan/source/rooms/landing_return_pier.txt
+?? data/world/zabulistan/source/rooms/landing_rope_ascent.txt
+?? data/world/zabulistan/source/rooms/landing_terraced_court.txt
+?? data/world/zabulistan/source/rooms/landing_upper_crag.txt
+?? data/world/zabulistan/source/rooms/landing_west_watch.txt
+?? data/world/zabulistan/source/rooms/landing_winding_stair.txt
+?? data/world/zabulistan/source/stamps/gate_lintel.txt
+?? data/world/zabulistan/source/stamps/vision_masonry.txt
+?? docs/CODEX_PROMPT_STAGE15_NEXT_KO.md
+?? docs/stage15_map_review_revision/assumed_coordinates.tsv
+?? docs/stage15_map_review_revision/festival_ability_hud.png
+?? docs/stage15_map_review_revision/festival_map.png
+?? docs/stage15_map_review_revision/landing_contact_sheet.png
+?? docs/stage15_map_review_revision/landing_corridor.png
+?? docs/stage15_map_review_revision/landing_exterior.png
+?? docs/stage15_map_review_revision/landing_festival.png
+?? docs/stage15_map_review_revision/landing_hall.png
+?? docs/stage15_map_review_revision/landing_hall_before_after.png
+?? docs/stage15_map_review_revision/landing_layout_after.png
+?? docs/stage15_map_review_revision/landing_layout_before.png
+?? docs/stage15_map_review_revision/landing_layout_comparison.png
+?? docs/stage15_map_review_revision/landing_return.png
+?? docs/stage15_map_review_revision/landing_shaft.png
+?? tests/stage15_festival_progress.gd
+?? tests/test_world_state_solver.py
+?? tools/qa/check_stage15_scope.py
+?? tools/qa/render_landing_layout.py
+?? tools/qa/stage15_scope_baseline.json
+?? tools/world/crawl_edges.py
+?? tools/world/festival_progression.py
+?? tools/world/gate_conditions.py
+?? tools/world/layout_rules.py
+?? tools/world/pack_landing_revision_art.py
+?? tools/world/package_landing_revision.py
+?? tools/world/state_proof.py
+?? tools/world/volume_entry.py
 ```
-
-보관: archive/stage15_map/before, retired_source, art (QA ZIP 포함, 실행 ZIP 제외). source/maze.ascii는 before/world/source에, 미사용 초안 템플릿은 retired_source에 보존합니다. 신규 전달 파일은 downloads의 실행 ZIP/QA ZIP/각 SHA256/README입니다.

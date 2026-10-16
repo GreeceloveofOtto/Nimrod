@@ -66,3 +66,6 @@ func _update_active(delta: float) -> void:
     var hero: Node2D = _target()
     if not attack_has_hit and _player_in_attack(hero):attack_has_hit=hero.receive_damage(int(attack_stats.get("damage",20)))
     super._update_active(delta)
+
+func _read_json(path: String) -> Dictionary:
+    return get_node("/root/World").enemy_json(path)

@@ -23,24 +23,21 @@
       "name": "두 번째 도약",
       "key": "Space",
       "impulse": 640,
-      "requires": [
-        "dash"
-      ]
+      "requires": []
     },
     "wall_cling": {
       "name": "벽의 발톱",
       "key": "A/D",
       "slide_speed": 65,
-      "requires": [
-        "double_jump"
-      ]
+      "requires": []
     },
     "wall_jump": {
       "name": "벽 차오르기",
       "key": "Space",
       "x_impulse": 460,
       "y_impulse": 695,
-      "requires": [
+      "requires": [],
+      "use_requires": [
         "wall_cling"
       ]
     },
@@ -49,17 +46,13 @@
       "key": "S+A/D",
       "speed": 115,
       "height": 48,
-      "requires": [
-        "wall_jump"
-      ]
+      "requires": []
     },
     "vision": {
       "name": "광질 시야",
       "key": "F",
       "hold": true,
-      "requires": [
-        "crawl"
-      ]
+      "requires": []
     },
     "light_throw": {
       "name": "천륜 빛 투척",
@@ -68,9 +61,7 @@
       "speed": 900,
       "range": 720,
       "cooldown": 2,
-      "requires": [
-        "vision"
-      ]
+      "requires": []
     }
   }
 }

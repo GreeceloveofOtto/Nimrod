@@ -7,6 +7,7 @@ ROOT=Path(__file__).resolve().parents[2]
 def main():
  path=ROOT/'assets/art_manifest.json';manifest=json.loads(path.read_text());entries={r['path']:r for r in manifest['assets']}
  targets=list((ROOT/'assets/world/zabulistan_v2/shared').glob('*.webp'))+list((ROOT/'assets/world/zabulistan_v2/landing').glob('*.webp'))
+ targets += [ROOT/'assets/world/shared/cord.webp', ROOT/'assets/world/shared/ember.webp']
  for image_path in targets:
   relative=image_path.relative_to(ROOT/'assets').as_posix();image=Image.open(image_path).convert('RGBA');width,height=image.size
   row=entries.get(relative)

@@ -57,6 +57,7 @@ func build_step() -> bool:
         entities=Node2D.new()
         add_child(entities)
         phase=3
+        return false
     if phase==3:
         if entity_cursor<data.get("entities",[]).size():
             world.spawn_entity(data.entities[entity_cursor],entities)
@@ -250,6 +251,8 @@ func add_extra(extra: Dictionary) -> void:
         var direction: int=int(row[3])
         var flip: int=TileSetAtlasSource.TRANSFORM_FLIP_H if direction==1 else 0
         if int(row[0])==0:support_layer.set_cell(at+Vector2i(-1 if direction==-1 else 1,0),0,Vector2i(0,0),flip)
+        elif int(row[0])==2:
+            for y in range(int(row[4])):support_layer.set_cell(at+Vector2i(0,y),0,Vector2i(2,0))
         else:
             for y in range(int(row[4])):support_layer.set_cell(at+Vector2i(direction,-y),0,Vector2i(1,0))
     elif extra.kind=="light":

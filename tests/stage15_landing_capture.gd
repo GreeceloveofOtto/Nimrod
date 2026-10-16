@@ -9,7 +9,7 @@ func _run() -> void:
     world.invulnerable=true
     await world.enter()
     hero.set_physics_process(false)
-    var directory: String="res://docs/stage15_map_review"
+    var directory: String="res://docs/stage15_map_review_revision"
     DirAccess.make_dir_recursive_absolute(directory)
     var measurements: Array=[]
     for point: Dictionary in world.settings.review_points:

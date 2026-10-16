@@ -23,10 +23,9 @@ func _run() -> void:
     world.map_ui.close()
     _check(not paused,"Map releases pause")
     world.abilities["dash"]=true
-    for i in range(4):world.collected["life_test_"+str(i)]=true
-    world.fragments=4
+    for i in range(4):world.cord_ids["cord_test_"+str(i)]=true
     world.switches["door_test"]=true
-    world.crystals=7
+    world.embers=7
     world.reveal_near(hero.position)
     var bits: PackedByteArray=world.explored.duplicate()
     world.invulnerable=false
@@ -41,19 +40,19 @@ func _run() -> void:
     hero.set_physics_process(false)
     await world.return_to_plaza()
     _check(not world.active and manager.current_level.level_id=="HwaniraPlaza","Death returns to plaza")
-    _check(world.has_ability("dash") and world.switches.has("door_test") and world.fragments==4,"Permanent progression retained")
-    _check(world.crystals==0 and world.explored==bits,"Consumables lost, fog retained")
+    _check(not world.has_ability("dash") and world.switches.has("door_test") and world.cord_ids.size()==4,"Permanent cords and doors retained; abilities removed")
+    _check(world.embers==0 and world.explored==bits,"Consumables lost, fog retained")
     _check(hero.hp==110 and hero.get_max_hp()==110,"Permanent life upgrades are fully healed in plaza before fade in")
     var save: Node=root.get_node("Save")
     var snapshot: Dictionary=save.read_save()
-    _check(int(snapshot.get("version",0))==2 and snapshot.has("zabulistan"),"Plaza checkpoint contains schema v2")
+    _check(int(snapshot.get("version",0))==3 and snapshot.has("zabulistan"),"Plaza checkpoint contains schema v3")
     _check(await save.resume(),"Resume new checkpoint")
-    _check(world.deaths_zabulistan==1 and world.has_ability("dash"),"Persistent block restored")
+    _check(world.deaths_zabulistan==1 and not world.has_ability("dash"),"Persistent block restored")
     snapshot.erase("zabulistan")
     snapshot.erase("deaths_total")
     snapshot.version=1
     var migrated: Dictionary=save.migrate_save(snapshot)
-    _check(migrated.version==2 and migrated.zabulistan.is_empty(),"Schema v1 migration")
+    _check(migrated.version==3 and migrated.zabulistan.zab_cord_ids.is_empty(),"Schema v1 migration")
     await world.enter()
     world.invulnerable=false
     hero.set_physics_process(false)

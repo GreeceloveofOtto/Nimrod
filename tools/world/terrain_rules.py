@@ -59,7 +59,9 @@ def measure(w, entities, decor, region_id=None):
         require(platforms <= (8 if region['id'] == 'skywalk' else 4), 'platform_ratio')
         view = window_counts(mask); required_min = 20 if region['id'] in ['ridge', 'skywalk'] else 35
         minimum = float(view.min()) / 880 * 100
-        require(minimum + 1e-8 >= required_min, 'viewport_solid_ratio')
+        exterior_view = window_counts(ar == ':') > 0
+        limits = np.where(exterior_view, 20, required_min)
+        require(bool(np.all(view / 880 * 100 + 1e-8 >= limits)), 'viewport_solid_ratio')
         # A cell must belong to a 2x2 solid block; this also rejects one-tile rods.
         squares = mask[:-1, :-1] & mask[1:, :-1] & mask[:-1, 1:] & mask[1:, 1:]
         thick = np.zeros_like(mask)

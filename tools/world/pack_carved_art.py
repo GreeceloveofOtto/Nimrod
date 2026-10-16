@@ -69,7 +69,7 @@ def main():
  supports=Image.new('RGBA',(4*68,2*68));boxes=[(9,634,303,921),(323,634,617,921),(636,634,932,921),(950,634,1245,921),(9,936,303,1244),(323,936,617,1244),(636,936,932,1244),(950,936,1245,1244)]
  for i,box in enumerate(boxes):
   piece=gray(art.key(image.crop(box)))
-  if i==4:piece=piece.crop((0,92,piece.width,138)) # Salt crust only; omit the long icicles.
+  if i==4:piece=piece.crop((0,92,piece.width,138)) # Frost crust only; omit the long icicles.
   piece=piece.crop(piece.getbbox());scale=min(60/piece.width,60/piece.height);piece=piece.resize((max(1,round(piece.width*scale)),max(1,round(piece.height*scale))),Image.Resampling.LANCZOS)
   x=(i%4)*68+4+(60-piece.width)//2;y=(i//4)*68+4+(60-piece.height if i==4 else 0);supports.alpha_composite(piece,(x,y))
  art.save(supports,OUT/'supports.webp',80)
@@ -78,6 +78,6 @@ def main():
  catalogue={'crust':'res://assets/world/zabulistan_v2/shared/crust.webp','backwall':'res://assets/world/zabulistan_v2/shared/backwall.webp','fill':'res://assets/world/zabulistan_v2/shared/fill.webp','supports':'res://assets/world/zabulistan_v2/shared/supports.webp','palette':'65788c','crust_light':1.4,'transition_light':.52,'fill_light':.27,'backwall_light':.78}
  catalogue['foreground']='res://assets/world/zabulistan_v2/shared/foreground.webp'
  (ROOT/'data/world/zabulistan/carved_art.json').write_text(json.dumps(catalogue,indent=2)+'\n');(ARCH/'quality.json').write_text(json.dumps(art.QUALITY,indent=2)+'\n')
- (ROOT/'assets/image_prompts/zabulistan_carved_shared.md').write_text('# 공유 굴착 지형 재질\n\n이미지 생성 원본: archive/stage15_map/art/generated_materials.png\n\n4×4 소재 시트, 회색조 해풍 침식 사암 4종, 흙벽돌·갈대 뒷벽 3종과 낮은 대비 암반 1종, 까치발·사슬·기둥·나무 선반, 소금 테두리·늘어진 뿌리·창틀·등잔. 마젠타 #FF00FF 배경, 정측면, 손그림, 고대 페르시아/우루크 분위기, no text, no watermark. 눈 덮인 돌은 제외.\n\n생성 이미지 크롭 → 크로마키·디스필 → 회색조 → 리사이즈 → 인접 마스크 합성/명도 보정 → 2px 확장 패딩 → WebP. 런타임 색 변조. 새 원본 아트는 코드로 그리지 않음.\n')
+ (ROOT/'assets/image_prompts/zabulistan_carved_shared.md').write_text('# 공유 굴착 지형 재질\n\n이미지 생성 원본: archive/stage15_map/art/generated_materials.png\n\n4×4 소재 시트, 회색조 해풍 침식 사암 4종, 흙벽돌·갈대 뒷벽 3종과 낮은 대비 암반 1종, 까치발·사슬·기둥·나무 선반, 서리 테두리·늘어진 뿌리·창틀·등잔. 마젠타 #FF00FF 배경, 정측면, 손그림, 고대 페르시아/우루크 분위기, no text, no watermark. 눈 덮인 돌은 제외.\n\n생성 이미지 크롭 → 크로마키·디스필 → 회색조 → 리사이즈 → 인접 마스크 합성/명도 보정 → 2px 확장 패딩 → WebP. 런타임 색 변조. 새 원본 아트는 코드로 그리지 않음.\n')
  print('CARVED SHARED ART',sum(p.stat().st_size for p in OUT.glob('*.webp')),'bytes;',len(art.QUALITY),'quality-gated files')
 if __name__=='__main__':main()

@@ -1,0 +1,162 @@
+{
+  "commit": "fbb5c7a4acbff50ec3e7b95fd5fb6fc148582380",
+  "groups": {
+    "sprites": {
+      "paths": [
+        "assets/sprites"
+      ],
+      "sha256": "236610ee15645649cabeea752979637dcc46b2a07cc2d1b9d729c62bd9420af0"
+    },
+    "other_game_art": {
+      "paths": [
+        "assets/backgrounds",
+        "assets/props",
+        "assets/fx"
+      ],
+      "sha256": "b06558a6f2ee467825b9c8a1fd68dd30802598c6d99a3df1b1f99ae8a1da9280"
+    },
+    "audio": {
+      "paths": [
+        "assets/audio"
+      ],
+      "sha256": "1769f02abf17628e5f72da86e63d4f290da3485dfe1cd574b3217e6db4a62895"
+    },
+    "nimrod_and_dialogue": {
+      "paths": [
+        "scripts/player.gd",
+        "data/enemies.json",
+        "data/player_attacks.json",
+        "data/dialogue.json",
+        "data/cutscenes.json",
+        "data/levels.json",
+        "data/npcs.json",
+        "project.godot"
+      ],
+      "sha256": "18157ebff23200816a752e628e83f25e37c495769b1a9e70e198a32376251f7a"
+    },
+    "approved_shared_art": {
+      "paths": [
+        "assets/world/zabulistan_v2/shared"
+      ],
+      "sha256": "3614c0fc66fca6d281fbc2250968afd113900212799ec6d0c7b37e9c4b419538"
+    },
+    "other_nine_region_art": {
+      "paths": [
+        "assets/world/zabulistan_v2/forest",
+        "assets/world/zabulistan_v2/marsh",
+        "assets/world/zabulistan_v2/mine",
+        "assets/world/zabulistan_v2/fortress",
+        "assets/world/zabulistan_v2/village",
+        "assets/world/zabulistan_v2/ridge",
+        "assets/world/zabulistan_v2/skywalk",
+        "assets/world/zabulistan_v2/deep",
+        "assets/world/zabulistan_v2/crystal"
+      ],
+      "sha256": "092a310519067f503a5e50596eae68515d2732fe5832ab1d94f6f50ac745815c"
+    },
+    "world_enemy_balance": {
+      "paths": [
+        "data/world/enemy_density.json"
+      ],
+      "sha256": "b69957e4ce14421123b9182aed3fa25d51c5ee918e0c64611b2cd2030fb278bb"
+    },
+    "non_world_game_scripts": {
+      "paths": [
+        "scripts/afterimage_effect.gd",
+        "scripts/anur_light_projectile.gd",
+        "scripts/arena.gd",
+        "scripts/asset_visual.gd",
+        "scripts/audio_manager.gd",
+        "scripts/boss_warning.gd",
+        "scripts/castle_front.gd",
+        "scripts/cedar_fx.gd",
+        "scripts/cedar_hazard.gd",
+        "scripts/chapter_events.gd",
+        "scripts/choice_menu.gd",
+        "scripts/crown_projectile.gd",
+        "scripts/cutscene_runner.gd",
+        "scripts/debug_teleport.gd",
+        "scripts/dialogue_system.gd",
+        "scripts/dinner_seat.gd",
+        "scripts/door_portal.gd",
+        "scripts/enemy_base.gd",
+        "scripts/enemy_boar_charger.gd",
+        "scripts/enemy_cedar.gd",
+        "scripts/enemy_cedar_archer.gd",
+        "scripts/enemy_cedar_colossus.gd",
+        "scripts/enemy_cedar_demon.gd",
+        "scripts/enemy_cedar_sentinel.gd",
+        "scripts/enemy_cedar_wisp.gd",
+        "scripts/enemy_chain_beastman.gd",
+        "scripts/enemy_corpse_bomber.gd",
+        "scripts/enemy_crown_boss.gd",
+        "scripts/enemy_explosive_spitter.gd",
+        "scripts/enemy_gas_sac.gd",
+        "scripts/enemy_gugalanna.gd",
+        "scripts/enemy_humbaba.gd",
+        "scripts/enemy_kala_ushumgal.gd",
+        "scripts/enemy_lilith.gd",
+        "scripts/enemy_melee_beast.gd",
+        "scripts/enemy_ninazu_mother.gd",
+        "scripts/enemy_ranged_beast.gd",
+        "scripts/enemy_root_spewer.gd",
+        "scripts/enemy_shell_scorpion.gd",
+        "scripts/enemy_sky_beast.gd",
+        "scripts/enemy_stage5.gd",
+        "scripts/enemy_wall_diver.gd",
+        "scripts/enemy_wraith_ray.gd",
+        "scripts/enemy_zu.gd",
+        "scripts/ferry_sequence.gd",
+        "scripts/game_constants.gd",
+        "scripts/game_hud.gd",
+        "scripts/game_state.gd",
+        "scripts/gate_controller.gd",
+        "scripts/gugalanna_quake.gd",
+        "scripts/healing_pickup.gd",
+        "scripts/huluppu_arena.gd",
+        "scripts/huluppu_interaction.gd",
+        "scripts/humbaba_form.gd",
+        "scripts/image_effect.gd",
+        "scripts/interior_level.gd",
+        "scripts/level_base.gd",
+        "scripts/main.gd",
+        "scripts/npc_base.gd",
+        "scripts/odyssey.gd",
+        "scripts/player.gd",
+        "scripts/player_modifiers.gd",
+        "scripts/rampage.gd",
+        "scripts/rampage_hud.gd",
+        "scripts/rear_gate.gd",
+        "scripts/rear_gate_layout.gd",
+        "scripts/scene_manager.gd",
+        "scripts/stage5_fx.gd",
+        "scripts/stage5_hazard.gd",
+        "scripts/stage5_projectile.gd",
+        "scripts/story_pickup.gd",
+        "scripts/story_state.gd",
+        "scripts/surface_accent.gd",
+        "scripts/surface_debug.gd",
+        "scripts/threat_marker.gd",
+        "scripts/tiamat_body.gd",
+        "scripts/travel_zone.gd",
+        "scripts/ui_lock.gd",
+        "scripts/villa_gate.gd",
+        "scripts/villa_gatekeeper.gd",
+        "scripts/weapon_pickup.gd"
+      ],
+      "sha256": "2a951925f9103fbe4cf8ee8991535fcf5f570fe11fce02b710d4077288346615"
+    }
+  },
+  "terrain": {
+    "forest": "265a89f8b4461f45e285252aeb116676cbc04b3a156135a23b53e852db18311f",
+    "marsh": "08ec60d7585e52fe5bba80a9a1d7db33160ab9ddc9fac4d59f42595a0f6db47d",
+    "mine": "88bcc6e343640ba6485b6800aeca7e2138c11f82b76b09a4e2e35106f1110f18",
+    "fortress": "cc0146f3cf06c701ff96c70c5666c88661ea542aef6b14611321fcb88c81baff",
+    "village": "28ccee6f1adeb1a68b8826b83d6050a7bfcdcf60f90a888881190be7c0af5a6b",
+    "ridge": "2a77c6b8b2d25ff1b1353d879c932c152ac7342ef95a03dccf27c92cd59dbfc7",
+    "skywalk": "6800f02a13e98a3249cd079c88584b0d290213d4e841bfce453018dd73d9e049",
+    "deep": "4cc34cae15d26c796d1551112cced11469011a3778905fb0f260015193f1d344",
+    "crystal": "6bc5fb5fd5cf5966180b1fbfe227b2f89c8fc9d6297a6505adaa1a6c59e7135d"
+  },
+  "ability_numbers_sha256": "56714869711c5e76817ccec9b024474a97bedc01ea219f7fc010febe9f65d023"
+}

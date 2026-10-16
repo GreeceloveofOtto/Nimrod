@@ -5,70 +5,80 @@
       "name": "착륙 절벽",
       "number": 1,
       "palette": "65788c",
-      "bgm": "cedar_forest"
+      "bgm": "cedar_forest",
+      "setpiece": "우주마 착륙 잔교"
     },
     {
       "id": "forest",
       "name": "검은 숲",
       "number": 2,
       "palette": "25463e",
-      "bgm": "cedar_forest"
+      "bgm": "cedar_forest",
+      "setpiece": "사이프러스 뿌리 회랑"
     },
     {
       "id": "fortress",
-      "name": "폐허 요새",
+      "name": "숙청의 요새",
       "number": 3,
       "palette": "65504a",
-      "bgm": "cedar_boss"
+      "bgm": "cedar_boss",
+      "setpiece": "지워진 쌍흑사 부조"
     },
     {
       "id": "ridge",
       "name": "산 능선",
       "number": 4,
       "palette": "7390a2",
-      "bgm": "deathsea_drone"
+      "bgm": "deathsea_drone",
+      "setpiece": "봉화 망루"
     },
     {
       "id": "mine",
       "name": "무광 갱도",
       "number": 5,
       "palette": "233c58",
-      "bgm": "deathsea_drone"
+      "bgm": "deathsea_drone",
+      "setpiece": "풍탑 갱도"
     },
     {
       "id": "village",
       "name": "은신 마을",
       "number": 6,
       "palette": "665b4d",
-      "bgm": "villa_calm"
+      "bgm": "villa_calm",
+      "setpiece": "메라브 가문의 포도 정원"
     },
     {
       "id": "marsh",
       "name": "황록 늪",
       "number": 7,
       "palette": "5a6630",
-      "bgm": "cedar_forest"
+      "bgm": "cedar_forest",
+      "setpiece": "카나트 침수 거처"
     },
     {
       "id": "crystal",
-      "name": "수정 협곡",
+      "name": "잿빛 협곡",
       "number": 8,
-      "palette": "664677",
-      "bgm": "deathsea_drone"
+      "palette": "5a5560",
+      "bgm": "deathsea_drone",
+      "setpiece": "불탄 축제 터"
     },
     {
       "id": "skywalk",
       "name": "하늘 잔도",
       "number": 9,
       "palette": "41435f",
-      "bgm": "cedar_boss"
+      "bgm": "cedar_boss",
+      "setpiece": "버려진 우주마 마구간"
     },
     {
       "id": "deep",
-      "name": "라오차흐 심층",
+      "name": "은닉 심층",
       "number": 10,
       "palette": "533e66",
-      "bgm": "cedar_boss"
+      "bgm": "cedar_boss",
+      "setpiece": "혈통의 지하 피난처"
     }
   ]
 }

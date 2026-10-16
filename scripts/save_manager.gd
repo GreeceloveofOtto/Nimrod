@@ -69,12 +69,29 @@ func migrate_save(input: Dictionary) -> Dictionary:
         for key in row["flags"]:complete=complete and bool(combined.get(str(key),false))
         if complete:stage_value=int(row["stage"])
     data["story_stage"]=stage_value
-    data["version"] = 2
+    var old_version: int=int(data.get("version",1))
+    data["version"] = 3
     data["zabulistan"] = data.get("zabulistan",{}) if data.get("zabulistan",{}) is Dictionary else {}
     if not (data.get("deaths_total",0) is int or data.get("deaths_total",0) is float):data["deaths_total"]=0
     data["deaths_total"] = maxi(0,int(data.get("deaths_total",0)))
-    for key in ["abilities","life_fragments","opened_doors","defeated_bosses"]:
-        if not data["zabulistan"].get(key,{}) is Dictionary:data["zabulistan"][key]={}
+    var progress: Dictionary=data["zabulistan"]
+    if old_version<3:
+        progress.erase("abilities")
+        progress.erase("life_fragments")
+        progress["zab_cord_ids"]=[]
+        print("SAVE MIGRATION v%d -> v3: legacy abilities/life_fragments discarded; doors/bosses/map/deaths retained" % old_version)
+    for key in ["opened_doors","defeated_bosses","discovered_sites"]:
+        if not progress.get(key,{}) is Dictionary:progress[key]={}
+    if not progress.get("zab_cord_ids",[]) is Array:progress["zab_cord_ids"]=[]
+    var cords: Array[String]=[]
+    for uid: Variant in progress.get("zab_cord_ids",[]):
+        if uid is String and uid.begins_with("cord_") and not cords.has(uid):cords.append(uid)
+    progress["zab_cord_ids"]=cords
+    progress["zab_cord_count"]=cords.size()
+    progress["zab_embers_carried"]=0
+    for key in ["zab_embers_offered_total","zab_embers_offered_best","zab_returns_alive"]:
+        var count: Variant=progress.get(key,0)
+        progress[key]=maxi(0,int(count)) if count is int or count is float else 0
     if not data["zabulistan"].get("map_bitmap","") is String:data["zabulistan"]["map_bitmap"]=""
     if not (data["zabulistan"].get("deaths_zabulistan",0) is int or data["zabulistan"].get("deaths_zabulistan",0) is float):data["zabulistan"]["deaths_zabulistan"]=0
     data["facing"] = -1 if int(data.get("facing", 1)) < 0 else 1
@@ -128,7 +145,7 @@ func _boss_active() -> bool:
 func snapshot_data() -> Dictionary:
     var manager: Node = get_node("/root/SceneManager")
     var hero: NimrodPlayer = manager.player
-    return {"story_stage":get_node("/root/Story").stage(),"active_character":get_node("/root/GameState").active_character,"siyavash_progress":get_node("/root/GameState").siyavash_progress.duplicate(true),"nimrod_status":get_node("/root/GameState").nimrod_status.duplicate(true),"choice_pending":bool(get_node("/root/GameState").run_flags.get("choice_pending",false)),"selected_system":str(get_node("/root/GameState").run_flags.get("selected_system","")),"version":2,"zabulistan":get_node("/root/World").persistent_data(),"deaths_total":get_node("/root/World").deaths_total,"level":manager.current_level.level_id,"position":[hero.global_position.x,hero.global_position.y],"facing":hero.facing,"hp":hero.hp,"run_flags":get_node("/root/GameState").run_flags.duplicate(true),"rampage":get_node("/root/Rampage").value(),"cooldowns":{"anur_light":0,"devour":0},"timestamp":Time.get_unix_time_from_system()}
+    return {"story_stage":get_node("/root/Story").stage(),"active_character":get_node("/root/GameState").active_character,"siyavash_progress":get_node("/root/GameState").siyavash_progress.duplicate(true),"nimrod_status":get_node("/root/GameState").nimrod_status.duplicate(true),"choice_pending":bool(get_node("/root/GameState").run_flags.get("choice_pending",false)),"selected_system":str(get_node("/root/GameState").run_flags.get("selected_system","")),"version":3,"zabulistan":get_node("/root/World").persistent_data(),"deaths_total":get_node("/root/World").deaths_total,"level":manager.current_level.level_id,"position":[hero.global_position.x,hero.global_position.y],"facing":hero.facing,"hp":hero.hp,"run_flags":get_node("/root/GameState").run_flags.duplicate(true),"rampage":get_node("/root/Rampage").value(),"cooldowns":{"anur_light":0,"devour":0},"timestamp":Time.get_unix_time_from_system()}
 
 func save_game(arrival_checkpoint: bool = false) -> bool:
     if not get_node("/root/World").saving_allowed():return false

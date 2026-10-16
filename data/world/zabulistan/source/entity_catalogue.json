@@ -61,16 +61,6 @@
       "patrol": 96
     },
     {
-      "uid": "altar_double_jump",
-      "id": "double_jump",
-      "type": "altar",
-      "region": "forest",
-      "position": [
-        4928,
-        1120
-      ]
-    },
-    {
       "uid": "enemy_forest_10",
       "id": "cedar_colossus",
       "type": "enemy",
@@ -107,21 +97,11 @@
       "patrol": 96
     },
     {
-      "uid": "crystal_marsh_0",
-      "type": "crystal",
+      "uid": "ember_marsh_0",
+      "type": "ember",
       "region": "marsh",
       "position": [
         10112,
-        1120
-      ]
-    },
-    {
-      "uid": "altar_wall_cling",
-      "id": "wall_cling",
-      "type": "altar",
-      "region": "marsh",
-      "position": [
-        9024,
         1120
       ]
     },
@@ -150,21 +130,11 @@
       "patrol": 96
     },
     {
-      "uid": "crystal_mine_0",
-      "type": "crystal",
+      "uid": "ember_mine_0",
+      "type": "ember",
       "region": "mine",
       "position": [
         14112,
-        1120
-      ]
-    },
-    {
-      "uid": "altar_wall_jump",
-      "id": "wall_jump",
-      "type": "altar",
-      "region": "mine",
-      "position": [
-        13088,
         1120
       ]
     },
@@ -205,21 +175,11 @@
       "patrol": 96
     },
     {
-      "uid": "crystal_fortress_0",
-      "type": "crystal",
+      "uid": "ember_fortress_0",
+      "type": "ember",
       "region": "fortress",
       "position": [
         18208,
-        1120
-      ]
-    },
-    {
-      "uid": "altar_crawl",
-      "id": "crawl",
-      "type": "altar",
-      "region": "fortress",
-      "position": [
-        17280,
         1120
       ]
     },
@@ -236,26 +196,32 @@
       "patrol": 96
     },
     {
-      "uid": "life_landing_0",
-      "type": "life",
+      "uid": "cord_landing_0",
+      "type": "cord",
       "region": "landing",
       "position": [
         1248,
         1472
+      ],
+      "requires": [
+        "dash"
       ]
     },
     {
-      "uid": "life_landing_4",
-      "type": "life",
+      "uid": "cord_landing_4",
+      "type": "cord",
       "region": "landing",
       "position": [
         416,
         2272
+      ],
+      "requires": [
+        "light_throw"
       ]
     },
     {
-      "uid": "crystal_landing_0",
-      "type": "crystal",
+      "uid": "ember_landing_0",
+      "type": "ember",
       "region": "landing",
       "position": [
         1824,
@@ -263,18 +229,8 @@
       ]
     },
     {
-      "uid": "altar_dash",
-      "id": "dash",
-      "type": "altar",
-      "region": "landing",
-      "position": [
-        800,
-        1248
-      ]
-    },
-    {
-      "uid": "crystal_landing_4",
-      "type": "crystal",
+      "uid": "ember_landing_4",
+      "type": "ember",
       "region": "landing",
       "position": [
         3872,
@@ -294,26 +250,30 @@
       "patrol": 96
     },
     {
-      "uid": "life_forest_0",
-      "type": "life",
+      "uid": "cord_forest_0",
+      "type": "cord",
       "region": "forest",
       "position": [
         5440,
         1376
+      ],
+      "requires": [
+        "dash"
       ]
     },
     {
-      "uid": "life_forest_4",
-      "type": "life",
+      "uid": "cord_forest_4",
+      "type": "cord",
       "region": "forest",
       "position": [
         4544,
         2272
-      ]
+      ],
+      "requires": []
     },
     {
-      "uid": "crystal_forest_0",
-      "type": "crystal",
+      "uid": "ember_forest_0",
+      "type": "ember",
       "region": "forest",
       "position": [
         5920,
@@ -321,8 +281,8 @@
       ]
     },
     {
-      "uid": "crystal_forest_4",
-      "type": "crystal",
+      "uid": "ember_forest_4",
+      "type": "ember",
       "region": "forest",
       "position": [
         7904,
@@ -342,22 +302,26 @@
       "patrol": 96
     },
     {
-      "uid": "life_marsh_0",
-      "type": "life",
+      "uid": "cord_marsh_0",
+      "type": "cord",
       "region": "marsh",
       "position": [
         9568,
         1376
+      ],
+      "requires": [
+        "dash"
       ]
     },
     {
-      "uid": "life_marsh_4",
-      "type": "life",
+      "uid": "cord_marsh_4",
+      "type": "cord",
       "region": "marsh",
       "position": [
         8512,
         2272
-      ]
+      ],
+      "requires": []
     },
     {
       "uid": "enemy_marsh_10",
@@ -372,8 +336,8 @@
       "patrol": 96
     },
     {
-      "uid": "crystal_marsh_4",
-      "type": "crystal",
+      "uid": "ember_marsh_4",
+      "type": "ember",
       "region": "marsh",
       "position": [
         11936,
@@ -393,26 +357,30 @@
       "patrol": 96
     },
     {
-      "uid": "life_mine_0",
-      "type": "life",
+      "uid": "cord_mine_0",
+      "type": "cord",
       "region": "mine",
       "position": [
         13536,
         1376
+      ],
+      "requires": [
+        "dash"
       ]
     },
     {
-      "uid": "life_mine_4",
-      "type": "life",
+      "uid": "cord_mine_4",
+      "type": "cord",
       "region": "mine",
       "position": [
         12704,
         2272
-      ]
+      ],
+      "requires": []
     },
     {
-      "uid": "crystal_mine_4",
-      "type": "crystal",
+      "uid": "ember_mine_4",
+      "type": "ember",
       "region": "mine",
       "position": [
         16160,
@@ -432,22 +400,26 @@
       "patrol": 96
     },
     {
-      "uid": "life_fortress_0",
-      "type": "life",
+      "uid": "cord_fortress_0",
+      "type": "cord",
       "region": "fortress",
       "position": [
         17760,
         1376
+      ],
+      "requires": [
+        "dash"
       ]
     },
     {
-      "uid": "life_fortress_4",
-      "type": "life",
+      "uid": "cord_fortress_4",
+      "type": "cord",
       "region": "fortress",
       "position": [
         16768,
         2272
-      ]
+      ],
+      "requires": []
     },
     {
       "uid": "enemy_fortress_10",
@@ -462,8 +434,8 @@
       "patrol": 96
     },
     {
-      "uid": "crystal_fortress_4",
-      "type": "crystal",
+      "uid": "ember_fortress_4",
+      "type": "ember",
       "region": "fortress",
       "position": [
         20160,
@@ -471,8 +443,8 @@
       ]
     },
     {
-      "uid": "crystal_landing_1",
-      "type": "crystal",
+      "uid": "ember_landing_1",
+      "type": "ember",
       "region": "landing",
       "position": [
         448,
@@ -556,12 +528,15 @@
       "patrol": 96
     },
     {
-      "uid": "life_landing_1",
-      "type": "life",
+      "uid": "cord_landing_1",
+      "type": "cord",
       "region": "landing",
       "position": [
         3136,
         3168
+      ],
+      "requires": [
+        "double_jump"
       ]
     },
     {
@@ -621,8 +596,8 @@
       "art_hint": "천륜 빛 투척"
     },
     {
-      "uid": "crystal_forest_1",
-      "type": "crystal",
+      "uid": "ember_forest_1",
+      "type": "ember",
       "region": "forest",
       "position": [
         4640,
@@ -706,12 +681,15 @@
       "patrol": 96
     },
     {
-      "uid": "life_forest_1",
-      "type": "life",
+      "uid": "cord_forest_1",
+      "type": "cord",
       "region": "forest",
       "position": [
         7136,
         3168
+      ],
+      "requires": [
+        "double_jump"
       ]
     },
     {
@@ -743,8 +721,8 @@
       "art_hint": "광질 시야"
     },
     {
-      "uid": "crystal_marsh_1",
-      "type": "crystal",
+      "uid": "ember_marsh_1",
+      "type": "ember",
       "region": "marsh",
       "position": [
         8544,
@@ -828,12 +806,15 @@
       "patrol": 96
     },
     {
-      "uid": "life_marsh_1",
-      "type": "life",
+      "uid": "cord_marsh_1",
+      "type": "cord",
       "region": "marsh",
       "position": [
         11232,
         3168
+      ],
+      "requires": [
+        "double_jump"
       ]
     },
     {
@@ -879,8 +860,8 @@
       "art_hint": "광질 시야"
     },
     {
-      "uid": "crystal_mine_1",
-      "type": "crystal",
+      "uid": "ember_mine_1",
+      "type": "ember",
       "region": "mine",
       "position": [
         12832,
@@ -978,12 +959,15 @@
       "patrol": 96
     },
     {
-      "uid": "life_mine_1",
-      "type": "life",
+      "uid": "cord_mine_1",
+      "type": "cord",
       "region": "mine",
       "position": [
         15424,
         3168
+      ],
+      "requires": [
+        "double_jump"
       ]
     },
     {
@@ -1001,8 +985,8 @@
       "art_hint": "천륜 빛 투척"
     },
     {
-      "uid": "crystal_fortress_1",
-      "type": "crystal",
+      "uid": "ember_fortress_1",
+      "type": "ember",
       "region": "fortress",
       "position": [
         16928,
@@ -1086,12 +1070,15 @@
       "patrol": 96
     },
     {
-      "uid": "life_fortress_1",
-      "type": "life",
+      "uid": "cord_fortress_1",
+      "type": "cord",
       "region": "fortress",
       "position": [
         19520,
         3168
+      ],
+      "requires": [
+        "double_jump"
       ]
     },
     {
@@ -1189,17 +1176,20 @@
       "art_hint": "두 번째 도약"
     },
     {
-      "uid": "life_landing_5",
-      "type": "life",
+      "uid": "cord_landing_5",
+      "type": "cord",
       "region": "landing",
       "position": [
         2336,
         4576
+      ],
+      "requires": [
+        "crawl"
       ]
     },
     {
-      "uid": "crystal_landing_2",
-      "type": "crystal",
+      "uid": "ember_landing_2",
+      "type": "ember",
       "region": "landing",
       "position": [
         2880,
@@ -1207,8 +1197,8 @@
       ]
     },
     {
-      "uid": "crystal_landing_5",
-      "type": "crystal",
+      "uid": "ember_landing_5",
+      "type": "ember",
       "region": "landing",
       "position": [
         2432,
@@ -1254,17 +1244,18 @@
       "patrol": 96
     },
     {
-      "uid": "life_forest_5",
-      "type": "life",
+      "uid": "cord_forest_5",
+      "type": "cord",
       "region": "forest",
       "position": [
         6528,
         4480
-      ]
+      ],
+      "requires": []
     },
     {
-      "uid": "crystal_forest_2",
-      "type": "crystal",
+      "uid": "ember_forest_2",
+      "type": "ember",
       "region": "forest",
       "position": [
         6976,
@@ -1272,8 +1263,8 @@
       ]
     },
     {
-      "uid": "crystal_forest_5",
-      "type": "crystal",
+      "uid": "ember_forest_5",
+      "type": "ember",
       "region": "forest",
       "position": [
         6752,
@@ -1347,17 +1338,18 @@
       "patrol": 96
     },
     {
-      "uid": "life_marsh_5",
-      "type": "life",
+      "uid": "cord_marsh_5",
+      "type": "cord",
       "region": "marsh",
       "position": [
         10496,
         4576
-      ]
+      ],
+      "requires": []
     },
     {
-      "uid": "crystal_marsh_2",
-      "type": "crystal",
+      "uid": "ember_marsh_2",
+      "type": "ember",
       "region": "marsh",
       "position": [
         11168,
@@ -1365,8 +1357,8 @@
       ]
     },
     {
-      "uid": "crystal_marsh_5",
-      "type": "crystal",
+      "uid": "ember_marsh_5",
+      "type": "ember",
       "region": "marsh",
       "position": [
         10784,
@@ -1412,17 +1404,18 @@
       "patrol": 96
     },
     {
-      "uid": "life_mine_5",
-      "type": "life",
+      "uid": "cord_mine_5",
+      "type": "cord",
       "region": "mine",
       "position": [
         14688,
         4448
-      ]
+      ],
+      "requires": []
     },
     {
-      "uid": "crystal_mine_2",
-      "type": "crystal",
+      "uid": "ember_mine_2",
+      "type": "ember",
       "region": "mine",
       "position": [
         15232,
@@ -1430,8 +1423,8 @@
       ]
     },
     {
-      "uid": "crystal_mine_5",
-      "type": "crystal",
+      "uid": "ember_mine_5",
+      "type": "ember",
       "region": "mine",
       "position": [
         14944,
@@ -1519,17 +1512,18 @@
       "art_hint": "벽의 발톱"
     },
     {
-      "uid": "life_fortress_5",
-      "type": "life",
+      "uid": "cord_fortress_5",
+      "type": "cord",
       "region": "fortress",
       "position": [
         18816,
         4448
-      ]
+      ],
+      "requires": []
     },
     {
-      "uid": "crystal_fortress_2",
-      "type": "crystal",
+      "uid": "ember_fortress_2",
+      "type": "ember",
       "region": "fortress",
       "position": [
         19296,
@@ -1537,8 +1531,8 @@
       ]
     },
     {
-      "uid": "crystal_fortress_5",
-      "type": "crystal",
+      "uid": "ember_fortress_5",
+      "type": "ember",
       "region": "fortress",
       "position": [
         18912,
@@ -1558,17 +1552,20 @@
       "patrol": 96
     },
     {
-      "uid": "life_landing_2",
-      "type": "life",
+      "uid": "cord_landing_2",
+      "type": "cord",
       "region": "landing",
       "position": [
         1568,
         4704
+      ],
+      "requires": [
+        "wall_cling"
       ]
     },
     {
-      "uid": "crystal_landing_3",
-      "type": "crystal",
+      "uid": "ember_landing_3",
+      "type": "ember",
       "region": "landing",
       "position": [
         1440,
@@ -1600,12 +1597,15 @@
       "patrol": 96
     },
     {
-      "uid": "life_landing_3",
-      "type": "life",
+      "uid": "cord_landing_3",
+      "type": "cord",
       "region": "landing",
       "position": [
         3584,
         5600
+      ],
+      "requires": [
+        "wall_jump"
       ]
     },
     {
@@ -1634,17 +1634,20 @@
       "patrol": 96
     },
     {
-      "uid": "life_forest_2",
-      "type": "life",
+      "uid": "cord_forest_2",
+      "type": "cord",
       "region": "forest",
       "position": [
         5440,
         4704
+      ],
+      "requires": [
+        "wall_cling"
       ]
     },
     {
-      "uid": "crystal_forest_3",
-      "type": "crystal",
+      "uid": "ember_forest_3",
+      "type": "ember",
       "region": "forest",
       "position": [
         5568,
@@ -1676,12 +1679,15 @@
       "patrol": 96
     },
     {
-      "uid": "life_forest_3",
-      "type": "life",
+      "uid": "cord_forest_3",
+      "type": "cord",
       "region": "forest",
       "position": [
         7712,
         5472
+      ],
+      "requires": [
+        "wall_jump"
       ]
     },
     {
@@ -1710,17 +1716,20 @@
       "patrol": 96
     },
     {
-      "uid": "life_marsh_2",
-      "type": "life",
+      "uid": "cord_marsh_2",
+      "type": "cord",
       "region": "marsh",
       "position": [
         9664,
         4736
+      ],
+      "requires": [
+        "wall_cling"
       ]
     },
     {
-      "uid": "crystal_marsh_3",
-      "type": "crystal",
+      "uid": "ember_marsh_3",
+      "type": "ember",
       "region": "marsh",
       "position": [
         9568,
@@ -1752,12 +1761,15 @@
       "patrol": 96
     },
     {
-      "uid": "life_marsh_3",
-      "type": "life",
+      "uid": "cord_marsh_3",
+      "type": "cord",
       "region": "marsh",
       "position": [
         11648,
         5472
+      ],
+      "requires": [
+        "wall_jump"
       ]
     },
     {
@@ -1786,17 +1798,20 @@
       "patrol": 96
     },
     {
-      "uid": "life_mine_2",
-      "type": "life",
+      "uid": "cord_mine_2",
+      "type": "cord",
       "region": "mine",
       "position": [
         13856,
         4704
+      ],
+      "requires": [
+        "wall_cling"
       ]
     },
     {
-      "uid": "crystal_mine_3",
-      "type": "crystal",
+      "uid": "ember_mine_3",
+      "type": "ember",
       "region": "mine",
       "position": [
         13696,
@@ -1828,12 +1843,15 @@
       "patrol": 96
     },
     {
-      "uid": "life_mine_3",
-      "type": "life",
+      "uid": "cord_mine_3",
+      "type": "cord",
       "region": "mine",
       "position": [
         15840,
         5568
+      ],
+      "requires": [
+        "wall_jump"
       ]
     },
     {
@@ -1862,17 +1880,20 @@
       "patrol": 96
     },
     {
-      "uid": "life_fortress_2",
-      "type": "life",
+      "uid": "cord_fortress_2",
+      "type": "cord",
       "region": "fortress",
       "position": [
         17856,
         4832
+      ],
+      "requires": [
+        "wall_cling"
       ]
     },
     {
-      "uid": "crystal_fortress_3",
-      "type": "crystal",
+      "uid": "ember_fortress_3",
+      "type": "ember",
       "region": "fortress",
       "position": [
         17760,
@@ -1904,12 +1925,15 @@
       "patrol": 96
     },
     {
-      "uid": "life_fortress_3",
-      "type": "life",
+      "uid": "cord_fortress_3",
+      "type": "cord",
       "region": "fortress",
       "position": [
         19968,
         5600
+      ],
+      "requires": [
+        "wall_jump"
       ]
     },
     {
@@ -1926,21 +1950,11 @@
       "secret": true
     },
     {
-      "uid": "crystal_village_0",
-      "type": "crystal",
+      "uid": "ember_village_0",
+      "type": "ember",
       "region": "village",
       "position": [
         1824,
-        6880
-      ]
-    },
-    {
-      "uid": "altar_vision",
-      "id": "vision",
-      "type": "altar",
-      "region": "village",
-      "position": [
-        832,
         6880
       ]
     },
@@ -1969,21 +1983,11 @@
       "patrol": 96
     },
     {
-      "uid": "crystal_ridge_0",
-      "type": "crystal",
+      "uid": "ember_ridge_0",
+      "type": "ember",
       "region": "ridge",
       "position": [
         5920,
-        6880
-      ]
-    },
-    {
-      "uid": "altar_light_throw",
-      "id": "light_throw",
-      "type": "altar",
-      "region": "ridge",
-      "position": [
-        4992,
         6880
       ]
     },
@@ -2024,8 +2028,8 @@
       "patrol": 96
     },
     {
-      "uid": "crystal_skywalk_0",
-      "type": "crystal",
+      "uid": "ember_skywalk_0",
+      "type": "ember",
       "region": "skywalk",
       "position": [
         9920,
@@ -2069,8 +2073,8 @@
       "patrol": 96
     },
     {
-      "uid": "crystal_deep_0",
-      "type": "crystal",
+      "uid": "ember_deep_0",
+      "type": "ember",
       "region": "deep",
       "position": [
         14112,
@@ -2114,8 +2118,8 @@
       "patrol": 96
     },
     {
-      "uid": "crystal_crystal_0",
-      "type": "crystal",
+      "uid": "ember_crystal_0",
+      "type": "ember",
       "region": "crystal",
       "position": [
         18208,
@@ -2131,7 +2135,7 @@
         19328,
         5856
       ],
-      "display_name": "잊힌 이완의 수호자",
+      "display_name": "숙청의 요새 문지기",
       "placeholder": true,
       "patrol": 256
     },
@@ -2148,17 +2152,20 @@
       "patrol": 96
     },
     {
-      "uid": "life_village_0",
-      "type": "life",
+      "uid": "cord_village_0",
+      "type": "cord",
       "region": "village",
       "position": [
         1312,
         7136
+      ],
+      "requires": [
+        "dash"
       ]
     },
     {
-      "uid": "crystal_village_4",
-      "type": "crystal",
+      "uid": "ember_village_4",
+      "type": "ember",
       "region": "village",
       "position": [
         3808,
@@ -2178,26 +2185,30 @@
       "patrol": 96
     },
     {
-      "uid": "life_ridge_0",
-      "type": "life",
+      "uid": "cord_ridge_0",
+      "type": "cord",
       "region": "ridge",
       "position": [
         5440,
         7136
+      ],
+      "requires": [
+        "dash"
       ]
     },
     {
-      "uid": "life_ridge_4",
-      "type": "life",
+      "uid": "cord_ridge_4",
+      "type": "cord",
       "region": "ridge",
       "position": [
         4448,
         8032
-      ]
+      ],
+      "requires": []
     },
     {
-      "uid": "crystal_ridge_4",
-      "type": "crystal",
+      "uid": "ember_ridge_4",
+      "type": "ember",
       "region": "ridge",
       "position": [
         7872,
@@ -2217,17 +2228,20 @@
       "patrol": 96
     },
     {
-      "uid": "life_skywalk_0",
-      "type": "life",
+      "uid": "cord_skywalk_0",
+      "type": "cord",
       "region": "skywalk",
       "position": [
         9440,
         7136
+      ],
+      "requires": [
+        "dash"
       ]
     },
     {
-      "uid": "crystal_skywalk_4",
-      "type": "crystal",
+      "uid": "ember_skywalk_4",
+      "type": "ember",
       "region": "skywalk",
       "position": [
         11936,
@@ -2247,26 +2261,30 @@
       "patrol": 96
     },
     {
-      "uid": "life_deep_0",
-      "type": "life",
+      "uid": "cord_deep_0",
+      "type": "cord",
       "region": "deep",
       "position": [
         13696,
         7136
+      ],
+      "requires": [
+        "dash"
       ]
     },
     {
-      "uid": "life_deep_4",
-      "type": "life",
+      "uid": "cord_deep_4",
+      "type": "cord",
       "region": "deep",
       "position": [
         12672,
         8032
-      ]
+      ],
+      "requires": []
     },
     {
-      "uid": "crystal_deep_4",
-      "type": "crystal",
+      "uid": "ember_deep_4",
+      "type": "ember",
       "region": "deep",
       "position": [
         16064,
@@ -2286,17 +2304,20 @@
       "patrol": 96
     },
     {
-      "uid": "life_crystal_0",
-      "type": "life",
+      "uid": "cord_crystal_0",
+      "type": "cord",
       "region": "crystal",
       "position": [
         17728,
         7136
+      ],
+      "requires": [
+        "dash"
       ]
     },
     {
-      "uid": "crystal_crystal_4",
-      "type": "crystal",
+      "uid": "ember_crystal_4",
+      "type": "ember",
       "region": "crystal",
       "position": [
         20128,
@@ -2304,17 +2325,18 @@
       ]
     },
     {
-      "uid": "life_village_4",
-      "type": "life",
+      "uid": "cord_village_4",
+      "type": "cord",
       "region": "village",
       "position": [
         448,
         8064
-      ]
+      ],
+      "requires": []
     },
     {
-      "uid": "crystal_village_1",
-      "type": "crystal",
+      "uid": "ember_village_1",
+      "type": "ember",
       "region": "village",
       "position": [
         352,
@@ -2388,12 +2410,15 @@
       "art_hint": "반대편에서 열린다"
     },
     {
-      "uid": "life_village_1",
-      "type": "life",
+      "uid": "cord_village_1",
+      "type": "cord",
       "region": "village",
       "position": [
         3136,
         8928
+      ],
+      "requires": [
+        "double_jump"
       ]
     },
     {
@@ -2439,8 +2464,8 @@
       "art_hint": "천륜 빛 투척"
     },
     {
-      "uid": "crystal_ridge_1",
-      "type": "crystal",
+      "uid": "ember_ridge_1",
+      "type": "ember",
       "region": "ridge",
       "position": [
         4640,
@@ -2538,12 +2563,15 @@
       "patrol": 96
     },
     {
-      "uid": "life_ridge_1",
-      "type": "life",
+      "uid": "cord_ridge_1",
+      "type": "cord",
       "region": "ridge",
       "position": [
         7232,
         8960
+      ],
+      "requires": [
+        "double_jump"
       ]
     },
     {
@@ -2603,17 +2631,18 @@
       "art_hint": "천륜 빛 투척"
     },
     {
-      "uid": "life_skywalk_4",
-      "type": "life",
+      "uid": "cord_skywalk_4",
+      "type": "cord",
       "region": "skywalk",
       "position": [
         8544,
         8064
-      ]
+      ],
+      "requires": []
     },
     {
-      "uid": "crystal_skywalk_1",
-      "type": "crystal",
+      "uid": "ember_skywalk_1",
+      "type": "ember",
       "region": "skywalk",
       "position": [
         8640,
@@ -2711,12 +2740,15 @@
       "patrol": 96
     },
     {
-      "uid": "life_skywalk_1",
-      "type": "life",
+      "uid": "cord_skywalk_1",
+      "type": "cord",
       "region": "skywalk",
       "position": [
         11328,
         8928
+      ],
+      "requires": [
+        "double_jump"
       ]
     },
     {
@@ -2762,8 +2794,8 @@
       "art_hint": "천륜 빛 투척"
     },
     {
-      "uid": "crystal_deep_1",
-      "type": "crystal",
+      "uid": "ember_deep_1",
+      "type": "ember",
       "region": "deep",
       "position": [
         12768,
@@ -2833,12 +2865,15 @@
       "patrol": 96
     },
     {
-      "uid": "life_deep_1",
-      "type": "life",
+      "uid": "cord_deep_1",
+      "type": "cord",
       "region": "deep",
       "position": [
         15424,
         8928
+      ],
+      "requires": [
+        "double_jump"
       ]
     },
     {
@@ -2898,17 +2933,18 @@
       "art_hint": "천륜 빛 투척"
     },
     {
-      "uid": "life_crystal_4",
-      "type": "life",
+      "uid": "cord_crystal_4",
+      "type": "cord",
       "region": "crystal",
       "position": [
         16768,
         8064
-      ]
+      ],
+      "requires": []
     },
     {
-      "uid": "crystal_crystal_1",
-      "type": "crystal",
+      "uid": "ember_crystal_1",
+      "type": "ember",
       "region": "crystal",
       "position": [
         16960,
@@ -2992,12 +3028,15 @@
       "patrol": 96
     },
     {
-      "uid": "life_crystal_1",
-      "type": "life",
+      "uid": "cord_crystal_1",
+      "type": "cord",
       "region": "crystal",
       "position": [
         19424,
         8928
+      ],
+      "requires": [
+        "double_jump"
       ]
     },
     {
@@ -3043,17 +3082,18 @@
       "art_hint": "벽의 발톱"
     },
     {
-      "uid": "life_village_5",
-      "type": "life",
+      "uid": "cord_village_5",
+      "type": "cord",
       "region": "village",
       "position": [
         2304,
         10240
-      ]
+      ],
+      "requires": []
     },
     {
-      "uid": "crystal_village_2",
-      "type": "crystal",
+      "uid": "ember_village_2",
+      "type": "ember",
       "region": "village",
       "position": [
         2944,
@@ -3061,8 +3101,8 @@
       ]
     },
     {
-      "uid": "crystal_village_5",
-      "type": "crystal",
+      "uid": "ember_village_5",
+      "type": "ember",
       "region": "village",
       "position": [
         2624,
@@ -3094,17 +3134,18 @@
       "patrol": 96
     },
     {
-      "uid": "life_ridge_5",
-      "type": "life",
+      "uid": "cord_ridge_5",
+      "type": "cord",
       "region": "ridge",
       "position": [
         6528,
         10208
-      ]
+      ],
+      "requires": []
     },
     {
-      "uid": "crystal_ridge_2",
-      "type": "crystal",
+      "uid": "ember_ridge_2",
+      "type": "ember",
       "region": "ridge",
       "position": [
         7072,
@@ -3112,8 +3153,8 @@
       ]
     },
     {
-      "uid": "crystal_ridge_5",
-      "type": "crystal",
+      "uid": "ember_ridge_5",
+      "type": "ember",
       "region": "ridge",
       "position": [
         6528,
@@ -3145,17 +3186,18 @@
       "patrol": 96
     },
     {
-      "uid": "life_skywalk_5",
-      "type": "life",
+      "uid": "cord_skywalk_5",
+      "type": "cord",
       "region": "skywalk",
       "position": [
         10560,
         10208
-      ]
+      ],
+      "requires": []
     },
     {
-      "uid": "crystal_skywalk_2",
-      "type": "crystal",
+      "uid": "ember_skywalk_2",
+      "type": "ember",
       "region": "skywalk",
       "position": [
         11136,
@@ -3163,8 +3205,8 @@
       ]
     },
     {
-      "uid": "crystal_skywalk_5",
-      "type": "crystal",
+      "uid": "ember_skywalk_5",
+      "type": "ember",
       "region": "skywalk",
       "position": [
         10816,
@@ -3238,17 +3280,18 @@
       "art_hint": "벽의 발톱"
     },
     {
-      "uid": "life_deep_5",
-      "type": "life",
+      "uid": "cord_deep_5",
+      "type": "cord",
       "region": "deep",
       "position": [
         14496,
         10208
-      ]
+      ],
+      "requires": []
     },
     {
-      "uid": "crystal_deep_2",
-      "type": "crystal",
+      "uid": "ember_deep_2",
+      "type": "ember",
       "region": "deep",
       "position": [
         15232,
@@ -3256,8 +3299,8 @@
       ]
     },
     {
-      "uid": "crystal_deep_5",
-      "type": "crystal",
+      "uid": "ember_deep_5",
+      "type": "ember",
       "region": "deep",
       "position": [
         14752,
@@ -3303,17 +3346,18 @@
       "art_hint": "쥐의 질주"
     },
     {
-      "uid": "life_crystal_5",
-      "type": "life",
+      "uid": "cord_crystal_5",
+      "type": "cord",
       "region": "crystal",
       "position": [
         18720,
         10304
-      ]
+      ],
+      "requires": []
     },
     {
-      "uid": "crystal_crystal_2",
-      "type": "crystal",
+      "uid": "ember_crystal_2",
+      "type": "ember",
       "region": "crystal",
       "position": [
         19392,
@@ -3321,8 +3365,8 @@
       ]
     },
     {
-      "uid": "crystal_crystal_5",
-      "type": "crystal",
+      "uid": "ember_crystal_5",
+      "type": "ember",
       "region": "crystal",
       "position": [
         18944,
@@ -3358,17 +3402,20 @@
       "art_hint": "광질 시야"
     },
     {
-      "uid": "life_village_2",
-      "type": "life",
+      "uid": "cord_village_2",
+      "type": "cord",
       "region": "village",
       "position": [
         1568,
         10464
+      ],
+      "requires": [
+        "wall_cling"
       ]
     },
     {
-      "uid": "crystal_village_3",
-      "type": "crystal",
+      "uid": "ember_village_3",
+      "type": "ember",
       "region": "village",
       "position": [
         1376,
@@ -3376,12 +3423,15 @@
       ]
     },
     {
-      "uid": "life_village_3",
-      "type": "life",
+      "uid": "cord_village_3",
+      "type": "cord",
       "region": "village",
       "position": [
         3488,
         11232
+      ],
+      "requires": [
+        "wall_jump"
       ]
     },
     {
@@ -3410,17 +3460,20 @@
       "patrol": 96
     },
     {
-      "uid": "life_ridge_2",
-      "type": "life",
+      "uid": "cord_ridge_2",
+      "type": "cord",
       "region": "ridge",
       "position": [
         5600,
         10464
+      ],
+      "requires": [
+        "wall_cling"
       ]
     },
     {
-      "uid": "crystal_ridge_3",
-      "type": "crystal",
+      "uid": "ember_ridge_3",
+      "type": "ember",
       "region": "ridge",
       "position": [
         5440,
@@ -3452,12 +3505,15 @@
       "patrol": 96
     },
     {
-      "uid": "life_ridge_3",
-      "type": "life",
+      "uid": "cord_ridge_3",
+      "type": "cord",
       "region": "ridge",
       "position": [
         7712,
         11488
+      ],
+      "requires": [
+        "wall_jump"
       ]
     },
     {
@@ -3486,17 +3542,20 @@
       "patrol": 96
     },
     {
-      "uid": "life_skywalk_2",
-      "type": "life",
+      "uid": "cord_skywalk_2",
+      "type": "cord",
       "region": "skywalk",
       "position": [
         9696,
         10464
+      ],
+      "requires": [
+        "wall_cling"
       ]
     },
     {
-      "uid": "crystal_skywalk_3",
-      "type": "crystal",
+      "uid": "ember_skywalk_3",
+      "type": "ember",
       "region": "skywalk",
       "position": [
         9536,
@@ -3528,12 +3587,15 @@
       "patrol": 96
     },
     {
-      "uid": "life_skywalk_3",
-      "type": "life",
+      "uid": "cord_skywalk_3",
+      "type": "cord",
       "region": "skywalk",
       "position": [
         11776,
         11232
+      ],
+      "requires": [
+        "wall_jump"
       ]
     },
     {
@@ -3575,17 +3637,20 @@
       "patrol": 96
     },
     {
-      "uid": "life_deep_2",
-      "type": "life",
+      "uid": "cord_deep_2",
+      "type": "cord",
       "region": "deep",
       "position": [
         13760,
         10464
+      ],
+      "requires": [
+        "wall_cling"
       ]
     },
     {
-      "uid": "crystal_deep_3",
-      "type": "crystal",
+      "uid": "ember_deep_3",
+      "type": "ember",
       "region": "deep",
       "position": [
         13632,
@@ -3617,12 +3682,15 @@
       "patrol": 96
     },
     {
-      "uid": "life_deep_3",
-      "type": "life",
+      "uid": "cord_deep_3",
+      "type": "cord",
       "region": "deep",
       "position": [
         15904,
         11232
+      ],
+      "requires": [
+        "wall_jump"
       ]
     },
     {
@@ -3651,17 +3719,20 @@
       "patrol": 96
     },
     {
-      "uid": "life_crystal_2",
-      "type": "life",
+      "uid": "cord_crystal_2",
+      "type": "cord",
       "region": "crystal",
       "position": [
         17888,
         10464
+      ],
+      "requires": [
+        "wall_cling"
       ]
     },
     {
-      "uid": "crystal_crystal_3",
-      "type": "crystal",
+      "uid": "ember_crystal_3",
+      "type": "ember",
       "region": "crystal",
       "position": [
         17728,
@@ -3693,12 +3764,15 @@
       "patrol": 96
     },
     {
-      "uid": "life_crystal_3",
-      "type": "life",
+      "uid": "cord_crystal_3",
+      "type": "cord",
       "region": "crystal",
       "position": [
         20000,
         11328
+      ],
+      "requires": [
+        "wall_jump"
       ]
     },
     {
@@ -3723,9 +3797,505 @@
         19392,
         11232
       ],
-      "display_name": "결정 봉인의 수호자",
+      "display_name": "잿빛 협곡의 파수꾼",
       "placeholder": true,
       "patrol": 256
+    },
+    {
+      "uid": "site_landing_0",
+      "type": "site",
+      "region": "landing",
+      "ability": "dash",
+      "requires": [],
+      "tier": 0,
+      "position": [
+        704,
+        1088
+      ]
+    },
+    {
+      "uid": "site_landing_1",
+      "type": "site",
+      "region": "landing",
+      "ability": "double_jump",
+      "requires": [],
+      "tier": 0,
+      "position": [
+        1920,
+        1664
+      ]
+    },
+    {
+      "uid": "door_landing_2",
+      "id": "door_landing_2",
+      "type": "switch",
+      "target": "door_landing_2",
+      "one_way": true,
+      "region": "landing",
+      "position": [
+        2848,
+        4640
+      ]
+    },
+    {
+      "uid": "door_gate_landing_2",
+      "type": "gate",
+      "region": "landing",
+      "opens_with": "door_landing_2",
+      "requires": [],
+      "art_hint": "반대편에서 열린다",
+      "position": [
+        2624,
+        4736
+      ]
+    },
+    {
+      "uid": "return_landing",
+      "type": "return_pier",
+      "region": "landing",
+      "requires": [],
+      "position": [
+        192,
+        1664
+      ]
+    },
+    {
+      "uid": "site_forest_0",
+      "type": "site",
+      "region": "forest",
+      "ability": "wall_cling",
+      "requires": [],
+      "tier": 0,
+      "position": [
+        4928,
+        1120
+      ]
+    },
+    {
+      "uid": "site_forest_1",
+      "type": "site",
+      "region": "forest",
+      "ability": "vision",
+      "requires": [],
+      "tier": 0,
+      "position": [
+        5984,
+        1504
+      ]
+    },
+    {
+      "uid": "door_forest_2",
+      "id": "door_forest_2",
+      "type": "switch",
+      "target": "door_forest_2",
+      "one_way": true,
+      "region": "forest",
+      "position": [
+        6976,
+        4576
+      ]
+    },
+    {
+      "uid": "door_gate_forest_2",
+      "type": "gate",
+      "region": "forest",
+      "opens_with": "door_forest_2",
+      "requires": [],
+      "art_hint": "반대편에서 열린다",
+      "position": [
+        6656,
+        4608
+      ]
+    },
+    {
+      "uid": "site_marsh_0",
+      "type": "site",
+      "region": "marsh",
+      "ability": "crawl",
+      "requires": [],
+      "tier": 0,
+      "position": [
+        9024,
+        1120
+      ]
+    },
+    {
+      "uid": "site_marsh_1",
+      "type": "site",
+      "region": "marsh",
+      "ability": "light_throw",
+      "requires": [],
+      "tier": 0,
+      "position": [
+        10112,
+        1536
+      ]
+    },
+    {
+      "uid": "door_marsh_2",
+      "id": "door_marsh_2",
+      "type": "switch",
+      "target": "door_marsh_2",
+      "one_way": true,
+      "region": "marsh",
+      "position": [
+        11072,
+        4576
+      ]
+    },
+    {
+      "uid": "door_gate_marsh_2",
+      "type": "gate",
+      "region": "marsh",
+      "opens_with": "door_marsh_2",
+      "requires": [],
+      "art_hint": "반대편에서 열린다",
+      "position": [
+        10720,
+        4672
+      ]
+    },
+    {
+      "uid": "site_mine_0",
+      "type": "site",
+      "region": "mine",
+      "ability": "wall_jump",
+      "requires": [],
+      "tier": 0,
+      "position": [
+        13056,
+        1120
+      ]
+    },
+    {
+      "uid": "site_mine_1",
+      "type": "site",
+      "region": "mine",
+      "ability": "dash",
+      "requires": [],
+      "tier": 0,
+      "position": [
+        14208,
+        1472
+      ]
+    },
+    {
+      "uid": "door_mine_2",
+      "id": "door_mine_2",
+      "type": "switch",
+      "target": "door_mine_2",
+      "one_way": true,
+      "region": "mine",
+      "position": [
+        15168,
+        4576
+      ]
+    },
+    {
+      "uid": "door_gate_mine_2",
+      "type": "gate",
+      "region": "mine",
+      "opens_with": "door_mine_2",
+      "requires": [],
+      "art_hint": "반대편에서 열린다",
+      "position": [
+        14848,
+        4576
+      ]
+    },
+    {
+      "uid": "site_fortress_0",
+      "type": "site",
+      "region": "fortress",
+      "ability": "double_jump",
+      "requires": [],
+      "tier": 0,
+      "position": [
+        17152,
+        1216
+      ]
+    },
+    {
+      "uid": "site_fortress_1",
+      "type": "site",
+      "region": "fortress",
+      "ability": "vision",
+      "requires": [],
+      "tier": 0,
+      "position": [
+        18304,
+        1472
+      ]
+    },
+    {
+      "uid": "door_fortress_2",
+      "id": "door_fortress_2",
+      "type": "switch",
+      "target": "door_fortress_2",
+      "one_way": true,
+      "region": "fortress",
+      "position": [
+        19264,
+        4576
+      ]
+    },
+    {
+      "uid": "door_gate_fortress_2",
+      "type": "gate",
+      "region": "fortress",
+      "opens_with": "door_fortress_2",
+      "requires": [],
+      "art_hint": "반대편에서 열린다",
+      "position": [
+        18944,
+        4576
+      ]
+    },
+    {
+      "uid": "return_fortress",
+      "type": "return_pier",
+      "region": "fortress",
+      "requires": [],
+      "position": [
+        19072,
+        5600
+      ]
+    },
+    {
+      "uid": "door_village_2",
+      "id": "door_village_2",
+      "type": "switch",
+      "target": "door_village_2",
+      "one_way": true,
+      "region": "village",
+      "position": [
+        2848,
+        10464
+      ]
+    },
+    {
+      "uid": "door_gate_village_2",
+      "type": "gate",
+      "region": "village",
+      "opens_with": "door_village_2",
+      "requires": [],
+      "art_hint": "반대편에서 열린다",
+      "position": [
+        2560,
+        10464
+      ]
+    },
+    {
+      "uid": "site_ridge_0",
+      "type": "site",
+      "region": "ridge",
+      "ability": "wall_cling",
+      "requires": [],
+      "tier": 0,
+      "position": [
+        4960,
+        6880
+      ]
+    },
+    {
+      "uid": "site_ridge_1",
+      "type": "site",
+      "region": "ridge",
+      "ability": "crawl",
+      "requires": [],
+      "tier": 0,
+      "position": [
+        6016,
+        7264
+      ]
+    },
+    {
+      "uid": "door_ridge_2",
+      "id": "door_ridge_2",
+      "type": "switch",
+      "target": "door_ridge_2",
+      "one_way": true,
+      "region": "ridge",
+      "position": [
+        6976,
+        10336
+      ]
+    },
+    {
+      "uid": "door_gate_ridge_2",
+      "type": "gate",
+      "region": "ridge",
+      "opens_with": "door_ridge_2",
+      "requires": [],
+      "art_hint": "반대편에서 열린다",
+      "position": [
+        6656,
+        10464
+      ]
+    },
+    {
+      "uid": "site_skywalk_0",
+      "type": "site",
+      "region": "skywalk",
+      "ability": "wall_jump",
+      "requires": [],
+      "tier": 0,
+      "position": [
+        9056,
+        6848
+      ]
+    },
+    {
+      "uid": "site_skywalk_1",
+      "type": "site",
+      "region": "skywalk",
+      "ability": "light_throw",
+      "requires": [],
+      "tier": 0,
+      "position": [
+        10112,
+        7264
+      ]
+    },
+    {
+      "uid": "door_skywalk_2",
+      "id": "door_skywalk_2",
+      "type": "switch",
+      "target": "door_skywalk_2",
+      "one_way": true,
+      "region": "skywalk",
+      "position": [
+        11072,
+        10464
+      ]
+    },
+    {
+      "uid": "door_gate_skywalk_2",
+      "type": "gate",
+      "region": "skywalk",
+      "opens_with": "door_skywalk_2",
+      "requires": [],
+      "art_hint": "반대편에서 열린다",
+      "position": [
+        10752,
+        10464
+      ]
+    },
+    {
+      "uid": "return_skywalk",
+      "type": "return_pier",
+      "region": "skywalk",
+      "requires": [],
+      "position": [
+        10976,
+        11392
+      ]
+    },
+    {
+      "uid": "site_deep_0",
+      "type": "site",
+      "region": "deep",
+      "ability": "dash",
+      "requires": [],
+      "tier": 0,
+      "position": [
+        13056,
+        6880
+      ]
+    },
+    {
+      "uid": "site_deep_1",
+      "type": "site",
+      "region": "deep",
+      "ability": "double_jump",
+      "requires": [],
+      "tier": 0,
+      "position": [
+        14144,
+        7264
+      ]
+    },
+    {
+      "uid": "door_deep_2",
+      "id": "door_deep_2",
+      "type": "switch",
+      "target": "door_deep_2",
+      "one_way": true,
+      "region": "deep",
+      "position": [
+        15168,
+        10432
+      ]
+    },
+    {
+      "uid": "door_gate_deep_2",
+      "type": "gate",
+      "region": "deep",
+      "opens_with": "door_deep_2",
+      "requires": [],
+      "art_hint": "반대편에서 열린다",
+      "position": [
+        14912,
+        10336
+      ]
+    },
+    {
+      "uid": "site_crystal_0",
+      "type": "site",
+      "region": "crystal",
+      "ability": "vision",
+      "requires": [],
+      "tier": 0,
+      "position": [
+        17152,
+        6880
+      ]
+    },
+    {
+      "uid": "site_crystal_1",
+      "type": "site",
+      "region": "crystal",
+      "ability": "light_throw",
+      "requires": [],
+      "tier": 0,
+      "position": [
+        18304,
+        7264
+      ]
+    },
+    {
+      "uid": "door_crystal_2",
+      "id": "door_crystal_2",
+      "type": "switch",
+      "target": "door_crystal_2",
+      "one_way": true,
+      "region": "crystal",
+      "position": [
+        19264,
+        10336
+      ]
+    },
+    {
+      "uid": "door_gate_crystal_2",
+      "type": "gate",
+      "region": "crystal",
+      "opens_with": "door_crystal_2",
+      "requires": [],
+      "art_hint": "반대편에서 열린다",
+      "position": [
+        18944,
+        10464
+      ]
+    },
+    {
+      "uid": "return_crystal",
+      "type": "return_pier",
+      "region": "crystal",
+      "requires": [],
+      "position": [
+        19136,
+        11232
+      ]
     }
   ],
   "landmarks": [

@@ -42,7 +42,7 @@ func tick(hero: NimrodPlayer,delta: float) -> bool:
             climbable=true
             wall_dir=-1 if collision.get_normal().x>0 else 1
     if not hero.is_on_floor() and Input.is_action_just_pressed("jump"):
-        if climbable and world.has_ability("wall_jump"):
+        if climbable and can_wall_jump():
             hero.velocity=Vector2(-wall_dir*float(tuning.wall_jump.x_impulse),-float(tuning.wall_jump.y_impulse))
             wall_push_left=.18
             hero._show_clip("wall_jump",0)
@@ -107,3 +107,7 @@ func throw_light(hero: NimrodPlayer) -> bool:
     projectile.modulate=Color(.85,.7,1)
     throw_cooldown=float(tuning.cooldown)
     return true
+
+func can_wall_jump() -> bool:
+    var world: Node=get_parent()
+    return world.has_ability("wall_jump") and world.meets(world.abilities_data.abilities.wall_jump.get("use_requires",[]))

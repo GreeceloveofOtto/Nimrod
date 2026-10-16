@@ -1,0 +1,754 @@
+종류	ID	지역	타일좌표/사각형(x,y,w,h)	추가값
+공간	landing_upper_crag	landing	[4, 2, 54, 34]	X1
+공간	landing_forest_overlook	landing	[64, 8, 60, 50]	X1
+공간	landing_arrival_deck	landing	[6, 12, 28, 14]	R4
+공간	landing_first_steps	landing	[42, 18, 28, 24]	C1
+공간	landing_return_pier	landing	[4, 38, 32, 18]	R5
+공간	landing_resonance_court	landing	[34, 58, 26, 18]	R2
+공간	landing_high_iwan	landing	[96, 61, 22, 21]	H1
+공간	landing_terraced_court	landing	[6, 88, 60, 30]	H2
+공간	landing_counter_steps	landing	[6, 106, 48, 32]	C1
+공간	landing_low_arch	landing	[4, 126, 34, 16]	C2
+공간	landing_festival_store	landing	[22, 142, 32, 18]	R2
+공간	landing_deep_pit	landing	[76, 108, 48, 34]	H3
+공간	landing_lower_gallery	landing	[62, 148, 62, 30]	R3
+공간	landing_west_watch	landing	[4, 162, 32, 16]	R1
+공간	landing_rope_ascent	landing	[22, 26, 10, 48]	S1
+공간	landing_echo_gap	landing	[58, 72, 12, 54]	S2
+공간	landing_claw_chimney	landing	[110, 84, 12, 50]	S3
+공간	landing_return_descent	landing	[54, 99, 4, 79]	S4
+공간	landing_winding_stair	landing	[26, 128, 12, 46]	S1
+공간	outer_watch_fissure	landing	[4, 98, 14, 32]	X1
+명시 편집(뒤 행 우선)	0	landing	[112, 8, 6, 18]	#
+명시 편집(뒤 행 우선)	1	landing	[70, 36, 6, 22]	#
+명시 편집(뒤 행 우선)	2	landing	[110, 44, 6, 14]	#
+명시 편집(뒤 행 우선)	3	landing	[40, 40, 22, 10]	.
+명시 편집(뒤 행 우선)	4	landing	[4, 62, 20, 10]	.
+명시 편집(뒤 행 우선)	5	landing	[8, 78, 18, 8]	.
+명시 편집(뒤 행 우선)	6	landing	[16, 64, 10, 20]	.
+명시 편집(뒤 행 우선)	7	landing	[74, 92, 36, 6]	.
+명시 편집(뒤 행 우선)	8	landing	[76, 78, 8, 20]	.
+명시 편집(뒤 행 우선)	9	landing	[58, 130, 34, 6]	.
+명시 편집(뒤 행 우선)	10	landing	[4, 148, 22, 8]	.
+명시 편집(뒤 행 우선)	11	landing	[18, 150, 12, 6]	.
+명시 편집(뒤 행 우선)	12	landing	[4, 136, 8, 2]	.
+명시 편집(뒤 행 우선)	13	landing	[66, 30, 14, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	14	landing	[94, 30, 16, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	15	landing	[74, 40, 6, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	16	landing	[90, 126, 16, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	17	landing	[94, 146, 8, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	18	landing	[112, 90, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	19	landing	[116, 112, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	20	landing	[112, 120, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	21	landing	[28, 2, 6, 16]	#
+명시 편집(뒤 행 우선)	22	landing	[82, 8, 6, 24]	#
+명시 편집(뒤 행 우선)	23	landing	[94, 28, 6, 30]	#
+명시 편집(뒤 행 우선)	24	landing	[106, 64, 6, 20]	#
+명시 편집(뒤 행 우선)	25	landing	[94, 76, 6, 8]	#
+명시 편집(뒤 행 우선)	26	landing	[100, 58, 4, 14]	#
+명시 편집(뒤 행 우선)	27	landing	[30, 90, 6, 34]	#
+명시 편집(뒤 행 우선)	28	landing	[48, 104, 8, 18]	#
+명시 편집(뒤 행 우선)	29	landing	[12, 116, 6, 18]	#
+명시 편집(뒤 행 우선)	30	landing	[104, 110, 6, 24]	#
+명시 편집(뒤 행 우선)	31	landing	[78, 112, 12, 4]	#
+명시 편집(뒤 행 우선)	32	landing	[108, 123, 18, 4]	#
+명시 편집(뒤 행 우선)	33	landing	[96, 128, 4, 14]	#
+명시 편집(뒤 행 우선)	34	landing	[80, 148, 6, 20]	#
+명시 편집(뒤 행 우선)	35	landing	[98, 158, 6, 16]	#
+명시 편집(뒤 행 우선)	36	landing	[112, 150, 6, 16]	#
+명시 편집(뒤 행 우선)	37	landing	[38, 128, 6, 30]	#
+명시 편집(뒤 행 우선)	38	landing	[18, 140, 6, 12]	#
+명시 편집(뒤 행 우선)	39	landing	[26, 142, 4, 20]	#
+명시 편집(뒤 행 우선)	40	landing	[24, 128, 4, 2]	#
+명시 편집(뒤 행 우선)	41	landing	[108, 72, 4, 4]	#
+명시 편집(뒤 행 우선)	42	landing	[22, 164, 4, 4]	#
+명시 편집(뒤 행 우선)	43	landing	[106, 76, 6, 5]	.
+명시 편집(뒤 행 우선)	44	landing	[30, 107, 6, 5]	.
+명시 편집(뒤 행 우선)	45	landing	[104, 124, 6, 5]	.
+명시 편집(뒤 행 우선)	46	landing	[80, 157, 6, 5]	.
+명시 편집(뒤 행 우선)	47	landing	[38, 131, 6, 5]	.
+명시 편집(뒤 행 우선)	48	landing	[38, 153, 6, 5]	.
+명시 편집(뒤 행 우선)	49	landing	[40, 32, 20, 18]	.
+명시 편집(뒤 행 우선)	50	landing	[28, 70, 8, 26]	.
+명시 편집(뒤 행 우선)	51	landing	[8, 152, 12, 4]	.
+명시 편집(뒤 행 우선)	52	landing	[6, 128, 18, 2]	.
+명시 편집(뒤 행 우선)	53	landing	[28, 76, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	54	landing	[32, 80, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	55	landing	[28, 84, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	56	landing	[32, 88, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	57	landing	[28, 92, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	58	landing	[30, 116, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	59	landing	[112, 90, 8, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	60	landing	[116, 70, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	61	landing	[94, 140, 8, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	62	landing	[46, 24, 6, 10]	#
+명시 편집(뒤 행 우선)	63	landing	[94, 72, 6, 4]	#
+명시 편집(뒤 행 우선)	64	landing	[38, 94, 4, 6]	#
+명시 편집(뒤 행 우선)	65	landing	[86, 118, 4, 18]	#
+명시 편집(뒤 행 우선)	66	landing	[78, 116, 12, 2]	#
+명시 편집(뒤 행 우선)	67	landing	[58, 112, 2, 66]	#
+명시 편집(뒤 행 우선)	68	landing	[66, 122, 4, 6]	#
+명시 편집(뒤 행 우선)	69	landing	[20, 60, 6, 26]	#
+명시 편집(뒤 행 우선)	70	landing	[46, 160, 6, 14]	#
+명시 편집(뒤 행 우선)	71	landing	[60, 160, 2, 14]	#
+명시 편집(뒤 행 우선)	72	landing	[72, 148, 4, 18]	#
+명시 편집(뒤 행 우선)	73	landing	[72, 104, 38, 6]	.
+명시 편집(뒤 행 우선)	74	landing	[108, 138, 18, 14]	.
+명시 편집(뒤 행 우선)	75	landing	[116, 146, 8, 20]	.
+명시 편집(뒤 행 우선)	76	landing	[38, 120, 12, 10]	.
+명시 편집(뒤 행 우선)	77	landing	[40, 53, 20, 5]	.
+명시 편집(뒤 행 우선)	78	landing	[60, 53, 6, 17]	.
+명시 편집(뒤 행 우선)	79	landing	[74, 40, 6, 2]	.
+명시 편집(뒤 행 우선)	80	landing	[116, 70, 4, 2]	.
+명시 편집(뒤 행 우선)	81	landing	[30, 117, 3, 1]	.
+명시 편집(뒤 행 우선)	82	landing	[18, 129, 3, 2]	.
+명시 편집(뒤 행 우선)	83	landing	[24, 128, 4, 2]	.
+명시 편집(뒤 행 우선)	84	landing	[20, 66, 6, 5]	.
+명시 편집(뒤 행 우선)	85	landing	[116, 154, 8, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	86	landing	[116, 158, 8, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	87	landing	[116, 162, 8, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	88	landing	[60, 57, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	89	landing	[62, 61, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	90	landing	[60, 65, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	91	landing	[94, 150, 8, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	92	landing	[110, 30, 2, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	93	landing	[44, 26, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	94	landing	[50, 34, 6, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	95	landing	[6, 88, 4, 7]	#
+명시 편집(뒤 행 우선)	96	landing	[19, 118, 4, 5]	#
+명시 편집(뒤 행 우선)	97	landing	[28, 51, 2, 9]	#
+명시 편집(뒤 행 우선)	98	landing	[32, 50, 4, 3]	#
+명시 편집(뒤 행 우선)	99	landing	[45, 80, 4, 3]	#
+명시 편집(뒤 행 우선)	100	landing	[58, 40, 4, 5]	#
+명시 편집(뒤 행 우선)	101	landing	[66, 43, 2, 9]	#
+명시 편집(뒤 행 우선)	102	landing	[71, 124, 4, 7]	#
+명시 편집(뒤 행 우선)	103	landing	[84, 100, 4, 5]	#
+명시 편집(뒤 행 우선)	104	landing	[110, 134, 4, 13]	#
+명시 편집(뒤 행 우선)	105	landing	[10, 121, 2, 9]	#
+명시 편집(뒤 행 우선)	106	landing	[12, 121, 18, 2]	#
+명시 편집(뒤 행 우선)	107	landing	[12, 128, 18, 2]	#
+명시 편집(뒤 행 우선)	108	landing	[2, 95, 12, 5]	.
+명시 편집(뒤 행 우선)	109	landing	[12, 123, 18, 5]	.
+명시 편집(뒤 행 우선)	110	landing	[30, 53, 10, 5]	.
+명시 편집(뒤 행 우선)	111	landing	[42, 83, 24, 5]	.
+명시 편집(뒤 행 우선)	112	landing	[56, 45, 10, 5]	.
+명시 편집(뒤 행 우선)	113	landing	[58, 131, 2, 5]	.
+명시 편집(뒤 행 우선)	114	landing	[70, 131, 14, 5]	.
+명시 편집(뒤 행 우선)	115	landing	[72, 105, 38, 5]	.
+명시 편집(뒤 행 우선)	116	landing	[66, 104, 8, 6]	.
+명시 편집(뒤 행 우선)	117	landing	[94, 33, 12, 5]	.
+명시 편집(뒤 행 우선)	118	landing	[104, 146, 16, 6]	.
+명시 편집(뒤 행 우선)	119	landing	[100, 146, 10, 6]	.
+명시 편집(뒤 행 우선)	120	landing	[106, 38, 6, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	121	landing	[88, 52, 6, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	122	landing	[88, 48, 6, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	123	landing	[88, 44, 6, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	124	landing	[88, 40, 6, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	125	landing	[88, 36, 6, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	126	landing	[88, 32, 6, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	127	landing	[104, 162, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	128	landing	[104, 158, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	129	landing	[104, 155, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	130	landing	[72, 131, 2, 5]	F
+명시 편집(뒤 행 우선)	131	landing	[110, 146, 4, 1]	#
+명시 편집(뒤 행 우선)	132	landing	[38, 129, 6, 1]	#
+명시 편집(뒤 행 우선)	133	landing	[100, 128, 6, 4]	#
+명시 편집(뒤 행 우선)	134	landing	[46, 26, 2, 1]	#
+명시 편집(뒤 행 우선)	135	landing	[92, 44, 2, 1]	#
+명시 편집(뒤 행 우선)	136	landing	[92, 48, 2, 1]	#
+명시 편집(뒤 행 우선)	137	landing	[92, 52, 2, 1]	#
+명시 편집(뒤 행 우선)	138	landing	[118, 138, 8, 10]	#
+명시 편집(뒤 행 우선)	139	landing	[108, 152, 16, 2]	#
+명시 편집(뒤 행 우선)	140	landing	[52, 58, 4, 16]	#
+명시 편집(뒤 행 우선)	141	landing	[88, 61, 2, 3]	#
+명시 편집(뒤 행 우선)	142	landing	[36, 102, 4, 4]	#
+명시 편집(뒤 행 우선)	143	landing	[28, 126, 6, 10]	#
+명시 편집(뒤 행 우선)	144	landing	[18, 126, 4, 14]	#
+명시 편집(뒤 행 우선)	145	landing	[92, 150, 4, 16]	#
+명시 편집(뒤 행 우선)	146	landing	[36, 108, 1, 2]	.
+명시 편집(뒤 행 우선)	147	landing	[96, 141, 4, 1]	.
+명시 편집(뒤 행 우선)	148	landing	[104, 152, 6, 14]	.
+명시 편집(뒤 행 우선)	149	landing	[116, 152, 6, 2]	.
+명시 편집(뒤 행 우선)	150	landing	[114, 147, 6, 7]	.
+명시 편집(뒤 행 우선)	151	landing	[18, 130, 4, 5]	.
+명시 편집(뒤 행 우선)	152	landing	[70, 84, 14, 6]	.
+명시 편집(뒤 행 우선)	153	landing	[4, 86, 16, 4]	.
+명시 편집(뒤 행 우선)	154	landing	[38, 76, 18, 8]	.
+명시 편집(뒤 행 우선)	155	landing	[66, 138, 20, 6]	.
+명시 편집(뒤 행 우선)	156	landing	[66, 122, 18, 6]	.
+명시 편집(뒤 행 우선)	157	landing	[36, 142, 14, 4]	.
+명시 편집(뒤 행 우선)	158	landing	[6, 158, 16, 4]	.
+명시 편집(뒤 행 우선)	159	landing	[78, 34, 4, 6]	.
+명시 편집(뒤 행 우선)	160	landing	[100, 16, 10, 3]	.
+명시 편집(뒤 행 우선)	161	landing	[38, 118, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	162	landing	[94, 138, 2, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	163	landing	[96, 150, 6, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	164	landing	[32, 150, 2, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	165	landing	[32, 173, 2, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	166	landing	[46, 116, 4, 20]	#
+명시 편집(뒤 행 우선)	167	landing	[38, 120, 2, 16]	#
+명시 편집(뒤 행 우선)	168	landing	[40, 120, 2, 2]	#
+명시 편집(뒤 행 우선)	169	landing	[66, 121, 22, 2]	#
+명시 편집(뒤 행 우선)	170	landing	[76, 110, 4, 12]	#
+명시 편집(뒤 행 우선)	171	landing	[78, 102, 4, 4]	#
+명시 편집(뒤 행 우선)	172	landing	[72, 114, 4, 4]	#
+명시 편집(뒤 행 우선)	173	landing	[4, 148, 8, 8]	#
+명시 편집(뒤 행 우선)	174	landing	[46, 124, 4, 5]	.
+명시 편집(뒤 행 우선)	175	landing	[38, 131, 2, 5]	.
+명시 편집(뒤 행 우선)	176	landing	[14, 158, 16, 4]	.
+명시 편집(뒤 행 우선)	177	landing	[38, 76, 18, 3]	#
+명시 편집(뒤 행 우선)	178	landing	[14, 76, 4, 16]	#
+명시 편집(뒤 행 우선)	179	landing	[38, 118, 4, 1]	#
+명시 편집(뒤 행 우선)	180	landing	[72, 117, 4, 1]	.
+명시 편집(뒤 행 우선)	181	landing	[78, 117, 8, 1]	.
+명시 편집(뒤 행 우선)	182	landing	[18, 80, 2, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	183	landing	[6, 166, 22, 4]	#
+명시 편집(뒤 행 우선)	184	landing	[12, 164, 16, 2]	#
+명시 편집(뒤 행 우선)	185	landing	[88, 104, 22, 1]	#
+명시 편집(뒤 행 우선)	186	landing	[88, 109, 22, 1]	#
+명시 편집(뒤 행 우선)	187	landing	[72, 104, 6, 1]	#
+명시 편집(뒤 행 우선)	188	landing	[70, 84, 14, 2]	#
+명시 편집(뒤 행 우선)	189	landing	[80, 84, 4, 6]	#
+명시 편집(뒤 행 우선)	190	landing	[98, 90, 4, 4]	#
+명시 편집(뒤 행 우선)	191	landing	[66, 85, 8, 5]	.
+명시 편집(뒤 행 우선)	192	landing	[10, 98, 6, 10]	:
+명시 편집(뒤 행 우선)	193	landing	[4, 104, 8, 12]	:
+명시 편집(뒤 행 우선)	194	landing	[8, 112, 8, 12]	:
+명시 편집(뒤 행 우선)	195	landing	[12, 120, 6, 10]	:
+명시 편집(뒤 행 우선)	196	landing	[10, 104, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	197	landing	[4, 112, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	198	landing	[10, 116, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	199	landing	[12, 120, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	200	landing	[14, 124, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	201	landing	[12, 128, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	202	landing	[45, 78, 4, 2]	#
+명시 편집(뒤 행 우선)	203	landing	[78, 117, 2, 1]	#
+명시 편집(뒤 행 우선)	204	landing	[38, 119, 2, 1]	#
+명시 편집(뒤 행 우선)	205	landing	[28, 123, 2, 3]	#
+명시 편집(뒤 행 우선)	206	landing	[38, 118, 2, 1]	#
+명시 편집(뒤 행 우선)	207	landing	[18, 126, 1, 2]	#
+명시 편집(뒤 행 우선)	208	landing	[45, 145, 5, 1]	#
+명시 편집(뒤 행 우선)	209	landing	[98, 102, 4, 2]	#
+명시 편집(뒤 행 우선)	210	landing	[104, 170, 2, 2]	#
+명시 편집(뒤 행 우선)	211	landing	[4, 76, 12, 10]	:
+명시 편집(뒤 행 우선)	212	landing	[8, 70, 8, 6]	:
+명시 편집(뒤 행 우선)	213	landing	[6, 144, 12, 8]	:
+명시 편집(뒤 행 우선)	214	landing	[12, 140, 6, 4]	:
+명시 편집(뒤 행 우선)	215	landing	[60, 105, 8, 5]	:
+명시 편집(뒤 행 우선)	216	landing	[68, 105, 4, 5]	.
+명시 편집(뒤 행 우선)	217	landing	[32, 173, 2, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	218	landing	[34, 173, 2, 3]	#
+명시 편집(뒤 행 우선)	219	landing	[45, 141, 5, 1]	.
+명시 편집(뒤 행 우선)	220	landing	[88, 94, 6, 5]	.
+명시 편집(뒤 행 우선)	221	landing	[102, 92, 6, 2]	.
+명시 편집(뒤 행 우선)	222	landing	[10, 84, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	223	landing	[60, 112, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	224	landing	[18, 126, 1, 2]	.
+명시 편집(뒤 행 우선)	225	landing	[6, 144, 2, 4]	:
+명시 편집(뒤 행 우선)	226	landing	[10, 152, 2, 4]	.
+명시 편집(뒤 행 우선)	227	landing	[12, 132, 2, 2]	^
+명시 편집(뒤 행 우선)	228	landing	[28, 25, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	229	landing	[28, 37, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	230	landing	[24, 41, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	231	landing	[24, 48, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	232	landing	[52, 27, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	233	landing	[78, 36, 8, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	234	landing	[114, 33, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	235	landing	[92, 30, 2, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	236	landing	[34, 45, 8, 5]	.
+명시 편집(뒤 행 우선)	237	landing	[120, 45, 8, 5]	.
+명시 편집(뒤 행 우선)	238	landing	[110, 131, 10, 5]	.
+명시 편집(뒤 행 우선)	239	landing	[30, 54, 2, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	240	landing	[58, 61, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	241	landing	[58, 65, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	242	landing	[62, 68, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	243	landing	[18, 73, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	244	landing	[22, 70, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	245	landing	[16, 82, 3, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	246	landing	[6, 87, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	247	landing	[26, 99, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	248	landing	[22, 102, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	249	landing	[106, 46, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	250	landing	[106, 53, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	251	landing	[124, 49, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	252	landing	[114, 133, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	253	landing	[110, 130, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	254	landing	[106, 127, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	255	landing	[36, 98, 2, 4]	#
+명시 편집(뒤 행 우선)	256	landing	[30, 117, 2, 1]	#
+명시 편집(뒤 행 우선)	257	landing	[30, 65, 28, 2]	#
+명시 편집(뒤 행 우선)	258	landing	[24, 124, 4, 12]	.
+명시 편집(뒤 행 우선)	259	landing	[28, 100, 30, 4]	.
+명시 편집(뒤 행 우선)	260	landing	[36, 172, 30, 4]	.
+명시 편집(뒤 행 우선)	261	landing	[94, 131, 18, 5]	.
+명시 편집(뒤 행 우선)	262	landing	[30, 60, 54, 5]	.
+명시 편집(뒤 행 우선)	263	landing	[80, 60, 6, 8]	.
+명시 편집(뒤 행 우선)	264	landing	[24, 128, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	265	landing	[24, 132, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	266	landing	[26, 136, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	267	landing	[56, 175, 6, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	268	landing	[90, 132, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	269	landing	[92, 135, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	270	landing	[64, 109, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	271	landing	[82, 66, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	272	landing	[86, 76, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	273	landing	[86, 79, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	274	landing	[66, 38, 4, 6]	#
+명시 편집(뒤 행 우선)	275	landing	[68, 43, 2, 7]	#
+명시 편집(뒤 행 우선)	276	landing	[94, 61, 2, 21]	#
+명시 편집(뒤 행 우선)	277	landing	[104, 124, 4, 4]	#
+명시 편집(뒤 행 우선)	278	landing	[66, 123, 18, 1]	#
+명시 편집(뒤 행 우선)	279	landing	[74, 116, 2, 5]	#
+명시 편집(뒤 행 우선)	280	landing	[36, 169, 4, 7]	.
+명시 편집(뒤 행 우선)	281	landing	[34, 79, 6, 5]	.
+명시 편집(뒤 행 우선)	282	landing	[66, 92, 10, 6]	.
+명시 편집(뒤 행 우선)	283	landing	[42, 104, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	284	landing	[58, 107, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	285	landing	[60, 110, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	286	landing	[60, 116, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	287	landing	[60, 120, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	288	landing	[62, 123, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	289	landing	[68, 97, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	290	landing	[70, 99, 3, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	291	landing	[70, 65, 12, 2]	#
+명시 편집(뒤 행 우선)	292	landing	[66, 60, 24, 1]	#
+명시 편집(뒤 행 우선)	293	landing	[96, 61, 4, 11]	#
+명시 편집(뒤 행 우선)	294	landing	[70, 88, 8, 4]	#
+명시 편집(뒤 행 우선)	295	landing	[46, 96, 6, 2]	#
+명시 편집(뒤 행 우선)	296	landing	[28, 108, 6, 4]	.
+명시 편집(뒤 행 우선)	297	landing	[58, 139, 10, 5]	.
+명시 편집(뒤 행 우선)	298	landing	[64, 168, 8, 6]	.
+명시 편집(뒤 행 우선)	299	landing	[96, 170, 10, 4]	.
+명시 편집(뒤 행 우선)	300	landing	[120, 147, 3, 27]	.
+명시 편집(뒤 행 우선)	301	landing	[54, 104, 4, 74]	.
+명시 편집(뒤 행 우선)	302	landing	[58, 65, 12, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	303	landing	[56, 176, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	304	landing	[72, 169, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	305	landing	[76, 172, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	306	landing	[94, 169, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	307	landing	[120, 151, 3, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	308	landing	[120, 154, 3, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	309	landing	[120, 158, 3, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	310	landing	[120, 162, 3, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	311	landing	[120, 166, 3, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	312	landing	[120, 170, 3, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	313	landing	[70, 85, 8, 3]	#
+명시 편집(뒤 행 우선)	314	landing	[106, 152, 4, 6]	#
+명시 편집(뒤 행 우선)	315	landing	[48, 99, 10, 5]	.
+명시 편집(뒤 행 우선)	316	landing	[102, 162, 12, 4]	.
+명시 편집(뒤 행 우선)	317	landing	[26, 105, 8, 7]	.
+명시 편집(뒤 행 우선)	318	landing	[56, 132, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	319	landing	[56, 140, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	320	landing	[26, 109, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	321	landing	[30, 105, 4, 1]	#
+명시 편집(뒤 행 우선)	322	landing	[80, 67, 2, 1]	#
+명시 편집(뒤 행 우선)	323	landing	[106, 128, 4, 1]	#
+명시 편집(뒤 행 우선)	324	landing	[92, 80, 2, 2]	#
+명시 편집(뒤 행 우선)	325	landing	[52, 112, 2, 16]	#
+명시 편집(뒤 행 우선)	326	landing	[52, 136, 2, 10]	#
+명시 편집(뒤 행 우선)	327	landing	[52, 152, 2, 16]	#
+명시 편집(뒤 행 우선)	328	landing	[96, 159, 6, 7]	#
+명시 편집(뒤 행 우선)	329	landing	[114, 162, 6, 4]	.
+명시 편집(뒤 행 우선)	330	landing	[90, 80, 2, 2]	#
+명시 편집(뒤 행 우선)	331	landing	[116, 160, 4, 2]	#
+명시 편집(뒤 행 우선)	332	landing	[76, 142, 2, 2]	#
+명시 편집(뒤 행 우선)	333	landing	[56, 67, 2, 5]	#
+명시 편집(뒤 행 우선)	334	landing	[82, 82, 2, 2]	#
+명시 편집(뒤 행 우선)	335	landing	[64, 122, 8, 2]	.
+명시 편집(뒤 행 우선)	336	landing	[76, 124, 6, 2]	#
+명시 편집(뒤 행 우선)	337	landing	[68, 126, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	338	landing	[66, 120, 6, 1]	#
+명시 편집(뒤 행 우선)	339	landing	[72, 120, 2, 1]	#
+명시 편집(뒤 행 우선)	340	landing	[72, 117, 2, 1]	#
+명시 편집(뒤 행 우선)	341	landing	[80, 61, 16, 21]	#
+명시 편집(뒤 행 우선)	342	landing	[118, 61, 10, 21]	#
+명시 편집(뒤 행 우선)	343	landing	[80, 82, 40, 2]	#
+명시 편집(뒤 행 우선)	344	landing	[96, 61, 22, 21]	.
+명시 편집(뒤 행 우선)	345	landing	[80, 61, 20, 4]	.
+명시 편집(뒤 행 우선)	346	landing	[120, 84, 8, 6]	.
+명시 편집(뒤 행 우선)	347	landing	[96, 65, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	348	landing	[100, 69, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	349	landing	[104, 73, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	350	landing	[108, 77, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	351	landing	[112, 80, 4, 1]	= (기존 빈 칸만)
+명시 편집(뒤 행 우선)	352	landing	[118, 118, 10, 5]	.
+명시 편집(뒤 행 우선)	353	landing	[82, 59, 10, 2]	.
+명시 편집(뒤 행 우선)	354	landing	[86, 64, 2, 1]	#
+boss	boss_crystal	crystal	[606.0, 351.0]	
+boss	boss_fortress	fortress	[604.0, 183.0]	
+boss	boss_skywalk	skywalk	[351.0, 359.0]	
+cord	cord_crystal_0	crystal	[554.0, 223.0]	dash
+cord	cord_crystal_1	crystal	[607.0, 279.0]	double_jump
+cord	cord_crystal_2	crystal	[559.0, 327.0]	wall_cling
+cord	cord_crystal_3	crystal	[625.0, 354.0]	wall_jump
+cord	cord_crystal_4	crystal	[524.0, 252.0]	
+cord	cord_crystal_5	crystal	[585.0, 322.0]	
+cord	cord_deep_0	deep	[428.0, 223.0]	dash
+cord	cord_deep_1	deep	[482.0, 279.0]	double_jump
+cord	cord_deep_2	deep	[430.0, 327.0]	wall_cling
+cord	cord_deep_3	deep	[497.0, 351.0]	wall_jump
+cord	cord_deep_4	deep	[396.0, 251.0]	
+cord	cord_deep_5	deep	[453.0, 319.0]	
+cord	cord_forest_0	forest	[170.0, 43.0]	dash
+cord	cord_forest_1	forest	[223.0, 99.0]	double_jump
+cord	cord_forest_2	forest	[170.0, 147.0]	wall_cling
+cord	cord_forest_3	forest	[241.0, 171.0]	wall_jump
+cord	cord_forest_4	forest	[142.0, 71.0]	
+cord	cord_forest_5	forest	[204.0, 140.0]	
+cord	cord_fortress_0	fortress	[555.0, 43.0]	dash
+cord	cord_fortress_1	fortress	[610.0, 99.0]	double_jump
+cord	cord_fortress_2	fortress	[558.0, 151.0]	wall_cling
+cord	cord_fortress_3	fortress	[624.0, 175.0]	wall_jump
+cord	cord_fortress_4	fortress	[524.0, 71.0]	
+cord	cord_fortress_5	fortress	[588.0, 139.0]	
+cord	cord_landing_0	landing	[4.0, 100.0]	dash
+cord	cord_landing_1	landing	[16.0, 128.0]	double_jump
+cord	cord_landing_2	landing	[31.0, 58.0]	wall_cling
+cord	cord_landing_3	landing	[43.0, 84.0]	wall_jump
+cord	cord_landing_4	landing	[94.0, 109.0]	light_throw
+cord	cord_landing_5	landing	[64.0, 50.0]	crawl
+cord	cord_marsh_0	marsh	[299.0, 43.0]	dash
+cord	cord_marsh_1	marsh	[351.0, 99.0]	double_jump
+cord	cord_marsh_2	marsh	[302.0, 148.0]	wall_cling
+cord	cord_marsh_3	marsh	[364.0, 171.0]	wall_jump
+cord	cord_marsh_4	marsh	[266.0, 71.0]	
+cord	cord_marsh_5	marsh	[328.0, 143.0]	
+cord	cord_mine_0	mine	[423.0, 43.0]	dash
+cord	cord_mine_1	mine	[482.0, 99.0]	double_jump
+cord	cord_mine_2	mine	[433.0, 147.0]	wall_cling
+cord	cord_mine_3	mine	[495.0, 174.0]	wall_jump
+cord	cord_mine_4	mine	[397.0, 71.0]	
+cord	cord_mine_5	mine	[459.0, 139.0]	
+cord	cord_ridge_0	ridge	[170.0, 223.0]	dash
+cord	cord_ridge_1	ridge	[226.0, 280.0]	double_jump
+cord	cord_ridge_2	ridge	[175.0, 327.0]	wall_cling
+cord	cord_ridge_3	ridge	[241.0, 359.0]	wall_jump
+cord	cord_ridge_4	ridge	[139.0, 251.0]	
+cord	cord_ridge_5	ridge	[204.0, 319.0]	
+cord	cord_skywalk_0	skywalk	[295.0, 223.0]	dash
+cord	cord_skywalk_1	skywalk	[354.0, 279.0]	double_jump
+cord	cord_skywalk_2	skywalk	[303.0, 327.0]	wall_cling
+cord	cord_skywalk_3	skywalk	[368.0, 351.0]	wall_jump
+cord	cord_skywalk_4	skywalk	[267.0, 252.0]	
+cord	cord_skywalk_5	skywalk	[330.0, 319.0]	
+cord	cord_village_0	village	[41.0, 223.0]	dash
+cord	cord_village_1	village	[98.0, 279.0]	double_jump
+cord	cord_village_2	village	[49.0, 327.0]	wall_cling
+cord	cord_village_3	village	[109.0, 351.0]	wall_jump
+cord	cord_village_4	village	[14.0, 252.0]	
+cord	cord_village_5	village	[72.0, 320.0]	
+switch	door_crystal	crystal	[564.0, 259.0]	
+switch	door_crystal_2	crystal	[602.0, 323.0]	
+switch	door_deep	deep	[435.0, 260.0]	
+switch	door_deep_2	deep	[474.0, 326.0]	
+switch	door_forest	forest	[178.0, 79.0]	
+switch	door_forest_2	forest	[218.0, 143.0]	
+switch	door_fortress	fortress	[569.0, 79.0]	
+switch	door_fortress_2	fortress	[602.0, 143.0]	
+gate	door_gate_crystal	crystal	[563.0, 259.0]	
+gate	door_gate_crystal_2	crystal	[592.0, 327.0]	
+gate	door_gate_deep	deep	[435.0, 260.0]	
+gate	door_gate_deep_2	deep	[466.0, 323.0]	
+gate	door_gate_forest	forest	[178.0, 79.0]	
+gate	door_gate_forest_2	forest	[208.0, 144.0]	
+gate	door_gate_fortress	fortress	[562.0, 79.0]	
+gate	door_gate_fortress_2	fortress	[592.0, 143.0]	
+gate	door_gate_landing	landing	[99.0, 38.0]	
+gate	door_gate_landing_2	landing	[112.0, 152.0]	
+gate	door_gate_marsh	marsh	[307.0, 83.0]	
+gate	door_gate_marsh_2	marsh	[335.0, 146.0]	
+gate	door_gate_mine	mine	[436.0, 79.0]	
+gate	door_gate_mine_2	mine	[464.0, 143.0]	
+gate	door_gate_ridge	ridge	[179.0, 259.0]	
+gate	door_gate_ridge_2	ridge	[208.0, 327.0]	
+gate	door_gate_skywalk	skywalk	[303.0, 259.0]	
+gate	door_gate_skywalk_2	skywalk	[336.0, 327.0]	
+gate	door_gate_village	village	[54.0, 260.0]	
+gate	door_gate_village_2	village	[80.0, 327.0]	
+switch	door_landing	landing	[104.0, 38.0]	
+switch	door_landing_2	landing	[120.0, 154.0]	
+switch	door_marsh	marsh	[313.0, 79.0]	
+switch	door_marsh_2	marsh	[346.0, 143.0]	
+switch	door_mine	mine	[438.0, 79.0]	
+switch	door_mine_2	mine	[474.0, 143.0]	
+switch	door_ridge	ridge	[180.0, 259.0]	
+switch	door_ridge_2	ridge	[218.0, 323.0]	
+switch	door_skywalk	skywalk	[310.0, 260.0]	
+switch	door_skywalk_2	skywalk	[346.0, 327.0]	
+switch	door_village	village	[54.0, 260.0]	
+switch	door_village_2	village	[89.0, 327.0]	
+ember	ember_crystal_0	crystal	[569.0, 215.0]	
+ember	ember_crystal_1	crystal	[530.0, 275.0]	
+ember	ember_crystal_2	crystal	[606.0, 311.0]	
+ember	ember_crystal_3	crystal	[554.0, 347.0]	
+ember	ember_crystal_4	crystal	[629.0, 243.0]	
+ember	ember_crystal_5	crystal	[592.0, 295.0]	
+ember	ember_deep_0	deep	[441.0, 215.0]	
+ember	ember_deep_1	deep	[399.0, 271.0]	
+ember	ember_deep_2	deep	[476.0, 311.0]	
+ember	ember_deep_3	deep	[426.0, 347.0]	
+ember	ember_deep_4	deep	[502.0, 244.0]	
+ember	ember_deep_5	deep	[461.0, 295.0]	
+ember	ember_forest_0	forest	[185.0, 39.0]	
+ember	ember_forest_1	forest	[145.0, 95.0]	
+ember	ember_forest_2	forest	[218.0, 131.0]	
+ember	ember_forest_3	forest	[174.0, 167.0]	
+ember	ember_forest_4	forest	[247.0, 63.0]	
+ember	ember_forest_5	forest	[211.0, 115.0]	
+ember	ember_fortress_0	fortress	[569.0, 35.0]	
+ember	ember_fortress_1	fortress	[529.0, 91.0]	
+ember	ember_fortress_2	fortress	[603.0, 132.0]	
+ember	ember_fortress_3	fortress	[555.0, 167.0]	
+ember	ember_fortress_4	fortress	[630.0, 63.0]	
+ember	ember_fortress_5	fortress	[591.0, 119.0]	
+ember	ember_landing_0	landing	[20.0, 22.0]	
+ember	ember_landing_1	landing	[108.0, 56.0]	
+ember	ember_landing_2	landing	[50.0, 104.0]	
+ember	ember_landing_3	landing	[114.0, 82.0]	
+ember	ember_landing_4	landing	[102.0, 140.0]	
+ember	ember_landing_5	landing	[68.0, 174.0]	
+ember	ember_marsh_0	marsh	[316.0, 35.0]	
+ember	ember_marsh_1	marsh	[267.0, 92.0]	
+ember	ember_marsh_2	marsh	[349.0, 131.0]	
+ember	ember_marsh_3	marsh	[299.0, 167.0]	
+ember	ember_marsh_4	marsh	[373.0, 63.0]	
+ember	ember_marsh_5	marsh	[337.0, 115.0]	
+ember	ember_mine_0	mine	[441.0, 35.0]	
+ember	ember_mine_1	mine	[401.0, 91.0]	
+ember	ember_mine_2	mine	[476.0, 135.0]	
+ember	ember_mine_3	mine	[428.0, 170.0]	
+ember	ember_mine_4	mine	[505.0, 63.0]	
+ember	ember_mine_5	mine	[467.0, 115.0]	
+ember	ember_ridge_0	ridge	[185.0, 215.0]	
+ember	ember_ridge_1	ridge	[145.0, 271.0]	
+ember	ember_ridge_2	ridge	[221.0, 311.0]	
+ember	ember_ridge_3	ridge	[170.0, 347.0]	
+ember	ember_ridge_4	ridge	[246.0, 244.0]	
+ember	ember_ridge_5	ridge	[204.0, 299.0]	
+ember	ember_skywalk_0	skywalk	[310.0, 215.0]	
+ember	ember_skywalk_1	skywalk	[270.0, 274.0]	
+ember	ember_skywalk_2	skywalk	[348.0, 311.0]	
+ember	ember_skywalk_3	skywalk	[298.0, 347.0]	
+ember	ember_skywalk_4	skywalk	[373.0, 247.0]	
+ember	ember_skywalk_5	skywalk	[338.0, 295.0]	
+ember	ember_village_0	village	[57.0, 215.0]	
+ember	ember_village_1	village	[11.0, 271.0]	
+ember	ember_village_2	village	[92.0, 311.0]	
+ember	ember_village_3	village	[43.0, 347.0]	
+ember	ember_village_4	village	[119.0, 244.0]	
+ember	ember_village_5	village	[82.0, 295.0]	
+enemy	enemy_crystal_0	crystal	[532.0, 199.0]	
+enemy	enemy_crystal_1	crystal	[559.0, 203.0]	
+enemy	enemy_crystal_10	crystal	[611.0, 215.0]	
+enemy	enemy_crystal_2	crystal	[544.0, 237.0]	
+enemy	enemy_crystal_3	crystal	[588.0, 271.0]	
+enemy	enemy_crystal_4	crystal	[620.0, 271.0]	
+enemy	enemy_crystal_5	crystal	[527.0, 302.0]	
+enemy	enemy_crystal_6	crystal	[570.0, 303.0]	
+enemy	enemy_crystal_7	crystal	[612.0, 333.0]	
+enemy	enemy_crystal_8	crystal	[538.0, 335.0]	
+enemy	enemy_crystal_9	crystal	[595.0, 356.0]	
+enemy	enemy_deep_0	deep	[404.0, 199.0]	
+enemy	enemy_deep_1	deep	[436.0, 204.0]	
+enemy	enemy_deep_10	deep	[484.0, 215.0]	
+enemy	enemy_deep_2	deep	[415.0, 237.0]	
+enemy	enemy_deep_3	deep	[459.0, 267.0]	
+enemy	enemy_deep_4	deep	[493.0, 271.0]	
+enemy	enemy_deep_5	deep	[402.0, 299.0]	
+enemy	enemy_deep_6	deep	[445.0, 303.0]	
+enemy	enemy_deep_7	deep	[484.0, 329.0]	
+enemy	enemy_deep_8	deep	[414.0, 335.0]	
+enemy	enemy_deep_9	deep	[470.0, 356.0]	
+enemy	enemy_forest_0	forest	[148.0, 23.0]	
+enemy	enemy_forest_1	forest	[176.0, 23.0]	
+enemy	enemy_forest_10	forest	[228.0, 35.0]	
+enemy	enemy_forest_2	forest	[159.0, 57.0]	
+enemy	enemy_forest_3	forest	[203.0, 87.0]	
+enemy	enemy_forest_4	forest	[236.0, 91.0]	
+enemy	enemy_forest_5	forest	[147.0, 119.0]	
+enemy	enemy_forest_6	forest	[194.0, 124.0]	
+enemy	enemy_forest_7	forest	[228.0, 149.0]	
+enemy	enemy_forest_8	forest	[162.0, 155.0]	
+enemy	enemy_forest_9	forest	[210.0, 175.0]	
+enemy	enemy_fortress_0	fortress	[531.0, 19.0]	
+enemy	enemy_fortress_1	fortress	[558.0, 23.0]	
+enemy	enemy_fortress_10	fortress	[611.0, 39.0]	
+enemy	enemy_fortress_2	fortress	[542.0, 57.0]	
+enemy	enemy_fortress_3	fortress	[587.0, 91.0]	
+enemy	enemy_fortress_4	fortress	[620.0, 91.0]	
+enemy	enemy_fortress_5	fortress	[530.0, 119.0]	
+enemy	enemy_fortress_6	fortress	[572.0, 127.0]	
+enemy	enemy_fortress_7	fortress	[612.0, 149.0]	
+enemy	enemy_fortress_8	fortress	[538.0, 155.0]	
+enemy	enemy_fortress_9	fortress	[598.0, 175.0]	
+enemy	enemy_landing_0	landing	[44.0, 50.0]	
+enemy	enemy_landing_1	landing	[91.0, 56.0]	
+enemy	enemy_landing_10	landing	[102.0, 82.0]	
+enemy	enemy_landing_2	landing	[23.0, 138.0]	
+enemy	enemy_landing_3	landing	[100.0, 128.0]	
+enemy	enemy_landing_4	landing	[33.0, 176.0]	
+enemy	enemy_landing_5	landing	[86.0, 174.0]	
+enemy	enemy_landing_6	landing	[20.0, 100.0]	
+enemy	enemy_landing_7	landing	[74.0, 142.0]	
+enemy	enemy_landing_8	landing	[46.0, 116.0]	
+enemy	enemy_landing_9	landing	[113.0, 123.0]	
+enemy	enemy_marsh_0	marsh	[277.0, 20.0]	
+enemy	enemy_marsh_1	marsh	[303.0, 28.0]	
+enemy	enemy_marsh_10	marsh	[356.0, 39.0]	
+enemy	enemy_marsh_2	marsh	[287.0, 57.0]	
+enemy	enemy_marsh_3	marsh	[334.0, 92.0]	
+enemy	enemy_marsh_4	marsh	[364.0, 91.0]	
+enemy	enemy_marsh_5	marsh	[270.0, 119.0]	
+enemy	enemy_marsh_6	marsh	[321.0, 123.0]	
+enemy	enemy_marsh_7	marsh	[356.0, 149.0]	
+enemy	enemy_marsh_8	marsh	[286.0, 155.0]	
+enemy	enemy_marsh_9	marsh	[342.0, 175.0]	
+enemy	enemy_mine_0	mine	[404.0, 19.0]	
+enemy	enemy_mine_1	mine	[432.0, 24.0]	
+enemy	enemy_mine_10	mine	[485.0, 35.0]	
+enemy	enemy_mine_2	mine	[418.0, 57.0]	
+enemy	enemy_mine_3	mine	[461.0, 87.0]	
+enemy	enemy_mine_4	mine	[492.0, 95.0]	
+enemy	enemy_mine_5	mine	[402.0, 119.0]	
+enemy	enemy_mine_6	mine	[443.0, 123.0]	
+enemy	enemy_mine_7	mine	[484.0, 149.0]	
+enemy	enemy_mine_8	mine	[414.0, 156.0]	
+enemy	enemy_mine_9	mine	[468.0, 175.0]	
+enemy	enemy_ridge_0	ridge	[148.0, 199.0]	
+enemy	enemy_ridge_1	ridge	[179.0, 203.0]	
+enemy	enemy_ridge_10	ridge	[226.0, 215.0]	
+enemy	enemy_ridge_2	ridge	[161.0, 237.0]	
+enemy	enemy_ridge_3	ridge	[204.0, 271.0]	
+enemy	enemy_ridge_4	ridge	[236.0, 271.0]	
+enemy	enemy_ridge_5	ridge	[146.0, 299.0]	
+enemy	enemy_ridge_6	ridge	[188.0, 303.0]	
+enemy	enemy_ridge_7	ridge	[226.0, 329.0]	
+enemy	enemy_ridge_8	ridge	[161.0, 339.0]	
+enemy	enemy_ridge_9	ridge	[211.0, 359.0]	
+enemy	enemy_skywalk_0	skywalk	[277.0, 204.0]	
+enemy	enemy_skywalk_1	skywalk	[303.0, 203.0]	
+enemy	enemy_skywalk_10	skywalk	[356.0, 215.0]	
+enemy	enemy_skywalk_2	skywalk	[286.0, 237.0]	
+enemy	enemy_skywalk_3	skywalk	[332.0, 267.0]	
+enemy	enemy_skywalk_4	skywalk	[364.0, 271.0]	
+enemy	enemy_skywalk_5	skywalk	[276.0, 299.0]	
+enemy	enemy_skywalk_6	skywalk	[318.0, 303.0]	
+enemy	enemy_skywalk_7	skywalk	[356.0, 329.0]	
+enemy	enemy_skywalk_8	skywalk	[284.0, 335.0]	
+enemy	enemy_skywalk_9	skywalk	[345.0, 355.0]	
+gate	gate_crystal_crawl	crystal	[593.0, 287.0]	crawl
+gate	gate_crystal_dash	crystal	[540.0, 291.0]	dash
+gate	gate_crystal_double_jump	crystal	[554.0, 287.0]	double_jump
+gate	gate_crystal_light_throw	crystal	[612.0, 287.0]	light_throw
+gate	gate_crystal_vision	crystal	[602.0, 291.0]	vision
+gate	gate_crystal_wall_cling	crystal	[566.0, 287.0]	wall_cling
+gate	gate_crystal_wall_jump	crystal	[581.0, 290.0]	wall_jump
+gate	gate_deep_crawl	deep	[458.0, 287.0]	crawl
+gate	gate_deep_dash	deep	[414.0, 287.0]	dash
+gate	gate_deep_double_jump	deep	[426.0, 291.0]	double_jump
+gate	gate_deep_light_throw	deep	[485.0, 287.0]	light_throw
+gate	gate_deep_vision	deep	[474.0, 287.0]	vision
+gate	gate_deep_wall_cling	deep	[441.0, 291.0]	wall_cling
+gate	gate_deep_wall_jump	deep	[450.0, 287.0]	wall_jump
+gate	gate_forest_crawl	forest	[202.0, 107.0]	crawl
+gate	gate_forest_dash	forest	[158.0, 107.0]	dash
+gate	gate_forest_double_jump	forest	[170.0, 107.0]	double_jump
+gate	gate_forest_light_throw	forest	[227.0, 111.0]	light_throw
+gate	gate_forest_vision	forest	[218.0, 107.0]	vision
+gate	gate_forest_wall_cling	forest	[182.0, 108.0]	wall_cling
+gate	gate_forest_wall_jump	forest	[198.0, 108.0]	wall_jump
+gate	gate_fortress_crawl	fortress	[587.0, 107.0]	crawl
+gate	gate_fortress_dash	fortress	[540.0, 107.0]	dash
+gate	gate_fortress_double_jump	fortress	[551.0, 107.0]	double_jump
+gate	gate_fortress_light_throw	fortress	[614.0, 107.0]	light_throw
+gate	gate_fortress_vision	fortress	[603.0, 107.0]	vision
+gate	gate_fortress_wall_cling	fortress	[564.0, 111.0]	wall_cling
+gate	gate_fortress_wall_jump	fortress	[578.0, 107.0]	wall_jump
+gate	gate_landing_crawl	landing	[60.0, 50.0]	crawl
+gate	gate_landing_dash	landing	[8.0, 100.0]	dash
+gate	gate_landing_double_jump	landing	[21.0, 128.0]	double_jump
+gate	gate_landing_light_throw	landing	[86.0, 110.0]	light_throw
+gate	gate_landing_vision	landing	[73.0, 136.0]	vision
+gate	gate_landing_wall_cling	landing	[34.0, 58.0]	wall_cling
+gate	gate_landing_wall_jump	landing	[47.0, 88.0]	wall_jump
+gate	gate_marsh_crawl	marsh	[338.0, 107.0]	crawl
+gate	gate_marsh_dash	marsh	[286.0, 107.0]	dash
+gate	gate_marsh_double_jump	marsh	[301.0, 108.0]	double_jump
+gate	gate_marsh_light_throw	marsh	[358.0, 108.0]	light_throw
+gate	gate_marsh_vision	marsh	[346.0, 107.0]	vision
+gate	gate_marsh_wall_cling	marsh	[314.0, 107.0]	wall_cling
+gate	gate_marsh_wall_jump	marsh	[323.0, 107.0]	wall_jump
+gate	gate_mine_crawl	mine	[462.0, 111.0]	crawl
+gate	gate_mine_dash	mine	[418.0, 107.0]	dash
+gate	gate_mine_double_jump	mine	[426.0, 107.0]	double_jump
+gate	gate_mine_light_throw	mine	[486.0, 107.0]	light_throw
+gate	gate_mine_vision	mine	[470.0, 108.0]	vision
+gate	gate_mine_wall_cling	mine	[438.0, 107.0]	wall_cling
+gate	gate_mine_wall_jump	mine	[450.0, 111.0]	wall_jump
+gate	gate_ridge_crawl	ridge	[206.0, 287.0]	crawl
+gate	gate_ridge_dash	ridge	[158.0, 287.0]	dash
+gate	gate_ridge_double_jump	ridge	[170.0, 287.0]	double_jump
+gate	gate_ridge_light_throw	ridge	[230.0, 287.0]	light_throw
+gate	gate_ridge_vision	ridge	[217.0, 287.0]	vision
+gate	gate_ridge_wall_cling	ridge	[185.0, 287.0]	wall_cling
+gate	gate_ridge_wall_jump	ridge	[193.0, 287.0]	wall_jump
+gate	gate_skywalk_crawl	skywalk	[334.0, 290.0]	crawl
+gate	gate_skywalk_dash	skywalk	[285.0, 287.0]	dash
+gate	gate_skywalk_double_jump	skywalk	[298.0, 287.0]	double_jump
+gate	gate_skywalk_light_throw	skywalk	[357.0, 287.0]	light_throw
+gate	gate_skywalk_vision	skywalk	[348.0, 287.0]	vision
+gate	gate_skywalk_wall_cling	skywalk	[310.0, 287.0]	wall_cling
+gate	gate_skywalk_wall_jump	skywalk	[325.0, 287.0]	wall_jump
+gate	gate_village_crawl	village	[76.0, 287.0]	crawl
+gate	gate_village_dash	village	[31.0, 287.0]	dash
+gate	gate_village_double_jump	village	[44.0, 287.0]	double_jump
+gate	gate_village_light_throw	village	[99.0, 287.0]	light_throw
+gate	gate_village_vision	village	[87.0, 287.0]	vision
+gate	gate_village_wall_cling	village	[58.0, 291.0]	wall_cling
+gate	gate_village_wall_jump	village	[62.0, 287.0]	wall_jump
+lore_item	lore_crystal	crystal	[626.0, 331.0]	vision
+lore_item	lore_deep	deep	[498.0, 327.0]	vision
+lore_item	lore_forest	forest	[244.0, 147.0]	vision
+lore_item	lore_fortress	fortress	[627.0, 148.0]	vision
+lore_item	lore_landing	landing	[80.0, 136.0]	vision
+lore_item	lore_marsh	marsh	[370.0, 147.0]	vision
+lore_item	lore_mine	mine	[499.0, 148.0]	vision
+lore_item	lore_ridge	ridge	[244.0, 331.0]	vision
+lore_item	lore_skywalk	skywalk	[372.0, 332.0]	vision
+lore_item	lore_village	village	[114.0, 327.0]	vision
+return_pier	return_crystal	crystal	[598.0, 351.0]	
+return_pier	return_fortress	fortress	[596.0, 175.0]	
+return_pier	return_landing	landing	[16.0, 54.0]	
+return_pier	return_skywalk	skywalk	[343.0, 356.0]	
+site	site_crystal_0	crystal	[536.0, 215.0]	
+site	site_crystal_1	crystal	[572.0, 227.0]	
+site	site_deep_0	deep	[408.0, 215.0]	
+site	site_deep_1	deep	[442.0, 227.0]	
+site	site_forest_0	forest	[154.0, 35.0]	
+site	site_forest_1	forest	[187.0, 47.0]	
+site	site_fortress_0	fortress	[536.0, 38.0]	
+site	site_fortress_1	fortress	[572.0, 46.0]	
+site	site_landing_0	landing	[44.0, 74.0]	
+site	site_landing_1	landing	[36.0, 158.0]	
+site	site_marsh_0	marsh	[282.0, 35.0]	
+site	site_marsh_1	marsh	[316.0, 48.0]	
+site	site_mine_0	mine	[408.0, 35.0]	
+site	site_mine_1	mine	[444.0, 46.0]	
+site	site_ridge_0	ridge	[155.0, 215.0]	
+site	site_ridge_1	ridge	[188.0, 227.0]	
+site	site_skywalk_0	skywalk	[283.0, 214.0]	
+site	site_skywalk_1	skywalk	[316.0, 227.0]	
+재사용 랜드마크	5	landing	[38.0, 74.0]	기존 0.9 밀도·앵커 유지
+재사용 랜드마크	0	landing	[98.0, 82.0]	기존 0.9 밀도·앵커 유지
+재사용 랜드마크	1	landing	[106.0, 82.0]	기존 0.9 밀도·앵커 유지
+재사용 랜드마크	2	landing	[8.0, 140.0]	기존 0.9 밀도·앵커 유지
+재사용 랜드마크	4	landing	[94.0, 140.0]	기존 0.9 밀도·앵커 유지
+재사용 랜드마크	6	landing	[28.0, 158.0]	기존 0.9 밀도·앵커 유지
+재사용 랜드마크	3	landing	[66.0, 174.0]	기존 0.9 밀도·앵커 유지
+재사용 랜드마크	7	landing	[84.0, 174.0]	기존 0.9 밀도·앵커 유지
+캡처	hall	landing	[108, 77]	1280×720
+캡처	shaft	landing	[27, 65]	1280×720
+캡처	corridor	landing	[80, 110]	1280×720
+캡처	exterior	landing	[16, 20]	1280×720
+캡처	festival	landing	[40, 74]	1280×720
+캡처	return	landing	[16, 54]	1280×720

@@ -30,16 +30,18 @@ func _run() -> void:
         step_index+=1
         if step_index==7:warm_return_nodes=_count_nodes(manager.current_level)
         if step_index==14:final_return_nodes=_count_nodes(manager.current_level)
+    _check(maximum_nodes<=1655,"Total level nodes stay within the review baseline")
     var sorted_times: Array[float]=times.duplicate()
     sorted_times.sort()
     var p95: float=sorted_times[int(sorted_times.size()*.95)]
     _check(final_return_nodes<=warm_return_nodes+16,"Repeated streaming returns to a bounded node count")
     var memory_delta: float=Performance.get_monitor(Performance.MEMORY_STATIC)-static_before
     print("STATIC_MEMORY_DELTA_BYTES: ",memory_delta," return_nodes=",warm_return_nodes,"->",final_return_nodes)
-    _check(memory_delta<=7506040,"Static memory growth stays within the Stage14 baseline")
+    _check(memory_delta<=7488612,"Static memory growth stays within the Stage14 baseline")
+    print("SLOWEST_STREAM_STEP: ",JSON.stringify(world.slowest_stream_step))
     print("CONTINUOUS_PERFORMANCE: frame_p95_ms=",p95," chunk_step_max_ms=",world.stream_times.max()," nodes_max=",maximum_nodes," chunks=",world.loaded.size())
-    _check(p95<50,"Streaming frame P95 below 50ms headless")
-    _check(float(world.stream_times.max())<25,"One main-thread streaming step below 25ms")
+    _check(p95<=8.2,"Streaming frame P95 at or below the 8.2ms review baseline")
+    _check(float(world.stream_times.max())<=13.5,"One main-thread streaming step at or below the 13.5ms review baseline")
     await _go("HwaniraPlaza")
     hero.set_physics_process(true)
     _finish("stage14_performance")

@@ -1,4 +1,10 @@
 extends Node
+# The shared CedarEnemy behavior is unchanged; only world-local JSON reads use
+# a defensive copy of preloaded data instead of reparsing files for every spawn.
+class CachedCedarEnemy extends CedarEnemy:
+    func _read_json(path: String) -> Dictionary:
+        return get_node("/root/World").enemy_json(path)
+
 signal ability_acquired(id: String)
 signal region_changed(id: String)
 var settings: Dictionary = {}
@@ -16,8 +22,13 @@ var switches: Dictionary = {}
 var bosses: Dictionary = {}
 var defeated: Dictionary = {}
 var explored:=PackedByteArray()
-var fragments:=0
-var crystals:=0
+var cord_ids: Dictionary = {}
+var embers:=0
+var embers_offered_total:=0
+var embers_offered_best:=0
+var returns_alive:=0
+var discovered_sites: Dictionary = {}
+var collectible_data: Dictionary = {}
 var deaths_zabulistan:=0
 var deaths_total:=0
 var death_latched:=false
@@ -31,6 +42,7 @@ var nearest_interactable: Node2D
 var active_enemies:=0
 var sleeping_enemies:=0
 var last_load_ms:=0.
+var slowest_stream_step: Dictionary = {}
 var saved_camera_smoothing:=true
 var level: ContinuousWorld
 var worker: Thread
@@ -39,6 +51,7 @@ var desired: Dictionary = {}
 var stream_center:=Vector2i(-100,-100)
 var stream_times: Array[float] = []
 var texture_cache: Array[Resource] = []
+var enemy_json_cache: Dictionary = {}
 var terrain_sets: Dictionary = {}
 var surface_shapes: Dictionary = {}
 var light_material: CanvasItemMaterial
@@ -60,6 +73,7 @@ func _ready() -> void:
                 navigation[cy+y]=line.substr(0,cx)+decode_row(chunk.rle[y])+line.substr(cx+64)
         settings["navigation"]=navigation
     density=read_json("res://data/world/enemy_density.json")
+    collectible_data=read_json("res://data/world/collectibles.json")
     abilities_data=read_json("res://data/world/abilities.json")
     art=read_json("res://data/world/zabulistan/art_v2.json")
     carved_art=read_json("res://data/world/zabulistan/carved_art.json")
@@ -76,6 +90,19 @@ func _ready() -> void:
 func read_json(path: String) -> Dictionary:
     return JSON.parse_string(FileAccess.get_file_as_string(path))
 
+func enemy_json(path: String) -> Dictionary:
+    if not enemy_json_cache.has(path):
+        var file:=FileAccess.open(path,FileAccess.READ)
+        if file==null:
+            push_warning("Missing data: "+path)
+            return {}
+        var value: Variant=JSON.parse_string(file.get_as_text())
+        if not value is Dictionary:
+            push_warning("Invalid data: "+path)
+            return {}
+        enemy_json_cache[path]=value
+    return enemy_json_cache[path].duplicate(true)
+
 func clear_session() -> void:
     leave()
     abilities.clear()
@@ -83,8 +110,12 @@ func clear_session() -> void:
     switches.clear()
     bosses.clear()
     defeated.clear()
-    fragments=0
-    crystals=0
+    cord_ids.clear()
+    embers=0
+    embers_offered_total=0
+    embers_offered_best=0
+    returns_alive=0
+    discovered_sites.clear()
     deaths_total=0
     deaths_zabulistan=0
     death_latched=false
@@ -121,28 +152,41 @@ func meets(required: Array) -> bool:
     return true
 func max_hp() -> int:
     var base: int=int(get_node("/root/GameState").siyavash_settings["max_hp"])
-    return mini(int(settings.life_hp_cap),base+(fragments/int(settings.life_fragments_per_upgrade))*int(settings.life_hp_increment))
+    var effect: Dictionary=collectible_data.cord.effect
+    return mini(int(effect.cap),base+floori(float(cord_ids.size())/float(effect.per))*int(effect.add))
+
+func story_counts() -> Dictionary:
+    return {"zab_cord_count":cord_ids.size(),"zab_cord_ids":cord_ids.keys(),"zab_embers_offered_total":embers_offered_total,"zab_embers_offered_best":embers_offered_best,"zab_returns_alive":returns_alive,"zab_embers_carried":embers,"deaths_zabulistan":deaths_zabulistan}
+
+func clear_attempt() -> void:
+    abilities.clear()
+    collected.clear()
+    embers=0
+    if hero_motion!=null:hero_motion.reset_motion()
 
 func persistent_data() -> Dictionary:
-    var life: Dictionary = {}
-    for id in collected:
-        if str(id).begins_with("life_"):life[id]=true
-    return {"abilities":abilities.duplicate(),"life_fragments":life,"opened_doors":switches.duplicate(),"defeated_bosses":bosses.duplicate(),"map_bitmap":Marshalls.raw_to_base64(explored.compress(FileAccess.COMPRESSION_DEFLATE)),"deaths_zabulistan":deaths_zabulistan}
+    var result: Dictionary=story_counts()
+    result["zab_embers_carried"]=0
+    result.merge({"opened_doors":switches.duplicate(),"defeated_bosses":bosses.duplicate(),"map_bitmap":Marshalls.raw_to_base64(explored.compress(FileAccess.COMPRESSION_DEFLATE)),"discovered_sites":discovered_sites.duplicate(true)})
+    return result
 
 func restore_persistent(data: Dictionary,total: int = 0) -> void:
-    abilities=data.get("abilities",{}).duplicate()
-    collected=data.get("life_fragments",{}).duplicate()
-    fragments=collected.size()
+    clear_attempt()
+    cord_ids.clear()
+    for uid: String in data.get("zab_cord_ids",[]):cord_ids[uid]=true
+    discovered_sites=data.get("discovered_sites",{}).duplicate(true)
+    embers_offered_total=maxi(0,int(data.get("zab_embers_offered_total",0)))
+    embers_offered_best=maxi(0,int(data.get("zab_embers_offered_best",0)))
+    returns_alive=maxi(0,int(data.get("zab_returns_alive",0)))
     switches=data.get("opened_doors",{}).duplicate()
     bosses=data.get("defeated_bosses",{}).duplicate()
     deaths_zabulistan=maxi(0,int(data.get("deaths_zabulistan",0)))
     deaths_total=maxi(deaths_zabulistan,total)
     explored.fill(0)
-    var packed: PackedByteArray = Marshalls.base64_to_raw(str(data.get("map_bitmap","")))
+    var packed: PackedByteArray=Marshalls.base64_to_raw(str(data.get("map_bitmap","")))
     if not packed.is_empty():
-        var decoded: PackedByteArray = packed.decompress(explored.size(),FileAccess.COMPRESSION_DEFLATE)
+        var decoded: PackedByteArray=packed.decompress(explored.size(),FileAccess.COMPRESSION_DEFLATE)
         if decoded.size()==explored.size():explored=decoded
-    crystals=0
     death_latched=false
 
 func confirm_death(hero: NimrodPlayer) -> bool:
@@ -150,8 +194,31 @@ func confirm_death(hero: NimrodPlayer) -> bool:
     if get_node("/root/Rampage").death_suspended and get_node("/root/HumbabaForm").engaged():return false
     death_latched=true
     deaths_total+=1
-    if active:deaths_zabulistan+=1
+    if active:
+        deaths_zabulistan+=1
+        clear_attempt()
     return true
+
+func debug_abilities(grant: bool) -> bool:
+    if not OS.is_debug_build() or not active or transitioning:return false
+    var hero: NimrodPlayer=get_node("/root/SceneManager").player
+    if grant:
+        for id: String in abilities_data.abilities:abilities[id]=true
+    else:
+        abilities.clear()
+        var needs_compact: bool=hero_motion.crawling and not hero._can_stand()
+        hero_motion.reset_motion()
+        hero_motion.crawling=needs_compact
+        if not needs_compact:
+            hero.crouching=false
+            hero._set_standing_collider()
+    return true
+
+func _unhandled_input(event: InputEvent) -> void:
+    if not OS.is_debug_build() or not event is InputEventKey:return
+    if not event.pressed or event.echo or not event.ctrl_pressed:return
+    if event.physical_keycode==KEY_G and debug_abilities(true):get_viewport().set_input_as_handled()
+    elif event.physical_keycode==KEY_B and debug_abilities(false):get_viewport().set_input_as_handled()
 
 func region_at(point: Vector2) -> Dictionary:
     for region: Dictionary in regions.values():
@@ -220,6 +287,7 @@ func enter() -> bool:
         manager.current_level.queue_free()
         manager.current_level=null
     await prewarm_art()
+    clear_attempt()
     active=true
     death_latched=false
     reveal_cursor=Vector2i(-100,-100)
@@ -298,10 +366,19 @@ func pump_stream() -> void:
             loaded[data.id]=building
             break
     if not is_instance_valid(building):return
+    var profile_phase: int=building.phase
+    var profile_id: String=str(building.data.id)
+    var profile_row: int=building.row_cursor
+    var profile_entity: String=""
+    if (profile_phase==3 or profile_phase==4 and building.extra_cursor>=building.extras.size()) and building.entity_cursor<building.data.get("entities",[]).size():profile_entity=str(building.data.entities[building.entity_cursor].get("uid",""))
+    var profile_extra: String=""
+    if profile_phase==4 and building.extra_cursor<building.extras.size():profile_extra=str(building.extras[building.extra_cursor].get("kind",""))
     var started:=Time.get_ticks_usec()
     var complete: bool=building.build_step()
     last_load_ms=(Time.get_ticks_usec()-started)/1000.
     stream_times.append(last_load_ms)
+    if last_load_ms>float(slowest_stream_step.get("ms",0)):
+        slowest_stream_step={"ms":last_load_ms,"chunk":profile_id,"phase":profile_phase,"row":profile_row,"entity":profile_entity,"extra":profile_extra}
     if last_load_ms>20 and OS.is_debug_build() and (bool(settings.get("developer_overlay",false)) or OS.get_environment("NIMROD_STREAM_TRACE")=="1"):print("STREAM_STEP ",building.data.id," phase=",building.phase," row=",building.row_cursor," ms=",last_load_ms)
     if complete:building=null
 
@@ -362,9 +439,9 @@ func update_sleep(hero: NimrodPlayer) -> void:
 
 func spawn_entity(spec: Dictionary,parent: Node2D) -> void:
     var id: String = str(spec.uid)
-    if defeated.has(id) or collected.has(id) or (spec.type=="boss" and bosses.has(id)) or (spec.type=="altar" and has_ability(str(spec.id))):return
+    if defeated.has(id) or collected.has(id) or cord_ids.has(id) or (spec.type=="boss" and bosses.has(id)):return
     if spec.type in ["enemy","boss"]:
-        var enemy: EnemyBase = load("res://scripts/world/world_boss.gd" if spec.type=="boss" else "res://scripts/enemy_"+str(spec.id)+".gd").new()
+        var enemy: EnemyBase = load("res://scripts/world/world_boss.gd").new() if spec.type=="boss" else CachedCedarEnemy.new()
         enemy.enemy_id=str(spec.id)
         enemy.position=Vector2(float(spec.position[0]),float(spec.position[1]))-parent.global_position
         enemy.room_bounds=level.camera_limits
@@ -380,13 +457,16 @@ func spawn_entity(spec: Dictionary,parent: Node2D) -> void:
     else:
         var actor: Node2D = load("res://scripts/world/world_object.gd").new()
         actor.spec=spec.duplicate(true)
-        actor.spec["id"]=id if spec.type!="altar" else str(spec.id)
+        actor.spec["id"]=id
         actor.position=Vector2(float(spec.position[0]),float(spec.position[1]))-parent.global_position
         parent.add_child(actor)
 
 func enemy_died(_enemy: EnemyBase,spec: Dictionary) -> void:
+    if spec.type=="boss" and bosses.has(str(spec.uid)):return
     defeated[str(spec.uid)]=true
-    if spec.type=="boss":bosses[str(spec.uid)]=true
+    if spec.type=="boss":
+        bosses[str(spec.uid)]=true
+        embers+=int(collectible_data.ember.effect.boss_amount)
 
 func return_to_plaza() -> void:
     if transitioning:return
@@ -395,17 +475,14 @@ func return_to_plaza() -> void:
     manager.set_player_locked(true)
     await manager._fade_to(1,.3*timing_scale)
     var caption:=Label.new()
-    caption.text="흐와니라 광장\n죽음 %d회" % deaths_zabulistan
+    caption.text="흐와니라 광장\n죽음 %d회\n%s" % [deaths_zabulistan,str(collectible_data.death_caption)]
     caption.position=Vector2(400,310)
     caption.size=Vector2(480,100)
     caption.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
     caption.add_theme_font_override("font",load("res://assets/fonts/NimrodUIKorean-Regular.otf"))
     caption.add_theme_font_size_override("font_size",28)
     manager._overlay.add_child(caption)
-    # Only consumables reset; persistent_data() remains intact during level teardown.
-    for id in collected.keys():
-        if not str(id).begins_with("life_"):collected.erase(id)
-    crystals=0
+    clear_attempt()
     defeated.clear()
     manager.player.reset_run_state()
     await manager.go_to("HwaniraPlaza","Spawn_Start",{"instant":true,"preserve_fade":true})
@@ -418,6 +495,51 @@ func return_to_plaza() -> void:
     transitioning=false
     manager.set_player_locked(false)
     get_node("/root/Save").save_checkpoint("character")
+
+func return_alive() -> bool:
+    if not active or transitioning:return false
+    transitioning=true
+    var manager: Node=get_node("/root/SceneManager")
+    manager.set_player_locked(true)
+    var offered: int=embers
+    await manager._fade_to(1,.3*timing_scale)
+    var travel_glow: Node2D=AssetVisual.add_image(manager._overlay,"res://assets/fx/npc_light_pool.webp",Vector2(240,230),Vector2(800,260))
+    travel_glow.modulate=Color(.9,.65,.35,.7)
+    await get_tree().create_timer(.2*timing_scale,true).timeout
+    travel_glow.queue_free()
+    var caption:=Label.new()
+    caption.text="흐와니라 광장"
+    caption.position=Vector2(400,310)
+    caption.size=Vector2(480,100)
+    caption.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+    caption.add_theme_font_override("font",load("res://assets/fonts/NimrodUIKorean-Regular.otf"))
+    caption.add_theme_font_size_override("font_size",28)
+    manager._overlay.add_child(caption)
+    clear_attempt()
+    manager.player.reset_run_state()
+    embers_offered_total+=offered
+    embers_offered_best=maxi(embers_offered_best,offered)
+    returns_alive+=1
+    await manager.go_to("HwaniraPlaza","Spawn_Start",{"instant":true,"preserve_fade":true})
+    manager.player.global_position=Vector2(float(collectible_data.return_pier.arrival_position[0]),float(collectible_data.return_pier.arrival_position[1]))
+    manager.player.velocity=Vector2.ZERO
+    manager.player.hp=manager.player.get_max_hp()
+    manager.player.camera.reset_smoothing()
+    manager.player.camera.force_update_scroll()
+    manager.set_player_locked(true)
+    var fire: Node2D=AssetVisual.add_image(manager.current_level,"res://assets/fx/npc_light_pool.webp",Vector2(1900,600),Vector2(150,280),-1)
+    fire.modulate=Color(1.,.44,.12,.8)
+    fire.material=light_material
+    var flash: Tween=create_tween()
+    flash.tween_property(fire,"modulate:a",0.,.6*timing_scale)
+    flash.tween_callback(fire.queue_free)
+    await manager._fade_to(0,.3*timing_scale)
+    caption.queue_free()
+    manager.show_toast(str(collectible_data.return_pier.offering_caption) % offered,float(collectible_data.return_pier.caption_seconds))
+    transitioning=false
+    manager.set_player_locked(false)
+    get_node("/root/Save").save_checkpoint("character")
+    return true
 
 func can_exit() -> bool:return true
 func request_attack(enemy: EnemyBase) -> bool:
@@ -459,12 +581,11 @@ func scale_damage(data: Variant,multiplier: float) -> void:
 
 func acquire(id: String) -> bool:
     if has_ability(id) or not abilities_data.abilities.has(id):return false
-    if not meets(abilities_data.abilities[id].requires):return false
     abilities[id]=true
     ability_acquired.emit(id)
     var manager: Node = get_node("/root/SceneManager")
     AnurLightProjectile.spawn_fx(manager.current_level,manager.player.position-Vector2(0,55),"anur_light_cast")
-    manager.show_toast(str(abilities_data.abilities[id].name)+" · "+str(abilities_data.abilities[id].key))
+    manager.show_toast(str(collectible_data.site.acquire_caption)+"\n"+str(abilities_data.abilities[id].name)+" · "+str(abilities_data.abilities[id].key),float(collectible_data.site.caption_seconds))
     return true
 
 func travel() -> void:
@@ -501,15 +622,22 @@ func altar_animation() -> void:
 
 func prewarm_art() -> void:
     if not texture_cache.is_empty():return
-    for path in ["res://scripts/enemy_cedar_sentinel.gd","res://scripts/enemy_cedar_archer.gd","res://scripts/enemy_cedar_colossus.gd","res://scripts/enemy_cedar_demon.gd","res://scripts/enemy_cedar_wisp.gd","res://scripts/world/world_boss.gd","res://scripts/world/world_object.gd"]:texture_cache.append(load(path))
+    for path in ["res://scripts/threat_marker.gd","res://scripts/enemy_cedar_sentinel.gd","res://scripts/enemy_cedar_archer.gd","res://scripts/enemy_cedar_colossus.gd","res://scripts/enemy_cedar_demon.gd","res://scripts/enemy_cedar_wisp.gd","res://scripts/world/world_boss.gd","res://scripts/world/world_object.gd"]:texture_cache.append(load(path))
+    for path: String in ["res://data/enemies.json","res://data/player_attacks.json"]:enemy_json_cache[path]=read_json(path)
     var paths: Dictionary = {}
+    for path: String in read_json("res://data/world/art.json").values():paths[path]=true
+    for record: Variant in collectible_data.values():
+        if record is Dictionary and record.has("icon"):paths[str(record.icon)]=true
+    paths["res://assets/fx/npc_light_pool.webp"]=true
     for key: String in ["crust","fill","backwall","supports","foreground"]:paths[str(carved_art[key])]=true
     for spec: Dictionary in art.values():
         paths[str(spec.atlas)]=true
-        paths[str(spec.terrain)]=true
+        if spec.has("terrain"):paths[str(spec.terrain)]=true
         for path in spec.backgrounds:paths[str(path)]=true
     for id in ["cedar_sentinel","cedar_archer","cedar_colossus","cedar_demon","cedar_wisp","kala_ushumgal","gugalanna","humbaba"]:
-        var manifest: Dictionary = read_json("res://assets/sprites/enemies/"+id+"/manifest.json")
+        var manifest_path: String="res://assets/sprites/enemies/"+id+"/manifest.json"
+        var manifest: Dictionary=read_json(manifest_path)
+        enemy_json_cache[manifest_path]=manifest
         for clip: Dictionary in manifest.clips:
             var sheet: String = str(clip.sheet)
             paths[sheet if sheet.begins_with("res://") else "res://assets/"+sheet if sheet.begins_with("sprites/") else "res://assets/sprites/enemies/"+id+"/"+sheet]=true
@@ -527,7 +655,8 @@ func prewarm_art() -> void:
             await get_tree().process_frame
         if ResourceLoader.load_threaded_get_status(path)==ResourceLoader.THREAD_LOAD_LOADED:texture_cache.append(ResourceLoader.load_threaded_get(path))
         else:push_error("World art load failed: "+path)
-    for id in art:terrain_set(str(id))
+    for id in art:
+        if art[id].has("terrain"):terrain_set(str(id))
     for kind: String in ["crust","fill","backwall","supports"]:carved_set(kind)
 
 func carved_set(kind: String) -> TileSet:

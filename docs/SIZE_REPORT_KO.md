@@ -217,3 +217,79 @@
 | assets/world/zabulistan_v2 | 5.66368 MiB |
 | assets/sprites/enemies/gugalanna | 5.34614 MiB |
 | assets/props/doors | 3.88511 MiB |
+
+## 2026-10-16 착륙지 배치·축제 시스템 재검토
+
+가정: 이번 승인 대기 범위의 실행 ZIP 상한은 72.23 MiB입니다. 전체 10지역 최종 목표(71/66/63 MiB)는 나머지9지역 승인 후 목표이며 달성했다고 표시하지 않습니다. 플레이어·NPC·적·오디오의 품질·수치 보호 범위는 재인코딩하지 않았습니다. 정확한 최종 바이트와 SHA256은 다운로드와 함께 제공한 STAGE15_DELIVERY.txt에 기록합니다.
+
+| 구분 | assets | 실행 ZIP |
+|---|---:|---:|
+| 이전 착륙지 검토본 | 74,982,591 B | 75,741,643 B (72.23286 MiB) |
+| 이번 착륙지 수정본 | 74,971,206 B | 72.22 MiB (최종 포장) |
+
+이전 단계11~15의 표는 위에 보존했습니다. 아래는 이번 변경만 비교합니다.
+
+| 신규/교체 이미지 | 전 B | 후 B | 비고 |
+|---|---:|---:|---|
+| assets/world/zabulistan_v2/landing/background_1.webp | 16,734 | 30,184 | 생성 원본 후처리·품질 QA 통과 |
+| assets/world/shared/cord.webp | 0 | 7,172 | 생성 원본 후처리·품질 QA 통과 |
+| assets/world/shared/ember.webp | 0 | 5,654 | 생성 원본 후처리·품질 QA 통과 |
+| 합계 | 16,734 | 43,010 | 교체 차이 +26,276 B; 생성 원본2장 |
+
+| 카테고리 | 전 B | 후 B | 차이 B |
+|---|---:|---:|---:|
+| 배경 | 7,042,950 | 7,042,950 | +0 |
+| NPC | 2,486,737 | 2,486,737 | +0 |
+| 적·보스 | 31,895,049 | 31,895,049 | +0 |
+| 플레이어 | 15,074,837 | 15,074,837 | +0 |
+| 오디오 | 1,879,737 | 1,879,737 | +0 |
+| 월드 | 6,063,976 | 6,052,730 | -11,246 |
+| 소품 | 7,206,487 | 7,206,487 | +0 |
+
+미사용 아이콘3장과 착륙지 타일의 실제 에셋 이동은 37,522 B입니다. 새 이미지 교체 차이를 빼면 이미지 원시 합계는 11,246 B 감소했습니다. 신규 프롬프트·매니페스트는 별도로 위 assets 합계에 반영합니다. 이전 포장/문서 생성 도구·초안·프롬프트 등 archive 이동 전체는 144,669 B입니다. 이미 ZIP에서 제외되던 원본은 실행 감량으로 중복 합산하지 않았습니다. 해시 중복 병합 감량은 이번 변경에서 0 B입니다.
+
+참고 이미지·원본·실패 후보·ASCII·좌표 TSV·캡처·검사 로그는 QA ZIP에만 넣습니다. 실행 ZIP은 archive, .godot, .import, __pycache__, pack_source, tests/artifacts를 제외하고 deflate9로 압축했습니다. 명시 디렉터리와 CRC를 검사하고 별도 추출 프로젝트에서 전체 Godot 검사 및 월드 콜드 증명/그래프 일치를 확인했습니다.
+
+팔레트 후보 실패/보류: 랜드마크256색 439,406 B/RGB MAE2.5006, 192색 409,734 B/2.7319는 품질을 통과했지만 원본316,034 B보다 커서 미적용했습니다. 128색 364,064 B/3.1419, 96색336,118 B/3.4263은 RGB≤3 기준도 실패해 미적용했습니다. 기존 파일을 변경하지 않았습니다. 신규3파일은 SSIM≥0.93·RGB≤3·alpha≤0.5·bbox 동일을 통과했고 알파 없는 배경은 RGB로 저장했습니다. 오디오는 보호 범위라 유지했습니다.
+
+### 후속 감량 후보 상위20
+
+이번 착륙지 범위에서 참조되는 기존 시트의 밀도/얼굴/전투 품질을 낮추지 않았습니다. 아래는 승인 후 실제 표시 크기와 품질을 다시 측정할 후보이며 예상 감량을 실측으로 주장하지 않습니다.
+
+| 파일 | B | 이번에 줄이지 않은 이유 |
+|---|---:|---|
+| assets/props/doors/castle_great_gate.webp | 889,750 | 기존 스프라이트/레벨 보호·품질 검증 필요 |
+| assets/backgrounds/hwanira/plaza.webp | 719,610 | 기존 스프라이트/레벨 보호·품질 검증 필요 |
+| assets/backgrounds/deathsea/stars_tile.webp | 542,122 | 기존 스프라이트/레벨 보호·품질 검증 필요 |
+| assets/sprites/enemies/gugalanna/walk.webp | 530,786 | 기존 스프라이트/레벨 보호·품질 검증 필요 |
+| assets/sprites/enemies/gugalanna/idle.webp | 500,708 | 기존 스프라이트/레벨 보호·품질 검증 필요 |
+| assets/sprites/enemies/gugalanna/death.webp | 481,112 | 기존 스프라이트/레벨 보호·품질 검증 필요 |
+| assets/backgrounds/cedar/mid_trunks_tile_2d.webp | 479,840 | 기존 스프라이트/레벨 보호·품질 검증 필요 |
+| assets/sprites/enemies/kala_ushumgal/phase_transition.webp | 462,450 | 기존 스프라이트/레벨 보호·품질 검증 필요 |
+| assets/sprites/enemies/kala_ushumgal/death.webp | 451,918 | 기존 스프라이트/레벨 보호·품질 검증 필요 |
+| assets/sprites/enemies/kala_ushumgal/collapse.webp | 426,984 | 기존 스프라이트/레벨 보호·품질 검증 필요 |
+| assets/world/zabulistan_v2/forest/landmarks.webp | 415,436 | 기존 스프라이트/레벨 보호·품질 검증 필요 |
+| assets/world/zabulistan_v2/crystal/landmarks.webp | 397,960 | 기존 스프라이트/레벨 보호·품질 검증 필요 |
+| assets/sprites/enemies/kala_ushumgal/walk.webp | 397,614 | 기존 스프라이트/레벨 보호·품질 검증 필요 |
+| assets/sprites/enemies/kala_ushumgal/whip_recovery.webp | 382,150 | 기존 스프라이트/레벨 보호·품질 검증 필요 |
+| assets/world/zabulistan_v2/skywalk/landmarks.webp | 381,592 | 기존 스프라이트/레벨 보호·품질 검증 필요 |
+| assets/sprites/enemies/kala_ushumgal/turn.webp | 374,096 | 기존 스프라이트/레벨 보호·품질 검증 필요 |
+| assets/sprites/enemies/gugalanna/turn.webp | 370,062 | 기존 스프라이트/레벨 보호·품질 검증 필요 |
+| assets/backgrounds/homeroad/mid_district_tile.webp | 368,362 | 기존 스프라이트/레벨 보호·품질 검증 필요 |
+| assets/sprites/enemies/gugalanna/rake_windup.webp | 365,052 | 기존 스프라이트/레벨 보호·품질 검증 필요 |
+| assets/sprites/enemies/kala_ushumgal/idle.webp | 364,234 | 기존 스프라이트/레벨 보호·품질 검증 필요 |
+
+### 폴더 크기 상위10 (중첩 포함)
+
+| 폴더 | B |
+|---|---:|
+| assets/sprites | 50,408,912 |
+| assets/sprites/enemies | 31,895,049 |
+| assets/sprites/player | 15,074,837 |
+| assets/props | 7,206,487 |
+| assets/backgrounds | 7,042,950 |
+| assets/sprites/enemies/kala_ushumgal | 6,651,427 |
+| assets/world | 6,052,730 |
+| assets/world/zabulistan_v2 | 5,940,088 |
+| assets/sprites/enemies/gugalanna | 5,605,838 |
+| assets/props/doors | 4,073,829 |

@@ -46,7 +46,7 @@ func _process(delta: float) -> void:
         for i in range(root_layer.get_child_count()):
             var layer: Sprite2D = root_layer.get_child(i)
             var ratio: float = [.12,.3,.58][i]
-            layer.position=hero.position-Vector2(2048,512)
+            layer.position=hero.position-(Vector2(1024,480) if str(id)=="landing" else Vector2(2048,512))
             layer.region_rect.position=Vector2(hero.position.x*ratio/layer.scale.x,0)
     var region: Dictionary = world.region_at(hero.position/32.)
     region_data=region
@@ -75,7 +75,7 @@ func make_background(id: String) -> void:
         sprite.region_enabled=true
         var source_size: Vector2=sprite.texture.get_size()
         sprite.region_rect=Rect2(Vector2.ZERO,source_size)
-        sprite.scale=Vector2(4096.,1024.)/source_size
+        sprite.scale=(Vector2(2048.,720.) if id=="landing" else Vector2(4096.,1024.))/source_size
         sprite.z_index=-30+i*5
         sprite.modulate=Color(.55,.59,.68,.85 if i<2 else .28)
         root_layer.add_child(sprite)

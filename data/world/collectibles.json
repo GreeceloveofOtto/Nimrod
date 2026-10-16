@@ -1,0 +1,57 @@
+{
+  "cord": {
+    "name": "축제의 색끈",
+    "icon": "res://assets/world/shared/cord.webp",
+    "size": [
+      48,
+      48
+    ],
+    "color": "e67f9d",
+    "effect": {
+      "type": "max_hp_step",
+      "per": 4,
+      "add": 10,
+      "cap": 200
+    }
+  },
+  "ember": {
+    "name": "축제의 불씨",
+    "icon": "res://assets/world/shared/ember.webp",
+    "size": [
+      48,
+      40
+    ],
+    "color": "ff9a45",
+    "effect": {
+      "type": "offering_only",
+      "boss_amount": 5
+    }
+  },
+  "site": {
+    "name": "축제 터",
+    "icon": "res://assets/props/brazier.webp",
+    "size": [
+      76,
+      80
+    ],
+    "color": "e8c66a",
+    "acquire_caption": "옛 축제의 공명이 천륜낭에 머문다",
+    "caption_seconds": 1.8
+  },
+  "return_pier": {
+    "name": "귀환 잔교",
+    "icon": "res://assets/world/shared/portal.webp",
+    "size": [
+      56,
+      160
+    ],
+    "color": "86bed5",
+    "caption_seconds": 1.8,
+    "arrival_position": [
+      1840,
+      880
+    ],
+    "offering_caption": "축제의 불씨 %d개를 바쳤다"
+  },
+  "death_caption": "공명이 꺼졌다"
+}

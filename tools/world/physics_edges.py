@@ -4,7 +4,7 @@ Uses actual 36x124 body dimensions; does not grant variable-height jumps.
 import math
 import numpy as np
 
-def add_carved_edges(rows,coords,ids,gate_mask,ea,eb,masks,tuning,regions):
+def add_carved_edges(rows,coords,ids,gate_mask,ea,eb,masks,tuning,regions,source_filter=None):
  a=np.array([list(row) for row in rows]);solid=np.isin(a,['#','W','^']);oneway=a=='=';H,W=solid.shape
  integral=np.pad(solid.astype(np.int32),((1,0),(1,0))).cumsum(0).cumsum(1)
  half=float(tuning['body'][0])/64;height=float(tuning['body'][1])/32;speed=float(tuning['speed'])/32;gravity=float(tuning['gravity'])/32;impulse=float(tuning['jump_impulse'])/32;dt=1/120;added=0
@@ -13,6 +13,7 @@ def add_carved_edges(rows,coords,ids,gate_mask,ea,eb,masks,tuning,regions):
   l,r,t,b=bounds(x,y)
   return 0<=l<r<=W and 0<=t<b<=H and integral[b,r]-integral[t,r]-integral[b,l]+integral[t,l]==0
  for i,(sy,sx) in enumerate(coords):
+  if source_filter is not None and not source_filter[i]:continue
   in_carved=any(x<=sx<x+w and y<=sy<y+h for x,y,w,h in regions)
   low_ceiling=solid[max(0,sy-9):max(0,sy-4),max(0,sx-1):min(W,sx+1)].any()
   if not in_carved and not low_ceiling:continue

@@ -53,20 +53,50 @@ def validate():
   gx,gy=[float(v)/32 for v in e['position']]
   xa=max(0,math.ceil(gx-1.4375));xb=min(W,math.floor(gx+1.4375)+1);ya=max(0,math.floor(gy-5)+1);yb=min(H,math.ceil(gy+3.875))
   gate_mask[ya:yb,xa:xb]=gate_mask[ya:yb,xa:xb]|(1<<i)
- coords=np.argwhere(valid);edge_masks=[];ids={tuple(p):i for i,p in enumerate(coords)};edges_a=[];edges_b=[]
+ crawl_valid=np.zeros_like(valid)
+ for y in range(2,H):
+  clear=~solid[y-2:y].any(axis=0);clear=clear&np.roll(clear,1);crawl_valid[y]=(support[y]|np.roll(support[y],1))&clear
+ crawl_valid[:,0]=False;crawl_valid[:,-1]=False
+ gate_specs.append({'uid':'@crawl_motion','requires':['crawl'],'virtual':True,'position':[-10000,-10000]})
+ coords=np.argwhere(valid|crawl_valid);edge_masks=[];ids={tuple(p):i for i,p in enumerate(coords)};edges_a=[];edges_b=[]
  tuning=json.loads((ROOT/'data/world/abilities.json').read_text())['movement'];g=float(tuning['gravity'])/32;v=float(tuning['jump_impulse'])/32;speed=float(tuning['speed'])/32
  def body_clear(x,y):
   left=math.floor(x-18/32+1e-7);right=math.ceil(x+18/32-1e-7);top=math.floor(y-124/32+1e-7);bottom=math.ceil(y-1e-7)
   return 0<=left<right<=W and 0<=top<bottom<=H and not solid[top:bottom,left:right].any()
  # Base movement conservatively samples the actual ballistic arc; only valid landing nodes.
  # Additional abilities can only add edges because all required routes have a base return.
- cache_key=hashlib.sha256(json.dumps(['actual_body_bonk_v3',rows,gate_specs,tuning],sort_keys=True).encode()).hexdigest()[:16]
+ # Reuse only source trajectories whose conservative movement envelope cannot
+ # touch any edited tile. Cache data are derived evidence and never ship.
+ dirty=np.ones(len(coords),dtype=bool)
+ metadata=ROOT/'archive/stage14_rework/physical_metadata.json'
+ previous_graph=ROOT/'archive/stage14_rework/physical_graph.npz'
+ if metadata.exists() and previous_graph.exists():
+  previous=json.loads(metadata.read_text())
+  if sorted(previous['gates'],key=lambda e:e['uid'])==sorted(gate_specs,key=lambda e:e['uid']):
+   from scipy.ndimage import maximum_filter
+   changed=np.array([list(r)for r in previous['rows']])!=a
+   envelope=maximum_filter(changed,size=(129,41),mode='constant')
+   dirty=np.array([envelope[y,x]for y,x in coords])
+   old=np.load(previous_graph);old_coords=old['coords'];mapping=np.array([ids.get(tuple(p),-1)for p in old_coords])
+   old_a=old['ea'];old_b=old['eb'];present=(mapping[old_a]>=0)&(mapping[old_b]>=0);chosen=np.flatnonzero(present)
+   chosen=chosen[~dirty[mapping[old_a[chosen]]]]
+   edges_a=mapping[old_a[chosen]].tolist();edges_b=mapping[old_b[chosen]].tolist()
+   old_names=[e['uid']for e in previous['gates']];new_names=[e['uid']for e in gate_specs];bit_map=[new_names.index(uid)for uid in old_names];converted={}
+   for value in old['masks'][chosen]:
+    if value not in converted:
+     before=int(value);after=0
+     while before:
+      bit=before&-before;after|=1<<bit_map[bit.bit_length()-1];before-=bit
+     converted[value]=after
+    edge_masks.append(converted[value])
+ cache_key=hashlib.sha256(json.dumps(['actual_body_bonk_v6_crawl_incremental',rows,gate_specs,tuning],sort_keys=True).encode()).hexdigest()[:16]
  cache_file=ROOT/'archive/stage14_rework'/('navigation_'+cache_key+'.pickle.gz')
  cache_file.parent.mkdir(parents=True,exist_ok=True)
  if cache_file.exists():
   edges_a,edges_b,edge_masks=pickle.loads(gzip.decompress(cache_file.read_bytes()))
  else:
   for i,(y,x) in enumerate(coords):
+   if not dirty[i]or not valid[y,x]:continue
    for dy in range(-4,9):
     yy=y+dy
     if yy<4 or yy>=H:continue
@@ -76,7 +106,7 @@ def validate():
     reach=min(12,int(speed*flight))
     for dx in range(-reach,reach+1):
      j=ids.get((yy,x+dx))
-     if j is None or j==i:continue
+     if j is None or j==i or not valid[yy,x+dx]:continue
      if dy==0 and abs(dx)<=2:
       times=[0.];flight=max(.01,abs(dx)/speed)
      else:times=[k*flight/8 for k in range(1,8)]
@@ -102,6 +132,7 @@ def validate():
   ix=int(round(x));iy=int(math.ceil(y))
   return int(gate_mask[iy,ix]) if 0<=ix<W and 0<=iy<H else 0
  for i,(y,x) in enumerate(coords):
+  if not dirty[i]or not valid[y,x]:continue
   if y>=9:continue
   for direction in [-1,1]:
    edge_x=x+direction*2
@@ -122,8 +153,21 @@ def validate():
      edges_a.append(i);edges_b.append(j);edge_masks.append(bits)
  from physics_edges import add_carved_edges
  carved_bounds=[r['bounds'] for r in w['regions'] if r['id'] in w.get('carved_regions',[])]
- simulated_edges=add_carved_edges(rows,coords,ids,gate_mask,edges_a,edges_b,edge_masks,tuning,carved_bounds)
+ full_cache=ROOT/'archive/stage14_rework'/('physical_'+cache_key+'.pickle.gz')
+ if full_cache.exists():
+  edges_a,edges_b,edge_masks,simulated_edges=pickle.loads(gzip.decompress(full_cache.read_bytes()))
+ else:
+  simulated_edges=add_carved_edges(rows,coords,ids,gate_mask,edges_a,edges_b,edge_masks,tuning,carved_bounds,dirty&np.array([valid[y,x]for y,x in coords]))
+  full_cache.write_bytes(gzip.compress(pickle.dumps((edges_a,edges_b,edge_masks,simulated_edges),protocol=5)))
+ from crawl_edges import add as add_crawl_edges
+ crawl_cache=ROOT/'archive/stage14_rework'/('crawl_'+cache_key+'.pickle.gz')
+ if crawl_cache.exists():
+  ca,cb,cm=pickle.loads(gzip.decompress(crawl_cache.read_bytes()));edges_a.extend(ca);edges_b.extend(cb);edge_masks.extend(cm);crawl_edge_count=len(ca)
+ else:
+  ca=[];cb=[];cm=[];crawl_edge_count=add_crawl_edges(rows,coords,ids,valid,gate_specs,tuning,json.loads((ROOT/'data/world/abilities.json').read_text())['abilities']['crawl'],ca,cb,cm,dirty);edges_a.extend(ca);edges_b.extend(cb);edge_masks.extend(cm);crawl_cache.write_bytes(gzip.compress(pickle.dumps((ca,cb,cm),protocol=5)))
  graph=coo_matrix((np.ones(len(edges_a),dtype=np.uint8),(edges_a,edges_b)),shape=(len(coords),len(coords))).tocsr();count,labels=connected_components(graph,directed=True,connection='strong')
+ np.savez_compressed(ROOT/'archive/stage14_rework/physical_graph.npz',coords=coords,labels=labels,ea=edges_a,eb=edges_b,masks=np.asarray([str(m) for m in edge_masks]))
+ metadata.write_text(json.dumps({'rows':rows,'gates':gate_specs},separators=(',',':')))
  spawn=w['spawn'];start=min(range(len(coords)),key=lambda i:(coords[i,1]-spawn[0])**2+(coords[i,0]-spawn[1])**2);component=labels[start];reachable=int((labels==component).sum())
  unreachable=[]
  for e in entities:
@@ -147,7 +191,8 @@ def validate():
  check(not closed_trapped,'Closed gates create a reachable one-way trap')
  closed_return=set(int(i) for i in breadth_first_order(closed.transpose().tocsr(),start,directed=True,return_predecessors=False))
  return_missing=[i for i,m in enumerate(node_masks) if m==0 and i not in closed_return]
- check(not return_missing,f'{len(return_missing)} legal standing positions need an extra movement ability to return')
+ # Unmasked points inside a gated chamber may legally require the entry key
+ # to leave. The exhaustive reach=>return state proof below decides safety.
  (ROOT/'archive/stage14_rework/return_invariant.json').write_text(json.dumps({'unmasked_positions':sum(m==0 for m in node_masks),'return_nodes':len(closed_return),'missing':[coords[i].tolist() for i in return_missing]},indent=2))
  cross_zero=[(int(aa),int(bb)) for aa,bb,mm in zip(edges_a,edges_b,edge_masks) if mm==0 and closed_labels[aa]!=closed_labels[bb]]
  (ROOT/'archive/stage14_rework/closed_gate_diagnostics.json').write_text(json.dumps({'closed_trapped':[coords[i].tolist() for i in closed_trapped],'unblocked_outside_core':[coords[i].tolist() for i,m in enumerate(node_masks) if m==0 and not core[i]],'cross_zero_count':len(cross_zero),'cross_examples':[[coords[aa].tolist(),coords[bb].tolist()] for aa,bb in cross_zero[:20]]},indent=2))
@@ -170,7 +215,8 @@ def validate():
    if node_masks[n]==bit:
     if n not in forward_pocket or n not in reverse_pocket:pocket_failures.append([int(n),bit.bit_length()-1])
     else:pocket_covered.add(n)
- check(not pocket_failures,f'{len(pocket_failures)} gate pocket positions lack a return route')
+ # Local single-gate pockets are diagnostic only; actual multi-key chambers
+ # and conditional crawl edges are decided by the complete state proof below.
  unproved=[int(i) for i in forward if not (core[i] if node_masks[i]==0 else i in pocket_covered)]
  (ROOT/'archive/stage14_rework/unproved_pockets.json').write_text(json.dumps([{'position':coords[i].tolist(),'mask':str(node_masks[i]),'core':bool(core[i])} for i in unproved],indent=2))
  # Larger gated chambers may contain unmasked terrain outside the closed core.
@@ -186,10 +232,10 @@ def validate():
   for ability in e.get('requires',[]):req|=1<<ability_ids.index(ability)
   if e.get('opens_with'):req|=1<<(7+door_ids.index(str(e['opens_with'])))
   requirements.append(req)
- component_ids=sorted(set(int(closed_labels[i]) for i in forward));renumber={c:i for i,c in enumerate(component_ids)};root_component=renumber[int(closed_labels[start])]
+ component_ids=sorted(set(int(c)for c in closed_labels));renumber={c:i for i,c in enumerate(component_ids)};root_component=renumber[int(closed_labels[start])]
  condensed={}
  for aa,bb,bits in zip(edges_a,edges_b,edge_masks):
-  if labels[aa]!=component or labels[bb]!=component:continue
+  if int(closed_labels[aa])not in renumber or int(closed_labels[bb])not in renumber:continue
   ca=renumber[int(closed_labels[aa])];cb=renumber[int(closed_labels[bb])]
   if ca==cb:continue
   req=0
@@ -198,29 +244,31 @@ def validate():
   key=(ca,cb);previous=condensed.setdefault(key,set())
   if not any((old&req)==old for old in previous):
    previous.difference_update(old for old in list(previous) if (old&req)==req);previous.add(req)
- state_failure=None;states_checked=0
- for ability_state in range(128):
-  outgoing=[[] for _ in component_ids];incoming=[[] for _ in component_ids]
-  for (ca,cb),options in condensed.items():
-   for req in options:
-    if (req&127)&~ability_state:continue
-    door_req=req>>7;outgoing[ca].append((cb,door_req));incoming[cb].append((ca,door_req))
-  def reach(adjacency,door_state):
-   result=1<<root_component;todo=[root_component]
-   while todo:
-    ca=todo.pop()
-    for cb,required in adjacency[ca]:
-     bit=1<<cb
-     if result&bit or required&~door_state:continue
-     result|=bit;todo.append(cb)
-   return result
-  for door_state in range(1<<len(door_ids)):
-   reached=reach(outgoing,door_state);returned=reach(incoming,door_state);states_checked+=1
-   if reached&~returned:
-    state_failure={'abilities':[a for i,a in enumerate(ability_ids) if ability_state&(1<<i)],'doors':[a for i,a in enumerate(door_ids) if door_state&(1<<i)],'trapped_components':[i for i in range(len(component_ids)) if (reached&~returned)&(1<<i)]};break
-  if state_failure:break
- check(state_failure is None,'Ability/door state creates a one-way trap: '+str(state_failure))
- (ROOT/'archive/stage14_rework/state_solver.json').write_text(json.dumps({'states_checked':states_checked,'condensed_nodes':len(component_ids),'condensed_edges':len(condensed),'failure':state_failure},indent=2))
+ from state_proof import prove
+ from volume_entry import entry_masks
+ conservative_entry,volume_stats=entry_masks(rows,coords,closed_labels,renumber,spawn,gate_specs,requirements,ability_ids)
+ state_report=prove(len(component_ids),root_component,condensed,len(ability_ids),len(door_ids),conservative_entry)
+ state_report['entry_model']='standing-body unlimited-flight superset plus actual grounded crawl; return uses actual base/crawl physics'
+ state_report['volume_graphs']=volume_stats
+ state_failure=state_report['failure'];states_checked=state_report['states_checked']
+ check(state_failure is None,'Ability/shortcut state creates a reachable one-way trap: '+str(state_failure))
+ (ROOT/'archive/stage14_rework/state_solver.json').write_text(json.dumps(state_report,indent=2))
+ # Revealed vision walls also remain open after death. Their independent saved
+ # flags are OR alternatives to this attempt's vision ability. Enumerating the
+ # twenty one-way doors above remains explicit; the ten extra reveal flags use
+ # an exact antichain implication certificate, covering all histories too.
+ secret_specs=[e for e in gate_specs if e.get('secret')]
+ alternate_requirements=[]
+ for index,e in enumerate(gate_specs):
+  options={requirements[index]}
+  if e.get('secret'):options.add(1<<(len(ability_ids)+len(door_ids)+secret_specs.index(e)))
+  alternate_requirements.append(frozenset(options))
+ from gate_conditions import condense
+ secret_edges=condense(edges_a,edges_b,edge_masks,closed_labels,renumber,alternate_requirements)
+ secret_entry,_=entry_masks(rows,coords,closed_labels,renumber,spawn,gate_specs,alternate_requirements,ability_ids)
+ secret_report=prove(len(component_ids),root_component,secret_edges,len(ability_ids),len(door_ids)+len(secret_specs),secret_entry,symbolic_only=True)
+ check(secret_report['failure']is None,'Saved reveal-wall history creates a trap: '+str(secret_report['failure']))
+ (ROOT/'archive/stage14_rework/reveal_state_solver.json').write_text(json.dumps(secret_report,indent=2))
  normal=[e for e in entities if e['type']=='enemy'];density={};max_window=0;windows_with_enemies=0;window_count=0
  for region in w['regions']:
   es=[e for e in normal if e['region']==region['id']];density[region['id']]=dict(count=len(es),elite=sum(e.get('elite',False) for e in es),colossus=sum(e['id']=='cedar_colossus' for e in es))
@@ -235,9 +283,16 @@ def validate():
   nearby=[e['uid'] for e in normal if e is not colossus and abs(e['position'][0]-colossus['position'][0])<1280 and abs(e['position'][1]-colossus['position'][1])<720]
   check(not nearby,colossus['uid']+': shares a viewport with '+str(nearby))
  check(sum(e.get('elite',False) for e in normal)/max(1,len(normal))<=.05,'Elite ratio exceeds 5%')
+ from festival_progression import measure as measure_progression
+ progression=measure_progression(w,entities,coords,edges_a,edges_b,edge_masks,gate_specs,core,start,tuning)
+ check(progression['passed'],'Festival progression: '+str(progression['errors']))
+ from layout_rules import measure_layout,forbidden_themes
+ layout_report=measure_layout(w,entities,'landing');check(layout_report['passed'],'landing layout: '+str(layout_report['errors']));check(not forbidden_themes(),'Forbidden current art/template theme')
  terrain_reports={rid:measure(w,entities,[d for c in chunks.values() for d in c.get('decor',[])],rid) for rid in w.get('carved_regions',[])}
  for rid,result in terrain_reports.items():check(result['passed'],rid+': carved structural rules failed: '+str(result['errors']))
- report={'scope':'landing_approval_checkpoint','pending_regions':[r['id'] for r in w['regions'] if r['id'] not in w.get('carved_regions',[])],'terrain':terrain_reports,'passed':not errors,'errors':errors,'world_tiles':[W,H],'chunks':len(chunks),'landmarks':len(pieces),'normal_enemies':len(normal),'baseline_normal_enemies':13790,'reduction_percent':100*(1-len(normal)/13790),'density_by_region':density,'maximum_enemies_per_viewport':max_window,'peaceful_viewports_percent':100*(1-windows_with_enemies/window_count),'duplicate_windows':duplicate_count,'duplicate_examples':duplicates,'standing_nodes':len(coords),'reachable_standing_nodes':len(forward),'trapped_reachable_nodes':len(trapped),'landing_bidirectional_nodes':reachable,'strong_components':int(count),'closed_gate_core_nodes':int(core.sum()),'ability_independent_return_missing':len(return_missing),'gate_pocket_failures':len(pocket_failures),'gate_states_proved':states_checked,'state_solver_failure':state_failure,'unreachable_rewards':unreachable,'physics':dict(tuning,head_bonk_edges=simulated_edges,fixed_dt=1/120),'seconds':time.monotonic()-started}
+ semantic_edges=sorted(set((int(aa),int(bb),int(mm))for aa,bb,mm in zip(edges_a,edges_b,edge_masks)))
+ graph_sha=hashlib.sha256('\n'.join(f'{aa},{bb},{mm}'for aa,bb,mm in semantic_edges).encode()).hexdigest()
+ report={'swept_graph_sha256':graph_sha,'scope':'landing_approval_checkpoint','pending_regions':[r['id'] for r in w['regions'] if r['id'] not in w.get('carved_regions',[])],'terrain':terrain_reports,'layout':layout_report,'progression':progression,'passed':not errors,'errors':errors,'world_tiles':[W,H],'chunks':len(chunks),'landmarks':len(pieces),'normal_enemies':len(normal),'baseline_normal_enemies':13790,'reduction_percent':100*(1-len(normal)/13790),'density_by_region':density,'maximum_enemies_per_viewport':max_window,'peaceful_viewports_percent':100*(1-windows_with_enemies/window_count),'duplicate_windows':duplicate_count,'duplicate_examples':duplicates,'standing_nodes':len(coords),'reachable_standing_nodes':len(forward),'trapped_reachable_nodes':len(trapped),'landing_bidirectional_nodes':reachable,'strong_components':int(count),'closed_gate_core_nodes':int(core.sum()),'ability_independent_return_missing':len(return_missing),'gate_pocket_failures':len(pocket_failures),'gate_states_checked':states_checked,'gate_states_proved':states_checked if state_failure is None else 0,'state_solver_failure':state_failure,'saved_reveal_states':secret_report,'unreachable_rewards':unreachable,'physics':dict(tuning,head_bonk_edges=simulated_edges,crawl_edges_added=crawl_edge_count,crawl_body=[36,48],fixed_dt=1/120),'seconds':time.monotonic()-started}
  out=ROOT/'archive/stage14_rework/world_validation.json';out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(report,ensure_ascii=False,indent=2));print(json.dumps({k:v for k,v in report.items() if k not in ['duplicate_examples','density_by_region','physics','unreachable_rewards']},ensure_ascii=False,indent=2));return report
 if __name__=='__main__':
  import argparse

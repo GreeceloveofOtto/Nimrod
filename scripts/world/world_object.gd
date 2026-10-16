@@ -8,21 +8,35 @@ var consumed := false
 var texture_node: Node2D
 
 func _ready() -> void:
-    if str(spec.type) in ["altar","crystal","life","lore_item","switch","portal"]:add_to_group("world_interactables")
+    if str(spec.type) in ["site","cord","ember","lore_item","switch","return_pier"]:add_to_group("world_interactables")
     base_position=position
     var art: Dictionary = get_node("/root/World").read_json("res://data/world/art.json")
     var kind: String = str(spec.type)
     var size: Vector2 = Vector2(48,48)
-    if kind in ["gate","portal","breakable_wall"]:size=Vector2(56,160)
-    elif kind in ["altar","switch"]:size=Vector2(76,80)
+    if kind in ["gate","return_pier","breakable_wall"]:size=Vector2(56,160)
+    elif kind in ["site","switch"]:size=Vector2(76,80)
     elif kind in ["spikes","poison","wind"]:size=Vector2(float(spec.size[0]),float(spec.size[1]))
     elif kind in ["crumble","moving_platform"]:size=Vector2(float(spec.size[0]),float(spec.size[1]))
     elif kind=="healing":
         var pickup: Node2D = load("res://scripts/healing_pickup.gd").new()
         add_child(pickup)
         return
-    texture_node=AssetVisual.add_image(self,str(art.get(kind,art.crystal)),Vector2(-size.x*.5,-size.y),size)
-    texture_node.modulate=Color(str(get_node("/root/World").regions[str(spec.region)].palette)).lightened(.3)
+    var world: Node=get_node("/root/World")
+    var record: Dictionary=world.collectible_data.get(kind,{})
+    if record.has("size"):size=Vector2(float(record.size[0]),float(record.size[1]))
+    var path: String=str(record.get("icon",art.get(kind,art.ember)))
+    var texture: Texture2D=load(path)
+    if texture!=null:
+        var image:=Sprite2D.new()
+        AssetVisual.configure_sprite(image)
+        image.texture=texture
+        image.centered=false
+        image.position=Vector2(-size.x*.5,-size.y)
+        image.scale=size/texture.get_size()
+        add_child(image)
+        texture_node=image
+    else:texture_node=AssetVisual.add_image(self,path,Vector2(-size.x*.5,-size.y),size)
+    texture_node.modulate=Color.WHITE if not record.is_empty() else Color(str(world.regions[str(spec.region)].palette)).lightened(.3)
     if kind in ["gate","crumble","moving_platform","breakable_wall"]:
         gate=load("res://scripts/world/world_breakable.gd").new() if kind=="breakable_wall" else StaticBody2D.new()
         if kind=="breakable_wall":gate.prop_owner=self
@@ -50,6 +64,11 @@ func _process(delta: float) -> void:
     if not world.active or consumed or world.transitioning or str(spec.type)=="healing":return
     var hero: NimrodPlayer = get_node("/root/SceneManager").player
     if not is_instance_valid(hero) or hero.transition_locked or hero.hp<=0:return
+    if str(spec.type)=="site" and not world.discovered_sites.has(str(spec.uid)):
+        var at:=Vector2i(global_position/256.)
+        var index: int=clampi(at.y,0,44)*80+clampi(at.x,0,79)
+        if world.explored[index]!=0:
+            world.discovered_sites[str(spec.uid)]={"ability":str(spec.ability),"position":spec.position.duplicate(),"region":str(spec.region)}
     timer+=delta
     if str(spec.type)=="falling_rock":position.y=base_position.y-500+minf(500,pow(fmod(timer,4),2)*450)
     var kind: String = str(spec.type)
@@ -82,7 +101,7 @@ func _process(delta: float) -> void:
     else:
         prompt.visible=available and allowed
         if kind=="switch" and spec.get("one_way",false) and hero.global_position.x<global_position.x:prompt.visible=false
-        if kind=="portal" and spec.get("one_way",false) and hero.position.x<position.x:prompt.visible=false
+        if kind=="return_pier" and spec.get("one_way",false) and hero.position.x<position.x:prompt.visible=false
         if prompt.visible and Input.is_action_just_pressed("interact"):interact()
     if spec.get("requires",[]).has("vision") and kind not in ["gate","breakable_wall"]:visible=world.hero_motion.vision
 
@@ -91,25 +110,25 @@ func interact() -> bool:
     if consumed or not world.meets(spec.get("requires",[])):return false
     if spec.type=="switch" and spec.get("one_way",false) and get_node("/root/SceneManager").player.global_position.x<global_position.x:return false
     match str(spec.type):
-        "altar":
-            if not world.acquire(str(spec.id)):return false
-            world.collected[str(spec.id)]=true
+        "site":
+            if not world.acquire(str(spec.ability)):return false
+            world.collected[str(spec.uid)]=true
+            world.discovered_sites[str(spec.uid)]={"ability":str(spec.ability),"position":spec.position.duplicate(),"region":str(spec.region)}
             world.altar_animation.call_deferred()
-        "crystal":
-            world.crystals+=1
-            world.collected[str(spec.id)]=true
-        "life":
-            world.fragments+=1
-            world.collected[str(spec.id)]=true
-            get_node("/root/SceneManager").player.heal(10)
+        "ember":
+            world.embers+=1
+            world.collected[str(spec.uid)]=true
+        "cord":
+            world.cord_ids[str(spec.uid)]=true
+            get_node("/root/SceneManager").show_toast(str(world.collectible_data.cord.name))
         "lore_item":world.collected[str(spec.id)]=true
         "switch":
             world.switches[str(spec.target)]=true
             get_node("/root/SceneManager").show_toast("지름길이 열렸다",1)
             return true
-        "portal":
-            if not world.can_exit():return false
-            world.switches[str(spec.target)]=true
+        "return_pier":
+            consumed=true
+            world.return_alive.call_deferred()
             return true
         _:return false
     consumed=true
