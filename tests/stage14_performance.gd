@@ -34,7 +34,9 @@ func _run() -> void:
     sorted_times.sort()
     var p95: float=sorted_times[int(sorted_times.size()*.95)]
     _check(final_return_nodes<=warm_return_nodes+16,"Repeated streaming returns to a bounded node count")
-    print("STATIC_MEMORY_DELTA_BYTES: ",Performance.get_monitor(Performance.MEMORY_STATIC)-static_before," return_nodes=",warm_return_nodes,"->",final_return_nodes)
+    var memory_delta: float=Performance.get_monitor(Performance.MEMORY_STATIC)-static_before
+    print("STATIC_MEMORY_DELTA_BYTES: ",memory_delta," return_nodes=",warm_return_nodes,"->",final_return_nodes)
+    _check(memory_delta<=7506040,"Static memory growth stays within the Stage14 baseline")
     print("CONTINUOUS_PERFORMANCE: frame_p95_ms=",p95," chunk_step_max_ms=",world.stream_times.max()," nodes_max=",maximum_nodes," chunks=",world.loaded.size())
     _check(p95<50,"Streaming frame P95 below 50ms headless")
     _check(float(world.stream_times.max())<25,"One main-thread streaming step below 25ms")

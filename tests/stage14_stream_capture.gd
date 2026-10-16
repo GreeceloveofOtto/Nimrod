@@ -13,6 +13,7 @@ func _run() -> void:
     for index in [0,1,4,5,7,9]:
         var region: Dictionary=world.settings.regions[index]
         hero.position=Vector2(float(region.bounds[0])+15,float(region.bounds[1])+25)*32
+        if str(region.id)=="landing":hero.position=Vector2(float(world.settings.spawn[0]),float(world.settings.spawn[1]))*32
         world.schedule_stream(hero.position)
         while not world.streaming_idle():await process_frame
         for i in range(5):await process_frame

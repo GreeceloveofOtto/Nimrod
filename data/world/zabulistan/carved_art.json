@@ -1,0 +1,12 @@
+{
+  "crust": "res://assets/world/zabulistan_v2/shared/crust.webp",
+  "backwall": "res://assets/world/zabulistan_v2/shared/backwall.webp",
+  "fill": "res://assets/world/zabulistan_v2/shared/fill.webp",
+  "supports": "res://assets/world/zabulistan_v2/shared/supports.webp",
+  "palette": "65788c",
+  "crust_light": 1.4,
+  "transition_light": 0.52,
+  "fill_light": 0.27,
+  "backwall_light": 0.78,
+  "foreground": "res://assets/world/zabulistan_v2/shared/foreground.webp"
+}

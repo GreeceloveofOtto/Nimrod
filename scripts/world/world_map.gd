@@ -113,7 +113,7 @@ func draw_map() -> void:
             # Actual terrain, rather than abstract rectangular room outlines.
             for yy in range(8):
                 for xx in range(8):
-                    if world.tile_at(Vector2i(x*8+xx,y*8+yy)) in ["#","W","="]:
+                    if world.tile_at(Vector2i(x*8+xx,y*8+yy)) in ["#","W","^","F","="]:
                         canvas.draw_rect(Rect2((Vector2(x,y)+Vector2(xx,yy)/8.)*cell,cell/8.),Color(.7,.75,.8,.75))
     for item: Dictionary in world.settings.map_icons:
         var at:=Vector2(float(item.position[0]),float(item.position[1]))/256.

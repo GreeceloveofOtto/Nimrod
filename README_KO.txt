@@ -197,3 +197,12 @@ F3 개발 오버레이는 디버그 빌드와 developer_overlay 설정을 모두
 설계·검증·용량: docs/stage14_rework_report.md / zabulistan_density_report.md / WORLD_SAVE_POLICY_KO.md / SIZE_REPORT_KO.md.
 신규 아트는 5.79 MiB로 예산 안에 들었습니다. 전체 ZIP은 약 72.33 MiB로 63 MiB 목표에 미달했습니다.
 시각 품질 미완료: 짧은 공중 발판의 반복 인상이 남아 있습니다. 데드 셀식 벽·복도·갱도 구성의 완성 판정은 보류했습니다.
+
+
+[15단계: 착륙 절벽 암반 지형 검토본]
+- 착륙지 한 지역을 두꺼운 바닥·천장·벽과 수직 우물로 다시 만들었습니다. 나머지 9지역은 승인 대기 상태입니다.
+- 조작·전투·저장·사망 귀환·입력키·F5 완전 초기화 규칙은 기존과 같습니다.
+- project.godot를 Godot 4.3에서 불러옵니다. 청크 스트리밍/GL Compatibility 설정을 유지합니다.
+- 검토 보고서: docs/STAGE15_MAP_REWORK_REPORT_KO.md. 캡처/소스/QA 근거는 별도 QA ZIP입니다.
+- 실행 ZIP에서 QA용 art_quality.json은 제외합니다. QA ZIP의 파일을 --quality-file 인자로 넘겨 check_world_art.py/check_carved_art.py를 실행할 수 있습니다.
+- 전체 월드 71/66/63MiB 최적화는 미완료이며 승인 뒤 계속합니다.

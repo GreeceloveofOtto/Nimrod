@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Static atlas margins, alpha, anchor, density and source parity for world art."""
 from pathlib import Path
-import json,sys,hashlib
+import json,sys,hashlib,argparse
 import numpy as np
 from PIL import Image
 ROOT=Path(__file__).resolve().parents[2]
 def main():
+ parser=argparse.ArgumentParser();parser.add_argument('--quality-file',type=Path,default=ROOT/'data/world/zabulistan/art_quality.json');args=parser.parse_args()
  data=json.loads((ROOT/'data/world/zabulistan/art_v2.json').read_text());errors=[];count=0
  for id,spec in data.items():
   im=Image.open(ROOT/spec['atlas'].removeprefix('res://')).convert('RGBA')
@@ -17,8 +18,9 @@ def main():
    if p['anchor'][1]!=h-2:errors.append(f'{id}/{i}: foot anchor')
    if ((a[:,:,0]>240)&(a[:,:,2]>240)&(a[:,:,1]<30)&(alpha>12)).sum():errors.append(f'{id}/{i}: magenta')
    count+=1
-  if len(spec['backgrounds'])!=3 or spec['material_variants']<6:errors.append(id+': regional layers/variants')
- quality=json.loads((ROOT/'data/world/zabulistan/art_quality.json').read_text())
+  minimum=3 if spec.get('rendering')=='carved_shared' else 6
+  if len(spec['backgrounds'])!=3 or spec['material_variants']<minimum:errors.append(id+': regional layers/variants')
+ quality=json.loads(args.quality_file.read_text())
  for row in quality:
   if hashlib.sha256((ROOT/row['path']).read_bytes()).hexdigest()!=row['sha256']:errors.append(row['path']+': runtime hash differs from verified encoding')
   if row['rgb_mae']>3 or row['alpha_mae']>.5 or not row['bbox_same'] or row['ssim']<.93:errors.append(row['path']+': parity')

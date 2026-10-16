@@ -1,0 +1,4373 @@
+{
+  "entities": [
+    {
+      "uid": "enemy_landing_0",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "landing",
+      "position": [
+        640,
+        608
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_landing_1",
+      "id": "cedar_archer",
+      "type": "enemy",
+      "region": "landing",
+      "position": [
+        1504,
+        736
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_landing_10",
+      "id": "cedar_colossus",
+      "type": "enemy",
+      "region": "landing",
+      "position": [
+        3232,
+        1120
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_forest_0",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "forest",
+      "position": [
+        4736,
+        736
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_forest_1",
+      "id": "cedar_archer",
+      "type": "enemy",
+      "region": "forest",
+      "position": [
+        5632,
+        736
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "altar_double_jump",
+      "id": "double_jump",
+      "type": "altar",
+      "region": "forest",
+      "position": [
+        4928,
+        1120
+      ]
+    },
+    {
+      "uid": "enemy_forest_10",
+      "id": "cedar_colossus",
+      "type": "enemy",
+      "region": "forest",
+      "position": [
+        7296,
+        1120
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_marsh_0",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "marsh",
+      "position": [
+        8864,
+        640
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_marsh_1",
+      "id": "cedar_archer",
+      "type": "enemy",
+      "region": "marsh",
+      "position": [
+        9696,
+        896
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "crystal_marsh_0",
+      "type": "crystal",
+      "region": "marsh",
+      "position": [
+        10112,
+        1120
+      ]
+    },
+    {
+      "uid": "altar_wall_cling",
+      "id": "wall_cling",
+      "type": "altar",
+      "region": "marsh",
+      "position": [
+        9024,
+        1120
+      ]
+    },
+    {
+      "uid": "enemy_mine_0",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "mine",
+      "position": [
+        12928,
+        608
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_mine_1",
+      "id": "cedar_archer",
+      "type": "enemy",
+      "region": "mine",
+      "position": [
+        13824,
+        768
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "crystal_mine_0",
+      "type": "crystal",
+      "region": "mine",
+      "position": [
+        14112,
+        1120
+      ]
+    },
+    {
+      "uid": "altar_wall_jump",
+      "id": "wall_jump",
+      "type": "altar",
+      "region": "mine",
+      "position": [
+        13088,
+        1120
+      ]
+    },
+    {
+      "uid": "enemy_mine_10",
+      "id": "cedar_colossus",
+      "type": "enemy",
+      "region": "mine",
+      "position": [
+        15520,
+        1120
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_fortress_0",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "fortress",
+      "position": [
+        16992,
+        608
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_fortress_1",
+      "id": "cedar_archer",
+      "type": "enemy",
+      "region": "fortress",
+      "position": [
+        17856,
+        736
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "crystal_fortress_0",
+      "type": "crystal",
+      "region": "fortress",
+      "position": [
+        18208,
+        1120
+      ]
+    },
+    {
+      "uid": "altar_crawl",
+      "id": "crawl",
+      "type": "altar",
+      "region": "fortress",
+      "position": [
+        17280,
+        1120
+      ]
+    },
+    {
+      "uid": "enemy_landing_2",
+      "id": "cedar_wisp",
+      "type": "enemy",
+      "region": "landing",
+      "position": [
+        1056,
+        1824
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_landing_0",
+      "type": "life",
+      "region": "landing",
+      "position": [
+        1248,
+        1472
+      ]
+    },
+    {
+      "uid": "life_landing_4",
+      "type": "life",
+      "region": "landing",
+      "position": [
+        416,
+        2272
+      ]
+    },
+    {
+      "uid": "crystal_landing_0",
+      "type": "crystal",
+      "region": "landing",
+      "position": [
+        1824,
+        1248
+      ]
+    },
+    {
+      "uid": "altar_dash",
+      "id": "dash",
+      "type": "altar",
+      "region": "landing",
+      "position": [
+        800,
+        1248
+      ]
+    },
+    {
+      "uid": "crystal_landing_4",
+      "type": "crystal",
+      "region": "landing",
+      "position": [
+        3872,
+        2016
+      ]
+    },
+    {
+      "uid": "enemy_forest_2",
+      "id": "cedar_wisp",
+      "type": "enemy",
+      "region": "forest",
+      "position": [
+        5088,
+        1824
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_forest_0",
+      "type": "life",
+      "region": "forest",
+      "position": [
+        5440,
+        1376
+      ]
+    },
+    {
+      "uid": "life_forest_4",
+      "type": "life",
+      "region": "forest",
+      "position": [
+        4544,
+        2272
+      ]
+    },
+    {
+      "uid": "crystal_forest_0",
+      "type": "crystal",
+      "region": "forest",
+      "position": [
+        5920,
+        1248
+      ]
+    },
+    {
+      "uid": "crystal_forest_4",
+      "type": "crystal",
+      "region": "forest",
+      "position": [
+        7904,
+        2016
+      ]
+    },
+    {
+      "uid": "enemy_marsh_2",
+      "id": "cedar_wisp",
+      "type": "enemy",
+      "region": "marsh",
+      "position": [
+        9184,
+        1824
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_marsh_0",
+      "type": "life",
+      "region": "marsh",
+      "position": [
+        9568,
+        1376
+      ]
+    },
+    {
+      "uid": "life_marsh_4",
+      "type": "life",
+      "region": "marsh",
+      "position": [
+        8512,
+        2272
+      ]
+    },
+    {
+      "uid": "enemy_marsh_10",
+      "id": "cedar_colossus",
+      "type": "enemy",
+      "region": "marsh",
+      "position": [
+        11392,
+        1248
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "crystal_marsh_4",
+      "type": "crystal",
+      "region": "marsh",
+      "position": [
+        11936,
+        2016
+      ]
+    },
+    {
+      "uid": "enemy_mine_2",
+      "id": "cedar_wisp",
+      "type": "enemy",
+      "region": "mine",
+      "position": [
+        13376,
+        1824
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_mine_0",
+      "type": "life",
+      "region": "mine",
+      "position": [
+        13536,
+        1376
+      ]
+    },
+    {
+      "uid": "life_mine_4",
+      "type": "life",
+      "region": "mine",
+      "position": [
+        12704,
+        2272
+      ]
+    },
+    {
+      "uid": "crystal_mine_4",
+      "type": "crystal",
+      "region": "mine",
+      "position": [
+        16160,
+        2016
+      ]
+    },
+    {
+      "uid": "enemy_fortress_2",
+      "id": "cedar_wisp",
+      "type": "enemy",
+      "region": "fortress",
+      "position": [
+        17344,
+        1824
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_fortress_0",
+      "type": "life",
+      "region": "fortress",
+      "position": [
+        17760,
+        1376
+      ]
+    },
+    {
+      "uid": "life_fortress_4",
+      "type": "life",
+      "region": "fortress",
+      "position": [
+        16768,
+        2272
+      ]
+    },
+    {
+      "uid": "enemy_fortress_10",
+      "id": "cedar_colossus",
+      "type": "enemy",
+      "region": "fortress",
+      "position": [
+        19552,
+        1248
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "crystal_fortress_4",
+      "type": "crystal",
+      "region": "fortress",
+      "position": [
+        20160,
+        2016
+      ]
+    },
+    {
+      "uid": "crystal_landing_1",
+      "type": "crystal",
+      "region": "landing",
+      "position": [
+        448,
+        2912
+      ]
+    },
+    {
+      "uid": "door_landing",
+      "id": "door_landing",
+      "target": "door_landing",
+      "type": "switch",
+      "region": "landing",
+      "position": [
+        1824,
+        2528
+      ],
+      "one_way": true
+    },
+    {
+      "uid": "gate_landing_dash",
+      "type": "gate",
+      "region": "landing",
+      "position": [
+        1088,
+        3424
+      ],
+      "requires": [
+        "dash"
+      ],
+      "secret": false,
+      "art_hint": "쥐의 질주"
+    },
+    {
+      "uid": "gate_landing_wall_cling",
+      "type": "gate",
+      "region": "landing",
+      "position": [
+        1664,
+        3424
+      ],
+      "requires": [
+        "wall_cling"
+      ],
+      "secret": false,
+      "art_hint": "벽의 발톱"
+    },
+    {
+      "uid": "door_gate_landing",
+      "type": "gate",
+      "region": "landing",
+      "position": [
+        1504,
+        2528
+      ],
+      "requires": [],
+      "opens_with": "door_landing",
+      "art_hint": "반대편에서 열린다"
+    },
+    {
+      "uid": "enemy_landing_3",
+      "id": "cedar_demon",
+      "type": "enemy",
+      "region": "landing",
+      "position": [
+        2496,
+        2784
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_landing_4",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "landing",
+      "position": [
+        3424,
+        3040
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_landing_1",
+      "type": "life",
+      "region": "landing",
+      "position": [
+        3136,
+        3168
+      ]
+    },
+    {
+      "uid": "gate_landing_wall_jump",
+      "type": "gate",
+      "region": "landing",
+      "position": [
+        2176,
+        3424
+      ],
+      "requires": [
+        "wall_jump"
+      ],
+      "secret": false,
+      "art_hint": "벽 차오르기"
+    },
+    {
+      "uid": "gate_landing_crawl",
+      "type": "gate",
+      "region": "landing",
+      "position": [
+        2400,
+        3424
+      ],
+      "requires": [
+        "crawl"
+      ],
+      "secret": false,
+      "art_hint": "틈새 기기"
+    },
+    {
+      "uid": "gate_landing_vision",
+      "type": "gate",
+      "region": "landing",
+      "position": [
+        2880,
+        3424
+      ],
+      "requires": [
+        "vision"
+      ],
+      "secret": true,
+      "art_hint": "광질 시야"
+    },
+    {
+      "uid": "gate_landing_light_throw",
+      "type": "gate",
+      "region": "landing",
+      "position": [
+        3264,
+        3424
+      ],
+      "requires": [
+        "light_throw"
+      ],
+      "secret": false,
+      "art_hint": "천륜 빛 투척"
+    },
+    {
+      "uid": "crystal_forest_1",
+      "type": "crystal",
+      "region": "forest",
+      "position": [
+        4640,
+        3040
+      ]
+    },
+    {
+      "uid": "door_forest",
+      "id": "door_forest",
+      "target": "door_forest",
+      "type": "switch",
+      "region": "forest",
+      "position": [
+        5696,
+        2528
+      ],
+      "one_way": true
+    },
+    {
+      "uid": "gate_forest_dash",
+      "type": "gate",
+      "region": "forest",
+      "position": [
+        5056,
+        3424
+      ],
+      "requires": [
+        "dash"
+      ],
+      "secret": false,
+      "art_hint": "쥐의 질주"
+    },
+    {
+      "uid": "gate_forest_double_jump",
+      "type": "gate",
+      "region": "forest",
+      "position": [
+        5440,
+        3424
+      ],
+      "requires": [
+        "double_jump"
+      ],
+      "secret": false,
+      "art_hint": "두 번째 도약"
+    },
+    {
+      "uid": "door_gate_forest",
+      "type": "gate",
+      "region": "forest",
+      "position": [
+        5696,
+        2528
+      ],
+      "requires": [],
+      "opens_with": "door_forest",
+      "art_hint": "반대편에서 열린다"
+    },
+    {
+      "uid": "enemy_forest_3",
+      "id": "cedar_demon",
+      "type": "enemy",
+      "region": "forest",
+      "position": [
+        6496,
+        2784
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_forest_4",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "forest",
+      "position": [
+        7552,
+        2912
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_forest_1",
+      "type": "life",
+      "region": "forest",
+      "position": [
+        7136,
+        3168
+      ]
+    },
+    {
+      "uid": "gate_forest_crawl",
+      "type": "gate",
+      "region": "forest",
+      "position": [
+        6464,
+        3424
+      ],
+      "requires": [
+        "crawl"
+      ],
+      "secret": false,
+      "art_hint": "틈새 기기"
+    },
+    {
+      "uid": "gate_forest_vision",
+      "type": "gate",
+      "region": "forest",
+      "position": [
+        6976,
+        3424
+      ],
+      "requires": [
+        "vision"
+      ],
+      "secret": true,
+      "art_hint": "광질 시야"
+    },
+    {
+      "uid": "crystal_marsh_1",
+      "type": "crystal",
+      "region": "marsh",
+      "position": [
+        8544,
+        2944
+      ]
+    },
+    {
+      "uid": "door_marsh",
+      "id": "door_marsh",
+      "target": "door_marsh",
+      "type": "switch",
+      "region": "marsh",
+      "position": [
+        10016,
+        2528
+      ],
+      "one_way": true
+    },
+    {
+      "uid": "gate_marsh_dash",
+      "type": "gate",
+      "region": "marsh",
+      "position": [
+        9152,
+        3424
+      ],
+      "requires": [
+        "dash"
+      ],
+      "secret": false,
+      "art_hint": "쥐의 질주"
+    },
+    {
+      "uid": "gate_marsh_wall_cling",
+      "type": "gate",
+      "region": "marsh",
+      "position": [
+        10048,
+        3424
+      ],
+      "requires": [
+        "wall_cling"
+      ],
+      "secret": false,
+      "art_hint": "벽의 발톱"
+    },
+    {
+      "uid": "door_gate_marsh",
+      "type": "gate",
+      "region": "marsh",
+      "position": [
+        9824,
+        2656
+      ],
+      "requires": [],
+      "opens_with": "door_marsh",
+      "art_hint": "반대편에서 열린다"
+    },
+    {
+      "uid": "enemy_marsh_3",
+      "id": "cedar_demon",
+      "type": "enemy",
+      "region": "marsh",
+      "position": [
+        10688,
+        2944
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_marsh_4",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "marsh",
+      "position": [
+        11648,
+        2912
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_marsh_1",
+      "type": "life",
+      "region": "marsh",
+      "position": [
+        11232,
+        3168
+      ]
+    },
+    {
+      "uid": "gate_marsh_wall_jump",
+      "type": "gate",
+      "region": "marsh",
+      "position": [
+        10336,
+        3424
+      ],
+      "requires": [
+        "wall_jump"
+      ],
+      "secret": false,
+      "art_hint": "벽 차오르기"
+    },
+    {
+      "uid": "gate_marsh_crawl",
+      "type": "gate",
+      "region": "marsh",
+      "position": [
+        10816,
+        3424
+      ],
+      "requires": [
+        "crawl"
+      ],
+      "secret": false,
+      "art_hint": "틈새 기기"
+    },
+    {
+      "uid": "gate_marsh_vision",
+      "type": "gate",
+      "region": "marsh",
+      "position": [
+        11072,
+        3424
+      ],
+      "requires": [
+        "vision"
+      ],
+      "secret": true,
+      "art_hint": "광질 시야"
+    },
+    {
+      "uid": "crystal_mine_1",
+      "type": "crystal",
+      "region": "mine",
+      "position": [
+        12832,
+        2912
+      ]
+    },
+    {
+      "uid": "door_mine",
+      "id": "door_mine",
+      "target": "door_mine",
+      "type": "switch",
+      "region": "mine",
+      "position": [
+        14016,
+        2528
+      ],
+      "one_way": true
+    },
+    {
+      "uid": "gate_mine_dash",
+      "type": "gate",
+      "region": "mine",
+      "position": [
+        13376,
+        3424
+      ],
+      "requires": [
+        "dash"
+      ],
+      "secret": false,
+      "art_hint": "쥐의 질주"
+    },
+    {
+      "uid": "gate_mine_double_jump",
+      "type": "gate",
+      "region": "mine",
+      "position": [
+        13632,
+        3424
+      ],
+      "requires": [
+        "double_jump"
+      ],
+      "secret": false,
+      "art_hint": "두 번째 도약"
+    },
+    {
+      "uid": "gate_mine_wall_cling",
+      "type": "gate",
+      "region": "mine",
+      "position": [
+        14016,
+        3424
+      ],
+      "requires": [
+        "wall_cling"
+      ],
+      "secret": false,
+      "art_hint": "벽의 발톱"
+    },
+    {
+      "uid": "door_gate_mine",
+      "type": "gate",
+      "region": "mine",
+      "position": [
+        13952,
+        2528
+      ],
+      "requires": [],
+      "opens_with": "door_mine",
+      "art_hint": "반대편에서 열린다"
+    },
+    {
+      "uid": "enemy_mine_3",
+      "id": "cedar_demon",
+      "type": "enemy",
+      "region": "mine",
+      "position": [
+        14752,
+        2784
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_mine_4",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "mine",
+      "position": [
+        15744,
+        3040
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_mine_1",
+      "type": "life",
+      "region": "mine",
+      "position": [
+        15424,
+        3168
+      ]
+    },
+    {
+      "uid": "gate_mine_light_throw",
+      "type": "gate",
+      "region": "mine",
+      "position": [
+        15552,
+        3424
+      ],
+      "requires": [
+        "light_throw"
+      ],
+      "secret": false,
+      "art_hint": "천륜 빛 투척"
+    },
+    {
+      "uid": "crystal_fortress_1",
+      "type": "crystal",
+      "region": "fortress",
+      "position": [
+        16928,
+        2912
+      ]
+    },
+    {
+      "uid": "door_fortress",
+      "id": "door_fortress",
+      "target": "door_fortress",
+      "type": "switch",
+      "region": "fortress",
+      "position": [
+        18208,
+        2528
+      ],
+      "one_way": true
+    },
+    {
+      "uid": "gate_fortress_dash",
+      "type": "gate",
+      "region": "fortress",
+      "position": [
+        17280,
+        3424
+      ],
+      "requires": [
+        "dash"
+      ],
+      "secret": false,
+      "art_hint": "쥐의 질주"
+    },
+    {
+      "uid": "gate_fortress_double_jump",
+      "type": "gate",
+      "region": "fortress",
+      "position": [
+        17632,
+        3424
+      ],
+      "requires": [
+        "double_jump"
+      ],
+      "secret": false,
+      "art_hint": "두 번째 도약"
+    },
+    {
+      "uid": "door_gate_fortress",
+      "type": "gate",
+      "region": "fortress",
+      "position": [
+        17984,
+        2528
+      ],
+      "requires": [],
+      "opens_with": "door_fortress",
+      "art_hint": "반대편에서 열린다"
+    },
+    {
+      "uid": "enemy_fortress_3",
+      "id": "cedar_demon",
+      "type": "enemy",
+      "region": "fortress",
+      "position": [
+        18784,
+        2912
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_fortress_4",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "fortress",
+      "position": [
+        19840,
+        2912
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_fortress_1",
+      "type": "life",
+      "region": "fortress",
+      "position": [
+        19520,
+        3168
+      ]
+    },
+    {
+      "uid": "gate_fortress_wall_jump",
+      "type": "gate",
+      "region": "fortress",
+      "position": [
+        18496,
+        3424
+      ],
+      "requires": [
+        "wall_jump"
+      ],
+      "secret": false,
+      "art_hint": "벽 차오르기"
+    },
+    {
+      "uid": "gate_fortress_crawl",
+      "type": "gate",
+      "region": "fortress",
+      "position": [
+        18784,
+        3424
+      ],
+      "requires": [
+        "crawl"
+      ],
+      "secret": false,
+      "art_hint": "틈새 기기"
+    },
+    {
+      "uid": "gate_fortress_vision",
+      "type": "gate",
+      "region": "fortress",
+      "position": [
+        19296,
+        3424
+      ],
+      "requires": [
+        "vision"
+      ],
+      "secret": true,
+      "art_hint": "광질 시야"
+    },
+    {
+      "uid": "gate_fortress_light_throw",
+      "type": "gate",
+      "region": "fortress",
+      "position": [
+        19648,
+        3424
+      ],
+      "requires": [
+        "light_throw"
+      ],
+      "secret": false,
+      "art_hint": "천륜 빛 투척"
+    },
+    {
+      "uid": "enemy_landing_5",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "landing",
+      "position": [
+        480,
+        3808
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_landing_6",
+      "id": "cedar_archer",
+      "type": "enemy",
+      "region": "landing",
+      "position": [
+        1984,
+        4064
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "gate_landing_double_jump",
+      "type": "gate",
+      "region": "landing",
+      "position": [
+        1344,
+        3552
+      ],
+      "requires": [
+        "double_jump"
+      ],
+      "secret": false,
+      "art_hint": "두 번째 도약"
+    },
+    {
+      "uid": "life_landing_5",
+      "type": "life",
+      "region": "landing",
+      "position": [
+        2336,
+        4576
+      ]
+    },
+    {
+      "uid": "crystal_landing_2",
+      "type": "crystal",
+      "region": "landing",
+      "position": [
+        2880,
+        4192
+      ]
+    },
+    {
+      "uid": "crystal_landing_5",
+      "type": "crystal",
+      "region": "landing",
+      "position": [
+        2432,
+        3680
+      ]
+    },
+    {
+      "uid": "enemy_forest_5",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "forest",
+      "position": [
+        4704,
+        3808
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "gate_forest_wall_cling",
+      "type": "gate",
+      "region": "forest",
+      "position": [
+        5824,
+        3456
+      ],
+      "requires": [
+        "wall_cling"
+      ],
+      "secret": false,
+      "art_hint": "벽의 발톱"
+    },
+    {
+      "uid": "enemy_forest_6",
+      "id": "cedar_archer",
+      "type": "enemy",
+      "region": "forest",
+      "position": [
+        6208,
+        3968
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_forest_5",
+      "type": "life",
+      "region": "forest",
+      "position": [
+        6528,
+        4480
+      ]
+    },
+    {
+      "uid": "crystal_forest_2",
+      "type": "crystal",
+      "region": "forest",
+      "position": [
+        6976,
+        4192
+      ]
+    },
+    {
+      "uid": "crystal_forest_5",
+      "type": "crystal",
+      "region": "forest",
+      "position": [
+        6752,
+        3680
+      ]
+    },
+    {
+      "uid": "gate_forest_wall_jump",
+      "type": "gate",
+      "region": "forest",
+      "position": [
+        6336,
+        3456
+      ],
+      "requires": [
+        "wall_jump"
+      ],
+      "secret": false,
+      "art_hint": "벽 차오르기"
+    },
+    {
+      "uid": "gate_forest_light_throw",
+      "type": "gate",
+      "region": "forest",
+      "position": [
+        7264,
+        3552
+      ],
+      "requires": [
+        "light_throw"
+      ],
+      "secret": false,
+      "art_hint": "천륜 빛 투척"
+    },
+    {
+      "uid": "enemy_marsh_5",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "marsh",
+      "position": [
+        8640,
+        3808
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "gate_marsh_double_jump",
+      "type": "gate",
+      "region": "marsh",
+      "position": [
+        9632,
+        3456
+      ],
+      "requires": [
+        "double_jump"
+      ],
+      "secret": false,
+      "art_hint": "두 번째 도약"
+    },
+    {
+      "uid": "enemy_marsh_6",
+      "id": "cedar_archer",
+      "type": "enemy",
+      "region": "marsh",
+      "position": [
+        10272,
+        3936
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_marsh_5",
+      "type": "life",
+      "region": "marsh",
+      "position": [
+        10496,
+        4576
+      ]
+    },
+    {
+      "uid": "crystal_marsh_2",
+      "type": "crystal",
+      "region": "marsh",
+      "position": [
+        11168,
+        4192
+      ]
+    },
+    {
+      "uid": "crystal_marsh_5",
+      "type": "crystal",
+      "region": "marsh",
+      "position": [
+        10784,
+        3680
+      ]
+    },
+    {
+      "uid": "gate_marsh_light_throw",
+      "type": "gate",
+      "region": "marsh",
+      "position": [
+        11456,
+        3456
+      ],
+      "requires": [
+        "light_throw"
+      ],
+      "secret": false,
+      "art_hint": "천륜 빛 투척"
+    },
+    {
+      "uid": "enemy_mine_5",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "mine",
+      "position": [
+        12864,
+        3808
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_mine_6",
+      "id": "cedar_archer",
+      "type": "enemy",
+      "region": "mine",
+      "position": [
+        14176,
+        3936
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_mine_5",
+      "type": "life",
+      "region": "mine",
+      "position": [
+        14688,
+        4448
+      ]
+    },
+    {
+      "uid": "crystal_mine_2",
+      "type": "crystal",
+      "region": "mine",
+      "position": [
+        15232,
+        4320
+      ]
+    },
+    {
+      "uid": "crystal_mine_5",
+      "type": "crystal",
+      "region": "mine",
+      "position": [
+        14944,
+        3680
+      ]
+    },
+    {
+      "uid": "gate_mine_wall_jump",
+      "type": "gate",
+      "region": "mine",
+      "position": [
+        14400,
+        3552
+      ],
+      "requires": [
+        "wall_jump"
+      ],
+      "secret": false,
+      "art_hint": "벽 차오르기"
+    },
+    {
+      "uid": "gate_mine_crawl",
+      "type": "gate",
+      "region": "mine",
+      "position": [
+        14784,
+        3552
+      ],
+      "requires": [
+        "crawl"
+      ],
+      "secret": false,
+      "art_hint": "틈새 기기"
+    },
+    {
+      "uid": "gate_mine_vision",
+      "type": "gate",
+      "region": "mine",
+      "position": [
+        15040,
+        3456
+      ],
+      "requires": [
+        "vision"
+      ],
+      "secret": true,
+      "art_hint": "광질 시야"
+    },
+    {
+      "uid": "enemy_fortress_5",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "fortress",
+      "position": [
+        16960,
+        3808
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_fortress_6",
+      "id": "cedar_archer",
+      "type": "enemy",
+      "region": "fortress",
+      "position": [
+        18304,
+        4064
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "gate_fortress_wall_cling",
+      "type": "gate",
+      "region": "fortress",
+      "position": [
+        18048,
+        3552
+      ],
+      "requires": [
+        "wall_cling"
+      ],
+      "secret": false,
+      "art_hint": "벽의 발톱"
+    },
+    {
+      "uid": "life_fortress_5",
+      "type": "life",
+      "region": "fortress",
+      "position": [
+        18816,
+        4448
+      ]
+    },
+    {
+      "uid": "crystal_fortress_2",
+      "type": "crystal",
+      "region": "fortress",
+      "position": [
+        19296,
+        4224
+      ]
+    },
+    {
+      "uid": "crystal_fortress_5",
+      "type": "crystal",
+      "region": "fortress",
+      "position": [
+        18912,
+        3808
+      ]
+    },
+    {
+      "uid": "enemy_landing_8",
+      "id": "cedar_demon",
+      "type": "enemy",
+      "region": "landing",
+      "position": [
+        864,
+        4992
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_landing_2",
+      "type": "life",
+      "region": "landing",
+      "position": [
+        1568,
+        4704
+      ]
+    },
+    {
+      "uid": "crystal_landing_3",
+      "type": "crystal",
+      "region": "landing",
+      "position": [
+        1440,
+        5344
+      ]
+    },
+    {
+      "uid": "enemy_landing_7",
+      "id": "cedar_wisp",
+      "type": "enemy",
+      "region": "landing",
+      "position": [
+        3168,
+        4768
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_landing_9",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "landing",
+      "position": [
+        2688,
+        5600
+      ],
+      "elite": true,
+      "patrol": 96
+    },
+    {
+      "uid": "life_landing_3",
+      "type": "life",
+      "region": "landing",
+      "position": [
+        3584,
+        5600
+      ]
+    },
+    {
+      "uid": "lore_landing",
+      "type": "lore_item",
+      "region": "landing",
+      "position": [
+        3712,
+        4736
+      ],
+      "requires": [
+        "vision"
+      ],
+      "secret": true
+    },
+    {
+      "uid": "enemy_forest_8",
+      "id": "cedar_demon",
+      "type": "enemy",
+      "region": "forest",
+      "position": [
+        5184,
+        4960
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_forest_2",
+      "type": "life",
+      "region": "forest",
+      "position": [
+        5440,
+        4704
+      ]
+    },
+    {
+      "uid": "crystal_forest_3",
+      "type": "crystal",
+      "region": "forest",
+      "position": [
+        5568,
+        5344
+      ]
+    },
+    {
+      "uid": "enemy_forest_7",
+      "id": "cedar_wisp",
+      "type": "enemy",
+      "region": "forest",
+      "position": [
+        7296,
+        4768
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_forest_9",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "forest",
+      "position": [
+        6720,
+        5600
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_forest_3",
+      "type": "life",
+      "region": "forest",
+      "position": [
+        7712,
+        5472
+      ]
+    },
+    {
+      "uid": "lore_forest",
+      "type": "lore_item",
+      "region": "forest",
+      "position": [
+        7808,
+        4704
+      ],
+      "requires": [
+        "vision"
+      ],
+      "secret": true
+    },
+    {
+      "uid": "enemy_marsh_8",
+      "id": "cedar_demon",
+      "type": "enemy",
+      "region": "marsh",
+      "position": [
+        9152,
+        4960
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_marsh_2",
+      "type": "life",
+      "region": "marsh",
+      "position": [
+        9664,
+        4736
+      ]
+    },
+    {
+      "uid": "crystal_marsh_3",
+      "type": "crystal",
+      "region": "marsh",
+      "position": [
+        9568,
+        5344
+      ]
+    },
+    {
+      "uid": "enemy_marsh_7",
+      "id": "cedar_wisp",
+      "type": "enemy",
+      "region": "marsh",
+      "position": [
+        11392,
+        4768
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_marsh_9",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "marsh",
+      "position": [
+        10944,
+        5600
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_marsh_3",
+      "type": "life",
+      "region": "marsh",
+      "position": [
+        11648,
+        5472
+      ]
+    },
+    {
+      "uid": "lore_marsh",
+      "type": "lore_item",
+      "region": "marsh",
+      "position": [
+        11840,
+        4704
+      ],
+      "requires": [
+        "vision"
+      ],
+      "secret": true
+    },
+    {
+      "uid": "enemy_mine_8",
+      "id": "cedar_demon",
+      "type": "enemy",
+      "region": "mine",
+      "position": [
+        13248,
+        4992
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_mine_2",
+      "type": "life",
+      "region": "mine",
+      "position": [
+        13856,
+        4704
+      ]
+    },
+    {
+      "uid": "crystal_mine_3",
+      "type": "crystal",
+      "region": "mine",
+      "position": [
+        13696,
+        5440
+      ]
+    },
+    {
+      "uid": "enemy_mine_7",
+      "id": "cedar_wisp",
+      "type": "enemy",
+      "region": "mine",
+      "position": [
+        15488,
+        4768
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_mine_9",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "mine",
+      "position": [
+        14976,
+        5600
+      ],
+      "elite": true,
+      "patrol": 96
+    },
+    {
+      "uid": "life_mine_3",
+      "type": "life",
+      "region": "mine",
+      "position": [
+        15840,
+        5568
+      ]
+    },
+    {
+      "uid": "lore_mine",
+      "type": "lore_item",
+      "region": "mine",
+      "position": [
+        15968,
+        4736
+      ],
+      "requires": [
+        "vision"
+      ],
+      "secret": true
+    },
+    {
+      "uid": "enemy_fortress_8",
+      "id": "cedar_demon",
+      "type": "enemy",
+      "region": "fortress",
+      "position": [
+        17216,
+        4960
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_fortress_2",
+      "type": "life",
+      "region": "fortress",
+      "position": [
+        17856,
+        4832
+      ]
+    },
+    {
+      "uid": "crystal_fortress_3",
+      "type": "crystal",
+      "region": "fortress",
+      "position": [
+        17760,
+        5344
+      ]
+    },
+    {
+      "uid": "enemy_fortress_7",
+      "id": "cedar_wisp",
+      "type": "enemy",
+      "region": "fortress",
+      "position": [
+        19584,
+        4768
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_fortress_9",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "fortress",
+      "position": [
+        19136,
+        5600
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_fortress_3",
+      "type": "life",
+      "region": "fortress",
+      "position": [
+        19968,
+        5600
+      ]
+    },
+    {
+      "uid": "lore_fortress",
+      "type": "lore_item",
+      "region": "fortress",
+      "position": [
+        20064,
+        4736
+      ],
+      "requires": [
+        "vision"
+      ],
+      "secret": true
+    },
+    {
+      "uid": "crystal_village_0",
+      "type": "crystal",
+      "region": "village",
+      "position": [
+        1824,
+        6880
+      ]
+    },
+    {
+      "uid": "altar_vision",
+      "id": "vision",
+      "type": "altar",
+      "region": "village",
+      "position": [
+        832,
+        6880
+      ]
+    },
+    {
+      "uid": "enemy_ridge_0",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "ridge",
+      "position": [
+        4736,
+        6368
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_ridge_1",
+      "id": "cedar_archer",
+      "type": "enemy",
+      "region": "ridge",
+      "position": [
+        5728,
+        6496
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "crystal_ridge_0",
+      "type": "crystal",
+      "region": "ridge",
+      "position": [
+        5920,
+        6880
+      ]
+    },
+    {
+      "uid": "altar_light_throw",
+      "id": "light_throw",
+      "type": "altar",
+      "region": "ridge",
+      "position": [
+        4992,
+        6880
+      ]
+    },
+    {
+      "uid": "enemy_ridge_10",
+      "id": "cedar_colossus",
+      "type": "enemy",
+      "region": "ridge",
+      "position": [
+        7232,
+        6880
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_skywalk_0",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "skywalk",
+      "position": [
+        8864,
+        6528
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_skywalk_1",
+      "id": "cedar_archer",
+      "type": "enemy",
+      "region": "skywalk",
+      "position": [
+        9696,
+        6496
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "crystal_skywalk_0",
+      "type": "crystal",
+      "region": "skywalk",
+      "position": [
+        9920,
+        6880
+      ]
+    },
+    {
+      "uid": "enemy_skywalk_10",
+      "id": "cedar_colossus",
+      "type": "enemy",
+      "region": "skywalk",
+      "position": [
+        11392,
+        6880
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_deep_0",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "deep",
+      "position": [
+        12928,
+        6368
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_deep_1",
+      "id": "cedar_archer",
+      "type": "enemy",
+      "region": "deep",
+      "position": [
+        13952,
+        6528
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "crystal_deep_0",
+      "type": "crystal",
+      "region": "deep",
+      "position": [
+        14112,
+        6880
+      ]
+    },
+    {
+      "uid": "enemy_deep_10",
+      "id": "cedar_colossus",
+      "type": "enemy",
+      "region": "deep",
+      "position": [
+        15488,
+        6880
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_crystal_0",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "crystal",
+      "position": [
+        17024,
+        6368
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_crystal_1",
+      "id": "cedar_archer",
+      "type": "enemy",
+      "region": "crystal",
+      "position": [
+        17888,
+        6496
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "crystal_crystal_0",
+      "type": "crystal",
+      "region": "crystal",
+      "position": [
+        18208,
+        6880
+      ]
+    },
+    {
+      "uid": "boss_fortress",
+      "id": "kala_ushumgal",
+      "type": "boss",
+      "region": "fortress",
+      "position": [
+        19328,
+        5856
+      ],
+      "display_name": "잊힌 이완의 수호자",
+      "placeholder": true,
+      "patrol": 256
+    },
+    {
+      "uid": "enemy_crystal_10",
+      "id": "cedar_colossus",
+      "type": "enemy",
+      "region": "crystal",
+      "position": [
+        19552,
+        6880
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_village_0",
+      "type": "life",
+      "region": "village",
+      "position": [
+        1312,
+        7136
+      ]
+    },
+    {
+      "uid": "crystal_village_4",
+      "type": "crystal",
+      "region": "village",
+      "position": [
+        3808,
+        7808
+      ]
+    },
+    {
+      "uid": "enemy_ridge_2",
+      "id": "cedar_wisp",
+      "type": "enemy",
+      "region": "ridge",
+      "position": [
+        5152,
+        7584
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_ridge_0",
+      "type": "life",
+      "region": "ridge",
+      "position": [
+        5440,
+        7136
+      ]
+    },
+    {
+      "uid": "life_ridge_4",
+      "type": "life",
+      "region": "ridge",
+      "position": [
+        4448,
+        8032
+      ]
+    },
+    {
+      "uid": "crystal_ridge_4",
+      "type": "crystal",
+      "region": "ridge",
+      "position": [
+        7872,
+        7808
+      ]
+    },
+    {
+      "uid": "enemy_skywalk_2",
+      "id": "cedar_wisp",
+      "type": "enemy",
+      "region": "skywalk",
+      "position": [
+        9152,
+        7584
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_skywalk_0",
+      "type": "life",
+      "region": "skywalk",
+      "position": [
+        9440,
+        7136
+      ]
+    },
+    {
+      "uid": "crystal_skywalk_4",
+      "type": "crystal",
+      "region": "skywalk",
+      "position": [
+        11936,
+        7904
+      ]
+    },
+    {
+      "uid": "enemy_deep_2",
+      "id": "cedar_wisp",
+      "type": "enemy",
+      "region": "deep",
+      "position": [
+        13280,
+        7584
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_deep_0",
+      "type": "life",
+      "region": "deep",
+      "position": [
+        13696,
+        7136
+      ]
+    },
+    {
+      "uid": "life_deep_4",
+      "type": "life",
+      "region": "deep",
+      "position": [
+        12672,
+        8032
+      ]
+    },
+    {
+      "uid": "crystal_deep_4",
+      "type": "crystal",
+      "region": "deep",
+      "position": [
+        16064,
+        7808
+      ]
+    },
+    {
+      "uid": "enemy_crystal_2",
+      "id": "cedar_wisp",
+      "type": "enemy",
+      "region": "crystal",
+      "position": [
+        17408,
+        7584
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_crystal_0",
+      "type": "life",
+      "region": "crystal",
+      "position": [
+        17728,
+        7136
+      ]
+    },
+    {
+      "uid": "crystal_crystal_4",
+      "type": "crystal",
+      "region": "crystal",
+      "position": [
+        20128,
+        7776
+      ]
+    },
+    {
+      "uid": "life_village_4",
+      "type": "life",
+      "region": "village",
+      "position": [
+        448,
+        8064
+      ]
+    },
+    {
+      "uid": "crystal_village_1",
+      "type": "crystal",
+      "region": "village",
+      "position": [
+        352,
+        8672
+      ]
+    },
+    {
+      "uid": "door_village",
+      "id": "door_village",
+      "target": "door_village",
+      "type": "switch",
+      "region": "village",
+      "position": [
+        1728,
+        8320
+      ],
+      "one_way": true
+    },
+    {
+      "uid": "gate_village_dash",
+      "type": "gate",
+      "region": "village",
+      "position": [
+        992,
+        9184
+      ],
+      "requires": [
+        "dash"
+      ],
+      "secret": false,
+      "art_hint": "쥐의 질주"
+    },
+    {
+      "uid": "gate_village_double_jump",
+      "type": "gate",
+      "region": "village",
+      "position": [
+        1408,
+        9184
+      ],
+      "requires": [
+        "double_jump"
+      ],
+      "secret": false,
+      "art_hint": "두 번째 도약"
+    },
+    {
+      "uid": "gate_village_wall_jump",
+      "type": "gate",
+      "region": "village",
+      "position": [
+        1984,
+        9184
+      ],
+      "requires": [
+        "wall_jump"
+      ],
+      "secret": false,
+      "art_hint": "벽 차오르기"
+    },
+    {
+      "uid": "door_gate_village",
+      "type": "gate",
+      "region": "village",
+      "position": [
+        1728,
+        8320
+      ],
+      "requires": [],
+      "opens_with": "door_village",
+      "art_hint": "반대편에서 열린다"
+    },
+    {
+      "uid": "life_village_1",
+      "type": "life",
+      "region": "village",
+      "position": [
+        3136,
+        8928
+      ]
+    },
+    {
+      "uid": "gate_village_crawl",
+      "type": "gate",
+      "region": "village",
+      "position": [
+        2432,
+        9184
+      ],
+      "requires": [
+        "crawl"
+      ],
+      "secret": false,
+      "art_hint": "틈새 기기"
+    },
+    {
+      "uid": "gate_village_vision",
+      "type": "gate",
+      "region": "village",
+      "position": [
+        2784,
+        9184
+      ],
+      "requires": [
+        "vision"
+      ],
+      "secret": true,
+      "art_hint": "광질 시야"
+    },
+    {
+      "uid": "gate_village_light_throw",
+      "type": "gate",
+      "region": "village",
+      "position": [
+        3168,
+        9184
+      ],
+      "requires": [
+        "light_throw"
+      ],
+      "secret": false,
+      "art_hint": "천륜 빛 투척"
+    },
+    {
+      "uid": "crystal_ridge_1",
+      "type": "crystal",
+      "region": "ridge",
+      "position": [
+        4640,
+        8672
+      ]
+    },
+    {
+      "uid": "door_ridge",
+      "id": "door_ridge",
+      "target": "door_ridge",
+      "type": "switch",
+      "region": "ridge",
+      "position": [
+        5760,
+        8288
+      ],
+      "one_way": true
+    },
+    {
+      "uid": "gate_ridge_dash",
+      "type": "gate",
+      "region": "ridge",
+      "position": [
+        5056,
+        9184
+      ],
+      "requires": [
+        "dash"
+      ],
+      "secret": false,
+      "art_hint": "쥐의 질주"
+    },
+    {
+      "uid": "gate_ridge_double_jump",
+      "type": "gate",
+      "region": "ridge",
+      "position": [
+        5440,
+        9184
+      ],
+      "requires": [
+        "double_jump"
+      ],
+      "secret": false,
+      "art_hint": "두 번째 도약"
+    },
+    {
+      "uid": "gate_ridge_wall_cling",
+      "type": "gate",
+      "region": "ridge",
+      "position": [
+        5920,
+        9184
+      ],
+      "requires": [
+        "wall_cling"
+      ],
+      "secret": false,
+      "art_hint": "벽의 발톱"
+    },
+    {
+      "uid": "door_gate_ridge",
+      "type": "gate",
+      "region": "ridge",
+      "position": [
+        5728,
+        8288
+      ],
+      "requires": [],
+      "opens_with": "door_ridge",
+      "art_hint": "반대편에서 열린다"
+    },
+    {
+      "uid": "enemy_ridge_3",
+      "id": "cedar_demon",
+      "type": "enemy",
+      "region": "ridge",
+      "position": [
+        6528,
+        8672
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_ridge_4",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "ridge",
+      "position": [
+        7552,
+        8672
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_ridge_1",
+      "type": "life",
+      "region": "ridge",
+      "position": [
+        7232,
+        8960
+      ]
+    },
+    {
+      "uid": "gate_ridge_wall_jump",
+      "type": "gate",
+      "region": "ridge",
+      "position": [
+        6176,
+        9184
+      ],
+      "requires": [
+        "wall_jump"
+      ],
+      "secret": false,
+      "art_hint": "벽 차오르기"
+    },
+    {
+      "uid": "gate_ridge_crawl",
+      "type": "gate",
+      "region": "ridge",
+      "position": [
+        6592,
+        9184
+      ],
+      "requires": [
+        "crawl"
+      ],
+      "secret": false,
+      "art_hint": "틈새 기기"
+    },
+    {
+      "uid": "gate_ridge_vision",
+      "type": "gate",
+      "region": "ridge",
+      "position": [
+        6944,
+        9184
+      ],
+      "requires": [
+        "vision"
+      ],
+      "secret": true,
+      "art_hint": "광질 시야"
+    },
+    {
+      "uid": "gate_ridge_light_throw",
+      "type": "gate",
+      "region": "ridge",
+      "position": [
+        7360,
+        9184
+      ],
+      "requires": [
+        "light_throw"
+      ],
+      "secret": false,
+      "art_hint": "천륜 빛 투척"
+    },
+    {
+      "uid": "life_skywalk_4",
+      "type": "life",
+      "region": "skywalk",
+      "position": [
+        8544,
+        8064
+      ]
+    },
+    {
+      "uid": "crystal_skywalk_1",
+      "type": "crystal",
+      "region": "skywalk",
+      "position": [
+        8640,
+        8768
+      ]
+    },
+    {
+      "uid": "door_skywalk",
+      "id": "door_skywalk",
+      "target": "door_skywalk",
+      "type": "switch",
+      "region": "skywalk",
+      "position": [
+        9920,
+        8320
+      ],
+      "one_way": true
+    },
+    {
+      "uid": "gate_skywalk_dash",
+      "type": "gate",
+      "region": "skywalk",
+      "position": [
+        9120,
+        9184
+      ],
+      "requires": [
+        "dash"
+      ],
+      "secret": false,
+      "art_hint": "쥐의 질주"
+    },
+    {
+      "uid": "gate_skywalk_double_jump",
+      "type": "gate",
+      "region": "skywalk",
+      "position": [
+        9536,
+        9184
+      ],
+      "requires": [
+        "double_jump"
+      ],
+      "secret": false,
+      "art_hint": "두 번째 도약"
+    },
+    {
+      "uid": "gate_skywalk_wall_cling",
+      "type": "gate",
+      "region": "skywalk",
+      "position": [
+        9920,
+        9184
+      ],
+      "requires": [
+        "wall_cling"
+      ],
+      "secret": false,
+      "art_hint": "벽의 발톱"
+    },
+    {
+      "uid": "door_gate_skywalk",
+      "type": "gate",
+      "region": "skywalk",
+      "position": [
+        9696,
+        8288
+      ],
+      "requires": [],
+      "opens_with": "door_skywalk",
+      "art_hint": "반대편에서 열린다"
+    },
+    {
+      "uid": "enemy_skywalk_3",
+      "id": "cedar_demon",
+      "type": "enemy",
+      "region": "skywalk",
+      "position": [
+        10624,
+        8544
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_skywalk_4",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "skywalk",
+      "position": [
+        11648,
+        8672
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_skywalk_1",
+      "type": "life",
+      "region": "skywalk",
+      "position": [
+        11328,
+        8928
+      ]
+    },
+    {
+      "uid": "gate_skywalk_wall_jump",
+      "type": "gate",
+      "region": "skywalk",
+      "position": [
+        10400,
+        9184
+      ],
+      "requires": [
+        "wall_jump"
+      ],
+      "secret": false,
+      "art_hint": "벽 차오르기"
+    },
+    {
+      "uid": "gate_skywalk_vision",
+      "type": "gate",
+      "region": "skywalk",
+      "position": [
+        11136,
+        9184
+      ],
+      "requires": [
+        "vision"
+      ],
+      "secret": true,
+      "art_hint": "광질 시야"
+    },
+    {
+      "uid": "gate_skywalk_light_throw",
+      "type": "gate",
+      "region": "skywalk",
+      "position": [
+        11424,
+        9184
+      ],
+      "requires": [
+        "light_throw"
+      ],
+      "secret": false,
+      "art_hint": "천륜 빛 투척"
+    },
+    {
+      "uid": "crystal_deep_1",
+      "type": "crystal",
+      "region": "deep",
+      "position": [
+        12768,
+        8672
+      ]
+    },
+    {
+      "uid": "door_deep",
+      "id": "door_deep",
+      "target": "door_deep",
+      "type": "switch",
+      "region": "deep",
+      "position": [
+        13920,
+        8320
+      ],
+      "one_way": true
+    },
+    {
+      "uid": "gate_deep_dash",
+      "type": "gate",
+      "region": "deep",
+      "position": [
+        13248,
+        9184
+      ],
+      "requires": [
+        "dash"
+      ],
+      "secret": false,
+      "art_hint": "쥐의 질주"
+    },
+    {
+      "uid": "door_gate_deep",
+      "type": "gate",
+      "region": "deep",
+      "position": [
+        13920,
+        8320
+      ],
+      "requires": [],
+      "opens_with": "door_deep",
+      "art_hint": "반대편에서 열린다"
+    },
+    {
+      "uid": "enemy_deep_3",
+      "id": "cedar_demon",
+      "type": "enemy",
+      "region": "deep",
+      "position": [
+        14688,
+        8544
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_deep_4",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "deep",
+      "position": [
+        15776,
+        8672
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_deep_1",
+      "type": "life",
+      "region": "deep",
+      "position": [
+        15424,
+        8928
+      ]
+    },
+    {
+      "uid": "gate_deep_wall_jump",
+      "type": "gate",
+      "region": "deep",
+      "position": [
+        14400,
+        9184
+      ],
+      "requires": [
+        "wall_jump"
+      ],
+      "secret": false,
+      "art_hint": "벽 차오르기"
+    },
+    {
+      "uid": "gate_deep_crawl",
+      "type": "gate",
+      "region": "deep",
+      "position": [
+        14656,
+        9184
+      ],
+      "requires": [
+        "crawl"
+      ],
+      "secret": false,
+      "art_hint": "틈새 기기"
+    },
+    {
+      "uid": "gate_deep_vision",
+      "type": "gate",
+      "region": "deep",
+      "position": [
+        15168,
+        9184
+      ],
+      "requires": [
+        "vision"
+      ],
+      "secret": true,
+      "art_hint": "광질 시야"
+    },
+    {
+      "uid": "gate_deep_light_throw",
+      "type": "gate",
+      "region": "deep",
+      "position": [
+        15520,
+        9184
+      ],
+      "requires": [
+        "light_throw"
+      ],
+      "secret": false,
+      "art_hint": "천륜 빛 투척"
+    },
+    {
+      "uid": "life_crystal_4",
+      "type": "life",
+      "region": "crystal",
+      "position": [
+        16768,
+        8064
+      ]
+    },
+    {
+      "uid": "crystal_crystal_1",
+      "type": "crystal",
+      "region": "crystal",
+      "position": [
+        16960,
+        8800
+      ]
+    },
+    {
+      "uid": "door_crystal",
+      "id": "door_crystal",
+      "target": "door_crystal",
+      "type": "switch",
+      "region": "crystal",
+      "position": [
+        18048,
+        8288
+      ],
+      "one_way": true
+    },
+    {
+      "uid": "gate_crystal_double_jump",
+      "type": "gate",
+      "region": "crystal",
+      "position": [
+        17728,
+        9184
+      ],
+      "requires": [
+        "double_jump"
+      ],
+      "secret": false,
+      "art_hint": "두 번째 도약"
+    },
+    {
+      "uid": "gate_crystal_wall_cling",
+      "type": "gate",
+      "region": "crystal",
+      "position": [
+        18112,
+        9184
+      ],
+      "requires": [
+        "wall_cling"
+      ],
+      "secret": false,
+      "art_hint": "벽의 발톱"
+    },
+    {
+      "uid": "door_gate_crystal",
+      "type": "gate",
+      "region": "crystal",
+      "position": [
+        18016,
+        8288
+      ],
+      "requires": [],
+      "opens_with": "door_crystal",
+      "art_hint": "반대편에서 열린다"
+    },
+    {
+      "uid": "enemy_crystal_3",
+      "id": "cedar_demon",
+      "type": "enemy",
+      "region": "crystal",
+      "position": [
+        18816,
+        8672
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_crystal_4",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "crystal",
+      "position": [
+        19840,
+        8672
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_crystal_1",
+      "type": "life",
+      "region": "crystal",
+      "position": [
+        19424,
+        8928
+      ]
+    },
+    {
+      "uid": "gate_crystal_crawl",
+      "type": "gate",
+      "region": "crystal",
+      "position": [
+        18976,
+        9184
+      ],
+      "requires": [
+        "crawl"
+      ],
+      "secret": false,
+      "art_hint": "틈새 기기"
+    },
+    {
+      "uid": "gate_crystal_light_throw",
+      "type": "gate",
+      "region": "crystal",
+      "position": [
+        19584,
+        9184
+      ],
+      "requires": [
+        "light_throw"
+      ],
+      "secret": false,
+      "art_hint": "천륜 빛 투척"
+    },
+    {
+      "uid": "gate_village_wall_cling",
+      "type": "gate",
+      "region": "village",
+      "position": [
+        1856,
+        9312
+      ],
+      "requires": [
+        "wall_cling"
+      ],
+      "secret": false,
+      "art_hint": "벽의 발톱"
+    },
+    {
+      "uid": "life_village_5",
+      "type": "life",
+      "region": "village",
+      "position": [
+        2304,
+        10240
+      ]
+    },
+    {
+      "uid": "crystal_village_2",
+      "type": "crystal",
+      "region": "village",
+      "position": [
+        2944,
+        9952
+      ]
+    },
+    {
+      "uid": "crystal_village_5",
+      "type": "crystal",
+      "region": "village",
+      "position": [
+        2624,
+        9440
+      ]
+    },
+    {
+      "uid": "enemy_ridge_5",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "ridge",
+      "position": [
+        4672,
+        9568
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_ridge_6",
+      "id": "cedar_archer",
+      "type": "enemy",
+      "region": "ridge",
+      "position": [
+        6016,
+        9696
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_ridge_5",
+      "type": "life",
+      "region": "ridge",
+      "position": [
+        6528,
+        10208
+      ]
+    },
+    {
+      "uid": "crystal_ridge_2",
+      "type": "crystal",
+      "region": "ridge",
+      "position": [
+        7072,
+        9952
+      ]
+    },
+    {
+      "uid": "crystal_ridge_5",
+      "type": "crystal",
+      "region": "ridge",
+      "position": [
+        6528,
+        9568
+      ]
+    },
+    {
+      "uid": "enemy_skywalk_5",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "skywalk",
+      "position": [
+        8832,
+        9568
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_skywalk_6",
+      "id": "cedar_archer",
+      "type": "enemy",
+      "region": "skywalk",
+      "position": [
+        10176,
+        9696
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_skywalk_5",
+      "type": "life",
+      "region": "skywalk",
+      "position": [
+        10560,
+        10208
+      ]
+    },
+    {
+      "uid": "crystal_skywalk_2",
+      "type": "crystal",
+      "region": "skywalk",
+      "position": [
+        11136,
+        9952
+      ]
+    },
+    {
+      "uid": "crystal_skywalk_5",
+      "type": "crystal",
+      "region": "skywalk",
+      "position": [
+        10816,
+        9440
+      ]
+    },
+    {
+      "uid": "gate_skywalk_crawl",
+      "type": "gate",
+      "region": "skywalk",
+      "position": [
+        10688,
+        9280
+      ],
+      "requires": [
+        "crawl"
+      ],
+      "secret": false,
+      "art_hint": "틈새 기기"
+    },
+    {
+      "uid": "enemy_deep_5",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "deep",
+      "position": [
+        12864,
+        9568
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_deep_6",
+      "id": "cedar_archer",
+      "type": "enemy",
+      "region": "deep",
+      "position": [
+        14240,
+        9696
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "gate_deep_double_jump",
+      "type": "gate",
+      "region": "deep",
+      "position": [
+        13632,
+        9312
+      ],
+      "requires": [
+        "double_jump"
+      ],
+      "secret": false,
+      "art_hint": "두 번째 도약"
+    },
+    {
+      "uid": "gate_deep_wall_cling",
+      "type": "gate",
+      "region": "deep",
+      "position": [
+        14112,
+        9312
+      ],
+      "requires": [
+        "wall_cling"
+      ],
+      "secret": false,
+      "art_hint": "벽의 발톱"
+    },
+    {
+      "uid": "life_deep_5",
+      "type": "life",
+      "region": "deep",
+      "position": [
+        14496,
+        10208
+      ]
+    },
+    {
+      "uid": "crystal_deep_2",
+      "type": "crystal",
+      "region": "deep",
+      "position": [
+        15232,
+        9952
+      ]
+    },
+    {
+      "uid": "crystal_deep_5",
+      "type": "crystal",
+      "region": "deep",
+      "position": [
+        14752,
+        9440
+      ]
+    },
+    {
+      "uid": "enemy_crystal_5",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "crystal",
+      "position": [
+        16864,
+        9664
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_crystal_6",
+      "id": "cedar_archer",
+      "type": "enemy",
+      "region": "crystal",
+      "position": [
+        18240,
+        9696
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "gate_crystal_dash",
+      "type": "gate",
+      "region": "crystal",
+      "position": [
+        17280,
+        9312
+      ],
+      "requires": [
+        "dash"
+      ],
+      "secret": false,
+      "art_hint": "쥐의 질주"
+    },
+    {
+      "uid": "life_crystal_5",
+      "type": "life",
+      "region": "crystal",
+      "position": [
+        18720,
+        10304
+      ]
+    },
+    {
+      "uid": "crystal_crystal_2",
+      "type": "crystal",
+      "region": "crystal",
+      "position": [
+        19392,
+        9952
+      ]
+    },
+    {
+      "uid": "crystal_crystal_5",
+      "type": "crystal",
+      "region": "crystal",
+      "position": [
+        18944,
+        9440
+      ]
+    },
+    {
+      "uid": "gate_crystal_wall_jump",
+      "type": "gate",
+      "region": "crystal",
+      "position": [
+        18592,
+        9280
+      ],
+      "requires": [
+        "wall_jump"
+      ],
+      "secret": false,
+      "art_hint": "벽 차오르기"
+    },
+    {
+      "uid": "gate_crystal_vision",
+      "type": "gate",
+      "region": "crystal",
+      "position": [
+        19264,
+        9312
+      ],
+      "requires": [
+        "vision"
+      ],
+      "secret": true,
+      "art_hint": "광질 시야"
+    },
+    {
+      "uid": "life_village_2",
+      "type": "life",
+      "region": "village",
+      "position": [
+        1568,
+        10464
+      ]
+    },
+    {
+      "uid": "crystal_village_3",
+      "type": "crystal",
+      "region": "village",
+      "position": [
+        1376,
+        11104
+      ]
+    },
+    {
+      "uid": "life_village_3",
+      "type": "life",
+      "region": "village",
+      "position": [
+        3488,
+        11232
+      ]
+    },
+    {
+      "uid": "lore_village",
+      "type": "lore_item",
+      "region": "village",
+      "position": [
+        3648,
+        10464
+      ],
+      "requires": [
+        "vision"
+      ],
+      "secret": true
+    },
+    {
+      "uid": "enemy_ridge_8",
+      "id": "cedar_demon",
+      "type": "enemy",
+      "region": "ridge",
+      "position": [
+        5152,
+        10848
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_ridge_2",
+      "type": "life",
+      "region": "ridge",
+      "position": [
+        5600,
+        10464
+      ]
+    },
+    {
+      "uid": "crystal_ridge_3",
+      "type": "crystal",
+      "region": "ridge",
+      "position": [
+        5440,
+        11104
+      ]
+    },
+    {
+      "uid": "enemy_ridge_7",
+      "id": "cedar_wisp",
+      "type": "enemy",
+      "region": "ridge",
+      "position": [
+        7232,
+        10528
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_ridge_9",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "ridge",
+      "position": [
+        6752,
+        11488
+      ],
+      "elite": true,
+      "patrol": 96
+    },
+    {
+      "uid": "life_ridge_3",
+      "type": "life",
+      "region": "ridge",
+      "position": [
+        7712,
+        11488
+      ]
+    },
+    {
+      "uid": "lore_ridge",
+      "type": "lore_item",
+      "region": "ridge",
+      "position": [
+        7808,
+        10592
+      ],
+      "requires": [
+        "vision"
+      ],
+      "secret": true
+    },
+    {
+      "uid": "enemy_skywalk_8",
+      "id": "cedar_demon",
+      "type": "enemy",
+      "region": "skywalk",
+      "position": [
+        9088,
+        10720
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_skywalk_2",
+      "type": "life",
+      "region": "skywalk",
+      "position": [
+        9696,
+        10464
+      ]
+    },
+    {
+      "uid": "crystal_skywalk_3",
+      "type": "crystal",
+      "region": "skywalk",
+      "position": [
+        9536,
+        11104
+      ]
+    },
+    {
+      "uid": "enemy_skywalk_7",
+      "id": "cedar_wisp",
+      "type": "enemy",
+      "region": "skywalk",
+      "position": [
+        11392,
+        10528
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_skywalk_9",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "skywalk",
+      "position": [
+        11040,
+        11360
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_skywalk_3",
+      "type": "life",
+      "region": "skywalk",
+      "position": [
+        11776,
+        11232
+      ]
+    },
+    {
+      "uid": "lore_skywalk",
+      "type": "lore_item",
+      "region": "skywalk",
+      "position": [
+        11904,
+        10624
+      ],
+      "requires": [
+        "vision"
+      ],
+      "secret": true
+    },
+    {
+      "uid": "boss_skywalk",
+      "id": "gugalanna",
+      "type": "boss",
+      "region": "skywalk",
+      "position": [
+        11232,
+        11488
+      ],
+      "display_name": "하늘 잔도의 수호자",
+      "placeholder": true,
+      "patrol": 256
+    },
+    {
+      "uid": "enemy_deep_8",
+      "id": "cedar_demon",
+      "type": "enemy",
+      "region": "deep",
+      "position": [
+        13248,
+        10720
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_deep_2",
+      "type": "life",
+      "region": "deep",
+      "position": [
+        13760,
+        10464
+      ]
+    },
+    {
+      "uid": "crystal_deep_3",
+      "type": "crystal",
+      "region": "deep",
+      "position": [
+        13632,
+        11104
+      ]
+    },
+    {
+      "uid": "enemy_deep_7",
+      "id": "cedar_wisp",
+      "type": "enemy",
+      "region": "deep",
+      "position": [
+        15488,
+        10528
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_deep_9",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "deep",
+      "position": [
+        15040,
+        11392
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_deep_3",
+      "type": "life",
+      "region": "deep",
+      "position": [
+        15904,
+        11232
+      ]
+    },
+    {
+      "uid": "lore_deep",
+      "type": "lore_item",
+      "region": "deep",
+      "position": [
+        15936,
+        10464
+      ],
+      "requires": [
+        "vision"
+      ],
+      "secret": true
+    },
+    {
+      "uid": "enemy_crystal_8",
+      "id": "cedar_demon",
+      "type": "enemy",
+      "region": "crystal",
+      "position": [
+        17216,
+        10720
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "life_crystal_2",
+      "type": "life",
+      "region": "crystal",
+      "position": [
+        17888,
+        10464
+      ]
+    },
+    {
+      "uid": "crystal_crystal_3",
+      "type": "crystal",
+      "region": "crystal",
+      "position": [
+        17728,
+        11104
+      ]
+    },
+    {
+      "uid": "enemy_crystal_7",
+      "id": "cedar_wisp",
+      "type": "enemy",
+      "region": "crystal",
+      "position": [
+        19584,
+        10656
+      ],
+      "elite": false,
+      "patrol": 96
+    },
+    {
+      "uid": "enemy_crystal_9",
+      "id": "cedar_sentinel",
+      "type": "enemy",
+      "region": "crystal",
+      "position": [
+        19040,
+        11392
+      ],
+      "elite": true,
+      "patrol": 96
+    },
+    {
+      "uid": "life_crystal_3",
+      "type": "life",
+      "region": "crystal",
+      "position": [
+        20000,
+        11328
+      ]
+    },
+    {
+      "uid": "lore_crystal",
+      "type": "lore_item",
+      "region": "crystal",
+      "position": [
+        20032,
+        10592
+      ],
+      "requires": [
+        "vision"
+      ],
+      "secret": true
+    },
+    {
+      "uid": "boss_crystal",
+      "id": "humbaba",
+      "type": "boss",
+      "region": "crystal",
+      "position": [
+        19392,
+        11232
+      ],
+      "display_name": "결정 봉인의 수호자",
+      "placeholder": true,
+      "patrol": 256
+    }
+  ],
+  "landmarks": [
+    {
+      "region": "landing",
+      "piece": 0,
+      "position": [
+        288,
+        992
+      ]
+    },
+    {
+      "region": "forest",
+      "piece": 0,
+      "position": [
+        4256,
+        864
+      ]
+    },
+    {
+      "region": "marsh",
+      "piece": 0,
+      "position": [
+        8480,
+        864
+      ]
+    },
+    {
+      "region": "marsh",
+      "piece": 1,
+      "position": [
+        10176,
+        1120
+      ]
+    },
+    {
+      "region": "mine",
+      "piece": 0,
+      "position": [
+        12544,
+        992
+      ]
+    },
+    {
+      "region": "mine",
+      "piece": 1,
+      "position": [
+        14464,
+        1120
+      ]
+    },
+    {
+      "region": "fortress",
+      "piece": 0,
+      "position": [
+        16672,
+        864
+      ]
+    },
+    {
+      "region": "fortress",
+      "piece": 1,
+      "position": [
+        18496,
+        1120
+      ]
+    },
+    {
+      "region": "landing",
+      "piece": 2,
+      "position": [
+        1120,
+        2016
+      ]
+    },
+    {
+      "region": "landing",
+      "piece": 1,
+      "position": [
+        2080,
+        1248
+      ]
+    },
+    {
+      "region": "forest",
+      "piece": 2,
+      "position": [
+        5088,
+        2016
+      ]
+    },
+    {
+      "region": "forest",
+      "piece": 1,
+      "position": [
+        6208,
+        1152
+      ]
+    },
+    {
+      "region": "marsh",
+      "piece": 2,
+      "position": [
+        9184,
+        2016
+      ]
+    },
+    {
+      "region": "mine",
+      "piece": 2,
+      "position": [
+        13376,
+        2016
+      ]
+    },
+    {
+      "region": "fortress",
+      "piece": 2,
+      "position": [
+        17472,
+        2016
+      ]
+    },
+    {
+      "region": "landing",
+      "piece": 3,
+      "position": [
+        3136,
+        2528
+      ]
+    },
+    {
+      "region": "forest",
+      "piece": 3,
+      "position": [
+        7136,
+        2528
+      ]
+    },
+    {
+      "region": "marsh",
+      "piece": 3,
+      "position": [
+        11232,
+        2528
+      ]
+    },
+    {
+      "region": "mine",
+      "piece": 3,
+      "position": [
+        15424,
+        2528
+      ]
+    },
+    {
+      "region": "fortress",
+      "piece": 3,
+      "position": [
+        19424,
+        2528
+      ]
+    },
+    {
+      "region": "landing",
+      "piece": 4,
+      "position": [
+        288,
+        3552
+      ]
+    },
+    {
+      "region": "landing",
+      "piece": 5,
+      "position": [
+        2080,
+        4192
+      ]
+    },
+    {
+      "region": "forest",
+      "piece": 4,
+      "position": [
+        4416,
+        3680
+      ]
+    },
+    {
+      "region": "forest",
+      "piece": 5,
+      "position": [
+        6112,
+        4224
+      ]
+    },
+    {
+      "region": "marsh",
+      "piece": 4,
+      "position": [
+        8480,
+        3552
+      ]
+    },
+    {
+      "region": "marsh",
+      "piece": 5,
+      "position": [
+        10272,
+        4192
+      ]
+    },
+    {
+      "region": "mine",
+      "piece": 4,
+      "position": [
+        12480,
+        3552
+      ]
+    },
+    {
+      "region": "mine",
+      "piece": 5,
+      "position": [
+        14304,
+        4224
+      ]
+    },
+    {
+      "region": "fortress",
+      "piece": 4,
+      "position": [
+        16800,
+        3712
+      ]
+    },
+    {
+      "region": "fortress",
+      "piece": 5,
+      "position": [
+        18368,
+        4192
+      ]
+    },
+    {
+      "region": "landing",
+      "piece": 6,
+      "position": [
+        736,
+        5088
+      ]
+    },
+    {
+      "region": "landing",
+      "piece": 7,
+      "position": [
+        2912,
+        5728
+      ]
+    },
+    {
+      "region": "forest",
+      "piece": 6,
+      "position": [
+        4896,
+        5088
+      ]
+    },
+    {
+      "region": "forest",
+      "piece": 7,
+      "position": [
+        7008,
+        5728
+      ]
+    },
+    {
+      "region": "marsh",
+      "piece": 6,
+      "position": [
+        9088,
+        5216
+      ]
+    },
+    {
+      "region": "marsh",
+      "piece": 7,
+      "position": [
+        11104,
+        5600
+      ]
+    },
+    {
+      "region": "mine",
+      "piece": 6,
+      "position": [
+        13088,
+        5088
+      ]
+    },
+    {
+      "region": "mine",
+      "piece": 7,
+      "position": [
+        15200,
+        5600
+      ]
+    },
+    {
+      "region": "fortress",
+      "piece": 6,
+      "position": [
+        17088,
+        5088
+      ]
+    },
+    {
+      "region": "fortress",
+      "piece": 7,
+      "position": [
+        19328,
+        5600
+      ]
+    },
+    {
+      "region": "village",
+      "piece": 0,
+      "position": [
+        160,
+        6624
+      ]
+    },
+    {
+      "region": "ridge",
+      "piece": 0,
+      "position": [
+        4288,
+        6624
+      ]
+    },
+    {
+      "region": "ridge",
+      "piece": 1,
+      "position": [
+        6208,
+        6880
+      ]
+    },
+    {
+      "region": "skywalk",
+      "piece": 0,
+      "position": [
+        8480,
+        6624
+      ]
+    },
+    {
+      "region": "skywalk",
+      "piece": 1,
+      "position": [
+        10368,
+        6880
+      ]
+    },
+    {
+      "region": "deep",
+      "piece": 0,
+      "position": [
+        12576,
+        6656
+      ]
+    },
+    {
+      "region": "deep",
+      "piece": 1,
+      "position": [
+        14432,
+        6880
+      ]
+    },
+    {
+      "region": "crystal",
+      "piece": 0,
+      "position": [
+        16608,
+        6624
+      ]
+    },
+    {
+      "region": "crystal",
+      "piece": 1,
+      "position": [
+        18624,
+        6880
+      ]
+    },
+    {
+      "region": "village",
+      "piece": 1,
+      "position": [
+        2016,
+        6912
+      ]
+    },
+    {
+      "region": "village",
+      "piece": 2,
+      "position": [
+        992,
+        7776
+      ]
+    },
+    {
+      "region": "ridge",
+      "piece": 2,
+      "position": [
+        5056,
+        7776
+      ]
+    },
+    {
+      "region": "skywalk",
+      "piece": 2,
+      "position": [
+        9152,
+        7808
+      ]
+    },
+    {
+      "region": "deep",
+      "piece": 2,
+      "position": [
+        13344,
+        7904
+      ]
+    },
+    {
+      "region": "crystal",
+      "piece": 2,
+      "position": [
+        17472,
+        7904
+      ]
+    },
+    {
+      "region": "village",
+      "piece": 3,
+      "position": [
+        3104,
+        8288
+      ]
+    },
+    {
+      "region": "ridge",
+      "piece": 3,
+      "position": [
+        7040,
+        8288
+      ]
+    },
+    {
+      "region": "skywalk",
+      "piece": 3,
+      "position": [
+        11264,
+        8416
+      ]
+    },
+    {
+      "region": "deep",
+      "piece": 3,
+      "position": [
+        15328,
+        8288
+      ]
+    },
+    {
+      "region": "crystal",
+      "piece": 3,
+      "position": [
+        19488,
+        8288
+      ]
+    },
+    {
+      "region": "village",
+      "piece": 4,
+      "position": [
+        288,
+        9312
+      ]
+    },
+    {
+      "region": "village",
+      "piece": 5,
+      "position": [
+        2016,
+        10208
+      ]
+    },
+    {
+      "region": "ridge",
+      "piece": 4,
+      "position": [
+        4480,
+        9344
+      ]
+    },
+    {
+      "region": "ridge",
+      "piece": 5,
+      "position": [
+        6176,
+        9952
+      ]
+    },
+    {
+      "region": "skywalk",
+      "piece": 4,
+      "position": [
+        8416,
+        9408
+      ]
+    },
+    {
+      "region": "skywalk",
+      "piece": 5,
+      "position": [
+        10208,
+        9952
+      ]
+    },
+    {
+      "region": "deep",
+      "piece": 4,
+      "position": [
+        12576,
+        9440
+      ]
+    },
+    {
+      "region": "deep",
+      "piece": 5,
+      "position": [
+        14304,
+        9952
+      ]
+    },
+    {
+      "region": "crystal",
+      "piece": 4,
+      "position": [
+        16768,
+        9312
+      ]
+    },
+    {
+      "region": "crystal",
+      "piece": 5,
+      "position": [
+        18464,
+        9952
+      ]
+    },
+    {
+      "region": "village",
+      "piece": 6,
+      "position": [
+        832,
+        10848
+      ]
+    },
+    {
+      "region": "village",
+      "piece": 7,
+      "position": [
+        2912,
+        11392
+      ]
+    },
+    {
+      "region": "ridge",
+      "piece": 6,
+      "position": [
+        4896,
+        10976
+      ]
+    },
+    {
+      "region": "ridge",
+      "piece": 7,
+      "position": [
+        7072,
+        11392
+      ]
+    },
+    {
+      "region": "skywalk",
+      "piece": 6,
+      "position": [
+        8992,
+        10848
+      ]
+    },
+    {
+      "region": "skywalk",
+      "piece": 7,
+      "position": [
+        11072,
+        11360
+      ]
+    },
+    {
+      "region": "deep",
+      "piece": 6,
+      "position": [
+        13024,
+        10848
+      ]
+    },
+    {
+      "region": "deep",
+      "piece": 7,
+      "position": [
+        15232,
+        11392
+      ]
+    },
+    {
+      "region": "crystal",
+      "piece": 6,
+      "position": [
+        17216,
+        10848
+      ]
+    },
+    {
+      "region": "crystal",
+      "piece": 7,
+      "position": [
+        19328,
+        11392
+      ]
+    }
+  ]
+}

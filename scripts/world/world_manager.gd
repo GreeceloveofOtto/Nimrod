@@ -6,6 +6,7 @@ var density: Dictionary = {}
 var abilities_data: Dictionary = {}
 var regions: Dictionary = {}
 var art: Dictionary = {}
+var carved_art: Dictionary = {}
 var loaded: Dictionary = {}
 var active:=false
 var transitioning:=false
@@ -39,15 +40,31 @@ var stream_center:=Vector2i(-100,-100)
 var stream_times: Array[float] = []
 var texture_cache: Array[Resource] = []
 var terrain_sets: Dictionary = {}
+var surface_shapes: Dictionary = {}
+var light_material: CanvasItemMaterial
 var building: Node2D
 var reveal_cursor:=Vector2i(-100,-100)
 
 func _ready() -> void:
     process_mode=PROCESS_MODE_ALWAYS
     settings=read_json("res://data/world/zabulistan/world_v2.json")
+    if not settings.has("navigation"):
+        var navigation: Array[String] = []
+        for y in range(int(settings.height)):navigation.append("#".repeat(int(settings.width)))
+        for path: String in settings.chunks.values():
+            var chunk: Dictionary=read_json(path)
+            var cx: int=int(chunk.coord[0])*64
+            var cy: int=int(chunk.coord[1])*36
+            for y in range(chunk.rle.size()):
+                var line: String=navigation[cy+y]
+                navigation[cy+y]=line.substr(0,cx)+decode_row(chunk.rle[y])+line.substr(cx+64)
+        settings["navigation"]=navigation
     density=read_json("res://data/world/enemy_density.json")
     abilities_data=read_json("res://data/world/abilities.json")
     art=read_json("res://data/world/zabulistan/art_v2.json")
+    carved_art=read_json("res://data/world/zabulistan/carved_art.json")
+    light_material=CanvasItemMaterial.new()
+    light_material.blend_mode=CanvasItemMaterial.BLEND_MODE_ADD
     for row: Dictionary in settings.regions:regions[str(row.id)]=row
     explored.resize(int(settings.width/8)*int(settings.height/8))
     get_node("/root/GameState").run_reset.connect(clear_session)
@@ -157,7 +174,35 @@ func region_weights(point: Vector2) -> Dictionary:
 
 func tile_at(at: Vector2i) -> String:
     if at.x<0 or at.y<0 or at.x>=int(settings.width) or at.y>=int(settings.height):return "#"
-    return str(settings.navigation[at.y])[at.x]
+    var glyph: String=str(settings.navigation[at.y])[at.x]
+    if glyph=="F":
+        for wall: Array in settings.get("fake_walls",[]):
+            if Rect2i(int(wall[1]),int(wall[2]),int(wall[3]),int(wall[4])).has_point(at) and switches.has(str(wall[0])):return "."
+    return glyph
+
+func solid_at(at: Vector2i) -> bool:
+    return tile_at(at) in ["#","W","^","F"]
+
+func surface_shape(size_px: Vector2) -> RectangleShape2D:
+    var key:=Vector2i(roundi(size_px.x),roundi(size_px.y))
+    if not surface_shapes.has(key):
+        var shape:=RectangleShape2D.new()
+        shape.size=size_px
+        surface_shapes[key]=shape
+    return surface_shapes[key]
+
+func decode_row(runs: Variant) -> String:
+    var row: String=""
+    if runs is Array:
+        for pair: Array in runs:row+=str(pair[0]).repeat(int(pair[1]))
+        return row
+    var count: int=0
+    for char: String in str(runs):
+        if char.is_valid_int():count=count*10+char.to_int()
+        else:
+            row+=char.repeat(count)
+            count=0
+    return row
 
 func chunk_id(at: Vector2i) -> String:return "c%02d_%02d" % [at.x,at.y]
 func chunk_at(point: Vector2) -> Vector2i:
@@ -227,11 +272,9 @@ func _read_chunks(tasks: Array) -> Array:
     for task: Dictionary in tasks:
         var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(str(task.path)))
         var rows: Array = []
-        for runs: Array in data.rle:
-            var row: String = ""
-            for pair: Array in runs:row+=str(pair[0]).repeat(int(pair[1]))
-            rows.append(row)
+        for runs: Variant in data.rle:rows.append(decode_row(runs))
         data["rows"]=rows
+        data.erase("rle")
         data["id"]=task.id
         output.append(data)
     return output
@@ -259,7 +302,7 @@ func pump_stream() -> void:
     var complete: bool=building.build_step()
     last_load_ms=(Time.get_ticks_usec()-started)/1000.
     stream_times.append(last_load_ms)
-    if last_load_ms>20 and OS.is_debug_build() and bool(settings.get("developer_overlay",false)):print("STREAM_STEP ",building.data.id," phase=",building.phase," row=",building.row_cursor," ms=",last_load_ms)
+    if last_load_ms>20 and OS.is_debug_build() and (bool(settings.get("developer_overlay",false)) or OS.get_environment("NIMROD_STREAM_TRACE")=="1"):print("STREAM_STEP ",building.data.id," phase=",building.phase," row=",building.row_cursor," ms=",last_load_ms)
     if complete:building=null
 
 func _process(_delta: float) -> void:
@@ -297,7 +340,7 @@ func reveal_near(point: Vector2) -> void:
             var steps:=maxi(1,ceili(eye.distance_to(target)))
             var clear:=true
             for step in range(1,steps+1):
-                if tile_at(Vector2i(eye.lerp(target,float(step)/steps))) in ["#","W"]:clear=false;break
+                if solid_at(Vector2i(eye.lerp(target,float(step)/steps))):clear=false;break
             if clear or Vector2i(x,y)==at:explored[y*width+x]=1
 
 func update_sleep(hero: NimrodPlayer) -> void:
@@ -460,6 +503,7 @@ func prewarm_art() -> void:
     if not texture_cache.is_empty():return
     for path in ["res://scripts/enemy_cedar_sentinel.gd","res://scripts/enemy_cedar_archer.gd","res://scripts/enemy_cedar_colossus.gd","res://scripts/enemy_cedar_demon.gd","res://scripts/enemy_cedar_wisp.gd","res://scripts/world/world_boss.gd","res://scripts/world/world_object.gd"]:texture_cache.append(load(path))
     var paths: Dictionary = {}
+    for key: String in ["crust","fill","backwall","supports","foreground"]:paths[str(carved_art[key])]=true
     for spec: Dictionary in art.values():
         paths[str(spec.atlas)]=true
         paths[str(spec.terrain)]=true
@@ -469,16 +513,40 @@ func prewarm_art() -> void:
         for clip: Dictionary in manifest.clips:
             var sheet: String = str(clip.sheet)
             paths[sheet if sheet.begins_with("res://") else "res://assets/"+sheet if sheet.begins_with("sprites/") else "res://assets/sprites/enemies/"+id+"/"+sheet]=true
-    for path in paths:
-        if not ResourceLoader.has_cached(path):ResourceLoader.load_threaded_request(path)
+    var requested: Array[String]=[]
     for path in paths:
         if ResourceLoader.has_cached(path):
             texture_cache.append(load(path))
-            continue
+        elif ResourceLoader.load_threaded_request(path)==OK:
+            requested.append(path)
+        else:push_error("World art request failed: "+str(path))
+    # A request must always be consumed, even if its completed resource entered
+    # the cache before this loop. Leaving it pending leaks an Image/RID at exit.
+    for path: String in requested:
         while ResourceLoader.load_threaded_get_status(path)==ResourceLoader.THREAD_LOAD_IN_PROGRESS:
             await get_tree().process_frame
         if ResourceLoader.load_threaded_get_status(path)==ResourceLoader.THREAD_LOAD_LOADED:texture_cache.append(ResourceLoader.load_threaded_get(path))
+        else:push_error("World art load failed: "+path)
     for id in art:terrain_set(str(id))
+    for kind: String in ["crust","fill","backwall","supports"]:carved_set(kind)
+
+func carved_set(kind: String) -> TileSet:
+    var key: String="carved_"+kind
+    if terrain_sets.has(key):return terrain_sets[key]
+    var dimensions: Vector2i={"crust":Vector2i(20,3),"fill":Vector2i(2,2),"backwall":Vector2i(16,3),"supports":Vector2i(4,2)}[kind]
+    var cell: int=64 if kind=="supports" else 32
+    var tiles:=TileSet.new()
+    tiles.tile_size=Vector2i(cell,cell)
+    var source:=TileSetAtlasSource.new()
+    source.texture=load(str(carved_art[kind]))
+    source.texture_region_size=Vector2i(cell,cell)
+    source.margins=Vector2i(2,2)
+    source.separation=Vector2i(4,4)
+    for y in range(dimensions.y):
+        for x in range(dimensions.x):source.create_tile(Vector2i(x,y))
+    tiles.add_source(source,0)
+    terrain_sets[key]=tiles
+    return tiles
 
 func terrain_set(id: String) -> TileSet:
     if terrain_sets.has(id):return terrain_sets[id]

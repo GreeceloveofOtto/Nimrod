@@ -6,14 +6,18 @@ from pathlib import Path
 import json,hashlib,itertools,collections,math,sys,time,pickle,gzip
 import numpy as np
 import jsonschema
+from terrain_rules import decode, load_world, measure
 from scipy.sparse import coo_matrix
 from scipy.sparse.csgraph import connected_components,breadth_first_order
 ROOT=Path(__file__).resolve().parents[2];BASE=ROOT/'data/world/zabulistan'
-def rle_decode(row):return ''.join(str(c)*int(n) for c,n in row)
+def rle_decode(row):return decode(row)
 def validate():
- started=time.monotonic();w=json.loads((BASE/'world_v2.json').read_text());jsonschema.validate(w,json.loads((ROOT/'data/world/world_v2.schema.json').read_text()));rows=w['navigation'];a=np.array([list(row) for row in rows]);H,W=a.shape;errors=[];entities=[];pieces=[];chunks={}
+ started=time.monotonic();w,_,_,_=load_world(BASE);jsonschema.validate(w,json.loads((ROOT/'data/world/world_v2.schema.json').read_text()));rows=w['navigation'];a=np.array([list(row) for row in rows]);H,W=a.shape;errors=[];entities=[];pieces=[];chunks={}
  check=lambda condition,message:errors.append(message) if not condition else None
  check((W,H)==(w['width'],w['height']),'World bounds mismatch')
+ raw_ascii='\n'.join(rows)+'\n'
+ check(hashlib.sha256(raw_ascii.encode()).hexdigest()==w.get('navigation_sha256'),'Chunk navigation differs from the compiled source hash')
+ if (BASE/'source/world.ascii').exists():check(raw_ascii==(BASE/'source/world.ascii').read_text(),'Chunk navigation differs from the hand-authored ASCII output')
  for id,path in w['chunks'].items():
   d=json.loads((ROOT/path.removeprefix('res://')).read_text());jsonschema.validate(d,json.loads((ROOT/'data/world/chunk.schema.json').read_text()));cx,cy=d['coord'];x=cx*64;y=cy*36;actual=[rle_decode(r) for r in d['rle']];check(actual==[r[x:x+64] for r in rows[y:y+36]],f'{id}: boundary/terrain differs from ASCII');entities+=d['entities'];pieces+=d['landmarks'];chunks[id]=d
  enemy_stats={e['id']:e for e in json.loads((ROOT/'data/enemies.json').read_text())['enemies']}
@@ -37,11 +41,11 @@ def validate():
    else:seen[key]=[x,y]
  check(duplicate_count==0,f'{duplicate_count} exact duplicate 24x14 windows (including empty/solid)')
  # Standing-foot configuration grid: width 36, height124; one-way ceilings are passable.
- solid=np.isin(a,['#','W']);support=np.isin(a,['#','W','=']);valid=np.zeros_like(solid)
+ solid=np.isin(a,['#','W','^']);support=np.isin(a,['#','W','=']);valid=np.zeros_like(solid)
  for y in range(4,H):
   clear=~solid[y-4:y].any(axis=0)
-  clear=clear & np.roll(clear,1)&np.roll(clear,-1)
-  valid[y]=support[y]&clear
+  clear=clear & np.roll(clear,1)
+  valid[y]=(support[y]|np.roll(support[y],1))&clear
  valid[:,0]=False;valid[:,-1]=False
  gate_specs=[e for e in entities if e['type']=='gate']
  gate_mask=np.zeros((H,W),dtype=object)
@@ -52,11 +56,11 @@ def validate():
  coords=np.argwhere(valid);edge_masks=[];ids={tuple(p):i for i,p in enumerate(coords)};edges_a=[];edges_b=[]
  tuning=json.loads((ROOT/'data/world/abilities.json').read_text())['movement'];g=float(tuning['gravity'])/32;v=float(tuning['jump_impulse'])/32;speed=float(tuning['speed'])/32
  def body_clear(x,y):
-  ix=int(round(x));iy=int(math.ceil(y))
-  return 1<=ix<W-1 and 4<=iy<H and not solid[iy-4:iy,max(0,ix-1):min(W,ix+2)].any()
+  left=math.floor(x-18/32+1e-7);right=math.ceil(x+18/32-1e-7);top=math.floor(y-124/32+1e-7);bottom=math.ceil(y-1e-7)
+  return 0<=left<right<=W and 0<=top<bottom<=H and not solid[top:bottom,left:right].any()
  # Base movement conservatively samples the actual ballistic arc; only valid landing nodes.
  # Additional abilities can only add edges because all required routes have a base return.
- cache_key=hashlib.sha256(json.dumps(['precise_gate_v2',rows,gate_specs,tuning],sort_keys=True).encode()).hexdigest()[:16]
+ cache_key=hashlib.sha256(json.dumps(['actual_body_bonk_v3',rows,gate_specs,tuning],sort_keys=True).encode()).hexdigest()[:16]
  cache_file=ROOT/'archive/stage14_rework'/('navigation_'+cache_key+'.pickle.gz')
  cache_file.parent.mkdir(parents=True,exist_ok=True)
  if cache_file.exists():
@@ -116,6 +120,9 @@ def validate():
      for k in range(1,5):bits|=gate_bits_at(x+direction*k*.5,y)
      for sx,sy in samples:bits|=gate_bits_at(sx,sy)
      edges_a.append(i);edges_b.append(j);edge_masks.append(bits)
+ from physics_edges import add_carved_edges
+ carved_bounds=[r['bounds'] for r in w['regions'] if r['id'] in w.get('carved_regions',[])]
+ simulated_edges=add_carved_edges(rows,coords,ids,gate_mask,edges_a,edges_b,edge_masks,tuning,carved_bounds)
  graph=coo_matrix((np.ones(len(edges_a),dtype=np.uint8),(edges_a,edges_b)),shape=(len(coords),len(coords))).tocsr();count,labels=connected_components(graph,directed=True,connection='strong')
  spawn=w['spawn'];start=min(range(len(coords)),key=lambda i:(coords[i,1]-spawn[0])**2+(coords[i,0]-spawn[1])**2);component=labels[start];reachable=int((labels==component).sum())
  unreachable=[]
@@ -228,6 +235,15 @@ def validate():
   nearby=[e['uid'] for e in normal if e is not colossus and abs(e['position'][0]-colossus['position'][0])<1280 and abs(e['position'][1]-colossus['position'][1])<720]
   check(not nearby,colossus['uid']+': shares a viewport with '+str(nearby))
  check(sum(e.get('elite',False) for e in normal)/max(1,len(normal))<=.05,'Elite ratio exceeds 5%')
- report={'passed':not errors,'errors':errors,'world_tiles':[W,H],'chunks':len(chunks),'landmarks':len(pieces),'normal_enemies':len(normal),'baseline_normal_enemies':13790,'reduction_percent':100*(1-len(normal)/13790),'density_by_region':density,'maximum_enemies_per_viewport':max_window,'peaceful_viewports_percent':100*(1-windows_with_enemies/window_count),'duplicate_windows':duplicate_count,'duplicate_examples':duplicates,'standing_nodes':len(coords),'reachable_standing_nodes':len(forward),'trapped_reachable_nodes':len(trapped),'landing_bidirectional_nodes':reachable,'strong_components':int(count),'closed_gate_core_nodes':int(core.sum()),'ability_independent_return_missing':len(return_missing),'gate_pocket_failures':len(pocket_failures),'gate_states_proved':states_checked,'state_solver_failure':state_failure,'unreachable_rewards':unreachable,'physics':tuning,'seconds':time.monotonic()-started}
+ terrain_reports={rid:measure(w,entities,[d for c in chunks.values() for d in c.get('decor',[])],rid) for rid in w.get('carved_regions',[])}
+ for rid,result in terrain_reports.items():check(result['passed'],rid+': carved structural rules failed: '+str(result['errors']))
+ report={'scope':'landing_approval_checkpoint','pending_regions':[r['id'] for r in w['regions'] if r['id'] not in w.get('carved_regions',[])],'terrain':terrain_reports,'passed':not errors,'errors':errors,'world_tiles':[W,H],'chunks':len(chunks),'landmarks':len(pieces),'normal_enemies':len(normal),'baseline_normal_enemies':13790,'reduction_percent':100*(1-len(normal)/13790),'density_by_region':density,'maximum_enemies_per_viewport':max_window,'peaceful_viewports_percent':100*(1-windows_with_enemies/window_count),'duplicate_windows':duplicate_count,'duplicate_examples':duplicates,'standing_nodes':len(coords),'reachable_standing_nodes':len(forward),'trapped_reachable_nodes':len(trapped),'landing_bidirectional_nodes':reachable,'strong_components':int(count),'closed_gate_core_nodes':int(core.sum()),'ability_independent_return_missing':len(return_missing),'gate_pocket_failures':len(pocket_failures),'gate_states_proved':states_checked,'state_solver_failure':state_failure,'unreachable_rewards':unreachable,'physics':dict(tuning,head_bonk_edges=simulated_edges,fixed_dt=1/120),'seconds':time.monotonic()-started}
  out=ROOT/'archive/stage14_rework/world_validation.json';out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(report,ensure_ascii=False,indent=2));print(json.dumps({k:v for k,v in report.items() if k not in ['duplicate_examples','density_by_region','physics','unreachable_rewards']},ensure_ascii=False,indent=2));return report
-if __name__=='__main__':sys.exit(0 if validate()['passed'] else 1)
+if __name__=='__main__':
+ import argparse
+ parser=argparse.ArgumentParser();parser.add_argument('--terrain-only',action='store_true');parser.add_argument('--region');args=parser.parse_args()
+ if args.terrain_only:
+  from terrain_rules import main
+  sys.argv=[sys.argv[0]]+(['--region',args.region] if args.region else [])
+  sys.exit(main())
+ sys.exit(0 if validate()['passed'] else 1)

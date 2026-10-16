@@ -47,7 +47,7 @@ func _process(delta: float) -> void:
             var layer: Sprite2D = root_layer.get_child(i)
             var ratio: float = [.12,.3,.58][i]
             layer.position=hero.position-Vector2(2048,512)
-            layer.region_rect.position=Vector2(hero.position.x*ratio/4.,0)
+            layer.region_rect.position=Vector2(hero.position.x*ratio/layer.scale.x,0)
     var region: Dictionary = world.region_at(hero.position/32.)
     region_data=region
     if not seen_regions.has(region.id):
@@ -73,8 +73,9 @@ func make_background(id: String) -> void:
         sprite.centered=false
         sprite.texture_repeat=CanvasItem.TEXTURE_REPEAT_ENABLED
         sprite.region_enabled=true
-        sprite.region_rect=Rect2(0,0,1024,256)
-        sprite.scale=Vector2(4.,4.)
+        var source_size: Vector2=sprite.texture.get_size()
+        sprite.region_rect=Rect2(Vector2.ZERO,source_size)
+        sprite.scale=Vector2(4096.,1024.)/source_size
         sprite.z_index=-30+i*5
         sprite.modulate=Color(.55,.59,.68,.85 if i<2 else .28)
         root_layer.add_child(sprite)
